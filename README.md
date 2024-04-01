@@ -1,6 +1,6 @@
 # ingeniería en sistemas
 
-| index | dir             | name                        | done |
+| index | src             | name                        | done |
 |-------|-----------------|-----------------------------|------|
 | 00    | 00-analisis     | Análisis Matemático         |      |
 | 01    | 01-discreta     | Matemática Discreta         |      |
