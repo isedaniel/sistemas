@@ -2,7 +2,8 @@
 
 | index | src             | name                        | done |
 |-------|-----------------|-----------------------------|------|
-| 00    | 00-analisis     | Análisis Matemático         |      |
-| 01    | 01-discreta     | Matemática Discreta         |      |
-| 02    | 02-fundamentos  | Fundamentos de Programación |      |
-| 03    | 03-organizacion | Organización de Empresas    |      |
+| 00    | 00-nivelacion   | Curso de nivelación         |      |
+| 01    | 01-analisis     | Análisis Matemático         |      |
+| 02    | 02-discreta     | Matemática Discreta         |      |
+| 03    | 03-fundamentos  | Fundamentos de Programación |      |
+| 04    | 04-organizacion | Organización de Empresas    |      |
