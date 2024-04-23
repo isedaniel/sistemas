@@ -1,0 +1,48 @@
+\section*{Actividad 9}
+\textbf{Que entiende por sistema de numeración binario, operaciones básicas (suma, resta, multiplicación, divisón). Ejemplificar.}
+
+El \textbf{sistema de numeración binario} es un sistema numérico que utiliza únicamente dos símbolos: $S=\{0,1\}$. Constituye el sistema fundamental para la computación digital, ya que se basa en la ausencia o presencia de señales eléctricas para la representación de valores.
+
+Es un sistema posicional de base 2, es decir, cada posición en un número binario representa una potencia de 2. Por ejemplo, el número $1010$ representa, en número decimales, la operación $0b0110 = (0 \cdot 2^{3} + 1 \cdot 2^{2} + 1 \cdot 2^{1} + 0 \cdot 2^{0})$. Por lo cual $0b0110 = 6$. 
+
+La suma, resta, multiplicación y división de binarios sigue reglas muy similares a la del sistema decimal. Al tratarse de sistemas posicionales, veremos que la forma de operar en cada uno esencialmente no varía. Lo único que cambia es el \textit{acarreo} entre columnas. 
+
+En un sistema de base 2, cuando se opera una \textbf{suma} en la primera columna, si esta da como resultado un número mayor a 1, se anota 0 y se acarrea 1 hacia la columna siguiente. Por ejemplo, si sumamos $0111 + 0010$:
+
+\begin{align*}
+0111 + 0010 &= 1001
+\end{align*}
+
+La \textbf{resta} en el sistema binario es en parte igual a la resta decimal: 
+
+\begin{align*}
+1 - 1 &= 0\\
+1 - 0 &= 1\\
+0 - 0 &= 0
+\end{align*}
+
+El caso especial se encuentra cuanto hay que operar una resta de tipo $0 - 1$, que no se puede hacer directamente, por lo que simplemente se toma la columna de la izquierda y se opera. Por ejemplo, en la resta $10 - 01$, $0 - 1$ no se puede hacer, pero tomando la columna de la izquierda tenemos $10 - 01$, en decimales $2 - 1$, por lo que ahora si es posible operar, siendo el resultado $1$.
+
+La \textbf{multiplicación} binaria es igual a la multiplicación decimal:
+
+\begin{align*}
+1 \cdot 1 &= 1\\
+1 \cdot 0 &= 0\\
+0 \cdot 1 &= 0\\
+0 \cdot 0 &= 0
+\end{align*}
+
+Todo número multiplicado por 0 da 0, al igual que en el sistema decimal. Una vez que operamos la multiplicación por cada una de las cifras, operamos una suma binaria, teniendo especial atención a cuidar el posicionamiento. Por ejemplo:
+
+\begin{align*}
+110 \cdot 10 &= (0000) + (1100)\\
+(0000) + (1100) &= 1100
+\end{align*}
+
+Por último, la \textbf{división} binaria es igual a la división decimal. Se opera de izquierda a derecha, tomando tantas cifras del dividendo como tenga el divisor. Se escribe un número 1, se multiplica por el divisor y se resta a las cifras consideradas del dividendo. Por ejemplo:
+
+\begin{align*}
+\frac{1101}{0010} &= 0110 + 0001
+\end{align*}
+
+En este caso 0110 (6 en decimal) equivale al cociente y 0001 (1 en decimal) al resto.

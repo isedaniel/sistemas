@@ -1,0 +1,48 @@
+\section*{Actividad 10}
+\textbf{Qué entiende por sistema de numeración octal, operaciones básicas (suma, resta, multiplicación, división). Ejemplificar.}
+
+El \textbf{sistema de numeración octal} es un sistema numérico que utiliza ocho símbolos: $S=\{0,1,2,3,4,5,6,7\}$. Es empleado en algunas ocaciones en la computación digital para trabajar con \textit{bytes}, entendidos como conjuntos de 8 \textit{bits}, aunque tambien se recurre al sistema hexadecimal por la posibilidad de representar un byte con solo dos dígitos.
+
+Es un sistema posicional de base 8, es decir, cada posición en un número octal representa una potencia de 8. Por ejemplo, el número $1010$ representa la operación $0o1010 = (1 \cdot 8^{3} + 0 \cdot 8^{2} + 1 \cdot 8^{1} + 0 \cdot 8^{0})$. Por lo cual $0o1010 = 512 + 8 = 520$. 
+
+La suma, resta, multiplicación y división números octales es igual a las operaciones decimales, con la diferencia que supone el acarreo entre columnas en la base 8.
+
+En una \textbf{suma} octal, si la operación en una columna da como resultado un número mayor a 7, se anota 0 y se acarrea 1 hacia la columna siguiente. Por ejemplo:
+
+\begin{tabular}{cccc}
+	  & 1 &   &   \\
+	  &   & 7 & 7 \\
+	+ &   & 1 & 0 \\
+\hline
+	  & 1 & 0 & 7 \\
+\end{tabular}
+
+La \textbf{resta} octal es igual a la resta decimal, con la salvedad que el acarreo entre columnas suma 8 en lugar de 10:
+
+\begin{tabular}{cccc}
+	  &   & 6 & 8 \\
+	  &   & \cancel{7} & 2 \\
+	- &   & 1 & 6 \\
+\hline
+	  &   & 5 & 4 \\
+\end{tabular}
+
+La \textbf{multiplicación} en el sistema octal es igual a la multiplicación decimal, con la salvedad que el acarreo se hace cuando un número supera 8:
+
+\begin{tabular}{cccc}
+	  & 1 & 1 &   \\
+	  &   & 7 & 7 \\
+	x &   &   & 2 \\
+\hline
+	  & 1 & 7 & 6 \\
+\end{tabular}
+
+En este caso, tenemos 77 octal, que es 63 decimal, multiplicado por 2 (igual en octal y decimal). El resultado es 176 siguiendo el acarreo octal, que sería 126 en decimal.
+
+Finalmente, la \textbf{división} octal es igual a la división decimal. Por ejemplo:
+
+\begin{align*}
+	\frac{74}{6} &= 12
+\end{align*}
+
+En este caso 74 (60 en decimal) dividido por 6 (igual en decimal) da 12 (10 en decimal).
