@@ -9,6 +9,7 @@ La suma, resta, multiplicación y división números octales es igual a las oper
 
 En una \textbf{suma} octal, si la operación en una columna da como resultado un número mayor a 7, se anota 0 y se acarrea 1 hacia la columna siguiente. Por ejemplo:
 
+\begin{align*}
 \begin{tabular}{cccc}
 	  & 1 &   &   \\
 	  &   & 7 & 7 \\
@@ -16,9 +17,11 @@ En una \textbf{suma} octal, si la operación en una columna da como resultado un
 \hline
 	  & 1 & 0 & 7 \\
 \end{tabular}
+\end{align*}
 
 La \textbf{resta} octal es igual a la resta decimal, con la salvedad que el acarreo entre columnas suma 8 en lugar de 10:
 
+\begin{align*}
 \begin{tabular}{cccc}
 	  &   & 6 & 8 \\
 	  &   & \cancel{7} & 2 \\
@@ -26,9 +29,11 @@ La \textbf{resta} octal es igual a la resta decimal, con la salvedad que el acar
 \hline
 	  &   & 5 & 4 \\
 \end{tabular}
+\end{align*}
 
 La \textbf{multiplicación} en el sistema octal es igual a la multiplicación decimal, con la salvedad que el acarreo se hace cuando un número supera 8:
 
+\begin{align*}
 \begin{tabular}{cccc}
 	  & 1 & 1 &   \\
 	  &   & 7 & 7 \\
@@ -36,6 +41,7 @@ La \textbf{multiplicación} en el sistema octal es igual a la multiplicación de
 \hline
 	  & 1 & 7 & 6 \\
 \end{tabular}
+\end{align*}
 
 En este caso, tenemos 77 octal, que es 63 decimal, multiplicado por 2 (igual en octal y decimal). El resultado es 176 siguiendo el acarreo octal, que sería 126 en decimal.
 

@@ -1,0 +1,69 @@
+\section*{Actividad 11}
+\textbf{Qué entiende por sistema de numeración hexadecimal, operaciones básicas (suma, resta, multiplicación, división). Ejemplificar.}
+
+El \textbf{sistema de numeración hexadecimal} es un sistema de numeración posicional de base 16. Utiliza 16 símbolos: $S=\{0,1 \dots 9, A, B, C, D, E, F\}$. Suele ser empleado en la computación digital por la falicilidad con la que se representan los conjuntos de \textit{bits}, que se denominan \textit{bytes}. El sistema de numeración hexadecimal permite representar un byte completo con solo 2 caracteres.
+
+\begin{align*}
+\begin{tabular}{ cc }
+	Símbolo	&	Valor decimal	\\
+	\hline						\\
+		A	&		10			\\
+		B	&		11			\\
+		C	&		12			\\
+		D	&		13			\\
+		E	&		14			\\
+		F	&		15			\\
+	\hline						\\
+\end{tabular}
+\end{align*}
+
+Al tratarse de un sistema posicional de 16 símbolos, cada posición en un número hexadecimal representa una potencia de 16. Por ejemplo, el número $FA$ representa la suma $(15 \cdot 16^{1} + 10 \cdot 16^{0})$. Por lo cual $0xFA = 0d250$. 
+
+La suma, resta, multiplicación y división números hexadecimales es muy similar a la operación en el marco de los decimales, en la medida en que ambos sistemas son posicionales. Sin embargo, cabe mencionar algunas diferencias en el acarreo debidas a la base 16.
+
+En la \textbf{suma} hexadecimal se opera de manera análoga a su operación en el marco del sistema decimal, tomando los valores de los dígitos alfabéticos de la tabla de equivalencia presentada. Cuando la suma de dos dígitos es superior a 16, se debe anotar el resultado - 16 y acarrear 1 a la columna siguiente. Por ejemplo:
+
+\begin{align*}
+\begin{tabular}{cccc}
+	  &   & 1 &   \\
+	  &   & 1 & F \\
+	+ &   & 1 & E \\
+\hline
+	  &   & 3 & D \\
+\end{tabular}
+\end{align*}
+
+La \textbf{resta} de números hexadecimales es igual a la resta decimal, con la salvedad que el acarreo entre columnas suma 16 en lugar de 10:
+
+\begin{align*}
+\begin{tabular}{cccc}
+	  &   &  & 16 \\
+	  &   & \cancel{1} & E \\
+	- &   &   & F \\
+\hline
+	  &   &   & F \\
+\end{tabular}
+\end{align*}
+
+E(14) - F(15) no se puede operar de manera directa, por lo que acarreamos 1 desde la columna de la izquierda. Ello implica sumar 16 a E(14). Con ello, llegamos al resultado, en este caso, 30 - 15 = F(15).
+
+La \textbf{multiplicación} en el sistema hexadecimal es igual a la multiplicación decimal, con la salvedad que el acarreo se hace cuando un número es igual o superior a 16:
+
+\begin{align*}
+\begin{tabular}{cccc}
+	  &   & 1 &   \\
+	  &   & 1 & F \\
+	x &   &   & 2 \\
+\hline
+	  &   & 3 & E \\
+\end{tabular}
+\end{align*}
+
+Al multiplicar $F(15) x 2$ obtenemos 30. Como $30 \geq 16$, debemos restar 16 y acarrear 1 a la columna de la izquierda. Por ello, escribimos 15(E) y seguimos operando. 1 x 2 es dos, más uno acarreado sería 3, que puede escribirse directamente por no superar la base 16.
+
+Finalmente, la \textbf{división} hexadecimal es igual a la división decimal. Por ejemplo:
+
+\begin{align*}
+	\frac{3DE5}{A} &= 630
+\end{align*}
+

@@ -1,0 +1,10 @@
+\section*{Actividad 12}
+\textbf{Representación de números enteros: método de complemento a uno y complemento a dos.}
+
+La representación digital de números enteros es fundamental para el almacenamiento, operación y transmisión de la información. Existen dos métodos comunes para la representación de números enteros: el complemento a uno y el complemento a dos. 
+
+En un sistema binario con \textbf{complemento a uno} la representación de un número negativo implica invertir todos los bits del número positivo correspondiente. Luego se agrega 1 al resultado de la inversión, obteniendo el complemento a uno del número original. Por ejemplo, dado el número 0b0110, su complemento a uno equivaldría a encontrar primero el inverso 0b1001, para luego sumarle uno: 0b1010.
+
+El sistema binario con \textbf{complemento a dos} opera bajo una modalidad muy similar, con la salvedad que suma 2 al resultado obtenido luego de la inversión. Es decir, si retomamos el ejmplo dado para el complemento a uno, el número binario 0b0110 sería invertido a 0b1001, sumándole ahora 2, de forma tal que $0b1001 + 0b0010 = 0b1011$. 
+
+Ambos sistemas implican considerar la longitud total de los bits utilizados (en los ejemplos, 4 bits). El complemento a uno puede resultad más intuitivo, pero el puede tener algunos problemas de desbordamiento. El complemento a dos es la modadalidad más común y eficiente de representación de un número binario negativo. 
