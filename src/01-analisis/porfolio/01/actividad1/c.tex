@@ -1,0 +1,41 @@
+\subsection*{Actividad 1.C}
+
+Dados $a, b, c, x \in \mathbb{R}$, con $a \neq 0$, una expresión cuadrática asume la siguiente estructura:
+
+\begin{align*}
+	ax^2 + bx + c &= 0
+\end{align*}
+
+Donde $a$ es el coeficiente cuadrático, $b$ el coeficiente lineal y $c$ el término independiente.
+
+A partir de esta expresión es posible deducir la fórmula de Bhaskara o resolvente. Para ello, recurrimos a uno de los métodos que permiten despejar una ecuación cuadrática: completar el cuadrado. En primer lugar, dividimos ambos lados de la expresión por $a$, para igualar el coeficiente cuadrático a 1.
+
+\begin{align*}
+	\frac{ax^2}{a} + \frac{bx}{a} + \frac{c}{a} &= \frac{0}{a}\\
+	x^2 + \frac{bx}{a} &= \frac{-c}{a}\\
+\end{align*}
+
+Ahora, completamos el cuadrado del lado izquierdo, para que siga la estructura $(x + b)^2 = x^2 + 2bx + b^2$. Para ello, dividimos el término lineal entre 2 y lo elevamos al cuadrado. Como vamos a sumar el resultado de esta operación a una de las expresiones de nuestra igualdad, debemos operar igual también del otro lado.
+
+\begin{align*}
+	x^2 + \left(\frac{b}{a}\right) \cdot x + \frac{b^2}{4a^2} &= \frac{b^2}{4a^2} - \frac{c}{a}\\
+\end{align*}
+
+En este punto es posible expresar el término izquierdo como el cuadrado de un binomio, así como podemos operar la resta de fracciones del lado derecho de la expresión.
+
+\begin{align*}
+	(x + \frac{b}{2a})^2 &= \frac{b^2 - 4ac}{4a^2}\\
+\end{align*}
+
+Operando raíz cuadrada sobre ambos términos para despejar la $x$, obtenemos la expresión:
+
+\begin{align*}
+	|x + \frac{b}{2a}| &= \frac{\sqrt{b^2 - 4ac}}{2a}\\
+	x &= \frac{-b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a}\\
+\end{align*}
+
+Y, finalmente, expresamos como una sola fracción la expresión de la derecha, resultando en:
+
+\begin{align*}
+	x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\\
+\end{align*}
