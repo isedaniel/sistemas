@@ -1,11 +1,11 @@
-Funcion promedio <- devolverMedia(vector)
+Funcion media <- devolverMedia(vector)
 	suma <- 0
 	elementos <- 0
 	Para Cada elemento De vector Hacer
 		suma <- suma + elemento
 		elementos <- elementos + 1
 	FinPara
-	promedio <- suma / elementos
+	media <- suma / elementos
 FinFuncion
 
 

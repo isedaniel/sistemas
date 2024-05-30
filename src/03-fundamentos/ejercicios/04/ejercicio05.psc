@@ -1,8 +1,8 @@
-SubAlgoritmo intercambio(a Por Referencia, b Por Referencia)
+Funcion intercambio(a Por Referencia, b Por Referencia)
 	temp <- a
 	a <- b
 	b <- temp
-FinSubAlgoritmo
+FinFuncion
 
 Algoritmo ejercicio05
 	Escribir "Ingrese valor a: "
