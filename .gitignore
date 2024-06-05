@@ -7,3 +7,4 @@
 *.docx
 *.out
 .directory
+.Rhistory
