@@ -21,10 +21,10 @@ Funcion s <- AsignarCadena(c)
 	s <- c
 FinFuncion
 
-Algoritmo ejercicio01
+Algoritmo ejercicio01a
 	Definir valor1, valor2 Como Real
 	Definir operacion Como Caracter
-	Imprimir "Ingrese valor1"
+	Imprimir "Ingrese valor 1"
 	Leer valor1
 	Imprimir "Ingrese valor 2"
 	Leer valor2
