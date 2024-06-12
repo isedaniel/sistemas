@@ -1,36 +1,34 @@
 Funcion resultado <- Calcular(valor1, valor2, operacion)
-	Si operacion = "+" Entonces
-		resultado <- valor1 + valor2
-	FinSi
-	Si operacion = "-" Entonces
-		resultado <- valor1 - valor2
-	FinSi
-	Si operacion = "*" Entonces
-		resultado <- valor1 * valor2
-	FinSi
-	Si operacion = "/" Entonces
-		Si valor2 <> 0 Entonces
-			resultado <- valor1 / valor2
-		SiNo
-			resultado <- DividirPorCero(0)
-		FinSi
-	FinSi
+	Segun operacion Hacer
+		Caso "+":
+			resultado <- valor1 + valor2
+		Caso "-":
+			resultado <- valor1 - valor2
+		Caso "*":
+			resultado <- valor1 * valor2
+		Caso "/":
+			Si valor2 <> 0 Entonces
+				resultado <- valor1 / valor2
+			SiNo
+				// Se hace de esta manera porque caso contrario
+				// PSeInt no permite devolver tipos diferentes
+				resultado <- AsignarCadena("No se puede dividir por cero.")
+			FinSi
+	FinSegun
 FinFuncion
 
-Funcion s <- DividirPorCero(cero)
-	s <- "No se puede dividir por cero."
-FinFuncion
-
-Funcion i <- Ingresar(mensaje)
-	Imprimir mensaje
-	Leer i
+Funcion s <- AsignarCadena(c)
+	s <- c
 FinFuncion
 
 Algoritmo ejercicio01
 	Definir valor1, valor2 Como Real
 	Definir operacion Como Caracter
-	valor1 <- Ingresar("Ingrese valor 1")
-	valor2 <- Ingresar("Ingrese valor 2")
-	operacion <- Ingresar("Ingrese operación (+, -, *, /)")
+	Imprimir "Ingrese valor1"
+	Leer valor1
+	Imprimir "Ingrese valor 2"
+	Leer valor2
+	Imprimir "Ingrese operación"
+	Leer operacion
 	Imprimir Calcular(valor1, valor2, operacion)
 FinAlgoritmo
