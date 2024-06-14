@@ -1,63 +1,60 @@
-Funcion menu
+Función menu
 	Limpiar Pantalla
-	Imprimir "Calculadora"
-	Imprimir "+: sumar"
-	Imprimir "-: restar"
-	Imprimir "*: multiplicar"
-	Imprimir "/: dividir"
-	Imprimir "S: salir"
-	Imprimir ""
-	Imprimir "Ingrese su opción"
-FinFuncion
+	Escribir 'Calculadora'
+	Escribir '+: sumar'
+	Escribir '-: restar'
+	Escribir '*: multiplicar'
+	Escribir '/: dividir'
+	Escribir 'S: salir'
+	Escribir ''
+	Escribir 'Ingrese su opción'
+FinFunción
 
-Funcion resultado <- Calcular(valor1, valor2, operacion)
-	Segun operacion Hacer
-		Caso "+":
-			resultado <- valor1 + valor2
-		Caso "-":
-			resultado <- valor1 - valor2
-		Caso "*":
-			resultado <- valor1 * valor2
-		Caso "/":
-			Si valor2 <> 0 Entonces
-				resultado <- valor1 / valor2
+Función resultado <- calcular(valor1,valor2,operacion)
+	Según operacion Hacer
+		'+':
+			resultado <- valor1+valor2
+		'-':
+			resultado <- valor1-valor2
+		'*':
+			resultado <- valor1*valor2
+		'/':
+			Si valor2<>0 Entonces
+				resultado <- valor1/valor2
 			SiNo
 				// Se hace de esta manera porque caso contrario
 				// PSeInt no permite devolver tipos diferentes
-				resultado <- AsignarCadena("No se puede dividir por cero.")
+				resultado <- AsignarCadena('No se puede dividir por cero.')
 			FinSi
-	FinSegun
-FinFuncion
+	FinSegún
+FinFunción
 
-Funcion s <- AsignarCadena(c)
+Función s <- AsignarCadena(c)
 	s <- c
-FinFuncion
+FinFunción
 
 Algoritmo ejercicio05
 	Definir valor1, valor2 Como Real
-	
 	salir <- Falso
-	Mientras salir = Falso Hacer
-		menu
+	Mientras salir=Falso Hacer
+		menu()
 		Leer operacion
-		
-		Segun operacion Hacer
-			Caso "s","S":
+		Según operacion Hacer
+			's', 'S':
 				salir <- Verdadero
-			Caso "+","-","*","/":
-				Imprimir "Ingrese valor 1"
+			'+', '-', '*', '/':
+				Escribir 'Ingrese valor 1'
 				Leer valor1
-				Imprimir "Ingrese valor 2"
+				Escribir 'Ingrese valor 2'
 				Leer valor2
-				
-				Imprimir "Resultado : " calcular(valor1, valor2, operacion)
-				Imprimir ""
-				Imprimir "Presione cualquier tecla para volver al menú..."
+				Escribir 'Resultado : ', calcular(valor1,valor2,operacion)
+				Escribir ''
+				Escribir 'Presione cualquier tecla para volver al menú...'
 				Esperar Tecla
 			De Otro Modo:
-				Imprimir "Opción inválida"
-				Imprimir "Presione cualquier tecla para volver al menú..."
+				Escribir 'Opción inválida'
+				Escribir 'Presione cualquier tecla para volver al menú...'
 				Esperar Tecla
-		FinSegun
+		FinSegún
 	FinMientras
 FinAlgoritmo
