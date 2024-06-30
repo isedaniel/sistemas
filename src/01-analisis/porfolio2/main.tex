@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage[margin=2.54cm]{geometry}
+\usepackage{graphicx}   % imágenes
+\graphicspath{{img}}
+\usepackage{amsfonts}   % fuentes de conjuntos numéricos
+\usepackage{amsmath}
+\usepackage{tikz}       % gráficos
+\usepackage{pgfplots}   % plots
+\pgfplotsset{width=10cm, compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+\usepackage{cancel}     % cancelar términos
+
+\title{porfolio2}
+\author{Daniel Ise}
+\date{June 2024}
+
+\begin{document}
+
+\input{titlepage}
+\input{01/01actividad}
+\input{01/02actividad}
+\input{01/03actividad}
+\input{01/04actividad2}
+\input{02/01ParteA}
+\include{02/02ParteB}
+\end{document}

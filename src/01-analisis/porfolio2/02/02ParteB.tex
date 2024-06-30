@@ -1,0 +1,48 @@
+\subsection*{Parte B}
+
+\subsection*{Actividad 1}
+
+El problema pide calcular el desplazamiento y la distancia recorrida por un drone, dada una función de su velocidad, medida en $\frac{m}{s}$. La velocidad del drone viene definida por la función $V_{(t)} = t^2 - t - 6$. 
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = middle,
+    xlabel = \(t\),
+    ylabel = {\(V(t)\)},
+    clip = false,
+]
+% V_t
+\addplot [
+    domain=0:4, 
+    samples=200, 
+    color=cyan,
+]
+{x*x-x-6};
+\addlegendentry{\(V_{(t)} = t^2 - t - 6\)}
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Si operamos la integral de esta función -que, al tratarse de un polinomio, se puede hacer de manera directa- obtenemos la función $d_{(t)} = \frac{t^3}{3} - \frac{t^2}{2} - 6t + C$. Notar que la primitiva de la función expresa el área bajo la curva, por lo que estaría expresada en $m$. Sería entonces una función que devolvería la distancia recorrida por el Drone.
+
+Se nos pide considerar el desplazamiento dentro del intervalo $[1, 4]$. Sin embargo, en el intervalo $[1, 3]$ la integral sería negativa. Ello nos invita a pensar que el drone, en ese período, se desplazó en un sentido, cambiando dicho sentido en $(3, 4]$. 
+
+Entonces, podríamos pensar que el desplazamiento final del drone implicaría restar las distancias recorridas. Por su parte, obtener la distancia recorrida total implicaría sumar el módulo de ambos desplazamientos, con independencia del sentido en que el drone se haya desplazado.
+
+Operamos la integral definida para cada uno de estos intervalos.
+
+\begin{align*}
+    \int_{1}^{3} t^2 - t - 6 \,dx &= \frac{t^3}{3} - \frac{t^2}{2} - 6t \Big|_1^3\\
+    \frac{3^3}{3} - \frac{3^2}{2} - 6 \cdot 3 &- \left( \frac{1^3}{3} - \frac{1^2}{2} - 6 \cdot 1 \right)\\
+    - \frac{22}{3}
+\end{align*}
+
+\begin{align*}
+    \int_{3}^{4} t^2 - t - 6 \,dx &= \frac{t^3}{3} - \frac{t^2}{2} - 6t \Big|_3^4\\
+    \frac{4^3}{3} - \frac{4^2}{2} - 6 \cdot 4 &- \left( \frac{3^3}{3} - \frac{3^2}{2} - 6 \cdot 3 \right)\\
+    \frac{17}{6}
+\end{align*}
+
+Entonces, el desplazamiento del drone vendría dado por la expresión $\frac{17}{6} - \frac{22}{3}$, siendo $- \frac{9}{2}$. Por su parte, el recorrido total sería $|\frac{17}{6}| + |\frac{22}{3}|$, siendo $\frac{61}{6}$ el recorrido total del drone.
