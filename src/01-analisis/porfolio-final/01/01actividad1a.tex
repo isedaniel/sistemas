@@ -1,0 +1,44 @@
+\section*{Unidad 1: Números reales}
+\subsection*{Actividad 1}
+
+\subsection*{1.A}
+Dado un cuadrado de lado $a$, con $a \in \mathbb{R^+}$, podemos definir su área como $a^2$.
+
+\begin{center}
+\begin{tikzpicture}
+\draw[blue] (0,0) rectangle (2,2);
+\draw (1, -0.4) node{$a$};
+\end{tikzpicture}
+\end{center}
+
+De igual manera, si tomamos otro cuadrado, esta vez de lado $b$, con $b \in \mathbb{R^+}$, podemos establecer el área de este como $b^2$. 
+
+\begin{align*}
+\begin{tikzpicture}
+\draw[red] (0,0) rectangle (1.5,1.5);
+\draw (.75, -0.4) node{$b$};
+\end{tikzpicture}
+\end{align*}
+
+Pasando a un tercer cuadrado, esta vez de lado $a+b$, podemos definir su área como $(a+b)^2$.
+
+\begin{align*}
+\begin{tikzpicture}
+\draw[blue] (0,0) rectangle (2,2);
+\draw (1, -0.4) node{$a$};
+\draw[red] (2,2) rectangle (3.5,3.5);
+\draw (3.9, 2.75) node{$b$};
+\draw[red] (2,0) -- (3.5,0);
+\draw (2.75, -0.4) node{$b$};
+\draw[blue] (3.5, 0) -- (3.5, 2);
+\draw (3.9, 1) node{$a$};
+\draw[blue] (0, 3.5) -- (2, 3.5);
+\draw (1, 3.9) node{$a$};
+\draw[red] (0, 2) -- (0, 3.5);
+\draw (-0.4, 2.75) node{$b$};
+\draw (2.75, 3.9) node{$b$};
+\draw (-0.4, 1) node{$a$};
+\end{tikzpicture}
+\end{align*}
+
+De esta forma, deducimos que el área de un cuadrado de lado $a+b$ es igual a $a^2 + ab + ab + b^2$, es decir, $(a + b)^2 = a^2 + 2ab + b^2$.

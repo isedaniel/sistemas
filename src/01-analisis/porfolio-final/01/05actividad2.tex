@@ -1,0 +1,52 @@
+\subsection*{Actividad 2}
+
+Tenemos un servicio en línea dedicado a validar identidades evitando el fraude en ventas por internet. El principal costo del servicio es el pago al proveedor de computación en la nube, cuyo precio final se compone de un monto fijo mensual, más un costo variable que depende de la cantidad de validaciones que se hagan en el mes. El costo total sigue el modelo $c = 2 + \frac{2}{3} \cdot v$, siendo $2$ el costo fijos, $v$ la cantidad de validaciones medidas en miles y $c$ el costo total en dólares. 
+
+Si el precio competitivo para nuestro servicio es de \$ 0,00133 por validación ¿Cuál es la cantidad mínima de validaciones necesarias para que el servicio sea rentable?
+
+En primer lugar, planteamos un modelo para los ingresos, expresando el precio en miles: $i = \frac{4}{3} \cdot v$.
+
+El servicio sería rentable si cubrimos, como mínimo, la totalidad de los costos, por lo tanto:
+
+\begin{align*}
+	i - c &= 0\\
+    \frac{4}{3} \cdot v - \left(2 + \frac{2}{3} \cdot v \right) &= 0\\
+    \frac{2}{3} \cdot v &= 2\\
+    v &= 3
+\end{align*}
+
+Entonces, a partir de $v = 3$ (3000 validaciones mensuales) el servicio sería rentable, igualándose costos e ingresos en \$ 4.
+
+Gráficamente:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = \(v\),
+    ylabel = {\(\$\)},
+    clip = false,
+]
+% costo
+\addplot [
+    domain=0:8, 
+    samples=200, 
+    color=cyan,
+]
+{2 + x*2/3};
+\addlegendentry{\(2 + \frac{2}{3} \cdot v\)}
+
+% ingreso
+\addplot [
+    domain=0:8, 
+    samples=200, 
+    color=orange,
+]
+{x*4/3};
+\addlegendentry{\(\frac{4}{3} \cdot v\)}
+\node[label={270:{(3,4)}},circle,fill,inner sep=2pt] at (axis cs:3,4) {};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\href{https://drive.google.com/file/d/1DXpY7xukQlkF4CswWKmvItGMWZuxZohS/view?usp=sharing}{Link para el audio.}

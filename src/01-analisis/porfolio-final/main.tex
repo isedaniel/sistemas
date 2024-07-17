@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage[margin=2.54cm]{geometry}
+\usepackage{graphicx}   % imágenes
+\graphicspath{{img}}
+\usepackage{amsfonts}   % fuentes de conjuntos numéricos
+\usepackage{amsmath}
+\usepackage{tikz}       % gráficos
+\usepackage{pgfplots}   % plots
+\pgfplotsset{width=10cm, compat=1.9}
+\usepgfplotslibrary{external}
+\tikzexternalize
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+\usepackage{parskip}    % espacio entre párrafos
+\usepackage{cancel}     % cancelar términos
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}   % links
+\usetikzlibrary{shapes.geometric}   % shapes
+\usepackage{pdfpages}   % incluir pdfs
+
+\title{porfolio final}
+\author{Daniel Ise}
+\date{June 2024}
+
+\begin{document}
+\input{titlepage}
+\include{01/01actividad1a}
+\input{01/02actividadb}
+\input{01/03actividadc}
+\input{01/04actividad1d}
+\input{01/05actividad2}
+
+\include{02/01actividad1a}
+\input{02/02actividad1b}
+\input{02/03actividad2}
+
+\input{03/01actividad1}
+\includepdf[pages={1}]{03/01mapa-conceptual.pdf}
+\input{03/02actividad2a}
+
+\include{04/01actividad1a}
+\input{04/02actividad1b}
+\input{04/03actividad1c}
+\input{04/04actividad1parte2}
+\input{04/05actividad1parte3}
+
+\end{document}

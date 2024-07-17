@@ -1,0 +1,46 @@
+\subsection*{1.B}
+
+La derivada de la función que describe la altura de la piedra es $40-10t$. Si igualamos a 0 obtenemos:
+
+\begin{align*}
+    40-10t &= 0 \\
+    t &= \frac{-40}{-10}\\
+    t &= 4
+\end{align*}
+
+Para comprobar que esta sea la altura máxima, evaluamos $h'$ en $t = 3$ y $t = 5$.
+
+\begin{center}
+\begin{tabular}{ c c }
+	t	&	$h'_{(t)}$ \\
+	\hline \\
+	$3$	&	10\\	
+	$4$	&	0\\
+	$5$	&	-10
+\end{tabular}
+\end{center}
+
+Como se desprende de la tabla, la velocidad en $t=3$ es todavía positiva, por lo cual la piedra continúa subiendo. En $t=5$, por el contrario, la velocidad es negativa, por lo que podemos concluir que la piedra ya se encuentra descendiendo. Por lo tanto, el punto $t=4$ constituye el máximo de la función.
+
+Con estos datos en mente, podemos representar el modelo que describe el movimiento de la piedra, resaltando su punto máximo.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = \(t\),
+    ylabel = {\(h(t)\)},
+    clip = false,
+]
+% Gráfico
+\addplot [
+    domain=0:8, 
+    samples=200, 
+    color=blue,
+]
+{40*x - 5 * x^2};
+\addlegendentry{\(40t - 5t^2\)}
+\node[label={270:{(4,80)}},circle,fill,inner sep=2pt] at (axis cs:4,80) {};
+\end{axis}
+\end{tikzpicture}
+\end{center}
