@@ -8,3 +8,4 @@
 *.out
 .directory
 .Rhistory
+*.dpth
