@@ -1,24 +1,34 @@
-\subsection*{1.B}
+\subsection*{Actividad 1.B}
+\textbf{A partir de la deducción anterior, interpretar en forma gráfica la expresión: $x^2 + 4x + 4$}
 
-Dado un número $x$, con $x \in \mathbb{R^+}$, podemos definir un cuadrado de lado $(x+2)$, cuya área se puede representar gráficamente de la siguiente forma:
+La expresión $x^2 + 4x + 4$ se puede interpretar gráficamente como un cuadrado de lado $x + 2$.
 
 \begin{align*}
 \begin{tikzpicture}
-\draw[blue] (0,0) rectangle (2,2);
+	% Cuadrado a
+\draw[cyan] (0,0) -- (2,0);
+\draw[cyan] (0,0) -- (0,2);
+\draw[cyan,dashed] (2,0) -- (2,2);
+\draw[cyan,dashed] (0,2) -- (2,2);
 \draw (1, -0.4) node{$x$};
-\draw (2,2) rectangle (3.5,3.5);
-\draw (3.9, 2.75) node{$2$};
-\draw (2,0) -- (3.5,0);
-\draw (2.75, -0.4) node{$2$};
-\draw[blue] (3.5, 0) -- (3.5, 2);
-\draw (3.9, 1) node{$x$};
-\draw[blue] (0, 3.5) -- (2, 3.5);
-\draw (1, 3.9) node{$x$};
-\draw (0, 2) -- (0, 3.5);
-\draw (-0.4, 2.75) node{$2$};
-\draw (2.75, 3.9) node{$2$};
 \draw (-0.4, 1) node{$x$};
+	% Cuadrado b
+\draw[orange,dashed] (2,2) -- (3.5,2);
+\draw[orange,dashed] (2,2) -- (2,3.5);
+\draw[orange] (3.5,2) -- (3.5,3.5);
+\draw[orange] (2,3.5) -- (3.5,3.5);
+\draw (3.9, 2.75) node{$2$};
+\draw (2.75, 3.9) node{$2$};
+	% Resto
+\draw[orange] (2,0) -- (3.5,0);
+\draw (2.75, -0.4) node{$2$};
+\draw[cyan] (3.5, 0) -- (3.5, 2);
+\draw (3.9, 1) node{$x$};
+\draw[cyan] (0, 3.5) -- (2, 3.5);
+\draw (1, 3.9) node{$x$};
+\draw[orange] (0, 2) -- (0, 3.5);
+\draw (-0.4, 2.75) node{$2$};
 \end{tikzpicture}
 \end{align*}
 
-Sumando las áreas de los cuadrados y rectángulos que componen al cuadrado de lado $(x+2)$ obtenemos que $(x+2)^2 = x^2 + 2x + 2x + 2^2$, que puede expresarse como $x^2 + 4x +4$.
+De esta forma, si sumamos las áreas de los cuadrados y rectángulos que componen al cuadrado de lado $(x+2)$ obtenemos que $(x+2)^2 = x^2 + 2x + 2x + 2^2$, que puede expresarse como $x^2 + 4x +4$.
