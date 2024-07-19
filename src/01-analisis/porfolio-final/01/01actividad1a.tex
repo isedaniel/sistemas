@@ -11,7 +11,7 @@ Dado un cuadrado de lado $a$, con $a \in \mathbb{R^+}$, podemos definir su área
 \end{tikzpicture}
 \end{center}
 
-De igual manera, si tomamos otro cuadrado, esta vez de lado $b$, con $b \in \mathbb{R^+}$, podemos establecer el área de este como $b^2$. 
+De igual manera, podemos definir un cuadrado de lado $b$, con $b \in \mathbb{R^+}$, siendo su área $b^2$. 
 
 \begin{align*}
 \begin{tikzpicture}
@@ -20,14 +20,23 @@ De igual manera, si tomamos otro cuadrado, esta vez de lado $b$, con $b \in \mat
 \end{tikzpicture}
 \end{align*}
 
-Pasando a un tercer cuadrado, esta vez de lado $a+b$, podemos definir su área como $(a+b)^2$.
+Entonces, si definimos un tercer cuadrado, de lado $a+b$, su área vendría dada por la expresión $(a+b)^2$. Gráficamente:
 
 \begin{align*}
 \begin{tikzpicture}
-\draw[blue] (0,0) rectangle (2,2);
+	% Cuadrado a
+\draw[blue] (0,0) -- (2,0);
+\draw[blue] (0,0) -- (0,2);
+\draw[blue,dashed] (2,0) -- (2,2);
+\draw[blue,dashed] (0,2) -- (2,2);
 \draw (1, -0.4) node{$a$};
-\draw[red] (2,2) rectangle (3.5,3.5);
+	% Cuadrado b
+\draw[red,dashed] (2,2) -- (3.5,2);
+\draw[red,dashed] (2,2) -- (2,3.5);
+\draw[red] (3.5,2) -- (3.5,3.5);
+\draw[red] (2,3.5) -- (3.5,3.5);
 \draw (3.9, 2.75) node{$b$};
+	% Resto
 \draw[red] (2,0) -- (3.5,0);
 \draw (2.75, -0.4) node{$b$};
 \draw[blue] (3.5, 0) -- (3.5, 2);
@@ -41,4 +50,4 @@ Pasando a un tercer cuadrado, esta vez de lado $a+b$, podemos definir su área c
 \end{tikzpicture}
 \end{align*}
 
-De esta forma, deducimos que el área de un cuadrado de lado $a+b$ es igual a $a^2 + ab + ab + b^2$, es decir, $(a + b)^2 = a^2 + 2ab + b^2$.
+Como vemos, el cuadrado resultante es la sumatoria de las áreas de los cuadrados 1 y 2, más dos rectángulos de área $a \cdot b$. Por lo cual el área de un cuadrado de lado $a+b$ es igual a $a^2 + ab + ab + b^2$, es decir, $(a + b)^2 = a^2 + 2ab + b^2$.
