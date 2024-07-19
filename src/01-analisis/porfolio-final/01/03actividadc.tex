@@ -1,27 +1,30 @@
-\subsection*{1.C}
+\subsection*{Actividad 1.C}
+\textbf{Proponer una deducción de la fórmula Bhaskara o “resolvente”
+utilizada para la resolución de ecuaciones cuadráticas.}
 
-Dados $a, b, c, x \in \mathbb{R}$, con $a \neq 0$, definimos como expresión cuadrática al polinomio de estructura $ax^2 + bx + c = 0$, siendo $a$ el coeficiente cuadrático, $b$ el coeficiente lineal y $c$ el término independiente.
+Dados $a, b, c \in \mathbb{R}$, con $a \neq 0$, una expresión cuadrática puede definirse como el polinomio de estructura $ax^2 + bx + c = 0$, siendo $a$ el coeficiente cuadrático, $b$ el coeficiente lineal y $c$ el término independiente.
 
-Desde esta expresión es posible deducir la fórmula de Bhaskara o resolvente, recurriendo al método de completar el cuadrado. Para ello, en primer lugar dividimos todos los términos, a ambos lados de la igualdad, por $a$, de manera tal que el coeficiente cuadrático quede igual a 1. Pasamos además el término independiente hacia el otro lado de la igualdad.
+A partir de esta expresión es posible deducir la fórmula de Bhaskara o resolvente, despejando $x$ mediante el procedimiento de completar el cuadrado. Para ello, en primer lugar, dividimos todos los términos por $a$, de manera tal que el coeficiente cuadrático sea igual a 1. Despejamos además el término independiente hacia el otro lado de la igualdad.
 
 \begin{align*}
 	\frac{ax^2}{a} + \frac{bx}{a} + \frac{c}{a} &= \frac{0}{a}\\
 	x^2 + \frac{bx}{a} &= \frac{-c}{a}\\
 \end{align*}
 
-Seguidamente, buscamos la estructura $x^2 + 2nx + n^2$, para poder comprimirla en $(x+n)^2$ y facilitar así el despeje de la $x$. Para ello, empezamos por multiplicar al término lineal por $\frac{2}{2}$, buscando que la estructura del término sea equivalente a $2nx$.
+Nuestro objetivo ahora es buscar la estructura $x^2 + 2nx + n^2$, para comprimirla en $(x+n)^2$ y permitir así el despeje de $x$. Para ello, multiplicamos al término lineal por $\frac{2}{2}$, buscando que su estructura sea equivalente a $2nx$.
 
 \begin{align*}
 	x^2 + \frac{2}{2} \cdot \frac{bx}{a} &= - \frac{c}{a}\\
+	x^2 + 2 \cdot \frac{b}{2a} \cdot x &= - \frac{c}{a}\\
 \end{align*}
 
-De esta forma $2 \cdot \frac{b}{2a} \cdot x$ sería equivalente a $2nx$. Ahora sumamos $n^2$. Para mantener la igualdad, sumamos de ambos lados.
+De esta forma, $2 \cdot \frac{b}{2a} \cdot x$ sería equivalente a $2nx$, siendo $n = \frac{b}{2a}$. Para completar el cuadrado, sumamos ahora $n^2$ de ambos lados de la expresión.
 
 \begin{align*}
 	x^2 + 2 \cdot \frac{b}{2a} \cdot x + \left(\frac{b}{2a}\right)^2 &= \left(\frac{b}{2a}\right)^2 - \frac{c}{a}\\
 \end{align*}
 
-Expresamos el término izquierdo como un binomio al cuadrado. Del otro lado de la igualdad operamos la resta de fracciones.
+Con esta estructura, es posible expresar el polinomio de la izquierda como un binomio al cuadrado. Del otro lado de la igualdad operamos la resta de fracciones.
 
 \begin{align*}
 	\left(x + \frac{b}{2a}\right)^2 &= \frac{b^2 - 4ac}{4a^2}\\
