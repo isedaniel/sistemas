@@ -9,3 +9,5 @@
 .directory
 .Rhistory
 *.dpth
+*.gz
+*.md5
