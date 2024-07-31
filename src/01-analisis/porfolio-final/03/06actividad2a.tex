@@ -1,54 +1,59 @@
 \subsection*{Actividad 2.A}
 
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[
-    axis lines = center,
-    clip = false,
-    legend pos = outer north east,
-]
-% x < -2
-\addplot [
-    domain=-4:-2, 
-    samples=100, 
-    color=magenta,
-]
-{x-1};
-
-% x = -2
-\node[circle,fill,inner sep=2pt, color=magenta] at (axis cs:-2,1) {};
-
-% x > -2
-\addplot [
-    domain=-2:-1, 
-    samples=100, 
-    color=magenta,
-]
-{x};
-
-% x > -1
-\addplot [
-    domain=-1:4, 
-    samples=100, 
-    color=magenta,
-]
-{(x*x - x)/(x)};
-
-% x = 0
-\node (n0) [circle, fill, inner sep=2pt, color=magenta] at (axis cs:0,-1) {};
-\node (n1) [circle, fill, inner sep=1.5pt, color=white] at (axis cs:0,-1) {};
-
-\end{axis}
-\end{tikzpicture}
-\end{center}
+El ejercicio pide una función con discontinuidad evitable en 0, que se cumple con la función $\frac{x^2-x}{x}$. 
+Además, necesitamos una discontinuidad de salto finito en $x = -2$, y que $f(-2) = 1$, características que cumple la siguiente función por partes:
 
 \begin{align*}
     f(x) = 
     \begin{cases}
-        x-1, & \text{si } x < -2\\
+        \frac{x^2-x}{x}, & \text{si } x < -2\\
         1, & \text{si } x = -2\\
         x, & \text{si } -2 < x < -1\\
         \frac{x^2-x}{x}, & \text{si } x \ge -1
     \end{cases}
 \end{align*}
 
+Gráficamente:
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[
+        axis lines = center,
+        clip = false,
+        legend pos = outer north east,
+    ]
+    % x < -2
+    \addplot [
+        domain=-4:-2, 
+        samples=100, 
+        color=magenta,
+    ]
+    {(x*x - x)/(x)};
+    
+    % x = -2
+    \node[circle,fill,inner sep=2pt, color=magenta] at (axis cs:-2,1) {};
+    
+    % x > -2
+    \addplot [
+        domain=-2:-1, 
+        samples=100, 
+        color=magenta,
+    ]
+    {x};
+    
+    % x > -1
+    \addplot [
+        domain=-1:4, 
+        samples=100, 
+        color=magenta,
+    ]
+    {(x*x - x)/(x)};
+    
+    % x = 0
+    \node (n0) [circle, fill, inner sep=2pt, color=magenta] at (axis cs:0,-1) {};
+    \node (n1) [circle, fill, inner sep=1.5pt, color=white] at (axis cs:0,-1) {};
+    
+    \end{axis}
+    \end{tikzpicture}
+    \end{center}
+    
