@@ -1,0 +1,62 @@
+\subsection*{Actividad 2.C}
+
+Para el tramo menor a $x = -3$ necesitamos una asíntota horizontal en 0. Por ello, en este tramo la función sería $f(x) = \frac{-1}{x}$.
+En $x = -3$ la función requiere de una discontinuidad de salto finito. Para ello, se propone que a partir de este punto $f(x) = \frac{-x}{x-2}$.
+Manteniendo este función hasta $x = 2$ se cumple también con la necesidad de una asíntota vertical en $x = 2$.
+Para el intervalo $[2, 4]$ se propone la función $x+1$, que mantiene el dominio de los números reales y a la vez $\lim_{x \to 2^+} = 3$.
+Por último, para las $x$ mayores a 4, la función seguiría con $\frac{-x}{x-4}$, para, de este forma, tener una asíntota horizontal en $-1$.
+
+\begin{align*}
+    f(x) =
+    \begin{cases}
+        \frac{-1}{x},   & \text{si } x < -3          \\
+        \frac{-x}{x-2}, & \text{si } -3 \leq x < 2   \\
+        x+1,            & \text{si } 2 \leq x \leq 4 \\
+        \frac{-x}{x-4}, & \text{si } 4 < x
+    \end{cases}
+\end{align*}
+
+Gráficamente:
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+                axis lines = center,
+                clip = false,
+                legend pos = outer north east
+            ]
+            % x < -3
+            \addplot [
+                domain=-5:-3,
+                samples=50,
+                color=magenta,
+            ]
+            {-1/x};
+
+            % x < 2
+            \addplot [
+                domain=-3:1.8,
+                samples=50,
+                color=magenta,
+            ]
+            {(-x)/(x-2)};
+
+            % x < 4
+            \addplot [
+                domain=2:4,
+                samples=50,
+                color=magenta,
+            ]
+            {x+1};
+
+            % 4 < x
+            \addplot [
+                domain=4.5:7,
+                samples=50,
+                color=magenta,
+            ]
+            {(-x)/(x-4)};
+
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
