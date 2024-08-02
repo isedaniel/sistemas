@@ -1,0 +1,62 @@
+\subsection*{Actividad 3}
+
+\textbf{Proponer alguna situación problemática relacionada con su carrera
+    de grado, que plantee un enunciado de su modelización y la
+    aplicación del concepto de límite para el estudio de la misma.}
+
+El concepto de límite ocupa un lugar central en el análisis de algoritmos.
+En particular, para el estudio de la eficiencia algorítmica se recurre a la cota superior asintótica,
+cuya determinación depende del límite cuando la variable tiende a infinito.
+
+Veamos un ejemplo. Siendo $n$ la cantidad de datos de entrada del algoritmo 1, la cantidad de operaciones que requiere
+para arribar a un resultado sigue el modelo $3n^2 + 2^n$. Por otra parte, tenemos el algoritmo 2, cuya cantidad de operaciones
+para arribar al mismo resultado crece según la función $2 \log n + 2n^4$. ¿Cómo determinamos cuál algoritmo es más eficiente?
+
+Para ello, debemos determinar la cota superior asintótica de cada uno de los algoritmos, cuya expresión será aquel término que, diviendo
+al modelo original, haga que el límite de la variable tendiendo a infinito sea igual a una constante. Entonces:
+
+\begin{align*}
+    \lim_{x \to \infty} \frac{3n^2 + 2^n}{3n^2} & = 1 + \infty \\
+    \lim_{x \to \infty} \frac{3n^2 + 2^n}{3n^2} & = \infty
+\end{align*}
+
+Como vemos, el límite del cociente entre el modelo 1 y su primer término no da un valor constante. Probamos ahora con el segudo término:
+
+\begin{align*}
+    \lim_{x \to \infty} \frac{3n^2 + 2^n}{2^n} & = 0 + 1 \\
+    \lim_{x \to \infty} \frac{3n^2 + 2^n}{2^n} & = 1
+\end{align*}
+
+Si operamos en cambio el cociente del modelo 1 por su segundo término, arribamos a un valor constante, en este caso de 1. Por ende,
+la cota superior asintótica sigue a la expresión $2^n$. Veamos ahora el caso del segundo modelo.
+
+\begin{align*}
+    \lim_{x \to \infty} \frac{2 \log n + 2n^4}{2 \log n }                                   & = 1 + \frac{\infty}{\infty} \\
+    1 + \lim_{x \to \infty} \frac{2 \cdot 4n^3}{2 \cdot \frac{1}{\ln 10} \cdot \frac{1}{x}} & = \infty
+\end{align*}
+
+En este caso, nuevamente el primer término no podría ser su cota superior asintótica, siéndolo por ende $2n^4$.
+Teniendo estas expresiones para las cotas superiores, vemos cuál es su ubicación en la tabla de órdenes de complejidad:
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{ll}
+        Notación                     & Nombre                              \\
+        \hline
+        $O(1)$                       & Orden constante                     \\
+        $O(log log n)$               & Orden sublogarítmica                \\
+        $O(log n)$                   & Orden logarítmica                   \\
+        $O( n \sqrt{n})$             & Orden sublineal                     \\
+        $O(n)$                       & Orden lineal o de primer orden      \\
+        $O(n \log n)$                & Orden lineal logarítmica            \\
+        $O(n^2)$                     & Orden cuadrática o de segundo orden \\
+        $O(n^3)$                     & Orden cúbica o de tercer orden      \\
+        $O(n^c)$                     & Orden potencial fija                \\
+        $O(c^n) \text{, con } n > 1$ & Orden exponencial                   \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Como puede observarse en la tabla, el algoritmo 1 podría ser clasificado como un algoritmo de orden exponencial, mientras el algoritmo 2 sería un algoritmo 
+de orden potencial fija. Como el orden exponencial está ubicado en una fila por debajo del orden potencial, podemos concluir que el algoritmo 2 es más eficiente 
+que el 1.
