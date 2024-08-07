@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[margin=2.54cm]{geometry}
+%\usepackage{graphicx}               % imágenes
+%\graphicspath{{img}}
+\usepackage{amsfonts}               % fuentes de conjuntos numéricos
+\usepackage{amsmath, amssymb}       % símbolos
+%\usepackage{tikz}                   % gráficos
+%\usepackage{pgfplots}               % plots
+%\pgfplotsset{width=10cm, compat=1.9}
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+\usepackage{parskip}                % espacio entre párrafos
+\usepackage{cancel}                 % cancelar términos
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}        % links
+%\usetikzlibrary{shapes.geometric}   % shapes
+%\usepackage{pdfpages}               % incluir pdfs
+
+\title{Álgebra - Segunda clase}
+\author{Daniel Ise}
+\date{8 de agosto de 2024}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Producto escalar de vectores.} 
+
+\begin{align*}
+\vec{u} \cdot \vec{v} &= |\vec{u}| \cdot |\vec{v}| \cdot \cos \alpha \\
+\vec{u} \cdot \vec{v} &= u_x \cdot v_x + u_y \cdot v_y
+\end{align*}
+
+Además, podemos obtener una expresión para la medida del ángulo $\alpha$.
+
+\begin{align*}
+    \alpha &= \arccos \left(\frac{\vec{u} \cdot \vec{v}}{|\vec{u}| \cdot |\vec{v}|}\right)
+\end{align*}
+
+Si dos vectores son \textbf{perpendiculares}, el producto escalar es igual a 0.
+
+\begin{align*}
+    \vec{u} \perp \vec{v} &\iff \vec{u} \cdot \vec{v} = 0
+\end{align*}
+
+\textbf{Propiedades de producto escalar. }
+
+\textbf{Conmutativa. }
+
+\begin{align*}
+    \vec{u} \cdot \vec{v} &= \vec{v} \cdot \vec{u}
+\end{align*}
+
+\textbf{Asociativa. }
+
+\textbf{Ortonormales. } Cuando dos vectores son a la vez \textbf{versores} y 
+\textbf{perpendiculares.}
+
+\textbf{Vectores paralelos. } Dados son vectores, se dicen que son paralelos si 
+comparten dirección. Por lo tanto, tienen los mismos cosenos directores.
+
+\textbf{Normalizar vector. } Normalizarlo es encontrar un vector unitario 
+palelo al vector normalizado.
+
+\end{document}
