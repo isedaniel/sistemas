@@ -1,0 +1,142 @@
+\documentclass{article}
+\usepackage[margin=2.54cm]{geometry}
+%\usepackage{graphicx}               % imágenes
+%\graphicspath{{img}}
+\usepackage{amsfonts}               % fuentes de conjuntos numéricos
+\usepackage{amsmath, amssymb}       % símbolos
+%\usepackage{tikz}                   % gráficos
+%\usepackage{pgfplots}               % plots
+%\pgfplotsset{width=10cm, compat=1.9}
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+\usepackage{parskip}                % espacio entre párrafos
+\usepackage{cancel}                 % cancelar términos
+\usepackage[colorlinks=true, 
+    urlcolor=blue]{hyperref}        % links
+%\usetikzlibrary{shapes.geometric}   % shapes
+%\usepackage{pdfpages}               % incluir pdfs
+
+\title{Arquitectura de computadoras\\Segunda clase}
+\author{Daniel Ise}
+\date{13 de agosto de 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{Cronograma.}
+
+Actividad de clase. Se las hace en la clase. Tienen un cierre de entrega y un 
+cierre de entrega definitivo antes de la clase siguiente. 
+
+Van a ser simples de resolver.
+
+Después hay prácticos cada 15 días. Esos tienen fecha definitiva antes del 
+parcial.
+
+Las actividades semanales y trabajos prácticos ponderan con el parcial.
+
+\section*{Conceptos generales.}
+
+\textbf{Dato.} Valor que representa una característica de un objeto del mundo
+real.
+
+\textbf{Información.} Conjunto de datos ordenados, procesados por un algoritmo,
+es el sentido de los datos.
+
+\textbf{Ejemplos.} Auto. Rojo $\rightarrow$ datos. 5 autos rojos en la 
+concesionaria $\rightarrow$ información.
+
+La información es más valiosa que los datos, porque los datos de por si no 
+dicen nada.
+
+\textbf{Cómo se genera la información.} Con un proceso. Tengo entrada de datos,
+le hago un procesamiento y a la salida tengo información.
+
+\textbf{Generación de computadoras.}
+
+\textbf{Primera generación.} 1940-1956. 
+
+\textbf{Tubo de vacío.} Utilizados como tecnología principal para circuitos y
+tambores magnéticos para memoria. Tamaño: habitaciones enteras. Consumo de 
+energía: alto. Mucho calor. Programación: te utilizaba lenguaje de máquina.
+Velocidad: procesamiento lento, aunque superior al humano. Confiabilidad: fallas
+frecuentes.
+
+\textbf{Segunda generación. 1956 - 1963}
+
+\textbf{Transistores.} Reemplazan al tubo de vacío. Permiten a los ordenadores
+ser más chicos, rápidos y confiables. Menor consumo de energía y generación de
+calor. Lenguaje de programación: aparece ensamblador y los primeros lenguajes de
+alto nivel: FORTRAN y COBOL. Mayor velocidad de procesamiento. Crece el uso 
+comercial, la aplicación militar y gubernamental. 
+
+\textbf{Tercera generación. 1964 - 1971.}
+
+\textbf{Circuito integrado.} Igual al transistor pero en un chip de silicio.
+Mayor reducción de tamaño, con mayor potencia. Multiprogramación: capcidad de
+ejecutar múltiples programas. Mayor confiabilidad. Menos fallas de hardware. 
+Permite el crecimiento del desarrollo de software y sistemas operativos más 
+sofisticados. Mejora la interacción con el usuario: teclado, monitor. 
+IBM System/360.
+
+\textbf{Cuarta generación. 1971 - Presente}
+
+\textbf{Microprocesador.} Introducción del microprocesador, colocando CPU en 
+un solo chip. Computadora personal: nace la PC, computadora accesible al 
+público en general. VLSI/ULSI: integración a gran escala, chips más complejos
+y potentes. Interfaz gráfica de usuario, facilitando uso de computadoras. 
+Redes: crece internet, llevando al mundo a una mayor conexión. Movilidad: 
+aumento de la portabilidad con laptop, tablet, smartphone. IBM PC.
+
+\textbf{Pelis.} Jobs. Sillicon cowboys.
+
+\textbf{Arquitectura de Von Neumann.} Modelo de diseño de computadoras, que 
+describe un sistema en el cual una única estructura de almacenamiento (llamada
+memoria) contiene tanto intrucciones de procesamiento (programas) como los 
+datos.
+
+Esta arquitectura es la base de la mayoría de computadoras modernas. Fue 
+propuesta por John von Neumann en 1945. En lugar de cablear en hardware el 
+programa, se hace a la computadora \textit{programable.}
+
+Componentes de la arquitectura. 
+
+\begin{enumerate}
+    \item Unidad central de procesamiento (CPU).
+     \begin{itemize}
+        \item Unidad aritmético lógica
+        \item Unidad de control
+        \begin{itemize}
+            \item Registro de instrucción
+            \item Contador de programa
+        \end{itemize}
+     \end{itemize}
+    \item Memoria Ram. 
+    \item Dispositivos de entrada y salida. 
+    \item Buses de conexión.
+\end{enumerate}
+
+\textbf{Programa almacenado.} Un programa son instrucciones secuenciales para el
+tratamiento de los datos. Antes los programas estaban \textit{hardcodeados}, es
+decir, eran diseñadas de fábrica para ejecutar un único programa. Estaba
+pre-definida en el hardware. Para cambiar un programa había que reconfigurar
+físicamente a la computadora. 
+
+\textbf{IAS Machine.} Elementos clave:
+\begin{enumerate}
+    \item Almacenamiento en memoria
+    \item Unidad de control
+    \item Secuencia de ejecución
+    \item Programa modificable
+\end{enumerate}
+
+\textbf{Ciclo de instrucción.}
+\begin{enumerate}
+    \item Buscar instrucción en la memoria principal
+    \item Decodificar instrucción: buscar y obtener datos
+    \item Ejecución de la instrucción: almacenamiento de datos.
+    \item Repetición del ciclo.
+\end{enumerate}
+
+\end{document}
