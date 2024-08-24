@@ -10,4 +10,4 @@
 | 05    | 05-algebra      | Álgebra                     |      |
 | 06    | 06-fisica       | Física 1                    |      |
 | 07    | 07-arquitectura | Arquitectura de Computadores|      |
-| 08    | 08-organizacion | Análisis de Sistemas 1      |      |
+| 08    | 08-sistemas     | Análisis de Sistemas 1      |      |
