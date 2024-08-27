@@ -24,4 +24,82 @@
 
 \maketitle
 
+Primero, un repaso conceptual.
+
+\textbf{Espacio.} Es un conjunto, cuyos elementos son \textbf{puntos}. Dentro 
+del espacio se destaca el subconjunto que denominamos \textbf{plano}. Cada plano
+está formado, a su vez, por un subconjunto de \textbf{rectas}.
+
+\textbf{Ecuación vectorial de la recta en \(R^2\).} Una \textbf{recta} $R$ es un
+conjunto de \textbf{puntos} en el plano, alineados con un punto $P (x_1, y_1)$,
+con \textbf{dirección} dada por $\vec{v}$. Siendo $P$ un punto de la recta $r$,
+podemos afirmar que el vector $\vec{PX}$, que va desde $P$ a un punto cualquiera
+$X$, tiene la misma \textbf{dirección} que $\vec{v}$. Por lo tanto, \(\vec{PX}\)
+es el resultado de multiplicar \(\vec{v}\) por un escalar, que representamos 
+como la letra griega gamma:
+
+\begin{equation*}
+    \vec{PX} = _\lambda \cdot \vec{v}
+\end{equation*}
+
+De esta ecuación podemos deducir la ecuación de la recta $r$, que requeriría del
+vector \(\vec{v}\) y de un punto $P$:
+
+\begin{align*}
+    \vec{PX} & = \lambda \cdot \vec{v}\\
+    (x,y) - (x_1,y_1) & = _\lambda \cdot \vec{v}\\
+    (x,y) & = (x_1,y_1) + _\lambda \cdot \vec{v}
+\end{align*}
+
+Esta forma de definir $r$ se conoce como 
+\textbf{ecuación vectorial de la recta.}
+
+\textbf{Ecuación vectorial de la recta en \(R^3\).} Dados un vector 
+\(\vec{v} = (v_x,v_y,v_z)\) y un punto \(P = (x_1, y_1, z_1)\), podemos definir
+una recta en \(R^3\) como:
+
+\begin{align*}
+    (x, y, z) & = (x_1,y_1,z_1) + _\lambda (v_x, v_y, v_z)
+\end{align*}
+
+Esta es la \textbf{ecuación vectorial de la recta} en el \textbf{espacio}.
+
+\textbf{Ecuaciones paramétricas de la recta.} Dada una ecuación vectorial de una 
+recta \(r\), es posible construir un sistema de ecuaciones:
+
+\begin{align*}
+    (x, y, z) & = (x_1,y_1,z_1) + _\lambda (v_x, v_y, v_z)\\
+    (x, y, z) & = (x_1,y_1,z_1) + (_\lambda \cdot v_x, _\lambda \cdot v_y,_\lambda \cdot v_z)\\
+    (x, y, z) & = (x_1 + _\lambda \cdot v_x, y_1 + _\lambda \cdot v_y, z_1 + _\lambda \cdot v_z)
+\end{align*}
+
+Expresado como un sistema:
+
+\begin{align*}
+    \begin{cases}
+        x = x_1 + _\lambda \cdot v_x\\
+        y = y_1 + _\lambda \cdot v_y\\
+        z = z_1 + _\lambda \cdot v_z
+    \end{cases}
+\end{align*}
+
+Estas son las \textbf{ecuaciones paramétricas de la recta}.
+
+\textbf{Ecuaciones simétricas de la recta.} Si despejo \(\lambda\) de cada una
+de las ecuaciones paramétricas obtengo:
+
+\begin{align*}
+    \lambda & = \frac{x - x_1}{v_x} & \lambda & = \frac{y - y_1}{v_y} & \lambda & = \frac{z - z_1}{v_z}
+\end{align*}
+
+Igualando estas expresiones:
+
+\begin{align*}
+    \frac{x - x_1}{v_x} = \frac{y - y_1}{v_y} = \frac{z - z_1}{v_z}
+\end{align*}
+
+Siempre con la \textbf{condición} que todos los componentes de \(\vec{v} \neq 0\)
+
+Estas son las \textbf{ecuaciones simétricas de la recta}.
+
 \end{document}
