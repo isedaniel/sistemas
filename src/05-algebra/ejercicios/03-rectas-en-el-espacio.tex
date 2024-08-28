@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+%\usepackage{graphicx}               % imágenes
+%\graphicspath{{img}}
+\usepackage{amsfonts}               % fuentes de conjuntos numéricos
+\usepackage{amsmath, amssymb}       % símbolos
+%\usepackage{tikz}                   % gráficos
+%\usepackage{pgfplots}               % plots
+%\pgfplotsset{width=10cm, compat=1.9}
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+\usepackage{parskip}                % espacio entre párrafos
+\usepackage{cancel}                 % cancelar términos
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}        % links
+%\usetikzlibrary{shapes.geometric}   % shapes
+%\usepackage{pdfpages}               % incluir pdfs
+
+\title{Álgebra y geometría analítica\\Guía de ejercicios}
+\author{Daniel Ise}
+\date{Agosto de 2024}
+
+\begin{document}
+
+\maketitle
+
+Primero, un repaso conceptual.
+
+\textbf{Espacio.} Es un conjunto de \textbf{puntos}. Un \textbf{plano} es un
+\textit{subconjunto} del \textbf{espacio}. La \textbf{recta} es, a su vez, un
+\textit{subconjunto} del \textbf{plano}.
+
+\textbf{Ecuación vectorial de la recta en \(R^2\).} Una \textbf{recta} es un
+conjunto de \textbf{puntos} en el \textbf{plano}.
+Dados dos puntos, $P$ y $X$, pertenecientes a la recta $r$, podemos definir el
+vector \(\overline{PX}\). Si este vector tiene la misma dirección que
+\(\vec{v}\), entonces \(\overline{PX}\) resulta de multiplicar \(\vec{v}\)
+por un escalar:
+
+\begin{align*}
+    \overline{PX}     & = \lambda \cdot \vec{v}             \\
+    (x,y) - (x_1,y_1) & = \lambda \cdot \vec{v}             \\
+    (x,y)             & = (x_1,y_1) + \lambda \cdot \vec{v}
+\end{align*}
+
+Concluimos que, dados un punto $P (x_1,y_1)$ y un vector \(\vec{v}\), podemos
+definir $r$. Esta definición se denomina
+\textbf{ecuación vectorial de la recta.}
+
+\textbf{Ecuación vectorial de la recta en \(R^3\).} Dados un vector
+\(\vec{v} = (v_x,v_y,v_z)\) y un punto \(P = (x_1, y_1, z_1)\), podemos definir
+una recta en \(R^3\) como:
+
+\begin{align*}
+    (x, y, z) & = (x_1,y_1,z_1) + \lambda \cdot (v_x, v_y, v_z)
+\end{align*}
+
+Esta es la \textbf{ecuación vectorial de la recta} en el \textbf{espacio}
+$(R^3)$.
+
+\textbf{Ecuaciones paramétricas de la recta.} Dada una ecuación vectorial de una
+recta \(r\), es posible construir un sistema de ecuaciones:
+
+\begin{align*}
+    (x, y, z) & = (x_1,y_1,z_1) + \lambda \cdot (v_x, v_y, v_z)                               \\
+    (x, y, z) & = (x_1,y_1,z_1) + (\lambda \cdot v_x, \lambda \cdot v_y,\lambda \cdot v_z)    \\
+    (x, y, z) & = (x_1 + \lambda \cdot v_x, y_1 + \lambda \cdot v_y, z_1 + \lambda \cdot v_z)
+\end{align*}
+
+Expresado como un sistema:
+
+\begin{align*}
+    \begin{cases}
+        x = x_1 + \lambda \cdot v_x \\
+        y = y_1 + \lambda \cdot v_y \\
+        z = z_1 + \lambda \cdot v_z
+    \end{cases}
+\end{align*}
+
+Estas son las \textbf{ecuaciones paramétricas de la recta}.
+
+\textbf{Ecuaciones simétricas de la recta.} Si despejo \(\lambda\) de cada una
+de las ecuaciones paramétricas obtengo:
+
+\begin{align*}
+    \lambda & = \frac{x - x_1}{v_x} & \lambda & = \frac{y - y_1}{v_y} & \lambda & = \frac{z - z_1}{v_z}
+\end{align*}
+
+Igualamos:
+
+\begin{align*}
+    \frac{x - x_1}{v_x} = \frac{y - y_1}{v_y} = \frac{z - z_1}{v_z}
+\end{align*}
+
+Con la \textbf{condición} que todos los componentes de \(\vec{v} \neq 0\)
+
+Estas son las \textbf{ecuaciones simétricas de la recta}.
+
+\textbf{Posiciones relativas de dos rectas en el espacio.} En el \textbf{plano}
+las rectas pueden adoptar dos posiciones: \textbf{intersecarse} en un punto o
+ser \textbf{paralelas} (sean o no coincidentes: \(f(x) = g(x)\)).
+
+En el \textbf{espacio} las rectas pueden adoptar tres posiciones:
+
+\begin{enumerate}
+    \item \textbf{paralelas}, tienen la misma dirección, pueden ser
+          coincidentes.
+    \item \textbf{incidentes}, se intersecan.
+    \item \textbf{alabeadas}, no se cortan ni son paralelas, \textit{por ende}
+          pertenecen a \textbf{planos} diferentes.
+\end{enumerate}
+\end{document}
+
+\textbf{Punto de intersección de dos rectas.} Se obtiene a partir de las 
+\textbf{ecuaciones paramétricas}. Se igualan los componentes en $x$, $y$ y $z$.
+
+\begin{align*}
+    r =
+    \begin{cases}
+       x = x_1 + \lambda u_x\\
+       y = y_1 + \lambda u_y\\
+       z = z_1 + \lambda u_z 
+    \end{cases}
+\end{align*}
