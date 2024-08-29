@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% imágenes
+%\usepackage{graphicx}               
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}               
+
+% símbolos
+\usepackage{amsmath, amssymb}       
+
+% gráficos
+%\usepackage{tikz}                   
+
+% plots
+%\usepackage{pgfplots}               
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% averiguar
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage{parskip}                
+
+% cancelar términos
+\usepackage{cancel}                 
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}        
+
+% shapes
+%\usetikzlibrary{shapes.geometric}   
+
+% incluir pdfs
+%\usepackage{pdfpages}               
+
+\title{Álgebra y geometría analítica\\Apunte de clase}
+\author{Daniel Ise}
+\date{28 de agosto de 2024}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Ecuación general del plano.} Por una \textbf{recta}
+\textit{pasan infinitos} \textbf{planos}. Para determinar un único plano:
+necesito un \textbf{punto} que no pertenezca a la recta. Mismo resultado si
+tengo \textbf{vector normal} y un \textbf{punto}.
+
+Ejemplo: Dado el \textbf{vector normal} \(\vec{n} = (3,2,1)\) y un
+\textbf{punto} \(P (4, 5, 6)\), determinamos la
+\textbf{ecuación general del plano}:
+
+\begin{align*}
+    3x + 2y + 1z + D                      & = 0            \\
+    3 \cdot 4 + 2 \cdot 5 + 1 \cdot 6 + D & = 0            \\
+    12 + 10 + 6 + D                       & = 0            \\
+    \boxed{D                                      = - 28 } \\
+\end{align*}
+
+Entonces:
+
+\begin{center}
+    3x + 2y + 1z - 28 = 0
+\end{center}
+
+\textbf{Ecuación vectorial del plano.} Igual a la de la recta pero con dos
+vectores.
+
+\begin{align*}
+    x - 2y - z + 2 & = 0           \\
+    x              & = -2 + 2y + z \\
+    (x, y, z) & = (-2 + 2y + z, y, z)\\
+    (x, y, z) & = (-2, 0, 0) + (2y, y, 0) + (z, 0, z)\\
+    (x, y, z) & = (-2, 0, 0) + \lambda (2, 1, 0) + \mu (1, 0, 1)
+\end{align*}
+
+\textbf{Teoremas.} Dada \textbf{recta} \(r\) y \textbf{punto} \(P \notin r\), se
+determina \textbf{plano}.
+
+Dado \textbf{plano} y \textbf{recta}, si son \textbf{perpendiculares} el 
+\textbf{producto escalar} es 0.
+
+Dos \textbf{planos} pueden ser \textbf{paralelos} o \textbf{secantes}. 
+
+Si dos \textbf{rectas} \(r, s \notin \pi\), son \textbf{alabeadas}.
+
+\textbf{Distancia de un punto a un plano.} Consideramos \textbf{punto} 
+\(M \in a, a \perp \pi\), la \textbf{distancia} es la menor a desde el 
+\textbf{punto} a los \textit{infinitos} \textbf{puntos} del \textbf{plano}.
+
+Ejemplo: Dado \(P (2, 1, 0)\), \(\pi (4x - 2y + 4z - 6 = 0)\).
+
+\begin{align*}
+    d(P,\pi) & = \frac{|P \cdot \vec{n} + D|}{|\vec{n}|}\\
+    d(P,\pi) & = \frac{2 \cdot 4 + 1 \cdot (-2) + 0 - 6}{\sqrt{16 + 4 + 16}} = 0
+\end{align*}
+
+Como \(d(P, \pi) = 0 \rightarrow P \in \pi\).
+
+\textbf{Ejercicios.} 
+
+Hallar plano que contenga a la recta 
+\(r: (x,y,z) = (3,2,1) + \alpha(-4,2,1)\) y al punto \(P (5,7,3)\).
+
+\begin{align*}
+    \vec{u} & = P - (3,2,1)\\
+    \vec{u} & = (2,5,2)
+\end{align*}
+
+Entonces:
+
+\begin{align*}
+    \pi & = (3,2,1) + \alpha (-4,2,1) + \mu (2,5,2)
+\end{align*}
+
+Determinar producto vectorial.
+
+\begin{align*}
+    \begin{vmatrix}
+        i & j & k \\
+        -4 & 2 & 1 \\
+        2 & 5 & 2
+    \end{vmatrix} = i (4 - 5) - j (-8 - 2) + k (-20 - 4) = -i + 10j - 24k
+\end{align*}
+
+\textbf{Ejercicio 2.} 
+
+\end{document}

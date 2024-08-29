@@ -109,16 +109,36 @@ En el \textbf{espacio} las rectas pueden adoptar tres posiciones:
     \item \textbf{alabeadas}, no se cortan ni son paralelas, \textit{por ende}
           pertenecen a \textbf{planos} diferentes.
 \end{enumerate}
-\end{document}
 
 \textbf{Punto de intersección de dos rectas.} Se obtiene a partir de las 
-\textbf{ecuaciones paramétricas}. Se igualan los componentes en $x$, $y$ y $z$.
+\textbf{ecuaciones paramétricas}.  Se igualan los componentes en $x$, $y$ y $z$.
 
 \begin{align*}
-    r =
+    r & =
     \begin{cases}
        x = x_1 + \lambda u_x\\
        y = y_1 + \lambda u_y\\
        z = z_1 + \lambda u_z 
+    \end{cases} &
+    s & =
+    \begin{cases}
+        x = x_2 + \mu v_x\\
+        y = y_2 + \mu v_y\\
+        z = z_2 + \mu v_z 
+     \end{cases}
+\end{align*}
+
+\begin{align*}
+    r \cap s & =
+    \begin{cases}
+       x_1 + \lambda u_x = x_2 + \mu v_x\\
+       y_1 + \lambda u_y = y_2 + \mu v_y\\
+       z_1 + \lambda u_z = z_2 + \mu v_z 
     \end{cases}
 \end{align*}
+
+Se opera el sistema de ecuaciones y si no encontramos contradicciones, se 
+concluye que las rectas $s$ y $r$ se intersecan. Sustituyendo $\lambda$ y $\mu$
+se obtiene el \textbf{punto de intersección}.
+
+\end{document}
