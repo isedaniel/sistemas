@@ -16,7 +16,7 @@
 %\usetikzlibrary{shapes.geometric}   % shapes
 %\usepackage{pdfpages}               % incluir pdfs
 
-\title{Álgebra y geometría analítica\\Guía de ejercicios}
+\title{Álgebra y geometría analítica\\Apunte teórico. Rectas en el espacio.}
 \author{Daniel Ise}
 \date{Agosto de 2024}
 
@@ -24,18 +24,19 @@
 
 \maketitle
 
-Primero, un repaso conceptual.
+\section*{Teoría.}
 
-\textbf{Espacio.} Es un conjunto de \textbf{puntos}. Un \textbf{plano} es un
+\textbf{Espacio.} Conjunto de \textbf{puntos}. El \textbf{plano} es un
 \textit{subconjunto} del \textbf{espacio}. La \textbf{recta} es, a su vez, un
 \textit{subconjunto} del \textbf{plano}.
 
 \textbf{Ecuación vectorial de la recta en \(R^2\).} Una \textbf{recta} es un
 conjunto de \textbf{puntos} en el \textbf{plano}.
-Dados dos puntos, $P$ y $X$, pertenecientes a la recta $r$, podemos definir el
-vector \(\overline{PX}\). Si este vector tiene la misma dirección que
-\(\vec{v}\), entonces \(\overline{PX}\) resulta de multiplicar \(\vec{v}\)
-por un escalar:
+Dados dos puntos, $P$ y $X$, pertenecientes a la recta $r$,
+podemos definir el vector \(\overline{PX}\).
+Si este vector tiene la misma dirección que \(\vec{v}\),
+entonces \(\overline{PX}\) \textit{resulta} de multiplicar \(\vec{v}\) por un
+escalar:
 
 \begin{align*}
     \overline{PX}     & = \lambda \cdot \vec{v}             \\
@@ -43,23 +44,21 @@ por un escalar:
     (x,y)             & = (x_1,y_1) + \lambda \cdot \vec{v}
 \end{align*}
 
-Concluimos que, dados un punto $P (x_1,y_1)$ y un vector \(\vec{v}\), podemos
-definir $r$. Esta definición se denomina
-\textbf{ecuación vectorial de la recta.}
+Entonces, dados un punto $P (x_1,y_1)$ y un vector \(\vec{v}\),
+siendo \(\lambda\) la variable, podemos definir la recta $r$.
+Esta definición se denomina \textbf{ecuación vectorial de la recta.}
 
-\textbf{Ecuación vectorial de la recta en \(R^3\).} Dados un vector
-\(\vec{v} = (v_x,v_y,v_z)\) y un punto \(P = (x_1, y_1, z_1)\), podemos definir
-una recta en \(R^3\) como:
+\textbf{Ecuación vectorial de la recta en \(R^3\).}
+Dados un vector \(\vec{v} = (v_x,v_y,v_z)\) y un punto \(P = (x_1, y_1, z_1)\),
+una recta \(r\) en \(R^3\) se expresa:
 
 \begin{align*}
     (x, y, z) & = (x_1,y_1,z_1) + \lambda \cdot (v_x, v_y, v_z)
 \end{align*}
 
-Esta es la \textbf{ecuación vectorial de la recta} en el \textbf{espacio}
-$(R^3)$.
-
-\textbf{Ecuaciones paramétricas de la recta.} Dada una ecuación vectorial de una
-recta \(r\), es posible construir un sistema de ecuaciones:
+\textbf{Ecuaciones paramétricas de la recta.}
+Dada una ecuación vectorial de una recta \(r\),
+se puede construir un sistema de ecuaciones:
 
 \begin{align*}
     (x, y, z) & = (x_1,y_1,z_1) + \lambda \cdot (v_x, v_y, v_z)                               \\
@@ -67,7 +66,7 @@ recta \(r\), es posible construir un sistema de ecuaciones:
     (x, y, z) & = (x_1 + \lambda \cdot v_x, y_1 + \lambda \cdot v_y, z_1 + \lambda \cdot v_z)
 \end{align*}
 
-Expresado como un sistema:
+Expresado como sistema:
 
 \begin{align*}
     \begin{cases}
@@ -77,10 +76,8 @@ Expresado como un sistema:
     \end{cases}
 \end{align*}
 
-Estas son las \textbf{ecuaciones paramétricas de la recta}.
-
-\textbf{Ecuaciones simétricas de la recta.} Si despejo \(\lambda\) de cada una
-de las ecuaciones paramétricas obtengo:
+\textbf{Ecuaciones simétricas de la recta.}
+Despejando \(\lambda\) de cada una de las ecuaciones paramétricas:
 
 \begin{align*}
     \lambda & = \frac{x - x_1}{v_x} & \lambda & = \frac{y - y_1}{v_y} & \lambda & = \frac{z - z_1}{v_z}
@@ -92,53 +89,169 @@ Igualamos:
     \frac{x - x_1}{v_x} = \frac{y - y_1}{v_y} = \frac{z - z_1}{v_z}
 \end{align*}
 
-Con la \textbf{condición} que todos los componentes de \(\vec{v} \neq 0\)
+Si y solo si todos los componentes de \(\vec{v} \neq 0\)
 
-Estas son las \textbf{ecuaciones simétricas de la recta}.
+Si por ejemplo \(x \in \vec{v} = 0\) entonces:
 
-\textbf{Posiciones relativas de dos rectas en el espacio.} En el \textbf{plano}
-las rectas pueden adoptar dos posiciones: \textbf{intersecarse} en un punto o
-ser \textbf{paralelas} (sean o no coincidentes: \(f(x) = g(x)\)).
+\begin{align*}
+    \frac{y - y_1}{v_y} = \frac{z - z_1}{v_z}; x = x_1
+\end{align*}
+
+\textbf{Posiciones relativas de dos rectas en el espacio.}
+En el \textbf{plano} las rectas pueden adoptar dos posiciones relativas:
+\textbf{intersecarse} en un punto o ser \textbf{paralelas}
+(sean o no coincidentes: \(f(x) = g(x)\)).
 
 En el \textbf{espacio} las rectas pueden adoptar tres posiciones:
 
 \begin{enumerate}
-    \item \textbf{paralelas}, tienen la misma dirección, pueden ser
-          coincidentes.
+    \item \textbf{paralelas}, misma dirección, pueden ser coincidentes.
     \item \textbf{incidentes}, se intersecan.
-    \item \textbf{alabeadas}, no se cortan ni son paralelas, \textit{por ende}
-          pertenecen a \textbf{planos} diferentes.
+    \item \textbf{alabeadas}, no se cortan ni son paralelas,
+          \textit{por ende}, pertenecen a \textbf{planos} diferentes.
 \end{enumerate}
 
-\textbf{Punto de intersección de dos rectas.} Se obtiene a partir de las 
-\textbf{ecuaciones paramétricas}.  Se igualan los componentes en $x$, $y$ y $z$.
+\textbf{Punto de intersección de dos rectas en el espacio.}
+Se obtiene con las \textbf{ecuaciones paramétricas}.
+Se igualan los componentes en $x$, $y$ y $z$.
+Por ejemplo, dadas rectas \(r\) y \(s\):
 
 \begin{align*}
-    r & =
+    r                        & =
     \begin{cases}
-       x = x_1 + \lambda u_x\\
-       y = y_1 + \lambda u_y\\
-       z = z_1 + \lambda u_z 
+        x = x_1 + \lambda u_x \\
+        y = y_1 + \lambda u_y \\
+        z = z_1 + \lambda u_z
     \end{cases} &
-    s & =
+    s                        & =
     \begin{cases}
-        x = x_2 + \mu v_x\\
-        y = y_2 + \mu v_y\\
-        z = z_2 + \mu v_z 
-     \end{cases}
+        x = x_2 + \mu v_x \\
+        y = y_2 + \mu v_y \\
+        z = z_2 + \mu v_z
+    \end{cases}
 \end{align*}
 
 \begin{align*}
     r \cap s & =
     \begin{cases}
-       x_1 + \lambda u_x = x_2 + \mu v_x\\
-       y_1 + \lambda u_y = y_2 + \mu v_y\\
-       z_1 + \lambda u_z = z_2 + \mu v_z 
+        x_1 + \lambda u_x = x_2 + \mu v_x \\
+        y_1 + \lambda u_y = y_2 + \mu v_y \\
+        z_1 + \lambda u_z = z_2 + \mu v_z
     \end{cases}
 \end{align*}
 
-Se opera el sistema de ecuaciones y si no encontramos contradicciones, se 
-concluye que las rectas $s$ y $r$ se intersecan. Sustituyendo $\lambda$ y $\mu$
-se obtiene el \textbf{punto de intersección}.
+Se opera el sistema de ecuaciones y si no encontramos contradicciones,
+se concluye que $s$ y $r$ se intersecan.
+Sustituyendo $\lambda$ y $\mu$ se obtiene el \textbf{punto de intersección}.
+
+\section*{Práctica.}
+
+Dadas \(r\) y \(s\) hallar intersección.
+
+\begin{align*}
+    r: \frac{x-4}{3} = \frac{y-4}{2} = z - 4 \\
+    s: x = \frac{y}{2} = \frac{z}{3}         \\
+\end{align*}
+
+\begin{align*}
+    r                    & =
+    \begin{cases}
+        x = 3 \lambda + 4 \\
+        y = 2 \lambda + 4 \\
+        z = \lambda + 4   \\
+    \end{cases} &
+    s =
+    \begin{cases}
+        x = \mu   \\
+        y = 2 \mu \\
+        z = 3 \mu \\
+    \end{cases}             \\
+\end{align*}
+
+\begin{align*}
+    r \cap s                & =
+    \begin{cases}
+        \mu = 3 \lambda + 4   \\
+        2 \mu = 2 \lambda + 4 \\
+        3 \mu = \lambda + 4   \\
+    \end{cases}                          \\
+    2 \cdot (3 \lambda + 4) & = 2 \lambda + 4      \\
+    3 \lambda + 4           & = \lambda + 2        \\
+    2 \lambda               & = -2                 \\
+                            & \boxed{\lambda = -1} \\
+                            & \boxed{\mu = 1}      \\
+\end{align*}
+
+Opero en la que me queda para chequear:
+
+\begin{align*}
+    3 \cdot 1 = -1 + 4 \\
+    \boxed{3 = 3}      \\
+\end{align*}
+
+Ta bien. Intersecan en \(P (1,2,3)\)
+
+Para determinar ángulo: \(\angle rs = \angle(\vec{v_r}\vec{v_s})\)
+
+\begin{align*}
+    \vec{v_r} = (3,2,1) & \text{  y  } \vec{v_s} = (1,2,3)                                                                                           \\
+    \alpha              & = \arccos \left[\frac{(3 \cdot 1)+(2 \cdot 2)+(1 \cdot 3)}{\sqrt{1^{2}+2^{2}+3^{2}} \cdot \sqrt{3^{2}+2^{2}+1^{2}}}\right] \\
+    \alpha              & = \arccos \left[\frac{3+4+3}{\sqrt{14} \cdot \sqrt{14}}\right]                                                             \\
+    \alpha              & = \arccos \left[\frac{10}{14}\right]                                                                                       \\
+    \alpha              & = \arccos \left[\frac{5}{7}\right]                                                                                         \\
+                        & \boxed{\alpha \approxeq 44,415^o}
+\end{align*}
+
+\subsection*{Ejercicio 3}
+
+Ver si existe y hallar intersección de:
+
+\begin{align*}
+    r: (3, 2, -1) + \lambda (0,-1,5) \\
+    s: (-1, 2, 4) + \beta (2,-3,1)   \\
+\end{align*}
+
+Las rectas están en ecuación vectorial,
+primero expresamos ecuaciones paramétricas:
+
+\begin{align*}
+    r =                  &
+    \begin{cases}
+        x = 3             \\
+        y = 2 - \lambda   \\
+        z = 5 \lambda - 1 \\
+    \end{cases} &
+    s =
+    \begin{cases}
+        x = 2 \beta - 1 \\
+        y = 2 - 3 \beta \\
+        z = \beta + 4   \\
+    \end{cases}
+\end{align*}
+
+Teniendo las paramétricas, igualamos:
+
+\begin{align*}
+    r \cap s & =
+    \begin{cases}
+        3 = 2 \beta - 1           \\
+        2 - \lambda = 2 - 3 \beta \\
+        5 \lambda - 1 = \beta + 4 \\
+    \end{cases}
+\end{align*}
+
+Sistema de 3 ecuaciones, 2 incógnitas, tomamos 2 y operamos:
+
+\begin{align*}
+    4 = 2 \beta \rightarrow \beta = 2 \\
+    2 - \lambda = 2 - 3 \cdot 2       \\
+    2 - \lambda = 2 - 6               \\
+    -\lambda = -6                     \\
+    \boxed{\lambda = 6}              \\
+\end{align*}
+
+Corroboramos con la que queda:
+
+
 
 \end{document}
