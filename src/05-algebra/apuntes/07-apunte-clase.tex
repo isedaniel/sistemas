@@ -1,0 +1,166 @@
+\documentclass{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}               
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}               
+
+% símbolos
+\usepackage{amsmath, amssymb}       
+
+% gráficos
+%\usepackage{tikz}                   
+
+% plots
+%\usepackage{pgfplots}               
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% averiguar
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[skip=8pt plus1pt]{parskip}                
+
+% cancelar términos
+\usepackage{cancel}                 
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}        
+
+% shapes
+%\usetikzlibrary{shapes.geometric}   
+
+% incluir pdfs
+%\usepackage{pdfpages}               
+
+\title{Álgebra y geometría analítica\\Apunte de clase}
+\author{Daniel Ise}
+\date{2 de septiembre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{Números complejos}
+
+Hasta ahora trabajamos conjunto \(\mathbb{R}\).
+Ahora pasamos al conjunto más amplio: \(\mathbb{C}\).
+
+\textbf{Unidad imaginaria.}
+\(i = \sqrt{-1}\).
+
+\textbf{Forma binómica de un número complejo.}
+\(z = a + b i\)
+
+\textbf{Igualdad.}
+Cuando la parte real es igual y parte imaginaria igual.
+
+\textbf{Conjugado de un complejo.}
+Parte real sigue igual, se cambia signo a la parte imaginaria.
+
+\textbf{Como par ordenado.}
+\(z = a + b i = (a,b)\)
+
+\textbf{Representación en el plano.}
+El número complejo se puede representar como un punto en el plano.
+X es la parte real, Y es la parte imaginaria.
+
+\textbf{Potencias de unidad imaginaria.}
+\begin{align*}
+    i^0 = 1             \\
+    i^1 = 1             \\
+    i^2 = -1            \\
+    i^3 = -i            \\
+    i^4 = 1             \\
+    i^5 = 1 \cdot i = i \\
+\end{align*}
+Van cíclicamente \((1, -1 , -i, 1, i, \dots)\)
+Hay un \textbf{algoritmo} para resolver.
+
+\section*{Operaciones en forma binómica}
+
+\textbf{Suma y resta de complejos.}
+Se opera parte real con parte real,
+parte imaginaria con parte imaginaria.
+
+\textbf{Multiplicación.}
+Sabiendo que \(i^2 = -1\), se opera como cualquier binomio.
+En el fondo, es un alias de \(\sqrt{-1}\).
+
+\textbf{Producto de complejos conjugados.}
+\begin{align*}
+    (a+bi) \cdot (a-bi) = a^2 \cancel{+ abi} \cancel{- abi} + bi^2 = a^2 + b^2
+\end{align*}
+Es una diferencia de cuadrados,
+pero \(i^2\) cambia el signo de la parte imaginaria.
+El resultado es un \textbf{real}.
+
+\textbf{División de complejos.}
+Se multiplica numerador y denominador por conjugado del denominador.
+\begin{align*}
+    \frac{a+bi}{c+di} = \frac{(a+bi) \cdot (c-di)}{(c+di) \cdot (c-di)} =
+    \frac{ac + cbi - adi - bdi^2}{c^2 + d^2}
+\end{align*}
+
+\section*{Forma polar}
+
+\textbf{Forma polar}.
+Tomo el módulo del complejo \(|z| = \sqrt{a^2 + b^2}\),
+y el ángulo \(\theta\) que forma en relación al eje \(x\) \((0-360^o)\).
+
+\begin{align*}
+    \theta = \arctan \left(\frac{b}{a}\right)
+\end{align*}
+
+Ojo con los ángulos.
+La función \(\arctan\) no es \textbf{inyectiva}.
+Entonces, la calculadora da resultados entre \([-90^o,90^o]\).
+
+\textbf{Grados a radianes.}
+Regla de 3 con esta igualdad: \(\pi = 180^o\).
+
+\section*{Pasar de polar a binómica}
+
+\textbf{Polar a trigonométrica.}
+\begin{align*}
+    \cos \alpha = \frac{a}{|z|} \rightarrow a = |z| \cdot \cos \alpha \\
+    \sen \alpha = \frac{b}{|z|} \rightarrow b = |z| \cdot \sen \alpha \\
+\end{align*}
+
+\textbf{Forma trigonométrica.} 
+\(z = |z| (\cos \alpha + i \sen \alpha)\). Ángulo: \(0 \leq \alpha \leq 2\pi\).
+
+\section*{Operaciones en forma polar o trigonométrica}
+
+En forma \textbf{polar/trigonométrica no} se puede \textbf{sumar ni restar}.
+Pero se puede \textbf{multiplicar} y \textbf{dividir}.
+
+\textbf{Multiplicación.} 
+Sumamos ángulos y multiplicamos módulos. 
+En el fondo, suma de vectores con multiplicación de sus módulos.
+
+\textbf{División.}
+Dividimos módulos y restamos ángulos.
+
+\textbf{Potencia.}
+Más simple para exponentes grandes. 
+Potencia del módulo 
+y multiplicamos cada ángulo por el exponente.
+\textbf{Fórmula de Le Moivre.}
+
+\textbf{Raíz n-ésima de números complejos en forma trigonométrica.}
+Todo complejo, excepto 0, tiene exactamente \(n\) raíces \(n\)-ésimas.
+
+\begin{align*}
+    \sqrt[n]{Z} = \sqrt[n]{|W|} \cdot \left(\cos \frac{\alpha + 2k\pi}{n} + i \sen \frac{\alpha + 2k\pi}{n}\right) \text{ con } k=0,1,2 \dots n-1
+\end{align*}
+
+\end{document}
