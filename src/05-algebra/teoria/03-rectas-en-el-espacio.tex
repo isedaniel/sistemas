@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[a4paper, margin=2.54cm]{geometry}
+\usepackage[spanish]{babel}
 %\usepackage{graphicx}               % imágenes
 %\graphicspath{{img}}
 \usepackage{amsfonts}               % fuentes de conjuntos numéricos
@@ -24,17 +25,15 @@
 
 \maketitle
 
-\section*{Teoría.}
-
 \textbf{Espacio.} Conjunto de \textbf{puntos}. El \textbf{plano} es un
 \textit{subconjunto} del \textbf{espacio}. La \textbf{recta} es, a su vez, un
 \textit{subconjunto} del \textbf{plano}.
 
-\textbf{Ecuación vectorial de la recta en \(R^2\).} Una \textbf{recta} es un
-conjunto de \textbf{puntos} en el \textbf{plano}.
-Dados dos puntos, $P$ y $X$, pertenecientes a la recta $r$,
+\textbf{Ecuación vectorial de la recta en \(R^2\).}
+Una \textbf{recta} es un conjunto de \textbf{puntos} en el \textbf{plano}.
+Dados dos puntos, $P$ y $X$,
 podemos definir el vector \(\overline{PX}\).
-Si este vector tiene la misma dirección que \(\vec{v}\),
+Si este es paralelo a \(\vec{v}\),
 entonces \(\overline{PX}\) \textit{resulta} de multiplicar \(\vec{v}\) por un
 escalar:
 
@@ -45,8 +44,8 @@ escalar:
 \end{align*}
 
 Entonces, dados un punto $P (x_1,y_1)$ y un vector \(\vec{v}\),
-siendo \(\lambda\) la variable, podemos definir la recta $r$.
-Esta definición se denomina \textbf{ecuación vectorial de la recta.}
+siendo \(\lambda\) variable,
+el conjunto de puntos \(X (x,y)\) que resuelven la igualdad definen la recta \(r\).
 
 \textbf{Ecuación vectorial de la recta en \(R^3\).}
 Dados un vector \(\vec{v} = (v_x,v_y,v_z)\) y un punto \(P = (x_1, y_1, z_1)\),
@@ -57,7 +56,7 @@ una recta \(r\) en \(R^3\) se expresa:
 \end{align*}
 
 \textbf{Ecuaciones paramétricas de la recta.}
-Dada una ecuación vectorial de una recta \(r\),
+Dada la ecuación vectorial de una recta \(r\),
 se puede construir un sistema de ecuaciones:
 
 \begin{align*}
@@ -105,7 +104,7 @@ En el \textbf{plano} las rectas pueden adoptar dos posiciones relativas:
 En el \textbf{espacio} las rectas pueden adoptar tres posiciones:
 
 \begin{enumerate}
-    \item \textbf{paralelas}, misma dirección, pueden ser coincidentes.
+    \item \textbf{paralelas}, misma dirección, sean o no coincidentes.
     \item \textbf{incidentes}, se intersecan.
     \item \textbf{alabeadas}, no se cortan ni son paralelas,
           \textit{por ende}, pertenecen a \textbf{planos} diferentes.
@@ -144,7 +143,7 @@ Se opera el sistema de ecuaciones y si no encontramos contradicciones,
 se concluye que $s$ y $r$ se intersecan.
 Sustituyendo $\lambda$ y $\mu$ se obtiene el \textbf{punto de intersección}.
 
-\section*{Práctica.}
+\textbf{Ejercicios.}
 
 Dadas \(r\) y \(s\) hallar intersección.
 
@@ -247,11 +246,38 @@ Sistema de 3 ecuaciones, 2 incógnitas, tomamos 2 y operamos:
     2 - \lambda = 2 - 3 \cdot 2       \\
     2 - \lambda = 2 - 6               \\
     -\lambda = -6                     \\
-    \boxed{\lambda = 6}              \\
+    \boxed{\lambda = 6}               \\
 \end{align*}
 
 Corroboramos con la que queda:
 
+\begin{align*}
+    5 \lambda - 1 = \beta + 4 \\
+\end{align*}
 
+\textbf{Distancia entre un punto y una recta en el espacio.}
+Dado un punto \(P \in R^3\), una recta \(r\)
+y su vector director \(\vec{u}\),
+la \textbf{distancia} entre \(P\) y \(r\) \(\overline{PQ}\),
+es perperdicular a \(r\). Entonces:
+
+\begin{align*}
+    \sen A = \frac{\overline{PQ}}{|\overline{AP}|} \\
+    \overline{PQ} = |\overline{AP}| \cdot \sen A   \\
+\end{align*}
+
+El módulo del producto vectorial de \(\overline{AP}\) y \(\vec{u}\) es:
+
+\begin{align*}
+    |\overline{AP} \times \vec{u}| = |\overline{AP}| \cdot |\vec{u}| \cdot \sen A  \\
+    \text{si despejo para igualar con la expresión anterior}                      \\
+    \sen A \cdot |\overline{AP} = \frac{|\overline{AP} \times \vec{u}|}{|\vec{u}|} \\
+\end{align*}
+
+Igualamos:
+
+\begin{align*}
+    \overline{PQ} & = \frac{|\overline{AP} \cdot \vec{u}}{\vec{u}}
+\end{align*}
 
 \end{document}

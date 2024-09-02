@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}               
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}        
+
+% math
+\usepackage{amsmath, amssymb}
+
+% gráficos y plots
+%\usepackage{tikz}                   
+%\usepackage{pgfplots}               
+%\pgfplotsset{width=10cm, compat=1.9}
+
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage{parskip}                
+
+% cancelar términos
+\usepackage{cancel}                 
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}        
+
+% shapes
+%\usetikzlibrary{shapes.geometric}   
+
+% incluir pdfs
+%\usepackage{pdfpages}               
+
+\title{Álgebra y geometría analítica\\Apunte teórico}
+\author{Daniel Ise}
+\date{Septiembre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{Ecuaciones del plano}
+
+\textbf{Ecuación general del plano.}
+Si tomamos dos puntos del espacio, 
+obtenemos una única \textbf{recta} que pasa por ellos, 
+pero infinitos planos pasan por esa recta.
+
+Dado un \textbf{vector dirección}, 
+existen infinitos planos \textit{perpendiculares} al mismo.
+Podemos determinarlo si tomamos además un \textbf{punto} perteneciente al plano.
+
+Si queremos encontrar la ecuación del plano \(pi\), 
+que pasa por \(P_0 (x_0,y_0,z_0)\), 
+y es perpendicular al \textbf{vector normal} \(\vec{n} = (a,b,c)\),
+preguntamos: ¿qué condición debe cumplir \(P (x, y, z)\) para estar en \(\pi\)?
+El vector \(\overline{P_0P}\) debería ser \textit{perpendicular} al 
+\textbf{vector normal} del plano:
+
+\begin{align*}
+    P (x, y, z) \in \iff \overline{P_0P} \perp \vec{n} \iff \overline{P_0P} \cdot \vec{n} = 0 \\
+\end{align*}
+
+
+\end{document}
