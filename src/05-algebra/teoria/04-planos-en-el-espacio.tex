@@ -47,23 +47,29 @@
 \section*{Ecuaciones del plano}
 
 \textbf{Ecuación general del plano.}
-Si tomamos dos puntos del espacio, 
-obtenemos una única \textbf{recta} que pasa por ellos, 
+Si tomamos dos puntos del espacio,
+obtenemos una única \textbf{recta},
 pero infinitos planos pasan por esa recta.
 
-Dado un \textbf{vector dirección}, 
+Dado un \textbf{vector dirección},
 existen infinitos planos \textit{perpendiculares} al mismo.
-Podemos determinarlo si tomamos además un \textbf{punto} perteneciente al plano.
+Para determinar uno solo necesitamos además un \textbf{punto}
+perteneciente al mismo.
 
-Si queremos encontrar la ecuación del plano \(pi\), 
-que pasa por \(P_0 (x_0,y_0,z_0)\), 
+Si queremos encontrar la ecuación del plano \(\pi\),
+que pasa por \(P_0 (x_0,y_0,z_0)\),
 y es perpendicular al \textbf{vector normal} \(\vec{n} = (a,b,c)\),
-preguntamos: ¿qué condición debe cumplir \(P (x, y, z)\) para estar en \(\pi\)?
-El vector \(\overline{P_0P}\) debería ser \textit{perpendicular} al 
-\textbf{vector normal} del plano:
+preguntamos:
+¿qué condición debe cumplir un punto \(P (x, y, z)\) para pertenecer a \(\pi\)?
+El vector que se forma entre \(P\) y \(P_0\), \(\overline{P_0P}\).
+debería ser \textit{perpendicular} al \textbf{vector normal} \(\vec{n}\):
 
 \begin{align*}
-    P (x, y, z) \in \iff \overline{P_0P} \perp \vec{n} \iff \overline{P_0P} \cdot \vec{n} = 0 \\
+    P (x, y, z) \in \pi \iff \overline{P_0P} \perp \vec{n} \iff \overline{P_0P} \cdot \vec{n} = 0 \\
+    (x - x_0, y - y_0, z - z_0) \cdot (a, b, c) = 0                                               \\
+    a (x - x_0) + b (y - y_0) + c (z - z_0) = 0                                                   \\
+    ax + by + cz + \underbrace{(-ax_0 - by_0 - cz_0)}_{d} = 0                                     \\
+    \boxed{ax + by + cz + d = 0}                                                                  \\
 \end{align*}
 
 
