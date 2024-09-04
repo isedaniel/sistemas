@@ -49,6 +49,65 @@
 
 \maketitle
 
+\section*{Sistema BCD}
 
+Se suma 6 porque cada 6 se repite la estructura binaria.
+
+\section*{Representación de Punto fijo con negativos complementados a la base}
+
+Representación numérica es fundamental en sistema de cómputo.
+En Punto fijo se almacena un número fijo de dígitos decimales.
+Se usa en sistemas de precisión fija, como aplicaciones financieras.
+Ejemplo: sistema de 4 dígitos, número 12.34 se representa sin cambios.
+
+\textbf{Ventajas.}
+Simple, rápido, adecuado para números pequeños..
+
+\textbf{COnstrucción parte decimal.}
+Multiplicamos 0.34 por 2 repetidamente para convertir fraccionaria a binario.
+
+\section*{Álgebra de Boole}
+
+\textbf{Estructura algebraica.}
+Conjunto no vacío con una o más \textbf{operaciones} definidas en él.
+
+\textbf{Operandos.}
+Las operaciones aceptan dos operandos: \(S = {0,1}\).
+
+\textbf{Operaciones.}
+En álgebra de Boole tenemos 2 operaciones:
+\textbf{suma} y \textbf{producto}.
+Los resultados de las operaciones son:
+
+\begin{center}
+    Suma en álgebra de Boole\\
+    \hfill \\
+    \begin{tabular}{ c c c }
+        A & B & Resultado \\
+        \hline
+        0 & 0 & 0         \\
+        1 & 0 & 1         \\
+        0 & 1 & 1         \\
+        1 & 1 & 1         \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    Producto en álgebra de Boole\\
+    \hfill \\
+    \begin{tabular}{ c c c }
+        A & B & Resultado \\
+        \hline
+        0 & 0 & 0         \\
+        1 & 0 & 0         \\
+        0 & 1 & 0         \\
+        1 & 1 & 1         \\
+        \hline
+    \end{tabular}
+\end{center}
+
+La \textbf{suma} es \textit{equivalente} al \textbf{Or} en lógica.
+La \textbf{multiplicación} es \textit{equivalente} al \textbf{And} en lógica.
 
 \end{document}
