@@ -11,3 +11,6 @@
 *.dpth
 *.gz
 *.md5
+
+# table of contents tex file
+*.toc
