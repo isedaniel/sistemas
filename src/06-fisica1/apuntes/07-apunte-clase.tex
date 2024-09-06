@@ -43,12 +43,150 @@
 
 \title{Física I\\Apunte de clase}
 \author{Daniel Ise}
-\date{2 de septiembre de 2024}
+\date{5 de septiembre de 2024}
 
 \begin{document}
 
 \maketitle
+\tableofcontents
 
+\section{Energía}
 
+Capacidad de un sistema de realizar \textbf{trabajo}.
 
+Siempre se asocia a un tipo de \textbf{fuerza}.
+
+Calcular rapidez de una flecha disparada es \textit{difícil} solo con \textbf{leyes de Newton}.
+Debido a que la cuerda del arco ejerce \textbf{fuerza variable}.
+
+Hasta aquí hemos trabajado con modelo partícula.
+Desde aquí en adelante, trabajamos con \textbf{modelo sistema}.
+
+\subsection{Sistema.}
+
+\textit{Parte} del universo sobre la que se enfoca el estudio.
+Primero \textit{definir} sistema, después analizar.
+Puede ser: dos planetas, una colección de objetos, etc.
+
+\subsection{Trabajo.}
+
+En física tiene un significado muy específico.
+Trabajo implica \textbf{fuerza} y \textbf{desplazamiento}.
+Describe \textit{cuantitativamente} lo que se \textit{logra} cuando
+una \textbf{fuerza} \textit{mueve} un objeto cierta \textbf{distancia}.
+
+El caso más sencillo es una \textbf{fuerza constante}.
+
+\begin{align*}
+    w = \vec{F} \cdot \vec{s}
+\end{align*}
+
+En general, lo únco que efectúa trabajo es la fuerza o \textbf{componente fuerza}
+paralela al desplazamiento del objeto. Es decir, si empujo un coche,
+descompongo en componente en x e y la fuerza ejercida. Solo efectúa trabajo la
+fuerza ejercida en x en este caso: es la que hace que el cuerpo se mueva.
+
+\begin{align*}
+    W = F \cdot s \cdot \cos \theta
+\end{align*}
+
+\textbf{Ejemplos.}
+
+Cuerpo de 15kg cae 10 metros, calcula trabajo.
+\begin{align*}
+    P = 15 \cdot 9.8 = 147 N      \\
+    W = 147 N \cdot 10 m = 1470 J \\
+\end{align*}
+
+Sobre cuerpo de 10 kg, fuerza de 100N, \(\alpha 30\) y se desplaza 5m.
+\begin{align*}
+    W = 100N \cdot 5m \cdot \cos 30^o \\
+    W = 433 J                         \\
+\end{align*}
+
+\subsection{Energía cinética.}
+
+\(K = \frac{1}{2}mv^2\).
+
+\textbf{Ejemplo.}
+
+Coche de 650kg,
+va a 90 km/h,
+frena y reduce a 50 km/h.
+
+Calcular: cinética inicial, final y trabajo de los frenos.
+
+\begin{align*}
+     & K = \frac{1}{2} \cdot 650kg \cdot (50000 \frac{m}{h} \cdot \frac{h}{3600 s})^2 \\
+     & K = \frac{1}{2} \cdot 650kg \cdot (13.889 \frac{m}{s})^2                       \\
+     & \boxed{K = 62693.90 J}
+\end{align*}
+
+Cuerpo de 20kg de masa,
+se mueve a \(2\frac{m}{s}\),
+aceleración de \(2\frac{m}{s^2}\) durante \(5s\).
+Calcular trabajo.
+
+\begin{align*}
+     & \Delta W = \frac{1}{2} 20kg \cdot \left[2\frac{m}{s} + \frac{1}{2} 2\frac{m}{s^2} \cdot (5s)^2\right] \\
+\end{align*}
+
+\subsection{Energía potencial}
+
+Se relaciona con la \textbf{fuerza gravitatoria}.
+A mayor altura, mayor distancia con respecto al centro de la tierra.
+A mayor distancia, mayor energía potencial.
+Se indica con \(U\).
+
+Cuando el cuerpo baja \(U \rightarrow K\).
+Notar que \(U + K\) permanece constante si no hay rozamiento.
+
+\textbf{Energía potencial gravitatoria.}
+
+Debida a las diferencias de altura.
+\[U_g = \frac{1}{2} g \cdot h\]
+
+\textbf{Energía potencial elástica.}
+
+Debida a un cuerpo deformable, como un resorte o banda elástica.
+\[U_e = \frac{1}{2} k \cdot x^2\]
+
+\subsection{Fuerzas conservativas}
+
+Fuerzas que son capaces de guardar energía y despues devolverla, como el peso.
+
+Una fuerza es conservativa cuando el trabajo realizado no depende de la trayectoria.
+
+Si en un sistema solo actúan FC se conserva la energía mecánica.
+
+Hay correspondencia entre fuerza conservativa y energía potencial.
+
+\subsection{Fuerzas no conservativas}
+
+No guardan energía para devolverla después.
+
+El trabajo realizado por este tipo de fuerza depende de la trayectoria.
+
+Un automóvil pierde la energía cinética por el rozamiento,
+esta energía no hay manera de recuperarla.
+
+Una pelota que se lanza hacia el aire pierde energía por el rozamiento de subida y de bajada.
+No hay forma de recuperar esta energía.
+
+\textbf{Ejemplo.}
+
+Reacomodando muebles.
+Se mueve un sillón de 40kg por 2.5m.
+La distancia directa es 2.5m.
+Sin embargo, para esquivar una mesa, hay que llevarlo por 3.5m.
+Calcular diferencia de trabajo si \(\mu = 0.2\).
+
+\begin{align*}
+     & F_r = 0.2 \cdot 40kg \cdot 9.8\frac{m}{s^2} \\
+     & F_r = 50N                                   \\
+     & W_1 = 50 \cdot 2.5m = 125J                  \\
+     & W_2 = 50 \cdot 3.5m = 175J                  \\
+\end{align*}
+
+Se observa que en fuerzas no conservativas el trabajo depende de la distancia.
 \end{document}
