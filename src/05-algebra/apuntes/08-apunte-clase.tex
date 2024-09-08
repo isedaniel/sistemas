@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% símbolos
+\usepackage{amsmath, amssymb}
+
+% gráficos
+%\usepackage{tikz}
+
+% plots
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% averiguar
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[skip=8pt plus1pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\title{Álgebra y geometría analítica\\Apunte de clase}
+\author{Daniel Ise}
+\date{4 de septiembre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Prácticos y parciales}
+
+Se valora \textbf{explicar paso por paso} lo que estamos haciendo.
+Es lo que permite saber que estamos entendiendo.
+No solo aplicando fórmulas.
+
+\section{Raíz enésima de número complejo}
+
+\begin{align*}
+    \sqrt[n]{W} = \sqrt[n]{|W|} \left(\cos \frac{\alpha + 2\pi k}{n} + \sen \frac{\alpha + 2\pi k}{n} \right)
+\end{align*}
+
+\section{Forma exponencial del número complejo}
+
+\textbf{Fórmula de Euler}
+
+Se demuestra con \textbf{serie de Taylor}. 
+Permite demostrar la \textbf{identidad de Euler}.
+Permite representar complejos con notación más corta.
+
+\begin{align*}
+    -2+2i = \sqrt{8}(\cos 135^o + i \sen 135^o) = \sqrt{8} \cdot 2^{\frac{@pi}{2}}
+\end{align*}
+
+\section{Logaritmo natural de un número complejo}
+
+Se puede resolver a partir de la \textbf{notación exponencial}.
+
+\begin{align*}
+    \ln z = \ln (|z|\cdot e^{i\cdot\alpha})
+\end{align*}
+
+\section{Exponencial compleja}
+
+Siendo \(V, U \in \mathbb{C}\).
+
+\begin{align*}
+    V^{U} = e^{u \cdot\ln v}
+\end{align*}
+
+\end{document}
