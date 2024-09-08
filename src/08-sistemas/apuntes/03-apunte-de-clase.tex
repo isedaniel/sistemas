@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% símbolos
+\usepackage{amsmath, amssymb}
+
+% gráficos
+%\usepackage{tikz}
+
+% plots
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% averiguar
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[skip=8pt plus1pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\title{Análisis de sistemas\\Apunte de clase}
+\author{Daniel Ise}
+\date{7 de septiembre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Planificación y programación de proyectos}
+
+\textbf{Planificación.}
+
+Etapa previa a la \textbf{programación}.
+Se elabora el \textbf{planeamiento}.
+Establece el \textbf{tiempo} del proyecto.
+
+\textbf{Revisión.}
+
+Ya durante la etapa de \textbf{ejecución},
+se hace una verificación de qué pasa con el \textbf{tiempo},
+que había sido pautado en la etapa de \textbf{planificación}.
+
+\textbf{Proyecto.}
+
+Una sucesión de \textbf{tareas} \textit{interrelacionadas},
+que \textit{guardan} un \textbf{orden},
+y \textit{buscan alcanzar} un \textbf{objetivo}.
+
+\textbf{Planeamiento.}
+
+Establece qué debe hacerse y en qué secuencia.
+
+\textbf{Programación.}
+
+Cuándo debe hacerse,
+acotar en el \textbf{tiempo} \textit{lo planeado}.
+
+\textbf{Control.}
+
+Verificar el \textbf{cumplimiento} de \textit{lo planeado y programado}.
+
+\section{Herramientas para la administración de proyectos}
+
+\textbf{Gantt.}
+
+Una de las técnicas más \textbf{simples} para la administración de proyectos.
+Genera \textbf{tiempos} y \textbf{tareas} fijos.
+Consiste en la representación por medio de barras proporcionales  a la duración de las tareas.
+Permite visualización rápida, simple y práctica.
+\textbf{Deventajas}. 
+No permite determinar impacto del \textbf{atraso} de una tarea.
+En proyectos \textit{complejos} se necesita más \textbf{información}.
+El \textbf{camino crítico} nace como opción y \textit{complemento}.
+
+\begin{center}
+    \begin{tabular}{ c c c }
+        Actividad & Duración & Precedencia\\
+        \hline \\
+        A         & 2        & -           \\
+        B         & 3        & -           \\
+        C         & 1        & B           \\
+        D         & 1        & A, C        \\
+        E         & 2        & D           \\
+        F         & 1        & E           \\
+        \hline\\
+    \end{tabular}
+\end{center}
+
+
+
+\textbf{CPM.}
+Critic Path Method.
+Utiliza \textbf{camino crítico}.
+\textit{Determina} \textbf{tiempos}.
+Preguntas principales:
+
+\begin{enumerate}
+    \item Cuál es el \textbf{Tiempo total}.
+    \item Cuáles son fechas de \textbf{inicio} y \textbf{terminación}.
+    \item Qué actividades son \textbf{críticas} y deben terminarse \textbf{exactamente} dentro de lo programado.
+\end{enumerate}
+
+\begin{center}
+    \begin{tabular}{ c c c c }
+        Tarea & Actividad & Duración & Precedencia\\
+        \hline \\
+        0-1 & A         & 2        & -           \\
+        0-2 & B         & 3        & -           \\
+        0-3 & C         & 1        & B           \\
+        1-2 & D         & 1        & A, C        \\
+        2-5 & E         & 2        & D           \\
+        3-5 & F         & 1        & E           \\
+        3-5 & G         & 1        & E           \\
+        3-5 & H         & 1        & E           \\
+        3-5 & I         & 1        & E           \\
+        3-5 & J         & 1        & E           \\
+        3-5 & K         & 1        & E           \\
+        \hline\\
+    \end{tabular}
+\end{center}
+
+\textbf{Grafo.} Con la tabla se puede armar un grafo.
+Se puede calcular una \textbf{fecha temprana}.
+Y una \textbf{fecha tardía}.
+Cuando hay diferencia entre temprana y tardía aparece un \textbf{margen}.
+El \textbf{margen total} para cada tarea es un indicador.
+Cuando da 0, esa actividad es \textbf{crítica}.
+El \textbf{camino} por los \textbf{nodos críticos} 
+
+\textbf{Pert.}
+Utiliza \textbf{camino crítico}.
+\textit{Considera} \textbf{tiempo} y \textbf{tareas} \textit{inciertos}.
+
+\end{document}
