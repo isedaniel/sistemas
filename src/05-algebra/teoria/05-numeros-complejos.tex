@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage[a4paper, margin=2.54cm]{geometry}
 \usepackage[spanish]{babel}
 
@@ -13,9 +13,10 @@
 \usepackage{amsmath, amssymb}
 
 % gráficos y plots
-%\usepackage{tikz}                   
+\usepackage{tikz}                   
 %\usepackage{pgfplots}               
 %\pgfplotsset{width=10cm, compat=1.9}
+\usetikzlibrary{babel}
 
 \setlength{\jot}{8pt}
 \setlength{\parindent}{0cm}
@@ -46,6 +47,398 @@
 
 \tableofcontents
 
-\section{}
+\pagebreak
+
+\section{Números complejos}
+
+\subsection{Surgen por necesidad de ampliar números reales.}
+
+Al resolver algunas ecuaciones de segundo grado,
+podemos obtener \textbf{raíces negativas},
+que \textit{no existen} en el conjunto de los \textbf{reales}.
+Pero se pueden resolver recurriendo a \textbf{unidad imaginaria}.
+
+\subsection{Unidad imaginaria.}
+
+Es \(\sqrt{-1}\),
+se representa con \(i\).
+\textit{Permite operar} \textbf{raíces negativas}.
+\begin{align*}
+    i = \sqrt{-1}
+\end{align*}
+
+\textbf{Ejemplo.}
+
+\begin{align*}
+    x^2 - 4x + 13 = 0 \rightarrow x & = \frac{4 \pm \sqrt{4^{2} - 4 \cdot 1 \cdot 13}}{2} \\
+    x                               & = \frac{4 \pm \sqrt{16 - 52}}{2}                    \\
+    x                               & = \frac{4 \pm \sqrt{-36}}{2}                        \\
+    x                               & = \frac{4 \pm \sqrt{36 \cdot (-1)}}{2}              \\
+    x                               & = \frac{4 \pm \sqrt{36} \cdot \sqrt{(-1)}}{2}       \\
+    x                               & = \frac{4 \pm 6 \cdot i}{2}                         \\
+                                    & \boxed{x  = 2 \pm 3i}                               \\
+\end{align*}
+
+\subsection{Conjunto de los números complejos}
+
+Un número complejo generalmente se denota con la letra \(z\).
+El conjunto se denota \(\mathbb{C}\),
+y se define:
+
+\begin{align*}
+    \mathbb{C} = \left\{z = a + bi; a,b \in \mathbb{R}, i = \sqrt{-1}\right\} \\
+\end{align*}
+
+
+\section{Formas de representación}
+
+Un número complejo \(z\) puede representarse de diferentes formas.
+
+\subsection{Forma binómica}
+
+Se denomina \textbf{forma binómica} a la representación:
+
+\begin{align*}
+    z = a + bi \\
+\end{align*}
+
+Donde \(a\) es la \textbf{parte real} del número complejo,
+y se denota \(a = Re(z)\).
+
+\(b\) es la \textbf{parte imaginaria} y se denota \(b = Im(z)\).
+
+Si \(a = 0\), es un \textbf{número imaginario puro}.
+
+Si \(b = 0\), se reduce a \textbf{número real}.
+
+Dos números complejos son \textbf{iguales} si tienen mismo
+su \textbf{componente real} y \textbf{componente imaginario}.
+
+\subsection{Forma par ordenado}
+
+Un número complejo se puede representar como par ordenado:
+
+\begin{align*}
+    z = a + bi = (a,b) \\
+\end{align*}
+
+\textbf{Representación gráfica.}
+
+Gráficamente, un par ordenado se puede representar como un \textbf{punto},
+de coordenadas \((a,b)\); o como un \textbf{vector},
+con \textbf{origen} en \((0,0)\) y \textbf{extremo} en \((a,b)\).
+
+La parte real se representa en el eje de las \textit{abscisas} \(X\),
+que se llama \textbf{eje real}.
+
+La parte imaginaria se representa en el eje de las \textit{ordenadas} \(Y\),
+que se llama \textbf{eje imaginario}.
+
+\hfil
+\begin{center}
+    \begin{tikzpicture}[>=stealth,scale=0.6,line cap=round,
+            bullet/.style={circle,inner sep=1.5pt,fill}]
+        % axis
+        \draw[<->] (-9,0) -- (9,0) node[right]{$x$};
+        \draw[<->] (0,-7) -- (0,7) node[above]{$y$};
+        % marcadores
+        \draw (4, 0.1) -- ++ (0, -0.2) node[below]{$a$};
+        \draw (0.1, 3) -- ++ (-0.2, 0) node[left]{$b$};
+        % vector
+
+        \path (0,0) coordinate (O)
+        (4, 0) coordinate (A)
+        (0, 3) coordinate (B)
+        (4,3) node[bullet,label=right:{$(a,b)$}](P){}
+        (O) edge[thick,->] (P)
+        (A) edge[dashed] (P)
+        (B) edge[dashed] (P);
+    \end{tikzpicture}
+\end{center}
+\hfil
+
+\subsection{Forma trigonométrica}
+
+La \textbf{forma trigonométrica} de un número complejo se expresa como:
+\begin{align*}
+    z = |z|(\cos \alpha + i \sen \alpha) \\
+\end{align*}
+
+Donde \(|z| \in \mathbb{R}\) es el \textbf{módulo} del número complejo,
+y se calcula como el módulo de un vector:
+\begin{align*}
+    z = a+bi \implies |z| = \sqrt{a^2 + b^2} \\
+\end{align*}
+
+Y \(\alpha\) es el \textbf{argumento},
+un ángulo positivo con respecto al \textbf{eje real},
+de medida \(0 \leq \alpha \leq 2\pi\).
+Se denota \(arg(z) = \alpha\) y se calcula como:
+\begin{align*}
+    z = a + bi \implies arg(z) = \alpha = \arctan \left(\frac{b}{a}\right) \\
+\end{align*}
+
+\textbf{Ojo \(\arctan\) en calculadora},
+prestar atención al \(z\).
+
+\begin{center}
+    \begin{tabular}{ c c c }
+        \(z\)       & Cuadrante            & \(\arctan\)         \\
+        \hline                                                   \\
+        \(a + bi\)  & \(1^{er}\) cuadrante & \( \alpha \)        \\
+        \(-a + bi\) & \(2^{do}\) cuadrante & \( \alpha + \pi \)  \\
+        \(-a - bi\) & \(3^{er}\) cuadrante & \( \alpha + \pi \)  \\
+        \(a - bi\)  & \(4^{to}\) cuadrante & \( \alpha + 2\pi \) \\
+    \end{tabular}
+\end{center}
+
+\subsection{Forma exponencial}
+
+Se deduce de la \textbf{fórmula de Euler}:
+
+\begin{align*}
+    e^{i \cdot \alpha} = \cos\alpha + i \sen\alpha \\
+\end{align*}
+
+Siendo \(\alpha\) el \textbf{ángulo en radianes}:
+
+\begin{align*}
+    180^o = \pi\text{ radianes} \\
+\end{align*}
+
+Si \(z\) de forma trigonométrica es:
+
+\begin{align*}
+    z = |z| \cdot (\cos\alpha + i\sen\alpha) \\
+\end{align*}
+
+Sustituyendo, lo podemos reescribir como:
+
+\begin{align*}
+    z = |z| \cdot e^{i \cdot \alpha} \\
+\end{align*}
+
+Esta manera de expresar \(z\) permite operar \(\ln\).
+
+\section{Operaciones con números complejos}
+
+\subsection{Potencias de la unidad imaginaria}
+
+\begin{align*}
+    i^0 = 1  \\
+    i^1 = i  \\
+    i^2 = -1 \\
+    i^3 = -i \\
+\end{align*}
+
+Para resto de potencias, \(i^n = i^r \iff n \mod 4 = r\):
+Dividimos \(n\) entre 4 y tomamos el Resto \(r\),
+\(i^n\) es lo mismo que \(i^r\).
+
+\textbf{Ejemplos.}
+
+\begin{align*}
+    i^{20} \implies 20 \mod 4 = 0 \\
+    \boxed{i^{20} = i^0 = 1}      \\
+\end{align*}
+
+\begin{align*}
+    i^{35} \implies 35 \mod 4 = 3 \\
+    \boxed{i^{35} = i^3 = -i}     \\
+\end{align*}
+
+\subsection{Suma y resta de números complejos}
+
+\subsubsection{Forma binómica}
+
+Dado un \(z_0,z_1 \in \mathbb{C}\),
+expresados de \textbf{forma binómica},
+se suman y restan sus partes reales e imaginarias,
+respectivamente.
+
+\textbf{Ejemplos.}
+\begin{align*}
+    (5 - 8i) + (7 + 6i) = (5 + 7) + (6i - 8i) = 12 - 2i                    \\
+    (5 + 2i) + (-8 + 3i) - (4-2i) = (5 - 8 - 4) + (2i + 3i + 2i) = -7 + 7i \\
+\end{align*}
+
+\subsubsection{Forma trigonométrica}
+
+En \textbf{forma trigonométrica},
+\(z \in \mathbb{C}\) no se puede sumar ni restar.
+
+\subsection{Multiplicación de números complejos}
+
+\subsubsection{Forma binómica}
+
+Dados dos números complejos,
+expresados de \textbf{forma binómica},
+una multiplicación se opera como el producto de un binomio,
+recordando que \(i^2 = -1\).
+
+\textbf{Ejemplos.}
+\begin{align*}
+    (2 + 3i) \cdot (4+5i) & = 8 + 12i + 10i + 15i^2   \\
+                          & = 8 + 22i + (15 \cdot -1) \\
+                          & = \boxed{-7 + 22i}
+\end{align*}
+
+\begin{align*}
+    (5-2i)^2 + 2(1-i) \cdot (-3 + 4i) & = 25 - 20i + 4i^2 + (2 - 2i) \cdot (-3 + 4i) \\
+                                      & = 21 - 20i - 6 + 6i + 8i - 8i^2              \\
+                                      & = \boxed{23 - 6i}                            \\
+\end{align*}
+
+\textbf{Producto de complejos conjugados.}
+
+El \textbf{complejo conjugado} de un \(z\)
+es otro número complejo de parte real igual y parte imaginaria opuesta.
+Se denota \(\overline{z}\):
+
+\begin{align*}
+    z = a + bi \implies \overline{z} = a - bi \\
+\end{align*}
+
+El producto \(z \cdot \overline{z}\) devuelve un \textbf{número real}:
+
+\begin{align*}
+    z \cdot \overline{z} & = (a + bi) cdot (a - bi)                      \\
+                         & = a^2 + \cancel{ abi} - \cancel{abi} - b^2i^2 \\
+                         & = a^2 - b^2 \cdot -1                          \\
+                         & = \boxed{a^2 + b^2}                           \\
+\end{align*}
+
+\subsubsection{Forma trigonométrica}
+
+El producto de \(z_{1} \cdot z_{2}\),
+en \textbf{forma trigonométrica},
+consiste en \textit{multiplicar} los \textbf{módulos} y
+\textit{sumar} los \textbf{argumentos}:
+
+\begin{align*}
+    \text{Dados: } &                                                                                     \\
+                   & z_{1} = |z_{1}|(\cos\alpha + i\sen\alpha) & z_{2} = |z_{2}|(\cos\beta + i\sen\beta) \\
+\end{align*}
+\begin{align*}
+    z_{1} \cdot z_{2} = |z_{1}| \cdot |z_{2}| \cdot [\cos(\alpha+\beta) + i\sen(\alpha+\beta)] \\
+\end{align*}
+
+De ello deducimos que la \textbf{potencia natural} \(n\) de \(z\)
+consiste en \textit{elevar} \(|z|^n\)
+y \textit{multiplicar} \(\alpha \cdot n\):
+
+\begin{align*}
+    z_{1}^n = |z_{1}|^n \cdot [\cos(n \cdot \alpha) + i\sen(n \cdot \alpha)] \\
+\end{align*}
+
+\subsection{División de números complejos}
+
+\subsubsection{Forma binómica}
+
+Dados \(z_{1}, z_{2}\),
+expresados de \textbf{forma binómica},
+para dividirlos operamos producto de numerador y denominador por
+\textbf{conjugado} del denominador.
+De esta manera, sacamos el número complejo del denominador y podemos operar:
+
+\begin{align*}
+    \frac{a + bi}{c + di} & = \frac{a + bi}{c + di} \cdot \frac{c - di}{c - di} \\
+                          & = \frac{ac + cbi - adi - bdi^2}{c^2 + d^2}          \\
+                          & = \frac{(ac + bd) + (cb - ad)i}{c^2 + d^2}          \\
+\end{align*}
+
+\textbf{Ejemplo.}
+\begin{align*}
+    \frac{2+6i}{7-3i} & = \frac{2+6i}{7-3i} \cdot \frac{7+3i}{7+3i} \\
+                      & = \frac{14 + 42i + 6i - 18}{7^{2} + 3^{2}}  \\
+                      & = \frac{-4 + 48i}{49 + 9}                   \\
+                      & = \boxed{\frac{-2}{29} + \frac{24}{29}i}    \\
+\end{align*}
+
+\subsubsection{Forma trigonométrica}
+
+El cociente de \(z_{1} \div z_{2}\),
+en \textbf{forma trigonométrica},
+consiste en \textit{dividir} los \textbf{módulos} y
+\textit{restar} los \textbf{argumentos}:
+
+\begin{align*}
+    \text{Dados: } &                                                                                     \\
+                   & z_{1} = |z_{1}|(\cos\alpha + i\sen\alpha) & z_{2} = |z_{2}|(\cos\beta + i\sen\beta) \\
+\end{align*}
+\begin{align*}
+    z_{1} : z_{2} = |z_{1}| : |z_{2}| \cdot [\cos(\alpha-\beta) + i\sen(\alpha-\beta)] \\
+\end{align*}
+
+\subsection{Raíz n-ésima de números complejos en forma trigonométrica}
+
+Todo complejo,
+\textbf{excepto el cero},
+tiene \textit{exactamente} n raíces n-ésimas diferentes.
+
+Se obtienen siguiendo:
+
+\begin{align*}
+    \sqrt[n]{Z} = \sqrt[n]{|W|} \cdot \left(\cos \frac{\alpha + 2k\pi}{n} + i \sen \frac{\alpha + 2k\pi}{n}\right) \text{ con } k=0,1,2 \dots n-1
+\end{align*}
+
+\textbf{Representación gráfica.}
+
+\hfil
+\begin{center}
+    \begin{tikzpicture}[>=stealth,scale=4,line cap=round,
+            bullet/.style={circle,inner sep=1.5pt,fill}]
+        % axis
+        \draw[<->] (-1.1,0) -- (1.1,0) node[right]{$x$};
+        \draw[<->] (0,-1.1) -- (0,1.1) node[above]{$y$};
+
+        % vector
+        \path (0,0) coordinate (O)
+        (1.05, 0.13) coordinate (K0)
+        (.4, .97) coordinate (K1)
+        (-.64, .84) coordinate (K2)
+        (-1.05, -.13) coordinate (K3)
+        (-.4, -.97) coordinate (K4)
+        (.64, -.84) coordinate (K5)
+        (K0) node[bullet]{}
+        (K1) node[bullet]{}
+        (K2) node[bullet]{}
+        (K3) node[bullet]{}
+        (K4) node[bullet]{}
+        (K5) node[bullet]{}
+        (O) edge[dashed] (K0)
+        (O) edge[dashed] (K1)
+        (O) edge[dashed] (K2)
+        (O) edge[dashed] (K3)
+        (O) edge[dashed] (K4)
+        (O) edge[dashed] (K5)
+        [draw=gray] (O) circle (1.06);
+    \end{tikzpicture}
+\end{center}
+\hfil
+
+Generalmente, uniendo los puntos queda un \textbf{polígono regular},
+de \(n\) lados, inscripto en una circunferencia de radio \(\sqrt[n]{|z|}\).
+
+\subsection{Logaritmo de número complejo en forma exponencial}
+
+Siendo \(z = |z| \cdot e^{i \cdot \alpha}\):
+
+\begin{align*}
+    \ln z & = \ln(|z| \cdot e^{i \cdot \alpha})      \\
+          & = \ln(|z|) + \ln(e^{i \cdot \alpha})     \\
+          & = \ln(|z|) + i \cdot \alpha \cdot \ln(e) \\
+          & = \boxed{\ln(|z|) + \alpha i}            \\
+\end{align*}
+
+\subsection{Exponencial compleja}
+
+Dados \(v, u \in \mathbb{C}\), si \(z = v^u\):
+
+\begin{align*}
+    z     & = v^u     \\
+    \ln z & = \ln v^u \\
+    \ln z & = u \ln v \implies v^u = e^{u \ln v} \\
+\end{align*}
 
 \end{document}
