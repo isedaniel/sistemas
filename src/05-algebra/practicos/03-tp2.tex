@@ -1,0 +1,262 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}               
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}        
+
+% math
+\usepackage{amsmath, amssymb}
+
+% gráficos y plots
+\usepackage{tikz}                   
+%\usepackage{pgfplots}               
+%\pgfplotsset{width=10cm, compat=1.9}
+\usetikzlibrary{babel}
+
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage{parskip}                
+
+% cancelar términos
+\usepackage{cancel}                 
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}        
+
+% shapes
+%\usetikzlibrary{shapes.geometric}   
+
+% incluir pdfs
+%\usepackage{pdfpages}  
+
+\title{Álgebra y Geometría Analítica\\ Trabajo Práctico $N^{o}2$\\Números complejos}
+\author{Profesores:\\Mg. Silvia Ranieri\\Prof. Sebastian Scalise\\Alumno:\\Daniel Ise}
+\date{Septiembre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\textbf{1. Resolver en forma binómica y trigonométrica.
+    Comparar resultados.}
+
+Operamos primero en fomra binómica.
+Para resolver cocientes, multiplicamos denominadores por conjugado:
+
+\begin{align*}
+    \frac{1-i}{-i} \cdot \frac{(1+i)^2}{5i} & = \frac{1-i}{-i} \cdot \frac{i}{i} \cdot \frac{(1+i)^2}{5i} \cdot \frac{-5i}{-5i}     \\
+                                            & = \frac{i-i^2}{-1i^2} \cdot \frac{(\cancel{1} + 2i - \cancel{1}) \cdot (-5i)}{-25i^2} \\
+                                            & = \frac{i-(-1)}{1} \cdot \frac{-10i^2}{25}                                            \\
+                                            & = (1+i) \cdot \frac{2}{5}                                                             \\
+                                            & = \boxed{\frac{2}{5}+\frac{2}{5}i}                                                    \\
+\end{align*}
+
+Operamos ahora de forma trigonométrica,
+en primer lugar, convertimos cada número complejo:
+
+\begin{align*}
+    |1 - i|                           & = \sqrt{1^2 + 1^2} = \sqrt{2}                                                               \\
+    \arctan \left(\frac{-1}{1}\right) & = \frac{-1}{4}\pi \rightarrow 4^{to} \text{cuadr.:} \frac{-1}{4}\pi + 2\pi = \frac{7}{4}\pi \\
+    1 - i                             & = \boxed{\sqrt{2}\left(\cos \frac{7}{4}\pi + i \sen \frac{7}{4} \pi\right)}                 \\
+\end{align*}
+
+En el caso de \(-i\), se trata de un número imaginario puro,
+que al ser negativo se posiciona sobre la parte inferior del eje imaginario,
+siendo \(\angle -i = \frac{3}{2}\pi\)
+
+\begin{align*}
+    |- i| & = \sqrt{1^2} = 1 \rightarrow \boxed{\left(\cos \frac{3}{2}\pi + i \sen \frac{3}{2} \pi\right)} \\
+\end{align*}
+
+Si operamos el primer cociente:
+
+\begin{align*}
+    \frac{\sqrt{2}\left(\cos \frac{7}{4}\pi + i \sen \frac{7}{4} \pi\right)}{\left(\cos \frac{3}{2}\pi + i \sen \frac{3}{2} \pi\right)} & = \frac{\sqrt{2}}{1} \cdot \left[\cos \left(\frac{7}{4}\pi - \frac{6}{4}\pi\right) + i \sen \left(\frac{7}{4}\pi - \frac{6}{4}\pi\right)\right] \\
+                                                                                                                                        & = \boxed{\sqrt{2} \left[\cos \left(\frac{1}{4}\pi\right) + i \sen \left(\frac{1}{4}\pi\right)\right]}                                           \\
+\end{align*}
+
+Convertimos ahora los otros dos complejos.
+
+\begin{align*}
+    |1 + i|                & = \sqrt{1^2 + 1^2} = \sqrt{2}                                                                         \\
+    \arctan \left(1\right) & = \frac{1}{4}\pi \rightarrow 1^{er} \text{cuadr.: } \alpha = \frac{1}{4}\pi                           \\
+    1 + i                  & = \boxed{\sqrt{2} \left[\cos \left(\frac{1}{4}\pi\right) + i \sen \left(\frac{1}{4}\pi\right)\right]} \\
+\end{align*}
+
+Aquí encontramos una primera diferencia con la operación anterior, en vez de hacer \(z^2\),
+podemos operar \(z^3\). Lo haremos luego de determinar el último complejo restante.
+Como tenemos otro imaginario puro, sabemos que \(\angle 5i = \frac{1}{2}\pi\)
+
+\begin{align*}
+    |5i| = \sqrt{5^2} = 5 \rightarrow 5i = \boxed{5\left(\cos \frac{1}{2}\pi + i \sen \frac{1}{2} \pi\right)} \\
+\end{align*}
+
+Operamos \(z^3\):
+
+\begin{align*}
+    z^3 & = \left(\sqrt{2}\right)^{3} \left[\cos \left(3 \cdot \frac{1}{4}\pi\right) + i \sen \left(3 \cdot \frac{1}{4}\pi\right)\right] \\
+        & = \boxed{\sqrt{8} \left[\cos \left(\frac{3}{4}\pi\right) + i \sen \left(\frac{3}{4}\pi\right)\right]}                          \\
+\end{align*}
+
+Y, por último, el cociente restante:
+
+\begin{align*}
+    \frac{\sqrt{8} \left[\cos \left(\frac{3}{4}\pi\right) + i \sen \left(\frac{3}{4}\pi\right)\right]}{5\left(\cos \frac{1}{2}\pi + i \sen \frac{1}{2} \pi\right)} & = \frac{\sqrt{8}}{5} \cdot \left[\cos \left(\frac{3}{4}\pi - \frac{2}{4}\pi\right) + i \sen \left(\frac{3}{4}\pi - \frac{2}{4}\pi\right)\right] \\
+                                                                                                                                                                   & = \boxed{\frac{\sqrt{8}}{5} \left[\cos \left(\frac{1}{4}\pi\right) + i \sen \left(\frac{1}{4}\pi\right)\right]}                                 \\
+\end{align*}
+
+Por último, convertimos a forma binómica:
+
+\begin{align*}
+    \frac{\sqrt{8}}{5} \left[\cos \left(\frac{1}{4}\pi\right) + i \sen \left(\frac{1}{4}\pi\right)\right] & = \frac{2\sqrt{2}}{5} \cdot \left[\frac{\sqrt{2}}{2} + i \frac{\sqrt{2}}{2}\right]                                                  \\
+                                                                                                          & = \frac{\cancel{2}\sqrt{2}}{5} \cdot \frac{\sqrt{2}}{\cancel{2}} + \frac{\cancel{2}\sqrt{2}}{5} \cdot i \frac{\sqrt{2}}{\cancel{2}} \\
+                                                                                                          & = \boxed{\frac{2}{5} + \frac{2}{5}i}
+\end{align*}
+
+\textbf{2. Hallar \(x, y \in \mathbb{R}\) tal que: \(y + \frac{x-5}{i} = \frac{2}{1-i} + 3x + yi\).}
+
+Primero, sacamos imaginarios de denominador multiplicando por complemento:
+
+\begin{align*}
+    y + \frac{x-5}{i} \cdot \frac{-i}{-i} = \frac{2}{1-i} \cdot \frac{1+i}{1+i} + 3x + yi \\
+    y + \frac{xi - 5i}{1} = \frac{2+2i}{1^2 + 1^2} + 3x + yi                              \\
+    y + (x-5)i = 1 + 3x + (y+1)i                                                          \\
+\end{align*}
+
+Con esta igualdad, construimos un sistema de dos ecuaciones y dos incognitas:
+
+\begin{align*}
+    \begin{cases}
+        y = 1 + 3x    \\
+        x - 5 = y + 1 \\
+    \end{cases}
+\end{align*}
+
+Sustituimos:
+
+\begin{align*}
+    x - 5                    & = 3x + 1 + 1                          \\
+    -2x                      & = 2 + 5                               \\
+    \boxed{x = \frac{-7}{2}} & \rightarrow \boxed{y = \frac{-19}{2}} \\
+\end{align*}
+
+\textbf{3. Escribir los siguiente números complejos, dados como pares ordenados,
+    en forma binómica, trigonométrica y exponencial:}
+
+Primero, forma binómica, \((a,b) = a + bi\):
+
+\begin{align*}
+    (2, -2)        & = \boxed{2 - 2i}        \\
+    (-1, \sqrt{3}) & = \boxed{\sqrt{3}i - 1} \\
+\end{align*}
+
+Forma trigonométrica:
+
+\begin{align*}
+    |2 - 2i| & = \sqrt{8}                                                                                                                       \\
+    \alpha   & = \arctan \left(\frac{-2}{2}\right) = \frac{-1}{4}\pi \rightarrow 4^{to}\text{ cuadr.: } \frac{-1}{4}\pi + 2\pi = \frac{7}{4}\pi \\
+    2 - 2i   & = \boxed{\sqrt{8}\left(\cos \frac{7}{4}\pi + i \sen \frac{7}{4}\pi\right)}                                                       \\
+\end{align*}
+
+\begin{align*}
+    |\sqrt{3}i - 1| & = \sqrt{(\sqrt{3})^2 + 1^2} = \sqrt{4} = 2                                                                                   \\
+    \beta           & = \arctan \left(-\sqrt{3}\right) = \frac{-1}{3}\pi \rightarrow 2^{do}\text{ cuadr.: } \frac{-1}{3}\pi + \pi = \frac{2}{3}\pi \\
+    \sqrt{3}i - 1   & = \boxed{2\left(\cos \frac{2}{3}\pi + i \sen \frac{2}{3}\pi\right)}                                                          \\
+\end{align*}
+
+Por último, forma exponencial, de estructura \(z = |z| \cdot e^{\alpha \cdot i}\):
+
+\begin{align*}
+    \sqrt{8}\left(\cos \frac{7}{4}\pi + i \sen \frac{7}{4}\pi\right) & = \boxed{\sqrt{8} \cdot e^{\frac{7}{4}\pi \cdot i}} \\
+    2\left(\cos \frac{2}{3}\pi + i \sen \frac{2}{3}\pi\right)        & = \boxed{2 \cdot e^{\frac{2}{3}\pi \cdot i}}        \\
+\end{align*}
+
+\textbf{4. Sea: }
+
+\begin{align*}
+    A & = \{ z \in \mathbb{C} / |z - 2| = |z + i| \}                            \\
+    B & = \{ z \in \mathbb{C} / |z - 2i| = |z + 1| \}                           \\
+    C & = \{ z \in \mathbb{C} / Re(z) \leq 3 \wedge Im(z) \geq -1 \} \\
+\end{align*}
+
+\textbf{a. Representar \(T = A \cap B \cap C\).}
+
+Primero, obtenemos funciones para representar \(A\) y \(B\):
+
+\begin{align*}
+    |x + yi - 2|                             & = |x + yi + i|                             \\
+    |(x-2) + yi|                             & = |x + (y + 1)i|                           \\
+    \sqrt{(x-2)^{2} \cdot y^{2}}             & = \sqrt{x^{2} + (y + 1)^{2}}               \\
+    \cancel{x^{2}} - 4x + 4 + \cancel{y^{2}} & = \cancel{x^{2}} + \cancel{y^{2}} + 2y + 1 \\
+    4 - 4x                                   & = 2y +1                                    \\
+    y                                        & = \frac{3 - 4x}{2}                         \\
+    A                                        & \rightarrow \boxed{y = \frac{3}{2} - 2x}
+\end{align*}
+
+\begin{align*}
+    |z - 2i|                             & = |z + 1|                                           \\
+    |x + yi - 2i|                        & = |x + yi + 1|                                      \\
+    |x + (y-2)i|                         & = |(x+1) + yi|                                      \\
+    \cancel{x^{2}} + \cancel{y^{2}} - 4y & = \cancel{x^{2}} + 2x + 1 + \cancel{y^{2}}          \\
+    B                                    & \rightarrow \boxed{y = \frac{-1}{2}x - \frac{1}{4}} \\
+\end{align*}
+
+Representamos:
+
+\hfil
+\begin{center}
+    \begin{tikzpicture}[>=stealth,scale=0.6,line cap=round,
+            bullet/.style={circle,inner sep=1.5pt,fill}]
+        % axis
+        \draw[<->] (-9,0) -- (9,0) node[right]{$x$};
+        \draw[<->] (0,-7) -- (0,7) node[above]{$y$};
+        % marcadores
+
+        % gráficos
+        \path (0,0) coordinate (O)
+        (-2.5, 6.5) coordinate (A0)
+        (4, -6.5) coordinate (A1)
+        (A0) edge[thick,orange,label=right:{$A$}] (A1)
+        (-9, 4.25) coordinate (B0)
+        (9, -4.75) coordinate (B1)
+        (B0) edge[thick,magenta,label=right:{$B$}] (B1)
+        (1.17,-.83) node[bullet,label=right:{$(1.17,-0.83)$}](P){};
+    \end{tikzpicture}
+\end{center}
+\hfil
+
+Entonces, \(A \cap B \approx P (1.17;-0.83)\). Incluimos C:
+
+\hfil
+\begin{center}
+    \begin{tikzpicture}[>=stealth,scale=0.6,line cap=round,
+            bullet/.style={circle,inner sep=1.5pt,fill}]
+        % axis
+        \draw[cyan,thick,fill] (3,-1) rectangle (-9,7);
+        \draw[<->] (-9,0) -- (9,0) node[right]{$x$};
+        \draw[<->] (0,-7) -- (0,7) node[above]{$y$};
+        \draw (3,-1) node[bullet,label=right:{$(3,-1)$}](P){};
+        % gráficos
+        \path (0,0) coordinate (O)
+        (-2.5, 6.5) coordinate (A0)
+        (4, -6.5) coordinate (A1)
+        (A0) edge[thick,orange,label=right:{$A$}] (A1)
+        (-9, 4.25) coordinate (B0)
+        (9, -4.75) coordinate (B1)
+        (B0) edge[thick,magenta,label=right:{$B$}] (B1)
+        (1.17,-.83) node[bullet,label=below:{$(1.17,-0.83)$}](P){};
+    \end{tikzpicture}
+\end{center}
+\hfil
+
+Concluimos que \(A \cap B \cap C \approx P (1.17;-0.83)\).
+
+\end{document}
