@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% símbolos
+\usepackage{amsmath, amssymb}
+
+% gráficos
+%\usepackage{tikz}
+
+% plots
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% averiguar
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[skip=8pt plus1pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\title{Arquitectura de computadoras\\Apunte de clase}
+\author{Daniel Ise}
+\date{10 de septiembre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Circuitos}
+
+\subsection{Defininicones previas.}
+
+\textbf{Reloj (clock).} 
+Mecanismo que emite una señal oscilando entre dos valores,
+alto y bajo (esto es, 0 y 1), 
+contando con tiempos de transición,
+lo que permite generar \textbf{ciclos}. 
+Los ciclos se miden en \textbf{hertz (Hz)}.
+
+\textbf{Compuertas.}
+Son circuitos integrados monolíticos,
+que permiten implementar familias lógicas.
+
+\section{Circuitos lógicos aritméticos con compuerta}
+
+\subsection{Circuitos lógicos aritméticos con compuerta combinacionales}
+
+\textbf{Definición.}
+Dependen de solo de \textbf{entradas} 
+para \textit{determinar} \textbf{salidas}.
+
+\textbf{Ejemplos.} 
+Sumador de 1-bit.
+Multiplexor.
+
+\subsection{Circuitos lógicos aritméticos con compuerta secuenciales}
+
+\textbf{Definición.}
+Los secuenciales dependen de entradas pasadas,
+es decir,
+almancenan \textbf{estado}.
+
+\textbf{Ejemplos.}
+Contadores.
+
+\textbf{Flip-flop.}
+Tipo de circuito secuencial biestable,
+es decir, con dos estados estables (0 y 1),
+puede cambiar entre estos dos estados,
+dependiendo de condiciones de entrada.
+Almancena \textbf{1 bit} de información.
+Es la \textbf{unidad básica de almacenamiento} en
+electrónica digital.
+\textit{Mantiene} su estado hasta que recibe señal de reloj,
+o señal de entrada específica.
+
+\textbf{Implementación en Hardware.} 
+
+\textbf{Set-Reset Flip-Flop.}
+
+\textbf{text}
+
+\end{document}
+
