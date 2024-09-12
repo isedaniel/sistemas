@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% símbolos
+\usepackage{amsmath, amssymb}
+
+% gráficos
+%\usepackage{tikz}
+
+% plots
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% averiguar
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[skip=10pt plus1pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\title{Álgebra y geometría analítica\\Apunte de clase}
+\author{Daniel Ise}
+\date{11 de septiembre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Propiedades de los determinantes}
+
+\subsection{Propiedad 10}
+Determinante no cambia si a una fila (o columna)
+se le suma otra fila (o columna),
+multiplicadas por números distintos de 0.
+
+\textbf{Ejemplo.}
+
+\subsection{Propiedad 11}
+
+\textbf{Submatriz \(A_{ij}\).}
+Matriz en la que se suprimen fila \(i\) y columna \(j\).
+
+\textbf{Adjunto de elemento \(a_{ij}\).}
+Determinante de submatriz \(A_{ij}\),
+con signo positivo o negativo de acuerdo a suma de subíndices par o impar.
+
+\textbf{Matriz adjunta.}
+Se calcula reemplazando a cada elemento por su adjunto.
+
+\textbf{Nota}: ojo que algunos llaman adjunta a la traspuesta de la adjunta.
+
+\section{Matriz inversa}
+
+Dada matriz \(A\),
+denominamos \textbf{matriz inversa} \(A^{-1}\) a aquella que,
+multiplicando \(A \cdot A^{-1}\),
+devuelve la \textbf{matriz identidad}.
+
+\textbf{Admisión de inversa.}
+Tiene dos requerimientos,
+1. matriz cuadrada y
+2. determinante \textit{distinto de 0}.
+
+\textbf{Matriz singular.} 
+Aquella matriz que no admite inversa.
+
+\textbf{Metodos.}
+Hay dos métodos para calcular.
+\begin{itemize}
+    \item Método de 
+    \item Método de Gauss
+\end{itemize}
+
+
+
+\end{document}
