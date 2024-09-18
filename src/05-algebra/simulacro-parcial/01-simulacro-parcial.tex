@@ -41,9 +41,9 @@
 % incluir pdfs
 %\usepackage{pdfpages}
 
-\title{Materia\\Tipo}
+\title{Álgebra y geometría analítica\\Simulacro de parcial}
 \author{Daniel Ise}
-\date{}
+\date{17 de septiembre de 2024}
 
 \begin{document}
 
@@ -51,7 +51,146 @@
 
 \tableofcontents
 
-\section{}
+\pagebreak
 
+\section{Parcial 9/19, noche}
+
+\textbf{1. Dadas las rectas \(r_{1}: \lambda (1,4,-2) + (3,9,-4)\)
+  y \(r_{2}: \beta(5,7,3) + (-3,-2,1)\),
+  los puntos: \(P (1,2,0)\), \(Q (-2,-1,0)\) y \(R (1,0,-3)\),
+  y los planos: \(\delta: x + 2z - 6 = 0\), \(\epsilon: x - y + z = 0\)
+  y \(\beta: z = 5\).}
+
+\textbf{a. Hallar la intersección entre los planos \(\delta\), \(\epsilon\)
+  y \(\beta\).}
+
+Primero, buscamos la intersección entre \(\delta\) y \(\epsilon\).
+Para ello, planteamos un sistema de ecuaciones con sus ecuaciones generales:
+
+\begin{align*}
+  \begin{cases}
+    x + 2z - 6 = 0 \\
+    x - y + z = 0  \\
+  \end{cases}
+\end{align*}
+
+Despejamos \(x\) y sustituimos:
+
+\begin{align*}
+  x = 6 - 2z         \\
+  6 - 2z - y + z = 0 \\
+  y = 6 - z          \\
+\end{align*}
+
+Planteamos la ecuación de la recta intersección:
+
+\begin{align*}
+  (x,y,z) = (6 - 2z, 6-z, z)              \\
+  (x,y,z) = (-2z, -z, z) + (6, 6, 0)      \\
+  (x,y,z) = \alpha(-2, -1, 1) + (6, 6, 0) \\
+\end{align*}
+
+\(\delta\) y \(\epsilon\) se intersecan en \(\alpha(-2, -1, 1) + (6, 6, 0)\).
+
+Veamos ahora la intersección con \(beta\):
+
+\begin{align*}
+   & \begin{cases}
+       x = -2\alpha + 6 \\
+       y = -\alpha + 6  \\
+       5 = \alpha       \\
+     \end{cases} \\
+   & \boxed{x = -4}   \\
+   & \boxed{y = 1}    \\
+\end{align*}
+
+Los tres planos se intersecan en el punto \((-4,1,5)\).
+Sabemos que solo se intersecan en ese punto puesto que \(\beta\) es paralelo
+al plano formado por los ejes \(x\) e \(y\).
+
+\textbf{b. Hallar intersección \(r_{1}\) y \(r_{2}\)}
+
+Planteamos un sistema de ecuaciones:
+
+\begin{align*}
+  \begin{cases}
+    \lambda (1,4,-2) + (3,9,-4) \\
+    \beta(5,7,3) + (-3,-2,1)    \\
+  \end{cases}
+   & \rightarrow
+  \begin{cases}
+    \lambda + 3 = 5\beta - 3   \\
+    4\lambda + 9 = 7\beta - 2  \\
+    -2\lambda - 4 = 3\beta + 1 \\
+  \end{cases}
+\end{align*}
+
+Tenemos dos incógnitas y tres ecuaciones,
+resolvemos tomando dos y comprobamos con la restante:
+
+\begin{align*}
+  \lambda           & = 5\beta -6                      \\
+  4(5\beta -6) + 9  & = 7\beta - 2                     \\
+  20\beta - 24 + 9  & = 7\beta - 2                     \\
+  13\beta           & = 13                             \\
+  \boxed{\beta = 1} & \rightarrow \boxed{\lambda = -1} \\
+  -2 \cdot -1 - 4   & = -2                             \\
+  3 \cdot 1 + 1     & = 4                              \\
+  -2                & \neq 4                           \\
+\end{align*}
+
+Encontramos desigualdad,
+por lo tanto las rectas no se intersecan.
+
+\textbf{c. Hallar ecuación de \(\pi\) que contenga a \(r_{2}\) y pase por \(P\)}.
+
+Construimos un plano dada una recta y un punto, para ello construimos
+un vector \((1,2,0) - (-3,-2,1) = (4,4,-1)\).
+
+Obtenemos así la ecuación vectorial paramétrica del plano \(\pi\):
+
+\begin{align*}
+  \pi: (1,2,0) + \alpha(4,4,-1) + \beta(5,7,-3) \\
+\end{align*}
+
+\textbf{d. Hallar intersección entre plano \(\delta\) y recta \(r_{2}\)}
+
+Planteamos un sistema de ecuaciones para obtener los puntos de la intersección:
+
+\begin{align*}
+   & \begin{cases}
+       x + 2z = 6      \\
+       x = 5\beta - 3  \\
+       y = 7\beta - 2  \\
+       z = -3\beta + 1 \\
+     \end{cases}                                     \\
+   & 5\beta - 3 + 2(-3\beta + 1) = 6                     \\
+   & 5\beta - 3 -6\beta + 2 = 6                          \\
+   & - 1 -\beta = 6                                      \\
+   & \boxed{\beta = -7} \rightarrow \boxed{(-38,-51,22)} \\
+\end{align*}
+
+\textbf{2. Hallar
+  \(z \in \mathbb{C}\), tal que \(\left[\frac{1-\sqrt{3i}}{2}\right]^{Z}=-i\).
+  Expresar en forma exponencial y binómica.}
+
+Operamos logaritmo natural en cada uno de los componentes de la expresión:
+\begin{align*}
+  \left[\frac{1-\sqrt{3}i}{2}\right]^{Z}        & =-i      \\
+  \ln\left(\frac{1-\sqrt{3}i}{2}\right) \cdot Z & =\ln(-i) \\
+\end{align*}
+
+Para operar logaritmo de los dos números complejos,
+necesitamos conocer sus ángulos respecto del eje real.
+\begin{align*}
+   & \alpha = \arctan\left(\frac{-\sqrt{3}}{\cancel{2}} \cdot \frac{\cancel{2}}{1}\right) = -\frac{1}{3}\pi\text{, por estar en 4to cuadrante }\rightarrow \frac{5}{3}\pi \\
+   & \beta = \frac{3}{2}\pi\text{, por ser imaginario puro negativo.}                                                                                                     \\
+\end{align*}
+
+Expresamos ambos complejos en forma exponencial y operamos logaritmo natural:
+\begin{align*}
+  \ln\left(\left|\frac{1-\sqrt{3}i}{2}\right|\right)\cdot e^{i\frac{5}{3}\pi} \cdot z = \ln(|-i|) \cdot e^{i\frac{3}{2}\pi} \\
+  \ln\left(\sqrt{\frac{1}{4} + \frac{3}{4}}\right)\cdot e^{i\frac{5}{3}\pi} \cdot z = \ln(1) \cdot e^{i\frac{3}{2}\pi}      \\
+  \boxed{z = 0}                                                                                                             \\
+\end{align*}
 \end{document}
-
