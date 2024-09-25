@@ -58,30 +58,28 @@
 \subsection{Desplazamiento}
 
 Es la distancia recorrida independientemente de la trayectoria.
+
+Trayectoria \(\implies\) escalar.
+Desplazamiento \(\implies\) vectorial.
 \begin{align*}
-    \Delta x = x_{f} - x_{0}
+    \Delta x = x_{f} - x_{i}
 \end{align*}
 
 \subsection{Rapidez}
 
-Distancia sobre tiempo. Como distancia es escalar, rapidez es escalar.
+Distancia sobre tiempo. Distancia es escalar \(\implies\) rapidez es escalar.
 \begin{align*}
-    \overline{s} = \frac{d}{\Delta t}
+    \overline{s} = \frac{\Delta d}{\Delta t}
 \end{align*}
-
-\textbf{Rapidez media.} Rapidez promedio en un recorrido.
-
-\textbf{Rapidez instantánea.} Movimiento en un instante dado.
 
 \subsection{Velocidad}
 
-Desplazamiento en función del tiempo. Desplazamiento vectorial \(\implies\) velocidad es vectorial.
-Hay \textbf{velocidad media} y \textbf{velocidad instantánea}.
+Desplazamiento en función del tiempo. Desplazamiento es vectorial \(\implies\) velocidad es vectorial.
 \begin{align*}
     v_{x} = \frac{\Delta x}{\Delta t}
 \end{align*}
 
-\textbf{Velocidad instantánea.} Derivada de la posición respecto del tiempo.
+Velocidad instantánea.
 \begin{align*}
     v_{x} = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t}
 \end{align*}
@@ -89,14 +87,105 @@ Hay \textbf{velocidad media} y \textbf{velocidad instantánea}.
 \subsection{Aceleración}
 
 Cambio en la velocidad en el tiempo. Velocidad vectorial \(\implies\) acelereación vectorial.
+También tiene promedio y derivada.
 \begin{align*}
     a = \frac{\Delta v}{\Delta t}
 \end{align*}
 
-También tiene promedio y derivada: 
-\textbf{Aceleración media} y \textbf{acelereación instantánea}.
-
 \subsection{Movimiento rectilíneo uniforme}
 
-\end{document}
+Velocidad constante sobre línea recta \(\implies\) aceleración nula
+\begin{align*}
+    v = v_{i} &  & x = x_{i} + v_{i} \cdot t &  & \overline{v} = \vec{v}
+\end{align*}
 
+\subsection{Movimiento rectilíneo uniformemente variado}
+
+Aceleración constante sobre línea recta.
+\begin{align*}
+    a = a_{i} &  & v = at + v_{i} &  & x = \frac{1}{2}at^{2} + v_{i} + x_{i}
+\end{align*}
+
+\subsection{Coordenadas intrínsecas de la aceleración}
+
+El vector velocidad puede cambiar en módulo o dirección.
+Para ello, se utiliza un sistema de referencia intrínseco para la aceleración.
+Se divide en un componente tangencial y otro normal.
+El tangencial es tangente a la trayectoria y responsable del módulo de \(\vec{v}\).
+El normal es centrípeto y responsable de la dirección de \(\vec{v}\).
+\begin{align*}
+    |a_{t}| = \frac{d|v|}{dt} &  & |a_{n}| = \frac{|v|^{2}}{r}
+\end{align*}
+
+\subsection{Tiro oblicuo}
+
+Objeto lanzado por el aire,
+con velocidad inicial y ángulo respecto del suelo,
+suponiendo efecto constante de la gravedad,
+y despreciando efecto del rozamiento del aire.
+
+MRU en dirección horizontal,
+MRUV en dirección vertical (caída libre).
+
+\textbf{Ecuaciones en dirección horizontal.}
+\begin{align*}
+    v_{x} = v_{i}\cdot\cos \alpha &  & a_{x} = 0 &  & x = v_{x}\cdot t
+\end{align*}
+\begin{align*}
+    A = \frac{2v_{i}^{2}\cdot\sin\alpha\cdot\cos\alpha}{g}
+\end{align*}
+
+\textbf{Ecuaciones en dirección vertical.}
+\begin{align*}
+    v_{y} = v_{i}\cdot \sen \alpha - g\cdot t &  & a_{y} = -g &  & y = \frac{1}{2} \cdot (-g) \cdot t^{2} + v_{y} \cdot t
+\end{align*}
+\begin{align*}
+    H = \frac{v_{i}^{2} \cdot \sen^{2}\alpha}{2g} &  & t_{v} = \frac{2v_{y}}{g}
+\end{align*}
+
+\subsection{Velocidad relativa en dos dimensiones}
+
+Velocidad relativa de A visto de B, dado un observador fijo T que ve a los dos,
+es:
+\begin{align*}
+    \vec{v}_{AB} = \vec{v}_{AT} - \vec{v}_{BT}
+\end{align*}
+
+\section{Dinámica}
+
+\subsection{Fuerza}
+
+Se denomina fuerza a la \textit{interacción} que puede cambiar el estado de
+movimiento de un objeto
+\footnote{Aunque una fuerza no equilibrada también podría \textit{deformar}
+    un objeto.}.
+
+Una fuerza produce aceleración. La aceleración es una magnitud vectorial.
+\(\implies\) La fuerza es una magnitud vectorial.
+
+Cuando varias fuerzas actúan sobre un mismo objeto,
+nos interesa el vector de \textbf{fuerza neta},
+que es igual a la suma vectorial de las fuerzas actuantes.
+\begin{align*}
+    \vec{R} = \vec{F}_{1} + \vec{F}_{2} + \cdots + \vec{F}_{n}
+\end{align*}
+
+\subsection{Leyes de Newton}
+
+Son descripciones a partir de la observación.
+Son fundamentales porque no puede deducirse ni demostrarse.
+Son la base de la mecánica clásica.
+En realidad serían más bien principios que leyes,
+similares a los axiomas en matemática.
+
+\subsubsection{Primera ley}
+
+"Todo cuerpo permanece en su estado de reposo o de movimiento rectilíneo
+y uniforme a menos que se le obligue a varias dicho estado mediante 
+fuerzas que actúen sobre él."
+
+Es decir,
+cuando la fuerza neta actúante sobre un objeto es 0,
+su aceleración es 0.
+
+\end{document}
