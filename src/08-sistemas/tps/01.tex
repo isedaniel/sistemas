@@ -1,0 +1,313 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}               
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}        
+
+% math
+\usepackage{amsmath, amssymb}
+
+% gráficos y plots
+\usepackage{tikz}                   
+%\usepackage{pgfplots}               
+%\pgfplotsset{width=10cm, compat=1.9}
+\usetikzlibrary{babel}
+
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage{parskip}                
+
+% cancelar términos
+\usepackage{cancel}                 
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}        
+
+% shapes
+%\usetikzlibrary{shapes.geometric}   
+
+% incluir pdfs
+%\usepackage{pdfpages}  
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+  \vspace*{.5cm}
+  \includegraphics[scale=.6]{~/Pictures/udemm-logo.png}\\
+  \vspace{.2cm}
+  \Large
+  \textbf{Facultad de Ingeniería}\\
+  \textbf{Ingeniería en Sistemas}\\
+  \vspace{2cm}
+
+  \Huge
+  Análisis de Sistemas\\
+  Trabajo Práctico N\(^{\circ} 1\)\\
+  \vfill
+
+  \raggedright
+  \Large
+  Docente:
+  \begin{itemize}
+    \item[] Mg. Lic. Prof. Margarita Castronuovo
+  \end{itemize}
+  Alumno:
+  \begin{itemize}
+    \item[] Daniel Ise
+  \end{itemize}
+  Legajo:
+  \begin{itemize}
+    \item[] 28547
+  \end{itemize}
+  Fecha:
+  \begin{itemize}
+    \item[] Septiembre de 2024
+  \end{itemize}
+\end{center}
+
+\pagebreak
+
+\textbf{a) ¿Por qué son importantes los conceptos de sistemas en el análisis
+  y diseño de sistemas de información?}
+
+Podemos considerar al \textit{análisis de sistemas} como el proceso de
+clasificación e interpretación de hechos y procesos (Senn, 1997),
+que se dan en el marco de una organización. Así,
+si mediante el análisis podemos \textit{conocer} un sistema organizacional
+en pleno funcionamiento -como, por ejemplo, una empresa-,
+el \textit{diseño de sistemas} permitiría la \textit{planificación}
+de un sistema de información que \textit{complemente} al sistema existente.
+
+En dicho marco, conceptos como la \textbf{descomposición funcional}
+permiten el análisis pormenorizado de diversos componentes,
+relativamente más simples que el sistema visto como un todo.
+Asimismo,
+apelando a conceptos propios de la teoría general de sistemas
+podemos reconocer los objetivos, elementos componentes,
+interacciones entre sus miembros, fronteras, propios del sistema en cuestión.
+
+Sin el conocimiento específico de dichos conceptos, tanto el análisis y
+como su el consecuente diseño de un sistema de información complementario,
+resultarían una tarea de una complejidad extrema,
+difícil de abordar.
+
+\textbf{b) ¿Por qué es difícil la determinación de los límites en los sistemas de Información?}
+
+La determinación de límites en un sistema varía de acuerdo al tipo de sistema
+con el que se esté trabajando.
+En el caso de un sistema natural o físico, la determinación de un límite
+puede ser relativamente fácil.
+En cambio, en el caso de un sistema social, como una organización o empresa,
+la delimitación puede representar un auténtico desafío.
+Esto se debe a que los límites organizacionales usualmente no constituyen
+una frontera concretamente delimitada. En cambio,
+una organización suele ser permeable a lo que acontece en su entorno,
+del cual toma entradas -recursos humanos y materiales, información-,
+y al cual remite salidas.
+Una organización social tiene límites en un rango contínuo,
+que van de la extrema permeabilidad a la práctica impermeabilidad (Kendall y Kendall, 2011).
+
+\textbf{c) ¿Para qué es importante el concepto de sistema cerrado?}
+
+En el contexto de la teoría general de sistemas,
+un sistema cerrado es aque que no interactúa con su entorno,
+esto es,
+un sistema que no recibe información ni recursos como entrada.
+En la práctica,
+es imposible la existencia de un sistema totalmente cerrado,
+siendo en cambio un contínuo de sistemas de mayor permeabilidad a sistemas de
+menor apertura (Kendall y Kendall, 2011).
+
+\textbf{d) ¿Por qué un sistema de soporte de decisión no debería tomar decisiones?}
+
+Al igual que un sistema de información administrativa,
+un sistema de soporte de decisiones depende de una base de datos.
+La diferencia radica en que el sistema de soporte de decisiones está
+enfocado en brindar respaldo a la toma de decisiones en cada una de sus fases,
+aunque, en última instancia,
+la decisión sigue correspondiendo al \textit{usuario} del sistema.
+Para razones de responsabilidad, ética, complejidad y adaptabilidad,
+la decisión debe corresponder al usuario humano del sistema.
+
+\textbf{e) ¿Qué habría que cambiar para que un sistema de soporte de decisiones pudiera tomar decisiones? }
+
+Para que un sistema de soporte de decisiones pueda tomar decisiones es necesaria
+la incorporación de inteligencia artifical, lo que convertiría al sistema en
+un \textit{sistema experto} (Kendall y Kendall, 2011).
+Es importante resaltar, sin embargo, que dicho cambio implicaría
+establecer lineamientos normativos, límites éticos y
+atribución de responsabilidades
+por las consecuencias de las decisiones.
+
+\textbf{f) ¿Por qué el análisis de los requisitos es una de las tareas más complejas en el desarrollo de software?}
+
+Luego de la documentación de los requerimientos,
+que es el resultado de la exploración realizada por el analista,
+es necesario un análisis de los requerimientos para buscar conflictos.
+La emergencia de partes conflictivas o contradictorias en la documentación
+es normal luego de la exploración, puesto que los requerimientos resultan
+de las opiniones y deseos sobre la funcionalidad y características del sistema
+provenientes de diferentes fuentes y personas.
+
+Entre los problemas que puede presentar un documento inicial de requerimientos
+se cuentan: requerimientos faltantes, en conflicto, infactibles, ambiguos.
+
+Es propio del análisis de los requerimientos la búsqueda de un consenso con
+las partes involucradas, para arribar a una solución de compromiso
+que genere el consenso. La búsqueda del consenso puede tener una complejidad
+importante y requerir de negociaciones y el establecimiento de prioridades
+(Whitten y Bentley, 2008).
+
+\textbf{g) ¿Cuáles son las ventajas de la utilización de un ciclo de vida para el desarrollo de sistemas?}
+
+Un ciclo de vida es un conjunto de fases por las que atraviesa un sistema
+en su proceso de desarrollo, partiendo por la idea inicial hasta el final de
+su período de soporte.
+
+Adoptar un ciclo de vida permite (INTECO, 2009):
+\begin{itemize}
+  \item Definir un esquema para la planificación, organización y coordinación del proceso de desarrollo
+  \item Definir entradas y salidas para cada una de las fases
+  \item Describir estados por los que atravesará el producto
+  \item Describir actividades a realizar para el desarrollo, actualización y soporte del producto
+\end{itemize}
+
+\textbf{h) Explique las principales diferencias entre los ciclos de vida presentados}
+
+Los ciclos de vida presentados son:
+\begin{itemize}
+  \item Ciclo de vida en cascada
+  \item 4GL
+  \item Prototipo
+  \item Espiral
+\end{itemize}
+
+\textbf{Ciclo de vida en cascada.}
+El ciclo de vida en cascada o clásico cuenta entre sus ventajas la simplicidad
+y la organización. Cada una de las fases que lo componen se ejecutaría 
+secuencialmente, una atras de la otra. Ello conllevaría una facilidad para la
+gestión del proyecto y un mayor orden en el desarrollo del mismo.
+Sin embargo, cuenta con algunos inconvenientes. En el mundo real es difícil que
+un proyecto siga un orden lineal, normalmente aparecen nuevos desafíos o 
+requerimientos en el proceso de desarrollo que significan volver hacia atras. 
+Por otra parte, el producto funcional llega a ser verificado y probado por el 
+usuario al final del proceso de desarrollo, lo que podría significar, sobre todo
+para un sistema de cierta complejidad, que no se corrigieron malas decisiones,
+omisiones o ambigüedades desde un principio, resultando en una pérdida de tiempo
+para el equipo de desarrollo y los usuarios.
+
+\textbf{Herramientas 4GL.}
+Son un conjunto diverso de métodos y herramientas,
+que tienen como propósito principal la simplificación del desarrollo de 
+software,
+permitiendo la generación de códigos,
+interfaces y controladores de bases de datos.
+Cuenta entre sus ventajas la generación de código a partir de 
+especificaciones de alto nivel de abstracción.
+Cuenta entre sus problemas a la ineficiencia del código generado,
+y a la imposibilidad de prescindir del todo de las herramientas de codificación.
+Además, las herramientas de 4GL están restringidas por lo general al software 
+de gestión, a la generación de interfaces y a la consulta de bases de datos.
+
+\textbf{Modelo de prototipos.}
+El modelo de prototipos comienza con el desarrollo de un modelo del sistema,
+partiendo por los requerimientos conocidos en un principio, aun cuando estos 
+requerimientos no estén completos. Se trata de un ciclo de vida iterativo e 
+incremental. El objetivo es presentar rápidamente un prototipo al usuario,
+de manera tal que lo pruebe y sugiera modificaciones desde un principio.
+Esto permite una realimentación contínua por parte del cliente, que participa
+así del proceso de desarrollo y puede colaborar en la toma de decisiones desde 
+el principio. Entre los problemas que presenta este estilo de desarrollo se 
+cuentan la propensión a utilizar el prototipo en el sistema final, considerando
+que este no fue desarrollado con la eficiencia en mente, sino tratando de 
+obtener rápidamente un producto que el cliente pueda probar. Ello puede ir en 
+detrimento tanto del rendimiento como de la calidad del software, así como futuras
+dificultades en el soporte del mismo. Este ciclo de vida es especialmente 
+valioso para aplicaciones que no requieran de grandes detalles algorítmicos,
+centradas en cambio en la interacción con el usuario final.
+
+\textbf{Ciclo de vida en espiral.}
+Este ciclo de vida es evolutivo e iterativo, especialmente útil para el 
+desarrollo de sistemas de alta complejidad. Se divide fundamentalmente en 
+4 grandes fases: planificación, análisis de riesgo, ingeniería y evaluación del
+cliente. 
+En cada iteración, en la fase de ingeniería, se construye una versión del software,
+un sistema completo que será testeado por el cliente. En cada una de las iteraciones 
+el sistema crece en características, obteniéndose en un ciclo final el sistema 
+completo. Entre las dificultades del ciclo de vida en espiral se cuentan la 
+dificultad de la gestión, la necesidad de un equipo con alta experiencia y 
+las dificultades propias de la determinación del riesgo, que no consiste en una 
+tarea fácil. 
+
+\textbf{j) Investigue algunos lenguajes de cuarta generación, explique sus características más importantes y sus limitaciones.}
+
+\textbf{SQL.}
+Structured Query Language (SQL) es un lenguaje de programación especializado
+en la creación, gestión y modificación de bases de datos. Se trata de un 
+lenguaje de cuarta generación en la medida en que su sintaxis es declarativa,
+esto es, no requiere de la especificación del \textit{cómo} realizar las operaciones.
+En cambio, alcanza con detallar algunos aspectos de la consulta a ejecutar,
+como las columnas que se desean y la tabla en la que se buscará, para que el 
+software se encargue del resto.
+
+\textbf{Visual Basic .NET.}
+Lenguaje enfocado en el desarrollo de aplicaciones de escritorio, sucesor de 
+Visual Basic 6. Permite la implementación de interfaces gráficas y 
+aplicaciones de escritorio con facilidad para el sistema operativo Windows.
+
+\textbf{R.}
+Lenguaje de código abierto, basado en \textbf{S}, especializado también en el
+análisis estadístico y la presentación de datos. Permite analizar grandes 
+cantidades de datos, estructurados o no, e inlcuir sus resultados en informes
+en los más variados formatos, incluyendo imágenes, PDF y páginas web.
+
+\textbf{k) ¿Con cuáles modelos de ciclos de vida complementaría a los lenguajes de cuarta generación? }
+
+Los lenguajes de cuarta generación, como por ejemplo Visual Basic .NET, que 
+permite un rápido desarrollo de aplicaciones destinadas al sistema operativo 
+Windows, aún a personas sin grandes conocimientos en programación y apelando 
+a un interfaz fácil de utilizar como la Visual Studio. Por ello, este tipo de 
+herramienta sería mejor aprovechada con ciclos de vida que ofrezcan resultados 
+de forma iterativa y rápida, sin poner tanto énfasis con la eficiencia o 
+profundidad del desarrollo algorítimico del programa, como sucede con el ciclo 
+de vida de prototipos.
+
+\textbf{l) ¿Por qué el término “mantenimiento” no es el más adecuado?}
+
+El término \textit{mantenimiento} puede no ser adecuado si se considera que 
+refiere exclusivamente a sostener el software en el estado en que está.
+Usualmente el soporte que brindado al cliente durante el ciclo de vida del 
+software incluye la emergencia de nuevos requerimientos y la necesidad de 
+retornar a la planificación y el desarrollo de nuevas características,
+para dar respuesta a necesidades cambiantes.
+
+\textbf{m) ¿De qué manera complementaría el ciclo de vida en cascada con prototipos?}
+
+El ciclo de vida en cascada se puede combinar con el modelo de prototipos 
+recurriendo a una reducción del tiempo de y de los objetivos de desarrollo del 
+ciclo de cascada, esto es, atravesar desde la ingeniería del sistema al 
+mantenimiento, pero teniendo como resultado no el sistema final sino una serie 
+de prototipos que, de forma evolutiva e incremental, vayan incorporando 
+características al sistema y permitiendo la evaluación del cliente desde las 
+primeras versiones.
+
+\textbf{n) ¿Por qué no dejaría un prototipo como sistema final?}
+
+Un prototipo es el resultado del modelo de prototipos, centrado en 
+la arquitectura del sistema y la estructura de interfaces antes que en los 
+aspectos procedimentales del programa. Por ello mismo, al no tener aún un 
+desarrollo pormenorizado de la infraestructura del sistema, un prototipo tendría
+una mayor tendencia a presentar problemas en su uso y dificultaría el trabajo 
+de soporte, poniendo en peligro la consecusión del fin mismo del sistema.
+
+\end{document}
