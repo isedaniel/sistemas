@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% símbolos
+\usepackage{amsmath, amssymb}
+
+% gráficos
+%\usepackage{tikz}
+
+% plots
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% averiguar
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[skip=10pt plus1pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\title{Álgebra y geometría analítica\\Apunte de clase}
+\author{Daniel Ise}
+\date{2 de octubre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Combinación lineal}
+
+Dados dos vectores no paralelos,
+podemos generar cualquier vector en el plano
+como combinación lineal de los dos primeros.
+
+Y esa combinación es \textit{única}.
+
+Cuando los vectores son coplanares, 
+la combinación lineal enfrenta algunas restricciones.
+
+Si son coplanares, puedo generar planos.
+
+Si son paralelos, puedo generar vectores dentro de la recta.
+
+La dimensión del vector que puede resultar de la combinación
+es igual al \textbf{rango} de la matriz que puedo construir
+a partir del sistema de ecuaciones que se deduce de los 
+vectores.
+
+Para saber si un vector está dentro de un sistema,
+llego a la solución y opero con los valores del vector,
+si es compatible,
+debería respetar la igualdad dada por el sistema.
+
+\section{Conjunto de generadores}
+
+Hay conjuntos de vectores que generan un espacio vectorial y otros que no.
+Dos vectores no paralelos, generan \(R^{2}\).
+
+Por tanto,
+el conjunto de vectores no paralelos/no coplanares es un 
+\textbf{conjunto generador} de un espacio vectorial.
+
+\section{Subespacio generado}
+
+Dado el conjunto de vectores \(A\),
+del espacio \(V\),
+el conjunto \(A\) es generador del subespacio \(W\),
+pero no a \(V\).
+Está en los ejemplos 5 y 6.
+
+\textbf{Ejemplo.}
+(2,1) genera una recta con dirección (2,1).
+Ese es un subespacio vectorial.
+Es la recta que pasa por el origen con dirección (2,1).
+
+\textbf{Ejemplo II.}
+(1,0,2) y (0,0,1). Generan el plano \(y = 0\).
+
+\textbf{Ejemplo III.}
+
+\end{document}
+
