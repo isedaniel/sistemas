@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% símbolos
+\usepackage{amsmath, amssymb}
+
+% gráficos
+%\usepackage{tikz}
+
+% plots
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% averiguar
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[skip=10pt plus1pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\title{Física I\\Apunte de clase}
+\author{Daniel Ise}
+\date{3 de septiembre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Momento lineal y energía cinética}
+
+Las dos se desprenden de masa por velocidad.
+\begin{align*}
+    E_{k} = \frac{1}{2}mv^{2}\\
+    p = mv
+\end{align*}
+
+El momento lineal es el impulso de aceleró desde el reposo a rapidez actual.
+
+Energía es trabajo necesario para acelerar la partícula.
+
+Momento es fuerza en el tiempo, energía es fuerza en la distancia.
+
+\section{Conservación del momento lineal}
+
+También se conserva,
+con mayor generalidad que la energía mecánica.
+
+Lo bueno de las cosas que se conservan es que alcanza con saber 
+el estado inicial y el final.
+
+Así se simplifican problemas.
+
+Para eso definimos sistemas, 
+con partículas que forman parte y partículas que no.
+Las fuerzas que el sistema ejerce entre sí son fuerzas internas.
+Las fuerzas externas son ejercidas por partículas exteriores al sistema.
+
+Siempre que las fuerzas sean internas, 
+no hay variación en la cantidad de movimiento del sistema.
+
+\textbf{Principio de conservación del momento lineal.}
+Si la suma vectorial de las fuerzas externas
+sobre un sistema es cero,
+el momento lineal total del sistema es constante.
+
+\textbf{Colisión.}
+Choque de cuerpos,
+interacción,
+con cambios muy bruscos en el sistema,
+en un momento muy corto de tiempo,
+lo que hace que se desprecien resto de fuerzas,
+y nos centramos en los cambios en la cantidad de movimiento.
+
+Un choque puede ser:
+\begin{itemize}
+    \item elástico
+    \item inelástico
+    \item perfectamente inelástico, que tiene la máxima pérdida de energía cinética
+\end{itemize}
+
+En la realidad,
+no hay choque completamente elástico.
+Solo son aproximadamente elásticas.
+Debería ser silenciosa para ser perfectamente elástica.
+
+Las colisiones entre partículas subatómicas son perfectamente elásticas.
+
+En un choque elástico se supone conservación del momento y energía cinética 
+en su totalidad.
+
+En un choque inelástico parte de la energía cinética se pierde.
+
+En un choque totalmente inelástico los cuerpos terminan con la misma velocidad.
+
+\section{Centro de masa}
+
+Punto en el que se puede considerar concentrada toda la masa de un sistema 
+o de un objeto.
+Cuando se considera fuerza externa, se considera que todo actúa sobre el 
+centro de masa del sistema.
+
+\begin{equation}
+    x = \frac{\sum m_{i}x_{i}}{\sum m_{i}}\\
+\end{equation}
+
+\begin{equation}
+    y = \frac{\sum m_{i}y_{i}}{\sum m_{i}}\\
+\end{equation}
+
+\end{document}
+
