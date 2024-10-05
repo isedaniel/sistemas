@@ -1,0 +1,161 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% símbolos
+\usepackage{amsmath, amssymb}
+
+% gráficos
+%\usepackage{tikz}
+
+% plots
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% averiguar
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[skip=10pt plus1pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\title{Análisis de sistemas\\Apunte de clase}
+\author{Daniel Ise}
+\date{5 de octubre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Objetivo de la materia}
+
+Utilizar \textbf{casos de uso} para describir las \textbf{interfaces} de un 
+sistema, vinculada a un ciclo de vida.
+El objetivo es desarrollar un \textbf{proyecto}.
+
+\section{Proceso unificado de desarrollo}
+
+Resulta de la combinación del ciclo de vida en cascada
+y en espiral.
+Es evolutivo, \textbf{iterativo} e \textbf{incremental}.
+Dirigido por \textbf{casos de uso}.
+Centrado en la \textbf{arquitectura}.
+
+\textbf{Unified modeling language.}
+Es una notación.
+Precisa de un proceso de desarrollo, es decir un ciclo de vida,
+que especifique la \textit{secuencia} de actividades a realizar.
+
+\section{Ingeniería de requisitos}
+
+Direcciona el proceso de \textit{elicitación},
+-que es el paso de información de forma fluida-,
+definición,
+modelado,
+análisis,
+especificación
+y validación de los requerimientos de un sistema,
+separando el \textit{qué} del \textit{cómo} del diseño.
+
+\textbf{Requisito.}
+Es una \textit{capacidad} que el sistema debe conformar. 
+Es un acuerdo entre el cliente y el desarrollador acerca de 
+lo que el sistema debe hacer.
+Lleva a comprender de manera clara la necesidad del usuario.
+
+Permite el \textit{flujo de trabajo fundamental},
+orientando el desarrollo hacia el sistema \textit{correcto}.
+
+\textbf{Problemas para identificar requisitos.}
+\begin{itemize}
+    \item No son obvios y pueden tener muchas fuentes
+    \item Pueden ser difíciles de enunciar en palabras
+    \item Existen muchos tipos distintos, de distinto nivel de detalle
+    \item Pueden crecer a un número inmanejable
+    \item Las partes interesadas y responsables pueden ser muchas,
+    con distintos intereses
+    \item Se interrelacionan entre sí 
+    \item Puede haber dificultades de lenguaje en la comunicación
+\end{itemize}
+
+Estos problemas impactan directamente sobre el costo.
+
+\section{Tipos de requisitos}
+
+\textbf{Requisitos de usuarios.}
+Necesidades expresadas por los usuarios.
+
+\textbf{Requisitos del sistema.}
+Componentes que el sistema debe tener para proveer sus funcionalidades.
+
+\textbf{Requisitos funcionales.}
+Especifican una acción que debe ser capaz de realizar el sistema,
+sin tener en cuenta las restricciones físicas.
+Describe la funcionalidad provista por el sistema.
+
+\textbf{Requisitos no funcionales.}
+Restricciones físicas sobre un requisitos funcional, de rendimiento,
+plataforma, fiabilidad.
+No refieren a funciones que entrega el sistema sino a sus propiedades emergentes:
+fiabilidad, respuesta, capacidad de almacenamiento.
+Refiere a la infraestructura en sí.
+Vinculado al Hardware y las redes.
+
+\section{Requisitos y casos de uso}
+
+\textbf{Casos de uso.}
+Técnica para la especificación de requisitos funcionales propuesta 
+por Jacobson (1992).
+
+Dan respuesta a la pregunta: 
+¿qué debe hacer el sistema para los usuarios?
+
+Es una secuencia de eventos entre el actor y el sistema.
+
+\textbf{Actor.}
+Interactúá con el sistema,
+persona,
+organización,
+programa o sistema.
+Estimula al sistema con algún evento o recibe información.
+Para cada actor se definer una \textbf{interfaz}.
+
+El actor puede ser:
+\begin{itemize}
+    \item \textbf{Primario.} 
+    Utiliza las funciones principales.
+    \item \textbf{Secundario.}
+    Efectúan tareas administrativas o de mantenimiento.
+\end{itemize}
+
+\textbf{Diagrama de contexto.}
+Permite determinar las fronteras del sistema,
+incluyendo clientes,
+administradores,
+otros sistemas que interactúan.
+
+\end{document}
