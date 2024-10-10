@@ -1,0 +1,159 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% símbolos
+\usepackage{amsmath, amssymb}
+
+% gráficos
+%\usepackage{tikz}
+
+% plots
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% averiguar
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[skip=10pt plus1pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\title{Física I\\Apunte de clase}
+\author{Daniel Ise}
+\date{10 de octubre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Mecánica de la rotación}
+
+Hasta ahora hemos visto el movimiento de traslación,
+centrado en el desplazamiento y la aceleración.
+
+En esta sección vamos a aplicar ideas similares a objetos que pueden rotar.
+
+\textbf{Cuerpo rígido.}
+Cuerpo que no se deforma con la aplicación de fuerzas,
+la distancia entre las partículas que lo forman permanece constante.
+
+\section{Cinemática del movimiento rotacional}
+
+Está vinculado al movimiento circular uniforme,
+de las partículas que forman el cuerpo rígido.
+
+\subsection{Posición angular}
+
+Describe la rotación de una partícula,
+mediante sus coordenadas \(x\) e \(y\).
+
+Para trabajar con movimiento angular usamos radianes.
+\begin{equation}
+    180^{\circ} = \pi rad
+\end{equation}
+
+\subsection{Velocidad angular}
+
+Cambio de la posición angular en relación al tiempo.
+\begin{equation}
+    \omega = \frac{\Delta\theta}{\Delta t}
+\end{equation}
+
+Su unidad en el SI es:
+\begin{equation}
+    \omega = \frac{rad}{s}
+\end{equation}
+
+Si el pulgar queda para arriba en el giro es positiva.
+Si el pulgar queda hacia abajo es negativa.
+
+\subsection{Velocidad tangencial}
+
+Dos puntos en un disco que gira tienen la misma velocidad angular.
+Sin embargo,
+el punto cuya distancia al centro sea mayor va a tener una mayor
+\textbf{velocidad tangencial}.
+
+\subsection{Aceleración centrípeta}
+
+Todo movimiento circular es acelerado,
+por lo menos,
+para mantener la trayectoria circular.
+Esta aceleración se denomina aceleración centrípeta,
+y se define como:
+\begin{equation}
+    a_{cen}=\frac{v^{2}}{r} = \omega^{2}\cdot r
+\end{equation}
+
+\subsection{Aceleración angular}
+
+Es el cambio en la velocidad angular en función del tiempo.
+\begin{equation}
+    \alpha_{m} = \frac{\Delta\omega}{\Delta t}
+\end{equation}
+
+En el SI se expresa como:
+\begin{equation}
+    \frac{rad}{s^{2}}
+\end{equation}
+
+\textbf{Ejemplo.}
+\begin{align*}
+    \alpha = \frac{40\pi rad/s - 8\pi rad/s}{2 s}\\
+    \alpha = \frac{16\pi rad}{s^{2}}\\
+\end{align*}
+
+\subsection{Período y frecuencia}
+
+Período es la cantidad de vueltas que da por segundo.
+Frecuencia es el tiempo que le lleva dar una vuelta.
+
+La frecuencia en el SI se expresa en hertz(Hz).
+
+Por ejemplo, una rueda que gira \(6\pi rad/s\).
+
+\section{Dinámica de la rotación}
+
+Un cuerpo rígio en rotación es masa en movimiento.
+Por tanto, 
+tiene energía cinética.
+
+Sabemos que \(v = \omega \cdot r\),
+entonces la expresión de la energía cinética se puede reescribir como:
+\begin{equation}
+    K_{t} = \frac{1}{2}\sum m\cdot r^{2} \cdot \omega^{2}
+\end{equation}
+
+A la expresión \(\sum m\cdot r^{2}\) se la define como el 
+\textbf{momento de inercia}, que se denota como \(I\),
+por lo tanto, reescribimos:
+\begin{equation}
+    K_{t} = \frac{1}{2} I \cdot \omega^{2}
+\end{equation}
+
+\end{document}
