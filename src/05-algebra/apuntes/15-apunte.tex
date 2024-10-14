@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% símbolos
+\usepackage{amsmath, amssymb}
+
+% gráficos
+%\usepackage{tikz}
+
+% plots
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% averiguar
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[skip=10pt plus1pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true, 
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\title{Álgebra y geometría analítica\\Apunte de clase
+\\Profes: Silvia Ranieri\\Sebastian Scalise}
+\author{Daniel Ise}
+\date{14 de octubre de 2024}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Transformaciones lineales}
+
+Es una función.
+Por lo tanto,
+tiene \textbf{dominio} y \textbf{codominio}.
+Estas funciones tienen como dominio espacios vectoriales,
+como codominio espacios vectoriales.
+\begin{equation}
+    T: V \rightarrow W
+\end{equation}
+
+\(T\) es una transformación lineal si y solo si:
+\begin{enumerate}
+    \item \(T(0,0) = (0,0)\)
+    \item \(T(u + v) = T(u) + T(v)\)
+    \item \(T(\alpha v) = \alpha T(v)\)
+\end{enumerate}
+
+De esto se deduce que:
+\begin{enumerate}
+    \item Toda componente debe ser grado 1
+    \item No debe tener coeficientes independientes
+\end{enumerate}
+
+\section{Teorema fundamental de las transformaciones lineales}
+
+Qué datos necesitaría para obtener una única transformación lineal.
+También conocido como teorema de existencia y unicidad de 
+una transformación lineal.
+Sean los espacios vectoriales \(V = R^{n}\) y W, sea \(B = \{v_{1}, ... v_{n}\}\)
+base de \(V\) y \(w_{1} \dots w_{n}\) vectores de \(W\), entonces existe 
+una única transformación lineal que verifica:
+\begin{align}
+    \begin{cases}
+        T(v_{1}) = w_{1}  \\
+        \hfil \vdots      \\
+        t(v_{n}) = w_{n}  \\
+    \end{cases}
+\end{align}
+
+\section{Nucleo e imagen de una transformación lineal}
+
+Sean \(V\) y \(W\) dos espacios vectoriales,
+sea \(T: V \rightarrow W\) una transformación lineal,
+entonces el núcleo de \(T\),
+denotado \(Nu(T)\),
+está dado por:
+\begin{equation}
+    Nu(T) = \left\{v \in V:T(v) = 0w\right\}
+\end{equation}
+
+Asimismo,
+se llama imagen de \(T\),
+denotada \(Im(T)\) al conjunto de vectores \(w \in W\)
+tales que existe \(v \in V\) con \(T(v) = w\).
+Similar al conjunto imagen en funciones.
+Es un subespacio vectorial del codominio:
+\begin{equation}
+    Im(T) \subseteq W
+\end{equation}
+
+\end{document}
