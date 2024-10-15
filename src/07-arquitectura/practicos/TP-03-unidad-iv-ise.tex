@@ -98,11 +98,11 @@
 
 La SRAM (Static Random-Access Memory)
 es un tipo de memoria de acceso aleatorio (RAM),
-volátil 
+volátil
 (es decir, que pierde su información en cuanto se corta el suministro eléctrico).
 
 En contraste con la memoria dinámica de acceso aleatorio,
-no requiere de refresco periódico, 
+no requiere de refresco periódico,
 resultando en una velocidad mayor y un menor tiempo de respuesta.
 
 Como contrapartida, su costo y dificultad de fabricación es
@@ -110,7 +110,7 @@ generalmente superior al de la memoria dinámica de acceso aleatorio.
 
 Esta características la convierten en la memoria ideal para ser empleada
 como caché y registro interno de una Unidad Central de Procesamiento (CPU),
-empleada como almacenamiento temporal y colaborando con un incremento en 
+empleada como almacenamiento temporal y colaborando con un incremento en
 la velocidad de procesamiento.
 
 \begin{figure}[h]
@@ -126,12 +126,12 @@ es un tipo de memoria de acceso aleatorio,
 basada por lo general en capacitores y transistores.
 El capacitor puede estar cargado o descargado,
 por lo que puede representar los dos estados del bit: 0 y 1.
-Sin embargo, como la carga eléctrica del capacitor tiende a 
+Sin embargo, como la carga eléctrica del capacitor tiende a
 decaer, requiere de ciclos periódicos de refresco.
 
 Es una memoria volátil, que requiere del suministro eléctrico para
-retener la información. 
-Se utiliza normalmente como memoria principal en computadoras y 
+retener la información.
+Se utiliza normalmente como memoria principal en computadoras y
 placas de video.
 
 \begin{figure}[h]
@@ -147,30 +147,30 @@ También conocida como memoria de contenido direccionable
 es un tipo de memoria de alta velocidad,
 enfocada en aplicaciones que requieren de grandes velocidades de búsqueda.
 
-En lugar de utilizar una dirección en memoria, las búsquedas 
+En lugar de utilizar una dirección en memoria, las búsquedas
 se realizan directamente contra una tabla de datos almacenados,
 retornando las direcciones en que encuentre la información.
 
-Podríá pensarse como la implementación en \textit{hardware} 
-de lo que se conoce como un arreglo o \textit{array} de datos en el 
+Podríá pensarse como la implementación en \textit{hardware}
+de lo que se conoce como un arreglo o \textit{array} de datos en el
 desarrollo de \textit{software}.
 
 Típicamente se emplea en dispositivos de red.
 
 \subsubsection{Memoria de solo lectura}
 
-También conocida por sus siglas ROM 
+También conocida por sus siglas ROM
 (Read-only memory),
 es un tipo de memoria no volátil,
-utilizada tanto en computadoras como en diferentes tipos de dispositivos 
+utilizada tanto en computadoras como en diferentes tipos de dispositivos
 electrónicos.
 
 Su función consiste en almacenar el \textit{firmware},
-es decir, del \textit{software} de bajo nivel encargado del control del 
+es decir, del \textit{software} de bajo nivel encargado del control del
 \textit{hardware}.
 
 Se utiliza en muchos dipositivos electrónicos,
-almacenando desde el comportamiento de diferentes programas de lavado de un 
+almacenando desde el comportamiento de diferentes programas de lavado de un
 lavarropa, hasta las instrucciones de arranque de una computadora,
 como es el caso de la BIOS.
 
@@ -180,5 +180,85 @@ como es el caso de la BIOS.
   \caption{Memoria de solo lectura, perteneciente a un cartucho de un videojuego}
 \end{figure}
 
+\subsubsection{Memoria flash}
+
+Es una memoria electrónica de almacenamiento no volátil,
+de fácil borrado y reprogramado.
+
+Existen principalmente dos tipos:
+\begin{itemize}
+  \item Memorias NOR
+  \item Memorias NAND
+\end{itemize}
+
+Sus nombres se derivan de las puertas lógicas NOR y NAND.
+Al permitir la lectura y escritura en múltiples posiciones de manera simultánea,
+permiten altas velocidades de funcionamiento.
+
+Se utilizan principalmente para memorias de almacenamiento interno,
+pendrives, discos de estado sólido y el las BIOS y UEFI actuales.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.8\textwidth]{TP-03-unidad-iv-ise/flash.jpg}
+  \caption{Dispositivo de almacenamiento con interfaz USB basado en tecnologia flash}
+\end{figure}
+
+\subsection{SWAP}
+
+El término SWAP refiere a la práctica de emplear espacio de disco cuando 
+la memoria principal del sistema se encuentra llena.
+Es un término común a los sistemas Unix y basados en Unix.
+
+El sistema operativo Unix gestiona la memoria de manera tal que,
+frente a un pico de demanda, 
+parte de los datos empleados con menor frecuencia se trasladen al almacenamiento
+de la computadora, liberando así memoria Ram para las aplicaciones que lo 
+requieran.
+
+Como contrapartida, 
+los datos almacenados en disco serán accedidos a una velocidad considerablemente
+inferior una vez que sean requeridos.
+
+\subsection{Paginación de memoria}
+
+La paginación de memoria es una modalidad de gestión de memoria principal
+a la que recurre el sistema operativo para incrementar la eficiencia en el 
+uso de la misma.
+
+Consiste básicamente en la división de la memoria principal (RAM) en 
+\textit{páginas} de tamaño fijo,
+por lo general,
+4 u 8 KB.
+El sistema operativo mantiene una tabla de páginas,
+que mapea el uso de la memoria física,
+reduciendo así la fragmentación y mejorando el uso.
+A medida que las aplicaciones requieren una mayor cantidad de memoria,
+el sistema puede mover algunas de las páginas inactivas a la partición SWAP.
+
+Entre las ventajas de esta modalidad encontramos una mayor eficiencia en 
+la utilización de memoria, el aislamiento de los procesos en páginas, que 
+mejora la seguridad, y una menor fragmentación.
+
+Entre sus desventajas contamos con una mayor sobrecarga del sistema,
+que debe gestionar tablas de páginas y traducir direcciones.
+
+\subsection{Segmentación de memoria}
+
+Por su parte, la segmentación de memoria es otra modalidad de gestión de 
+la memoria principal de un sistema informático. Esta consiste en la 
+división del espacio físico de la memoria en segmentos de tamaño dinámico,
+que representan diferentes tipos de estructuras de datos.
+
+Ello repercute en un uso eficiente de la memoria, 
+al permitir fragmentos de diferente tamaño, aunque suele incurrir en el 
+costo de una mayor fragmentación.
+
+Los sistemas operativos modernos,
+entre los que contamos Linux y Windows,
+suelen priorizar la paginación por encima de la segmentación,
+por su simplicidad, eficiencia y velocidad de acceso,
+aunque ello bo excluye que determinados usos específicos recurren a la 
+segmentación.
 
 \end{document}
