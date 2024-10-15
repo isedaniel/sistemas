@@ -14,3 +14,7 @@
 
 # table of contents tex file
 *.toc
+
+# images
+*.jpg
+*.png
