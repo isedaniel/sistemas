@@ -1,0 +1,202 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% math
+\usepackage{amsmath, amssymb}
+
+% gráficos y plots
+\usepackage{tikz}
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+\usetikzlibrary{babel}
+
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true,
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+  \vspace*{.5cm}
+  \includegraphics[scale=0.4]{../../img/udemm-logo.png}\\
+  \vspace{.2cm}
+  \Large
+  \textbf{Facultad de Ingeniería}\\
+  \textbf{Ingeniería en Sistemas}\\
+  \vspace{2cm}
+
+  \Huge
+  Álgebra y Geometría Analítica\\
+  Trabajo Práctico N\(^{\circ} 5\) \\
+  Espacios Vectoriales
+  \vfill
+
+  \raggedright
+  \Large
+  Docentes:
+  \begin{itemize}
+    \item[] Mg. Silvia Ranieri\\
+    \item[] Prof. Sebastian Scalise\\
+  \end{itemize}
+  Alumno:
+  \begin{itemize}
+    \item[] Daniel Ise
+  \end{itemize}
+  \vspace{1cm}
+
+  \centering
+  2024
+\end{center}
+
+\pagebreak
+
+\textbf{1.}
+Siendo \(A = \left\{(x,y,z) \in R^{3} / x = y = z\right\}\) y
+\(B = \left\{(x,y,z) \in R^{3} / x-y-z=0\right\}\),
+encontrar:
+
+\hspace{6mm}\textbf{a.}
+\(A \cap B\), una base y su dimensión.
+
+Comprobamos que \(A \not \subset B\):
+\begin{align*}
+  \begin{cases}
+    y = x \\
+    z = x
+  \end{cases} \implies (x,y,z) = \alpha (1,1,1)
+\end{align*}
+
+Sustituimos en \(B\):
+\begin{align*}
+  1 - 1 - 1 = -1 \neq 0 \implies A \not \subset B
+\end{align*}
+
+Por lo tanto:
+\begin{align*}
+  B_{A \cap B} = \left\{(0,0,0)\right\} \implies dim(A \cap B) = 0
+\end{align*}
+
+\hspace{6mm}\textbf{b.}
+\(A + B\), una base y su dimensión. ¿Es directa?
+
+Sabemos que \(B_{A} = \left\{(1,1,1)\right\}\).
+Determinamos \(B_{B}\):
+\begin{align*}
+  x = y + z & \rightarrow (x,y,z) = (y+z,y,z) = y(1,1,0) + z(1,0,1) \\
+            & \boxed{B_{B} = \left\{(1,1,0),(1,0,1)\right\}}
+\end{align*}
+
+Por lo tanto, \(A + B = \left\{(1,1,0),(1,0,1),(1,1,1)\right\}\).
+Como \(A + B\) está formado por 3 vectores, resta saber si es linealmente
+independiente:
+\begin{align*}
+  \begin{vmatrix}
+    1 & 1 & 0 \\
+    1 & 0 & 1 \\
+    1 & 1 & 1 \\
+  \end{vmatrix} = 1 \cdot (-1) - 1 \cdot 0 = \boxed{-1 \neq 0}
+\end{align*}
+
+Como el determinante de \(A + B\) es distinto de 0,
+concluimos que \(A \oplus B = R^{3}\), así como \(dim(A\oplus B) = 3\).
+
+Además, en el punto anterior mostramos que la intersección entre ambos
+es el vector nulo, por lo cual también concluimos que la suma es directa.
+
+\textbf{2.}
+Dados los vectores:
+\(U_{1} = (1,0,2)\),
+\(U_{2} = (0,2,0)\) y
+\(U_{3} = (0,1,-1)\).
+
+\hspace{6mm}\textbf{a.}
+Expresar, de ser posible, \(U_{1}\) como combinación lineal de \(U_{2}\) y
+\(U_{3}\).
+
+\(U_{1}\) no se puede expresar como combinación lineal de \(U_{2}\) y
+\(U_{3}\), puesto que el componente en \(x\) de ambos vectores es igual a 0,
+y \(\alpha\cdot 0 + \beta\cdot 0 = 1\) es un absurdo.
+
+\hspace{6mm}\textbf{b.}
+Decidir si el conjunto \(A = \left\{U_{1}, U_{2}, U_{3}\right\}\) es una base
+de \(R^{3}\).
+
+Dado que el conjunto \(A\) está compuesto por tres vectores,
+restaría determinar que estos son linealmente independientes para saber
+si consituyen base de \(R_{3}\), por lo tanto:
+\begin{align*}
+  \begin{vmatrix}
+    1 & 0 & 2  \\
+    0 & 2 & 0  \\
+    0 & 1 & -1 \\
+  \end{vmatrix} = 1 \cdot (-2) - 0 + 2 \cdot 0 = \boxed{-2 \neq 0}
+\end{align*}
+
+Como el determinante de la matriz es distinto de 0,
+concluimos que el conjunto \(A\) es linealmente independiente y,
+por lo tanto,
+es base del espacio vectorial \(R^{3}\).
+
+\hspace{6mm}\textbf{c.}
+Presentar un subespacio de \(R^{3}\) de dimensión 1 que contenga a \(U_{1}\).
+Dar una base del mismo.
+
+Tomando a \(U_{1}\) como base, obtenemos el conjunto \(\left\{(1,0,2)\right\}\),
+de dimensión 1, expresado como \(\left\{(x,y,z) \in R^{3} / y = 0 \land z=2x \right\}\).
+
+\hspace{6mm}\textbf{d.}
+Presentar un subespacio de \(R^{3}\) de dimensión 2 que contenga a \(U_{2}\).
+Dar una base del mismo.
+
+Podemos utilizar a \(U_{2}\) y \(U_{3}\) como base, 
+\(\left\{(0,1,-1), (0,2,0)\right\}\). 
+Determinamos la ecuación del plano mediante el producto factorial 
+\((0,1,-1) \times (0,2,0) = (2,0,0)\), por lo tanto,
+\(\left\{(x,y,z) \in R^{3} / 2x = 0 \right\}\).
+
+\hspace{6mm}\textbf{e.}
+Presentar un subespacio de \(R^{3}\) de dimensión 0.
+
+Por convención, el único subespacio de \(R^{3}\) con dimensión igual a 0 es
+el que tiene como base al vector nulo:
+\(\left\{(x,y,z) \in R^{3} / x = y = z = 0 \right\}\).
+
+\hspace{6mm}\textbf{f.}
+Presentar un subespacio de \(R^{3}\) de dimensión 3.
+Dar una base del mismo.
+
+Dado que tenemos un conjunto de 3 vectores que, 
+por lo que vimos en el punto \textbf{b.},
+constituyen un conjunto linealmente independiente,
+podemos utilizarlos como base:
+\(B = \left\{(1,0,2), (0,2,0), (0,1,-1)\right\}\).
+
+Al ser un conjunto LI de dimensión 3, 
+sabemos que permiten expresar al subespacio trivial \(R^{3} \subseteq R^{3}\).
+
+\end{document}
