@@ -84,6 +84,7 @@ encontrar:
 \(A \cap B\), una base y su dimensión.
 
 Comprobamos que \(A \not \subset B\):
+
 \begin{align*}
   \begin{cases}
     y = x \\
@@ -92,11 +93,13 @@ Comprobamos que \(A \not \subset B\):
 \end{align*}
 
 Sustituimos en \(B\):
+
 \begin{align*}
   1 - 1 - 1 = -1 \neq 0 \implies A \not \subset B
 \end{align*}
 
 Por lo tanto:
+
 \begin{align*}
   B_{A \cap B} = \left\{(0,0,0)\right\} \implies dim(A \cap B) = 0
 \end{align*}
@@ -106,6 +109,7 @@ Por lo tanto:
 
 Sabemos que \(B_{A} = \left\{(1,1,1)\right\}\).
 Determinamos \(B_{B}\):
+
 \begin{align*}
   x = y + z & \rightarrow (x,y,z) = (y+z,y,z) = y(1,1,0) + z(1,0,1) \\
             & \boxed{B_{B} = \left\{(1,1,0),(1,0,1)\right\}}
@@ -114,6 +118,7 @@ Determinamos \(B_{B}\):
 Por lo tanto, \(A + B = \left\{(1,1,0),(1,0,1),(1,1,1)\right\}\).
 Como \(A + B\) está formado por 3 vectores, resta saber si es linealmente
 independiente:
+
 \begin{align*}
   \begin{vmatrix}
     1 & 1 & 0 \\
@@ -149,6 +154,7 @@ de \(R^{3}\).
 Dado que el conjunto \(A\) está compuesto por tres vectores,
 restaría determinar que estos son linealmente independientes para saber
 si consituyen base de \(R_{3}\), por lo tanto:
+
 \begin{align*}
   \begin{vmatrix}
     1 & 0 & 2  \\
@@ -173,9 +179,9 @@ de dimensión 1, expresado como \(\left\{(x,y,z) \in R^{3} / y = 0 \land z=2x \r
 Presentar un subespacio de \(R^{3}\) de dimensión 2 que contenga a \(U_{2}\).
 Dar una base del mismo.
 
-Podemos utilizar a \(U_{2}\) y \(U_{3}\) como base, 
-\(\left\{(0,1,-1), (0,2,0)\right\}\). 
-Determinamos la ecuación del plano mediante el producto factorial 
+Podemos utilizar a \(U_{2}\) y \(U_{3}\) como base,
+\(\left\{(0,1,-1), (0,2,0)\right\}\).
+Determinamos la ecuación del plano mediante el producto factorial
 \((0,1,-1) \times (0,2,0) = (2,0,0)\), por lo tanto,
 \(\left\{(x,y,z) \in R^{3} / 2x = 0 \right\}\).
 
@@ -190,13 +196,218 @@ el que tiene como base al vector nulo:
 Presentar un subespacio de \(R^{3}\) de dimensión 3.
 Dar una base del mismo.
 
-Dado que tenemos un conjunto de 3 vectores que, 
+Dado que tenemos un conjunto de 3 vectores que,
 por lo que vimos en el punto \textbf{b.},
 constituyen un conjunto linealmente independiente,
 podemos utilizarlos como base:
 \(B = \left\{(1,0,2), (0,2,0), (0,1,-1)\right\}\).
 
-Al ser un conjunto LI de dimensión 3, 
+Al ser un conjunto LI de dimensión 3,
 sabemos que permiten expresar al subespacio trivial \(R^{3} \subseteq R^{3}\).
+
+\textbf{3.}
+Dado el conjunto de vectores: \(S = \left\{(2,0,2), (0,3,3),(4,3,7)\right\}\)
+
+\hspace{6mm}\textbf{a.}
+Determinar si \(U = (1,2,4)\) es combinación lineal del conjunto de vectores de
+\(S\).
+
+Dado que \(S\) tiene 3 vectores,
+de ser un conjunto LI podría generar el espacio vectorial \(R^{3}\) y,
+por lo tanto,
+a \(U\).
+Calculamos su determinante:
+
+\begin{align*}
+  \begin{vmatrix}
+    2 & 0 & 2 \\
+    0 & 3 & 3 \\
+    4 & 3 & 7 \\
+  \end{vmatrix} & = 2 \cdot (21 - 9) - 0 + 2 \cdot (0 - 12) \\
+                  & = 24 - 24 = \boxed{0}
+\end{align*}
+
+Como el determinante de la matriz es igual a 0,
+el conjunto \(S\) no es LI y por lo tanto no genera \(R^{3}\).
+Planteamos la ecuación del plano que generan los dos primeros vectores:
+
+\begin{align*}
+  (x,y,z) = \alpha(2,0,2) + \beta(0,3,3) \implies
+  \begin{vmatrix}
+    i & j & k \\
+    2 & 0 & 2 \\
+    0 & 3 & 3 \\
+  \end{vmatrix} = i \cdot (-6) - j \cdot (6) + k \cdot 6
+\end{align*}
+
+Tomando los dos primeros vectores del conjunto obtenemos un plano,
+que sigue la expresión \(-6x-6y+6z=0\).
+Con esta expresión,
+observamos que el tecer vector es coplanar a los dos primeros,
+por lo cual restaría determinar si \(U\) también lo es o no.
+
+\begin{align*}
+  -6 \cdot 1 - 6 \cdot 2 + 6 \cdot 4 = \boxed{6 \neq 0}
+\end{align*}
+
+Como se observa,
+\(U\) no es coplanar a los vectores de \(S\),
+por lo cual concluimos que no es combinación lineal de los mismos.
+
+\hspace{6mm}\textbf{b.}
+¿Cuánto debe valer \(k \in R\) para que \(v = (-3,k,3)\) sea combinación
+lineal de S?
+
+Para poder expresar \(v\) como combinación lineal de \(S\) necesitamos que
+aquel sea coplanar. Para ello, recurrimos a la expresión del plano que hemos
+obtenido en el punto anterior:
+
+\begin{align*}
+  -6x-6y+6z=0 & \rightarrow -6\cdot (-3) - 6\cdot k + 6 \cdot 3 = 0 \\
+              & 18 - 6k + 18 = 0                                    \\
+              & -6k = -36                                           \\
+              & \boxed{k = 6}
+\end{align*}
+
+Con \(k = 6\) \(v\) es coplanar al plano que genera \(S\) y, por lo tanto,
+es combinación lineal de este.
+
+\hspace{6mm}\textbf{c.}
+¿\(S\) es una base de \(R^{3}\)?
+
+Como notamos en el punto \textbf{a},
+\(S\) cumple con el criterio de la cantidad de vectores para ser base de
+\(R^{3}\).
+Sin embargo,
+no cumple con el segundo requisito,
+esto es,
+no es linealmente independiente.
+Por ello mismo no genera todo \(R^{3}\),
+sino un subespacio vectorial del mismo: un plano.
+
+\hspace{6mm}\textbf{d.}
+¿Qué subespacio genera \(S\)? Llámelo \(W\). Dar una dimensión y una base.
+
+El subespacio generado por \(S\) es el plano \(-6x-6y+6z=0\).
+Para dar con una base debemos de quedarnos con dos de los vectores que lo
+integran, de manera tal que el conjunto sea linealmente independiente.
+Este subconjunto es \(W = \left\{(2,0,2),(0,3,3)\right\}\) y se obtiene
+simplemente quedándonos con los dos primeros vectores que mantienen la
+independencia lineal.
+
+Al delimitar un plano, sabemos que su \(dim(W) = 2\).
+
+\hspace{6mm}\textbf{e.}
+Siendo \(H = \left\{(x,y,z) \in R^{3} / 2x = y = -2z\right\}\),
+dar una base de \(H\).
+Determinar \(W + H\), una base y su dimensión.
+Decir si la suma es o no directa.
+
+Primero determinamos una expresión para \(H\):
+
+\begin{align*}
+          &
+  \begin{cases}
+    y = 2x \\
+    z = \frac{2x}{-2} = -x
+  \end{cases} \\
+  (x,y,z) & = (x, 2x, -x) \\
+  & = x(1,2,-1) \\
+  &\boxed{\lambda(1,2,-1)}
+\end{align*}
+
+Con esta expresión de \(H\) podemos afirmar que es una recta que,
+al no ser coplanar a \(W\),
+podemos concluir que constituya una suma directa:
+
+\begin{align*}
+  W \oplus H & = R^{3}
+\end{align*}
+
+\textbf{4.}
+En \(R^{2\times2}\) se consideran las matrices:
+\(A = \begin{pmatrix}
+  2&0\\0&-1
+\end{pmatrix}\),
+\(B = \begin{pmatrix}
+  1&3\\-1&0
+\end{pmatrix}\) y
+\(C = \begin{pmatrix}
+  0&0\\2&-1
+\end{pmatrix}\)
+
+\hspace{6mm}\textbf{a.}
+Decidir conjunto generado por dichas matrices.
+
+El conjunto generado por las matrices sigue la expresión:
+
+\begin{align*}
+  \begin{pmatrix}
+    a&b\\c&d
+  \end{pmatrix} & =
+  \alpha
+  \begin{pmatrix}
+    2&0\\0&-1
+  \end{pmatrix} +
+  \beta
+  \begin{pmatrix}
+    1&3\\-1&0
+  \end{pmatrix} +
+  \gamma
+  \begin{pmatrix}
+    0&0\\2&-1
+  \end{pmatrix}
+\end{align*}
+
+Que se puede expresar como un sistema de ecuaciones:
+
+\begin{align*}
+  \begin{cases}
+    a = 2\alpha + \beta\\
+    b = 3\beta \\
+    c = -\beta + 2\gamma \\
+    d = -\alpha - \gamma
+  \end{cases}
+\end{align*}
+
+\hspace{6mm}\textbf{b.}
+¿Es un conjunto linealmente independiente?
+
+Para saber si las matrices son linealmente independientes podemos ver si 
+la única solución para la combinación lineal  \(\alpha
+\begin{pmatrix}
+  2&0\\0&-1
+\end{pmatrix} +
+\beta
+\begin{pmatrix}
+  1&3\\-1&0
+\end{pmatrix} +
+\gamma
+\begin{pmatrix}
+  0&0\\2&-1
+\end{pmatrix} = 0
+\) es la solución trivial \(\alpha = \beta = \gamma = 0\):
+
+\begin{align*}
+  \begin{cases}
+    0 = 2\alpha + \beta\\
+    0 = 3\beta \\
+    0 = -\beta + 2\gamma \\
+    0 = -\alpha - \gamma
+  \end{cases} & \rightarrow 3\beta = 0 \implies \beta = 0 \\
+  & 2\alpha = 0 \implies \alpha = 0 \\
+  & -\beta + 2\gamma = 0 \implies \gamma = 0
+\end{align*}
+
+Como la única solución es la solución trivial, 
+concluimos que el conjunto es linealmente independiente.
+
+\hspace{6mm}\textbf{c.}
+¿Son base de \(R^{2\times2}\)? Justificar.
+
+Aunque el conjunto de matrices sea linealmente independiente,
+para constitur base de \(R^{2\times2}\) necesitamos 4 matrices,
+por lo cual concluimos que el conjunto es generador de un subespacio vectorial
+\(\subset R^{2\times2}\).
 
 \end{document}
