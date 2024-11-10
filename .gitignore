@@ -18,3 +18,9 @@
 # images
 *.jpg
 *.png
+
+# bib files
+*.bbl
+*.bcf
+*.blg
+*.run.xml
