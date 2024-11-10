@@ -1,0 +1,470 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% math
+\usepackage{amsmath, amssymb}
+
+% gráficos y plots
+\usepackage{tikz}
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+\usetikzlibrary{babel}
+
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[skip=10pt plus1pt, indent=12pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true,
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+	\vspace*{.5cm}
+	\includegraphics[scale=.6]{~/Pictures/udemm-logo.png}\\
+	\vspace{.2cm}
+	\Large
+	\textbf{Facultad de Ingeniería}\\
+	\textbf{Ingeniería en Sistemas}\\
+	\vspace{2cm}
+
+	\Huge
+	Álgebra y Geometría Analítica\\
+	Trabajo Práctico N\(^\circ\) 7\\
+	\vfill
+
+	\raggedright
+	\Large
+	Docentes:
+	\begin{itemize}
+		\item[] Mg. Silvia Ranieri 		\\
+		\item[] Prof. Sebastián Scalise \\
+	\end{itemize}
+	Alumno:
+	\begin{itemize}
+		\item[] Daniel Ise
+	\end{itemize}
+	Legajo:
+	\begin{itemize}
+		\item[] 28547
+	\end{itemize}
+	Fecha:
+	\begin{itemize}
+		\item[] Octubre, 2024
+	\end{itemize}
+\end{center}
+
+\pagebreak
+
+1. Hallar todos los valores de \(k \in \mathbb{R}\) para los cuales la matriz
+\(\begin{pmatrix}
+	0 & 0 & -3 \\1&0&-1\\k&1&-1
+\end{pmatrix}\) tiene a 1 como autovalor.
+
+Si 1 es autovalor de \(A\), entonces debe cumplirse que:
+
+\begin{align*}
+	(A-1I)\vec{v}=\vec{0}
+\end{align*}
+
+Operamos la resta de matrices:
+
+\begin{align*}
+	\begin{pmatrix}
+		(0-1) & 0     & -3     \\
+		1     & (0-1) & -1     \\
+		k     & 1     & (-1-1) \\
+	\end{pmatrix}
+	\begin{pmatrix}
+		x \\
+		y \\
+		z \\
+	\end{pmatrix} =
+	\begin{pmatrix}
+		0 \\
+		0 \\
+		0 \\
+	\end{pmatrix}
+\end{align*}
+
+Construimos el sistema de ecuaciones:
+
+\begin{align*}
+	\begin{cases}
+		-x-3z=0 \implies x=-3z          \\
+		x-y-z=0 \implies y=-4z          \\
+		kx+y-2z=0 \implies -3zk-4z-2z=0 \\
+	\end{cases} \\
+	-3zk-4z-2z=0                    \\
+	(k+2)(-3z)=0
+\end{align*}
+
+En este punto, deducimos que \(z\) debe ser distinto que 0,
+ya que \(z = 0\) implicaría \(x=0\) e \(y=0\) y,
+como sabemos,
+el sistema de ecuaciones debe tener una solución que no sea
+la trivial. Por lo tanto, el término que hace 0 a la expresión es
+\(k+2=0 \implies \boxed{k=-2}\).
+
+\pagebreak
+
+2. Dada la matriz \(A=\begin{pmatrix}
+	-3 & -2 & 5 \\2&1&-1\\0&0&-2
+\end{pmatrix}\), hallar sus autovalores,
+subespacio asociado a cada uno de ellos y los autovectores.
+Decir si A es diagonalizable. Justificar.
+
+Primero buscamos autovalores:
+
+\begin{align*}
+	\begin{vmatrix}
+		(-3-\lambda) & -2          & 5            \\
+		2            & (1-\lambda) & -1           \\
+		0            & 0           & (-2-\lambda)
+	\end{vmatrix} = 0       \\
+	(-2-\lambda)[(-3-\lambda)(1-\lambda)+4]=0       \\
+	(-2-\lambda)[-3+3\lambda-\lambda+\lambda^{2}+4] \\
+	(-2-\lambda)(\lambda^{2}+2\lambda+1)            \\
+	(-2-\lambda)(x+1)^{2}
+\end{align*}
+
+Entonces: \(\lambda_{1}= -1\) y \(\lambda_{2}=-2\).
+Calculamos autovectores.
+
+\begin{align*}
+	E(\lambda_{1}) =
+	\begin{pmatrix}
+		-2 & -2 & 5  \\
+		2  & 2  & -1 \\
+		0  & 0  & -1 \\
+	\end{pmatrix}
+	\begin{pmatrix}
+		x \\y\\z
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		0 \\0\\0
+	\end{pmatrix}
+\end{align*}
+
+Deducimos que \(z=0 \implies x=-y\). Entonces:
+
+\begin{align*}
+	E(\lambda_{1})=\begin{Bmatrix}
+		               \begin{pmatrix}
+			-y \\y\\0
+		\end{pmatrix}
+	               \end{Bmatrix}
+	\implies
+	\vec{v_{1}}=
+	\begin{pmatrix}
+		-1 \\1\\0
+	\end{pmatrix}
+\end{align*}
+
+Calculamos \(E(\lambda_{2})\):
+
+\begin{align*}
+	E(\lambda_{2}) =
+	\begin{pmatrix}
+		-1 & -2 & 5  \\
+		2  & 3  & -1 \\
+		0  & 0  & 0  \\
+	\end{pmatrix}
+	\begin{pmatrix}
+		x \\y\\z
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		0 \\0\\0
+	\end{pmatrix}                                                \\
+	\begin{cases}
+		-x-2y+5z = 0 \implies x=5z-2y \\
+		2(5z-2y) + 3y -z =0 \implies \boxed{y=9z} \land \boxed{x=-13z}
+	\end{cases} \\
+	E(\lambda_{2})
+	=
+	\begin{Bmatrix}
+		\begin{pmatrix}
+			-13z \\9z\\z
+		\end{pmatrix}
+	\end{Bmatrix}
+	\implies
+	v_{2}
+	=
+	\begin{pmatrix}
+		-13 \\9\\1
+	\end{pmatrix}
+\end{align*}
+
+Por último,
+concluimos que \(A\) no es diagonalizable,
+puesto que es una matriz de orden 3,
+pero tiene solos 2 autovectores.
+
+\pagebreak
+
+3. Dada la matriz \(A=\begin{pmatrix}
+	-3 & 0 & 0 \\0&2&0\\-1&4&2
+\end{pmatrix}\), hallar sus autovalores,
+subespacio asociado a cada uno de ellos y los autovectores.
+Decir si A es diagonalizable. Justificar.
+
+Dado que \(A\) es una matriz triangular,
+esto es,
+una matriz con todos sus elementos por encima de la diagonal principal iguales a 0,
+podemos deducir que sus autovalores son \(\lambda_{1} = -3\)
+y \(\lambda_{2} = 2\).
+
+Calculamos el subespacio para \(\lambda_{1} = -3\):
+
+\begin{align*}
+	E(\lambda_{1}) =
+	\begin{pmatrix}
+		0 & 0 & 0 \\0&5&0\\-1&4&5
+	\end{pmatrix}
+	\begin{pmatrix}
+		x \\y\\z
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		0 \\0\\0
+	\end{pmatrix}                                   \\
+	\boxed{y=0} \implies -x+5z \implies \boxed{x=5z} \\
+	E(\lambda_{1}) =
+	\begin{Bmatrix}
+		\begin{pmatrix}
+			5z \\0\\z
+		\end{pmatrix}
+	\end{Bmatrix}
+	\implies
+	v_{1} =
+	\begin{pmatrix}
+		5 \\0\\1
+	\end{pmatrix}
+\end{align*}
+
+Ahora el subespacio para \(\lambda_{2} = 2\):
+
+\begin{align*}
+	E(\lambda_{2}) =
+	\begin{pmatrix}
+		-5 & 0 & 0 \\
+		0  & 0 & 0 \\
+		-1 & 4 & 0
+	\end{pmatrix}
+	\begin{pmatrix}
+		x \\y\\z
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		0 \\0\\0
+	\end{pmatrix}                \\
+	\boxed{x=0} \land \boxed{y=0} \\
+	E(\lambda_{2}) =
+	\begin{Bmatrix}
+		\begin{pmatrix}
+			0 \\0\\z
+		\end{pmatrix}
+	\end{Bmatrix}
+	\implies
+	v_{2} =
+	\begin{pmatrix}
+		0 \\0\\1
+	\end{pmatrix}
+\end{align*}
+
+En este caso,
+\(A\) tampoco sería diagonalizable,
+puesto que es una matriz de \(3x3\),
+pero solo cuenta con 2 autovectores.
+
+\pagebreak
+
+4. Determinar si
+\(A = \begin{pmatrix}
+	0 & 0 & -2 \\
+	1 & 2 & 1  \\
+	1 & 0 & 3
+\end{pmatrix}\)
+es diagonalizable.
+Justificar.
+
+Para saber si \(A\) es diagonalizable,
+primero determinamos sus autovalores:
+
+\begin{align*}
+	\begin{vmatrix}
+		-\lambda & 0           & -2          \\
+		1        & (2-\lambda) & 1           \\
+		1        & 0           & (3-\lambda)
+	\end{vmatrix}
+	= 0                                                \\
+	2(2-\lambda) + (3-\lambda)(-\lambda)(2-\lambda) =0 \\
+	(2-\lambda)[2+(3-\lambda)(-\lambda)] =0            \\
+	(2-\lambda)(\lambda^{2}-3\lambda+2) = 0            \\
+	\boxed{\lambda_{1} = 1, m = 1} \land \boxed{\lambda_{2} = 2, m=2}
+\end{align*}
+
+Determinamos autovector de \(\lambda_{1}\):
+
+\begin{align*}
+	\begin{pmatrix}
+		-1 & 0 & -2 \\1&1&1\\1&0&2
+	\end{pmatrix} \implies \boxed{x=-z} \land \boxed{y=z} \\
+	E(\lambda_{1})=
+	\begin{Bmatrix}
+		\begin{pmatrix}
+			-2z \\z\\z
+		\end{pmatrix}
+	\end{Bmatrix}
+	\implies
+	v_{1} =
+	\begin{pmatrix}
+		-2 \\1\\1
+	\end{pmatrix}
+\end{align*}
+
+Por último, buscamos autovectores de \(\lambda_{2}\):
+
+\begin{align*}
+	\begin{pmatrix}
+		-2 & 0 & -2 \\1&0&1\\1&0&1\\
+	\end{pmatrix} \\
+	E(\lambda_{2})=
+	\begin{Bmatrix}
+		\begin{pmatrix}
+			-z \\y\\z
+		\end{pmatrix}
+	\end{Bmatrix}
+	\implies
+	v_{2}=
+	\begin{pmatrix}
+		-1 \\0\\1
+	\end{pmatrix}
+	\land
+	v_{3}
+	\begin{pmatrix}
+		0 \\1\\0
+	\end{pmatrix}
+\end{align*}
+
+Como \(A\) es una matriz de orden 3 y tiene 3 autovectores,
+concluimos que \(A\) es diagonalizable.
+
+\pagebreak
+
+5. Dada la matriz
+\(A = \begin{pmatrix}
+	-1 & 0 & 0 \\\alpha&-1&0\\1&1&2
+\end{pmatrix}\)
+estudiar,
+en cada caso,
+para qué valores de \(\alpha\) la matriz es diagonalizable.
+Elegir uno de esos valores y encontrar la matriz P que la diagonaliza.
+
+Al ser \(A\) una matriz triangular inferior,
+deducimos que sus autovalores son \(\lambda_{1}=-1\),
+con multiplicidad 2,
+y \(\lambda=2\),
+con multiplicidad 1.
+
+Por lo tanto, con el autovalor -1 deberiamos tener 2 autovectores.
+Planteamos la búsqueda del subespacio:
+
+\begin{align*}
+	\begin{pmatrix}
+		0 & 0 & 0 \\\alpha&0&0\\1&1&3
+	\end{pmatrix}
+\end{align*}
+
+Notamos que \(\alpha \neq 0 \implies x=0\) y,
+por lo tanto,
+podríamos expresar el autovector en función de una sola de las variables.
+Ello implicaría que \(A\) no sería diagonalizable.
+Por ello concluimos que \(\alpha = 0\) para que \(A\) sea diagonalizable.
+
+\begin{align*}
+	\begin{pmatrix}
+		0 & 0 & 0 \\0&0&0\\1&1&3
+	\end{pmatrix}
+	\implies
+	x=-y-3z \\
+	E(\lambda_{1}) =
+	\begin{Bmatrix}
+		\begin{pmatrix}
+			-y-3z \\y\\z
+		\end{pmatrix}
+	\end{Bmatrix}
+	\implies
+	v_{1} =
+	\begin{pmatrix}
+		-1 \\1\\0
+	\end{pmatrix}
+	\land
+	v_{2} =
+	\begin{pmatrix}
+		-3 \\0\\1
+	\end{pmatrix}
+\end{align*}
+
+Y para \(\lambda_{2}\):
+
+\begin{align*}
+	\begin{pmatrix}
+		-3 & 0 & 0 \\0&-3&0\\1&1&0
+	\end{pmatrix} \\
+	E(\lambda_{2}) =
+	\begin{Bmatrix}
+		\begin{pmatrix}
+			0 \\0\\z
+		\end{pmatrix}
+	\end{Bmatrix}
+	\implies
+	v_{3} =
+	\begin{pmatrix}
+		0 \\0\\1
+	\end{pmatrix}
+\end{align*}
+
+Con ello, obtenemos \(P\):
+
+\begin{align*}
+	P =
+	\begin{pmatrix}
+		-1 & -3 & 0 \\
+		1  & 0  & 0 \\
+		0  & 1  & 1
+	\end{pmatrix}
+	 & \land
+	D =
+	\begin{pmatrix}
+		-1 & 0  & 0 \\
+		0  & -1 & 0 \\
+		0  & 0  & 2
+	\end{pmatrix}
+\end{align*}
+
+\end{document}
