@@ -1,0 +1,180 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% math
+\usepackage{amsmath, amssymb}
+
+% gráficos y plots
+\usepackage{tikz}
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+\usetikzlibrary{babel}
+
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[indent=12pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true,
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+	\vspace*{.5cm}
+	\includegraphics[scale=.6]{~/Pictures/udemm-logo.png}\\
+	\vspace{.2cm}
+	\Large
+	\textbf{Facultad de Ingeniería}\\
+	\textbf{Ingeniería en Sistemas}\\
+	\vspace{2cm}
+
+	\Huge
+	Física I\\
+	Cheatsheet Parcial N\(^\circ\) 2\\
+	\vfill
+
+	\raggedright
+	\Large
+	Docentes:
+	\begin{itemize}
+		\item[] Lic. Francisco González \\
+	\end{itemize}
+	Alumno:
+	\begin{itemize}
+		\item[] Daniel Ise
+	\end{itemize}
+	Legajo:
+	\begin{itemize}
+		\item[] 28547
+	\end{itemize}
+	Fecha:
+	\begin{itemize}
+		\item[] Noviembre, 2024
+	\end{itemize}
+\end{center}
+
+\pagebreak
+
+\tableofcontents
+
+
+
+\pagebreak
+
+\section{Cantidad de movimiento}
+
+\subsection{Momento}
+
+El momento -o cantidad de movimiento-
+es una medida que refiere a la velocidad con que se mueve un cuerpo,
+esto es,
+un objeto con masa,
+y se puede expresar como:
+
+\begin{equation}
+	P = mv
+\end{equation}
+
+Siendo \(m\) la masa del cuerpo en cuestión y \(v\) la velocidad del mismo.
+El momento se mide en \(kg\cdot\frac{m}{s}\). Es una cantidad vectorial.
+
+El momento se puede relacionar con la fuerza, ya que si recordamos,
+fuerza se puede expresar como:
+
+\begin{align*}
+	F = ma
+\end{align*}
+
+Si reescribimos:
+
+\begin{align*}
+	F = m\cdot\frac{\Delta v}{\Delta t} \\
+	F = \frac{m \Delta v}{\Delta t}     \\
+	F = \frac{\Delta P}{\Delta t}
+\end{align*}
+
+La fuerza se puede expresar como el cambio del Momento lineal en el
+tiempo.
+De ello deducimos que, en ausencia de fuerzas externas,
+el momento lineal se mantiene constante.
+
+\subsection{Impulso}
+
+
+El impulso es el cambio en la cantidad de movimiento de cuerpo,
+esto es,
+una partícula con masa:
+
+\begin{equation}
+	J = \Delta P = mP - mP_{0}
+\end{equation}
+
+El impulso, naturalmente, se mide también en \(kg\cdot\frac{m}{s}\).
+
+Sabemos que la fuerza es \(F = \Delta P / \Delta t\).
+Si despejamos el cambio en el momento lineal,
+obtenemos \(\Delta P = F \Delta t\).
+Por lo tanto:
+
+\begin{equation}
+	J = F \Delta t
+\end{equation}
+
+Desde este punto de vista,
+el impulso se puede definir como la aplicación de una fuerza durante un intervalo de tiempo.
+
+\subsection{Conservación del momento}
+
+En física,
+se habla de conservación cuando una cantidad se mantiene en dos momentos de un sistema.
+La conservación del momento implica que el sistema considerado se encuentra \textit{aislado},
+esto es,
+no existen fuerzas externas al mismo actuando sobre él.
+En estas condiciones, podemos afirmar que:
+
+\begin{align*}
+	m_{1}v_{1} + \ddots + m_{n}v_{n} = m_{1f}v_{1f} + \ddots + m_{nf}v_{nf}
+\end{align*}
+
+Esto quiere decir que la sumatoria del estado inicial del sistema es igual a la 
+sumatoria del estado final del sistema.
+
+\pagebreak
+
+\section{Cuerpo rígido}
+
+\pagebreak
+
+\section{Movimiento periódico}
+
+\pagebreak
+
+\section{Ondas}
+
+\pagebreak
+
+\section{Sonido}
+
+\end{document}
