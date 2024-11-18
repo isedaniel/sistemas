@@ -1,0 +1,177 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+\usepackage[spanish]{babel}
+
+% imágenes
+%\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% math
+\usepackage{amsmath, amssymb}
+
+% gráficos y plots
+\usepackage{tikz}
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+\usetikzlibrary{babel}
+
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos y sangría
+\usepackage[skip=10pt plus1pt, indent=12pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true,
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+\usepackage[style=apa]{biblatex}
+\addbibresource{bib.bib}
+\usepackage{csquotes}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+	\vspace*{.5cm}
+	\includegraphics[scale=.6]{~/Pictures/udemm-logo.png}\\
+	\vspace{.2cm}
+	\Large
+	\textbf{Facultad de Ingeniería}\\
+	\textbf{Ingeniería en Sistemas}\\
+	\vspace{2cm}
+
+	\Huge
+	Arquitectura de computadoras 				\\
+	Trabajo Práctico N\(^\circ\) 4 - Parte III  \\
+	\vfill
+
+	\raggedright
+	\Large
+	Docentes:
+	\begin{itemize}
+		\item[] Lic. Claudio M. Biffani
+	\end{itemize}
+	Alumno:
+	\begin{itemize}
+		\item[] Daniel Ise
+	\end{itemize}
+	Legajo:
+	\begin{itemize}
+		\item[] 28547
+	\end{itemize}
+	Fecha:
+	\begin{itemize}
+		\item[] Noviembre, 2024
+	\end{itemize}
+\end{center}
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\section{Consignas}
+
+\begin{enumerate}
+	\item Desarrollar el concepto de Acceso Directo a Memoria (DMA).
+	\item Desarrollar el concepto de Mapeo de Memoria o I/O Mapeado en memoria.
+	\item Ejemplificar el caso de uso más apropiado para cada caso.
+	\item Referenciar la información utilizada en formato APA.
+\end{enumerate}
+
+\pagebreak
+
+\section{Respuestas}
+
+\subsection{Acceso Directo a Memoria}
+
+El Acceso Directo a Memoria (o DMA, por sus siglas en inglés),
+refiere a la capacidad de algunos sistemas informáticos de
+otorgar permisos de lectoescritura de la memoria principal
+a un dispositivo de entrada/salida,
+con independencia del Microprocesador.
+Los sistemas que cuentan con canales dedicados al DMA pueden lidiar con
+dispositivos cuya velocidad o cantidad de datos ingresadas sean difíciles de
+manejar para el procesador.
+Esto permite alcanzar un acceso de mayor velocidad y,
+en simultáneo, liberar parte del trabajo que,
+de otra manera,
+debería realizar la CPU\parencite{directmemoryaccess}.
+
+Como contrapartida,
+dedicar parte de la memoria de manera exclusiva a un dispositivo de entrada/salida
+requiere de soluciones de Hardware -como circuitos específicos para dicho propósito-,
+así como previsiones en el Software para el mismo,
+a modo de evitar que ocurran problemas de sincronización
+-acceder a una versión vieja de un dato grabado en memoria, por ejemplo-,
+que pueden complicar inclusive la estabilidad del sistema.
+En suma, el DMA supone desafíos a la administración de memoria \parencite{corbetetal2005linux}.
+
+Existen principalmente dos modalidades para evitar este problema: la primera es
+la exclusividad de acceso a la memoria para el periferico, hasta que finalice el
+proceso, dejando al CPU ocuparse del resto del programa hasta recibir la señal
+de \textit{interrupción} por parte del dispositivo \parencite{harvey1991dmafundamentals}.
+Esto permite computación en paralelo,
+con sus consecuentes puntos positivos y negativos,
+concernientes tanto a la mayor velocidad como creciente complejidad,
+que deberán de ser administradas del lado del software por el desarrollador.
+Por otra parte, se puede detener el proceso hasta tanto
+el dispositivo haya finalizado la transferencia de datos,
+que reduce la complejidad del software
+pero significando un crecimiento del tiempo para finalizar el proceso
+\parencite{santamaria1993electronica}.
+
+Existen casos de uso en los cuales el DMA no sería deseable, por ejemplo,
+cuando se desea hacer trabajo \textit{on the fly} con los datos que el dispositivo
+va introduciendo al sistema. En ese caso, antes que un \textit{overhead} del procesador,
+el hecho de que los datos introducidos por el dispositivo de entrada/salida se vayan
+trabajando implican un ahorro de tiempo a futuro \parencite{harvey1991dmafundamentals}.
+
+Entre los dispositivos que pueden recurrir al DMA encontramos placas de video,
+placas de red o discos duros, entre otros. Inclusive, el DMA puede ser empleado
+por los diferentes núcleos de un mismo procesador para compartir información
+entre sí. En dicho caso, los circuitos integrados dentro del mismo dispositivo
+suelen permitir el intercambio de datos en la memoria de trabajo \parencite{directmemoryaccess}.
+
+\subsection{Entrada/Salida Mapeada en Memoria}
+
+La Entrada/Salida mapeada en memoria (MMIO, por sus siglas en inglés)
+es otra técnica para interactuar con dispositivos de entrada/salida. 
+En este caso, se asigna al dispositivo una
+dirección de memoria, como si se tratase de memoria del sistema. Mediante esta
+técnica el procesador puede acceder a los dispositivos de entrada/salida como si
+se tratase de memoria física en el sistema, reduciendo la cantidad de instrucciones
+necesarias para interactuar con el mismo \parencite{wikientradasalidamapeada}.
+Esto fue particularmente importante en los inicios de la computación, en la
+medida en que reducía la complejidad necesaria para los procesadores.
+
+La Entrada/Salida mapeada en memoria puede resultar más fácil de implementar y
+simple, en la medida en que utilizando un conjunto de intrucciones limitada 
+del procesador, es posible interactuar con los dispositivos de entrada/salida \parencite{stallings2016computer}.
+
+Como contrapartida,
+en los casos en que las direcciones de memoria puede enfrentar limitaciones,
+como era el caso en su momento con las primeras computadoras en incluir esta tecnología,
+y como lo es hoy en ciertas industrias,
+como en sistemas embebidos,
+la entrada/salida mapeada en memoria puede suponer dificultades en un registro de memoria limitado,
+por lo que es una condición a tener en cuenta para su uso \parencite{wikimemorymappedio}.
+
+\printbibliography[heading=bibnumbered]
+
+\end{document}
