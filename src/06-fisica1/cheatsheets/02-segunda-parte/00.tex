@@ -88,9 +88,9 @@
 \subsection{Momento}
 
 El momento -o cantidad de movimiento-
-es una medida que refiere a la velocidad con que se mueve un cuerpo,
-esto es,
-un objeto con masa,
+es una medida que refiere a la velocidad con que se mueve un cuerpo
+-esto es,
+un objeto con masa-
 y se puede expresar como:
 
 \begin{equation}
@@ -98,7 +98,7 @@ y se puede expresar como:
 \end{equation}
 
 Siendo \(m\) la masa del cuerpo en cuestión y \(v\) la velocidad del mismo.
-El momento se mide en \(kg\cdot\frac{m}{s}\). Es una cantidad vectorial.
+El momento se mide en \(kg\cdot\frac{m}{s}\). Es una magnitud vectorial.
 
 El momento se puede relacionar con la fuerza, ya que si recordamos,
 fuerza se puede expresar como:
@@ -107,7 +107,7 @@ fuerza se puede expresar como:
 	F = ma
 \end{align*}
 
-Si reescribimos:
+La aceleración es el cambio en la velocidad durante un intervalo de tiempo (\(\Delta v / \Delta t\)), reescribimos:
 
 \begin{align*}
 	F = m\cdot\frac{\Delta v}{\Delta t} \\
@@ -123,9 +123,7 @@ el momento lineal se mantiene constante.
 \subsection{Impulso}
 
 
-El impulso es el cambio en la cantidad de movimiento de cuerpo,
-esto es,
-una partícula con masa:
+El impulso es el cambio en la cantidad de movimiento de un objeto:
 
 \begin{equation}
 	J = \Delta P = mP - mP_{0}
@@ -148,18 +146,75 @@ el impulso se puede definir como la aplicación de una fuerza durante un interva
 \subsection{Conservación del momento}
 
 En física,
-se habla de conservación cuando una cantidad se mantiene en dos momentos de un sistema.
-La conservación del momento implica que el sistema considerado se encuentra \textit{aislado},
-esto es,
+se habla de conservación cuando una magnitud se mantiene constante durante
+el período de tiempo en que se considera al sistema.
+La conservación del momento implica que el sistema considerado
+se encuentra \textit{aislado},
+es decir,
 no existen fuerzas externas al mismo actuando sobre él.
+O, lo que en términos prácticos es lo mismo,
+la fuerza neta total que actúa sobre él es igual a 0.
 En estas condiciones, podemos afirmar que:
 
 \begin{align*}
-	m_{1}v_{1} + \ddots + m_{n}v_{n} = m_{1f}v_{1f} + \ddots + m_{nf}v_{nf}
+	m_{1i}v_{1i} + \dots + m_{ni}v_{ni} = m_{1f}v_{1f} + \dots + m_{nf}v_{nf}
 \end{align*}
 
-Esto quiere decir que la sumatoria del estado inicial del sistema es igual a la 
-sumatoria del estado final del sistema.
+Esto quiere decir que la sumatoria del momento inicial del sistema es igual a la
+sumatoria del momento final del sistema.
+
+\subsection{Choques}
+
+En mecánica se distinguen dos tipos de choques:
+\begin{itemize}
+	\item Elásticos
+	\item Inelásticos
+\end{itemize}
+
+Un choque elástico es aquel en el cual la energía cinética total se
+conserva, por lo cual la cantidad de energía perdida en la colisión es nula
+-o prácticamente nula y, por lo tanto, despreciable.
+
+\begin{align*}
+	K_{A0} + K_{B0} = K_{A} + K_{B} \\
+\end{align*}
+
+Un choque inelástico es aquel en el que los objetos que colisionan pierden parte
+\textit{significativa} de su energía en el choque,
+que se disipa en deformación de los objetos,
+calor y ondas de sonido.
+
+\begin{align*}
+	K_{A0} + K_{B0} \neq K_{A} + K_{B}
+\end{align*}
+
+Recordar que energía cinética se define como:
+
+\begin{align*}
+	K = \frac{1}{2}mv^{2}
+\end{align*}
+
+Es decir, mitad de la masa por la velocidad al cuadrado.
+
+Hay que resaltar que,
+con independencia de lo que suceda con la energía en el sistema,
+el momento lineal se puede conservar si se dan las condiciones para ello.
+
+La ventaja de las colisiones elásticas es que permiten emplear la igualdad de
+energía cinética al comienzo y final del período en que se considera el sistema.
+Empleando este igualdad, se puede arribar a una expresior muy simple y elegante
+para resolver problemas de choques elásticos.
+
+Dados dos objetos, \(A\) y \(B\), 
+la igualdad de energía cinética a principio y final implica que:
+
+\begin{equation}
+	v_{Ai} + v_{Af} = v_{Bi} + v_{Bf}
+\end{equation}
+
+La ventaja de las colisiones inelásticas es que permiten unificar las masas y,
+por lo tanto, tener una sola variable de velocidad del otro lado de la igualdad,
+que aplicaría a las dos masas consideradas.
 
 \pagebreak
 
