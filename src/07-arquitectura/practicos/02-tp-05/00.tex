@@ -1,0 +1,230 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+\usepackage[spanish]{babel}
+
+% imágenes
+\usepackage{graphicx}
+\graphicspath{{img}}
+
+\usepackage{svg}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% math
+\usepackage{amsmath, amssymb}
+
+% gráficos y plots
+\usepackage{tikz}
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+\usetikzlibrary{babel}
+
+\setlength{\jot}{8pt}
+\setlength{\parindent}{0cm}
+
+% espacio entre párrafos
+\usepackage[skip=10pt plus1pt, indent=12pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true,
+%    urlcolor=blue]{hyperref}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+% bibliografía
+\usepackage[style=apa]{biblatex}
+\addbibresource{bib.bib}
+\usepackage{csquotes}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+	\vspace*{.5cm}
+	\includegraphics[scale=.6]{~/Pictures/udemm-logo.png}\\
+	\vspace{.2cm}
+	\Large
+	\textbf{Facultad de Ingeniería}\\
+	\textbf{Ingeniería en Sistemas}\\
+	\vspace{2cm}
+
+	\Huge
+	Arquitectura de Computadores\\
+	Trabajo Práctico N\(^\circ\) 5\\
+	\vfill
+
+	\raggedright
+	\Large
+	Docentes:
+	\begin{itemize}
+		\item[] Lic. Claudio Biffani \\
+	\end{itemize}
+	Alumno:
+	\begin{itemize}
+		\item[] Daniel Ise
+	\end{itemize}
+	Legajo:
+	\begin{itemize}
+		\item[] 28547
+	\end{itemize}
+	Fecha:
+	\begin{itemize}
+		\item[] Noviembre, 2024
+	\end{itemize}
+\end{center}
+
+\pagebreak
+
+\section{Consignas}
+
+\begin{enumerate}
+	\item Desarrollar concepto de Bus USB:
+	\begin{enumerate}
+		\item Breve historia
+		\item Características técnicas
+		\item Evolución a través del tiempo
+		\item Ejemplo de multiplexación de buses
+	\end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+\section{Respuestas}
+
+El Universal Serial Bus,
+traducido como Bus de Serie Universal y más conocido como USB, 
+es una especificación propuesta inicialmente a mediado de los noventa, 
+a instancias del USB Implementers Forum,
+enfocada principalmente en la conexión de diversos dispositivos de entrada/salida,
+proveyendo de forma simultánea alimentación e intercambio de datos \parencite{wikienusb}.
+
+La USB Implementers Forum, Inc. (en adelante, USB-IF) es una organización sin fines de lucro,
+que agrupa a las corporaciones que propusieron inicialmente el estándar USB,
+entre las que se cuentan a actores del tamaño de Intel, Microsoft, HP y Apple \parencite{usbifabout}. 
+Su principal objetivo consiste en la promoción y el desarrollo del estándar USB.
+
+Pensado inicialmente como una propuesta para estandarizar la conexión de diversos dispositivos de entrada/salida,
+entre los que se incluyen impresoras, tabletas de digitalización, teclados, joystick y otros,
+luego del lanzamiento de su segunda iteración en 1998,
+la versión 1.1,
+su adopación tuvo tal velocidad que desplazó a todo el resto de conectores de la industria.
+Así, conectores serie, paralelos y PS/2, 
+entre otros, 
+se convirtieron en conectores de nicho,
+dejando al USB como el nuevo estándar defacto \parencite{wikiusb}.
+
+Un cable USB consiste básicamente en dos canales: 
+uno para alimentación y otro para el intercambio de datos.
+Aunque las sucesivas versiones fueron incrementando la cantidad de canales y,
+con ello,
+la capacidad de los cables de este estándar de alimentar y comunicar dispositivos,
+la lógica subyacente sigue siendo la misma.
+
+Desde el punto de vista del sistema,
+sigue un modelo de anfitrión-dispositivo,
+donde un equipo funciona como anfitrión -inicialmente, 
+una computadora, 
+aunque hoy múltiples dispositivos cumplen esa función-
+y un dispositivo de entrada-salida se ubica en la otra posición \parencite{wikienusb}.
+
+En lo que respecta a los conectores,
+han habido diferentes iteraciones con los años,
+entre las que se destacan:
+
+El USB 1.0,
+iteración inicial lanzada en 1996,
+prácticamente sin implementación en la industria.
+Su máxima velocidad teórica son 1.5Mbits/s.
+El conector inicialmente lanzado fue el,
+a día de hoy quizá más conocido,
+USB Tipo A.
+
+\begin{figure}[h]
+	\vspace{20pt}
+	\centering
+	\includesvg[width=.2\textwidth]{./img/usb-tipo-a.svg}
+	\caption{Conector USB Tipo A}
+	\vspace{15pt}
+\end{figure}
+
+En 1998 se lanza el USB 1.1,
+segunda iteración del estándar,
+que lleva la máxima velocidad de transmisión de datos a 12Mbits/s.
+Hoy ambos renombrados a \textit{BasicSpeed},
+como nombre comercial impulsado por la USB-IF.
+
+En el 2000 llega el USB 2.0,
+con conectores tanto tipo A como tipo B.
+
+\begin{figure}[h]
+	\vspace{20pt}
+	\centering
+	\includesvg[width=.2\textwidth]{./img/usb-tipo-b.svg}
+	\caption{Conector USB Tipo B}
+	\vspace{15pt}
+\end{figure}
+
+Esta versión lleva la transmisión de datos a los 480 Mbits/s.
+Renombrada hoy con el nombre comercial de \textit{High-Speed},
+con el USB 2.0 se lanzan también los conectores \textit{miniusb},
+como el Mini-B.
+
+\begin{figure}[h]
+	\vspace{20pt}
+	\centering
+	\includesvg[width=.2\textwidth]{./img/mini-usb-b.svg}
+	\caption{Conector USB Mini B}
+	\vspace{15pt}
+\end{figure}
+
+Como ocurriría con el USB 1.0 y 1.1,
+estos conectores no recibirían mucha adopción y serían rápidamente reemplazados
+por los más populares Micro USB.
+
+\begin{figure}[h]
+	\vspace{20pt}
+	\centering
+	\includesvg[width=.2\textwidth]{./img/micro-usb.svg}
+	\caption{Conector Micro USB A}
+	\vspace{15pt}
+\end{figure}
+
+En 2008 el USB-IF presentaba el estándar más utilizado a día de hoy:
+el USB 3.0. Con él, las velocidades de transmisión alcanzarían los 5, 10 y 20Gbit/s,
+en su primera, segunda y tercera generación, 
+hoy renombradas Gen 1, Gen 2 y Gen 2x2.
+Con el USB 3.0 llegaría también el conector que parece ser el futuro de todas las conexiones USB:
+el USB C.
+
+\begin{figure}[h]
+	\vspace{20pt}
+	\centering
+	\includegraphics[width=.8\textwidth]{usb-c}
+	\caption{Conector Micro USB A}
+	\vspace{15pt}
+\end{figure}
+
+Entre sus características más destacadas, además del crecimiento del número de canales,
+y con ellos de la provisión de energía y velocidad de transmisión,
+hay que destacar un incremento en la calidad de vida de los usuarios con la reversibilidad del enchufe.
+
+La interfaz USB4, aún de baja implementación a nivel de popularidad,
+fue presentada en 2019,
+con una segunda versión en 2022,
+cuyas velocidades de transmisión alcanzan los 40 y 80 Gbit/s.
+Por el momento,
+el conector USB Tipo C parece ser el único que sería empleado en adelante,
+dando un paso más en la estandarización de conexión de distintos tipos de dispositivos a los sistemas de computación.
+
+\printbibliography[heading=bibnumbered]
+
+\end{document}
