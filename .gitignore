@@ -26,3 +26,6 @@
 *.bcf
 *.blg
 *.run.xml
+
+#dirs
+svg-inkscape/
