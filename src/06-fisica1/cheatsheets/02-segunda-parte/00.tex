@@ -43,7 +43,7 @@
 
 \begin{center}
 	\vspace*{.5cm}
-	\includegraphics[scale=.6]{~/Pictures/udemm-logo.png}\\
+	%\includegraphics[scale=.6]{~/Pictures/udemm-logo.png}\\
 	\vspace{.2cm}
 	\Large
 	\textbf{Facultad de Ingeniería}\\
@@ -59,7 +59,7 @@
 	\Large
 	Docentes:
 	\begin{itemize}
-		\item[] Lic. Francisco González \\
+		\item[] Lic. Germán González \\
 	\end{itemize}
 	Alumno:
 	\begin{itemize}
@@ -293,7 +293,8 @@ medido en radianes.
 Para dar cuenta de la distancia recorrida,
 denominada \textit{longitud de arco} (\(S\)),
 es necesario considerar el radio (\(r\)) de la circunferencia,
-multiplicado por el ángulo medido en radianes\footnote{La ventaja de medir ángulos en radianes es que esta y otras conversiones se pueden hacer de manera directa.}:
+multiplicado por el ángulo medido en radianes
+\footnote{La ventaja de medir ángulos en radianes es que esta y otras conversiones se pueden hacer de manera directa.}:
 
 \begin{equation}
 	S = \theta\cdot r
@@ -362,7 +363,7 @@ el desplazamiento angular sigue la expresión:
 	\theta = \omega_{i}t + \frac{1}{2}\alpha t^{2}
 \end{equation}
 
-\subsection{Torca}
+\subsection{Torque}
 
 Dado un eje,
 -que podemos situar convenientemente en \(x=0\)-,
@@ -374,6 +375,32 @@ la torca no es fuerza aplicada en la misma dirección que el movimiento del obje
 \begin{equation}
 	\tau = Fd
 \end{equation}
+
+El torque cuando se aplica con un ángulo con respecto al vector \(d\) es:
+
+\begin{equation}
+	\tau = Fd\sen(\theta)
+\end{equation}
+
+\subsection{Dinámica rotacional}
+
+La aceleración angular es igual al torque sobre la inercia rotacional:
+
+\begin{equation}
+	\alpha = \frac{\tau}{I}
+\end{equation}
+
+Llamamos inercia rotacional
+\footnote{También se la denomina momento rotacional} 
+a la masa multiplicada por el radio al cuadrado:
+
+\begin{equation}
+	I = mr^{2}
+\end{equation}
+
+Recordar:
+si son sistemas, siempre sumatorias ponderadas,
+como en todo sistema considerado en mecánica clásica.
 
 
 \pagebreak
