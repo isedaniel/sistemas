@@ -205,7 +205,7 @@ energía cinética al comienzo y final del período en que se considera el siste
 Empleando este igualdad, se puede arribar a una expresior muy simple y elegante
 para resolver problemas de choques elásticos.
 
-Dados dos objetos, \(A\) y \(B\), 
+Dados dos objetos, \(A\) y \(B\),
 la igualdad de energía cinética a principio y final implica que:
 
 \begin{equation}
@@ -218,41 +218,149 @@ que aplicaría a las dos masas consideradas.
 
 \subsection{Centro de masa}
 
-El centro de masa es un punto que puede ser considerado como equiparable al 
-conjunto de la masa de un objeto,
-esto es,
-si aplico una fuerza sobre el centro de masa de un objeto,
-equivaldría a empujar al objeto completo.
+El centro de masa es un punto,
+perteneciente a un objeto o sistema de objetos,
+para el cual,
+si sumamos la posición de todos sus elementos ponderados por su masa,
+obtenemos 0.
 
-Si,
-por el contrario,
-aplico una fuerza fuera del centro de masa de un objeto,
-el resultado sería la rotación de dicho cuerpo.
+En un cuerpo rígido y de distribución uniforme,
+el centro de masa se ubica en su centroide.
+Puede ubicarse también fuera de la masa del sistema,
+por ejemplo,
+en el caso de un anillo.
 
-El centro de masa de un cuerpo coincide con su centro geométrico,
-siempre y cuando la distribución de su masa sea homogénea.
-
-Ahora,
-dado un sistema arbitrario,
-¿cómo podemos conocer su centro de masa?
-
-En ese caso debemos guiarnos por la expresión:
+Para concer el centro de masa de un sistema arbitrario recurrimos a la expresión:
 
 \begin{align*}
-	X = \frac{\sum_{i=1}^{n}m_{i}x_{i}}{\sum_{i=1}^{n}m_{i}}
+	C_{x} = \frac{\sum_{i=1}^{n}m_{i}x_{i}}{M}
 \end{align*}
 
 Es decir,
-la posición del centro de masa (X)
-es igual a la sumatoria de cada masa multiplicada por su posición,
-dividido por la sumatoria de todas las masas.
-Lo importante para que esta expresión se cumpla es la \textit{consistencia},
+la posición del centro de masa (C)
+es igual a la sumatoria de la masa de cada elemento,
+multiplicada por su posición,
+dividida por la sumatoria de la masa de todos los elementos (M).
+Es importante cuidar la \textit{consistencia},
 es decir,
-usar el mismo punto de referencia \(x=0\) de principio a fin.
+usar el mismo punto de referencia \(x=0\) para todas las posiciones.
+
+Cuando tenemos problemas de dos dimensiones se recurre a la misma expresión,
+considerando las componentes horizontal y vertical por separado,
+siguiendo la misma recomendación:
+cuidar la consistencia \(x=0 \land y=0\) para todos los elementos.
+
+El centro de masa es útil en tres tipos de problemas.
+
+En primer lugar,
+cuando una fuerza se aplica de manera uniforme sobre un objeto,
+por complejo que este sea,
+se puede considerar que la fuerza se aplica sobre el centro de masa,
+facilitando así el trabajo con el mismo.
+
+En segundo lugar,
+y como consecuencia directa del enunciado anterior,
+en mecánica clásica generalmente se considera al campo gravitatorio como una fuerza uniforme,
+por lo que esta se aplicaría directamente sobre el centro de masa,
+facilitando así problemas que de otra forma podrían ser muy complejos.
+
+Y en tercer y último lugar,
+considerar que la fuerza de gravedad se aplica sobre el centro de masa tiene una aplicación interesante en los problemas de volteo.
+Si tomamos el caso de un vehículo mal cargado,
+por ejemplo,
+una camioneta con la mayoría de su carga ubicada sobre su lado izquierdo,
+cuando el vector peso
+-que podemos trazar desde el centro de masa y hacia la tierra-
+sobresale de los puntos de contacto de la camioneta con el suelo,
+podemos estar seguros de que existirá un volteo.
+El grado máximo de inclinación que soporta un objeto se conoce como \textit{límite de volteo}.
 
 \pagebreak
 
 \section{Cuerpo rígido}
+
+\subsection{Principales variables del movimiento angular}
+
+Equiparable al desplazamiento cuando hablamos de movimiento lineal,
+tenemos el \textit{desplazamiento angular} (\(\theta\)),
+que refiere al ángulo que forma el objeto con su rotación,
+medido en radianes.
+
+\begin{equation}
+	\Delta\theta = \theta_{f} - \theta_{i}
+\end{equation}
+
+Para dar cuenta de la distancia recorrida,
+denominada \textit{longitud de arco} (\(S\)),
+es necesario considerar el radio (\(r\)) de la circunferencia,
+multiplicado por el ángulo medido en radianes\footnote{La ventaja de medir ángulos en radianes es que esta y otras conversiones se pueden hacer de manera directa.}:
+
+\begin{equation}
+	S = \theta\cdot r
+\end{equation}
+
+La \textit{velocidad angular} (\(\omega\)) es otra variable importante.
+Refiere a la tasa de cambio del desplazamiento angular en relación al tiempo.
+
+\begin{equation}
+	\Delta\omega = \frac{\Delta\theta}{\Delta t}
+\end{equation}
+
+Vinculada a la velocidad angular encontramos el concepto de \textit{rapidez} (\(v\)),
+que refiere ya no al ángulo que describe el objeto en movimiento sino a la trayectoria,
+siguiendo la circunferencia,
+en relación al tiempo.
+Como todas las variables que refieren a la circunferencia,
+se encuentra multiplicando a la velocidad angular por el radio.
+
+\begin{equation}
+	v = \frac{S}{\Delta t} = \omega r
+\end{equation}
+
+En cuanto a la aceleración, distinguimos tres tipos.
+
+En primer lugar,
+tenemos la \textit{aceleración angular} (\(\alpha\)),
+que refiere al cambio en la velocidad angular en relación al tiempo.
+
+\begin{equation}
+	\alpha = \frac{\Delta\omega}{\Delta t}
+\end{equation}
+
+En todo movimiento circular existe un tipo de aceleración cuya función es cambiar la dirección del vector velocidad.
+Esta aceleración se denomina \textit{aceleración centrípeta} (\(a_{c}\)).
+
+\begin{equation}
+	a_{c} = \frac{v^{2}}{r}
+\end{equation}
+
+Por último,
+tenemos la \textit{aceleración tangencial},
+que resulta de la multiplicación de la aceleración angular por el radio:
+
+\begin{equation}
+	a_{t} = \alpha r
+\end{equation}
+
+\subsection{Cinemática rotacional}
+
+Como pasa con sus contrapartes,
+dentro de la cinemática en una sola dimensión,
+las variables del movimiento angular se relacionan siguiendo algunas fórmulas.
+
+Dado el caso que la aceleración angular sea constante, 
+la velocidad angular en función del tiempo se puede expresar como:
+
+\begin{equation}
+	\omega = \omega_{i} + \alpha t
+\end{equation}
+
+Por su parte,
+el desplazamiento angular sigue la expresión:
+
+\begin{equation}
+	\theta = \omega_{i}t + \frac{1}{2}\alpha t^{2}
+\end{equation}
 
 \pagebreak
 
