@@ -1,9 +1,9 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage[a4paper, margin=2.54cm]{geometry}
 \usepackage[spanish]{babel}
 
 % imágenes
-%\usepackage{graphicx}
+\usepackage{graphicx}
 %\graphicspath{{img}}
 
 % fuentes de conjuntos numéricos
@@ -77,22 +77,361 @@
 
 \pagebreak
 
-1.- Objetivo del proyecto. Descripción Básica del problema. Requerimientos Funcionales. Restricciones. Objeto de negocio
+\section{Introducción}
 
-2.- Identificación de Actores.
+El presente proyecto pretende describir un sistema de gestión de una Pyme dedicada a la venta de equipos informáticos
+\footnote{Este diseño se basa en mi experiencia de más de 15 años de trabajo en la Pyme familiar}.
+Aunque los ejemplos concretos serán pensados para la venta de equipos de computación, 
+el sistema se podría generalizar para empresas cuyos productos tengan una importante proporción de insumos importados.
+Afirmamos esto porque,
+en una economía inflacionaria y con dificultades para importar,
+como la Argentina de los últimos años,
+puede haber una dispersión de precios importante,
+tanto en costos y como en precios finales de los productos.
+Como consumidores, 
+muchas veces cuesta conocer el precio de mercado de los productos. 
+Esta característica se agrava para el caso de los productos importados,
+cuya escasez relativa puede hacer que el mismo producto valga 2 o 3 veces más dependiendo del lugar de compra.
 
-3.- Diagrama de Contexto.
+Por ello, 
+el sistema diseñado propone acompañar a la empresa desde la compra a proveedor hasta la emisión de la factura.
+La idea es vincular los precios ofrecidos por distintos proveedores que,
+tal y como lo percibe el cliente final,
+también tienen grandes variaciones,
+colaborando con la toma de decisiones de la Pyme y asegurando un mejor precio.
+Adicionalmente,
+el sistema recabará datos de la competencia,
+recurriendo tanto a APIs como al \textit{scrapeo} web,
+tratando de establecer el precio de mercado un producto.
+En un contexto de alta dispersión, 
+acompañado de una baja de la inflación,
+tener un precio competitivo es muy importante.
+Con estos datos,
+tanto los encargados de compras como de ventas podrán establecer las mejores estrategias de precios,
+disminuyendo costos y cuidando a los clientes en simultáneo.
 
-4.- Identificar 7 Casos de Uso en general.
+Por último,
+el sistema deberá ser capaz de conectarse con la API de la ahora denominada
+Agencia de Recaudación y Control Aduanero (ARCA),
+para emitir la factura digital correspondiente a la venta presencial.
 
-5.- Diagrama de Casos de Uso.
+\section{Objetivos}
 
-6.- Descripción resumida. Plantilla Básica. Elegir dos Casos de Uso y realizar la plantilla detallada de los Casos de Uso elegidos.
+\begin{enumerate}
+	\item Acceder a la información suministrada por los proveedores en listas de precios y páginas web, 
+	en particular números de parte, descripciones y precios de los productos.
+	\item Recabar información en portales de venta online, como Mercado Libre, sobre el precio de mercado de los productos 
+	\item Almacenar los precios fijados por el encargado de ventas, para que sean empleados por el personal de ventas.
+	\item Permitir la emisión de factura electrónica desde el sistema, integrándolo a la API de ARCA.
+\end{enumerate}
 
-7.- Realizar el Modelo de Datos.
+\section{Identificación de los actores}
 
-Presentación: En fecha y horario de parcial, con coloquio personalizado.
+\subsection*{Actores primarios}
+\begin{enumerate}
+	\item Encargado de compras
+	\item Encargado de ventas
+	\item Personal de ventas
+\end{enumerate}
+
+\subsection*{Actores secundarios}
+\begin{enumerate}
+	\item Proveedores 
+	\item Portales de venta online 
+	\item Sistemas de ARCA
+\end{enumerate}
+
+\section{Diagrama de contexto}
+
+\begin{figure}[ht]
+	\vspace{20pt}
+	\centering
+	\vspace{15pt}
+	\includegraphics[width=.9\textwidth]{src/00-diagrama-contexto}
+	\caption{Diagrama de contexto}
+	\vspace{15pt}
+\end{figure}
+
+\section{Casos de uso}
+
+\subsection*{Encargado de compras}
+\begin{enumerate}
+	\item Consultar precios disponibles para un producto, 
+	de acuerdo a su número de parte, 
+	para optar por el proveedor que ofrece mejores condiciones.
+	\item Seguir el stock disponible,
+	previendo necesidades de corto y mediano plazo.
+\end{enumerate}
+
+\subsection*{Encargado de ventas}
+\begin{enumerate}
+	\item Conocer los precios de recompra,
+	para que esa información permita definir un precio al consumidor final.
+	\item Conocer los precios de la competencia,
+	para tener un precio competitivo que fidelice al cliente.
+	\item Conocer el margen actual para un producto,
+	de manera tal de ofrecer mejores precios a los clientes importantes.
+\end{enumerate}
+
+\subsection*{Personal de ventas}
+\begin{enumerate}
+	\item Consultar precios de los productos para informar al consumidor final.
+	\item Emitir factura electrónica,
+	autorizada por ARCA, aprovechando la base de datos del sistema.
+\end{enumerate}
+
+\section{Diagrama de casos de uso}
+
+\begin{figure}[ht]
+	\vspace{20pt}
+	\centering
+	\vspace{15pt}
+	\includegraphics[width=\textwidth]{src/01-diagrama-casos-uso}
+	\caption{Diagrama de casos de uso}
+	\vspace{15pt}
+\end{figure}
 
 \pagebreak
+
+\section{Descripción resumida de casos de uso}
+
+\subsection{Consultar precios disponibles para un producto}
+
+Dado un número de parte,
+que es un nomenclador único de productos,
+el encargado de compras contará con un listado de precios de dicho producto,
+que será descargado de las páginas web e interfaces de programación de los diversos proveedores,
+según el caso.
+
+\textbf{Actores:} Encargado de compras (primario), proveedores (secundario).
+
+\subsection{Seguir el stock disponible, previendo necesidades de corto y mediano plazo.}
+
+Dado un ingreso de producto en sucursal,
+el encargado de compras debe disponer de un formulario que permita dar de alta el producto en la base de datos propia,
+de ser necesario,
+y actualizar el stock.
+
+\textbf{Actores:} Encargado de compras (primario).
+
+\subsection{Conocer los precios de recompra}
+
+El encargado de ventas puede necesitar la información del costo de recompra de un producto,
+para reaccionar a un cambio en el precio de mercado.
+En ocasiones, un precio al cliente final puede caer y el encargado de ventas debe ser capaz de reaccionar a ello.
+Este precio se renovará directamente, 
+como lo hace cuando el encargado de compras quiere saber qué proveedor ofrece mejores condiciones.
+
+\textbf{Actores:} Encargado de ventas (primario), proveedores (secundario).
+
+\subsection{Conocer los precios de la competencia}
+
+Para poner un precio competitivo,
+que cuide a los clientes al tiempo que protege las finanzas de la empresa,
+el encargado de ventas debe de disponer del precio de mercado casi en tiempo real.
+Para ello, se descargará el mismo, empleando el número de parte,
+de portales de venta como ser Mercado Libre y otros.
+Con esta información, 
+el encargado de ventas definirá los precios de lista de los productos,
+que será el precio al consumidor final.
+
+\textbf{Actores:} Encargado de ventas (primario), portales de venta online (secundario).
+
+\subsection{Calcular el margen actual para un producto}
+
+Dado el precio de recompra y el precio de lista establecido por el encargado de compras,
+la empresa obtiene un margen por la venta unitaria de los productos.
+Sin embargo,
+en ocasiones es necesario ofrecer descuentos, disminuyendo dicho margen,
+para ofrecer un precio competitivo a clientes institucionales, revendedores u otras empresas.
+
+\textbf{Actores:} Encargado de ventas (primario), proveedores (secundario), portales de venta online (secundario).
+
+\subsection{Consultar precio de un producto}
+
+El personal de venta atiende al comprador minorista y debe consultar el último precio disponible,
+decidido ya por el encargado de ventas.
+Estos precios pueden cambiar varias veces en una semana y el personal de venta debe estar sincronizado con dichos cambios.
+
+\textbf{Actores:} Personal de ventas (primario), proveedores (secundario).
+
+\subsection{Emitir factura electrónica}
+
+El personal de venta, 
+luego de la brindar atención y asesoramiento al comprador minorista,
+puede necesitar utilizar la información del sistema
+-descripción del producto, cantidad, disponibilidad y precio-
+para emitir una factura electrónica.
+Esto puede hacerse sincronizando al sistema con la API de la ex AFIP,
+ahora ARCA.
+
+\textbf{Actores:} Personal de ventas (primario), Sistema de ARCA (secundario).
+
+\pagebreak
+
+\section{Descripción detallada de casos de uso}
+
+\subsection{Consultar precios disponibles para un producto}
+
+\textbf{Resumen:}
+Dada una descripción o número de parte
+-que es un nomenclador único de productos-,
+el encargado de compras recibirá un listado de precios de dicho producto,
+que será descargado de las páginas web e interfaces de programación de los diversos proveedores,
+según el caso.
+
+\textbf{Precondición:} 
+el encargado de compras ingresa parte de la descripción/número de parte en el sistema para iniciar una búsqueda
+
+\textbf{Escenario principal:}
+\begin{enumerate}
+	\item El encargado de compras ingresa a la opción búsqueda.
+	\item El sistema solicita ingreso de número de parte o descripción del producto.
+	\item El encargado de compras ingresa cualquiera de los dos datos, completos o en parte.
+	\item El sistema muestra coincidencias al encargado de compras, para que elija cuál era el artículo que buscaba.
+	\item El encargado de compras confirma el producto que buscaba.
+	\item El sistema descarga la información necesaria, 
+	recurriendo en los casos en que sea posible a las interfaces de programación de los proveedores (API),
+	al \textit{Web Scrapping} donde no sea posible. Una vez recopilada la información, 
+	se presenta al encargado por nombre de proveedor y precio.
+	\item El encargado toma las decisiones correspondientes e inicia el proceso de compra por canales habituales.
+\end{enumerate}
+
+\textbf{Poscondición:}
+El encargado de compras dispone de información suficiente en tiempo real para hacer una compra minimizando costos.
+
+\textbf{Flujo alternativo:}
+
+\textbf{A1} La descripción no coincide con un producto cargado en base de datos 
+
+La secuencia comienza en el punto 3.
+
+\begin{enumerate}
+	\item[4.] El sistema informa que no existen coincidencias con productos en base de datos,
+	y solicita cargar número de parte íntegramente para buscar por nomenclador único.
+	\item[5.] El usuario carga número de parte íntegramente.
+	\item[6.] El sistema muestra coincidencias tomadas directamente de proveedor,
+	de ser el producto buscado se incorpora a base de datos,
+	para facilitar búsqueda por descripción en el futuro.
+\end{enumerate}
+
+El escenario vuelve a punto 6.
+
+\subsection{Emitir factura electrónica}
+
+\textbf{Resumen:}
+Personal de venta, 
+luego de la brindar atención y asesoramiento al comprador minorista,
+requiere de la información del sistema
+-descripción del producto, cantidad, disponibilidad y precio-
+para emitir una factura electrónica.
+Esto puede hacerse sincronizando al sistema con la API de la ex AFIP,
+ahora ARCA.
+
+\textbf{Actores:} Personal de ventas (primario), Sistema de ARCA (secundario).
+
+\textbf{Precondición:} 
+Personal de ventas ha concluido con la atención y asesoramiento correspondiente,
+el cliente minorista decide proceder con la compra,
+por lo cual el personal de ventas solicita iniciar el procedimiento para emitir factura electrónica.
+
+\textbf{Escenario principal:}
+\begin{enumerate}
+	\item Personal de ventas ingresa a la sección de emisión de factura electrónica
+	\item El sistema solicita ingresar identificación de cliente, mediante CUIT o código interno alfanumérico.
+	\item Personal de ventas ingresa identificación de cliente o nomenclador por categoría, como CF para consumidor final.
+	\item El sistema, de acuerdo a la identificación del cliente, determina si la boleta será tipo A o tipo B.
+	\item El sistema, luego de determinar el tipo de factura, solicita ingresar el primer producto.
+	\item Personal de ventas ingresa el producto, por número de parte, código de barras o descripción.
+	\item El sistema muestra las coincidencias en base de datos, esperando confirmación.
+	\item Personal de ventas confirma la coincidencia e ingresa cantidad.
+	\item El sistema aguarda la carga de nuevo item, en dicho caso vuelve a punto 6.
+	\item Personal de ventas indica que finaliza la carga de productos, solicitando autorización de comprobante.
+	\item El sistema envía petición a servicio de ARCA, incluyendo: CUIT de cliente, cantidad de productos, Iva y precio final.
+	\item Servidor de ARCA confirma autorización de boleta, devolviendo número de comprobante electrónico.
+	\item El sistema solicita al personal de ventas confirme para imprimir el comprobante o exportarlo a PDF.
+	\item Personal de ventas confirma y obtiene el comprobante en el formato deseado.
+\end{enumerate}
+
+\textbf{Poscondición:}
+Personal de ventas tiene el comprobante correspondiente a la compra del cliente y puede finalizar el proceso de compra entregando comprobante y producto.
+
+\textbf{Flujo alternativo:}
+
+\textbf{A1} El personal de ventas ingresa el CUIT del cliente, pero este no está cargado en base de datos
+
+Secuencia comienza en punto 3
+
+\begin{enumerate}
+	\item[4.] El sistema hace una petición al sistema de ARCA de los datos del contribuyente, 
+	empleando el CUIT para identificarlo.
+	\item[5.] ARCA devuelve los datos del contribuyente.
+	\item[6.] El sistema los incorpora a la base de datos.
+\end{enumerate}
+
+Vuelve al escenario principal en punto 4
+
+\textbf{A2} Personal de ventas ingresa un producto, pero este no existe en base de datos
+
+Secuencia comienza en 6.
+
+\begin{enumerate}
+	\item[7.] El sistema no encuentra coincidencias, por lo que pide reingreso al personal de ventas.
+	\item[8.] Personal de ventas prueba con descripción, código de barras o ingreso manual de nombenclador.
+\end{enumerate}
+
+Vuelve a flujo normal en punto 8.
+
+\section{Modelo de datos}
+
+Para plantear el modelo de datos,
+adoptamos el enfoque de listar las diferentes tablas que puede necesitar cada uno de los actores.
+
+El encargado de compras puede necesitar:
+\begin{itemize}
+	\item Precio de producto por proveedor 
+	\item Productos por stock 
+	\item Precio histórico por producto
+\end{itemize}
+
+El encargado de ventas puede necesitar:
+\begin{itemize}
+	\item Precio de producto por competidor
+	\item Precio histórico de ventas por cliente
+	\item Margen de ganancia por venta
+\end{itemize}
+
+El personal de ventas puede necesitar:
+\begin{itemize}
+	\item Precio por producto
+	\item Productos por stock 
+\end{itemize}
+
+Las entidades serían entonces:
+\begin{itemize}
+	\item Producto
+	\item Cliente 
+	\item Proveedor 
+	\item Competidor 
+\end{itemize}
+
+Las relaciones:
+\begin{itemize}
+	\item Producto-proveedor 
+	\item Producto-cliente 
+	\item Producto-competidor 
+\end{itemize}
+
+Dadas estas entidades y relaciones,
+la primera iteración del modelo de datos entidad-relación propuesta se presenta a continuación:
+
+\begin{figure}[ht]
+	\vspace{20pt}
+	\centering
+	\vspace{15pt}
+	\includegraphics[width=\textwidth]{src/02-modelo-entidad-relacion}
+	\caption{Modelo entidad-relación}
+	\vspace{15pt}
+\end{figure}
 
 \end{document}
