@@ -1,0 +1,75 @@
+\subsection*{Actividad 1.C}
+\textbf{Consigna. }
+Proponer una deducción de la fórmula Bhaskara o \textit{resolvente},
+empleada en la resolución de ecuaciones cuadráticas.
+
+Dados $a, b, c \in \mathbb{R}$, con $a \neq 0$,
+una expresión cuadrática puede definirse como el polinomio de estructura $ax^2 + bx + c = 0$,
+siendo $a$ el coeficiente cuadrático,
+$b$ el coeficiente lineal
+y $c$ el término independiente.
+
+Para deducir Bhaskara desde esta expresión empleamos la técnica de completar el cuadrado.
+En primer lugar,
+dividimos todos los términos por $a$,
+para asegurar que el coeficiente lineal es igual a 1:
+
+\begin{align*}
+	\frac{ax^2}{a} + \frac{bx}{a} + \frac{c}{a} & = \frac{0}{a} \\
+\end{align*}
+
+Despejamos el término independiente:
+
+\begin{align*}
+	x^2 + \frac{bx}{a} & = \frac{-c}{a} \\
+\end{align*}
+
+Para completar el cuadrado buscamos la estructura $x^2 + 2nx + n^2$,
+por lo que multiplicamos al término lineal por $\frac{2}{2}$:
+
+\begin{align*}
+	x^2 + \frac{2}{2} \cdot \frac{bx}{a} & = - \frac{c}{a} \\
+	x^2 + 2 \cdot \frac{b}{2a} \cdot x   & = - \frac{c}{a} \\
+\end{align*}
+
+Como $2 \cdot \frac{b}{2a} \cdot x$ sigue la estructura $2nx$, sumamos $n^2$ a ambos lados:
+
+\begin{align*}
+	x^2 + 2 \cdot \frac{b}{2a} \cdot x + \left(\frac{b}{2a}\right)^2 & = \left(\frac{b}{2a}\right)^2 - \frac{c}{a} \\
+\end{align*}
+
+Expresamos la componente izquierda como un binomio al cuadrado y del lado derecho operamos la resta de fracciones:
+
+\begin{align*}
+	\left(x + \frac{b}{2a}\right)^2 & = \frac{b^2 - 4ac}{4a^2} \\
+\end{align*}
+
+Operamos raíz cuadrada a ambos lados de la expresión, incorporando módulo del lado izquierdo.
+
+\begin{align*}
+	\left|x + \frac{b}{2a}\right| & = \sqrt{\frac{b^2 - 4ac}{4a^2}} \\
+	\left|x + \frac{b}{2a}\right| & = \frac{\sqrt{b^2 - 4ac}}{\sqrt{4a^2}} \\
+	\left|x + \frac{b}{2a}\right| & = \frac{\sqrt{b^2 - 4ac}}{2a}
+\end{align*}
+
+En este punto diversificamos, una expresión para cuando \(x + \frac{b}{2a} \geq 0\):
+
+\begin{align*}
+	x + \frac{b}{2a} & = \frac{\sqrt{b^2 - 4ac}}{2a} \\
+	x  & =  - \frac{b}{2a} + \frac{\sqrt{b^2 - 4ac}}{2a} \\
+	x  & =  \frac{-b + \sqrt{b^2 - 4ac}}{2a} \\
+\end{align*}
+
+Y otra para \(x + \frac{b}{2a} < 0\):
+
+\begin{align*}
+	- x - \frac{b}{2a} & = \frac{\sqrt{b^2 - 4ac}}{2a} \\
+	- x  & = \frac{b}{2a} + \frac{\sqrt{b^2 - 4ac}}{2a} \\
+	x  & =  \frac{-b - \sqrt{b^2 - 4ac}}{2a} \\
+\end{align*}
+
+Estas dos expresiones se unifican en la conocida fórmula Bhaskara:
+
+\begin{align*}
+	x & = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+\end{align*}

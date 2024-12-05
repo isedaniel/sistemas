@@ -1,19 +1,25 @@
 \documentclass{article}
-\usepackage[margin=2.54cm]{geometry}
-\usepackage{graphicx}               % imágenes
+\usepackage[a4paper, margin=2.54cm]{geometry}
+\usepackage[spanish]{babel}
+
+% imágenes
+\usepackage{graphicx}               
 \graphicspath{{img}}
+
+
 \usepackage{amsfonts}               % fuentes de conjuntos numéricos
 \usepackage{amsmath, amssymb}       % símbolos
-\usepackage{tikz}                   % gráficos
 \usepackage{pgfplots}               % plots
+\usepackage{tikz}                   % gráficos
 \pgfplotsset{width=10cm, compat=1.9}
 \setlength{\jot}{8pt}
 \setlength{\parindent}{0cm}
-\usepackage{parskip}                % espacio entre párrafos
+\usepackage[skip=10pt plus1pt, indent=12pt]{parskip}            % espacio entre párrafos
 \usepackage{cancel}                 % cancelar términos
 \usepackage[colorlinks=true, 
     urlcolor=blue]{hyperref}        % links
 \usetikzlibrary{shapes.geometric}   % shapes
+\usetikzlibrary{babel} 
 \usepackage{pdfpages}               % incluir pdfs
 
 \title{porfolio final}
@@ -21,12 +27,22 @@
 \date{June 2024}
 
 \begin{document}
+
+\thispagestyle{empty}
 \input{titlepage}
-\include{01/01actividad1a}
+
+\pagebreak
+
+\input{01/01actividad1a}
+\pagebreak 
 \input{01/02actividadb}
+\pagebreak
 \input{01/03actividadc}
+\pagebreak
 \input{01/04actividad1d}
+\pagebreak
 \input{01/05actividad2}
+\pagebreak
 
 \include{02/01actividad1a}
 \input{02/02actividad1b}
