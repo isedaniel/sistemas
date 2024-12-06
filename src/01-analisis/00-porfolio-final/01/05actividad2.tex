@@ -7,12 +7,19 @@ dos incógnitas, cuyo resultado sea el par ordenado S=(a, b) siendo
 “a” el primer número de su documento y “b” , el último número del
 mismo.
 
-Tenemos un servicio en línea dedicado a validar identidades para evitar el fraude en ventas por internet. El principal costo del servicio es el pago al proveedor de computación en la nube, cuyo precio final se compone de un monto fijo mensual, más un costo variable que depende de la cantidad de validaciones que se hagan en el mes. El costo total sigue el modelo $c = 2 + \frac{2}{3} \cdot v$, siendo $2$ el costo fijo, $v$ la cantidad de validaciones medidas en miles y $c$ el costo total en dólares.
+Tenemos un servicio en línea dedicado a validar identidades para evitar el fraude en ventas por internet.
+El principal costo del servicio es el pago al proveedor de computación en la nube,
+cuyo precio final se compone de un monto fijo mensual, 
+más un costo variable que depende de la cantidad de validaciones que se hagan en el mes. 
+El costo total sigue el modelo $c = 2 + \frac{2}{3} \cdot v$, 
+siendo $2$ el costo fijo -medido en miles-, 
+$v$ la cantidad de validaciones -medidas en millones- y $c$ el costo total en dólares.
 
-Si el precio competitivo para nuestro servicio es de \$ 0,00133 por validación ¿Cuál es la cantidad mínima de validaciones necesarias para que el servicio sea rentable?
+El precio competitivo para nuestro servicio es de \$ 0,00133 por validación, es decir,
+sigue la expresión $i = \frac{4}{3} \cdot v$,
+siempre con \(v\) medida en millones.
 
-En primer lugar, planteamos un modelo para los ingresos, expresando el precio en miles: $i = \frac{4}{3} \cdot v$.
-
+¿Cuál es la cantidad mínima de validaciones necesarias para que el servicio sea rentable?
 El servicio sería rentable si cubrimos, como mínimo, la totalidad de los costos, por lo tanto:
 
 \begin{align*}
@@ -22,7 +29,8 @@ El servicio sería rentable si cubrimos, como mínimo, la totalidad de los costo
     v                                                           & = 3
 \end{align*}
 
-Entonces, a partir de $v = 3$ (3000 validaciones mensuales) el servicio sería rentable, igualándose costos e ingresos en \$ 4 por mes.
+Entonces, a partir de $v = 3$ -3.000.000 de validaciones por mes- el servicio cubriría sus costos, 
+igualándose con sus ingresos en \$ 4.000 por mes.
 
 Gráficamente:
 
@@ -56,4 +64,4 @@ Gráficamente:
     \end{tikzpicture}
 \end{center}
 
-\href{https://drive.google.com/file/d/1DXpY7xukQlkF4CswWKmvItGMWZuxZohS/view?usp=sharing}{Link para el audio.}
+\href{https://drive.google.com/file/d/1pYB_rOXkzM8fQlNikElE6r1gjYAl1tJU/view?usp=sharing}{Link para el audio.}
