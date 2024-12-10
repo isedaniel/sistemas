@@ -1,4 +1,4 @@
-\subsection*{Modelización 2}
+\subsubsection*{Modelización de dos variables}
 
 Tenemos que construir un silo de forma cilíndrica para el almacenamiento de granos. La capacidad de almacenamiento del silo viene dada por la función $V(r, h)$, que depende de dos variables: radio de la base del silo ($r$) y su altura ($h$).
 
@@ -24,13 +24,17 @@ Definimos la función de la capacidad de almacenamiento del silo como:
     V(r, h) & = \pi r^2h
 \end{align*}
 
-Por motivos estructurales incorporamos algunas restricciones. El radio no puede ser menor a 1 metro y la altura no puede superar los 24 metros. A su vez, por el material elegido, la altura no superar 3 veces el radio. La altura máxima para cada radio vendría dada por la expresión:
+Por motivos estructurales, el radio no puede ser menor a 1 metro y la altura no puede superar los 24 metros. 
+A su vez, 
+por el material elegido, 
+la altura no debe superar 3 veces al radio. 
+Por lo tanto:
 
 \begin{align*}
-    3r & = h
+    3r = h
 \end{align*}
 
-Si sustituimos en la expresión original:
+Sustituimos en la expresión original:
 
 \begin{align*}
     V & = \pi r^2 \cdot 3r \\
@@ -64,6 +68,6 @@ Gráficamente:
     \end{tikzpicture}
 \end{center}
 
-Dadas las restricciones al radio y la altura, el dominio de la función sería $D = [1, 8]$.
+Dadas las restricciones al radio y la altura, el dominio de la función sería $D = [1; 8]$.
 
-Por su parte, la imagen sería $I = [9.43, 4825.49]$.
+Por su parte, la imagen sería $I = [9.43; 4825.49]$.
