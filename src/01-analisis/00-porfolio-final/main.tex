@@ -5,6 +5,7 @@
 % imágenes
 \usepackage{graphicx}               
 \graphicspath{{img}}
+\usepackage{float}
 
 
 \usepackage{amsfonts}               % fuentes de conjuntos numéricos
@@ -16,8 +17,10 @@
 \setlength{\parindent}{0cm}
 \usepackage[skip=10pt plus1pt, indent=12pt]{parskip}            % espacio entre párrafos
 \usepackage{cancel}                 % cancelar términos
-\usepackage[colorlinks=true, 
-    urlcolor=blue]{hyperref}        % links
+\usepackage{hyperref}        % links
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
+\setcounter{secnumdepth}{-2}
+
 \usetikzlibrary{shapes.geometric}   % shapes
 \usetikzlibrary{babel}
 \usetikzlibrary{graphs} 
@@ -31,7 +34,9 @@
 
 \thispagestyle{empty}
 \input{titlepage}
+\pagebreak
 
+\tableofcontents
 \pagebreak
 
 \input{01/01actividad1a}
