@@ -1,0 +1,31 @@
+\subsection*{Ejercicio 2}
+
+Dado que tenemos la función que describe el arco,
+\(f(x) = 25 \cos (\frac{\pi x}{50})\),
+podemos determinar en primer lugar su longitud,
+siguiendo la expresión \(L=\int_{a}^{b}\sqrt{1+[f'(x)]^2}\).
+
+Para ello, calculamos en primer lugar la derivada \(f'(x)\):
+
+\begin{align*}
+    f'(x) & = -\frac{\pi}{2} \sen(\frac{\pi x}{50})
+\end{align*}
+
+Con la derivada, planteamos la integral definida:
+
+\begin{align*}
+    L & = \int_{-25}^{25}\sqrt{1+(-\frac{\pi}{2} \sen(\frac{\pi x}{50}))^2} \\
+\end{align*}
+
+Resolvemos la integral por sustitución:
+
+\begin{align*}
+    u & = 1+\frac{\pi}{4} \sen^2(\frac{\pi x}{50}) \\
+    \frac{du}{dx} & = \frac{\pi^2}{2500}\sen(\frac{\pi x}{50})\cos(\frac{\pi x}{50}) \\
+\end{align*}
+
+Sustituimos en la integral:
+
+\begin{align*}
+    L & = \frac{2500}{\pi^{2}}\int_{-25}^{25}u^{\frac{1}{2}} \frac{du}{\sen(\frac{\pi x}{50})\cos(\frac{\pi x}{50})} \\
+\end{align*}
