@@ -1,40 +1,40 @@
 \section{Primera clase}
 
-18 de marzo de 2025.
+18 de marzo, 2025.
 
 \subsection{Conceptos previos}
 
-\textbf{Espacio métrico.}
-Todo espacio que pueda calcular una distancia hablo de espacio métrico.
+Denominamos \textbf{espacio métrico}
+a aquel espacio para el cual puedo calcular una distancia.
 
-\textbf{Distancia.}
-La distancia entre dos puntos P y Q es un real \textit{no negativo},
+Dados dos puntos P y Q,
+decimos que la \textbf{distancia} es un número real \textit{no negativo},
 denotado \(|P-Q|\),
 que cumple con las propiedades:
 
-\begin{align*}
-    |P-Q| = 0 \implies P = Q \\
-    |P-Q| + |P-R| \geq |Q-R| \\
-    |P-Q| = |Q-P|  
-\end{align*}
+\begin{enumerate}
+    \item \(|P-Q| = 0 \implies P = Q\)
+    \item \(|P-Q| + |P-R| \geq |Q-R|\)
+    \item \(|P-Q| = |Q-P|\)
+\end{enumerate}
 
-\textbf{Espacio Euclídeo n-dimensional.}
-Se denota \(R^{n}\),
-y es el conjunto de todos los puntos de un espacio n dimensional,
+Llamamos \textbf{espacio euclídeo n-dimensional}
+al conjunto de todos los puntos de un espacio n-dimensional,
 cuyos elementos se denominan n-uplas.
+Se denota \(R^{n}\).
+
 Ejemplo, \(R^{2}\) indica espacio \textit{bidimensional},
 plano,
 formado por todos los pares ordenados de números reales.
+
 Ejemplo 2, \(R^{3}\) es el espacio tridimensional,
 formado por \textit{ternas} de números reales.
-(Funciones de 2 puedo graficar.
-De más no.)
 
 Definimos \textbf{distancia euclídea} en \(R^{n}\) 
 entre \(P = (x_{1},x_2 \dots x_n)\) y \(Q = (y_{1},y_2 \dots y_n)\) al número:
 
 \begin{align*}
-    |P-Q| = \sqrt{(y_1 - x_1)^{2} + (y_2 - x_2)^{2} + \dots + (y_n + x_n)^{2}}
+    |P-Q| = \sqrt{(y_1 - x_1)^{2} + (y_2 - x_2)^{2} + \dots + (y_n - x_n)^{2}}
 \end{align*}
 
 \subsection{Definiciones de topología}
@@ -45,69 +45,97 @@ radio \(\delta\),
 al conjunto de puntos que se encuentran a \textit{distancia} de \(A\) menor a \(\delta\).
 
 El \textbf{entorno reducido},
-centro A,
-radio \(\delta\),
-es el conjunto de puntos \textit{distintos} de \(A\).
+con centro en A,
+de radio \(\delta\),
+es el conjunto de puntos \textit{distintos} de \(A\),
+(sin incluirlo).
 
 Dado el conjunto \(C \subset R^{n}\):
 
 Decimos que \(A\) es \textbf{punto interior} si existe por lo menos un entorno de \(A\)
 completamente incluído en \(C\).
 
-Decimos que es \textbf{punto exterior} si existe por lo menos un entorno de \(A\)
+Decimos que \(A\) es \textbf{punto exterior} si existe por lo menos un entorno de \(A\)
 que no contiene \textit{ningún} elemento de \(C\).
 
-\(A\) es \textbf{punto frontera} si y solo si no es interior ni exterior.
+\(A\) es \textbf{punto frontera} si y solo si no es interior ni exterior a \(C\).
 
 Es \textbf{punto de acumulación} si no pertenece a \(C\),
 pero su entorno tiene intersección no vacía con \(C\).
 
-Decimos que un conjunto es \textbf{abierto} si todos sus puntos son interiores.
+Decimos que un conjunto es \textbf{abierto} si todos sus puntos son interiores
+(es decir, su frontera no forma parte del conjunto).
 
-Un conjunto es \textbf{cerrado} si su complemento es abierto.
+Un conjunto es \textbf{cerrado} si su complemento es abierto,
+(su frontera forma parte del conjunto).
 
-Es \textbf{acotado} si su centro está en el origen.
+Un conjunto es \textbf{acotado} si su centro está en el Origen \(O\).
 
-Es \textbf{conexo} si dos puntos se puede unir
-mediante poligonal
-de número finito de lados,
+Es \textbf{conexo} si, dados dos puntos cualesquiera,
+pertenecientes a \(C\),
+es posible unirlos mediante poligonal de número finito de lados,
 cuyos puntos pertenecen \textit{todos}
 al conjunto considerado.
-(\textit{Criollo:} no tiene agujeros).
+(no tiene agujeros).
 
 \subsection{Funcion de una variable}
 
 Lo que trabajamos en análisis 1.
-Regla, 
+Una \textbf{función} es una regla, 
 que asigna a cada \(x \in A\) un único \(y = f(x)\).
 
-Aquí el \textbf{dominio} son puntos de la recta x,
+Aquí el \textbf{dominio} son los reales pertenecientes a la recta x,
 puesto de \(x \in R\).
+
+La \textbf{imagen} es el conjunto de todos los números reales que \(y\) puede tomar.
 
 \subsection{Funciones de varias variables}
 
-El dominio son puntos y la imagen es un número real.
-Funciones que asignan a un par ordenado,
-pertenciente al plano \((x,y)\) un valor de \(z\),
-siendo \(z \in R\), \textit{no un punto}.
+También es una \textit{regla},
+cuyo dominio son puntos y su imagen es un número real.
+
+Asignan a un par ordenado,
+pertenciente al plano \((x,y)\), 
+un valor de \(z\),
+siendo \((x,y)\) un punto y \(z\) un número real.
 
 A lo sumo, trabajamos \(R^{2}\) o \(R^{3}\).
 \(R^{2}\) se puede graficar.
-\(R^{3}\) solo el dominio.
+Para \(R^{3}\) solo podemos graficar el dominio.
 
-Este tipo de función se llama \(campo escalar\).
+Llamamos a este tipo de función \(campo escalar\).
 
-¿Qué se estudia de una función?
-
-Una cosa es el \textbf{dominio},
+Podemos estudiar el \textbf{dominio},
 es decir, 
 el rango de valores de \((x,y)\) para los cuales la función está definida,
-devuelve como respuesta un número real.
+que devuelven un número real \(z\).
 
 La \textbf{gráfica} de una función de 2 variables
-da una superficie,
-puesto que le doy un valor (x,y) y devuelve un real z.
+es una superficie.
 
 El eje x se representa a \(-135^{\circ}\) del eje y.
 (que son 90 + 45).
 
+\subsection{Curvas de nivel}
+
+(O superificies de nivel en \(R^{3}\)).
+
+Dada la función \(z=x^{2}+y^{2}\),
+dando valor constante a z,
+generamos un circunferencia en el plano.
+Me puedo imaginar que la forma es un paraboloide,
+porque va de una circunferencia chica,
+a una más grande,
+a medida que z crece.
+
+\textbf{Las mas conocidas.}
+Isobaras, líneas sobre le mapa, misma presión,
+isotermas, líneas sobr el mapa, misma temperatura,
+líneas equipotenciales,
+mapas topográficos.
+
+Dada función de 3 variables,
+puedo graficar dominio,
+como superficie.
+Se puede imaginar forma de dominio en \(R^{3}\).
+\textbf{Solo dominio}.
