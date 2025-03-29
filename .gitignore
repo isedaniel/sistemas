@@ -29,3 +29,8 @@
 
 #dirs
 svg-inkscape/
+
+# c++/code::blocks files
+*.o
+*.exe
+*.depend
