@@ -43,6 +43,5 @@ int main()
             // saco elemento del tope
             p.pop();
     }
-
     return 0;
 }
