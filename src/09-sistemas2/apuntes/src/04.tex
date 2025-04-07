@@ -1,0 +1,46 @@
+\section{Cuarta clase}
+
+7 de abril, 2025
+
+\subsection{Instancias extend e instancias include}
+
+La relación \texttt{include} significa que un caso de uso \textit{necesariamente} utliza la funcionalidad de otro caso de uso para completarse.
+
+En contraste, una relación \texttt{extend} implica que un caso de uso \textit{puede} agregar funcionalidad de otro.
+Es decir, el caso de uso puede funcionar perfectamente por si solo, pero puede extenderse en ciertas circunstancias.
+
+\subsection{Relación include}
+
+La relación \texttt{include} cuenta entre sus \textbf{ventajas} que las descripciones son más cortas.
+Además, se identifica funcionalidad común, descubriendo componentes en la implementación.
+
+Entre sus \textbf{desventajas}: hace los diagramas más difíciles de leer (cuando hay muchos, como en herencia).
+
+\subsection{Cuándo usar include}
+
+Cuando un caso incorpora \textit{explícitamente} el comportamiento de otro.
+
+Para evitar \textit{repeticiones}.
+
+Cuando un conjunto de casos de uso comparten \textit{funcionalidad}.
+
+Cuando un caso es extenso y difícil de leer (se lo divide para que sea más manejable).
+
+Hay un conjunto de idas y vueltas que se repiten:
+se crea un caso de uso include común.
+
+\subsection{Relación extend}
+
+Cuando un caso de uso incluye \textit{opcionalmente} otro caso de uso. 
+\textbf{Atención.} En esquema, la flecha va de secundario a principal (apunta al \textit{caller}).
+
+Si se cumple una condición, el caso de uso base llama al caso de uso secundario.
+
+\subsection{Cuando usar extend}
+
+Cuando se desea describir una variación del comportamiento normal de un caso de uso.
+
+Para agrupar conjuntos de eventos que se ejecutan opcionalmente.
+
+Cuando los flujos alternativos se tornan grandes y difíciles de leer: 
+creamos casos de uso que engloban esos flujos alternativos.
