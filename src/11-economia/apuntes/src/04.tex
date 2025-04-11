@@ -2,4 +2,149 @@
 
 10 de abril, 2025.
 
-\subsection{}
+\subsection{Curva y la función demanda}
+
+La demanda se conceptualiza desde el punto de vista del comprador.
+
+Cuanto mas barato es un producto, \textit{ceteris paribus}, más se compra.
+Es decir,
+manteniendo el resto de factores constante (estacionalidad, etc.),
+la cantidad demandanda es inversamente proporcional al precio.
+
+La curva \textit{decreciente} de demanda relaciona cantidad demandada y precio.
+Al reducir el precio,
+aumenta la cantidad de demandada. 
+A cada precio \(P_A\) corresponde una cantidad \(Q_A\),
+que los demandantes están dispuestos a adquirir.
+La curva de la demanda se va a confeccionar de acuerdo a la tabla antedicha,
+y va a mostrar las cantidades de algún determinado bien que serán demandadas durante un período,
+por una población específica, a cada uno de los posibles precios.
+
+La función demanda se va a expresar de acuerdo al precio del bien demandado \(A\),
+a la renta, a los gustos de los consumidores y a los precios relativos de los bienes sustitutos.
+
+\begin{equation*}
+    Q_A = D(P_A, Y, P_B, G)
+\end{equation*}
+
+Donde \(Q_A\) es la cantidad demandada del bien A en un período concreto,
+\(P_A\) el precio del bien A,
+\(Y\) el ingreso de los consumidores,
+\(P_B\) los precios del resto de bienes en el mismo período
+y \(G\) los gustos de los consumidores.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=Cantidad,
+            ylabel=Precio,
+            axis lines=left,
+            xmin=0, xmax=10,
+            ymin=0, ymax=10,
+            ]
+            \addplot[domain=0:8, samples=100] {8 - x};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+La \textbf{función de demanda} es la relación entre la cantidad demandada de un bien y su precio,
+manteniendose constantes el resto de factores: renta, gustos.
+
+\subsection{Alteración de los otros factores}
+
+¿Qué pasa si cambian esos factores?
+Ya no estamos en una situación ceteris paribus.
+
+¿Qué pasa si cambia uno de los factores permaneciendo constate el precio?
+
+Una alteración de cualquier factor difrente del precio del bien desplazará toda la curva hacia la derecha o la izquierda,
+y es lo que llama cambios en la demanda.
+
+\begin{equation*}
+    Y = -\frac{4}{3}x + 8
+\end{equation*}
+
+Hacemos gráfico de esta función:
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=Cantidad,
+            ylabel=Precio,
+            axis lines=left,
+            xmin=0, xmax=10,
+            ymin=0, ymax=10,
+            ]
+            \addplot[domain=0:8, samples=100] {8 - 4/3*x};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\subsection{Oferta}
+
+Desde el punto de vista del vendedor.
+De la misma manera que en el caso de la demanda,
+tabién existe un conjunto de factores para determinar la oferta del vendedor.
+Estos factores son: la tecnolkogía, los precios de factores rpoductivos (tierra, capital, trabajo)
+y el precio del bien que se desea ofrecer.
+
+\subsection{Tabla de la oferta}
+
+Tambien bajo la condición e ceteris paribus, la tabla de la oferta va a relacionar
+el precio de un bien y las cantidades
+
+Para elevar la producción en una unidad será cada vez mayor.
+
+Tabla:
+\begin{equation*}
+    P_A: 2 4 6 8
+    O_A: 0 2 4 6
+\end{equation*}
+
+\subsection{Curva y función oferta}
+
+Muestra las cantidades del bien en un periodo especifico,
+para diversos precios de mercado.
+En este caso la curva tiene pendiente positiva,
+debido a que,
+al aumentar el precio de un bien,
+manteniendose constantes el resto de factores,
+la cantidad ofrecida de dicho bien crecerá.
+
+También la cantidad ofrecida dependerá de otras variables,
+siendo la función oferta la siguiente:
+
+\begin{equation*}
+    Q_A = O(P_A, P_B, r, K)
+\end{equation*}
+
+Donde \(Q_A\) es la cantidad ofrecida del bien A para un período determinado,
+\(P_A\) el precio del bien \(A\),
+\(P_B\) el precio del resto de bienes,
+\(r\) el precio de los factores de producción,
+y \(K\) el estado de la tecnología.
+
+En este análisis se considera también la condición \textit{ceteris paribus},
+es decir, que todas las variables permanecen constantes,
+excepto por la cantidad ofrecida \(Q_A\) y el precio \(P_A\).
+
+La función de oferta es la relación entre la cantidad ofrecida de un bien y su precio,
+considerando todos los demás factores constantes.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=Cantidad,
+            ylabel=Precio,
+            axis lines=left,
+            xmin=0, xmax=10,
+            ymin=0, ymax=10,
+            ]
+            \addplot[domain=0:8, samples=100] {2 + x};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\subsection{Equilibrio de mercado}
+
+Cuando se ponen en contacto el consumidor y el productor con sus respectivos planes de consumo y producción
