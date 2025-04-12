@@ -1,36 +1,23 @@
 #include <iostream>
-#include <stack>
+#include <queue>
 
 using namespace std;
 
-struct Person
-{
-    string name;
-    int age;
-
-    Person(string s, int i)
-    {
-        this->name = s;
-        this->age = i;
-    }
-};
-
 int main()
 {
-    string auxName = "Juan";
-    int auxAge = 10;
+    int nums[] = {10, 20, 30};
 
-    stack<Person> Persons;
-    Persons.emplace(auxName, auxAge);
-
-    Person p("Pedro", 11);
-    Persons.push(p);
-
-    int size = Persons.size();
-    for (int i = 0; i < size; i++)
+    queue<int> q;
+    for (int num: nums)
     {
-        cout << Persons.top().name << ' ' << Persons.top().age << '\n';
-        Persons.pop();
+        q.push(num);
+    }
+
+    int size = q.size();
+    for (int i=0; i<size; i++)
+    {
+        cout << q.front() << '\n';
+        q.pop();
     }
 
     return 0;
