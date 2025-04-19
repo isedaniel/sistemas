@@ -13,6 +13,19 @@ void plusPointer(auto& it, int n)
     }
 }
 
+void printList(auto& l)
+{
+    for (auto e:l)
+    {
+        cout << e << '\n';
+    }
+}
+
+void printLine()
+{
+    cout << "-----" << '\n';
+}
+
 int main()
 {
     // estructura lista
@@ -32,31 +45,34 @@ int main()
     l.pop_back();
     l.pop_front();
 
-
-    /*
-    for (int i: l)
-    {
-        cout << i << '\n';
-    }
-    */
-
     // imprimimos
-    for (auto it=l.begin(); it!=l.end();it++)
-    {
-        cout << *it << '\n';
-    }
-
-    cout << "-----" << '\n';
+    printList(l);
+    printLine();
 
     // agregamos elemento en la tercera posición
-    auto auxIt = l.begin();
+    auto auxIt{l.begin()};
     plusPointer(auxIt, 2);
     l.insert(auxIt, 40);
 
-    for (auto it=l.begin(); it!=l.end();it++)
-    {
-        cout << *it << '\n';
-    }
+    printList(l);
+    printLine();
+
+    // sacar por puntero
+    auto removeIt{l.begin()};
+    plusPointer(removeIt, 3);
+    l.erase(removeIt);
+    printList(l);
+    printLine();
+
+    // agregamos un 40
+    l.push_back(40);
+    printList(l);
+    printLine();
+
+    // sacamos todos los 40 con remove
+    l.remove(40);
+    printList(l);
+    printLine();
 
     return 0;
 }
