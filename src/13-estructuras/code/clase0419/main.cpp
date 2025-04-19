@@ -4,75 +4,34 @@
 
 using namespace std;
 
-// función avanzar puntero
-void plusPointer(auto& it, int n)
-{
-    for (int i=0;i<n;i++)
-    {
-        ++it;
-    }
-}
-
-void printList(auto& l)
-{
-    for (auto e:l)
-    {
-        cout << e << '\n';
-    }
-}
-
-void printLine()
-{
-    cout << "-----" << '\n';
-}
-
 int main()
 {
-    // estructura lista
+    // ingresar nros hasta ingresar 0
+    // luego insertar 10 antes que los numeros pares
+    // ejemplo: 15, 27, 12, 19, 20,0 -> 15, 27, 10, 12, 19, 10, 20
+
     list<int> l;
+    int in;
+    cin >> in;
 
-    // se pueden agregar elemento detras
-    l.push_back(100);
-    l.push_back(200);
-    l.push_back(300);
+    while (in != 0)
+    {
+        l.push_back(in);
+        cin >> in;
+    }
 
-    // y delante
-    l.push_front(30);
-    l.push_front(20);
-    l.push_front(10);
+    for (auto it=l.begin(); it!=l.end(); ++it)
+    {
+        if (*it % 2 == 0)
+        {
+            l.insert(it, 99);
+        }
+    }
 
-    // pop tb se puede hacer detras y delante
-    l.pop_back();
-    l.pop_front();
-
-    // imprimimos
-    printList(l);
-    printLine();
-
-    // agregamos elemento en la tercera posición
-    auto auxIt{l.begin()};
-    plusPointer(auxIt, 2);
-    l.insert(auxIt, 40);
-
-    printList(l);
-    printLine();
-
-    // sacar por puntero
-    auto removeIt{l.begin()};
-    plusPointer(removeIt, 3);
-    l.erase(removeIt);
-    printList(l);
-    printLine();
-
-    // agregamos un 40
-    l.push_back(40);
-    printList(l);
-    printLine();
-
-    // sacamos todos los 40 con remove
-    l.remove(40);
-    printList(l);
-    printLine();
+    for (auto it=l.begin(); it!=l.end(); ++it)
+    {
+        cout << *it << '\n';
+    }
 
     return 0;
 }
