@@ -8,20 +8,22 @@ La demanda se conceptualiza desde el punto de vista del comprador.
 
 Cuanto mas barato es un producto, \textit{ceteris paribus}, más se compra.
 Es decir,
-manteniendo el resto de factores constante (estacionalidad, etc.),
+manteniendo el resto de factores constante (renta, preferencias, estacionalidad, etc.),
 la cantidad demandanda es inversamente proporcional al precio.
 
 La curva \textit{decreciente} de demanda relaciona cantidad demandada y precio.
 Al reducir el precio,
-aumenta la cantidad de demandada. 
+aumenta la cantidad de demandada.
+
 A cada precio \(P_A\) corresponde una cantidad \(Q_A\),
 que los demandantes están dispuestos a adquirir.
+
 La curva de la demanda se va a confeccionar de acuerdo a la tabla antedicha,
 y va a mostrar las cantidades de algún determinado bien que serán demandadas durante un período,
 por una población específica, a cada uno de los posibles precios.
 
 La función demanda se va a expresar de acuerdo al precio del bien demandado \(A\),
-a la renta, a los gustos de los consumidores y a los precios relativos de los bienes sustitutos.
+a la renta, a los gustos de los consumidores y a los precios relativos de otros bienes:
 
 \begin{equation*}
     Q_A = D(P_A, Y, P_B, G)
@@ -36,11 +38,11 @@ y \(G\) los gustos de los consumidores.
 \begin{center}
     \begin{tikzpicture}
         \begin{axis}[
-            xlabel=Cantidad,
-            ylabel=Precio,
-            axis lines=left,
-            xmin=0, xmax=10,
-            ymin=0, ymax=10,
+                xlabel=Cantidad,
+                ylabel=Precio,
+                axis lines=left,
+                xmin=0, xmax=10,
+                ymin=0, ymax=10,
             ]
             \addplot[domain=0:8, samples=100] {8 - x};
         \end{axis}
@@ -48,32 +50,33 @@ y \(G\) los gustos de los consumidores.
 \end{center}
 
 La \textbf{función de demanda} es la relación entre la cantidad demandada de un bien y su precio,
-manteniendose constantes el resto de factores: renta, gustos.
+manteniendose constantes el resto de factores: renta, gustos, precios del resto de bienes, etc.
+Es decir,
+ceteris paribus.
 
 \subsection{Alteración de los otros factores}
 
-¿Qué pasa si cambian esos factores?
+¿Qué pasa si cambia uno de los factores permaneciendo constate el precio?
 Ya no estamos en una situación ceteris paribus.
 
-¿Qué pasa si cambia uno de los factores permaneciendo constate el precio?
-
-Una alteración de cualquier factor difrente del precio del bien desplazará toda la curva hacia la derecha o la izquierda,
-y es lo que llama cambios en la demanda.
+Una alteración de cualquier factor diferentes del precio del bien
+desplazará toda la curva hacia la derecha o la izquierda,
+y es lo que llama \textit{cambios en la demanda}.
 
 \begin{equation*}
     Y = -\frac{4}{3}x + 8
 \end{equation*}
 
-Hacemos gráfico de esta función:
+Graficamos:
 
 \begin{center}
     \begin{tikzpicture}
         \begin{axis}[
-            xlabel=Cantidad,
-            ylabel=Precio,
-            axis lines=left,
-            xmin=0, xmax=10,
-            ymin=0, ymax=10,
+                xlabel=Cantidad,
+                ylabel=Precio,
+                axis lines=left,
+                xmin=0, xmax=10,
+                ymin=0, ymax=10,
             ]
             \addplot[domain=0:8, samples=100] {8 - 4/3*x};
         \end{axis}
@@ -82,28 +85,50 @@ Hacemos gráfico de esta función:
 
 \subsection{Oferta}
 
-Desde el punto de vista del vendedor.
-De la misma manera que en el caso de la demanda,
-tabién existe un conjunto de factores para determinar la oferta del vendedor.
-Estos factores son: la tecnolkogía, los precios de factores rpoductivos (tierra, capital, trabajo)
+Se conceptualiza desde el punto de vista del vendedor.
+
+Al igual que en el caso de la demanda,
+tabién existen un conjunto de factores que determinan la oferta del vendedor.
+Estos factores se resumen en: la tecnología, los precios de factores productivos (tierra, capital, trabajo),
 y el precio del bien que se desea ofrecer.
 
 \subsection{Tabla de la oferta}
 
-Tambien bajo la condición e ceteris paribus, la tabla de la oferta va a relacionar
-el precio de un bien y las cantidades
+Tambien bajo la condición de ceteris paribus,
+la tabla de la oferta relaciona el precio de un bien y las cantidades que un empresario está dispuesto a ofrecer a ese precio,
+para un período de tiempo determinado.
 
-Para elevar la producción en una unidad será cada vez mayor.
+Mientras la tabla de la demanda muestra el comportamiento de los consumidores,
+la tabla de la oferta señala el comportamiento de los productores.
+
+\subsection{Ley de los rendimientos decrecientes}
+
+El crecimiento de la curva de la oferta puede establecerse diciendo que,
+sin por ejemplo se desea una mayor producción de algún bien,
+habrá que ir añadiendo mayores cantidades de mano de obra,
+apelando a la \textbf{ley de los rendimientos decrecientes},
+resultará que el costo necesario para elevar la producción \textit{en una unidad} será cada vez mayor.
 
 Tabla:
-\begin{equation*}
-    P_A: 2 4 6 8
-    O_A: 0 2 4 6
-\end{equation*}
+\begin{table}[h!] % El [h!] es una sugerencia de ubicación "aquí mismo"
+    \centering
+    \begin{tabular}{c c} % {|l|r|} define dos columnas, una alineada a la izquierda (l) y otra a la derecha (r), con líneas verticales
+        \hline
+        \( P_A\) & \(Q_A\) \\ % Encabezados de las columnas en negrita
+        \hline
+        2        & 0       \\ % Filas de datos, separadas por &
+        4        & 2       \\
+        6        & 4       \\
+        8        & 6       \\
+        \hline
+    \end{tabular}
+\end{table}
 
 \subsection{Curva y función oferta}
 
-Muestra las cantidades del bien en un periodo especifico,
+Es la representación gráfica de la tabla de oferta.
+Muestra las cantidades del bien que se ofreceran a la venta,
+en un periodo de tiempo específico,
 para diversos precios de mercado.
 En este caso la curva tiene pendiente positiva,
 debido a que,
@@ -118,7 +143,7 @@ siendo la función oferta la siguiente:
     Q_A = O(P_A, P_B, r, K)
 \end{equation*}
 
-Donde \(Q_A\) es la cantidad ofrecida del bien A para un período determinado,
+Donde \(Q_A\) es la cantidad ofrecida del bien A para un período concreto,
 \(P_A\) el precio del bien \(A\),
 \(P_B\) el precio del resto de bienes,
 \(r\) el precio de los factores de producción,
@@ -129,16 +154,16 @@ es decir, que todas las variables permanecen constantes,
 excepto por la cantidad ofrecida \(Q_A\) y el precio \(P_A\).
 
 La función de oferta es la relación entre la cantidad ofrecida de un bien y su precio,
-considerando todos los demás factores constantes.
+considerando todos los demás factores constantes. Gráficamente:
 
 \begin{center}
     \begin{tikzpicture}
         \begin{axis}[
-            xlabel=Cantidad,
-            ylabel=Precio,
-            axis lines=left,
-            xmin=0, xmax=10,
-            ymin=0, ymax=10,
+                xlabel=Cantidad,
+                ylabel=Precio,
+                axis lines=left,
+                xmin=0, xmax=10,
+                ymin=0, ymax=10,
             ]
             \addplot[domain=0:8, samples=100] {2 + x};
         \end{axis}
@@ -147,4 +172,143 @@ considerando todos los demás factores constantes.
 
 \subsection{Equilibrio de mercado}
 
-Cuando se ponen en contacto el consumidor y el productor con sus respectivos planes de consumo y producción
+Cuando se ponen en contacto el consumidor y el productor 
+con sus respectivos planes de consumo y producción
+(sus curvas de demanda y oferta),
+solamente habrá un punto de coincidencia entre los dos,
+y será en el punto de corte entre ambas curvas.
+A este precio de coincidencia se lo denomina \textbf{precio de equilibrio},
+y la cantidad ofrecida y demandada a ese precio se le llama \textbf{cantidad de equilibrio}.
+
+Así pues,
+el precio de equilibrio es aquel para el cual la cantidad demandada es igual a la cantidad ofrecida.
+Y esa cantidad se denomina cantidad de quilibrio.
+
+El punto de corte de ambas curvas se denomina \textbf{punto de equilibrio}.
+
+Por encima del punto de equilibrio se denomina \textbf{zona de excedente}.
+Por debajo, \textbf{zona de escasez}.
+
+En resumen, en la situación de equilibro se igualan cantidades ofrecidas y demandadas,
+y es cuando se sienten cómodos ambos jugadores.
+
+\subsection{Desplazamientos de las curvas de demanda y oferta}
+
+Esto sucederá cuando la condición ceteris paribus se interrumpe.
+
+\subsubsection{Desplazamientos de la curva de demanda}
+
+En realidad esto es frecuente, lo que motivará los desplazamientos de la curva de demanda.
+En nuestro análisis vamos a ver lo que sucede con los factores de la renta de los consumidores,
+los precios de los demás bienes y los gustos.
+
+\textbf{a.} La renta de los consumidores.
+
+\textbf{Caso a:} Si la renta aumenta,
+los individuos pueden consumir más cualquiera que sea el precio,
+por lo que la curva de la demanda se desplazará a la derecha.
+Tengamos en cuenta que aún el precio del bien \(A\)
+permanece constante.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+                xlabel=Cantidad,
+                ylabel=Precio,
+                axis lines=left,
+                xmin=0, xmax=10,
+                ymin=0, ymax=10,
+            ]
+            \addplot[domain=0:8, samples=100] {8 - 4/3*x};
+            \addplot[domain=0:10, samples=100] {10 - 4/3*x};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\textbf{Caso b:}
+Sucede a veces que cuando el individuo gana más sus patrones de consumo del producto \(A\)
+varíen y adquiera una menor cantidad el bien \(A\). Ejemplo: papas.
+Y se incremente su consumo de otros bienes, como por ejemplo carne,
+aumentando la cantidad demandada del nuevo producto.
+Con lo cual la curva de las papas se desplaza hacia la izquierda.
+
+\textbf{b.} Precios de los bienes relacionados
+
+El analisis de este caso va a ser similar al caso b de la renta de los consumidores
+(lo que sucedio con las papás y la carne).
+
+Las alteraciones en el precio de un bien pueden ocasionar también desplazamientos en la curva de demanda
+de otro bien. Por ejemplo, si aumenta el combustible, la gente tendrá un menor interés
+en comprar bienes relacionados como vehículos,
+y por lo tanto la curva de la demanda se desplazará hacia la izquierda.
+
+Del mismo modo, el consumo del GNC aumentará,
+desplazándose la curva del GNC hacia la derecha.
+
+\textbf{c.} Gustos y preferencias de los consumidores
+
+Los gustos pueden modificarse a lo largo del tiempo,
+o bien por campañas publicitarias,
+shocks (como pandemias),
+etc.
+
+Si los gustos se alteran en el sentido de desear demandar una mayor cantidad de un determinado producto,
+la curva de demanda se desplazará hacia la derecha,
+mientras que si la modificación de las preferencias es en sentido contrario,
+la curva de demanda se desplazará hacia la izquierda.
+
+\subsection{Cambios en la demanda y punto de equilibrio}
+
+Ante el movimiento de una de las curvas,
+se modificará consecuentemente la posición del punto de equilibrio,
+con lo cual se arriba a una nueva situación de equilibrio.
+
+Si el desplazamiento de la curva demanda \(D_0\) es hacia la derecha \(D_1\),
+el precio de equilibrio y la cantidad demandada aumentarán,
+siempre considerando que la oferta no se desplazó
+(por ejemplo, que el Estado le de un incentivo al productor para que eso no suceda).
+
+\subsection{Desplazamientos de la curva de oferta}
+
+En este caso los factores que estaba constantes eran el precio de los factores productivos,
+el precio de bienes relacionados y la tecnología.
+
+\textbf{a.} Precio de los factores productivos
+
+En términos gráficos, el deseo de producir más para cualquier nivel de precios 
+implica un desplazamiento de la curva de oferta hacia la derecha.
+Si se reducen los costos de producción,
+por ejemplo baja la luz,
+los productores producirán más al precio anterior.
+
+\textbf{b.} Precio de los bienes relacionados 
+
+Si el precio del maíz disminuye,
+es probable que los agricultores reduzcan su producción y decidan cultivar trigo.
+En este caso, la curva del trigo se desplaza a la derecha y la del maíz hacia la izquierda.
+
+\textbf{c.} Tecnología
+
+Una mejora de la tecnología contribuye a reducir costos de producción,
+incrementando rendimientos,
+lo que hará que los empresarios ofrezcan más productos a cualquier precio,
+desplazando la curva de la oferta hacia la derecha.
+
+\subsection{Cambios en la oferta y punto de equilibrio}
+
+En cuanto al equilibrio, en este caso se considera la demanda fija,
+moviéndose las curvas de oferta.
+
+\subsection{Desplazamientos de ambas curvas}
+
+Tal cual analizamos hasta recién,
+cuando una de las curvas permanece fija
+(sea la de demanda o de oferta),
+se puede observar los efectos sobre precios y cantidades de equilibrio,
+que serán \textit{predecibles}.
+
+Sin embargo,
+cuando se desplazan ambas,
+los efectos no son \textit{perfectamente} predecibles.
+
+Quedamos en demanda y elasticidad.
