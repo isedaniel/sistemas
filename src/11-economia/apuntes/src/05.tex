@@ -2,4 +2,270 @@
 
 24 de abril, 2025.
 
-\subsection{}
+\subsection{Elasticidad}
+
+El concepto de elasticidad se utiliza en economía para analizar en términos cuantitativos
+cómo se ajusta el mercado en las variaciones de los determinantes de la demanda y la oferta.
+Indica la sensibilidad.
+
+\begin{equation*}
+    \text{Ingreso total} = \text{precio} \times \text{cantidad demandada}
+\end{equation*}
+
+Indica la facturación, no la ganancia.
+Es bruto, no \textit{neto}.
+
+El sentido del cambio del ingreso total cuando varía el precio,
+depende de la \textit{sensibilidad} de la cantidad demandada,
+y esto precisamente se expresa mediante el concepto de elasticidad de la demanda:
+
+Elasticidad-precio de la demanda:
+mide el grado en que la cantidad demandada (\(Q\)) responde a un cambio en el precio (\(P\)).
+
+\begin{equation*}
+    E_P = \frac{\text{- Variación porcentual de la cantidad demandada}}{\text{Variación porcentual del precio}}
+\end{equation*}
+
+Fórmula generalista:
+
+\begin{equation*}
+    E_P = \frac{\Delta Q}{\Delta P}
+\end{equation*}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{cccc} % {|l|c|r|p{3cm}|} define cuatro columnas con diferentes alineaciones
+        \hline
+        Situación & Precio & Cantidad demandada & Ingreso total \\
+        \hline
+        Inicial   & 100    & 300                & 30.000        \\
+        Caso 1    & 80     & 340                & 27.200        \\
+        Caso 2    & 75     & 390                & 29.250        \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Lo relevante es que una elasticidad alta indica un elevado grado de respuesta de la cantidad demandada a la variación en el precio,
+y una elasticidad baja indica una escasa sensibilidad a la variación del precio.
+
+Ejemplo de elasticidad de demanda de productos agropecuarios.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{lr}
+        \hline
+        Producto      & Elasticidad \\
+        \hline
+        Trigo         & 0.03        \\
+        Papa          & 0.16        \\
+        Leche         & 0.23/0.35   \\
+        Carne vacuna  & 0.30/0.48   \\
+        Pollo         & 0.75        \\
+        Carne porcina & 0.81/0.84   \\
+        \hline
+    \end{tabular}
+\end{table}
+
+En el ejemplo del trigo,
+aunque varíe su precio,
+la gente va a comprar igual \(Q_{PAN}\).
+
+\begin{equation*}
+    E_P = -\frac{\frac{\Delta Q}{Q_i}}{\frac{\Delta P}{P_i}}
+\end{equation*}
+
+Nota sobre sl gino negativo:
+dado que la curva de demanda tiene una inclinación negativa,
+las variaciones de \(P\) y \(Q\) son en sentido contrario,
+con lo cual el cociente tendría un signo negativo.
+Sin embargo, en la práctica, se considera que esta fórmula se multiplica por \(-1\)
+y se trabaja en positivo.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+                xlabel=Cantidad,
+                ylabel=Precio,
+                axis lines=left,
+                xmin=0, xmax=10,
+                ymin=0, ymax=10,
+            ]
+            \addplot[domain=0:8, samples=100] {8 - 3/10*x};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Demanda elástica}
+\end{figure}
+
+Como es mayor a 1, es elástica, generalmente bienes que se sustituyen entre si.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+                xlabel=Cantidad,
+                ylabel=Precio,
+                axis lines=left,
+                xmin=0, xmax=10,
+                ymin=0, ymax=10,
+            ]
+            \addplot[domain=0:8, samples=100] {8 - x};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Demanda unitaria}
+\end{figure}
+
+La elasticidad es 1. Cambia 1:1.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+                xlabel=Cantidad,
+                ylabel=Precio,
+                axis lines=left,
+                xmin=0, xmax=10,
+                ymin=0, ymax=10,
+            ]
+            \addplot[domain=0:8, samples=100] {8 - 2*x};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Demanda inelástica}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+                xlabel=Cantidad,
+                ylabel=Precio,
+                axis lines=left,
+                xmin=0, xmax=10,
+                ymin=0, ymax=10,
+            ]
+            \addplot[domain=0:8, samples=100] {10/x};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Elasticidad arco}
+\end{figure}
+
+Calcular elasticidad: pregunta de examen.
+
+\subsection{Elasticidad cruzada de la demanda}
+
+La cantidad demandada de un bien no solo muestra sensibilidad ante los cambios en el precio del propio bien,
+sino también ante alteraciones de los precios de ciertos productos que están estrechamente relacionados con el bien.
+
+\begin{equation*}
+    \text{Elasticidad cruzada del bien i con respecto al bien j} = \frac{\text{Variacion porcentual de la cantidad demandada del bien i}}{\text{Variacion porcentual del precio del bien j}}
+\end{equation*}
+
+La elasticidad-precio cruzada de la demanda mide la influencia de una variación del precio de un bien en la cantidad demandada de otro.
+
+\subsection{Elasticidad de la demanda e ingreso total}
+
+\begin{equation*}
+    \text{Ingreso total} = \text{precio} \times \text{cantidad demandada}
+\end{equation*}
+
+Lo que se intenta demostrar es que si \(E = 1\),
+se consigue el ingreso total máximo.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{ccccc}
+        \hline
+        Precio & Cantidad & Elasticidad & Relaciones \(E_P \text{ vs } I_T\) & Ingreso Total (\(I_T\)) \\
+        \hline
+        45     & 100      & 9.0         &                                    & 4.500                   \\
+        40     & 200      & 4.0         & \(E_P > 1\)                        & 8.000                   \\
+        30     & 400      & 1.5         &                                    & 12.000                  \\
+        25     & 500      & 1.0         & \(E_P = 1\)                        & 12.500                  \\
+        20     & 600      & 0.67        &                                    & 12.000                  \\
+        10     & 800      & 0.25        &                                    & 8.000                   \\
+        5      & 900      & 0.09        & \(E_P < 1\)                        & 4.500                   \\
+        2      & 950      & 0.05        &                                    & 1.900                   \\
+        0      & 1000     & 0           &                                    & 0                       \\
+        \hline
+    \end{tabular}
+\end{table}
+
+En la tabla se observa que en \(E=1\) se maximiza el ingreso.
+
+\subsection{Elasticidad-precio de la oferta}
+
+Indica como responde los mercados a los cambios de la renta.
+Es la variación experimentada por la cantidad ofrecida de un bien cuando varía su precio en \(1\%\),
+manteniéndose constante el resto de factores que afectan a la cantidad ofrecida.
+
+\begin{equation*}
+    \text{Elasticidad de la oferta} = \frac{\text{Cambio porcentual en la cantidad}}{\text{Cambio porcentual en el precio}}
+\end{equation*}
+
+En cuanto a la respuesta del mercado,
+cuanto más elástica sea la oferta,
+más fácil resultará a los vendedores incrementar la producción ante el aumento del precio.
+
+La elasticidad de la oferta depende de la \textit{capacidad de reacción} de los productores
+ante alteraciones en el precio,
+que también estará ligada (o condicionada)
+por las características de los procesos productivos,
+y por la necesidad de factores específicos,
+como por ejemplo, emplear más personal.
+Es decir,
+todo esto condiciona de manera determinante a la elasticidad de la oferta.
+En resumen,
+a corto plazo,
+la elasticidad de la oferta tiende a \(E<1\),
+porque no hay tiempo de reacción para producir.
+Y luego tiende a ser \(E>1\).
+
+\subsection{Calculamos elasticidad demanda}
+
+(Pregunta de examen).
+
+Si un aumento en el precio de \$10 a \$20 reduce la cantidad demandada (\(Q\)) de 600 a 400,
+calcular \(E_P\) de la demanda.
+
+R: \(\frac{3}{5}\)
+
+\begin{align*}
+    E = \frac{\frac{-200}{600}}{\frac{20 - 10}{10}} \\
+    E = \frac{1}{3} \cdot \frac{10}{10}
+\end{align*}
+
+\subsection{Utilidad}
+
+Es la percepción subjetiva de placer o satisfacción que una persona experimenta como consecuencia
+de consumir un bien o un servicio.
+
+En cuanto a la evolución de la utilidad,
+a medida que aumenta la cantidad consumida de un bien,
+el incremento de utilidad total que proporciona la última unidad es cada vez menor,
+con lo cual la \textbf{utilidad marginal} es decreciente.
+
+\begin{empheq}[box=\fcolorbox{red}{white}]{equation*}
+    \text{Marginal} = \text{Adicional}
+\end{empheq}
+
+\subsection{Ley de utilidad marginal decreciente}
+
+Establece que,
+a medida que aumenta la cantidad consumida de un bien,
+la utilidad marginal de ese bien tiende a disminuir.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{ccc}
+        \hline
+        Cantidad Consumida & Utilidad Total & Utilidad Marginal \\
+        \hline
+        0                  & 0              & -                 \\
+        1                  & 100            & 100               \\
+        2                  & 180            & 80                \\
+        3                  & 240            & 60                \\
+        4                  & 280            & 40                \\
+        5                  & 300            & 20                \\
+        \hline
+    \end{tabular}
+\end{table}
