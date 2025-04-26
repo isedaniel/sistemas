@@ -52,5 +52,16 @@ int main()
     cout << "\nMerge de un literal:\n";
     printList(lA, 'A');
 
+    // unique(): nos quedamos valores únicos
+    lA.unique();
+    cout << "\nMetemos unique():\n";
+    printList(lA, 'A');
+
+    // pero si la lista no esta ordenada no funciona
+    lA.push_front(12);
+    lA.unique();
+    cout << "\nAtencion! solo funciona en linea ordenada:\n";
+    printList(lA, 'A');
+
     return 0;
 }
