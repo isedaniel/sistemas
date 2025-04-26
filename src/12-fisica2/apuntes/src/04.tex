@@ -1,0 +1,140 @@
+\section{Práctica resistencia}
+
+25 de abril, 2025
+
+\subsection{Fórmulas}
+
+\subsubsection{Corriente}
+
+\begin{equation}
+    I = \frac{Q}{t}
+\end{equation}
+
+\subsubsection{Ley de Ohm}
+
+\begin{equation}
+    R = \frac{V}{I}
+\end{equation}
+
+\subsubsection{Resistencia}
+
+\begin{equation}
+    R = \rho\frac{L}{A}
+\end{equation}
+
+\subsection{Ejercicio 1}
+
+I = 0.5A
+
+¿Cuánta carga pasa por un alambre en 1 minuto?
+
+Pasamos tiempo a minutos.
+
+\begin{align*}
+    t = 1 m = 60 s \\
+\end{align*}
+
+Operamos con ecuación de corriente:
+
+\begin{align*}
+    0.5A = \frac{Q}{60 s} \\
+    \boxed{Q = 30 C}
+\end{align*}
+
+\subsection{Ejercicio 2}
+
+\(R = 240 \omega\), conectada a una fuente de \(120 V\).
+¿Qué corriente circula?
+
+Despejamos corriente de Ley de Ohm:
+
+\begin{align*}
+    R = \frac{V}{I} \implies I = \frac{V}{R} \\
+\end{align*}
+
+Operamos:
+
+\begin{align*}
+    I = \frac{120 V}{240 \omega} \\
+    \boxed{I = 0.5A}
+\end{align*}
+
+\subsection{Ejercicio 3}
+
+Alambre de 2 metros, diámetro de 8 milímetros,
+con \(\rho = 1.76 \cdot 10^{-18} \omega\cdot m\).
+Determinar resistencia.
+
+Operamos con fórmula de resistencia:
+
+\begin{align*}
+    R = 1.76 \cdot 10^{-18} \omega\cdot m \frac{2 m}{\pi\cdot (0.004 m)^2} \\
+    \boxed{R \approx 7\cdot 10^{-14}}
+\end{align*}
+
+\section{Práctica capacitancia}
+
+\subsection{Fórmulas}
+
+Trabajo que necesito para llevar una carga de un lugar a otro:
+
+\begin{equation}
+    W = QV
+\end{equation}
+
+Donde \(W\) es trabajo,
+\(Q\) es carga,
+y \(V\) es diferencia de potencial.
+
+\begin{equation}
+    C=k\epsilon\frac{A}{d}
+\end{equation}
+
+Donde \(C\) es capacidad,
+\(k\) es constante,
+\(\epsilon_0\),
+y \(V\) es diferencia de potencial.
+
+Con capacitores en serie:
+
+\begin{equation}
+    \frac{1}{C_T} = \frac{1}{C_1} + \frac{1}{C_2}
+\end{equation}
+
+\subsection{Ejercicio 1}
+
+Un \(e\), carga \(1.6 \cdot 10^{-19}C\).
+
+Dada pila de \(12 V\),
+cuánto trabajo se requiere para llevar un electrón desde el terminal positivo al terminal negativo.
+
+Operamos con fórmula de trabajo:
+
+\begin{align*}
+    W = QV \implies W = 1.6 \cdot 10^{-19}C \cdot 12 V \\
+    \boxed{W = 1.92 \cdot 10^{-18} J}
+\end{align*}
+
+\subsection{Ejercicio 2}
+
+Dada \(A = 200 cm^2\), con \(d = 0.4 cm\) y \(\epsilon_0 = 8.85\cdot10^{-12}\),
+con \(K_{\text{Aire}} = 1\), determinar valor del capacitor (\(C\)).
+
+Operamos con segunda ecuación:
+
+\begin{align*}
+    C=k\epsilon\frac{A}{d} \implies C = 1 \cdot 8.85\cdot10^{-12} \frac{0.02 m^2}{0.004 m} \\
+    \boxed{4.42 \cdot 10^{-11} F}
+\end{align*}
+
+\subsection{Ejercicio 3}
+
+\(C_1 = 3 pF\) y \(C_2 = 6 pF\). Calcular el capacitor resultante de la serie de \(C_1\) y \(C_2\).
+
+Operamos con la fórmula de capacitancia:
+
+\begin{align*}
+    \frac{1}{C_T} = \frac{1}{C_1} + \frac{1}{C_2} \implies \frac{1}{C_T} = \frac{1}{3} + \frac{1}{6} \\
+    \frac{1}{C_T} = \frac{3}{6} \\
+    \boxed{C_T = 2pF} \\
+\end{align*}
