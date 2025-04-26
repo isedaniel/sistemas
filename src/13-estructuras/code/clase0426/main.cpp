@@ -63,5 +63,9 @@ int main()
     cout << "\nAtencion! solo funciona en linea ordenada:\n";
     printList(lA, 'A');
 
+    // reverse da vuelta la lista
+    lA.reverse();
+    cout << "\nreverse():\n";
+    printList(lA, 'A');
     return 0;
 }
