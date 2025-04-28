@@ -35,3 +35,6 @@ svg-inkscape/
 *.exe
 *.depend
 *.layout
+
+# c++/visual studio
+.vs
