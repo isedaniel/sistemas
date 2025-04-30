@@ -1,4 +1,7 @@
-\section{Objetivos}
+\section{Objetivo general}
+
+La idea central es ofrecer un conocimiento rápido de los precios de distintos productos,
+colaborando con la toma de decisiones de la empresa, bajando costos y mejorando la competitividad.
 
 \begin{enumerate}
 	\item Acceder a la información suministrada por los proveedores en listas de precios y páginas web, 
@@ -7,3 +10,29 @@
 	\item Almacenar los precios fijados por el encargado de ventas, para que sean empleados por el personal de ventas.
 	\item Permitir la emisión de factura electrónica desde el sistema, integrándolo a la API de ARCA.
 \end{enumerate}
+
+\section{Objetivos específicos}
+
+Para responder a la primera necesidad
+(comparar costos para elegir al mejor proveedor por producto)
+el sistema recabará datos de precios de proveedores,
+recurriendo a las interfaces de programación de aplicaciones (APIs)
+de aquellos proveedores que ofrezcan el servicio,
+así como al \textit{scrapeo web} para aquellos que no lo ofrezcan.
+De esta manera,
+el encargado de compras de la empresa contará con la información necesaria para negociar de la mejor manera.
+
+En segundo término,
+tenemos que identificar el precio de mercado del producto.
+Sabemos que con una economía en proceso de apertura,
+pero aun relativamente cerrada,
+los precios de los productos importados pueden sufrir de gran dispersión.
+Por ello,
+el sistema recurrirá a las APIs (o \textit{scrapeo web}, según corresponda),
+de la competencia,
+ofreciendo al encargado de ventas la posibilidad de fijar precios con esta información en mente.
+
+Por último,
+una vez realizada la venta,
+el sistema será capaz de conectarse con la API de la Agencia de Recaudación y Control Aduanero (ARCA),
+a los efectos de emitir la factura digital correspondiente.

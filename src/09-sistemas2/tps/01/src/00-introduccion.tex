@@ -1,37 +1,68 @@
 \section{Introducción}
 
-El presente proyecto pretende describir un sistema de gestión de una Pyme dedicada a la venta de equipos informáticos
-\footnote{Este diseño se basa en mi experiencia de más de 15 años de trabajo en la Pyme familiar}.
-Aunque los ejemplos concretos serán pensados para la venta de equipos de computación, 
-el sistema se podría generalizar para empresas cuyos productos tengan una importante proporción de insumos importados.
-Afirmamos esto porque,
-en una economía inflacionaria y con dificultades para importar,
-como la Argentina de los últimos años,
-puede haber una dispersión de precios importante,
-tanto en costos y como en precios finales de los productos.
-Como consumidores, 
-muchas veces cuesta conocer el precio de mercado de los productos. 
-Esta característica se agrava para el caso de los productos importados,
-cuya escasez relativa puede hacer que el mismo producto valga 2 o 3 veces más dependiendo del lugar de compra.
+El presente proyecto propone un sistema de información
+orientado a mejorar la toma de decisiones de una empresa comercial,
+en particular en lo que refiere a la compra y venta de productos.
+
+Aunque,
+en el marco del presente proyecto,
+se diseñará pensando en la venta de equipos informáticos,
+el sistema podría generalizarse para otro rubros,
+en particular para empresas que se dediquen a la venta de productos importados
+\footnote{El diseño se basa en mi experiencia trabajando en la empresa familiar, 
+dedicada a la venta de equipos informáticos e insumos de impresión.}.
+
+En la anterior iteración fundamentábamos la necesidad de este sistema 
+en el contexto de la economía argentina,
+a la que caracterizábamos, 
+en aquel momento, 
+como inflacionaria 
+y con dificultades para la importación.
+
+Aunque la inflación haya bajado 
+la economía argentina enfrenta aun niveles de inflación relativamente altos,
+con un precio del dólar fluctuando con cierta importancia,
+a veces de forma intradiaria.
+
+Por otra parte,
+el lento pero sostenido crecimiento de las importaciones,
+así como la llegada de otros actores al comercio minorista,
+(pensemos, por ejemplo, en el servicio puerta a puerta de Amazon)
+refuerzan la necesidad de contar con la información del mercado adecuada,
+en el momento adecuado.
+Bajar costos y crecer en competitividad son dos desafíos fundamentales en este contexto.
 
 Por ello, 
-el sistema diseñado propone acompañar a la empresa desde la compra a proveedor hasta la emisión de la factura.
-La idea es vincular los precios ofrecidos por distintos proveedores que,
-tal y como lo percibe el cliente final,
-también tienen grandes variaciones,
-colaborando con la toma de decisiones de la Pyme y asegurando un mejor precio.
-Adicionalmente,
-el sistema recabará datos de la competencia,
-recurriendo tanto a APIs como al \textit{scrapeo} web,
-tratando de establecer el precio de mercado un producto.
-En un contexto de alta dispersión, 
-acompañado de una baja de la inflación,
-tener un precio competitivo es muy importante.
-Con estos datos,
-tanto los encargados de compras como de ventas podrán establecer las mejores estrategias de precios,
-disminuyendo costos y cuidando a los clientes en simultáneo.
+el sistema diseñado propone acompañar a la empresa comercial,
+desde la compra de un producto a proveedor,
+la fijación del precio teniendo en cuenta a la competencia,
+y la emisión de la factura electrónica correspondiente.
+La idea central es ofrecer un conocimiento rápido de los precios de distintos productos,
+colaborando con la toma de decisiones de la empresa, bajando costos y mejorando la competitividad.
+
+Para responder a la primera necesidad
+(comparar costos para elegir al mejor proveedor por producto)
+el sistema recabará datos de precios de proveedores,
+recurriendo a las interfaces de programación de aplicaciones (APIs)
+de aquellos proveedores que ofrezcan el servicio,
+así como al \textit{scrapeo web} para aquellos que no lo ofrezcan.
+De esta manera,
+el encargado de compras de la empresa contará con la información necesaria para negociar de la mejor manera.
+
+En segundo término,
+tenemos que identificar el precio de mercado del producto.
+Sabemos que con una economía en proceso de apertura,
+pero aun relativamente cerrada,
+los precios de los productos importados pueden sufrir de gran dispersión.
+Por ello,
+el sistema recurrirá a las APIs (o \textit{scrapeo web}, según corresponda),
+de la competencia,
+ofreciendo al encargado de ventas la posibilidad de fijar precios con esta información en mente.
 
 Por último,
-el sistema deberá ser capaz de conectarse con la API de la ahora denominada
-Agencia de Recaudación y Control Aduanero (ARCA),
-para emitir la factura digital correspondiente a la venta presencial.
+una vez realizada la venta,
+el sistema será capaz de conectarse con la API de la Agencia de Recaudación y Control Aduanero (ARCA),
+a los efectos de emitir la factura digital correspondiente.
+
+De esta forma,
+el sistema pretende acompañar a la empresa desde la compra del producto hasta la concreción de la venta.
