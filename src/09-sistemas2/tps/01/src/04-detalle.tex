@@ -1,0 +1,113 @@
+
+\section{Descripción detallada de casos de uso}
+
+\subsection{Consultar precios disponibles para un producto}
+
+\textbf{Resumen:}
+Dada una descripción o número de parte
+-que es un nomenclador único de productos-,
+el encargado de compras recibirá un listado de precios de dicho producto,
+que será descargado de las páginas web e interfaces de programación de los diversos proveedores,
+según el caso.
+
+\textbf{Precondición:} 
+el encargado de compras ingresa parte de la descripción/número de parte en el sistema para iniciar una búsqueda
+
+\textbf{Escenario principal:}
+\begin{enumerate}
+	\item El encargado de compras ingresa a la opción búsqueda.
+	\item El sistema solicita ingreso de número de parte o descripción del producto.
+	\item El encargado de compras ingresa cualquiera de los dos datos, completos o en parte.
+	\item El sistema muestra coincidencias al encargado de compras, para que elija cuál era el artículo que buscaba.
+	\item El encargado de compras confirma el producto que buscaba.
+	\item El sistema descarga la información necesaria, 
+	recurriendo en los casos en que sea posible a las interfaces de programación de los proveedores (API),
+	al \textit{Web Scrapping} donde no sea posible. Una vez recopilada la información, 
+	se presenta al encargado por nombre de proveedor y precio.
+	\item El encargado toma las decisiones correspondientes e inicia el proceso de compra por canales habituales.
+\end{enumerate}
+
+\textbf{Poscondición:}
+El encargado de compras dispone de información suficiente en tiempo real para hacer una compra minimizando costos.
+
+\textbf{Flujo alternativo:}
+
+\textbf{A1} La descripción no coincide con un producto cargado en base de datos 
+
+La secuencia comienza en el punto 3.
+
+\begin{enumerate}
+	\item[4.] El sistema informa que no existen coincidencias con productos en base de datos,
+	y solicita cargar número de parte íntegramente para buscar por nomenclador único.
+	\item[5.] El usuario carga número de parte íntegramente.
+	\item[6.] El sistema muestra coincidencias tomadas directamente de proveedor,
+	de ser el producto buscado se incorpora a base de datos,
+	para facilitar búsqueda por descripción en el futuro.
+\end{enumerate}
+
+El escenario vuelve a punto 6.
+
+\subsection{Emitir factura electrónica}
+
+\textbf{Resumen:}
+Personal de venta, 
+luego de la brindar atención y asesoramiento al comprador minorista,
+requiere de la información del sistema
+-descripción del producto, cantidad, disponibilidad y precio-
+para emitir una factura electrónica.
+Esto puede hacerse sincronizando al sistema con la API de la ex AFIP,
+ahora ARCA.
+
+\textbf{Actores:} Personal de ventas (primario), Sistema de ARCA (secundario).
+
+\textbf{Precondición:} 
+Personal de ventas ha concluido con la atención y asesoramiento correspondiente,
+el cliente minorista decide proceder con la compra,
+por lo cual el personal de ventas solicita iniciar el procedimiento para emitir factura electrónica.
+
+\textbf{Escenario principal:}
+\begin{enumerate}
+	\item Personal de ventas ingresa a la sección de emisión de factura electrónica
+	\item El sistema solicita ingresar identificación de cliente, mediante CUIT o código interno alfanumérico.
+	\item Personal de ventas ingresa identificación de cliente o nomenclador por categoría, como CF para consumidor final.
+	\item El sistema, de acuerdo a la identificación del cliente, determina si la boleta será tipo A o tipo B.
+	\item El sistema, luego de determinar el tipo de factura, solicita ingresar el primer producto.
+	\item Personal de ventas ingresa el producto, por número de parte, código de barras o descripción.
+	\item El sistema muestra las coincidencias en base de datos, esperando confirmación.
+	\item Personal de ventas confirma la coincidencia e ingresa cantidad.
+	\item El sistema aguarda la carga de nuevo item, en dicho caso vuelve a punto 6.
+	\item Personal de ventas indica que finaliza la carga de productos, solicitando autorización de comprobante.
+	\item El sistema envía petición a servicio de ARCA, incluyendo: CUIT de cliente, cantidad de productos, Iva y precio final.
+	\item Servidor de ARCA confirma autorización de boleta, devolviendo número de comprobante electrónico.
+	\item El sistema solicita al personal de ventas confirme para imprimir el comprobante o exportarlo a PDF.
+	\item Personal de ventas confirma y obtiene el comprobante en el formato deseado.
+\end{enumerate}
+
+\textbf{Poscondición:}
+Personal de ventas tiene el comprobante correspondiente a la compra del cliente y puede finalizar el proceso de compra entregando comprobante y producto.
+
+\textbf{Flujo alternativo:}
+
+\textbf{A1} El personal de ventas ingresa el CUIT del cliente, pero este no está cargado en base de datos
+
+Secuencia comienza en punto 3
+
+\begin{enumerate}
+	\item[4.] El sistema hace una petición al sistema de ARCA de los datos del contribuyente, 
+	empleando el CUIT para identificarlo.
+	\item[5.] ARCA devuelve los datos del contribuyente.
+	\item[6.] El sistema los incorpora a la base de datos.
+\end{enumerate}
+
+Vuelve al escenario principal en punto 4
+
+\textbf{A2} Personal de ventas ingresa un producto, pero este no existe en base de datos
+
+Secuencia comienza en 6.
+
+\begin{enumerate}
+	\item[7.] El sistema no encuentra coincidencias, por lo que pide reingreso al personal de ventas.
+	\item[8.] Personal de ventas prueba con descripción, código de barras o ingreso manual de nombenclador.
+\end{enumerate}
+
+Vuelve a flujo normal en punto 8.

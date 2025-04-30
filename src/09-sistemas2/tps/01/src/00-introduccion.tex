@@ -1,0 +1,37 @@
+\section{Introducción}
+
+El presente proyecto pretende describir un sistema de gestión de una Pyme dedicada a la venta de equipos informáticos
+\footnote{Este diseño se basa en mi experiencia de más de 15 años de trabajo en la Pyme familiar}.
+Aunque los ejemplos concretos serán pensados para la venta de equipos de computación, 
+el sistema se podría generalizar para empresas cuyos productos tengan una importante proporción de insumos importados.
+Afirmamos esto porque,
+en una economía inflacionaria y con dificultades para importar,
+como la Argentina de los últimos años,
+puede haber una dispersión de precios importante,
+tanto en costos y como en precios finales de los productos.
+Como consumidores, 
+muchas veces cuesta conocer el precio de mercado de los productos. 
+Esta característica se agrava para el caso de los productos importados,
+cuya escasez relativa puede hacer que el mismo producto valga 2 o 3 veces más dependiendo del lugar de compra.
+
+Por ello, 
+el sistema diseñado propone acompañar a la empresa desde la compra a proveedor hasta la emisión de la factura.
+La idea es vincular los precios ofrecidos por distintos proveedores que,
+tal y como lo percibe el cliente final,
+también tienen grandes variaciones,
+colaborando con la toma de decisiones de la Pyme y asegurando un mejor precio.
+Adicionalmente,
+el sistema recabará datos de la competencia,
+recurriendo tanto a APIs como al \textit{scrapeo} web,
+tratando de establecer el precio de mercado un producto.
+En un contexto de alta dispersión, 
+acompañado de una baja de la inflación,
+tener un precio competitivo es muy importante.
+Con estos datos,
+tanto los encargados de compras como de ventas podrán establecer las mejores estrategias de precios,
+disminuyendo costos y cuidando a los clientes en simultáneo.
+
+Por último,
+el sistema deberá ser capaz de conectarse con la API de la ahora denominada
+Agencia de Recaudación y Control Aduanero (ARCA),
+para emitir la factura digital correspondiente a la venta presencial.
