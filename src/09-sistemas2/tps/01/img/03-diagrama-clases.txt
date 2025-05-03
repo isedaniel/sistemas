@@ -1,0 +1,55 @@
+Mermaid Live Editor
+
+ classDiagram
+    Cliente *-- Venta
+    Venta *-- Producto
+    Compra *-- Producto
+    PrecioMercado *-- Producto
+    PrecioMercado <|-- Competidor
+    Compra <|-- Proveedor
+    class Cliente{
+        +String cuit
+        +String nombre
+        +String apellido
+        +String direccion
+        +String localidad
+        +Venta[] venta
+        +getVentas()
+    }
+    class Venta {
+        + codVenta
+        + Cliente cliente
+        + Producto[] productos
+        + Date fecha
+        + Double total
+        + getTotal()
+        + getFecha()
+        + getProductos()
+    }
+    class Producto{
+        + String numParte
+        + String nombre
+        + Double precio
+        + Enum iva
+        + int stock
+        + getStock()
+        + getPrecioCompra()
+        + getPrecioVenta()
+    }
+    class Compra {
+        + Date fecha
+        + Double total
+        + Producto[] productos
+        + getTotal()
+        + getProductos()
+    }
+    class PrecioMercado {
+        + Producto[] producto
+        + Date fecha
+    }
+    class Competidor {
+        + String nombre 
+    }
+    class Proveedor {
+        + String nombre
+    }
