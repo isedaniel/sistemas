@@ -1,0 +1,168 @@
+\section*{Fórmulas}
+
+\subsection*{Ley de Coulomb}
+
+\begin{equation}
+    F = k\frac{|Q_1Q_2|}{r^{2}}
+\end{equation}
+
+\begin{equation}
+    k = \frac{1}{4\pi\epsilon_0}
+\end{equation}
+
+Donde k es la \textbf{Constante de Coulomb} o
+\textbf{Constante electrostática},
+cuyo valor aproximado es:
+
+\begin{equation}
+    k_\epsilon = \frac{1}{4\pi\epsilon_0} \approx 8.98 \times 10^{9} \frac{N\cdot m^{2}}{C^{2}}
+\end{equation}
+
+Y \(\epsilon_0\) es la constante de permitividad en el vacío,
+cuyo valor aproximado es:
+
+\begin{equation}
+    e_0 \approx 8.85 \times 10^{-12} \frac{C^{2}}{N\cdot m^{2}}
+\end{equation}
+
+\subsection*{Campo eléctrico}
+
+\begin{equation}
+    E = \frac{F}{Q_0} = k\frac{|Q_1|}{r^{2}}
+\end{equation}
+
+\subsection*{Flujo eléctrico - Ley de Gauss}
+
+\begin{equation}
+    \phi=E\cdot A \cdot \cos(\theta)
+\end{equation}
+
+Donde \(E\) es la magnitud del campo eléctrico,
+\(A\) el área de la superficia que atraviesa,
+y \(\phi\) es el ángulo entre el vector del campo eléctrico y 
+el vector normal a la superficie.
+Si son paralelos, es \(\cos\theta = 1\),
+por lo tanto: 
+
+\begin{equation}
+    \phi = E\cdot A
+\end{equation}
+
+Si reemplazamos \(E\) por la expresión en (5) obtenemos:
+
+\begin{equation}
+    \phi = \frac{F}{Q_0} \cdot A = k\frac{|Q_1|}{r^{2}} \cdot A
+\end{equation}
+
+Si el área es de una esfera, reemplazando \(k = \frac{1}{4\pi\epsilon_0}\):
+
+\begin{equation}
+    \phi = \frac{1}{\cancel{4\pi}\epsilon_0} \frac{|Q_1|}{\cancel{r^{2}}} \cdot \cancel{4\pi r^{2}} = \frac{|Q_1|}{\epsilon_0}
+\end{equation}
+
+Es decir, dada esfera, flujo es carga sobre permitividad.
+
+\section{Ejercicio 1}
+
+\(Q_1 = 3 \times 10^{-6} C\) y \(Q_2 = -2 \times 10^{-6} C\),
+con \(r = 0.05m\). Averiguar \(F\).
+
+Operamos con \textbf{Ley de Coulomb}:
+
+\begin{align*}
+    F = k\frac{|Q_1Q_2|}{r^{2}} \implies F = 8.98 \times 10^{9} \frac{|3 \times 10^{-6} \cdot -2 \times 10^{-6}|}{0.05^{2}} \\
+    \boxed{F = 21.6 N}
+\end{align*}
+
+\section{Ejercicio 2}
+
+\(q_1 = 5 \mu C\), \(q_2 = -3 \mu C\) y \(q_3 = 2 \mu C\).
+Distancias, \(r_{12} = 0,1m\), \(r_{13} = 0,2m\).
+Calcular \(F_{12}\), \(F_{23}\) y \(F_{N}\).
+
+Operamos nuevamente con \textbf{Ley de Coulomb}:
+
+\begin{align*}
+    F_{12} = 9 \times 10^{9} \frac{|5 \times 10^{-6} \cdot -3 \times 10^{-6}|}{0.1^{2}} \\
+    \boxed{F_{12} = 13.5 N}
+\end{align*}
+
+Operamos ahora \(F_{23}\):
+
+\begin{align*}
+    F_{23} = 9 \times 10^{9} \frac{|2 \times 10^{-6} \cdot -3 \times 10^{-6}|}{0.1^{2}} \\
+    \boxed{F_{12} = 5.4 N}
+\end{align*}
+
+Por lo tanto, \(F_{N}\):
+
+\begin{align*}
+    F_{N} = -13.5 N + 5.4 N \\
+    \boxed{F_{N} = -8.1 N}
+\end{align*}
+
+Puesto que el signo es negativo,
+esto implica que la fuerza resultante es hacia la izquierda.
+
+\section{Ejercicio 3}
+
+Dada \(Q = 4 \times 10^{-6} C\), calcular campo eléctrico para 
+\(r = 0.2m\).
+
+\begin{align*}
+    E = k\frac{|Q_1|}{r^{2}} \implies 9 \times 10^{9} \frac{|4 \times 10^{-6}|}{0.2^{2}} \\
+    \boxed{E = 9 \times 10^{5} \frac{N}{C}}
+\end{align*}
+
+\section{Ejercicio 4}
+
+Dadas \(Q_1 = 3 \mu C\), \(Q_2 = -2 \mu C\), \(r = 0.4 m\), calcular \(E\) en \(r = 0.2 m\).
+
+Calculamos \(E_1\), campo eléctrico debido a carga 1:
+
+\begin{align*}
+    9 \times 10^{9} \frac{|3 \times 10^{-6}|}{0.2^{2}} \\
+    \boxed{E_1 = 6.75 \times 10^{5} \frac{N}{C}}
+\end{align*}
+
+Vamos ahora con el campo eléctrico debido a \(Q_2\):
+
+\begin{align*}
+    9 \times 10^{9} \frac{|-2 \times 10^{-6}|}{0.2^{2}} \\
+    \boxed{E_2 = 4.5 \times 10^{5} \frac{N}{C}}
+\end{align*}
+
+Para determinar \(E_N\), restamos, por ser cargas de distinto signo:
+
+\begin{align*}
+    E_N = 6.75 \times 10^{5} N - 4.5 \times 10^{5} N \\
+    \boxed{E_N = 2.25 \times 10^{5} \frac{N}{C}}
+\end{align*}
+
+\section{Ejercicio 5}
+
+Dada \(\epsilon = 8.85 \times 10^{-12} \), 
+tengo una carga de \(5 \mu C\),
+encerrada en esfera de \(r=0.2m\).
+Calcular flujo.
+
+Operamos con \textbf{Ley de Gauss}:
+
+\begin{align*}
+    \phi = \frac{|Q_1|}{\epsilon_0} \implies \phi = \frac{5 \times 10^{-6}}{8.85 \times 10^{-12}} \\
+    \boxed{\phi = 5.65 \times 10^{5} \frac{N\cdot m^{2}}{C}}
+\end{align*}
+
+\section{Ejercicio 6}
+
+Dada \(A = 0.1m^{2}\),
+con \(r = 1m\),
+y \(Q = 2 \mu C\),
+calcular \(\phi\).
+
+Usamos \(\phi = k\frac{Q}{r^{2}} \cdot A\):
+
+\begin{align*}
+    \phi = 9\times10^{9} \frac{2\times10^{-6}}{1^{2}}\cdot 0.1 \\
+    \boxed{\phi = 1.8\times10^{3} \frac{N\cdot m^{2}}{C}}
+\end{align*}
