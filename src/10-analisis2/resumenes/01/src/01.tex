@@ -1,0 +1,128 @@
+Primer apunte con enfoque estructuras de datos y funciones.
+
+\section{Unidad 1}
+
+\subsection{Campo escalar}
+
+\texttt{CampoEscalar (x,y) => z}
+
+Es una función de dos variables \texttt{xy} que, 
+dado un punto \((x,y)\),
+devuelve un escalar \(z\).
+
+La función puede estar definida de forma 
+\texttt{Explícita f(x,y) = z} o \texttt{Implícita f(x,y,z) = 0}.
+
+\subsection{Dominio}
+
+\texttt{Dom CampoEscalar => \(\{(x,y) \in R^{2} / \text{\texttt{Condicion a cumplir}}\}\)}
+
+Dominio recibe un CampoEscalar y devuelve el conjunto de puntos \((x,y)\)
+que el \texttt{CampoEscalar} acepta.
+
+Para determinar dominio:
+\begin{enumerate}
+    \item Establecemos restricciones
+    \item Despejamos una de las variables
+    \item Expresamos como conjunto
+\end{enumerate}
+
+\textbf{Ejemplo.}
+
+Dado \texttt{CampoEscalar} con función 
+\(z = \frac{\sqrt{x+y}}{x-2y}\).
+
+Determinamos restricciones.
+
+\begin{equation*}
+    x+y \geq 0 \land x-2y \neq 0
+\end{equation*}
+
+Despejamos una de las variables, en este caso y.
+
+\begin{equation*}
+    y \geq -x \land y \neq \frac{x}{2}
+\end{equation*}
+
+Por lo tanto, \texttt{Dom CampoEscalar} =>
+
+\begin{equation*}
+    \{(x,y) \in R^{2} / y \geq -x \land y \neq \frac{x}{2}\}
+\end{equation*}
+
+\subsection{Definiciones de topología}
+
+\subsubsection{Entorno}
+
+\texttt{E(A,\(\delta\)) => \(\{x \in R^{n}: |x-A| < \delta\}\)}
+
+Entorno recibe un punto \(A\) y un radio \(\delta\),
+y devuelve un conjunto de puntos en \(R^{n}\),
+ubicados a una distancia menor a \(\delta\).
+
+\textbf{Ejemplos.}
+
+En \(R\): entorno, con centro en \(A\), en recta real, con radio \(\delta\).
+
+En \(R^{2}\): \textbf{disco}, con centro en \(A\), en plano real, con radio \(\delta\).
+
+En \(R^{3}\): \textbf{esfera}, con centro en \(A\), en el espacio, con radio \(\delta\).
+
+\subsubsection{Entorno reducido}
+
+\texttt{EntornoReducido A, \(\delta\) => E(A,\(delta\) - A)}
+
+Es igual al entorno,
+pero devuelve el conjunto de puntos \textbf{sin incluir} \(A\).
+
+\subsubsection{Clasificación de puntos}
+
+Dado conjunto \(C\):
+
+\begin{itemize}
+    \item A es \textbf{punto interior} si está incluído en \(C\)
+    \item A es \textbf{punto exterior} si está fuera de \(C\)
+    \item A es \textbf{punto frontera} si está sobre la frontera de \(C\)
+    \item A es \textbf{punto de acumulación} si su entorno es interior o frontera, pero A no pertenece a C.
+\end{itemize}
+
+\subsubsection{Clasificación de conjuntos}
+
+Dado conjunto \(C\):
+
+\begin{itemize}
+    \item Es \textbf{abierto} si solo tiene puntos interiores.
+    \item \textbf{Cerrado} si tiene interiores + frontera.
+    \item \textbf{Acotado} si se puede incluir \textit{completamente} en un entorno, de cualquier radio,
+    con \(A\) en origen.
+\end{itemize}
+
+\subsection{Gráfica de campo escalar}
+
+\texttt{Graf CampoEscalar => superficie en \(R^{3}\)}
+
+La gráfica devuelve todos los puntos \((x,y,z)\) tal que \(z = f(x,y)\).
+Es una superficie en \(R^{3}\).
+
+Para determinarla:
+
+\begin{enumerate}
+    \item Igualamos a 0 cada uno de sus componentes
+    \item Vemos como se comporta el resto
+\end{enumerate}
+
+\subsection{Curva de nivel}
+
+Intersección de \texttt{CampoEscalar} con cualquier plano \(z = k\),
+paralelo al plano \texttt{xy}, siendo \(k\) una constante.
+
+Para determinarla:
+
+\begin{enumerate}
+    \item Igualamos z a un valor
+    \item Despejamos alguna de las variables que queda y obtenemos una en función de otra
+    \item Viendo cómo se comporta se obtiene una idea de lo que hacer el \texttt{CampoEscalar}
+\end{enumerate}
+
+\subsection{Cuádricas, cónicas, cilindros}
+
