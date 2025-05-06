@@ -6,11 +6,11 @@ Primer apunte con enfoque estructuras de datos y funciones.
 
 \texttt{CampoEscalar (x,y) => z}
 
-Es una función de dos variables \texttt{xy} que, 
+Es una función de dos variables \texttt{xy} que,
 dado un punto \((x,y)\),
 devuelve un escalar \(z\).
 
-La función puede estar definida de forma 
+La función puede estar definida de forma
 \texttt{Explícita f(x,y) = z} o \texttt{Implícita f(x,y,z) = 0}.
 
 \subsection{Dominio}
@@ -29,7 +29,7 @@ Para determinar dominio:
 
 \textbf{Ejemplo.}
 
-Dado \texttt{CampoEscalar} con función 
+Dado \texttt{CampoEscalar} con función
 \(z = \frac{\sqrt{x+y}}{x-2y}\).
 
 Determinamos restricciones.
@@ -94,7 +94,7 @@ Dado conjunto \(C\):
     \item Es \textbf{abierto} si solo tiene puntos interiores.
     \item \textbf{Cerrado} si tiene interiores + frontera.
     \item \textbf{Acotado} si se puede incluir \textit{completamente} en un entorno, de cualquier radio,
-    con \(A\) en origen.
+          con \(A\) en origen.
 \end{itemize}
 
 \subsection{Gráfica de campo escalar}
@@ -180,13 +180,13 @@ Igual estructura al anterior, pero \texttt{Grado z => 2}:
 Igual al anterior, pero \(\exists\) \texttt{CoeficienteIndependiente}.
 
 \subsubsection{Hiperboloide de una hoja}
- 
+
 
 \subsection{Límites Campos Escalares}
 
 En una variable:
 
-\texttt{Lim x, a, f(x) => L \(\iff\) f(x) tiende a L por izquierda y derecha} 
+\texttt{Lim x, a, f(x) => L \(\iff\) f(x) tiende a L por izquierda y derecha}
 
 En funciones de 2 variables \texttt{CampoEscalar} es la misma idea,
 pero \texttt{Entorno (x,y) => } Disco,
@@ -234,3 +234,102 @@ Igual al iterado, pero con:
 Y sus respectivas variantes en función de \(x\).
 Si aparece \(L\) distinto, concluimos que \(\nexists L\).
 
+\subsubsection{Límites en coordenadas polares}
+
+
+Se utiliza cuando aparece \(x^{2} + y^{2}\) en el denominador.
+
+Sustituimos:
+\begin{enumerate}
+    \item \(x = \rho \cos\theta\)
+    \item \(y = \rho \sin\theta\)
+    \item \(x^{2} + y^{2} = \rho^{2}\)
+\end{enumerate}
+
+Operamos algebraicamente y buscamos la función \(F(\rho)\),
+es decir, que quede en función de \(\rho\) y no de \(\theta\).
+
+Operamos \(\lim_{\rho\to0} F(\rho)\).
+
+Como \(f(\rho\cos\theta,\rho\sin\theta) < F(\rho) \implies \lim_{(x,y)\to(0,0)}f(x,y) = L\).
+
+\textbf{Ejemplo.}
+
+Dado \(\lim_{(x,y)\to(9,9)}\frac{x^{3} + x^{2} - 2y^{3} + y^{2}}{x^{2} + y^{2}}\).
+
+\texttt{Lim \(\to\) (0,0)} y además \texttt{\(x^{2} + y^{2}\)} en denominador \(\implies\) calculamos con coordenadas polares:
+
+Sustituimos:
+
+\begin{equation*}
+    f(\rho\cos\theta,\rho\sin\theta) = \frac{\rho^{3}\cos^{3}\theta + \rho^{2}\cos^{2}\theta - 2\rho^{3}\sin^{3}\theta + \rho^{2}\sin^{2}\theta}{\rho^{2}}
+\end{equation*}
+
+Operamos algebraicamente, sacamos \(\rho^{2}\) factor común para que quede una sola función:
+
+\begin{equation*}
+    \frac{\cancel{\rho^{2}}(\rho\cos^{3}\theta + \cos^{2}\theta - 2\rho\sin^{3}\theta + \sin^{2}\theta)}{\cancel{\rho^{2}}}
+\end{equation*}
+
+Simplificamos \(\cos^{2}\theta + \sin^{2}\theta = 1\)
+
+\begin{equation*}
+    \rho\cos^{3}\theta - 2\rho\sin^{3}\theta + 1
+\end{equation*}
+
+Operamos el \(\lim_{\rho\to0}\)
+
+\begin{equation*}
+    \lim_{\rho\to0}\rho\cos^{3}\theta - 2\rho\sin^{3}\theta + 1 = \boxed{1}
+\end{equation*}
+
+Llegamos a un valor, para comprobarlo buscamos \(F(\rho)\),
+igualando expresión de \(L\) a 0:
+
+\begin{align*}
+    \rho\cos^{3}\theta - 2\rho\sin^{3}\theta + 1     & = 1 \\
+    \rho\cos^{3}\theta - 2\rho\sin^{3}\theta + 1 - 1 & = 0 \\
+    \rho\cos^{3}\theta - 2\rho\sin^{3}\theta         & = 0 \\
+\end{align*}
+
+Sobre la expresión resultante aplicamos módulo:
+
+\begin{align*}
+    |\rho\cos^{3}\theta - 2\rho\sin^{3}\theta|                 & \leq |\rho\cos^{3}\theta| + |2\rho\sin^{3}\theta|            \\
+    |\rho\cos^{3}\theta| + |2\rho\sin^{3}\theta|               & = |\rho|\cdot|\cos^{3}\theta| + |2\rho|\cdot|\sin^{3}\theta| \\
+    |\rho|\cdot|\cos^{3}\theta| + |2\rho|\cdot|\sin^{3}\theta| & \leq |\rho| + |2\rho|                                        \\
+    \boxed{F(\rho) = 3\rho}
+\end{align*}
+
+Operamos límite tendiendo a 0 de \(F(\rho)\)
+
+\begin{align*}
+    \lim_{\rho\to0} 3\rho = \boxed{0}
+\end{align*}
+
+Como límite tiende a 0, por lo tanto, límite es igual al 1 encontrado con anterioridad.
+
+\subsection{Continuidad de funciones de dos variables}
+
+\subsubsection{Contínua en un punto}
+
+\texttt{Continua f(x,y), (x0,y0) => \(\{True, False\}\)}
+
+Continua recibe \texttt{CampoEscalar} y un punto \texttt{P = (x0,y0)},
+devuelve continuidad verdadera si:
+
+\begin{enumerate}
+    \item \texttt{f(x0,y0) => z0}
+    \item \texttt{lim (x,y), (x0,y0), f(x,y) => L}
+    \item \texttt{L == x0}
+\end{enumerate}
+
+\subsubsection{Función contínua}
+
+\texttt{Continua f(x,y) => \(\{True, False\}\)}
+
+Que sea contínua depende del polinomio del \texttt{CampoEscalar},
+si no tiene discontinuidades en su dominio es contínua.
+
+\textbf{Ejemplo.}
+\(\sqrt{x+y}\) es contínua en su dominio \(y \geq -x\).
