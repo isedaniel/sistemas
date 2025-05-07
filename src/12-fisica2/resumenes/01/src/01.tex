@@ -1,1 +1,110 @@
+\section{Carga eléctrica}
+
+\subsection{Ley de Coulomb}
+
+La fuerza ejercida entre cargas \(Q_1\) y \(Q_2\).
+
+\vspace{1cm}
+\begin{equation}
+    F = k\frac{|Q_1Q_2|}{r^{2}}
+\end{equation}
+\vspace{1cm}
+
+\begin{enumerate}
+    \item Siendo F la fuerza entre las cargas (por tercera ley), medida en newton (N)
+    \item \(k\) la \textbf{Constante de Coulomb} o \textbf{Constante electrostática},
+    con valor aproximado 
+    \begin{equation*}
+        k_0\approx9\times10^{9} \frac{N\cdot m^{2}}{C^{2}}
+    \end{equation*}
+    \item \(Q_{1}\) y \(Q_{2}\) las cargas, medidas en coulomb (C)
+    \item y \(r\) la distancia entre las mismas, medida en metros (m)
+\end{enumerate}
+
+La constante de Coulomb puede expresarse también como:
+
+\vspace{1cm}
+\begin{equation*}
+    k_0 = \frac{1}{4\pi\epsilon_0}
+\end{equation*}
+\vspace{1cm}
+
+Siendo \(\epsilon_0\) la \textbf{Constante de permitividad},
+cuyo valor aproximado es: 
+\begin{equation*}
+    \epsilon_0 \approx 8.85 \times 10^{-12} \frac{C^{2}}{N\cdot m^{2}}
+\end{equation*}.
+
 \section{Campo eléctrico}
+
+Es la fuerza potencial que una carga puede ejercer sobre una carga de prueba,
+ubicada a un distancia \textit{r}.
+
+\vspace{1cm}
+\begin{equation}
+    E = \frac{F}{Q_0} = k \frac{|Q|}{r^{2}}
+\end{equation}
+\vspace{1cm}
+
+\begin{itemize}
+    \item Siendo \(E\) el campo eléctrico, medido en \(\frac{N}{Q}\)
+    \item \(F\) la fuerza que la carga \(Q\) puede potencialmente ejercer sobre la carga de prueba \(Q_0\)
+    \item \(k\) la constante de Coulomb 
+    \item \(r\) la distancia entre las cargas
+\end{itemize}
+
+\section{Flujo Eléctrico - Ley de Gauss}
+
+Refiere al campo eléctrico que atraviesa una superficie de área \(A\).
+
+\vspace{1cm}
+\begin{equation*}
+    \phi = E \cdot A \cdot \cos \theta
+\end{equation*}
+\vspace{1cm}
+
+\begin{itemize}
+    \item Siendo \(\phi\) el flujo eléctrico 
+    \item \(E\) el campo eléctrico 
+    \item \(A\) el área considerada
+    \item \(\theta\) el ángulo entre el vector normal de la superficie y el vector del campo eléctrico
+\end{itemize}
+
+Cuando el vector normal de la superificie y el vector del campo eléctrico son paralelos,
+\(\cos\theta = 1\), por lo cual la ecuación se reduce a:
+
+\vspace{1cm}
+\begin{equation}
+    \phi = E\cdot A
+\end{equation}
+\vspace{1cm}
+
+La ley de Gauss resulta de reemplazar \(E\) por \(k\frac{|Q|}{r^{2}}\) y,
+a su vez,
+\(k\) por \(\frac{1}{4\pi\epsilon_0}\).
+Por otra parte,
+el área considerada es la superficie de una esfera,
+por lo cual \(A = 4\pi r^{2}\),
+por lo cual llegamos a la expresión:
+
+\vspace{1cm}
+\begin{equation*}
+    \phi = \frac{1}{4\pi\epsilon} \cdot \frac{|Q|}{r^{2}} \cdot 4\pi r^{2}
+\end{equation*}
+\vspace{1cm}
+
+Simplificamos:
+
+\vspace{1cm}
+\begin{equation*}
+    \phi = \frac{1}{\cancel{4\pi}\epsilon} \cdot \frac{|Q|}{\cancel{r^{2}}} \cdot \cancel{4\pi} \cancel{r^{2}}
+\end{equation*}
+\vspace{1cm}
+
+Finalmente, llegamos a la expresión de la \textbf{Ley de Gauss}:
+
+\vspace{1cm}
+\begin{equation}
+    \phi = \frac{|Q|}{\epsilon}
+\end{equation}
+\vspace{1cm}
