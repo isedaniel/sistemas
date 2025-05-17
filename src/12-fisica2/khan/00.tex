@@ -41,7 +41,9 @@
 %\usepackage{pdfpages}
 
 % tipografía cheta
-\usepackage{tgbonum}
+\usepackage{tgadventor}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
 
 % interlineado: 1.0 simple, 1.3 (1.5), 1.6 (doble)
 \linespread{1.3}
@@ -56,15 +58,17 @@
 
 \tableofcontents
 
-\include{src/01}
-\include{src/02}
-\include{src/03}
-\include{src/04}
-\include{src/05}
-\include{src/06}
-\include{src/07}
-\include{src/08}
-\include{src/09}
-\include{src/10}
+\pagebreak
+
+\input{src/01}
+\input{src/02}
+\input{src/03}
+\input{src/04}
+\input{src/05}
+\input{src/06}
+\input{src/07}
+\input{src/08}
+\input{src/09}
+\input{src/10}
 
 \end{document}
