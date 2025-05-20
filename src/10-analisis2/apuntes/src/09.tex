@@ -1,2 +1,47 @@
 \section{Clase 20 de mayo}
 
+\subsection{Repasamos TP de integrales dobles}
+
+Vemos ejercicio 1q.
+Integral doble con recinto rectangular.
+Planteamos integral doble que se resuelve de forma iterativa.
+Por convención, ponemos diferencial \(dy dy\).
+
+Repasamos integración por partes:
+elegimos \(u\) y \(dv\) con regla ILPET:
+irracional, logarítmica, polinómica, exponencial, trigonométrica.
+
+\subsection{Cambiar variables}
+
+Hacemos unos ejercicios de repaso.
+Vemos cómo (y cuándo) se hace el cambio a coordenadas polares.
+
+Vamos a poder terminar la práctica de integrales dobles con esto.
+
+El resto de transformaciones las vamos a conocer,
+pero no se suelen aplicar.
+Las que vamos a trabajar en profundidad son las coordenadas polares.
+
+\subsection{Coordenadas polares}
+
+Se hace cuando la región de integración es circular.
+Apelamos a la transformación:
+
+\begin{align*}
+    \begin{cases}
+        x = \rho\cos\theta    \\
+        y = \rho\sin\theta    \\
+        x^{2} + x^{2} = r^{2} \\
+    \end{cases}
+\end{align*}
+
+El Jacobiano correspondiente a la transformación es operar determinante sobre un cojunto de derivadas parciales.
+
+En general se integra primero el radio y después el ángulo.
+Porque el ángulo suele ser numérico.
+
+Si hiciéramos la integral iterativa común,
+la que ya conocemos,
+sería muy engorroso:
+esa es la utilidad de la transformación en coordenadas polares.
+Queda prácticamente una integral directa multiplicada por el resultado del jacobiano.
