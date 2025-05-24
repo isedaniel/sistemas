@@ -101,7 +101,7 @@ int main()
     /*
         creo la pila
     */
-    Node* stack = nullptr; 
+    Node* stack = nullptr;
 
     /*
         primer nodo
@@ -129,7 +129,7 @@ int main()
 
     /*
         imprimimos
-    */ 
+    */
     Node* aux = stack;
     while (aux != nullptr)
     {
@@ -139,18 +139,23 @@ int main()
     std::cout << '\n';
 
     /*
-        agregamos nodo en el medio
+        pedimos número para nodo nuevo
     */
+    int num = 0;
+    std::cin >> num;
     n = (Node*)malloc(sizeof(Node));
-    n->data = 25;
+    n->data = num;
 
     /*
-        si el primer nodo es menor a 25, 
-        (o la pila está vacía
-        hacemos que n->next apunte al ex-primer nodo de la pila
-        y convertimos a n en el nuevo primer nodo de la pila
+        si el primer nodo es menor,
+        (o la pila está vacía)
+        convertimos a n en el nuevo primer nodo de la pila
         SINO
-        que aux apunte al primero y empezamos a iterar
+        iteramos hasta encontrar lo que suceda primero:
+        el último nodo de la pila 
+        O
+        que el nodo siguiente sea menor al que queremos insertar
+        insertamos nuevo nodo en esa posición
     */
     if ((stack == nullptr) || (n->data > stack->data))
     {
@@ -160,18 +165,14 @@ int main()
     else
     {
         aux = stack;
-        while (aux->next != nullptr)
+        while (aux->next != nullptr && aux->next->data > n->data)
         {
-            if (aux->next->data < n->data)
-            {
-                n->next = aux->next;
-                aux->next = n;
-                break;
-            }
             aux = aux->next;
         }
+        n->next = aux->next;
+        aux->next = n;
     }
-    
+
     /*
         imprimimos
     */
