@@ -107,3 +107,38 @@ Graficamos:
     \caption{Recinto 2}
 \end{figure}
 
+Por propiedad de las integrales dobles,
+podemos dividir el recinto en dos subrecintos, 
+de manera tal que:
+
+\begin{align*}
+    &R_1 = [0,1] \times [0,x^{2}] &&\text{y} &R_2 = [1,3/2] \times [x-1,2-x] \\ % doble && en el medio para que quede separado de los otros dos
+\end{align*}
+
+Operamos integral doble en el primer recinto: 
+
+\begin{align*}
+    \int_{0}^{1}\!\left[\int_{0}^{x^{2}}2\,dy\right]\,dx &= \int_{0}^{1}\!\left[\left.2y\right|_{0}^{x^{2}}\right]\,dx \\
+    & = \int_{0}^{1} 2x^{2}\,dx \\ 
+    & = \left.\frac{2}{3}x^{3}\right|_{0}^{1} \\
+    & = \boxed{\frac{2}{3}}
+\end{align*}
+
+Opeamos integral doble en el segundo recinto: 
+
+\begin{align*}
+    \int_{1}^{3/2}\left[\int_{x-1}^{2-x} 2\,dy\right]\,dx &= \int_{1}^{3/2}\left[\left.2y\right|_{x-1}^{2-x}\right]\,dx \\
+    &= \int_{1}^{3/2}\left[2(2-x) - 2(x-1)\right]\,dx \\
+    &= \int_{1}^{3/2}\left[4-2x - 2x + 2)\right]\,dx \\
+    &= \int_{1}^{3/2}6-4x\,dx \\
+    &= \left.6x - 2x^{2}\right|_{1}^{3/2} \\
+    &= 9 - \frac{9}{2} - (6 - 2) \\
+    &= \boxed{\frac{1}{2}}
+\end{align*}
+
+Por último,
+sumamos integrales definidas de subrecintos y obtenemos resultado:
+
+\begin{align*}
+    \frac{2}{3} + \frac{1}{2} & = \frac{4 + 3}{6} = \boxed{\frac{7}{6}}
+\end{align*}
