@@ -17,9 +17,9 @@
 *.toc
 
 # images
-*.jpg
-*.png
-*.svg
+#*.jpg
+#*.png
+#*.svg
 
 # bib files
 *.bbl
