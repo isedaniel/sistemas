@@ -6,7 +6,7 @@ la integración de hace de forma iterada y sucesiva.
 Es decir, primero integramos por una de las variables, tomando la otra como constante, y después integramos por la segunda.
 
 \begin{equation*}
-    \int\int_R f(x,y) \,dx\,dy = \int_{c}^{d} [\int_{a}^{b} f(x,y) \,dx] \,dy
+    \int\int_R f(x,y) \,dx\,dy = \int_{c}^{d} \left[\int_{a}^{b} f(x,y) \,dx\right] \,dy
 \end{equation*}
 
 Por \textbf{teorema de Fubini},
@@ -14,7 +14,7 @@ los dos caminos de integración tienen que dar el mismo resultado,
 siempre que la función sea contínua en el recinto R.
 
 \begin{equation*}
-    \int_{c}^{d} [\int_{a}^{b} f(x,y) \,dx] \,dy = \int_{a}^{b} [\int_{c}^{d} f(x,y) \,dy] \,dx
+    \int_{c}^{d} \left[\int_{a}^{b} f(x,y) \,dx\right] \,dy = \int_{a}^{b} \left[\int_{c}^{d} f(x,y) \,dy\right] \,dx
 \end{equation*}
 
 \subsection{Ejemplo}
@@ -22,13 +22,13 @@ siempre que la función sea contínua en el recinto R.
 Integrar \(f(x,y) = xy\cos y\) para \(R = [-1,1] \times [0,\pi] \).
 
 \begin{align*}
-    \int_{-1}^{1} [\int_{0}^{\pi} xy\cos y \,dy] \,dx
+    \int_{-1}^{1} \left[\int_{0}^{\pi} xy\cos y \,dy\right] \,dx
 \end{align*}
 
 Como en la primera integración \(x\) es constante y multiplica a la función \(y\cos y\), podemos sacarla.
 
 \begin{align*}
-    \int_{-1}^{1} x [\int_{0}^{\pi} y\cos y \,dy] \,dx
+    \int_{-1}^{1} x \left[\int_{0}^{\pi} y\cos y \,dy\right] \,dx
 \end{align*}
 
 Tenemos que integrar \(y\cos y\) por partes, por lo que elegimos \(u\) y \(dv\) en base a ILPET (irracional, logarítmica, polinómica, exponencial, trigonométrica).
