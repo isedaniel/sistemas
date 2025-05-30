@@ -1,0 +1,59 @@
+\section{Energía potencial eléctrica con campo variable}
+
+Tenemos carga puntual positiva,
+\(q_1=1C\).
+Como el campo \(\vec{E}=\frac{k\cdot q_1}{r^{2}}\),
+la carga genera un campo eléctrico en su entorno,
+con vectores radialmente hacia afuera de \(q_1\).
+
+A medida que nos alejamos de \(q_1\),
+la intensidad del campo eléctrico disminuye,
+porque disminuyen con el cuadrado de la distancia \(r\).
+
+Si tenemos una carga \(q_2\) positiva,
+para obtener la fuerza ejercida por \(\vec{E}\)
+tenemos que multiplicamos por \(q_2\) 
+y dividimos por el cuadrado de la distancia \(r\).
+Es decir, Ley de Coulomb para dos cargas.
+
+Supongamos que la carga \(q_2\) está a \(10m\) 
+y nuestro objetivo es desplazarla \(5m\)
+en dirección a \(q_1\).
+Queremos calcular el trabajo \(W\)
+necesario para desplazarla.
+Trabajo es fuerza por distancia pero,
+como la fuerza de \(\vec{E}\) va variando,
+tenemos que recurrir al cálculo.
+Como el trabajo realizado cambia de forma infinitesimal con respecto a la distancia recorrida,
+tomamos cambio infinitesimal en trabajo \(dW\) como proporcional
+al cambio infinitesimal en el radio \(dr\).
+Entonces:
+
+\vspace{.5cm}
+\begin{equation*}
+    dW = -\frac{k\cdot q_1\cdot q_2}{r^{2}}\,dr
+\end{equation*}
+\vspace{.5cm}
+
+Es decir,
+el cambio infinitesimal en el trabajo \(W\) varía siguiendo la expresión,
+a medida que \(r\) cambia infinitesimalmente, 
+cambio expresado por \(dr\).
+
+Agregamos el menos adelante de la expresión porque el trabajo que tenemos 
+que hacer es contrario al vector \(\vec{E}\).
+
+Ahora,
+queremos calcular el trabajo total,
+eso implica la sumatoria de todas las porciones infinitamente chicas 
+de \(dr\).
+Es decir,
+sumatoria de porciones infinitesimalmente chicas, 
+estamos hablando de integrar.
+
+\begin{align*}
+    W & = \int_{10}^{5}-\frac{k\cdot q_1\cdot q_2}{r^{2}}\,dr \\
+    & = -kq_1q_2 \int_{10}^{5} r^{-2}\,dr \\
+    & = (-kq_1q_2) \left.(-\frac{1}{r})\right|_{10}^{5} \\
+    & = \boxed{\frac{kq_1q_2}{10}}
+\end{align*}
