@@ -1,24 +1,20 @@
 \section{Energía potencial eléctrica con campo variable}
 
-Tenemos carga puntual positiva,
-\(q_1=1C\).
-Como el campo \(\vec{E}=\frac{k\cdot q_1}{r^{2}}\),
-la carga genera un campo eléctrico en su entorno,
-con vectores radialmente hacia afuera de \(q_1\).
+Tenemos carga puntual positiva \(q_1=1C\).
+La carga genera un campo eléctrico en su entorno,
+que sigue la expresión \(\vec{E}=\frac{k\cdot q_1}{r^{2}}\),
+con vectores radialmente hacia afuera del punto \(q_1\).
 
 A medida que nos alejamos de \(q_1\),
-la intensidad del campo eléctrico disminuye,
-porque disminuyen con el cuadrado de la distancia \(r\).
+la intensidad del campo eléctrico disminuye con el cuadrado de la distancia \(r\).
 
-Si tenemos una carga \(q_2\) positiva,
-para obtener la fuerza ejercida por \(\vec{E}\)
-tenemos que multiplicamos por \(q_2\) 
-y dividimos por el cuadrado de la distancia \(r\).
-Es decir, Ley de Coulomb para dos cargas.
+Para obtener la fuerza ejercida por \(\vec{E}\)
+sobre una carga \(q_2\),
+multiplicamos por \(q_2\).
+Es decir, Ley de Coulomb.
 
-Supongamos que la carga \(q_2\) está a \(10m\) 
-y nuestro objetivo es desplazarla \(5m\)
-en dirección a \(q_1\).
+Supongamos que la carga \(q_2\) está a \(10m\) de \(q_1\)
+y nuestro objetivo es desplazarla \(5m\) en dirección a \(q_1\).
 Queremos calcular el trabajo \(W\)
 necesario para desplazarla.
 Trabajo es fuerza por distancia pero,
@@ -42,11 +38,12 @@ cambio expresado por \(dr\).
 
 Agregamos el menos adelante de la expresión porque el trabajo que tenemos 
 que hacer es contrario al vector \(\vec{E}\).
+En electricidad la convención es:
+con el campo positivo, contra el campo negativo.
 
 Ahora,
 queremos calcular el trabajo total,
-eso implica la sumatoria de todas las porciones infinitamente chicas 
-de \(dr\).
+eso implica la sumatoria de todas las porciones de \(dr\).
 Es decir,
 sumatoria de porciones infinitesimalmente chicas, 
 estamos hablando de integrar.
@@ -55,5 +52,7 @@ estamos hablando de integrar.
     W & = \int_{10}^{5}-\frac{k\cdot q_1\cdot q_2}{r^{2}}\,dr \\
     & = -kq_1q_2 \int_{10}^{5} r^{-2}\,dr \\
     & = (-kq_1q_2) \left.(-\frac{1}{r})\right|_{10}^{5} \\
-    & = \boxed{\frac{kq_1q_2}{10}}
+    & = \boxed{\frac{kq_1q_2}{10m}}
 \end{align*}
+
+Así llegamos a una expresión para el trabajo.
