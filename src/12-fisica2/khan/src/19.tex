@@ -1,0 +1,21 @@
+\section{Resistores en serie}
+
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[american voltages]
+        % componentes:
+        \draw 
+            (0,0) to [battery1,l_=$V$] (6,0)
+            to [R,l_=$R_3$] (6,4)
+            to [R,l_=$R_2$] (0,4)
+            to [R,l_=$R_1$] (0,0);
+        \draw
+            (2,0) to [short,*-,i=$I$] (0,0);
+    \end{circuitikz}
+\end{figure}
+
+En resistencias en serie, sumamos las resistencias para obtener la resistencia total:
+
+\begin{equation*}
+    R_T = R_1 + R_2 + R_3 
+\end{equation*}

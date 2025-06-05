@@ -1,0 +1,29 @@
+\section{Resistores en paralelo}
+
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[american voltages]
+        % componentes:
+        \draw 
+            (0,0) to [battery1,l_=$V$] (6,0)
+            to (6,4)
+            to (5,4)
+            to (4,5)
+            to [R,l_=$R_1$] (2,5)
+            to (1,4)
+            to (0,4)
+            to (0,0);
+        \draw
+            (2,0) to [short,*-,i=$I$] (0,0);
+        \draw 
+            (5,4) to (4,3)
+            to [R,l_=$R_2$] (2,3)
+            to (1,4);
+    \end{circuitikz}
+\end{figure}
+
+En resistencias en paralelo, resistencia total es:
+
+\begin{equation*}
+    \frac{1}{R_T} = \frac{1}{R_1} + \frac{1}{R_2}
+\end{equation*}
