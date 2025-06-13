@@ -14,31 +14,34 @@ y \(R\) resistecia, medida en \textit{ohms} \((\Omega)\).
 
 Podemos hacer una analogía con la circulación de agua a través de una tubería.
 Si tenemos agua a una determinada altura,
-en un tanque de agua cerrado por abajo,
-por ejemplo,
+por ejemplo, en un tanque de agua,
 ésta tendrá energía potencial.
-La energía potencial gravitatoria del agua, 
+La energía potencial del agua,
 que la impulsará una vez que abramos el tanque,
-cumple una función similar a la del voltaje.
+cumple una función similar a la del voltaje en los circuitos eléctricos.
 Si liberamos el agua y dejamos que fluya,
-el agua que pasa por una sección de la tubería puede pensarse como análoga a la corriente eléctrica,
-de hecho \textit{ampere} equivale justamente a \textit{coulombs/segundo}.
+el agua que pasa por una sección de la tubería
+puede pensarse como análoga a la corriente eléctrica.
+De hecho,
+la unidad con que medimos la corriente,
+el \textit{ampere}, es equivalente a \textit{coulombs/segundo}.
 Por último,
-la resistencia se podría pensar como una parte del tubo que es más fina que el resto.
-Esto hará que el agua en toda la tubería circule más lentamente.
+la resistencia se podría pensar como una parte del tubo
+que es más fina que el resto.
+Esto hara al agua circular con menor velocidad en toda la tubería.
 Una resistencia en un circuito eléctrico tiene la misma propiedad.
 
 \begin{figure}[H]
     \centering
     \begin{circuitikz}[american voltages]
         % componentes:
-        \draw 
-            (0,0) to (6,0)
-            to [battery1,l_=$V$] (6,4)
-            to [R,l_=$R$] (0,4)
-            to [switch] (0,0);
         \draw
-            (6,1) to [short,*-,i=$I$] (6,0);
+        (0,0) to (6,0)
+        to [battery1,l_=$V$] (6,4)
+        to [R,l_=$R$] (0,4)
+        to [switch] (0,0);
+        \draw
+        (6,1) to [short,*-,i=$I$] (6,0);
     \end{circuitikz}
 \end{figure}
 
@@ -46,4 +49,5 @@ Aunque los electrones fluyen de la parte negativa a la positiva,
 por convención,
 se considera que la circulación es en sentido contrario,
 del lado positivo hacia el negativo.
-Esto es así porque los electrones se descubrienron siglo y medio después de trabajar con circuitos.
+Esto es así porque los electrones se descubrienron siglo y medio después
+de trabajar con circuitos.
