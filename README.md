@@ -1,4 +1,4 @@
-# Ingeniería en Sistemas
+# Ingeniería en Sistemas (7/53)
 
 0. [x] Curso de Nivelación
 1. [x] Análisis Matemático I
