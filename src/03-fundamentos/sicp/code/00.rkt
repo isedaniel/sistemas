@@ -1,7 +1,7 @@
 #lang sicp
 
-(+ (* 3
-      (+ (* 2 4)
-         (+ 3 5)))
-   (+ (- 10 7)
-      6))
+; implementing a case analysis construct
+(define (abs x)
+      (cond ((> x 0) x)
+            ((< x 0) (- x))
+            ((= x 0) 0)))
