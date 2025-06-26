@@ -1,0 +1,23 @@
+Mermaid Live Editor
+
+flowchart TD
+    Compras[fa:fa-user Encargado de Compras]
+    --> setPrecioCompra(Fijar Precio Compra)
+    Compras --> getPrecioCompetencia(Consultar Precio Competencia)
+    Compras --> setStock(Fijar Stock)
+    Ventas[fa:fa-user Encargado de Ventas]
+    --> getPrecioCompra(Conocer Precio Compra)
+    setPrecioCompra --include--> getPrecioCompra
+    Ventas --> getPrecioCompetencia
+    Ventas --> setPrecioVenta(Fijar Precio Venta)
+    Personal[fa:fa-user Personal de Ventas]
+    --> getPrecioVenta[Conocer Precio Venta]
+    setPrecioVenta --include--> getPrecioVenta 
+    Personal--> getStock[Conocer Stock]
+    setStock --include--> getStock
+    Personal --> getFactura[Emitir Factura Electrónica]
+    getStock -- extends --> getFactura
+    getPrecioVenta -- extends --> getFactura 
+    getPrecioCompetencia --> Competencia[(fa:fa-server Portales Venta Online)]
+    getPrecioCompra --> Proveedores[(fa:fa-server Proveedores)]
+    getFactura --> ARCA[(fa:fa-server ARCA)]
