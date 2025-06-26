@@ -1,0 +1,48 @@
+\section{Reestructuración del software}
+
+En este caso, Pressman reconoce dos tipos de reestructuración: 
+la reestructuración de código y la reestructuración de datos.
+
+En el primer caso,
+la reestructuración del código puede o no modificar la \textbf{arquitectura}
+del programa,
+puesto que si esta resulta del mantenimiento en el tiempo de buenas prácticas
+de ingeniería de software,
+antes que un proceso de reingeniería propiamente dicho alcanzaría con la 
+reestructuración del código de alguno módulos o subsistemas puntuales.
+En cualquier caso,
+el autor sugiere algunas técnicas para abordar la reestructuración,
+entre las que se destacan:
+\begin{enumerate}
+    \item La \textbf{simplificación lógica} de Warnier,
+    que implica el modelado siguiendo la lógica booleana y,
+    mediante la aplicación de una serie de reglas,
+    llegar a una reestructuración lógica,
+    conforme a las reglas de la programación estructurada.
+    \item Por otra parte, el \textbf{mapeo de módulos} y \textbf{recursos}
+    puede permitir una representación del flujo del programa y de su arquitectura,
+    resultando en sugerencias para lograr un mínimo acoplamiento de los primeros 
+    y, por ende, una simplificación de esta última.
+\end{enumerate}
+
+Por su parte, la \textbf{reestructuración de datos} implica la evaluación 
+de todos los enunciados que incluyan:
+\begin{itemize}
+    \item definiciones de datos 
+    \item descripciones de entrada/salida 
+    \item descripciones de interfaz
+\end{itemize}
+
+El objetivo es reconstruir el flujo de datos en la aplicación.
+Una vez completado este diagnóstico inicial,
+la reestructuración se abocará a:
+\begin{itemize}
+    \item \textbf{Estandarizar} el registro de datos,
+    clarificando definiciones,
+    buscando consistencia.
+    \item \textbf{Racionalizar} el nombre de los datos,
+    garantizando el seguimiento de la nomenclatura apropiada.
+    \item \textbf{Modificar} estructuras de datos existentes,
+    que puede implicar desde el cambio de las estructuras de datos en el código 
+    hasta el paso de un tipo de base de datos a otra.
+\end{itemize}

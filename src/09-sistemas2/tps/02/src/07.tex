@@ -1,0 +1,44 @@
+\section{Ingeniería Inversa}
+
+El término ingeniería inversa se origina en el mundo del Hardware,
+y refiere comunmente al desensamblado 
+y análisis de un producto de la competencia,
+con el objetivo de obtener información sobre el mismo.
+Una proceso de ingenieria inversa exitosa resultaba en 
+sugerencias sobre el diseño y fabricación de un producto determinado.
+
+Este concepto, trasladado al mundo del Software,
+implica el análisis del código fuente de un producto,
+para elaborar una representación del mismo 
+en un \textit{nivel de abstracción superior}.
+Un proceso de ingeniería inversa exitoso,
+en este contexto,
+redunda en una \textbf{recuperación del diseño} del software,
+en particular sobre su diseño de datos,
+arquitectura y procedimientos.
+
+En concreto, la ingeniería inversa parte del propio \textbf{código fuente}
+de la aplicación,
+para desarrollar especificaciones sobre:
+\begin{enumerate}
+    \item \textbf{Estructuras de datos}, 
+    definiendo clases de objetos,
+    agrupando variables relacionadas, 
+    identificando tipos de datos abstractos.
+    \item \textbf{Estructura de la base de datos}, 
+    construyendo modelos de objetos, 
+    determinando claves candidatas,
+    refinando clases tentantivas,
+    descubriendo asocaciones entre las entidades,
+    llegando en última instancia a un mapeo de la base de datos.
+    \item \textbf{Procesamiento},
+    teniendo en cuenta la funcionalidad global del sistema,
+    creando diagramas de bloques que representen la interacción entre 
+    abstracciones funcionales,
+    usando herramientas automatizadas para comprender el código
+    de forma semántica
+    \item \textbf{Interfaces de usuario},
+    especificando estructura y comportamiento de la interfaz,
+    reconciendo acciones básicas a procesar -como clicks, atajos de teclado-,
+    y las respuestas a esas acciones.
+\end{enumerate}
