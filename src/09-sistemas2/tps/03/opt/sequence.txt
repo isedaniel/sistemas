@@ -1,0 +1,6 @@
+sequenceDiagram
+    actor Usuario
+    participant S as #8801; Sistema
+    Usuario->>+S:Hola
+    S-->>-Usuario: Hi
+    

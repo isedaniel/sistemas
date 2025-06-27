@@ -1,0 +1,90 @@
+\section{Introducción}
+
+Este documento presenta una propuesta para la implementación 
+de un sistema informático,
+cuyo principal objetivo es colaborar con la toma de decisiones de una empresa
+dedicada a la venta de productos de computación,
+en particular en lo que refiere a sus compras y ventas.
+
+Aunque este sistema se haya diseñado para el rubro de la informática,
+bien podría generalizarse algunas de sus propuestas para otras empresas 
+dedicadas a la comercialización de otro tipo de productos,
+en particular aquellas que se dediquen a la venta de productos importados
+\footnote{Este diseño se basa en mi experiencia trabajando en la empresa familiar, 
+dedicada a la venta de equipos informáticos e insumos de impresión.}.
+
+En la anterior iteración fundamentábamos la necesidad de este sistema 
+en el contexto de la economía argentina,
+a la que caracterizábamos, 
+en aquel momento, 
+como inflacionaria 
+y con dificultades para la importación.
+
+Aunque la inflación haya bajado 
+la economía argentina enfrenta aun niveles de inflación relativamente altos
+-tanto para el mundo como a nivel regional-.
+Adicionalmente,
+uno de los factores más importantes para calcular los costos,
+en esta y en toda industria con alto componente de importación,
+es el precio del dólar.
+Aunque este se encuentre \textit{relativamente} estable,
+sus fluctuaciones continúan, inclusive de forma intradiaria,
+lo que impacta directamente sobre la rentabilidad de este tipo de empresa.
+
+Por otra parte,
+en los últimos años han aparecido nuevos competidores:
+pensemos, por ejemplo, en el servicio puerta a puerta de Amazon,
+o el recientemente lanzado servicio de venta desde Estados Unidos,
+incorporado a Mercado Libre.
+Este contexto, junto al lento pero sostenido crecimiento de las importaciones 
+en el país,
+refuerzan la necesidad de contar con la información del mercado adecuada,
+en el momento adecuado.
+Bajar costos y 
+-en paralelo- crecer en competitividad son dos desafíos 
+fundamentales de este período.
+
+Por ello, 
+el sistema diseñado propone acompañar a la empresa,
+desde la compra de un producto a proveedor,
+pasando por la fijación del precio,
+hasta la emisión de la factura electrónica correspondiente.
+La idea central es ofrecer información sintética y oportuna 
+sobre los precios de distintos productos,
+colaborando con la toma de decisiones y,
+de esa forma,
+bajando costos y mejorando la competitividad.
+
+El primer desafío consiste en identificar 
+al mejor proveedor para un determinado producto.
+Para ello,
+el sistema recabará datos de precios,
+recurriendo a las interfaces de programación de aplicaciones (APIs)
+de aquellos proveedores que ofrezcan el servicio,
+así como al \textit{scrapeo web} para aquellos que no lo ofrezcan.
+De esta manera,
+el encargado de compras de la empresa contará con la información necesaria para 
+negociar las mejores condiciones y bajar los costos.
+
+El segundo desafío se vincula con la competitividad,
+e implica identificar el precio de mercado de un producto.
+Sabemos que con una economía en proceso de apertura,
+pero aun relativamente cerrada,
+los precios de los productos importados pueden sufrir de gran dispersión.
+Por ello,
+el sistema recurrirá a las APIs (o \textit{scrapeo web}, según corresponda),
+de la competencia.
+Esta información,
+sumada a la información provista por los proveedores,
+permitirá al encargado de ventas fijar precios competitivos,
+que cuiden a su vez la rentabilidad y el modelo de negocios de la empresa.
+
+Por último,
+para gestionar la venta presencial,
+el sistema será capaz de conectarse con la 
+API de la Agencia de Recaudación y Control Aduanero (ARCA),
+con el objetivo de emitir la factura digital correspondiente.
+
+De esta forma,
+el sistema pretende acompañar a la empresa comercial en todo su proceso de valor,
+desde la compra del producto hasta la concreción de la venta.
