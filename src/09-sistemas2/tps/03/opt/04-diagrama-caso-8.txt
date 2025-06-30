@@ -1,0 +1,36 @@
+sequenceDiagram
+    actor Usuario
+    participant S as #8801; Sistema
+    participant API as #8801; ARCA
+    Usuario->>+S: IntefazFacturaElectronica()
+    S-->>-Usuario: SolicitarIdentificacionCliente()
+    alt Cliente existe en Base de Datos
+        Usuario->>+S: IngresarCliente()
+        S->>-Usuario: DevolverInformacion()
+    else Articulo No existe en Base de Datos
+        Usuario->>+S: IngresarCliente()
+        S->>+API: BuscarCliente()
+        API-->>-S: DevolverResultados()
+        S-->>-Usuario: DevolverInformacion()
+    end
+    Usuario->>+S: ConfirmarCliente()
+    S-->>-Usuario: SolicitarIdentificacionProducto()
+    loop Ingreso de Productos
+    alt Producto existe en Base de Datos
+        Usuario->>+S: IngresarProducto()
+        S->>-Usuario: DevolverInformacion()
+    else Articulo No existe en Base de Datos
+        Usuario->>+S: IngresarProducto()
+        S-->>-Usuario: SolicitarReingreso()
+    end
+    end
+    Usuario->>+S: AutorizarComprobante()
+    S->>+API: AutorizarComprobante()
+    API-->>-S: DevolverIdentificador()
+    S-->>-Usuario: DevolverIdentificador()
+    opt Impresion de Comprobante
+        Usuario->>+S: SolicitarImpresion()
+        S->>+Servicio Impresion: SolicitarImpresion()
+        Servicio Impresion-->>-S: ConfirmarImpresion()
+        S-->>-Usuario: ConfirmarImpresion()
+    end

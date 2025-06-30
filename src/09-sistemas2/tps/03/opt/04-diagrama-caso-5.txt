@@ -1,0 +1,22 @@
+sequenceDiagram
+    actor Usuario
+    participant S as #8801; Sistema
+    participant API as #8801; Competencia
+    alt Articulo Existe en Base de Datos
+        Usuario->>+S: BuscarArticulo()
+        S->>-Usuario: MostrarResultados()
+    else Articulo No Existe en Base de Datos
+        Usuario->>+S: BuscarArticulo()
+        S->>+API: BuscarArticulo()
+        API-->>-S: MostrarResultados()
+        S-->>-Usuario: MostrarResultados()
+    end
+    Usuario->>+S: ConfirmarProducto()
+    alt Cuenta con Api
+        S->>+API: ConsultarAPI()
+        API-->>-S: ResponderConsultaAPI()
+    else No cuenta con API
+        S->>+API: DescargarWeb()
+        API-->>-S: DevolverPaginaWeb()
+    end
+    S-->>-Usuario: DevolverInformacion()

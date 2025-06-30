@@ -1,0 +1,16 @@
+sequenceDiagram
+    actor Usuario
+    participant S as #8801; Sistema
+    alt Articulo Existe en Base de Datos
+        Usuario->>+S: BuscarArticulo()
+        S->>-Usuario: MostrarResultados()
+    else Articulo No Existe en Base de Datos
+        Usuario->>+S: BuscarArticulo()
+        S-->>-Usuario: SolicitarNumeroDeParte()
+    end
+    Usuario->>+S: ConfirmarProducto()
+    S-->>-Usuario: DevolverInformacion()
+    opt Desea Cambiar Stock 
+    Usuario->>+S: IngresarNuevoStock()
+    S-->>-Usuario: ConfirmarCambioStock()
+    end

@@ -5,7 +5,7 @@
 - [x] Mejorar introducción del proyecto 
 - [x] Introducir/mejorar visión y misión de la organización 
 - [ ] Diagrama de clase debajo de cada caso de uso
-- [ ] Diagrama de secuencia de sistema debajo de cada caso de uso 
+- [x] Diagrama de secuencia de sistema debajo de cada caso de uso 
 
 Reescritura del caso de uso como diagrama de secuencia:
 Extraemos los mensajes del caso de uso,
