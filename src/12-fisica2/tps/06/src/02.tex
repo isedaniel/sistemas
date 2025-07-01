@@ -1,0 +1,35 @@
+\section{Ejercicio 2}
+
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[american voltages]
+        % componentes:
+        \draw
+        (0,0)
+        to                    (6,0)
+        to [L,l_=$50mH$]      (6,4)
+        to                    (0,4)
+        to [sV, l_=$60Hz$]    (0,0);
+    \end{circuitikz}
+\end{figure}
+
+Dado el circuito, calculamos siguiendo la expresión:
+
+\begin{equation*}
+    X_L= 2\pi f\cdot L
+\end{equation*}
+
+Donde \(X_L\) es reactancia,
+que se mide en \textit{ohms} (\(\Omega\));
+\(f\) representa la frecuencia,
+medida en \textit{hertz} (\(Hz\));
+y \(L\) representa la inductancia,
+medida en \textit{henrys} (\(H\)).
+
+Dada esa expresión, operamos:
+
+\begin{align*}
+    X_L & = 2\pi f\cdot L                             \\
+    X_L & = 2\pi \cdot 60 Hz \cdot 50 \times 10^{-3} H \\
+    X_L & = \boxed{18.85 \Omega}
+\end{align*}

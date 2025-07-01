@@ -1,0 +1,52 @@
+\section{Ejercicio 4}
+
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[american voltages]
+        % componentes:
+        \draw 
+            (0,0) 
+            to     (6,0)
+            to [C,l_=$100\mu F$]                     (6,4)
+            to [R,l_=$1k\Omega$]                     (0,4)
+            to [battery1,l_=$10V$] (0,0);
+    \end{circuitikz}
+\end{figure}
+
+La fórmula de carga del capacitor sigue la expresión
+\(V_C=V_0(1-e^{-t/RC})\);
+donde \(V_C\) es tensión en tiempo \(t\),
+medida el \textit{volts} \((V)\);
+\(V_0\) es tensión final o máxima;
+\(e\) es el número de Euler;
+\(t\) es el tiempo,
+en \textit{segundos} \((s)\);
+\(R\) es resistencia,
+medida en \textit{ohms} \((\Omega)\);
+\(C\) es capacitancia,
+medida en \textit{faradios} \((F)\);
+notar que \(RC\) se conoce como 
+constante de tiempo,
+que indica la rapidez de carga o descarga del capacitor,
+representada por \(\tau\),
+y se mide en \textit{segundos} \((s)\).
+
+¿Cuál es la tensión de carga en \(t=0\)?
+¿En \(t=0.1s\)?
+¿Y en \(t=\infty s\)?
+
+En 0 y en \(\infty\) resolvemos deduciendo:
+0 y \(10V\), respectivamente.
+Operamos para calcular en \(0.1s\):
+
+\begin{align*}
+    RC &= 100\times10^{-6}F \cdot 1\times10^{3} \Omega \\
+    RC &= \boxed{0.1}
+\end{align*}
+
+Por lo tanto:
+
+\begin{align*}
+    V_C = 10V \cdot (1-e^{-0.1/0.1}) \\
+    V_C = \boxed{6.32V}
+\end{align*}

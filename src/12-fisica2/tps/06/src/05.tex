@@ -1,0 +1,34 @@
+\section{Ejercicio 5}
+
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[american voltages]
+        % componentes:
+        \draw
+        (0,0)
+        to [R,l_=$3\Omega$]      (6,0)
+        to [R,l_=$1\Omega$]     (6,4)
+        to [R,l_=$2\Omega$]     (0,4)
+        to [battery1,l_=$12V$,i_=$I$]  (0,0);
+    \end{circuitikz}
+\end{figure}
+
+Tenemos que calcular corriente \(I\).
+Dado que las resistencias están en serie,
+la resistencia total \((R_T)\) se obtiene 
+de la sumatoria de resistencias,
+por lo tanto:
+
+\begin{align*}
+    R_T & = (3 + 1 + 2) \Omega \\
+    R_T & = 6\Omega 
+\end{align*}
+
+Por último, para obtener \(I\) recurrimos a la Ley de Ohm,
+cuya expresión es \(V=IR\), si despejamos:
+
+\begin{align*}
+    I & = \frac{V}{R} \\
+    I & = \frac{12V}{6\Omega} \\
+    I & = \boxed{2A}
+\end{align*}
