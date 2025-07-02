@@ -1,107 +1,118 @@
-Primer apunte con enfoque estructuras de datos y funciones.
-
 \section{Unidad 1}
 
 \subsection{Campo escalar}
 
-\texttt{CampoEscalar (x,y) => z}
-
-Es una función de dos variables \texttt{xy} que,
+Es, básicamente, una función de dos variables que,
 dado un punto \((x,y)\),
 devuelve un escalar \(z\).
 
-La función puede estar definida de forma
-\texttt{Explícita f(x,y) = z} o \texttt{Implícita f(x,y,z) = 0}.
+La función puede estar definida de forma:
+\begin{itemize}
+    \item Explícita: \(f(x,y) = z\)
+    \item Implícita: \(f(x,y,z) = 0\)
+\end{itemize}
 
-\subsection{Dominio}
+\subsection{Dominio de un campo escalar}
 
-\texttt{Dom CampoEscalar => \(\{(x,y) \in R^{2} / \text{\texttt{Condicion a cumplir}}\}\)}
+\(Dom \, f(x,y) = \{(x,y) \in R^{2} / \, \text{Condición}\}\)
 
-Dominio recibe un CampoEscalar y devuelve el conjunto de puntos \((x,y)\)
-que el \texttt{CampoEscalar} acepta.
+El dominio de un campo escalar es el conjunto de puntos para los cuales el campo 
+escalar está definido.
 
-Para determinar dominio:
+\subsubsection{Procedimiento}
+
 \begin{enumerate}
-    \item Establecemos restricciones
-    \item Despejamos una de las variables
-    \item Expresamos como conjunto
+    \item Determinamos las restricciones (puntos para los cuales la función
+    no está definida)
+    \item Despejamos una de las variables para cada una de las restricciones
+    \item Expresamos como definición de un conjunto
 \end{enumerate}
 
-\textbf{Ejemplo.}
+\subsubsection{Ejemplo}
 
-Dado \texttt{CampoEscalar} con función
-\(z = \frac{\sqrt{x+y}}{x-2y}\).
+Dado \(z = \frac{\sqrt{x+y}}{x-2y}\):
 
-Determinamos restricciones.
-
-\begin{equation*}
-    x+y \geq 0 \land x-2y \neq 0
-\end{equation*}
-
-Despejamos una de las variables, en este caso y.
+1. Determinamos restricciones.
 
 \begin{equation*}
-    y \geq -x \land y \neq \frac{x}{2}
+    x+y \geq 0 \quad \land \quad x-2y \neq 0
 \end{equation*}
 
-Por lo tanto, \texttt{Dom CampoEscalar} =>
+2. Despejamos una de las variables, por ejemplo, \(y\).
 
 \begin{equation*}
-    \{(x,y) \in R^{2} / y \geq -x \land y \neq \frac{x}{2}\}
+    y \geq -x \quad \land \quad y \neq \frac{x}{2}
 \end{equation*}
+
+3. Expresamos como conjunto.
+
+\begin{equation*}
+    \text{Dom } f(x,y) = \{(x,y) \in R^{2} / y \geq -x \quad \land \quad y \neq \frac{x}{2}\}
+\end{equation*}
+
+Si quisiera representar gráficamente, grafico las fronteras que se deducen de 
+las desigualdades y marco en consecuencia: para arriba y frontera si es mayor o 
+igual, etc.
 
 \subsection{Definiciones de topología}
 
+Conceptos que se usan a lo largo de la materia y es importante conocer.
+
 \subsubsection{Entorno}
 
-\texttt{E(A,\(\delta\)) => \(\{x \in R^{n}: |x-A| < \delta\}\)}
+\(E(A,\delta) = \{x \in R^{n}: |x-A| < \delta\}\)
 
-Entorno recibe un punto \(A\) y un radio \(\delta\),
-y devuelve un conjunto de puntos en \(R^{n}\),
-ubicados a una distancia menor a \(\delta\).
+Dado un punto \(A\) y un radio \(\delta\), llamamos entorno al conjunto de 
+puntos \(\in R^{n}\) ubicados a una distancia menor a \(\delta\). 
 
 \textbf{Ejemplos.}
 
-En \(R\): entorno, con centro en \(A\), en recta real, con radio \(\delta\).
+\begin{itemize}
+    \item En \(R\): \textit{entorno}, con centro en \(A\), sobre la recta real, 
+    con radio \(\delta\).
+    \item En \(R^{2}\): \textit{disco}, con centro en \(A\), sobre el 
+    \textit{plano} real, con radio \(\delta\).
+    \item En \(R^{3}\): \textit{esfera}, con centro en \(A\), en el 
+    \textit{espacio}, con radio \(\delta\).
+\end{itemize}
 
-En \(R^{2}\): \textbf{disco}, con centro en \(A\), en plano real, con radio \(\delta\).
-
-En \(R^{3}\): \textbf{esfera}, con centro en \(A\), en el espacio, con radio \(\delta\).
 
 \subsubsection{Entorno reducido}
 
-\texttt{EntornoReducido A, \(\delta\) => E(A,\(delta\) - A)}
-
 Es igual al entorno,
-pero devuelve el conjunto de puntos \textbf{sin incluir} \(A\).
+pero el conjunto de puntos resultante \textbf{no incluye a} \(A\):
+
+\(E_R(A,\delta) = \{x \in R^{n}: |x-A| < \delta \quad \land \quad x \neq A\}\)
+
 
 \subsubsection{Clasificación de puntos}
 
-Dado conjunto \(C\):
+Dado un conjunto \(C\):
 
 \begin{itemize}
     \item A es \textbf{punto interior} si está incluído en \(C\)
     \item A es \textbf{punto exterior} si está fuera de \(C\)
     \item A es \textbf{punto frontera} si está sobre la frontera de \(C\)
-    \item A es \textbf{punto de acumulación} si su entorno es interior o frontera, pero A no pertenece a C.
+    \item A es \textbf{punto de acumulación} si su entorno es interior o 
+    frontera, pero A no pertenece a C (Creo que se podría decir que el entorno 
+    reducido de A pertenece a C).
 \end{itemize}
 
 \subsubsection{Clasificación de conjuntos}
 
-Dado conjunto \(C\):
+Dado un conjunto \(C\), decimos que:
 
 \begin{itemize}
-    \item Es \textbf{abierto} si solo tiene puntos interiores.
-    \item \textbf{Cerrado} si tiene interiores + frontera.
-    \item \textbf{Acotado} si se puede incluir \textit{completamente} en un entorno, de cualquier radio,
-          con \(A\) en origen.
+    \item Es \textbf{abierto} si solo tiene puntos interiores y no tiene 
+    frontera.
+    \item Es \textbf{Cerrado} si tiene puntos interiores y frontera.
+    \item Es \textbf{Acotado} si se puede incluir \textit{completamente} en un 
+    entorno, de cualquier radio, con \(A\) en origen.
 \end{itemize}
 
 \subsection{Gráfica de campo escalar}
 
-\texttt{Graf CampoEscalar => superficie en \(R^{3}\)}
-
-La gráfica devuelve todos los puntos \((x,y,z)\) tal que \(z = f(x,y)\).
+La representación gráfica del campo escalar \(z = f(x,y)\).
 Es una superficie en \(R^{3}\).
 
 Para determinarla:
@@ -113,15 +124,15 @@ Para determinarla:
 
 \subsection{Curva de nivel}
 
-Intersección de \texttt{CampoEscalar} con cualquier plano \(z = k\),
-paralelo al plano \texttt{xy}, siendo \(k\) una constante.
+Intersección de un campo escalar con cualquier plano \(z = k\), paralelo al 
+plano \(xy\), siendo \(k\) una constante.
 
-Para determinarla:
-
+Para determinar una curva de nivel:
 \begin{enumerate}
-    \item Igualamos z a un valor
-    \item Despejamos alguna de las variables que queda y obtenemos una en función de otra
-    \item Viendo cómo se comporta se obtiene una idea de lo que hacer el \texttt{CampoEscalar}
+    \item Igualamos z a un valor \(k\)
+    \item Despejamos alguna de las variables restantes y obtenemos una función 
+    de una variable
+    \item Analizamos el comportamiento de esa función
 \end{enumerate}
 
 \subsection{Cuádricas, cónicas, cilindros}
@@ -130,67 +141,119 @@ Para determinarla:
 
 Forma: \(x^{2} + y^{2} = r^{2}\)
 
-Es una circunferencia en \(R^{2}\)
+Gráficamente forma una circunferencia en \(R^{2}\),
+de radio \(r\).
 
 \subsubsection{Plano}
 
-\(y + 2z = 2\), recta en \(R^{2}\), plano con \(x\) arbitraria en \(R^{3}\).
+\(y + 2z = 2\), recta en \(R^{2}\), 
+y un plano con \(x\) arbitraria en \(R^{3}\).
 
 \subsubsection{Cilindro}
 
-Toda superficie con líneas paralelas a una generatriz,
-curvas que recorren una curva plana.
+Se denomina cilindro a una superficie generada a partir de una línea recta,
+llamada \textit{generatriz}, 
+que se mueve manteniéndose paralela a una dirección,
+mientras recorre una curva fija, que se llama \textit{directriz}.
 
-\(ax^{2} + by^{2} = r^{2}\), igual a círculo,
-pero con \(a \neq b\), tenemos elipse en el plano,
-cilindro elíptico en el espacio.
+La expresión \(ax^{2} + by^{2} = r^{2}\),
+con \(a \neq b\), describe una elipse en el plano,
+que, con \(z\) arbitraria, 
+obtendríamos un cilindro elíptico en el espacio.
 
-\(z = x^{2}\), parábola en plano \(xz\),
-cilindro parabólico en el espacio.
+\(z = x^{2}\) describe una parábola en el plano \(xz\),
+una curva que funciona como \textit{directriz}.
+En el espacio, con \(y\) arbitraria, obtenemos un cilindro parabólico.
 
-\subsubsection{Cuadricas. Elipsoide.}
+\subsubsection{Cuadricas}
+
+Una cuádrica es una superficie definida por una ecuación de segundo grado en las 
+variables \(x, y, z\), de forma general:
+
+\begin{equation*}
+    ax^{2} + by^{2} + cz^{2} + dxy + eyz + fzx + gx + hy + jz + k = 0
+\end{equation*}
+
+Siendo \(a, b, c, d, f, g, h, j, k\) constantes.
+Los términos en \(xy,\,yz\,,\,xz\) indican rotaciones.
+Los términos lineales indican traslaciones.
+
+\subsubsection{Elipsoide}
+
+Caso particular de cuádrica, que sigue la expresión:
 
 \begin{equation*}
     \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} + \frac{z^{2}}{c^{2}} = r^{2}
 \end{equation*}
 
-Si \(a = b = c\), esfera, sino elipsoide.
-Para graficar,
-como siempre, igualamos cada una a 0 y vemos como queda en cada plano,
-para darnos una idea.
+Sus trazas\footnote{Las curvas que resultan de su intersección con un plano \(z = cte\)}
+forman elipses.
+Si tenemos \(a = b = c\), el resultado es un caso particular de elipsoide: 
+la esfera.
+Para darnos una idea del gráfico podemos igualar cada uno de los componentes 
+\(x, y, z\) a 0, obteniendo elipses para los planos \(xy\), etc.
+
 
 \subsubsection{Paraboloide}
+
+Es otro tipo de cuádrica, que sigue la expresión:
 
 \begin{equation*}
     \frac{z}{c} = \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}}
 \end{equation*}
 
-Atención a \texttt{Grado z => 1}.
+Atención al \(\text{grado }z = 1\).
+Con \(z = cte\), las trazas son elipses;
+mientras que, \(x = 0\) o \(y = 0\) devuelve parábolas.
 
 \subsubsection{Cono}
 
-Igual estructura al anterior, pero \texttt{Grado z => 2}:
+Otra cuádrica, con expresión:
 
 \begin{equation*}
     \frac{z^{2}}{c^{2}} = \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}}
 \end{equation*}
 
+Notar que es estructuralmente igual a la expresión anterior, salvo que el 
+\(\text{Grado }z = 2\).
+Las trazas con \(z = cte\) son elipses y las trazas \(x = 0\) e \(y = 0\) son 
+lineales.
+
 \subsubsection{Hiperboloide de una hoja}
 
-Igual al anterior, pero \(\exists\) \texttt{CoeficienteIndependiente}.
+Igual al anterior, pero con \textit{coeficiente independiente}:.
 
-\subsubsection{Hiperboloide de una hoja}
+\begin{equation*}
+    \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} - \frac{z^{2}}{c^{2}} = \boxed{1}
+\end{equation*}
 
+El \textit{término negativo} indica el eje que funciona como \textit{eje de 
+simetría}, en el ejemplo, el eje \(z\). \(z = k\) son elipses; \(x=0\) e \(y=0\)
+son \textit{hipérbolas}.
 
-\subsection{Límites Campos Escalares}
+\subsubsection{Hiperboloide de dos hojas}
 
-En una variable:
+Sigue la ecuación:
 
-\texttt{Lim x, a, f(x) => L \(\iff\) f(x) tiende a L por izquierda y derecha}
+\begin{equation*}
+    -\frac{x^{2}}{a^{2}} - \frac{y^{2}}{b^{2}} + \frac{z^{2}}{c^{2}} = \boxed{1}
+\end{equation*}
 
-En funciones de 2 variables \texttt{CampoEscalar} es la misma idea,
-pero \texttt{Entorno (x,y) => } Disco,
-por lo tanto no solo me acerco por izquierda y derecha.
+Notar que es igual a la cuádrica anterior, con la salvedad que tiene 
+\textit{dos} términos negativos. En este caso, es el término positivo el que 
+marca el \textit{eje de simetría}.
+
+\subsection{Límites de Campos Escalares}
+
+Recordamos la definición de límite para funciones de \textit{una variable}:
+
+\begin{equation*}
+    \lim_{x\to a} f(x) = L \iff \text{ tiende a L por izquierda y derecha}
+\end{equation*}
+
+En funciones de 2 variables la idea es la misma, pero considerando que el 
+\textit{entorno} de \(a\) es un \textit{disco}, por lo que no me acerco 
+\textit{solo} por izquierda y derecha.
 
 \subsubsection{Propiedades}
 
