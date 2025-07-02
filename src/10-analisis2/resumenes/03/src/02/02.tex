@@ -1,0 +1,83 @@
+\subsection{Integración parcial}
+
+Como en la derivación de campos escalares,
+la integración de hace de forma iterada y sucesiva.
+
+Es decir, primero integramos por una de las variables, tomando la otra como constante, y después integramos por la segunda.
+
+\begin{equation*}
+    \int\int_R f(x,y) \,dx\,dy = \int_{c}^{d} \left[\int_{a}^{b} f(x,y) \,dx\right] \,dy
+\end{equation*}
+
+Por \textbf{teorema de Fubini},
+los dos caminos de integración tienen que dar el mismo resultado,
+siempre que la función sea contínua en el recinto R.
+
+\begin{equation*}
+    \int_{c}^{d} \left[\int_{a}^{b} f(x,y) \,dx\right] \,dy = \int_{a}^{b} \left[\int_{c}^{d} f(x,y) \,dy\right] \,dx
+\end{equation*}
+
+\subsection{Ejemplo}
+
+Integrar \(f(x,y) = xy\cos y\) para \(R = [-1,1] \times [0,\pi] \).
+
+\begin{align*}
+    \int_{-1}^{1} \left[\int_{0}^{\pi} xy\cos y \,dy\right] \,dx
+\end{align*}
+
+Como en la primera integración \(x\) es constante y multiplica a la función \(y\cos y\), podemos sacarla.
+
+\begin{align*}
+    \int_{-1}^{1} x \left[\int_{0}^{\pi} y\cos y \,dy\right] \,dx
+\end{align*}
+
+Tenemos que integrar \(y\cos y\) por partes, por lo que elegimos \(u\) y \(dv\) en base a ILPET (irracional, logarítmica, polinómica, exponencial, trigonométrica).
+En este caso, \(y\) es polinómica, por lo que \(u = y\) y \(dv = \cos y\).
+
+Determinamos \(du = dy\) y \(v = \sen y\). Planteamos \(\int u\,dv = uv - \int v \,du\):
+
+\begin{align*}
+    \int y\cos y \,dy & = y \cdot \sen y - \int \sen y \,dy \\
+    \int y\cos y \,dy & = y \sen y - (-\cos y) \\
+    \int y\cos y \,dy & = \boxed{y \sen y + \cos y}
+\end{align*}
+
+Evaluando:
+
+\begin{align*}
+    \left.y \sen y + \cos y\right|_{0}^{\pi} & = \pi \sen\pi + \cos\pi - (0 \sen 0 + \cos 0) \\
+    &= \boxed{-\pi - 1}
+\end{align*}
+
+Ahora integramos en \(x\):
+
+\begin{align*}
+    \int_{-1}^{1} x [-\pi - 1] \,dx & = (-\pi - 1) \int_{-1}^{1} x \,dx \\
+    & = (-\pi - 1) \cdot \left.\frac{x^{2}}{2}\right|_{-1}^{1} \\
+    & = (-\pi - 1) \cdot \left(\frac{1}{2} - \frac{1}{2}\right) \\
+    & = \boxed{0}
+\end{align*}
+
+\subsection{Ejemplo 2}
+
+Con \(z = 4 - x\) (es decir, un plano), integrar para recinto \(R = [0,4] \times [0,6]\).
+
+\begin{align*}
+    \iint 4 - x \,dy\,dx
+\end{align*}
+
+Primero integramos \(y\):
+
+\begin{align*}
+    \int_{0}^{4} (4-x) \int_{0}^{6} \,dy \,dx & = \int_{0}^{4} (4-x) \cdot 6 \,dx \\
+    & = \int_{0}^{4} 24-6x \,dx 
+\end{align*}
+
+Ahora integramos \(x\):
+
+\begin{align*}
+    \int_{0}^{4} 24-6x \,dx & = \left.24x - 3x^{2}\right|_{0}^{4} \\
+    & = 24 \cdot 4 - 3 \cdot 16 \\
+    & = 96 - 48 \\
+    & = \boxed{48}
+\end{align*}

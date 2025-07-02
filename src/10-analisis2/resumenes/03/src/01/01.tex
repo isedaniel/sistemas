@@ -1,0 +1,335 @@
+Primer apunte con enfoque estructuras de datos y funciones.
+
+\section{Unidad 1}
+
+\subsection{Campo escalar}
+
+\texttt{CampoEscalar (x,y) => z}
+
+Es una función de dos variables \texttt{xy} que,
+dado un punto \((x,y)\),
+devuelve un escalar \(z\).
+
+La función puede estar definida de forma
+\texttt{Explícita f(x,y) = z} o \texttt{Implícita f(x,y,z) = 0}.
+
+\subsection{Dominio}
+
+\texttt{Dom CampoEscalar => \(\{(x,y) \in R^{2} / \text{\texttt{Condicion a cumplir}}\}\)}
+
+Dominio recibe un CampoEscalar y devuelve el conjunto de puntos \((x,y)\)
+que el \texttt{CampoEscalar} acepta.
+
+Para determinar dominio:
+\begin{enumerate}
+    \item Establecemos restricciones
+    \item Despejamos una de las variables
+    \item Expresamos como conjunto
+\end{enumerate}
+
+\textbf{Ejemplo.}
+
+Dado \texttt{CampoEscalar} con función
+\(z = \frac{\sqrt{x+y}}{x-2y}\).
+
+Determinamos restricciones.
+
+\begin{equation*}
+    x+y \geq 0 \land x-2y \neq 0
+\end{equation*}
+
+Despejamos una de las variables, en este caso y.
+
+\begin{equation*}
+    y \geq -x \land y \neq \frac{x}{2}
+\end{equation*}
+
+Por lo tanto, \texttt{Dom CampoEscalar} =>
+
+\begin{equation*}
+    \{(x,y) \in R^{2} / y \geq -x \land y \neq \frac{x}{2}\}
+\end{equation*}
+
+\subsection{Definiciones de topología}
+
+\subsubsection{Entorno}
+
+\texttt{E(A,\(\delta\)) => \(\{x \in R^{n}: |x-A| < \delta\}\)}
+
+Entorno recibe un punto \(A\) y un radio \(\delta\),
+y devuelve un conjunto de puntos en \(R^{n}\),
+ubicados a una distancia menor a \(\delta\).
+
+\textbf{Ejemplos.}
+
+En \(R\): entorno, con centro en \(A\), en recta real, con radio \(\delta\).
+
+En \(R^{2}\): \textbf{disco}, con centro en \(A\), en plano real, con radio \(\delta\).
+
+En \(R^{3}\): \textbf{esfera}, con centro en \(A\), en el espacio, con radio \(\delta\).
+
+\subsubsection{Entorno reducido}
+
+\texttt{EntornoReducido A, \(\delta\) => E(A,\(delta\) - A)}
+
+Es igual al entorno,
+pero devuelve el conjunto de puntos \textbf{sin incluir} \(A\).
+
+\subsubsection{Clasificación de puntos}
+
+Dado conjunto \(C\):
+
+\begin{itemize}
+    \item A es \textbf{punto interior} si está incluído en \(C\)
+    \item A es \textbf{punto exterior} si está fuera de \(C\)
+    \item A es \textbf{punto frontera} si está sobre la frontera de \(C\)
+    \item A es \textbf{punto de acumulación} si su entorno es interior o frontera, pero A no pertenece a C.
+\end{itemize}
+
+\subsubsection{Clasificación de conjuntos}
+
+Dado conjunto \(C\):
+
+\begin{itemize}
+    \item Es \textbf{abierto} si solo tiene puntos interiores.
+    \item \textbf{Cerrado} si tiene interiores + frontera.
+    \item \textbf{Acotado} si se puede incluir \textit{completamente} en un entorno, de cualquier radio,
+          con \(A\) en origen.
+\end{itemize}
+
+\subsection{Gráfica de campo escalar}
+
+\texttt{Graf CampoEscalar => superficie en \(R^{3}\)}
+
+La gráfica devuelve todos los puntos \((x,y,z)\) tal que \(z = f(x,y)\).
+Es una superficie en \(R^{3}\).
+
+Para determinarla:
+
+\begin{enumerate}
+    \item Igualamos a 0 cada uno de sus componentes
+    \item Vemos como se comporta el resto
+\end{enumerate}
+
+\subsection{Curva de nivel}
+
+Intersección de \texttt{CampoEscalar} con cualquier plano \(z = k\),
+paralelo al plano \texttt{xy}, siendo \(k\) una constante.
+
+Para determinarla:
+
+\begin{enumerate}
+    \item Igualamos z a un valor
+    \item Despejamos alguna de las variables que queda y obtenemos una en función de otra
+    \item Viendo cómo se comporta se obtiene una idea de lo que hacer el \texttt{CampoEscalar}
+\end{enumerate}
+
+\subsection{Cuádricas, cónicas, cilindros}
+
+\subsubsection{Cilindro de z arbitrario}
+
+Forma: \(x^{2} + y^{2} = r^{2}\)
+
+Es una circunferencia en \(R^{2}\)
+
+\subsubsection{Plano}
+
+\(y + 2z = 2\), recta en \(R^{2}\), plano con \(x\) arbitraria en \(R^{3}\).
+
+\subsubsection{Cilindro}
+
+Toda superficie con líneas paralelas a una generatriz,
+curvas que recorren una curva plana.
+
+\(ax^{2} + by^{2} = r^{2}\), igual a círculo,
+pero con \(a \neq b\), tenemos elipse en el plano,
+cilindro elíptico en el espacio.
+
+\(z = x^{2}\), parábola en plano \(xz\),
+cilindro parabólico en el espacio.
+
+\subsubsection{Cuadricas. Elipsoide.}
+
+\begin{equation*}
+    \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} + \frac{z^{2}}{c^{2}} = r^{2}
+\end{equation*}
+
+Si \(a = b = c\), esfera, sino elipsoide.
+Para graficar,
+como siempre, igualamos cada una a 0 y vemos como queda en cada plano,
+para darnos una idea.
+
+\subsubsection{Paraboloide}
+
+\begin{equation*}
+    \frac{z}{c} = \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}}
+\end{equation*}
+
+Atención a \texttt{Grado z => 1}.
+
+\subsubsection{Cono}
+
+Igual estructura al anterior, pero \texttt{Grado z => 2}:
+
+\begin{equation*}
+    \frac{z^{2}}{c^{2}} = \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}}
+\end{equation*}
+
+\subsubsection{Hiperboloide de una hoja}
+
+Igual al anterior, pero \(\exists\) \texttt{CoeficienteIndependiente}.
+
+\subsubsection{Hiperboloide de una hoja}
+
+
+\subsection{Límites Campos Escalares}
+
+En una variable:
+
+\texttt{Lim x, a, f(x) => L \(\iff\) f(x) tiende a L por izquierda y derecha}
+
+En funciones de 2 variables \texttt{CampoEscalar} es la misma idea,
+pero \texttt{Entorno (x,y) => } Disco,
+por lo tanto no solo me acerco por izquierda y derecha.
+
+\subsubsection{Propiedades}
+
+\begin{enumerate}
+    \item Distributivo respecto de la suma
+    \item Respecto del producto
+    \item Lim x cte x f = cte x L
+    \item Distributivo respecto de cociente, siempre que denominador \(\neq\) 0
+    \item Respecto de potencia
+\end{enumerate}
+
+\subsection{Cálculo de límites en dos variables}
+
+\subsubsection{Límite doble o simultáneo}
+
+Reemplazamos, operamos algebraicamente y llegamos a un resultado.
+
+\subsubsection{Límite iterado}
+
+Hacemos primero con una y después con otra:
+
+\texttt{Lim x, a, f(x,y) => \(f_x\)}.
+
+\texttt{Lim y, b, \(f_x\) => \(L_1\)}.
+
+Hacemos el otro camino también,
+que devuelve \(L_2\).
+
+Si \(L_1 = L_2 = L\), suponemos \(\exists L\) hasta que se demuestre lo contrario (hay que seguir)
+
+\subsubsection{Límites radiales, parabólicos, cúbicos, etc.}
+
+Igual al iterado, pero con:
+
+\begin{enumerate}
+    \item \(y = mx\)
+    \item \(y = ax^{2}\)
+    \item \(y = ax^{3}\)
+\end{enumerate}
+
+Y sus respectivas variantes en función de \(x\).
+Si aparece \(L\) distinto, concluimos que \(\nexists L\).
+
+\subsubsection{Límites en coordenadas polares}
+
+
+Se utiliza cuando aparece \(x^{2} + y^{2}\) en el denominador.
+
+Sustituimos:
+\begin{enumerate}
+    \item \(x = \rho \cos\theta\)
+    \item \(y = \rho \sin\theta\)
+    \item \(x^{2} + y^{2} = \rho^{2}\)
+\end{enumerate}
+
+Operamos algebraicamente y buscamos la función \(F(\rho)\),
+es decir, que quede en función de \(\rho\) y no de \(\theta\).
+
+Operamos \(\lim_{\rho\to0} F(\rho)\).
+
+Como \(f(\rho\cos\theta,\rho\sin\theta) < F(\rho) \implies \lim_{(x,y)\to(0,0)}f(x,y) = L\).
+
+\textbf{Ejemplo.}
+
+Dado \(\lim_{(x,y)\to(9,9)}\frac{x^{3} + x^{2} - 2y^{3} + y^{2}}{x^{2} + y^{2}}\).
+
+\texttt{Lim \(\to\) (0,0)} y además \texttt{\(x^{2} + y^{2}\)} en denominador \(\implies\) calculamos con coordenadas polares:
+
+Sustituimos:
+
+\begin{equation*}
+    f(\rho\cos\theta,\rho\sin\theta) = \frac{\rho^{3}\cos^{3}\theta + \rho^{2}\cos^{2}\theta - 2\rho^{3}\sin^{3}\theta + \rho^{2}\sin^{2}\theta}{\rho^{2}}
+\end{equation*}
+
+Operamos algebraicamente, sacamos \(\rho^{2}\) factor común para que quede una sola función:
+
+\begin{equation*}
+    \frac{\cancel{\rho^{2}}(\rho\cos^{3}\theta + \cos^{2}\theta - 2\rho\sin^{3}\theta + \sin^{2}\theta)}{\cancel{\rho^{2}}}
+\end{equation*}
+
+Simplificamos \(\cos^{2}\theta + \sin^{2}\theta = 1\)
+
+\begin{equation*}
+    \rho\cos^{3}\theta - 2\rho\sin^{3}\theta + 1
+\end{equation*}
+
+Operamos el \(\lim_{\rho\to0}\)
+
+\begin{equation*}
+    \lim_{\rho\to0}\rho\cos^{3}\theta - 2\rho\sin^{3}\theta + 1 = \boxed{1}
+\end{equation*}
+
+Llegamos a un valor, para comprobarlo buscamos \(F(\rho)\),
+igualando expresión de \(L\) a 0:
+
+\begin{align*}
+    \rho\cos^{3}\theta - 2\rho\sin^{3}\theta + 1     & = 1 \\
+    \rho\cos^{3}\theta - 2\rho\sin^{3}\theta + 1 - 1 & = 0 \\
+    \rho\cos^{3}\theta - 2\rho\sin^{3}\theta         & = 0 \\
+\end{align*}
+
+Sobre la expresión resultante aplicamos módulo:
+
+\begin{align*}
+    |\rho\cos^{3}\theta - 2\rho\sin^{3}\theta|                 & \leq |\rho\cos^{3}\theta| + |2\rho\sin^{3}\theta|            \\
+    |\rho\cos^{3}\theta| + |2\rho\sin^{3}\theta|               & = |\rho|\cdot|\cos^{3}\theta| + |2\rho|\cdot|\sin^{3}\theta| \\
+    |\rho|\cdot|\cos^{3}\theta| + |2\rho|\cdot|\sin^{3}\theta| & \leq |\rho| + |2\rho|                                        \\
+    \boxed{F(\rho) = 3\rho}
+\end{align*}
+
+Operamos límite tendiendo a 0 de \(F(\rho)\)
+
+\begin{align*}
+    \lim_{\rho\to0} 3\rho = \boxed{0}
+\end{align*}
+
+Como límite tiende a 0, por lo tanto, límite es igual al 1 encontrado con anterioridad.
+
+\subsection{Continuidad de funciones de dos variables}
+
+\subsubsection{Contínua en un punto}
+
+\texttt{Continua f(x,y), (x0,y0) => \(\{True, False\}\)}
+
+Continua recibe \texttt{CampoEscalar} y un punto \texttt{P = (x0,y0)},
+devuelve continuidad verdadera si:
+
+\begin{enumerate}
+    \item \texttt{f(x0,y0) => z0}
+    \item \texttt{lim (x,y), (x0,y0), f(x,y) => L}
+    \item \texttt{L == x0}
+\end{enumerate}
+
+\subsubsection{Función contínua}
+
+\texttt{Continua f(x,y) => \(\{True, False\}\)}
+
+Que sea contínua depende del polinomio del \texttt{CampoEscalar},
+si no tiene discontinuidades en su dominio es contínua.
+
+\textbf{Ejemplo.}
+\(\sqrt{x+y}\) es contínua en su dominio \(y \geq -x\).

@@ -1,0 +1,94 @@
+\section{Unidad 2}
+
+\subsection{Derivadas parciales}
+
+Similar a derivada de una variable, que sería: 
+
+\texttt{Derivada f(x) x0 => Pendiente de la recta tangente a la función en x0}
+
+Derivada Parcial considera el cambio en una de las variables, manteniendo constante la otra.
+
+\texttt{DerivadaParcial f(x,y) (x0,y0) \(\{x,y\}\) => pendiente de tangente \(\cap\) x = x0}
+
+Hay entonces dos tipos de derivada parcial:
+
+\begin{align*}
+    \frac{\partial f}{\partial x} = f_x & y \frac{\partial f}{\partial y} = f_y \\
+\end{align*}
+
+Es decir,
+manteniendo función y punto constante, 
+\texttt{DerivadaParcial} puede devolver 2 pendientes:
+una de la curva que se forma en la intersección con el plano \(x = x_0\),
+y otro de la intersección con el plano \(y = y_0\).
+
+Operativamente es igual a la derivada de una variable: operamos considerando a la otra constante.
+
+\subsection{Reglas de derivación}
+
+\begin{enumerate}
+    \item Si \(a\) constante, derivada parcial en x de función \(f\): \((af)_x = af_x\)
+    \item Distributiva respecto de suma: \((f \pm g)_x = f_x \pm g_x\)
+    \item Regla del producto: \((f\cdot g)_x = f_x\cdot g + f\cdot g_x\)
+    \item Regla del cociente: \(\left(\frac{f}{g}\right)_x = \frac{f_x\cdot g - f\cdot g_x}{g^{2}}\)
+    \item Regla de la cadena: \((g^{\circ}f)_x = g(f)_x \cdot f_x\)
+\end{enumerate}
+
+\subsection{Derivada parcial por definición}
+
+\subsubsection{Cuando no está definida en (a,b)}
+
+\begin{align*}
+    f_x = \lim_{x \to a}\frac{f(x,b) - f(a,b)}{x} \\
+    f_y = \lim_{y \to b}\frac{f(a,y) - f(a,b)}{y} \\
+\end{align*}
+
+\subsubsection{Cuando está definida por trazos}
+
+\subsubsection{Cuando puede que una exista y la otra no}
+
+\subsubsection{En funciones de varias variables: derivabilidad \(\nRightarrow\) continuidad}
+
+\subsection{Derivadas sucesivas}
+
+Derivadas de \(2^{\circ}\) orden en varias variables:
+
+\((f_x)_x = f_{xx}\).
+
+\subsection{Teorema de Schwarz}
+
+Si existen \(f_x\),
+\(f_y\),
+\(f_{xy}\),
+entorno de punto \(P=(x_0,y_0)\),
+y \(f_{xy}\) es contínua en \(P\),
+\textbf{existe} \(f_{yx}\) y \(f_{yx}|_P = f_{xy}|_P\).
+
+Es decir,
+la derivadas cruzadas son iguales donde la función es contínua.
+
+\subsection{Matrices especiales}
+
+\subsubsection{Matriz jacobiana}
+
+Matriz cuyas filas son las derivadas parciales de 1er orden de las funciones incluídas.
+
+\subsubsection{Matriz Hessiana}
+
+Matriz cuyas filas son derivadas parciales de 2do orden de \textbf{una} función.
+Una función tiene \(2^{n}\) derivadas cruzadas si tiene 2 variables.
+
+\subsection{Regla de la cadena}
+
+Si \(z\) es campo escalar en función de xy, \(f(x,y)\),
+, a su vez x e y son funciones de t, \(x(t), y(t)\),
+se puede hacer una composición de funciones, quedando \(z(t)\).
+
+Se puede componer y derivar \(\frac{dz}{dt}\) o, por regla de la cadena:
+
+\begin{equation*}
+    \frac{dz}{dt} = \frac{\partial z}{\partial x}\cdot\frac{dx}{dt} + \frac{\partial z}{\partial y}\cdot\frac{dy}{dt}
+\end{equation*}
+
+\subsection{Derivada direccional}
+

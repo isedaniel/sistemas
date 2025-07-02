@@ -1,0 +1,34 @@
+\subsection{Cambio de variable en integrales dobles}
+
+Cuando tengo recintos que son paralelogramos o trapecios rotados,
+conviene aplicar una transformación lineal para resolver la integral.
+
+Las condiciones para aplicar este método son:
+
+\begin{align*}
+    \begin{cases}
+        \text{1. La función es contínua en R}                              \\
+        \text{2. x e y tienen derivadas parciales contínuas en el recinto} \\
+        \text{2. el jacobiano es no nulo en el recinto}                    \\
+    \end{cases}
+\end{align*}
+
+Si se dan estas tres condiciones,
+podemos expresar la integral doble del recinto R en términos del recinto \(R'\),
+siguiendo:
+
+\begin{align*}
+    \int\int_R\,f(x,y)\,dA = \int\int_R'\,f(x(u,v),y(u,v))\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv
+\end{align*}
+
+\subsubsection{Ejemplo 1}
+
+Hallar área delimitada por:
+\begin{align*}
+    \begin{cases}
+        x-2y=4 \\
+        x-2y=0 \\
+        x+y=4  \\
+        x+y=1  \\
+    \end{cases}
+\end{align*}
