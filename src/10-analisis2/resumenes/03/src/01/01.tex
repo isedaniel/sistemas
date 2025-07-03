@@ -257,36 +257,62 @@ En funciones de 2 variables la idea es la misma, pero considerando que el
 
 \subsubsection{Propiedades}
 
+Dadas \(g(x,y) = z\) y \(f(x,y) = z\):
+
 \begin{enumerate}
-    \item Distributivo respecto de la suma
-    \item Respecto del producto
-    \item Lim x cte x f = cte x L
-    \item Distributivo respecto de cociente, siempre que denominador \(\neq\) 0
+    \item El límite es distributivo respecto de la suma:
+    
+    \(\lim \left[g(x,y) + f(x,y)\right] = \lim g(x,y) + \lim f(x,y)\)
+    \item Es distributivo respecto del producto:
+    
+    \(\lim \left[g(x,y) \cdot f(x,y)\right] = \lim g(x,y) \cdot \lim f(x,y)\)
+    \item Límite de constante es la constante:
+    
+    \(\lim k\cdot f(x,y) = k\cdot\lim f(x,y)\)
+    \item Distributivo respecto de cociente, siempre que denominador \(\neq\) 0:
+    
+
     \item Respecto de potencia
 \end{enumerate}
 
+
 \subsection{Cálculo de límites en dos variables}
+
+Dependiendo de la expresión, podemos recurrir a diferentes formas de resolver un 
+límite con dos variables:
 
 \subsubsection{Límite doble o simultáneo}
 
-Reemplazamos, operamos algebraicamente y llegamos a un resultado.
+Cuando no tenemos una indeterminación simplemente reemplazamos, operamos y 
+llegamos a un resultado.
 
 \subsubsection{Límite iterado}
 
-Hacemos primero con una y después con otra:
+Cuando existe una indeterminación, un posibilidad es calcular el límite para una
+de las variables y luego para la siguiente. 
+Entonces, \(\lim_{(x,y) \to (a,b)} f(x,y)\):
 
-\texttt{Lim x, a, f(x,y) => \(f_x\)}.
+\begin{align*}
+    \lim_{x \to a} f(x,y) & = f_x \\
+    \lim_{y \to b} f_x & = \boxed{L_1}
+\end{align*}
 
-\texttt{Lim y, b, \(f_x\) => \(L_1\)}.
+Luego, operamos en sentido inverso:
 
-Hacemos el otro camino también,
-que devuelve \(L_2\).
+\begin{align*}
+    \lim_{y \to b} f(x,y) & = f_y \\
+    \lim_{x \to a} f_y & = \boxed{L_2}
+\end{align*}
 
-Si \(L_1 = L_2 = L\), suponemos \(\exists L\) hasta que se demuestre lo contrario (hay que seguir)
+Si \(L_1 = L_2 = L\), suponemos que el límite existe hasta que se demuestre lo 
+contrario. En límites en dos variables, nunca podemos estar completamente 
+seguros.
 
 \subsubsection{Límites radiales, parabólicos, cúbicos, etc.}
 
-Igual al iterado, pero con:
+Procedemos de la misma forma que el límite iterado, pero poniendo una variable 
+en función de la otra. Esto implica acercarnos al punto desde una recta, una 
+parábola, etc:
 
 \begin{enumerate}
     \item \(y = mx\)
@@ -294,13 +320,20 @@ Igual al iterado, pero con:
     \item \(y = ax^{3}\)
 \end{enumerate}
 
-Y sus respectivas variantes en función de \(x\).
-Si aparece \(L\) distinto, concluimos que \(\nexists L\).
+Se opera con \(f(x) = y\) y sus respectivas variantes en \(f(y) = x\):
+
+\begin{enumerate}
+    \item \(x = my\)
+    \item \(x = ay^{2}\)
+    \item \(x = ay^{3}\)
+\end{enumerate}
+
+Si aparece un \(L\) distinto, concluimos que no existe. Como mencionamos en el 
+apartado anterior, no podemos confirmar existencia, sino \textit{no existencia}.
 
 \subsubsection{Límites en coordenadas polares}
 
-
-Se utiliza cuando aparece \(x^{2} + y^{2}\) en el denominador.
+Se utiliza cuando la expresión tiene \(x^{2} + y^{2}\) en el denominador.
 
 Sustituimos:
 \begin{enumerate}
@@ -309,10 +342,10 @@ Sustituimos:
     \item \(x^{2} + y^{2} = \rho^{2}\)
 \end{enumerate}
 
-Operamos algebraicamente y buscamos la función \(F(\rho)\),
+Operamos buscando que quede \(F(\rho)\),
 es decir, que quede en función de \(\rho\) y no de \(\theta\).
 
-Operamos \(\lim_{\rho\to0} F(\rho)\).
+Luego, operamos \(\lim_{\rho\to0} F(\rho)\).
 
 Como \(f(\rho\cos\theta,\rho\sin\theta) < F(\rho) \implies \lim_{(x,y)\to(0,0)}f(x,y) = L\).
 
@@ -370,29 +403,35 @@ Operamos límite tendiendo a 0 de \(F(\rho)\)
     \lim_{\rho\to0} 3\rho = \boxed{0}
 \end{align*}
 
-Como límite tiende a 0, por lo tanto, límite es igual al 1 encontrado con anterioridad.
+Como límite tiende a 0, 
+por lo tanto, 
+límite es igual al 1 encontrado con anterioridad.
 
 \subsection{Continuidad de funciones de dos variables}
 
-\subsubsection{Contínua en un punto}
+\subsubsection{Cotinuidad en un punto}
 
-\texttt{Continua f(x,y), (x0,y0) => \(\{True, False\}\)}
-
-Continua recibe \texttt{CampoEscalar} y un punto \texttt{P = (x0,y0)},
-devuelve continuidad verdadera si:
+Decimos que una función de dos variables es continua en \((a,b)\) si:
 
 \begin{enumerate}
-    \item \texttt{f(x0,y0) => z0}
-    \item \texttt{lim (x,y), (x0,y0), f(x,y) => L}
-    \item \texttt{L == x0}
+    \item \(f(a,b) = c\)
+    \item \(\lim_{(x,y) \to (a,b)} = L\)
+    \item \(L = c\)
 \end{enumerate}
 
-\subsubsection{Función contínua}
+Es decir,
+las \textit{mismas} condiciones de continuidad que una \textit{función de una 
+variable}.
 
-\texttt{Continua f(x,y) => \(\{True, False\}\)}
+\subsubsection{Función continua}
 
-Que sea contínua depende del polinomio del \texttt{CampoEscalar},
-si no tiene discontinuidades en su dominio es contínua.
+Decimos que una función de dos variables es continua si no tiene 
+discontinuidades en su dominio.
 
 \textbf{Ejemplo.}
-\(\sqrt{x+y}\) es contínua en su dominio \(y \geq -x\).
+\(\sqrt{x+y}\) tiene una discontinudad en su dominio, puesto que todo punto 
+\(x+y<0\) será indeterminado, no cumpliendo con la condición de continuidad en 
+el punto. 
+
+Para que sea continua podemos acotar su dominio:
+\(\sqrt{x+y} \quad/\quad x+y \geq 0\).

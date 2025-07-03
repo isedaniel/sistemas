@@ -2,39 +2,47 @@
 
 \subsection{Derivadas parciales}
 
-Similar a derivada de una variable, que sería: 
+Si operamos derivada a una función de una varible obtenemos otra función,
+que describe la pendiente de la primera.
+La derivada en funciones de dos variables sigue la misma idea, 
+pero con diferencias en el cálculo.
 
-\texttt{Derivada f(x) x0 => Pendiente de la recta tangente a la función en x0}
-
-Derivada Parcial considera el cambio en una de las variables, manteniendo constante la otra.
-
-\texttt{DerivadaParcial f(x,y) (x0,y0) \(\{x,y\}\) => pendiente de tangente \(\cap\) x = x0}
-
-Hay entonces dos tipos de derivada parcial:
+Aquí aparece el concepto de \textit{derivada parcial}: 
+operamos derivada de una de las variables y consideramos constante la otra.
 
 \begin{align*}
-    \frac{\partial f}{\partial x} = f_x & y \frac{\partial f}{\partial y} = f_y \\
+\frac{\partial f}{\partial x} = f_x \\
+\frac{\partial f}{\partial y} = f_y \\
 \end{align*}
 
-Es decir,
-manteniendo función y punto constante, 
-\texttt{DerivadaParcial} puede devolver 2 pendientes:
-una de la curva que se forma en la intersección con el plano \(x = x_0\),
-y otro de la intersección con el plano \(y = y_0\).
-
-Operativamente es igual a la derivada de una variable: operamos considerando a la otra constante.
-
-\subsection{Reglas de derivación}
+\subsection{Propiedades y reglas de la derivada parcial}
 
 \begin{enumerate}
-    \item Si \(a\) constante, derivada parcial en x de función \(f\): \((af)_x = af_x\)
-    \item Distributiva respecto de suma: \((f \pm g)_x = f_x \pm g_x\)
-    \item Regla del producto: \((f\cdot g)_x = f_x\cdot g + f\cdot g_x\)
-    \item Regla del cociente: \(\left(\frac{f}{g}\right)_x = \frac{f_x\cdot g - f\cdot g_x}{g^{2}}\)
-    \item Regla de la cadena: \((g^{\circ}f)_x = g(f)_x \cdot f_x\)
+    \item Con \(a\) constante: 
+    \begin{equation*}
+        (a \cdot f)_x = a\cdot f_x
+    \end{equation*}
+    \item Distributiva respecto de la suma y resta: 
+    \begin{equation*}
+        (f \pm g)_x = f_x \pm g_x
+    \end{equation*}
+    \item Regla del producto: 
+    \begin{equation*}
+        (f\cdot g)_x = f_x\cdot g + f\cdot g_x
+    \end{equation*}
+    \item Regla del cociente: 
+    \begin{equation*}
+        \left(\frac{f}{g}\right)_x = \frac{f_x\cdot g - f\cdot g_x}{g^{2}}
+    \end{equation*}
+    \item Regla de la cadena: 
+    Derivada parcial de \(g\), con \(f\) como está,
+    por derivada parcial de \(f\):
+    \begin{equation*}
+        (g(f))_x = g(f)_x \cdot f_x
+    \end{equation*}
 \end{enumerate}
 
-\subsection{Derivada parcial por definición}
+\subsection{Cálculo de derivada parcial por definición}
 
 \subsubsection{Cuando no está definida en (a,b)}
 
@@ -57,32 +65,33 @@ Derivadas de \(2^{\circ}\) orden en varias variables:
 
 \subsection{Teorema de Schwarz}
 
-Si existen \(f_x\),
-\(f_y\),
-\(f_{xy}\),
-entorno de punto \(P=(x_0,y_0)\),
-y \(f_{xy}\) es contínua en \(P\),
+Si existen en torno al punto \(P\) \(f_x\),
+\(f_y\) 
+y \(f_{xy}\),
+con \(f_{xy}\) continua en \(P\),
 \textbf{existe} \(f_{yx}\) y \(f_{yx}|_P = f_{xy}|_P\).
 
-Es decir,
-la derivadas cruzadas son iguales donde la función es contínua.
+En concreto,
+las derivadas cruzadas son iguales si la función es continua.
 
 \subsection{Matrices especiales}
 
 \subsubsection{Matriz jacobiana}
 
-Matriz cuyas filas son las derivadas parciales de 1er orden de las funciones incluídas.
+Matriz de las derivadas parciales de una o más funciones.
 
 \subsubsection{Matriz Hessiana}
 
-Matriz cuyas filas son derivadas parciales de 2do orden de \textbf{una} función.
+Matriz de las derivadas parciales \textit{de 2do orden} 
+de \textit{una} función.
 Una función tiene \(2^{n}\) derivadas cruzadas si tiene 2 variables.
 
 \subsection{Regla de la cadena}
 
-Si \(z\) es campo escalar en función de xy, \(f(x,y)\),
-, a su vez x e y son funciones de t, \(x(t), y(t)\),
-se puede hacer una composición de funciones, quedando \(z(t)\).
+Si \(f(x,y) = z\),
+y podemos expresar x e y en función de t, 
+es decir, \(x(t), y(t)\),
+se puede hacer una composición \(z(t)\).
 
 Se puede componer y derivar \(\frac{dz}{dt}\) o, por regla de la cadena:
 

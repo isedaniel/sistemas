@@ -4,42 +4,45 @@
 
 \subsection{Integrales múltiples}
 
-La integral definida es el \textit{volumen} del sólido \((S)\),
-con base en recinto \(R = [a,b] \times [c,d]\),
+La integral definida es el \textit{volumen} del sólido \(S\),
+desde la base en el recinto \(R\),
 hasta la superficie \(z = f(x,y)\).
 
 \begin{equation*}
-    \int\int f(x,y)\,dA = V
+    \int\int f(x,y)\,dA_R = V_S
 \end{equation*}
 
-Es decir, si \(R\) tiene como límites \([a,b] \times [c,d]\):
+Si \(R = [a,b] \times [c,d]\), la podemos expresar como:
 
 \begin{equation*}
     \int_{c}^{d}\int_{a}^{b} f(x,y) \,dx\,dy
 \end{equation*}
 
-\subsection{Propiedades}
+\subsection{Propiedades de las integrales múltiples}
 
-Dadas dos funciones de dos variables,
-\(f(x,y)\) y \(g(x,y)\),
+Dadas \(f\) y \(g\) funciones de dos variables,
 siendo ambas \textit{integrables} en el recinto \(R\):
 
 1. La integración múltiple es distributiva respecto de la suma y resta de funciones:
 
 \begin{equation*}
-    \int\int [f(x,y) \pm g(x,y)] \,dA = \int\int f(x,y) \,dA \pm \int\int g(x,y) \,dA
+    \int\int [f \pm g] \,dA = \int\int [f] \;dA \pm \int\int [g] \;dA
 \end{equation*}
 
-2. Si tengo producto de función por constante (\(k\)), \textit{puedo sacar la constante}:
+2. Si tengo producto de función por \(k\) constante, 
+\textit{puedo sacar la constante}:
 
 \begin{equation*}
-    \int\int [kf(x,y)] \,dA = k \int\int f(x,y) \,dA
+    \int\int [kf] \; dA = k \int\int f \; dA
 \end{equation*}
 
-3. La integral definida para el recinto \(R\) es igual a la suma de las integrales para los \textit{subrecintos} \(R_1\) y \(R_2\):
+3. La integral definida para el recinto \(R\) 
+es igual a la suma de las integrales para 
+los \textit{subrecintos} \(R_1\) y \(R_2\):
 
 \begin{equation*}
-    \int\int_R [f(x,y)] \,dA = \int\int_{R_1} [f(x,y)] \,dA + \int\int_{R_2} [f(x,y)] \,dA
+    \int\int_R [f] \; dA = \int\int_{R_1} [f] \; dA + \int\int_{R_2} [f] \; dA
 \end{equation*}
 
-4. Si \(f(x,y)\) esta por encima de \(g(x,y)\) para todo \(R\), entonces la integral también va a estar por encima
+4. Si \(f(x,y)\) esta por encima de \(g(x,y)\) para todo \(R\), 
+entonces la integral también va a estar por encima.

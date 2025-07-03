@@ -1,9 +1,12 @@
 \subsection{Integración parcial}
 
-Como en la derivación de campos escalares,
-la integración de hace de forma iterada y sucesiva.
+La idea es la misma que en la derivación de campos escalares:
+integramos de forma iterada y sucesiva.
 
-Es decir, primero integramos por una de las variables, tomando la otra como constante, y después integramos por la segunda.
+Es decir, 
+primero integramos por una de las variables, 
+tomando la otra como constante. 
+Seguidamente, integramos por la segunda.
 
 \begin{equation*}
     \int\int_R f(x,y) \,dx\,dy = \int_{c}^{d} \left[\int_{a}^{b} f(x,y) \,dx\right] \,dy
@@ -11,7 +14,7 @@ Es decir, primero integramos por una de las variables, tomando la otra como cons
 
 Por \textbf{teorema de Fubini},
 los dos caminos de integración tienen que dar el mismo resultado,
-siempre que la función sea contínua en el recinto R.
+siempre que la función sea continua en el recinto R.
 
 \begin{equation*}
     \int_{c}^{d} \left[\int_{a}^{b} f(x,y) \,dx\right] \,dy = \int_{a}^{b} \left[\int_{c}^{d} f(x,y) \,dy\right] \,dx
