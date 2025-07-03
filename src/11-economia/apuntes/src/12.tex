@@ -1,0 +1,198 @@
+\section{Clase 26 de junio}
+
+Examen: jueves 10 a las 19.
+Modalidad: misma que la anterior.
+
+\subsection{Teoría de la producción}
+
+Entendemos que las actividades productivas (fábricas, explotación agrícola,
+etc.) lo hacen eficientemente, es decir,
+con el menor costo posible.
+O sea,
+obtener el máximo nivel de producción con una dada cantidad de factores.
+Cuando hablamos de factores, por ejemplo,
+podríamos mencionar horas hombre (HH), cantidad de empleados,
+líneas de montaje, etc.
+
+\subsection{Función de producción}
+
+Especifica la cantidad máxima de producción que puede obtenerse con una cantidad
+dada de factores,
+dependiendo de los conocimientos técnicos,
+por ejemplo,
+en Occidente,
+para cavar un pozo de \(2\times15\) metros se utiliza maquinaria adecuada,
+personal capacitado y quizá un supervisor.
+En cambio,
+en Corea del Norte,
+para realizar ese mismo trabajo se utilizan 50 personas con pico y pala.
+
+Por lo tanto,
+desde el punto de vista económico,
+se utiliza la \textit{función producción} para describir la capacidad productiva
+de una empresa.
+
+\subsection{Producto total, marginal y medio}
+
+\textbf{Producto total}, es la cantidad total de producción en unidades físicas.
+Ejemplo, en 3 horas hice 3000 tapitas. En 4 horas hice 4000 tapitas.
+
+\textbf{Producto marginal},
+es la producción \textit{adicional} que se obtiene por unidad de factor,
+por ejemplo,
+por una unidad de hora hombre se obtienen 1553 tapitas.
+
+\textbf{Producto medio} es la producción total dividida por el total de unidades
+del factor,
+es decir,
+su promedio.
+
+\vspace{.5cm}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cccc}
+        \hline
+        Factor & Producto total & Producto marginal & Producto medio \\
+        0      & 0              & -                 & 0              \\
+        1      & 2000           & 2000              & 2000           \\
+        2      & 3000           & 1000              & 1500           \\
+        3      & 3500           & 500               & 1167           \\
+        4      & 3800           & 300               & 950            \\
+        5      & 3900           & 100               & 780            \\
+        \hline
+    \end{tabular}
+\end{table}
+\vspace{.5cm}
+
+\subsection{Ley de los rendimientos decrecientes}
+
+Establece que cuando se añade una cantidad \textit{adicional} de un factor,
+manteniendo los demás fijos,
+se obtienen una cantidad adicional del producto,
+pero cada vez más pequeña.
+Es decir, 
+el producto marginal de ese factor disminuye a medida que aumenta la cantidad de
+ese factor.
+Quiere decir que al comienzo lo que se debe hacer es todo.
+O sea,
+la disponibilidad de maquinarias, instalaciones, etc., son muy amplias 
+y a medida que la capcidad de explotación se va intensificando,
+el ritmo de expansión se hace más lento,
+hasta llegar a un punto de saturación,
+lo que implica que debería incorporarse más unidades pero de otros factores.
+Ejemplo: comprar una nueva línea de montaje.
+
+
+\vspace{.5cm}
+\begin{figure}[H]
+    \centering
+    \caption{Curva de los rendimientos decrecientes}
+    \vspace{.25cm}
+    \begin{tikzpicture}
+        \begin{axis}[
+                axis lines=middle,
+                xmin=0, xmax=10,
+                ymin=0, ymax=4,
+                xtick={2,4,6,8},
+                ytick={0,1,2,3},
+                domain=1:10,
+                samples=100,
+                grid=both,
+                grid style={dashed, gray!50},
+            ]
+            % función
+            \addplot[
+                color=blue,
+                thick,
+                smooth
+            ] {ln(x)+1};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+\vspace{.5cm}
+
+\subsection{Costos: fijos, variables y totales}
+
+\textbf{Costos fijos.}
+Son los que permanecen constantes dada cierta capacidad física de la empresa,
+y no tienen relación con el aumento o disminución de la producción.
+Ejemplo:
+alquiler de la fábrica,
+seguro,
+ciertos sueldos como el de la seguridad.
+Aún si no existiese producción alguna,
+estos gastos existirían igualmente.
+
+Los costos fijos (\(CF\)) permanecen constantes en el corto plazo,
+hasta que aumenta la capacidad física de la empresa.
+Por ejemplo, 
+si se construyen más galpones y se adquieren más maquinarias,
+estos costos aumentarán.
+
+\textbf{Costos variables.}
+Tienen relación directa con el volumen de producción.
+Ejemplo: produzco más, gasto más energía, sueldo, insumos.
+
+\textbf{Costo total} es la suma de \(CF\) y \(CV\).
+
+\begin{equation*}
+    CT = CF + CV
+\end{equation*}
+
+Ejemplo, si alquilar una fábrica vale \$10,
+energía \$5, sueldos \$5, seguro \$3, materia prima \$2,
+calcular \(CF\), \(CV\) y \(CT\).
+
+\begin{equation*}
+    CF = 10 + 3 = 13 \\
+    CV = 5 + 5 + 2 = 12 \\
+    CT = \boxed{25}
+\end{equation*}
+
+Con \(V\) ventas, y \(B\) beneficio:
+
+\begin{equation*}
+    V - CV = CF + B \implies B = V - CT
+\end{equation*}
+
+\subsection{Inflación}
+
+La inflación se puede identificar como el crecimiento continuo y generalizado de 
+los precios de bienes y servicios.
+Este crecimiento se mide bajo la evolución de algún índice\footnote{Índice \(\neq\) porcentaje}.
+Tal cual lo indicado, 
+la inflación se define como el aumento del nivel general de precios
+y este se expresa mediante índices de precios, 
+los cuales,
+si se comparan sobre la base del mes anterior o del año anterior,
+se determina el porcentaje de inflación del período considerado.
+
+El índice de precios al consumidor (IPC) 
+representa el costo de una canasta de bienes y servicios.
+La inflación medida por el IPC es la tasa de variación porcentual 
+que experimenta este índice en el período de tiempo considerado.
+
+\begin{equation*}
+    I_{2024} = \frac{IPC_{2024}-IPC{2023}}{IPC_{2024}}
+\end{equation*}
+
+De esta manera pasamos de un índice a porcentaje.
+
+El IPC no es un índice de costo de vida.
+Para determinar el IPC se hace un relevamiento de precios 
+de ciertos productos de la canasta.
+Hasta hoy son 9, a saber:
+\begin{itemize}
+    \item Alimentos y bebidas
+    \item Indumentaria
+    \item Vivienda y servicios básicos
+    \item Equipamiento y mantenimiento del hogar
+    \item Atención médica y gastos para la salud 
+    \item Transporte y comunicaciones
+    \item Esparcimiento
+    \item Educación
+    \item Otros bienes y servicios 
+\end{itemize}
+
+A su vez,
+esta canasta se subdivide.
