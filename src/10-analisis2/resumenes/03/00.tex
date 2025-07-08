@@ -14,6 +14,12 @@
 % símbolos
 \usepackage{amsmath, amssymb}
 
+% resize for mathexpr
+\usepackage{environ}
+\NewEnviron{BIG}{% 
+    \scalebox{1.6}{$\BODY$} 
+} 
+
 % gráficos
 %\usepackage{tikz}
 

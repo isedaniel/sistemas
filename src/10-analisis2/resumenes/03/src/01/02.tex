@@ -133,26 +133,64 @@ Calcular derivada de:
 Calculamos por definición donde se produce el cambio de función:
 
 \begin{align*}
-     f_x & = \lim_{x \to 0}\frac{f(x,0) - f(0,0)}{x - 0} \\
-     f_x & = \lim_{x \to 0}\frac{0 - 0}{x - 0} = \boxed{0} \\
+     f_x & = \lim_{h \to 0}\frac{f(0 + h,0) - f(0,0)}{h} \\
+     f_x & = \lim_{h \to 0}\frac{0 - 0}{h - 0} = \boxed{0} \\
 \end{align*}
 
 \begin{align*}
-     f_y & = \lim_{y \to 0}\frac{f(0,y) - f(0,0)}{y - 0} \\
-     f_y & = \lim_{y \to 0}\frac{0 - 0}{y - 0} = \boxed{0} \\
+     f_y & = \lim_{h \to 0}\frac{f(0,0 + h) - f(0,0)}{h - 0} \\
+     f_y & = \lim_{h \to 0}\frac{0 - 0}{h - 0} = \boxed{0} \\
 \end{align*}
 
-La derivada por definición en el punto es \((0,0)\).
+La derivada parcial respecto de \(x\) y respecto de \(y\) en \((0,0)\) valen 
+ambas 0.
 
 \subsubsection{Cuando puede que una exista y la otra no}
 
-\subsubsection{En funciones de varias variables: derivabilidad \(\nRightarrow\) continuidad}
+\subsubsection{Derivabilidad y continuidad}
 
-\subsection{Derivadas sucesivas}
+En funciones de una variable la derivabilidad implica continuidad:
+si una función es derivable en el punto \(P\),
+se puede afirmar que es continua en \(P\).
 
-Derivadas de \(2^{\circ}\) orden en varias variables:
+Lo recíproco, siempre en funciones de una variable,
+no se puede asegurar:
+que una función sea continua no implica que sea derivable.
+El ejemplo clásico es la función \(f(x) = |x|\). 
+Esta función no es derivable en \(x = 0\),
+puesto que la derivada por izquierda es distinta de la derivada por derecha.
 
-\((f_x)_x = f_{xx}\).
+Sin embargo,
+en funciones de varias variables,
+la derivabilidad \textit{no implica} continuidad.
+Por ejemplo, la función \(\frac{3xy}{x^{2} + y^{2}}\).
+Sus derivadas parciales en \(x\) y \(y\),
+determinadas por definición,
+son iguales a 0.
+Pero esta función claramente \textit{no es continua} en 0.
+
+Derivabilidad, 
+en funciones de varias variables,
+no implica continuidad.
+
+\subsection{Derivadas de orden superior o derivadas sucesivas}
+
+Una función de 2 variables independientes tiene \(2^{2}\) 
+derivadas de 2\(^{\circ}\) orden:
+
+\begin{align*}
+    f_{xx} \quad f_{xy} \quad f_{yy} \quad f_{yx}
+\end{align*}
+
+Generalizando,
+una función de \(m\) variables tiene \(m^{n}\) derivadas de \(n\) orden.
+
+La notación de las derivadas de segundo orden es:
+
+\begin{equation*}
+    f_{xy} = \frac{\partial^{2} f}{\partial y \partial x} \quad 
+    f_{xx} = \frac{\partial^{2} f}{\partial x^{2}}
+\end{equation*}
 
 \subsection{Teorema de Schwarz}
 
@@ -163,25 +201,68 @@ con \(f_{xy}\) continua en \(P\),
 \textbf{existe} \(f_{yx}\) y \(f_{yx}|_P = f_{xy}|_P\).
 
 En concreto,
-las derivadas cruzadas son iguales si la función es continua.
+las derivadas cruzadas son iguales 
+en todos los puntos del dominio donde sean continuas.
 
-\subsection{Matrices especiales}
+\vspace{.5cm}
+\textbf{Ejemplo.}
+
+Hallar derivadas de segundo orden de \(f(x,y) = x \cos y + ye^{x}\):
+
+Hallamos primero derivadas de primer orden:
+
+\begin{align*}
+    f_x = \cos y + ye^{x} \quad f_y = -x\sen y + e^{x}
+\end{align*}
+
+Buscamos las derivadas de segundo orden:
+
+\begin{align*}
+    f_{xy} = -\sen y + e^{x} \quad f_{yx} = -\sen y + e^{x}
+\end{align*}
+
+Vemos que ambas son continuas,
+por lo cual se cumple el Teorema de Schwarz:
+las derivadas cruzadas son iguales.
+
+\subsection{Dos matrices especiales}
 
 \subsubsection{Matriz jacobiana}
 
-Matriz de las derivadas parciales de una o más funciones.
+Es una matriz \(m \times n\),
+cuyas filas son las derivadas parciales de \(m\) funciones,
+de \(n\) variables.
+
+Por ejemplo, una matriz jacobiana de dos funciones \(f\) y \(g\),
+de dos variables, sería:
+
+\begin{equation*}
+\BIG{J =
+    \begin{pmatrix}
+        \frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} \\
+        \frac{\partial g}{\partial x} & \frac{\partial g}{\partial y} \\
+    \end{pmatrix}}
+\end{equation*}
 
 \subsubsection{Matriz Hessiana}
 
 Matriz de las derivadas parciales \textit{de 2do orden}
 de \textit{una} función.
-Una función tiene \(2^{n}\) derivadas cruzadas si tiene 2 variables.
+Por ejemplo, la hessiana de una función de 2 variables sería:
+
+\begin{equation*}
+\BIG{H =
+    \begin{pmatrix}
+        f_{xx} & f_{xy} \\
+        f_{yx} & f_{yy} \\
+    \end{pmatrix}}
+\end{equation*}
 
 \subsection{Regla de la cadena}
 
 Si \(f(x,y) = z\),
 y podemos expresar x e y en función de t,
-es decir, \(x(t), y(t)\),
+es decir, \(x(t)\) e \(y(t)\),
 se puede hacer una composición \(z(t)\).
 
 Se puede componer y derivar \(\frac{dz}{dt}\) o, por regla de la cadena:
@@ -190,5 +271,75 @@ Se puede componer y derivar \(\frac{dz}{dt}\) o, por regla de la cadena:
     \frac{dz}{dt} = \frac{\partial z}{\partial x}\cdot\frac{dx}{dt} + \frac{\partial z}{\partial y}\cdot\frac{dy}{dt}
 \end{equation*}
 
+Ahora, 
+supongamos \(z = f(x,y)\),
+que a su vez \(x = x(u,v)\) e \(y = y(u,v)\).
+En este caso,
+\(z\) tendrá una derivada parcial respecto de \(u\)
+y una derivada parcial respecto de \(v\),
+siguiendo la estructura del punto anterior:
+
+\begin{align*}
+    z_u = f_x\cdot x_u + f_y \cdot y_u \\
+    z_v = f_x\cdot x_v + f_y \cdot y_v \\
+\end{align*}
+
 \subsection{Derivada direccional}
 
+Ya hemos visto las derivadas parciales,
+que son las tasas de cambio de \(z\) en dirección de los ejes \(x\) e \(y\).
+
+La derivada direccional es la tasa de cambio del campo vectorial en dirección 
+de un vector \(\vec{u}\).
+
+El vector \(\vec{u}\) puede definirse básicamente de dos maneras:
+\begin{itemize}
+    \item Con \textbf{puntos} \(a\) y \(b\), 
+    que para referir el vector al origen los restamos \(\vec{u} = b-a\)
+    \item Con el \textbf{ángulo} \(\theta\),
+    de forma \(\vec{u} = (\cos \theta, \sen \theta)\).
+\end{itemize}
+
+Para realizar una derivada direccional el vector debe estar normalizado.
+Un vector dado por su ángulo \textit{ya se encuentra normalizado}.
+Para normalizar un vector dado por sus puntos operamos:
+
+\begin{equation*}
+    \vec{n} = \frac{\vec{u}}{|\vec{u}|}
+\end{equation*}
+
+Siendo la magnitud del vector \(|\vec{u}| = \sqrt{a^{2} + b^{2}}\).
+
+Dado el punto \(P = (x_0, y_0, z_0)\), 
+la derivada direccional en dirección de \(\vec{u} = (a,b)\) es:
+
+\begin{equation*}
+    D_{\vec{u}}f(x,y) = \lim_{h \to 0}
+    \frac{f(x_0 + ha, y_0 + hb) - f(x_0,y_0)}{h}
+\end{equation*}
+
+\textbf{Teorema de la derivada direccional.}
+
+Si \(f\) es diferenciable en \(P = (x_0,y_0)\),
+entonces tiene derivada direccional en sentido de cualquier vector 
+\(\vec{u} = (a,b)\), donde:
+
+\begin{equation*}
+    D_{\vec{u}}f(x,y) = f_x|_{P} \cdot a + f_y|_{P} \cdot b
+\end{equation*}
+
+\textbf{Ejemplo.}
+
+Hallar derivada direccional de \(f(x,y) = x^{3} - 3xy + 4y^{2}\),
+en dirección de \(\vec{u}\) con \(\theta = \pi/6\).
+Determinar valor de la razón de cambio siguiendo ese vector en \(P = (1,2)\).
+
+Instrucciones:
+\begin{itemize}
+    \item Primero especificamos/normalizamos el vector
+    \item Calculamos derivadas parciales 
+    \item Planteo el teorema de la derivada direccional 
+    \item Obtengo una expresión
+    \item Evaluamos en \(P\)
+    \item Llegamos al valor
+\end{itemize}
