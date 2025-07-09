@@ -430,3 +430,65 @@ para determinar la tasa de cambio calculamos el módulo del gradiente en \((2,0)
 
 \subsection{Plano tangente}
 
+El vector gradiente es ortogonal a la superficie en un punto.
+Por lo tanto,
+es también ortogonal a \textit{todas las rectas tangentes a la superficie en 
+ese punto}. 
+El plano que contiene a todas esas tangentes se denomina \textit{plano tangente}
+y el vector gradiente es el \textit{vector normal} de dicho plano.
+
+La expresión que describe ese plano,
+en el punto \(P = (x_0, y_0)\), es:
+
+\begin{equation*}
+    f_x|_P(x - x_0) + f_y|_P(y - y_0) - z + f|_P = 0
+\end{equation*}
+
+Y, de manera general, con la función definida de forma implícita:
+
+\begin{equation*}
+    \nabla f(x,y,z)\cdot(x-x_0,y-y_0,z-z_0) = 0
+\end{equation*}
+
+Es decir,
+dada la superficie \(S\) definida por \(f(x,y,z) = 0\),
+diferenciable en el punto \(P = (x_0,y_0,z_0)\),
+con \(\nabla f (x,y,z \neq 0)\),
+definimos:
+\begin{itemize}
+    \item Plano tangente a \(S\) en \(P\),
+    como el plano que pasa por \(P\) y es normal al gradiente en ese punto.
+    \item Recta normal a \(S\) en \(P\),
+    como la recta que tiene la dirección del gradiente y pasa por \(P\).
+\end{itemize}
+
+Se llama \textit{linealización} de \(f\) en \(P\) a la función
+-cuya gráfica es un plano- que sigue:
+
+\begin{equation*}
+    \mathcal{L}(x,y)= f|_P + f_x|_P(x - x_0) + f_y|_P(y - y_0)
+\end{equation*}
+
+\vspace{.5cm}
+\textbf{Ejemplo.}
+
+Encontrar ecuación del plano tangente al paraboloide elíptico 
+\(z = 2x^{2} + y^{2}\),
+para \(P = (1,1)\).
+
+Primero, determinamos \(z|_P = 3\).
+
+Las derivadas parciales de \(z\) son:
+
+\begin{equation*}
+    f_x = 4x \quad \land \quad f_y = 2y
+\end{equation*}
+
+Por último, evaluamos y expresamos como plano:
+
+\begin{align*}
+    f_x|_P(x - x_0) + f_y|P(y - y_0) - z + f|P & = 0 \\
+    4x - 4 + 2y - 2 - z + 3 & = 0 \\
+    \boxed{4x + 2y - z - 3 = 0} &
+\end{align*}
+
