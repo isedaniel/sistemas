@@ -343,3 +343,90 @@ Instrucciones:
     \item Evaluamos en \(P\)
     \item Llegamos al valor
 \end{itemize}
+
+Entonces,
+primero especificamos el vector:
+
+\begin{align*}
+    \vec{u} = \langle\cos\pi/6,\sen\pi/6 \rangle
+\end{align*}
+
+El vector está expresado por su ángulo,
+es por lo tanto un \textit{vector unitario} y no es necesario normalizar.
+
+En segundo lugar,
+determinamos derivadas parciales:
+
+\begin{align*}
+    f_x = 3x^{2} - 3y \quad f_y = 8y - 3x
+\end{align*}
+
+Ahora planteamos el teorema de la derivada direccional,
+que afirma que:
+
+\begin{equation*}
+    D_{\vec{u}}f = f_x|_P\cdot a + f_y|_P\cdot b
+\end{equation*}
+
+Por lo tanto:
+
+\begin{align*}
+    D_{\vec{u}}f & = (3x^{2} - 3y)|_P\cdot \cos\pi/6 
+    + (8y - 3x)|_P\cdot \sen\pi/6 \\
+    D_{\vec{u}}f & = (3 - 6) \cdot \frac{\sqrt{3}}{2} 
+    + (16 - 3) \cdot \frac{1}{2} \\
+    D_{\vec{u}}f & = \boxed{\frac{13 - 3\sqrt{3}}{2}}
+\end{align*}
+
+Concluimos que la derivada de \(f\) en dirección de \(\vec{u}\) es 
+\(\frac{13 - 3\sqrt{3}}{2}\).
+
+\subsection{Vector gradiente}
+
+Se llama vector gradiente al resultado de la función vectorial:
+
+\begin{equation*}
+    \nabla f = \langle f_x, f_y \rangle
+\end{equation*}
+
+Es perpendicular a la curva de nivel en el punto \(P\) 
+y geométricamente representa la dirección de mayor tasa de cambio de la función,
+es decir,
+da el valor máximo de la derivada direccional para el punto \(P\) 
+y es perpendicular la superficie.
+
+\vspace{.5cm}
+\textbf{Ejemplo.}
+
+Dada \(f(x,y)=xe^{y}\), 
+determinar en qué dirección la función tiene máxima razón de cambio
+y cuál es la tasa de cambio para el punto \(P = (2,0)\).
+
+Primero,
+para determinar el gradiente necesitamos las derivadas parciales:
+
+\begin{align*}
+    f_x = e^{y} \quad f_y = xe^{y}
+\end{align*}
+
+Determinamos gradiente:
+
+\begin{align*}
+    \nabla f = \langle e^{y}, xe^{y} \rangle
+\end{align*}
+
+Evaluamos gradiente en \(P = (2,0)\):
+
+\begin{align*}
+    \nabla f|_{(2,0)} = \langle e^{0}, 2\cdot e^{0} \rangle = \langle1,2\rangle
+\end{align*}
+
+Por último,
+para determinar la tasa de cambio calculamos el módulo del gradiente en \((2,0)\):
+
+\begin{align*}
+    ||\langle1,2\rangle|| = \sqrt{1^{2} + 2^{2}} = \boxed{\sqrt{5}}
+\end{align*}
+
+\subsection{Plano tangente}
+
