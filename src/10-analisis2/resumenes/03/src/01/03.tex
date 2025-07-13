@@ -1,0 +1,308 @@
+\section{Unidad 3}
+
+\subsection{Funciones implícitas}
+
+Una función \(f(x) = y\) está definida de forma implícita cuando sigue la
+estructura \(f(x,y) = 0\).
+
+\textbf{No toda} función explítica se puede definir de forma implícita.
+Para que ello sea posible,
+se deben cumplir las condiciones del \textbf{Teorema de Dini}.
+
+\subsection{Teorema de Dini}
+
+Dada \(f(x,y)\),
+decimos que está definida implícitamente en \(P = (x_0,y_0)\) si:
+\begin{enumerate}
+    \item la función se anula en algún punto de su dominio: \(f|_P = 0\)
+    \item posee derivadas parciales continuas en \(P\)
+    \item la derivada parcial respecto de la variable dependiente es distinta
+          de 0: \(f_y \neq 0\)
+\end{enumerate}
+
+Si se cumplen estas condiciones,
+la derivada de la función será:
+
+\begin{align*}
+    \frac{dy}{dx} = -\frac{f_x}{f_y}
+\end{align*}
+
+\vspace{.5cm}
+\textbf{Ejemplo.}
+
+Verificar que \(f(x,y) = x^{2} - 3xy + x + y\) es una función implícita,
+considerando \(P = (0,0)\).
+Hallar \(dy/dx\) en dicho punto.
+
+Primero comprobamos Dini:
+\begin{enumerate}
+    \item \(f(0,0) = 0\)
+    \item \(f_x|_{(0,0)} = (2x - 3y + 1)|_{(0,0)} = \boxed{1} \qquad f_y|_{(0,0)} = (-3x + 1)|_{(0,0)} = \boxed{1}\),
+          derivadas existen y son continuas en \(P\)
+    \item \(f_y|_{(0,0)} = 1 \neq 0\)
+\end{enumerate}
+
+Se cumplen las tres condiciones del \textbf{teorema de Dini},
+por lo tanto la función está definida en \(P\),
+siendo su derivada:
+
+\begin{align*}
+    \frac{dy}{dx} = \frac{3y - 2x - 1}{1 - 3x}
+\end{align*}
+
+Si la evaluamos en \(P\): \(dy/dx|_P = -1\).
+
+\subsection{Teorema de Dini en campos escalares}
+
+El teorema se puede extender para campos escalares,
+expresados \(f(x,y,z) = 0\),
+en un punto \(P= (x_0,y_0,z_0)\):
+\begin{enumerate}
+    \item \(f(x_0,y_0,z_0) = 0\)
+    \item Existen \(f_x|_P \quad f_y|_P \quad f_z|_P\) y son continuas en \(P\)
+    \item \(f_z|_P \neq 0\)
+\end{enumerate}
+
+Dadas esas condiciones,
+podemos determinar derivadas parciales siguiendo la expresión:
+
+\begin{align*}
+    \frac{\partial z}{\partial x} = -\frac{f_x}{f_z} \qquad
+    \frac{\partial z}{\partial y} = -\frac{f_y}{f_z}
+\end{align*}
+
+Este teorema se puede generalizar,
+a su vez,
+para \(n\)-variables independientes.
+
+\subsection{Sistemas de Funciones Implícitas}
+
+Un sistema de ecuaciones implícitas puede definir una curva \(C\) en \(R^{3}\):
+\begin{align*} C:
+    \begin{cases}
+        F(x,y,z)=0 \\
+        G(x,y,z)=0
+    \end{cases}
+    \text{con } y = y(x) \text{ y } z = z(x)
+\end{align*}
+
+Las condiciones de existencia de la curva en \(P=(x_0,y_0,z_0)\) se desprenden del
+\textbf{teorema de Cauchy Dini}:
+\begin{enumerate}
+    \item \(F(P) = 0 \quad \land \quad G(P) = 0\)
+    \item Derivadas parciales de \(F\) y \(G\) existen y son continuas en \(P\)
+    \item Determinante del jacobiano \(\neq 0\)
+\end{enumerate}
+
+Con estas condiciones podemos asegurar la existencia de
+\(y = y(x)\) y \(z = z(x)\) diferenciables,
+y la curva \(C\) se puede parametrizar siguiendo:
+\begin{align*}
+    \alpha(x) = (x0, \,y(x), \,z(x))
+\end{align*}
+
+El \textbf{vector tangente} a \(C\) se calcula:
+\begin{align*}
+    \alpha'(x) = (1, \,y'(x), \,z'(x))
+\end{align*}
+
+O como el producto vectorial de los gradientes de las superficies \(F\) y \(G\):
+\begin{align*}
+    \alpha'(x) = \nabla F|_P \times \nabla G|_P
+\end{align*}
+
+Sabemos que \(F = 0\) y \(G = 0\)
+definen implícitamente \(y = y(x)\) y \(z = z(x)\).
+Ademas, hemos determinado que son diferenciables.
+Por lo tanto:
+
+\begin{align*}
+    \begin{cases}
+        dF = F'_x \; dx + F'_y \; dy + F'_z \; dz = 0 \\
+        dG = G'_x \; dx + G'_y \; dy + G'_z \; dz = 0
+    \end{cases}
+\end{align*}
+
+Despejamos derivada parcial respecto de \(x\):
+
+\begin{align*}
+    \begin{cases}
+        F'_y \; dy + F'_z \; dz = -F'_x \; dx \\
+        G'_y \; dy + G'_z \; dz = -G'_x \; dx
+    \end{cases}
+\end{align*}
+
+Si dividimos ambos miembros por \(dx\):
+
+\begin{align*}
+    \begin{cases}
+        F'_y \; \frac{dy}{dx} + F'_z \; \frac{dz}{dx} = -F'_x \\
+        G'_y \; \frac{dy}{dx} + G'_z \; \frac{dz}{dx} = -G'_x
+    \end{cases}
+\end{align*}
+
+Para encontrar las derivadas parciales aplicamos \textbf{Regla de Cramer}:
+
+\begin{align*}
+    det \text{ del sistema } = J = \begin{vmatrix}
+                                       F'_y & F'_z \\
+                                       G'_y & G'_z
+                                   \end{vmatrix}
+\end{align*}
+
+Por lo tanto:
+
+\begin{align*}
+    y'(x) = \frac{\begin{vmatrix}
+                          -F'_x & F'_z \\
+                          -G'_x & G'_z
+                      \end{vmatrix}}{\begin{vmatrix}
+                                         F'_y & F'_z \\
+                                         G'_y & G'_z
+                                     \end{vmatrix}}
+    \qquad\text{ y }\qquad
+    z'(x) = \frac{
+        \begin{vmatrix}
+            F'_y & -F'_x \\
+            G'_y & -G'_x
+        \end{vmatrix}}{\begin{vmatrix}
+                           F'_y & F'_z \\
+                           G'_y & G'_z
+                       \end{vmatrix}}
+\end{align*}
+
+\vspace{.5cm}
+\textbf{Ejemplo 1.}
+
+Sea \(C\) curva en \(R^{3}\),
+definida implícitamente por el sistema:
+
+\begin{align*} C:
+    \begin{cases}
+        F(x,y,z) = z^{3} + 2x^{2} - 4yx + 1 = 0 \\
+        G(x,y,z) = 2y - 3x^{2}y - 4z - 4 = 0
+    \end{cases}
+    \text{ con } z = z(x) \text{ e } y = y(x)
+\end{align*}
+
+Hallar y'(x) y z'(x).
+
+\textit{Resolución.}
+
+Primero buscamos las derivadas parciales:
+
+\begin{table*}[h!]
+    \centering
+    \begin{tabular}{lll}
+        $F'_x = 4x - 4y$ & $F'_y = -4x$        & $F'_z = 3z^{2}$ \\
+        $G'_x = - 6xy$   & $G'_y = 2 - 3x^{2}$ & $G'_z = -4 $    \\
+    \end{tabular}
+\end{table*}
+
+Componemos los jacobianos:
+
+\begin{align*}
+    J_x =
+    \begin{vmatrix}
+        -4x        & 3z^{2} \\
+        2 - 3x^{2} & -4     \\
+    \end{vmatrix} = 16x - 6z^{2} + 9x^{2}z^{2}
+\end{align*}
+
+\begin{align*}
+    J_y =
+    \begin{vmatrix}
+        4y - 4x & 3z^{2} \\
+        6xy     & -4     \\
+    \end{vmatrix} = 16x - 16y - 18xyz^{2}
+\end{align*}
+
+\begin{align*}
+    J_z =
+    \begin{vmatrix}
+        -4x        & 4y - 4x \\
+        2 - 3x^{2} & 6xy     \\
+    \end{vmatrix} = 8x - 8y -12x^{2}y - 12x^{3}
+\end{align*}
+
+\vspace{.5cm}
+\textbf{Ejemplo 2.}
+
+Hallar ecuación de recta tangente y plano normal a la curva \(C\),
+dada por la intersección de dos superficies en el punto \(P=(0,0,2)\):
+
+\begin{align*} C =
+    \begin{cases}
+        F(x,y,z): x\sen y + z\cos(xy) = 2 \\
+        G(x,y,z): e^{y} + \sen(zx) = 1
+    \end{cases}
+\end{align*}
+
+Primero,
+probamos que las funciones estén definidas de forma implícita por teorema de
+Cauchy Dini:
+
+\begin{enumerate}
+    \item \(F|_P = 0 + 2 - 2 = \boxed{0}\) y \(G|_P = 1 + 0 - 1 = \boxed{0}\)
+    \item Determinamos derivadas parciales:
+          \begin{itemize}
+              \item[] \(F'_x = \sen y - zy\sen(xy)\)
+              \item[] \(F'_y = x\cos y - zx\sen(xy)\)
+              \item[] \(F'_z = \cos(xy)\)
+              \item[] \(G'_x = z\cos(zx)\)
+              \item[] \(G'_y = e^{y}\)
+              \item[] \(G'_z = x\cos(zx)\)
+          \end{itemize}
+          Todas son continuas y existen porque son polinomios de
+          funciones trigonométricas y exponenciales.
+    \item Evaluamos jacobiano
+          \(J_x = \begin{vmatrix}
+              0 & 1 \\
+              1 & 0
+          \end{vmatrix} = \boxed{-1 \neq 0}\)
+\end{enumerate}
+
+Se cumplen las tres condiciones,
+por lo tanto \(C\) está definida implícitamente.
+
+Para hallar la recta tangente y el plano normal necesitamos 
+el \textbf{vector tangente} en \(P\):
+
+\begin{align*}
+    \alpha'(x) = \nabla F|_P \times \nabla G|_P \\
+\end{align*}
+
+Determinamos gradientes en \(P\):
+
+\begin{align*}
+    \nabla F|_P = \langle 0, 0, 1 \rangle \\
+    \nabla G|_P = \langle 2, 1, 0 \rangle
+\end{align*}
+
+Operamos producto vectorial:
+
+\begin{align*}
+    \nabla F|_P \times \nabla G|_P =
+    \begin{vmatrix}
+        \hat{i} & \hat{j} & \hat{k} \\
+        0       & 0       & 1       \\
+        2       & 1       & 0       \\
+    \end{vmatrix} =
+    -\hat{i} + 2\hat{j} + 0\hat{k} = \boxed{\langle -1, 2, 0 \rangle}
+\end{align*}
+
+Con el vector tangente podemos expresar la recta tangente de forma vectorial:
+
+\begin{align*}
+    r: (x, y, z) = (0, 0, 2) + \lambda(-1, 2, 0)
+\end{align*}
+
+Y el plano tangente lo expresamos:
+
+\begin{align*}
+    \pi&: (-1, 2, 0) \cdot (x - 0, y - 0, z - 2) \\
+    \pi&: \boxed{2y - x = 0}
+\end{align*}
+
+\subsection{Extremos libres y condicionados}
+

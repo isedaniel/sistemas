@@ -90,25 +90,25 @@ Calcular derivadas parciales de \(\sqrt[3]{x^{3} + y^{3}}\) en el origen:
 Si calculamos derivada directamente:
 \begin{align*}
     f_x & = \frac{1}{3}(x^{3} + y^{3})^{-2/3} \cdot 3x^{2} \\
-    f_x & = \frac{x^{2}}{\sqrt[3]{(x^{3} + y^{3})^{2}}} \\
+    f_x & = \frac{x^{2}}{\sqrt[3]{(x^{3} + y^{3})^{2}}}    \\
 \end{align*}
 
 Si evaluaramos esta derivada parcial en el origen,
 encontraríamos una indeterminación.
-Sin embargo, 
+Sin embargo,
 si derivamos por definición en el punto:
 
 \begin{align*}
-    f_x & = \lim_{x \to 0}\frac{f(x,0) - f(0,0)}{x - 0} \\
+    f_x & = \lim_{x \to 0}\frac{f(x,0) - f(0,0)}{x - 0}  \\
     f_x & = \lim_{x \to 0} \frac{\sqrt[3]{x^{3}} - 0}{x} \\
-    f_x & = \boxed{1} \\
+    f_x & = \boxed{1}                                    \\
 \end{align*}
 
 Vamos con \(f_y\):
 
 \begin{align*}
     f_y & = \lim_{y \to 0}\frac{f(0,y) - f(0,0)}{y - 0} \\
-    f_y & = \lim_{y \to 0}\frac{y - 0}{y - 0} \\
+    f_y & = \lim_{y \to 0}\frac{y - 0}{y - 0}           \\
     f_y & = \boxed{1}
 \end{align*}
 
@@ -126,23 +126,23 @@ Calcular derivada de:
 \begin{align*}
     \begin{cases}
         \frac{3xy}{x^{2} + y^{2}} & (x,y)\neq (0,0) \\
-        0 & (x,y) = (0,0)
+        0                         & (x,y) = (0,0)
     \end{cases}
 \end{align*}
 
 Calculamos por definición donde se produce el cambio de función:
 
 \begin{align*}
-     f_x & = \lim_{h \to 0}\frac{f(0 + h,0) - f(0,0)}{h} \\
-     f_x & = \lim_{h \to 0}\frac{0 - 0}{h - 0} = \boxed{0} \\
+    f_x & = \lim_{h \to 0}\frac{f(0 + h,0) - f(0,0)}{h}   \\
+    f_x & = \lim_{h \to 0}\frac{0 - 0}{h - 0} = \boxed{0} \\
 \end{align*}
 
 \begin{align*}
-     f_y & = \lim_{h \to 0}\frac{f(0,0 + h) - f(0,0)}{h - 0} \\
-     f_y & = \lim_{h \to 0}\frac{0 - 0}{h - 0} = \boxed{0} \\
+    f_y & = \lim_{h \to 0}\frac{f(0,0 + h) - f(0,0)}{h - 0} \\
+    f_y & = \lim_{h \to 0}\frac{0 - 0}{h - 0} = \boxed{0}   \\
 \end{align*}
 
-La derivada parcial respecto de \(x\) y respecto de \(y\) en \((0,0)\) valen 
+La derivada parcial respecto de \(x\) y respecto de \(y\) en \((0,0)\) valen
 ambas 0.
 
 \subsubsection{Cuando puede que una exista y la otra no}
@@ -156,7 +156,7 @@ se puede afirmar que es continua en \(P\).
 Lo recíproco, siempre en funciones de una variable,
 no se puede asegurar:
 que una función sea continua no implica que sea derivable.
-El ejemplo clásico es la función \(f(x) = |x|\). 
+El ejemplo clásico es la función \(f(x) = |x|\).
 Esta función no es derivable en \(x = 0\),
 puesto que la derivada por izquierda es distinta de la derivada por derecha.
 
@@ -169,13 +169,13 @@ determinadas por definición,
 son iguales a 0.
 Pero esta función claramente \textit{no es continua} en 0.
 
-Derivabilidad, 
+Derivabilidad,
 en funciones de varias variables,
 no implica continuidad.
 
 \subsection{Derivadas de orden superior o derivadas sucesivas}
 
-Una función de 2 variables independientes tiene \(2^{2}\) 
+Una función de 2 variables independientes tiene \(2^{2}\)
 derivadas de 2\(^{\circ}\) orden:
 
 \begin{align*}
@@ -188,7 +188,7 @@ una función de \(m\) variables tiene \(m^{n}\) derivadas de \(n\) orden.
 La notación de las derivadas de segundo orden es:
 
 \begin{equation*}
-    f_{xy} = \frac{\partial^{2} f}{\partial y \partial x} \quad 
+    f_{xy} = \frac{\partial^{2} f}{\partial y \partial x} \quad
     f_{xx} = \frac{\partial^{2} f}{\partial x^{2}}
 \end{equation*}
 
@@ -201,7 +201,7 @@ con \(f_{xy}\) continua en \(P\),
 \textbf{existe} \(f_{yx}\) y \(f_{yx}|_P = f_{xy}|_P\).
 
 En concreto,
-las derivadas cruzadas son iguales 
+las derivadas cruzadas son iguales
 en todos los puntos del dominio donde sean continuas.
 
 \vspace{.5cm}
@@ -237,11 +237,11 @@ Por ejemplo, una matriz jacobiana de dos funciones \(f\) y \(g\),
 de dos variables, sería:
 
 \begin{equation*}
-\BIG{J =
-    \begin{pmatrix}
-        \frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} \\
-        \frac{\partial g}{\partial x} & \frac{\partial g}{\partial y} \\
-    \end{pmatrix}}
+    \BIG{J =
+        \begin{pmatrix}
+            \frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} \\
+            \frac{\partial g}{\partial x} & \frac{\partial g}{\partial y} \\
+        \end{pmatrix}}
 \end{equation*}
 
 \subsubsection{Matriz Hessiana}
@@ -251,11 +251,11 @@ de \textit{una} función.
 Por ejemplo, la hessiana de una función de 2 variables sería:
 
 \begin{equation*}
-\BIG{H =
-    \begin{pmatrix}
-        f_{xx} & f_{xy} \\
-        f_{yx} & f_{yy} \\
-    \end{pmatrix}}
+    \BIG{H =
+        \begin{pmatrix}
+            f_{xx} & f_{xy} \\
+            f_{yx} & f_{yy} \\
+        \end{pmatrix}}
 \end{equation*}
 
 \subsection{Regla de la cadena}
@@ -271,7 +271,7 @@ Se puede componer y derivar \(\frac{dz}{dt}\) o, por regla de la cadena:
     \frac{dz}{dt} = \frac{\partial z}{\partial x}\cdot\frac{dx}{dt} + \frac{\partial z}{\partial y}\cdot\frac{dy}{dt}
 \end{equation*}
 
-Ahora, 
+Ahora,
 supongamos \(z = f(x,y)\),
 que a su vez \(x = x(u,v)\) e \(y = y(u,v)\).
 En este caso,
@@ -289,15 +289,15 @@ siguiendo la estructura del punto anterior:
 Ya hemos visto las derivadas parciales,
 que son las tasas de cambio de \(z\) en dirección de los ejes \(x\) e \(y\).
 
-La derivada direccional es la tasa de cambio del campo vectorial en dirección 
+La derivada direccional es la tasa de cambio del campo vectorial en dirección
 de un vector \(\vec{u}\).
 
 El vector \(\vec{u}\) puede definirse básicamente de dos maneras:
 \begin{itemize}
-    \item Con \textbf{puntos} \(a\) y \(b\), 
-    que para referir el vector al origen los restamos \(\vec{u} = b-a\)
+    \item Con \textbf{puntos} \(a\) y \(b\),
+          que para referir el vector al origen los restamos \(\vec{u} = b-a\)
     \item Con el \textbf{ángulo} \(\theta\),
-    de forma \(\vec{u} = (\cos \theta, \sen \theta)\).
+          de forma \(\vec{u} = (\cos \theta, \sen \theta)\).
 \end{itemize}
 
 Para realizar una derivada direccional el vector debe estar normalizado.
@@ -310,7 +310,7 @@ Para normalizar un vector dado por sus puntos operamos:
 
 Siendo la magnitud del vector \(|\vec{u}| = \sqrt{a^{2} + b^{2}}\).
 
-Dado el punto \(P = (x_0, y_0, z_0)\), 
+Dado el punto \(P = (x_0, y_0, z_0)\),
 la derivada direccional en dirección de \(\vec{u} = (a,b)\) es:
 
 \begin{equation*}
@@ -321,7 +321,7 @@ la derivada direccional en dirección de \(\vec{u} = (a,b)\) es:
 \textbf{Teorema de la derivada direccional.}
 
 Si \(f\) es diferenciable en \(P = (x_0,y_0)\),
-entonces tiene derivada direccional en sentido de cualquier vector 
+entonces tiene derivada direccional en sentido de cualquier vector
 \(\vec{u} = (a,b)\), donde:
 
 \begin{equation*}
@@ -337,8 +337,8 @@ Determinar valor de la razón de cambio siguiendo ese vector en \(P = (1,2)\).
 Instrucciones:
 \begin{itemize}
     \item Primero especificamos/normalizamos el vector
-    \item Calculamos derivadas parciales 
-    \item Planteo el teorema de la derivada direccional 
+    \item Calculamos derivadas parciales
+    \item Planteo el teorema de la derivada direccional
     \item Obtengo una expresión
     \item Evaluamos en \(P\)
     \item Llegamos al valor
@@ -371,14 +371,14 @@ que afirma que:
 Por lo tanto:
 
 \begin{align*}
-    D_{\vec{u}}f & = (3x^{2} - 3y)|_P\cdot \cos\pi/6 
-    + (8y - 3x)|_P\cdot \sen\pi/6 \\
-    D_{\vec{u}}f & = (3 - 6) \cdot \frac{\sqrt{3}}{2} 
-    + (16 - 3) \cdot \frac{1}{2} \\
+    D_{\vec{u}}f & = (3x^{2} - 3y)|_P\cdot \cos\pi/6
+    + (8y - 3x)|_P\cdot \sen\pi/6                     \\
+    D_{\vec{u}}f & = (3 - 6) \cdot \frac{\sqrt{3}}{2}
+    + (16 - 3) \cdot \frac{1}{2}                      \\
     D_{\vec{u}}f & = \boxed{\frac{13 - 3\sqrt{3}}{2}}
 \end{align*}
 
-Concluimos que la derivada de \(f\) en dirección de \(\vec{u}\) es 
+Concluimos que la derivada de \(f\) en dirección de \(\vec{u}\) es
 \(\frac{13 - 3\sqrt{3}}{2}\).
 
 \subsection{Vector gradiente}
@@ -389,16 +389,16 @@ Se llama vector gradiente al resultado de la función vectorial:
     \nabla f = \langle f_x, f_y \rangle
 \end{equation*}
 
-Es perpendicular a la curva de nivel en el punto \(P\) 
+Es perpendicular a la curva de nivel en el punto \(P\)
 y geométricamente representa la dirección de mayor tasa de cambio de la función,
 es decir,
-da el valor máximo de la derivada direccional para el punto \(P\) 
+da el valor máximo de la derivada direccional para el punto \(P\)
 y es perpendicular la superficie.
 
 \vspace{.5cm}
 \textbf{Ejemplo.}
 
-Dada \(f(x,y)=xe^{y}\), 
+Dada \(f(x,y)=xe^{y}\),
 determinar en qué dirección la función tiene máxima razón de cambio
 y cuál es la tasa de cambio para el punto \(P = (2,0)\).
 
@@ -432,8 +432,8 @@ para determinar la tasa de cambio calculamos el módulo del gradiente en \((2,0)
 
 El vector gradiente es ortogonal a la superficie en un punto.
 Por lo tanto,
-es también ortogonal a \textit{todas las rectas tangentes a la superficie en 
-ese punto}. 
+es también ortogonal a \textit{todas las rectas tangentes a la superficie en
+    ese punto}.
 El plano que contiene a todas esas tangentes se denomina \textit{plano tangente}
 y el vector gradiente es el \textit{vector normal} de dicho plano.
 
@@ -457,9 +457,9 @@ con \(\nabla f (x,y,z \neq 0)\),
 definimos:
 \begin{itemize}
     \item Plano tangente a \(S\) en \(P\),
-    como el plano que pasa por \(P\) y es normal al gradiente en ese punto.
+          como el plano que pasa por \(P\) y es normal al gradiente en ese punto.
     \item Recta normal a \(S\) en \(P\),
-    como la recta que tiene la dirección del gradiente y pasa por \(P\).
+          como la recta que tiene la dirección del gradiente y pasa por \(P\).
 \end{itemize}
 
 Se llama \textit{linealización} de \(f\) en \(P\) a la función
@@ -472,7 +472,7 @@ Se llama \textit{linealización} de \(f\) en \(P\) a la función
 \vspace{.5cm}
 \textbf{Ejemplo.}
 
-Encontrar ecuación del plano tangente al paraboloide elíptico 
+Encontrar ecuación del plano tangente al paraboloide elíptico
 \(z = 2x^{2} + y^{2}\),
 para \(P = (1,1)\).
 
@@ -488,7 +488,99 @@ Por último, evaluamos y expresamos como plano:
 
 \begin{align*}
     f_x|_P(x - x_0) + f_y|P(y - y_0) - z + f|P & = 0 \\
-    4x - 4 + 2y - 2 - z + 3 & = 0 \\
-    \boxed{4x + 2y - z - 3 = 0} &
+    4x - 4 + 2y - 2 - z + 3                    & = 0 \\
+    \boxed{4x + 2y - z - 3 = 0}                &
 \end{align*}
+
+\subsection{Teorema de la Condición Suficiente de la Diferenciabilidad}
+
+Si las derivadas parciales \(f_x\) y \(f_y\):
+\begin{enumerate}
+    \item existen en un entorno de \(P=(x_0,y_0)\), y
+    \item son continuas en \(P\)
+\end{enumerate}
+se puede afirmar que \(f\) es diferenciable en \(P\).
+
+\vspace{.5cm}
+\textbf{Ejemplo.}
+
+Demostrar que \(f(x,y)=xe^{xy}\) es diferenciable en \((1,0)\).
+Además,
+hallar su linealización y aproximar \(f(1.1,-0.1)\).
+
+\textit{Resolución:}
+
+Como hemos visto en el teorema de la diferenciabilidad,
+necesitamos probar que las derivadas parciales de \(f\) existen en el entorno de
+\(P = (1,0)\) y que son continuas en el propio \(P\).
+Empezamos por determinarlas:
+
+\begin{align*}
+    f_x = e^{xy} + xye^{xy} \qquad f_y = x^{2}e^{xy}
+\end{align*}
+
+Ambas son continuas en \(\mathbb{R}\),
+así que las dos condiciones estarían probadas,
+por lo cual \(f\) es diferenciable en \(P\).
+
+Hallamos linealización:
+
+\begin{align*}
+    \mathcal{L}(x,y) & = f|_P + f_x|_P(x - x_0) + f_y|_P(y - y_0) \\
+    \mathcal{L}(x,y) & = 1 + (x - 1) + y                          \\
+    \mathcal{L}(x,y) & = \boxed{x + y}                            \\
+\end{align*}
+
+Entonces \(f(1.1,-0.1) \approx \mathcal{L}(1.1,-0.1) = 1.1 - 0.1 = \boxed{1}\).
+
+\subsection{Diferencial de una función de varias variables}
+
+El diferencial en una función de una variable \(dy\)
+se interpreta como el cambio que sufre la función
+por un cambio en la variable independiente,
+\(\Delta x = x - x_0 = dx\),
+pero siguiendo por la derivada,
+esto es,
+por la recta tangente en lugar de la función original.
+
+En una función de dos variables la idea es la misma.
+Dada f(x,y) = z, diferencial \(dz\) es \(\Delta x\) y \(\Delta y\),
+pero evaluado en el plano tangente al punto de la superficie.
+
+Se define al \textbf{diferencial total} de \(z\) como:
+
+\begin{equation*}
+    dz = f_x \cdot dx + f_y \cdot dy
+\end{equation*}
+
+\vspace{.5cm}
+\textbf{Ejemplo.}
+
+Determinar diferencial total de \(z = x^{2} + 3xy - y^{2}\).
+Si \(x\) cambia de 2 a \(2.05\) e \(y\) de 3 a \(2.96\),
+hallar \(\Delta z\) y \(dz\) .
+
+Primero calculamos \(dx\) y \(dy\):
+
+\begin{align*}
+    dx = 2.05 - 2 = 0.05 \qquad dy = 2.96 - 3 = -0.04
+\end{align*}
+
+Deteminamos entonces diferencial total:
+
+\begin{align*}
+    dz & = (2x + 3y)|_{(2,3)}\cdot 0.05 + (3x - 2y)|_{(2,3)}\cdot (-0.04) \\
+    dz & = (13) \cdot 0.05 + (0) \cdot (-0.04)                            \\
+    dz & = \boxed{0.65}
+\end{align*}
+
+Por último, hallamos \(\Delta z\):
+
+\begin{align*}
+    \Delta z & = f(2.05,2.96) - f(2,3) \\
+    \Delta z & = 13.64 - 13 \\
+    \Delta z & = \boxed{0.64}
+\end{align*}
+
+Vemos que, para pequeños cambios, \(\Delta z \approx dz\).
 
