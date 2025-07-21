@@ -1,4 +1,4 @@
-\section{Cinemática de una partícula}
+\section{Cinemática de la partícula}
 
 La rama de la física que estudia el movimiento,
 sus causas y sus interacciones,
@@ -289,6 +289,93 @@ la aceleración debida a la gravedad permanece constante para todo el trayecto;
 y despreciamos el efecto del rozamiento debido al aire.
 
 Con ambas suposiciones,
-entendemos que el tiro oblicuo en un MRU en el eje horizontal \(x\),
-y un MRUV en el eje \(y\).
+entendemos que el tiro oblicuo es un MRU sobre el eje horizontal \(x\),
+y un MRUV respecto del eje vertical \(y\).
+La composición de ambos movimientos resulta en una parábola.
+
+\vspace{.5cm}
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+                xlabel=x,
+                ylabel=y,
+                axis lines=left,
+            ]
+            \addplot[domain=0:9, samples=100] {34/21*x - 8/45*x*x};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+\vspace{.5cm}
+
+Las expresiones para la componente en \(x\): 
+
+\begin{align*}
+    a_x = 0 \qquad v_x = v_0 \cdot \cos\theta \qquad x = v_x \cdot t 
+\end{align*}
+
+Por su parte, la componente en \(y\):
+
+\begin{align*}
+    a_y = -g \qquad v_y = v_0 \cdot \sen\theta - g \cdot t \qquad y = v_y \cdot t - \frac{1}{2}g \cdot t^{2}
+\end{align*}
+
+Para determinar el \textbf{momento de altura máxima} buscamos el \(t\) 
+donde \(v_y\) se hace 0:
+
+\begin{align*}
+    v_0 \cdot \sen\theta - g \cdot t = 0 \\
+    t = \frac{v_0 \cdot \sen\theta}{g}
+\end{align*}
+
+Si sustituimos en la expresión para \(y\) llegamos a una expresión para 
+determinar rapidamente la \textbf{altura máxima}: 
+
+\begin{align*}
+    y_{max} = \frac{v_y^{2}}{2g}
+\end{align*}
+
+Por otra parte,
+si queremos saber el \textbf{alcance} en \(x\),
+suponiendo que aterriza a una altura igual a la altura de partida,
+podemos estimar que el tiempo total de vuelo es el \textit{tiempo de altura máxima por 2},
+sustituyendo en \(x\):
+
+\begin{align*}
+    x_{max} = \frac{2V_0^{2}\cos\theta\sen\theta}{g}
+\end{align*}
+
+\subsection{Velocidad relativa}
+
+El concepto de velocidad relativa vincula la medición de velocidad desde dos 
+observadores que se mueven uno respecto del otro.
+
+Dados dos observadores que miden su distancia respecto a un punto \(P\),
+podemos deducir que la posición del 1 es la sumatoria de la distancia con respecto 
+al 2 y al punto \(P\):
+
+\begin{align*}
+    x_{1P} = x_2 + x_{2P}
+\end{align*}
+
+Si esas son las distancias, entonces las velocidades serán:
+
+\begin{align*}
+    v_{1P} = v_{2} + v_{2P}
+\end{align*}
+
+Si lo consideramos ahora en dos dimensiones,
+llegamos a la \textbf{transformación galileana}:
+
+Sea \(T\) un observador fijo respecto los móviles \(A\) y \(B\),
+tenemos:
+\begin{enumerate}
+    \item \(\vec{r}_{AT}\): la posición del móvil A,
+    visto desde T;
+    \item \(\vec{r}_{BT}\): la posición de B visto desde T;
+    \item \(\vec{r}_{AB}\) la posición de A visto desde B.
+\end{enumerate}
+
+La posición de A visto desde B es la ressta de vectores \(\vec{r}_{AB} = \vec{r}_{AT} - \vec{r}_{BT}\),
+si derivamos llegamos a la expresión de las velocidades que es 
+\(\vec{v}_{AB} = \vec{v}_{AT} - \vec{v}_{BT}\).
 
