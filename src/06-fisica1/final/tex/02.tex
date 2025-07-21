@@ -1,0 +1,294 @@
+\section{Cinemática de una partícula}
+
+La rama de la física que estudia el movimiento,
+sus causas y sus interacciones,
+se conoce como \textbf{mecánica}.
+La mecánica suele subdividirse,
+a su vez,
+en dos áreas:
+\begin{enumerate}
+    \item la cinemática 
+    \item y la dinámica 
+\end{enumerate}
+
+La cinemática estudia el \textbf{movimiento} sin tener en cuenta sus causas ni sus
+sus interacciones con el entorno.
+
+La cinemática solo trabaja con longitudes.
+No requiere considerar masas, fuerzas ni energías:
+ese es trabajo de la dinámica.
+
+En esta área de la mecánica usamos el \textbf{modelo partícula},
+que considera al objeto como un \textit{punto} en un sistema de coordenadas,
+puesto que otros aspectos del objeto,
+-como sus dimensiones-
+no son relevantes en este contexto.
+Este modelo proporciona un punto de partida simple para el desarrollo teórico de 
+la cinemática.
+
+\subsection{Desplazamiento, velocidad y aceleración}
+
+Para definir al concepto de movimiento,
+necesitamos entender lo que es la \textbf{posición}.
+Esta se define como la \textit{ubicación} de la \textit{partícula},
+respecto a un \textbf{punto de referencia}
+que funciona como el \textit{origen del sistema de coordenadas}.
+Es una \textit{magnitud vectorial},
+cuyo \textit{signo} cambia de acuerdo a si se encuentra de un lado u otro 
+del sistema de referencia elegido.
+
+Cuando hablamos de \textbf{distancia recorrida},
+nos referimos a la longitud total de un trayecto por el cual se desplaza un 
+objeto.
+La \textit{distancia}, a diferencia de la posición, es una magnitud escalar,
+nos indica solo una cantidad, pero \textit{no una dirección}.
+Y con \textbf{trayectoria} nos referimos al conjunto de puntos que atraviesa 
+un cuerpo, en un sistema de referencia considerado,
+a lo largo de su trayecto.
+
+Ahora,
+cuando hablamos de \textbf{desplazamiento}
+nos referimos al \textit{cambio en la posición} del objeto,
+con \textit{independencia} de la trayectoria seguida.
+Es una magnitud vectorial,
+que puede ser negativa o positiva de acuerdo al sistema de referencia,
+que se mide en \textit{metros} \((m)\),
+como señala el SI,
+y que viene dado por la expresión:
+
+\begin{equation*}
+    \Delta x = x_f - x_i
+\end{equation*}
+
+Notar que, si el \textit{sentido} del movimiento no cambia,
+la distancia recorrida y el desplazamiento son iguales.
+
+El \textbf{movimiento} es el \textit{cambio en la posición con el tiempo}.
+
+Si relacionamos la \textit{distancia recorrida} y el \textit{tiempo},
+nos referimos a la \textbf{rapidez},
+que es un magnitud escalar,
+y se expresa en \textit{metros por segundo} \((m/s)\).
+
+\begin{equation*}
+    s = \frac{d}{\Delta t}
+\end{equation*}
+
+Cuando hablamos de \textbf{rapidez media} nos referimos a la rapidez promedio
+de un cuerpo atravesando una distancia determinado a lo largo de un intervalo de 
+tiempo.
+
+En cambio, la \textbf{rapidez instantánea} refiere al movimiento en un instante 
+dado, y es la rapidez que muestra el velocímetro de un auto.
+
+El concepto de \textbf{velocidad} refiere a un \textit{desplazamiento}
+durante un período de tiempo determinado,
+por lo cual es una \textit{magnitud vectorial}.
+La unidad en que se mide es \textit{metros por segundo} \((m/s)\).
+
+Velocidad media refiere al desplazamiento dividido por el tiempo:
+
+\begin{equation*}
+    \bar{v} = \frac{\Delta x}{\Delta t} = \frac{x_f - x_i}{t_f - t_i}
+\end{equation*}
+
+Como ya se ha señalado al hablar del desplazamiento,
+\textit{no depende de la trayectoria},
+sino que refiere al desplazamiento neto entre dos puntos.
+
+El concepto de \textbf{velocidad instantánea}
+refiere a la derivada de la velocidad evaluada en un punto,
+es decir,
+a la pendiente de la recta tangente en ese punto:
+
+\begin{equation*}
+    v_x = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t}
+\end{equation*}
+
+De aquí en más,
+cada vez que digamos \textit{media} o \textit{instantánea},
+nos referimos a magnitudes vinculadas a un intervalo temporal.
+Cuando decimos magnitud media,
+nos referimos a su intensidad para un intervalo de tiempo determinado 
+\(\Delta t\),
+y cuando decimos magnitud instantánea,
+nos referimos a su intensidad con ese intervalo tendiendo a 0 \(\Delta t \to 0\).
+
+Así como la velocidad indica el cambio en la posición con respecto al tiempo,
+la \textbf{aceleración} refiere a un cambio en la velocidad con respecto al tiempo.
+Su unidad de medida es \textit{metros por segundo, por segundo},
+es decir, \(v/s = m/s^{2}\).
+Como se relaciona con la velocidad,
+es naturalmente también una magnitud \textit{vectorial}.
+
+La expresión de la aceleración media sería:
+
+\begin{equation*}
+    \bar{a} = \frac{\Delta v}{\Delta t}
+\end{equation*}
+
+Y la aceleración instantánea es:
+
+\begin{equation*}
+    a_x = \lim_{\Delta t \to 0}\frac{\Delta a}{\Delta t} = \frac{d\vec{v}}{dt}
+\end{equation*}
+
+Notar que,
+como velocidad y aceleración son vectores,
+pueden ser positivos o negativos,
+de acuerdo al sentido que tengan en relación al sistema de referencia.
+
+Si velocidad y aceleración tienen el mismo sentido,
+el cuerpo tenderá a desplazarse cada vez más rápido.
+Por el contrario,
+si velocidad y aceleración tienen sentidos contrapuestos,
+el cuerpo tenderá a bajar su velocidad.
+
+De aquí en adelante vamos a ver algunos casos particulares de movimiento 
+en una sola dimensión.
+
+\subsection{Movimiento Rectilíneo Uniforme}
+
+El movimiento rectilíneo uniforme es aquel que posee \textbf{aceleración nula},
+lo que \textit{implica} que el cuerpo se mueve con \textbf{velocidad constante} 
+y en \textbf{línea recta}.
+
+\begin{align*}
+    a = 0 \implies v = v_0 \quad\land\quad x = x_0 + v_0 \cdot t
+\end{align*}
+
+Como la velocidad no cambia:
+
+\begin{align*}
+    \bar{v} = v_x
+\end{align*}
+
+\subsection{Movimiento Rectilíneo Uniformemente Variado}
+
+En este caso hablamos de un movimiento con trayectoria recta y aceleración 
+constante.
+
+\begin{align*}
+    a = a_0 \implies v = a_0 \cdot t + v_0 \quad x = \frac{1}{2}a_{0}t^{2} + v_{0}t + x_0
+\end{align*}
+
+\subsection{Caída libre}
+
+Un ejemplo de movimiento rectilíneo con aceleración -prácticamente- constante es 
+la caída de un cuerpo en dirección a la Tierra por su atracción gravitacional.
+Si omitimos el efecto del aire,
+todo cuerpo en un lugar específico cae con la misma aceleración,
+con independencia de su peso.
+Si además su distancia de caída es pequeña en comparación al radio terrestre,
+e ignoramos los efectos debidos a la rotación de la tierra,
+la aceleración es constante.
+El modelo que surge de estos supuestos se denomina \textbf{caída libre}.
+
+La aceleración debida al efecto de la gravedad se simboliza con \(g\).
+El valor aproximado cerca de la superficie terrestre es \(g = 9.8 m/s^{2}\).
+
+\subsection{Cinemática en dos dimensiones}
+
+Hasta aquí hemos trabajado con el movimiento en una sola dimensión,
+en línea recta.
+Para considerar el movimiento en dos o más dimensiones hay que tener en cuenta 
+el caracter vectorial de la posición.
+Esto implica describir el movimiento siempre en cada uno de sus componentes,
+como si fueran movimientos independientes.
+
+El vector posición definido en dos dimensiones será entonces la sumatoria de la 
+componente horizontal y la componente vertical:
+
+\begin{equation*}
+    \vec{r} = x\hat{i} + y\hat{j}
+\end{equation*}
+
+La magnitud del vector desplazamiento viene dada por la expresión:
+
+\begin{equation*}
+    |\vec{r}| = \sqrt{x^{2} + y^{2}}
+\end{equation*}
+
+El vector desplazamiento tiene origen en la posición inicial y extremo en la 
+posición final.
+
+La \textbf{velocidad media} es el cociente entre el vector desplazamiento y el 
+tiempo:
+
+\begin{equation*}
+    \vec{v} = \frac{\Delta\vec{r}}{\Delta t}
+\end{equation*}
+
+Su módulo es el módulo del desplazamiento dividido por el tiempo,
+y su dirección y sentido son iguales a los del vector desplazamiento.
+
+La \textbf{aceleración media} que es el cambio en el vector velocidad
+en un intervalo de tiempo.
+
+En general,
+el vector velocidad puede cambiar en \textbf{módulo} y \textbf{dirección}.
+En cada punto de la trayectoria de un cuerpo podemos distinguir un componente 
+\textit{tangencial} a la trayectoria y un componente \textit{perpendicular} a la
+misma.
+
+El componente tangencial de la aceleración se denomina 
+\textbf{aceleración tangencial},
+y es reponsable por el cambio en el \textit{módulo de la velocidad}.
+El componente perpendicular se denomina \textbf{aceleración normal},
+o \textit{centrípeta},
+apunta hacia el centro de la curva y es la responsable por los cambios en la 
+dirección de la velocidad.
+El módulo del vector aceleración sigue la expresión:
+
+\begin{equation*}
+    |\vec{a}| = \sqrt{a_t^{2} + a_n^{2}}
+\end{equation*}
+
+Además, el módulo de la aceleración tangencial es:
+
+\begin{equation*}
+    |a_t| = \frac{d|\vec{v}|}{dt}
+\end{equation*}
+
+Y el módulo de la aceleración normal es:
+
+\begin{equation*}
+    |a_n| = \frac{|\vec{v}|^{2}}{R}
+\end{equation*}
+
+Notar que,
+cuando la aceleración tangencial es igual a 0,
+podemos concluir que el módulo de la velocidad se mantiene constante,
+esto es,
+el cuerpo se encuentra en movimiento \textit{uniforme}.
+Por otra parte,
+si la aceleración normal es igual a 0,
+la dirección del vector velocidad permanece constante,
+por lo que el cuerpo se mueve de forma \textit{rectilínea}.
+
+La aceleración en dos dimensiones funciona como 
+un eje de coordenadas intrinseco.
+
+\subsection{Composición de movimientos}
+
+Llamamos composición de movimientos a la combinación en un mismo objeto de 
+dos movimientos simultáneos e independientes.
+Por ejemplo, un nadador atravesando un río:
+tiene un movimiento en la dirección en que esta nadando,
+y además otro movimiento en la dirección en que el río lo empuja.
+
+\subsection{Tiro oblicuo}
+
+El tiro oblicuo es, esencialmente, un movimiento compuesto.
+Refiere al lanzamiento de un objeto,
+con una velocidad inicial \(v_0\),
+a un ángulo \(\theta\) con respecto al suelo.
+
+Las suposiciones sobre las que se para el tiro oblicuo son dos:
+la aceleración debida a la gravedad permanece constante para todo el trayecto;
+y despreciamos el efecto del rozamiento debido al aire.
+
+Con ambas suposiciones,
+entendemos que el tiro oblicuo en un MRU en el eje horizontal \(x\),
+y un MRUV en el eje \(y\).
+
