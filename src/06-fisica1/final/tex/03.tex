@@ -1,17 +1,315 @@
 \section{Dinámica de la partícula}
 
-Mecánica viene del griego \textit{mekanos},
-que significa movimiento.
-Hasta ahora hemos visto,
+Hasta ahora hemos visto cómo podemos describir el movimiento,
 desde el punto de vista de  la cinemática,
-descripciones sobre el movimiento,
-con conceptos centrales como la posición, la velocidad y la aceleración.
+empleando conceptos como la posición, la velocidad y la aceleración.
 
-A partir del presente capítulo  vamoss aver conceptos que nos permitan 
-analizas lass \textit{causas del  movimiento}.
-Para  ello, nos serviremosd e dosconceptos nuevos: 
-la \textbf{masa} y la \textbf{fuerza}.
+En este capítulo vamos a preguntarnos por las \textit{causas del  movimiento}.
+Y para dar respuesta a esas preguntas vamos a recurrir a nuevos conceptos,
+como son \textbf{masa} y \textbf{fuerza},
+y vamos a relacionarlos siguiendo las \textbf{leyes de Newton}.
 
-A su vez,
-veremos que los principiso que guian la dinámica 
-son las conocidas \textbf{leyes de Newton}.
+\subsection{Fuerza}
+
+La fuerza se puede definir como una interacción entre dos cuerpos,
+cuya evidencia observable es un \textit{cambio en el movimiento}\footnote{Aunque una fuerza no equilibrada podría deformar un objeto.}.
+Es decir, es capaz de producir una \textit{aceleración} y,
+como esta, es una \textit{magnitud vectorial}.
+
+Varias fuerzas pueden actuar sobre un mismo cuerpo.
+Cuando esto sucede, debemos concentrarnos en su \textit{efecto combinado},
+la \textbf{fuerza neta}.
+Esto se conoce como \textbf{principio de superposición de las fuerzas}.
+Notar que, al tratarse de una magnitud vectorial,
+debemos seguir las reglas propias de las sumas de vectores.
+
+La unidad del SI para medir la fuerza es el \textit{newton} \((N)\),
+que equivale a la fuerza necesaria para acelerar 1 \(kg\) de masa 
+1 \(m/s^{2}\).
+
+La \textit{libra} (\(lb\)) es otra unidad usada para medir fuerzas,
+equivale a \(1N = 4.448lb\).
+El sistema técnico usa el \textit{kilogramo-fuerza} (\(kgf\)),
+que equivale al peso de un kilogramo situado al nivel del mar,
+es decir, \(1kg \cdot 9.81m/s^{2} = 1kgf = 9.81N\).
+
+Las fuerzas pueden clasificarse en:
+\begin{enumerate}
+    \item fuerzas de \textbf{contacto}, que son aquellas que 
+    surgen del contacto físico entre los objetos; y
+    \item fuerzas de \textbf{acción a distancia}, 
+    como la gravedad y el electromagnetismo,
+    que no requieren del contacto. 
+\end{enumerate}
+
+\subsection{Leyes de Newton}
+
+Las leyes de Newton son descripciones matemáticas que se desprenden de la 
+observación de cuerpos en movimiento.
+Son \textit{fundamentales}, en la medida en que no pueden deducirse ni 
+demostrarse.
+Antes bien,
+funcionan como una \textit{axioma} en matemática,
+un principio que no se demuestra sino que se da por válido y permite entender 
+otros fenómenos de la naturaleza.
+
+Las leyes de Newton son la base de la mecánica clásica,
+aunque tienen ciertas limitaciones:
+require de modificaciones para velocidades cercanas a la de la luz,
+o para tamaños muy pequeños como el atómico.
+
+\subsection{Primera ley de Newton: ley de la inercia}
+
+La primera ley de Newton se puede enunciar como:
+
+\blockquote{
+    Todo cuerpo permanece en su estado 
+    -que puede ser de reposo o movimiento rectilíneo uniforme- 
+    a menos que una fuerza neta lo obligue a cambiar.}
+
+Es decir, cuando la fuerza neta sobre un objeto es 0,
+su aceleración es 0.
+
+\begin{equation*}
+    \sum \vec{F} = 0 \implies \vec{a} = 0
+\end{equation*}
+
+Algunos corolarios que se desprenden de esta ley:
+\begin{enumerate}
+    \item un objeto no puede cambiar por si solo su estado 
+    \item un cambio de estado requiere de la interacción de dos objetos 
+    \item el reposo \((v = 0)\) y el mru \(v = k\) son estados equivalentes 
+\end{enumerate}
+
+El puntapie inicial para la primera ley de Newton,
+también conocida como \textbf{ley de la inercia},
+lo da Galileo, en el siglo XVII,
+quien postula que la naturaleza de un cuerpo no es el reposo,
+sino \textit{resistir el cambio en su movimiento}.
+
+Llamamos \textbf{inercia} a la tendencia natural que tiene un cuerpo a 
+mantener su estado y a resistir al cambio.
+La inercia se relaciona directamente con el concepto de \textbf{masa},
+que vemos a continuación.
+
+\subsection{Masa}
+
+La masa se puede definir como la cantidad de resistencia que muestra un objeto a 
+un cambio en su velocidad.
+Es una propiedad inherente a un objeto, independiente del entorno.
+Es una magnitud \textit{escalar}, que el SI se mide en kilogramos \((kg)\).
+
+La masa es una \textit{medida cuantitativa} de la inercia:
+a mayor masa, 
+mayor la resistencia frente al cambio en el movimiento que presenta un cuerpo.
+
+La forma más simple de comparar masas es medir pesos en el mismo lugar:
+mismo peso en mismo lugar es misma masa.
+
+\subsection{Segunda ley de Newton: }
+
+La segunda ley relaciona la fuerza, la aceleración y la masa:
+
+\blockquote{
+    La aceleración de un objeto es proporcional a la fuerza neta,
+    e inversamente proporcional a la masa.
+}
+
+Es decir:
+
+\begin{equation*}
+    \vec{F} = m\vec{a}
+\end{equation*}
+
+Hay que tener en cuenta algunas consideraciones:
+\begin{enumerate}
+    \item la ley implica la interacción entre dos cuerpos:
+    sino yo podría acelerarme a mi mismo estirándome de la ropa
+    \item la relación es válida para masas constantes:
+    no es válida, por ejemplo,
+    para un cohete que se impulsa quemando combustible y perdiendo masa.
+    \item Además,
+    requiere de un sistema de referencia inercial, 
+    no es válida para vehículos con aceleración.
+    \item Si la fuerza es variable, la ley se cumple para fuerza y acelaración 
+    instantánea, haciendo obligatorio el uso de cálculo.
+\end{enumerate}
+
+En muchos problemas tocará considerar sumatoria de fuerzas y aceleraciones 
+como componentes:
+
+\begin{align*}
+    \sum F_x = m \cdot a_x \qquad \sum F_y = m \cdot a_y
+\end{align*}
+
+Naturalmente, si la aceleración es 0 para cualquier componente,
+la fuerza neta para dicho componente es 0.
+
+\subsection{Diagrama de cuerpo libre}
+
+Un diagrama de cuerpo libre es una representación esquemática de la acción 
+de distintas fuerzas, considerando sus ángulos.
+
+Por lo general es buena práctica escoger como eje la dirección de una de las 
+fuerzas, de manera tal que la descomposición en componentes en \(xy\) sea más 
+sencilla.
+
+La metodología es simple:
+\begin{enumerate}
+    \item Se hace un diagrama identificando las fuerzas
+    \item Se aísla el cuerpo para el cual construimos el diagrama
+    \item Dibujamos vectores desde el origen, incluyendo ángulos
+    \item Descomponemos en \(x\) y \(y\) las componentes necesarias y operamos 
+\end{enumerate}
+
+\subsection{Tercera ley de Newton: ley de acción y reacción}
+
+La tercera ley establece que:
+
+\blockquote{
+    Si un objeto \(A\) ejerce fuerza sobre \(B\),
+    \(B\) ejercerá una fuerza igual pero en sentido contrario sobre \(A\).
+}
+
+Las fuerzas se dan en pares, de manera simultánea,
+con cada elemento ejerciendo fuerza sobre un \textit{cuerpo distinto}.
+Un conjunto de fuerzas sobre el mismo cuerpo \textit{nunca} puede ser un 
+par de acción-reacción.
+
+\subsection{Fuerzas de fricción}
+
+Refiere a la \textit{resistencia al movimiento}
+que se da en el contacto entre dos materiales.
+Esta resistencia existe para todo tipo de medios: sólidos, líquidos, gaseosos.
+
+La fricción entre sólidos se clasifica generalmente en tres tipos:
+\begin{enumerate}
+    \item Fricción estática (\(f_s\))
+    \item Fricción cinética (\(f_k\))
+    \item Fricción rodante
+\end{enumerate}
+
+La fricción estática abarca aquellos casos en que la fuerza de fricción 
+\textit{impide} el movimiento,
+la fricción cinética incluye los casos en que la fuerza de fricción 
+\textit{dificulta} un movimiento que se está realizando;
+y la rodante es la fuerza de fricción de una superficie que gira sobre otra.
+En esta materia nos vamos a concentrar en las dos primeras.
+
+Ambas fuerzas de fricción dependen tanto de las dos superficies en contacto,
+como de la \textit{carga} -que, como sabemos, es igual a la normal,
+puesto que son un par de acción y reacción.
+
+La fricción estática se maximiza justo antes de que un objeto comience a 
+deslizarse, siendo su expresión:
+
+\begin{equation*}
+    f_s = \mu_s \cdot N = \mu_s \cdot mg
+\end{equation*}
+
+Una vez que el cuerpo comienza a moverse sobre la superficie,
+la fricción se convierte en dinámica, que sigue una expresión parecida,
+aunque con otro coeficiente de fricción:
+
+\begin{equation*}
+    f_k = \mu_k \cdot N = \mu_k \cdot mg
+\end{equation*}
+
+Los valores de los coeficientes dependen de la naturaleza de las superficies,
+aunque suelen variar entre \(0.03\) y \(1\).
+La dirección de una fuerza de fricción es paralela a la superficie de contacto,
+en sentido opuesto al movimiento, sea este real o inminente.
+
+\subsection{Dinámica de la rotación}
+
+Cuando veíamos Movimiento Circular Uniforme,
+veiamos que un móvil a rapidez constante \(v\),
+con trayectoria circular de radio \(r\),
+tenía una aceleración centrípeta que seguía la expresión \(a_c = v^{2}/r\).
+
+Ahora que conocemos las leyes de Newton,
+estamos en condiciones de afirmar que,
+si existe una aceleración centrípeta,
+es porque existe una \textbf{fuerza centrípeta}.
+
+\begin{equation*}
+    f_c = a_c \cdot m = m \cdot \frac{v^{2}}{r}
+\end{equation*}
+
+Ambas comparten dirección y sentido: hacia el centro de la circunferencia.
+Como se trata de un MCU,
+sabemos que la aceleración es constante,
+por lo tanto la fuerza neta sobre el móvil también es constante.
+
+Ojo con la "fuerza centrífuga".
+Cuando vamos arriba de un automóvil,
+lo que sentimos y erróneamente denominamos fuerza centrífuga es en 
+realidad la inercia de nuestro propio cuerpo, 
+que tiende a seguir en línea recta.
+La presión del asiento y la carrocería hacen que nuestro cuerpo no siga en 
+línea recta,
+sino que acompañe el giro del auto.
+Hay una sola fuerza, y es la centrípeta,
+que corrige nuestra dirección para que hagamos la trayectoria circular.
+
+Hay algunos problemas interesantes que aparecen en la fricción y el 
+movimiento circular,
+que se vinculan con el peralte de la ruta.
+
+Por ejemplo, si un automovil circula por un camino plano,
+la aceleración centrípeta máxima que puede ejercer para que no derrape 
+es igual a la fuerza de fricción entre el auto y la ruta:
+
+\begin{equation*}
+    f_s = a_c \cdot m
+\end{equation*}
+
+Si hay peralte, la normal inclinada colabora con la fricción,
+otorgando seguridad a mayores velocidades y en condiciones de menor fricción
+como una ruta congelada.
+
+\subsection{Movimiento circular no uniforme}
+
+Si una partícula se mueve en trayectoria circular,
+con rapidez variable,
+existen dos componentes en la aceleración:
+\begin{itemize}
+    \item aceleración radial
+    \item aceleración tangencial
+\end{itemize}
+
+En consecuencia la fuerza también tendrá un componente radial y uno tangencial.
+
+\subsection{Las 4 fuerzas de la naturaleza}
+
+Todas las fuerzas del universo se corresponden con una de estas 4:
+\begin{enumerate}
+    \item Fuerza gravitacional
+    \item Fuerza electromagnética
+    \item Fuerza nuclear fuerte
+    \item Fuerza nuclear débil
+\end{enumerate}
+
+En este curso de física solo interesarán las dos primeras.
+
+\subsection{Fuerza gravitacional}
+
+Es la responsable de la caída de los cuerpos hacia la Tierra y de los movimientos 
+a gran escala en el Universo.
+
+Es siempre atractiva y su alcance es infinito,
+aunque es inversamente proporcional al cuadrado de la distancia 
+-al igual que la fuerza electromagnética.
+Siempre produce atracción, con independencia de la composición de los cuerpos,
+atrayendo el centro de gravedad de un objeto hacia el centro de otro.
+
+Aunque es universal,
+su fuerza a nivel atómico es muy baja,
+por la pequeñisima magnitud de la masa en este nivel.
+
+\subsection{Fuerza electromagnética}
+
+Es responsable de la interacción entre partículas cargadas,
+y por extensión, de todas las reacciones químicas.
+Las fuerzas de roce, empuje, que observamos y percibimos a nuestra escala,
+son en esencia interacciones electromagnéticas entre nubes de electrones.
