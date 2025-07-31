@@ -1,3 +1,4 @@
+# some tex aux files
 *.pdf
 *.log
 *.aux
@@ -12,9 +13,9 @@
 *.gz
 *.md5
 *.json
-
-# table of contents tex file
 *.toc
+*.nav
+*.snm
 
 # images
 #*.jpg
