@@ -1,0 +1,261 @@
+\section{Primera clase}
+
+\subsection{Modalidad de cursada}
+
+\begin{itemize}
+    \item Consultas sobre los prácticos al principio de la clase 
+    \item Desarrollo de teoría durante la clase 
+    \item Consulta nuevamente al final 
+\end{itemize}
+
+\subsection{Forma de evaluación}
+
+\begin{itemize}
+    \item Parciales, promocionable con nota mínima de 6, promedio mayor a 7.
+\end{itemize}
+
+\subsection{Sugerencias}
+
+\begin{itemize}
+    \item Hacer ejercicios todas las semanas: matemática se aprende haciendo 
+    ejercicios 
+\end{itemize}
+
+\subsection{Bibliografía}
+
+\begin{itemize}
+    \item Stewart, la mayoría de la práctica sale de ahí 
+    \item Revisar teoría provista 
+    \item Realizar prácticos provistos 
+\end{itemize}
+
+\subsection{Modalidad rendir final}
+
+\begin{itemize}
+    \item Examen escrito y oral
+\end{itemize}
+
+\subsection{Requerimientos}
+
+\begin{itemize}
+    \item Repasar identidades trigonométricas
+    \item Repasar cónicas 
+    \item Usar geogebra 
+\end{itemize}
+
+\subsection{Conceptos previos}
+
+\begin{itemize}
+    \item Espacio métrico
+    \begin{itemize}
+        \item Conjunto de puntos 
+        \item que tienen una función asociada llamada \textbf{distancia}
+        \item Y puede ser una recta, un plano, el espacio
+    \end{itemize}
+    \item Distancia 
+    \begin{itemize}
+        \item Módulo de la diferencia entre dos puntos 
+        \item \(|P-Q| =\) distancia entre \(P\) y \(Q\)
+        \item \(|P-Q| = 0 \implies P = Q\)
+        \item \(|P-Q| + |P-R| \geq |Q-R|\), 
+        (condición para que sean iguales: 
+        que esten en la misma recta,
+        dejando de ser por tanto un triángulo)
+    \end{itemize}
+    \item Espacio euclídeo n-dimensional
+    \begin{itemize}
+        \item Se denota \(R^{n}\)
+        \item Sus elementos se denominan: duplas, ternas, n-uplas,
+        de acuerdo a \(n\)
+        \item \(R^{2}\): plano
+        \item \(R^{3}\): espacio
+        \item \(R^{n}\) con \(n>3\): hiperplano
+    \end{itemize}
+    \item Distancia euclídea en \(R^{n}\):
+    \begin{itemize}
+        \item \(|P-Q| = \sqrt{(q_1-p_1)^{2} + (q_2-p_2)^{2} + \cdots + (q_n-p_n)^{2}}\)
+        \item Cada dimensión incorpora un \textit{término} al cálculo de la 
+        distancia 
+        \item Como hablamos de distancia: siempre positivo 
+    \end{itemize}
+\end{itemize}
+
+\subsection{Conceptos de topología}
+
+\textbf{Entorno.}
+\begin{itemize}
+    \item Siendo \(A\) punto en \(R^{n}\), un entorno con centro en \(A\),
+    de radio \(\delta\), es el \textit{conjunto de puntos} a una distancia 
+    respecto de \(A\) menor a \(\delta\)
+    \item Es decir, \(E(A,\delta) = \{x \in \mathbb{R}: |x-A| < \delta\}\)
+    \item En el plano, 
+    \(E(A,\delta) = \{x \in \mathbb{R}^{2}: |x-a_1| < \delta \land |y-a_2| < \delta\}\)
+    \item En otras palabras, en el plano genera un disco 
+    \item En el espacio \(\mathbb{R}^{3}\), genera una esfera
+    \item Entorno reducido: no incluye al centro \(A\)
+\end{itemize}
+
+\textbf{Punto.}
+\begin{itemize}
+    \item Decimos que es: interior: si al menos un entorno del punto está 
+    totalmente incluido en el conjunto C 
+    \item Exterior: si al menos un entorno está totalmente excluido de C 
+    \item Frontera: no es ni interior ni exterior, siempre tiene parte 
+    incluída y parte excluída.
+    \item Punto de acumulación: cuando cualquier \textit{entorno reducido},
+    es decir, que no incluye a \(A\), tiene intersección \textit{no vacía}
+    con \(C\) (puede estar en frontera, naturalmente)
+\end{itemize}
+
+\textbf{Conjunto.}
+\begin{itemize}
+    \item Decimos que es: abierto: si todo punto incluído en \(C\) es interior,
+    es decir, ninguno es frontera.
+    \item cerrado: su complemento es abierto, es decir, tiene frontera 
+    \item Acotado: lo puedo incluir \textit{en su totalidad} en una 
+    circunferencia con centro en el origen, con independencia del radio 
+    \item conexo: puedo unir 2 puntos cualesquiera, y la recta entre ellos 
+    \textit{no se sale} del conjunto
+\end{itemize}
+
+\textbf{Ejemplo.}
+\(f(x,y) = z = \sqrt{y-x^{2}}\)
+
+\begin{itemize}
+    \item Su \textit{dominio} son todos los \(y \geq x^{2}\)
+    \item Su \textit{frontera} es \(y = x^{2}\), que está incluída
+    \item Sus \textit{puntos interiores} son aquellos \(x\) que satisfacen 
+    \(y - x^{2} > 0\)
+    \item Es un \textit{dominio cerrado}, puesto que incluye a la frontera,
+    y por lo tanto su complemento no
+    \item \textit{No es acotado}, puesto que no se puede incluir en un círculo
+    centrado en el origen
+\end{itemize}
+
+\subsection{Función de una variable}
+
+\begin{itemize}
+    \item A cada valor del \textit{dominio} de la función,
+    le corresponde un \textit{y solo un} valor del codominio.
+\end{itemize}
+
+\subsection{Función de varias variables}
+\begin{itemize}
+    \item La idea es la misma 
+    \item Si es una función que toma un par de escalares y devuelve un escalar,
+    es un \textbf{campo escalar}
+    \item \((x,y)\) es un punto en el conjunto \textit{dominio}
+    \item como toda función tiene un único valor de salida, en este caso, \(z\)
+    \item Sería función vectorial si: devuelve un vector
+\end{itemize}
+
+\subsection{Campo escalar}
+\begin{itemize}
+    \item Función que a cada par \((x,y)\) le asigna un \textit{único} valor \(z\)
+    \item Dominio en \(\mathbb{R}^{2}\)
+    \item Como en una función de una variable, dos pares pueden dar mismo \(z\)
+    pero un solo par no puede devolver más de un \(z\)
+\end{itemize}
+
+\subsection{Como buscar dominio de campo escalar}
+\begin{itemize}
+    \item Todo par \((x,y)\) que deje a la función bien definida,
+    es decir, misma condición que en función de una variable.
+\end{itemize}
+
+\subsection{Gráfica de función de dos variables}
+\begin{itemize}
+    \item Se realiza en el espacio
+    \item El eje \(x\) debe estar a \(135^{\circ}\) del eje \(y\),
+    siguiendo escala .7
+    \item Graficamos por trazas: 
+    hacemos que una o dos variables sean 0 y vemos que sale.
+\end{itemize}
+
+\textbf{Ejemplo.}
+\begin{align*}
+    z = 4 - 5x + 2y \\
+\end{align*}
+
+Si \(x = 0 \land y = 0 \implies z = 4\)
+Si \(z = 0 \land y = 0 \implies x = 4/5\)
+Si \(z = 0 \land x = 0 \implies z = -2\)
+
+Con estos puntos podemos graficar el plano
+
+\textbf{Ejemplo 2.}
+\begin{equation*}
+    z = 4x^{2} + y^{2}
+\end{equation*}
+
+En este caso, si hacemos dos variables igual a 0 no obtenemos información,
+vamos de una en una:
+
+\begin{align*}
+    z = 0 \implies y = 
+\end{align*}
+
+Consultar de nuevo que pasa aquí.
+
+\subsection{Interpretación geométrica}
+
+Es una superficie de \(z\) para cada par \((x,y)\)
+
+\subsection{Gráficas conocidas: cuádricas y cónicas}
+
+\begin{itemize}
+    \item en \(R^{2}\) \(x^{2} + y^{2} = 1\) es una circunferencia,
+    en el espacio \(R^{3}\) es un cilindro con \(z\) libre.
+    \item aclaración: llamamos cilindro a toda superficie de líneas paralelas 
+    entre sí, a la que llamamos \textit{generatrices}, que van recorriendo una 
+    curva, por lo que el cilindro puede (o no) ser la figura tradicional que 
+    conocemos
+\end{itemize}
+
+\subsection{Elipsoide}
+
+\begin{align*}
+    \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} + \frac{z^{2}}{c^{2}} = 1
+\end{align*}
+
+\subsection{Paraboloide}
+
+La palabra \textit{no elevada} al cuadrado es la que el paraboloide abraza:
+
+\textbf{Consultar.}
+
+\subsection{Cono:}
+
+\begin{align*}
+    \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} = \frac{z^{2}}{c^{2}}
+\end{align*}
+
+Notar que una es negativa y el cono es igual a 0.
+
+\subsection{Hiperboloide}
+
+Abraza la negativa al cuadrado 
+
+\subsection{Hiperboloide 2 hojas}
+
+Tiene dos variables negativas, y todas cuadradas.
+
+
+\subsection{Curvas de nivel}
+
+Curva que resulta de la intersección de un plano \(z=k\),
+con \(k\) constante.
+Si la proyecto sobre el piso, veo como evoluciona \(z\),
+como en un mapa físico.
+
+Algunas curvas conocidas son: isobaras (curvas de presión)
+isotermas (areas de temperatura)
+
+\subsection{Superficie de nivel}
+
+Va de \(\mathbb{R}^{3} \to \mathbb{R}\). No es representable,
+pero igualando a \(k\) obtengo \textit{superficie de nivel}
+
+\subsection{Mapa de contorno}
+
+Da una idea sobre una superficie.
