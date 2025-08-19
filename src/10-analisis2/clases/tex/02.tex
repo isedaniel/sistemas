@@ -1,0 +1,84 @@
+\section{Segunda clase, 19 de agosto}
+
+\subsection{Límites de campos escalares}
+
+En función de una variable:
+\begin{itemize}
+    \item \(L \iff a\) si \(a\) es punto de acumulación
+    \item Dados \(\delta\) y \(\epsilon\),
+    la distancia entre cualquier \(x\) y el punto \(a\) tiene que ser menor a
+    \(\delta\); \(f(x)\) menor a \(\epsilon\)
+\end{itemize}
+
+\subsection{Límites de campos escalares}
+
+\begin{itemize}
+    \item Definición igual: distancia de punto cualquier \((x,y)\) menor a 
+    \(\delta\) devuelve \(f(x,y) - L < \epsilon\)
+\end{itemize}
+
+\subsection{Propiedades de los límites}
+
+Con \(f\) y \(g\) funciones, \(k\) constante:
+\begin{itemize}
+    \item \(\lim\left[f \pm g\right] = L \pm M\)
+    \item \(\lim\left[f \cdot g\right] = L \cdot M\)
+    \item \(\lim\left[k \cdot f\right] = k \cdot L\)
+    \item \(\lim\left[\frac{f}{g}\right] = \frac{f}{g}\)
+\end{itemize}
+
+\subsection{Cálculo de límite}
+
+\begin{itemize}
+    \item Tiene límite cuando \(\lim_{(x,y) \to (a,b)} f(x,y) = P\),
+    aproximándome por cualquier lugar
+    \item Es muy difícil, por eso mismo, demostrar que el límite existe
+    \item Por ello, tratamos de probar que el límite \textit{no existe}
+    \item Si me aproximo a \((a,b)\) por un lado y devuelve \(L_1\),
+    me aproximo por otra curva y devuelve \(L_2\), con \(L_1 \neq L_2\),
+    concluimos que \(\nexists L\)
+\end{itemize}
+
+Cómo calcular.
+\begin{itemize}
+    \item Primero probamos reemplazando: si es punto que pertenece al dominio
+    se encuentra por sustitución directa
+    \item Esto se llama \textbf{límite doble} o \textbf{simultáneo}
+    \item Si encuentro indeterminación, pruebo salvarla algebraicamente
+\end{itemize}
+
+\begin{equation*}
+    lim_{(x,y) \to (0,0)} \frac{x^{2} - y^{2}}{x + y}
+\end{equation*}
+
+\begin{itemize}
+    \item Arriba tengo diferencia de cuadrado, simplifico denominador y 
+    llego a resultado
+\end{itemize}
+
+\begin{equation*}
+    lim_{(x,y) \to (0,0)} \frac{\cancel{(x + y)}(x - y)}{\cancel{x + y}} = \boxed{0}
+\end{equation*}
+
+Es decir, \(\frac{x^{2} - y^{2}}{x + y} \eqsim x - y\), solo que \((0,0)\) 
+no pertenece al dominio.
+
+Si no puedo resolver, podemos usar \textbf{límite iterado y sucesivo}
+\begin{itemize}
+    \item Tomamos una constante y calculamos límite 
+    \item Después hacemos al revés
+\end{itemize}
+
+\begin{itemize}
+    \item Doble
+    \item Iterado 
+    \item Radial (cambiar y por mx)
+    \item Parabólico: y a \(x^{2}\)
+\end{itemize}
+
+Lo que vamos cambiando es una de las variables, en el fondo son todos iterados.
+Hago el iterado y veo cómo puedo saltear de acuerdo a la expresión.
+
+Si en denominador hay \(x^{2} + y^{2}\) operamos \textbf{coordenadas polares}.
+
+Hacer toda la guía 1.
