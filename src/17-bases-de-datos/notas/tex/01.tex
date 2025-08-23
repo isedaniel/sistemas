@@ -1,0 +1,142 @@
+\section{Primera clase, 16 de agosto}
+
+\subsection{Sistema de Ficheros}
+\begin{itemize}
+    \item Surgen con la informatización
+    \item Sigue un modelo descentralizado: cada area maneja su información
+    \item Estos programas son independientes, enfocado a mantener ficheros
+          y generar informes propios
+    \item La falta de sincronización genera problemas:
+          \begin{itemize}
+              \item Se duplica información
+              \item No se sincroniza
+              \item Actualizar todos los ficheros lleva un costo
+              \item Puede fallar (con mayor facilidad)
+              \item Incompatibilidad entre formatos
+              \item Rigidez en consultas, no flexible
+          \end{itemize}
+\end{itemize}
+
+\subsection{Bases de datos}
+\begin{itemize}
+    \item Es un conjunto de datos
+    \item Que modeliza hechos y objetos de una parte de la realidad
+    \item Sirve de soporte a aplicaciones informáticas
+    \item Debe estar almacenada físicamente en un \textbf{soporte informático}
+    \item Deben relacionarse entre sí siguiendo una estructura lógica
+    \item Nacieron para solucionar las limitaciones de los ficheros
+          \begin{itemize}
+              \item Consiguen independencia de datos: 
+              no importa si consulta contaduría o compras:
+              el proveedor es el proveedor y contamos con información 
+              sincronizada y suficiente para resolver el problema concreto
+          \end{itemize}
+    \item Contiene datos de toda la organización 
+    \item Los datos son coherentes lógicamente: 
+    una amalgama de datos no es una base de datos
+    \item También almacena \textbf{metadatos} 
+    registrada en un diccionario de datos o \textbf{catálogo},
+    permitiendo independencia entre lógica y física de datos
+\end{itemize}
+
+\subsection{Sistemas de gestión de bases de datos}
+\begin{itemize}
+    \item Ejemplos:
+    \item SQLite
+    \item MySQL
+    \item Postgre
+\end{itemize}
+
+\subsection{Sistema de gestión de bases de datos}
+\begin{itemize}
+    \item Proporciona sistema de seguridad para usuarios
+    \item Cuida la integridad de los datos: evitar que se corrompan
+    \item Permitir la concurrencia: acceso simultáneo compartido
+    \item Contar con sistema de recuperación que reestablece la BD frente a un problema de infraestructura
+    \item Contar con diccionario o catálogo, que contiene descripción de los datos
+\end{itemize}
+
+\subsection{SQL}
+\begin{itemize}
+    \item Es un lenguaje estructurado para consultas 
+    \item Se usa para gestionar y mantener bases de datos 
+    \item Hay un estándar ANSI SQL que todo gestor debería cumplir 
+    \item Pero no es limitante: los servicios implementan características 
+    adicionales
+    \item Si tengo una BD que cumple el estándar se reducen los costos de migración
+\end{itemize}
+
+\subsection{Ventajas de bases de datos}
+\begin{itemize}
+    \item Controla la redundancia: sin duplicidad
+    \item Controla la consistencia: sin incoherencia
+    \item Comparte los datos entre diversas apliaciones cliente
+    \item Mantiene estándares 
+    \item Mejora la integridad 
+    \item Mejora la recolección y mantenimiento de datos 
+    \item Todo esto redunda en mejora de productividad de la organización 
+    \item Aumenta la posibilidad de concurrencia 
+    \item Sirve para hacer copias de seguridad y recuperación ante fallos 
+    \item Mejora la accesibilidad de los datos 
+    \item Facilita el mantenimiento 
+    \item Mejora la seguridad de los datos, permitiendo administración de permisos
+\end{itemize}
+
+\subsection{Inconvenientes de las bases de datos}
+\begin{itemize}
+    \item Costo de inversión: al principio puede ser dificil o costoso
+    \item Mayor complejidad: requiere esfuerzo de capacitación en la organización,
+    aunque existen implementaciones de complejidad variable
+    \item Gran tamaño: puede llegar a ser exigente en infraestructura,
+    aunque existen gestores más ligeros
+\end{itemize}
+
+\subsection{Historia de las bases de datos}
+\begin{itemize}
+    \item Arranca con tarjetas perforadas
+    \item Primera generación: se almacenaba en cintas magnéticas,
+    luego surgen discos duros
+    \item Durante 50 al 70 predominan modelo jerárquico y modelo de red
+    \item El disco rígido guarda archivos fragmentados, 
+    por lo que era más rápido que la cinta
+    \item \textbf{Modelo jerárquico}: se basa en el modelo de árbol,
+    tiene un nodo raíz, que puede tener varios nodos hijos
+    \item Útiles para aplicaciones que manejaban grandes volúmenes de información 
+    \item Limitación: la redundancia de datos
+    \item \textbf{Modelo de red:} usa grafos para representar información 
+    \item Permite relaciones complejas entre datos 
+    \item Supera las limitaciones del modelo jerárquico 
+    \item La ventaja es que solucionaba la redundancia de datos 
+    \item La desventaja es que incrementaba la complejidad de administrar datos 
+    \item \textbf{Segunda generación:} Edgar Codd en 1970 sienta la base teórica
+    del modelo de bases de datos.
+    \item En 1976 Peten Chen, basado sobre el trabajo de Codd, crea el 
+    Modelo de Entidad-Relación (MER).
+    \item Sobre la base de Codd, otro grupo de IBM crea SEQUEL, que pasaría a 
+    llamarse \textbf{SQL}
+    \item Elliso, también basado en Codd, desarrolla para la CIA un RDBMS llamado
+    Oracle, padre de los SQL 
+    \item \textbf{Tercera generación:} evolución del modelo relacional,
+    agregando solidez en BD orientadas a objetos, extensión de características,
+    procesamiento distribuido
+    \item Permite bases de datos distribuidas en distintos nodos,
+    facilitando concurrencias
+    \item BD activas, para aplicaciones críticas que responden automáticamente a 
+    circunstancias
+    \item BD deductivas, mezcla de BD con IA, permite deducir información 
+    a partir de la introducida por el usuario 
+    \item Web puede pensarse como una interfaz de acceso a BD, 
+    proporcionan acceso a datos a través de \textbf{XML} o \textbf{JSON}
+    \item En sentido \textit{NO ESTRICTO} se puede describir a la web como una 
+    gran base de datos
+    \item \textbf{Data warehouse}: sistema centralizado, 
+    que soporta online analytical process (OLAP), 
+    permitiendo hacer consultas en línea para toma de decisiones,
+    antecesor del Big Data.
+    \item \textbf{Data Mining}: procesos para descubrir patrones, tendencias o 
+    relaciones significativas en grandes conjuntos de datos,
+    para convertirlos en información útil para la toma de decisiones 
+    \item ¿Está surgiendo una cuarta generación?
+    \item Aparición de BD NoSQL: (Not Only SQL) Soporta SQL, pero tiene otras cosas 
+    \item Big Data: procesamiento de volumen, velocidad, variedad y valor
+\end{itemize}

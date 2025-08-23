@@ -1,0 +1,127 @@
+\section{Segunda clase, 23 de agosto}
+
+\subsection{Introducción a las BD}
+\begin{itemize}
+    \item Ficheros
+    \item Biblioteca
+    \item Guía telefónica
+    \item Los tres son ejemplos de BD: 
+    guardan información que vamos a poder consultar
+\end{itemize}
+
+\subsection{Sistemas de Gestión de Bases de Datos}
+\begin{itemize}
+    \item Jerárquico, con estructura tipo árbol,
+    con nodo padre, nodos hijos
+    \item Modelo rígido, que generaba duplicidad de datos 
+    \item Modelo de red, implementa grafos, reduce el volumen de información,
+    pero lo vuelve difícil de mantener, podía convertirse en una maraña de datos
+    \item Sobre la base de eso Codd hace el \textbf{modelo de bases de datos 
+    relacionales}, donde establece:
+    \begin{itemize}
+        \item Entidades, una por tabla 
+        \item Cada tabla tiene: clave primaria, una identificación única para un 
+        registro; clave foránea, que apunta a otra entidad en otra tabla
+        \item Toda entidad tiene una \textbf{primary key} (PK)
+        \item la \textbf{Foreign Key} (FK) es un campo que referencia a otra 
+        entidad, en otra tabla
+    \end{itemize}
+\end{itemize}
+
+\subsection{Conceptos importantes}
+\begin{itemize}
+    \item Entidad: algo de interés para el usuario de la BD
+    \item Columna: es una pieza de dato almacenada 
+    \item Registro: un conjunto de columnas que describen a una entidad o una 
+    acción de una entidad 
+    \item Tabla: conjunto de registros, conservada en memoria (no persistente)
+    o almacenamiento (persistente)
+    \item Result set: table no persistente, generalmente resulta de una consulta 
+    SQL 
+    \item Primary Key: columna que sirve de identificador único 
+    \item Foreign Key: columna que sirve para identificar un registro en otra tabla
+\end{itemize}
+
+\subsection{SQL}
+\begin{itemize}
+    \item Codd propuso, DSL/Alpha se arma en IBM, SEQUEL
+    \item ANSI hace el estándar en 1986 (ANSI: instituto estadounidense de estándares)
+    \item En décadas posteriores se agregan otras características
+    \item Vamos a ver MySQL, que tiene doble licencia, gratis para aprender
+    \item Tenemos el motor de la base (servidor), y la interfaz (cliente)
+\end{itemize}
+
+\subsection{Modelado de Datos}
+\begin{itemize}
+    \item Forma de estructurar y organizar datos 
+    \item Objetivos:
+    \item Definir la estructura, la organización de los datos 
+    \item Definir sus relaciones, cómo se conectan entre sí 
+    \item Ayuda la comunicación, con XML y JSON
+    \item Ayuda a documentar datos en procesos ETL, de actualización de BD,
+    por ejemplo, traer ventas de otra surcursal, puede ser masivo,
+    se genera en otro sistema y se trae en un formato, por ejemplo, JSON 
+\end{itemize}
+
+\subsection{Pasos del modelado}
+\begin{enumerate}
+    \item Mundo Real 
+    \item Modelo de Entidad - Relación 
+    \item Modelo Relacional, la  implementación lógica del MER 
+\end{enumerate}
+
+\subsection{Relación}
+\begin{itemize}
+    \item Asociación entre diferentes entidades 
+    \item Puede ser reflexiva, bianaria, n-aria
+    \item Reflexiva: se relaciona consigo misma 
+    \item Ejemplo: una persona trabaja para otra. 
+    \item Las dos entidades son iguales, aunque sean distintos registros 
+    \item Binaria: vincula 2 entidades con una relación única de los 2 lados
+    \item Ejemplo: yo tengo un auto, una relación 1 a 1, a través de relación
+    poseer 
+    \item N-aria: relación donde intervienen más de 2 entidades
+    \item Ejemplo: periodista, artículo, y periódico
+    \item Un periodista escribe muchos artículos, 
+    publicados en distintos periódicos
+\end{itemize}
+
+Conceptualmente, tres tipos de relaciones:
+\begin{itemize}
+    \item Uno a uno: un registro de entidad A con un registro de entidad B 
+    \item Uno a muchos: un registro de entidad A se relaciona con 0 o más registros 
+    de entidad B, ejemplo: persona auto, tiene 0 o más autos 
+    \item Muchos a muchos: un registro de A relaciona con 0 o más de B, a su vez,
+    el registro de B se relaciona con uno o más de B 
+\end{itemize}
+
+\subsection{Modelo de Entidad Relación}
+\begin{itemize}
+    \item Es un modelo gráfico, un diagrama
+    \item Representa a una entidad del mundo real 
+    \item Tiene un nombre y \textbf{atributos} que corresponden a la entidad 
+    \item Ejemplo: Entidad Persona, atributos nombre, apellido, género 
+    \item El atributo principal permite identificar de maner unívoca a la entidad 
+    \item Relaciones permiten identificar \textit{vínculos} con otras entidades,
+    normalmente la relación es un verbo 
+\end{itemize}
+
+\subsection{Cardinalidad}
+\begin{itemize}
+    \item Es el tipo de relación por cantidad:
+    \item Uno a uno, uno a muchos, muchos a muchos 
+\end{itemize}
+
+\subsection{Diagrama de Entidad Relación}
+\begin{itemize}
+    \item Se convierte el modelo entidad relación en tabla 
+    \item Establecemos las relaciones entre tablas con PK/FK 
+    \item Una relación muchos a muchos \textit{requiere} crear una nueva tabla,
+    los registros de la tabla intermedia representan cada una de las relaciones,
+    cada registro incluye las FK de las dos entidades relacionadas
+\end{itemize}
+
+\subsection{Tarea}
+\begin{itemize}
+    \item Queda en la diapo dos tareas, probar con Mermaid
+\end{itemize}
