@@ -1,0 +1,80 @@
+\section{Tercera clase, 26 de agosto}
+
+\subsection{Derivada en una función de una sola variable}
+\begin{itemize}
+    \item Aproximo tanto dos puntos que obtengo una recta tangente a la curva
+\end{itemize}
+
+\subsection{Derivada en función de dos variables}
+\begin{itemize}
+    \item Idea muy similar, pero no puedo derivar dos a la vez
+    \item Derivo \(x\) o derivo \(y\)
+    \item La nomenclatura es:
+\end{itemize}
+
+\begin{equation*}
+    f_x = \frac{\partial f}{\partial x}
+\end{equation*}
+
+\begin{itemize}
+    \item Entonces, derivar respecto de x es encontrar la pendiente de la
+          curva que se genera por intersecar la superficie por un plano \(x = k\)
+\end{itemize}
+
+\subsection{Derivadas sucesivas}
+\begin{itemize}
+    \item Derivo una tomando la otra constante y luego derivo de nuevo,
+          por la misma o la anterior \(f_{xx} \lor f_{xy}\)
+    \item Teorema Claireaut-Schwarz: si la función es continua en el punto \(P\),
+          la derivada segunda \(f_{xy} = f_{yx}\)
+\end{itemize}
+
+\subsection{Regla de la cadena}
+\begin{itemize}
+    \item Sale de funciones compuestas
+    \item Derivo una y la otra que está adentro
+    \item Tengo w(x,y), x(t) e y(t):
+          \begin{enumerate}
+              \item Puedo: sustituir y derivar como función de una variable
+              \item Aplicar regla de la cadena:
+          \end{enumerate}
+\end{itemize}
+\begin{equation*}
+    \frac{dw}{dt} = \frac{\partial w}{\partial x}\frac{dx}{dt} + \frac{\partial w}{\partial y}\frac{dy}{dt}
+\end{equation*}
+\begin{itemize}
+    \item Si tengo \(w(x,y)\), \(x(t,s)\) e \(y(t,s)\), es lo mismo,
+          pero hay que hacer una para cada una de las variables \(s\) y \(t\):
+\end{itemize}
+\begin{equation*}
+    \frac{\partial w}{\partial s} = \frac{\partial w}{\partial x}\frac{\partial x}{\partial s} + \frac{\partial w}{\partial y}\frac{\partial y}{\partial s}
+\end{equation*}
+\begin{equation*}
+    \frac{\partial w}{\partial t} = \frac{\partial w}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial w}{\partial y}\frac{\partial y}{\partial t}
+\end{equation*}
+\begin{itemize}
+    \item Sugerencia: hacer los dos caminos
+\end{itemize}
+
+\subsection{Plano tangente a la superficie}
+\begin{equation*}
+    \vec{n}= \vec{u}\times\vec{v} = \begin{vmatrix}
+        i & j & k \\ 1 & 0 & f_x(a,b) \\ 0 & 1 & f_y(a,b) \\
+    \end{vmatrix}
+\end{equation*}
+
+\begin{itemize}
+    \item Con esto tengo vector normal a la superficie en \((a,b)\)
+    \item Con ese vector y el punto \((a,b)\) hacemos un plano tangente a la 
+    superficie
+    \item \( \vec{n} = (f_x, f_y, -1)\)
+    \item Siempre que piden linealización o aproximación lineal están hablando de
+    plano tangente
+\end{itemize}
+
+\subsection{Función diferenciable}
+\begin{itemize}
+    \item Si es diferenciable, es continua 
+    \item No siempre es diferenciable si es continua
+    \item diferenciable: si las derivadas parciales son continuas en el punto
+\end{itemize}
