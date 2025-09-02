@@ -1,0 +1,42 @@
+\section{Cuarta clase, 2 de septiembre}
+
+\subsection{Consultas}
+
+\subsubsection{Ejercicio 4-c}
+
+Derivar $f(x,y) = x^{y}$, con $x(t)=\sen t$ e $y(t) = \cos t$.
+
+Resolvemos con regla de la cadena:
+
+$$\frac{df}{dt} = \frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\partial y}\frac{dy}{dt}$$
+
+\subsection{Función implícita}
+
+En función de una variable:
+\begin{itemize}
+    \item Explícita: $y = mx + b$
+    \item Implícita: $y - mx - b = 0$
+\end{itemize}
+
+\textbf{Teorema de Dini}, de existencia de la función implícita:
+\begin{itemize}
+    \item $f(x,y) = 0$ define implícitamente a $y = g(x)$ si:
+          \begin{enumerate}
+              \item $f(P) = 0$: la función se anula en un punto
+              \item $z=f(x,y)$ tiene derivadas continuas en el entorno de $p$
+              \item $\frac{\partial f}{\partial y}|_P \neq 0$, la derivada parcial
+                    respecto de la dependiente distinta de 0
+          \end{enumerate}
+    \item Si se cumplen, la derivada es:
+          $$\frac{dy}{dx} = -\frac{\frac{\partial f}{\partial x}}{\frac{\partial f}{\partial y}}$$
+\end{itemize}
+
+En campos escalares:
+\begin{itemize}
+    \item Hay $f|_P = 0$
+    \item Existen $f_x$, $f_y$ y $f_z$ continuas en $P$
+    \item $f_z \neq 0$
+    \item Entonces:
+          $$Z_x = -\frac{F_x}{F_z}$$
+          $$Z_y = -\frac{F_y}{F_z}$$
+\end{itemize}
