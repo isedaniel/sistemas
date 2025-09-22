@@ -439,3 +439,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Ruby
+*Gemfile.lock
+*Gemfile
+*.ruby-version
+
