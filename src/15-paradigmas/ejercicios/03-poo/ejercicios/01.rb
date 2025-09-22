@@ -3,7 +3,6 @@ class TV
   def initialize(input, on = false)
     @input = input
     @output = "viendo desde #{input}"
-    # false = off
     @on = on
   end
 
