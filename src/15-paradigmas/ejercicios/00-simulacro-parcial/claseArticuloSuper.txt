@@ -1,0 +1,37 @@
+classDiagram
+    class Articulo{
+        private String codigo
+        private String nombre
+        private String marca
+        private int cantidadPorPack
+        private double precio
+        public getCodigo() String
+        public setCodigo(codigo)
+        public getNombre() String
+        public setNombre(nombre)
+        public getMarca() String
+        public setMarca(marca)
+        public getCantidad() int
+        public setCantidad(cantidad)
+    }
+    class Alimento{
+        private Date fechaVencimiento
+        public getFechaVencimiento() Date
+        public setFechaVencimiento()
+    }
+    class AlimentoFresco{
+        private Sector sector
+        public getSector() Sector
+        public setSector()
+    }
+    class ArticuloLimpieza{
+        private TipoEnvase tipo
+        private double peso
+        public getTipoEnvase() Tipo
+        public setTipoEnvase(tipo)
+        public getPeso() double
+        public setPeso(peso)
+    }
+    Articulo <|-- Alimento
+    Alimento <|-- AlimentoFresco
+    Articulo <|-- ArticuloLimpieza

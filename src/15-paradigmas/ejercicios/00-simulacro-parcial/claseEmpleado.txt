@@ -1,0 +1,30 @@
+classDiagram
+    class Empleado{
+        protected String nombre
+        protected String apellido
+        protected int edad
+        public String getNombre()
+        public void setNombre()
+        public String getApellido()
+        public void setApellido()
+        public int getEdad()
+        public void setEdad()
+    }
+    class Tesorero{
+        private int antiguedad   
+        public int getAntiguedad()
+        public void setAntiguedad()
+    }
+    class Cajero{
+        private boolean bilingue
+        public boolean getBilingue()
+        public void setBilingue()
+    }
+    class Entrenador{
+        private Deporte deporte
+        public Deporte getDeporte()
+        public void setDeporte()
+    }
+    Empleado <|-- Tesorero
+    Empleado <|-- Cajero
+    Empleado <|-- Entrenador
