@@ -1,0 +1,28 @@
+classDiagram
+    class Figura{
+        virtual superficie() float
+        virtual perimetro() float
+    }
+    class Triangulo{
+        private float[] lados
+        private Triangulo_t tipo
+        public superficie() float
+        public perimetro() float
+    }
+    class Rectangulo{
+        private float base
+        private float altura
+        public superficie() float
+        public perimetro() float
+    }
+    class Cuadrado{
+    }
+    class Circulo{
+        private float radio
+        public superficie() float
+        public perimetro() float
+    }
+    Figura <|-- Triangulo
+    Figura <|-- Rectangulo
+    Figura <|-- Circulo
+    Rectangulo <|-- Cuadrado

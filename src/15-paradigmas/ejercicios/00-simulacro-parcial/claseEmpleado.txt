@@ -1,8 +1,8 @@
 classDiagram
     class Empleado{
-        protected String nombre
-        protected String apellido
-        protected int edad
+        private String nombre
+        private String apellido
+        private int edad
         public String getNombre()
         public void setNombre()
         public String getApellido()
