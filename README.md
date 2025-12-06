@@ -1,4 +1,4 @@
-# Ingeniería en Sistemas (9/53)
+# Ingeniería en Sistemas (12/53)
 
 0. [x] Curso de Nivelación
 1. [x] Análisis Matemático I
@@ -10,11 +10,11 @@
 7. [x] Arquitectura de Computadores
 8. [x] Análisis de Sistemas I
 9. [x] Análisis de Sistemas II
-10. [ ] Análisis Matemático II-A
+10. [x] Análisis Matemático II-A
 11. [x] Fundamentos de Economía
 12. [ ] Física II
 13. [x] Estructuras de Datos y Algoritmos
 14. [ ] Comunicaciones
-15. [ ] Paradigmas de Programación
+15. [x] Paradigmas de Programación
 16. [ ] Probabilidad y Estadística
-17. [ ] Bases de Datos I
+17. [x] Bases de Datos I
