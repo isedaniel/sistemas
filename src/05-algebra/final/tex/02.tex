@@ -1,0 +1,195 @@
+\section{Números complejos}
+
+\subsection{Introducción}
+
+Surgen por la necesidad de resolver ecuaciones de segundo grado con raíces de
+números negativos.
+Para ello, se amplía el conjunto de los números reales.
+
+\textbf{La unidad imaginaria.}
+
+\begin{equation*}
+    i = \sqrt{-1}
+\end{equation*}
+
+Por ejemplo, $\sqrt{-4} = 2 \cdot \sqrt{-1} = 2i$.
+
+\subsection{Forma binómica}
+
+\begin{equation*}
+    z = a + bi
+\end{equation*}
+
+\subsection{Conjugado de complejo}
+
+\begin{equation*}
+    \bar{z} = a - bi
+\end{equation*}
+
+\subsection{Forma par ordenado}
+
+\begin{equation*}
+    (a,b)
+\end{equation*}
+
+Se representa parte real en el eje real, parte imaginaria en el eje imaginario Y.
+El gráfico es un \textbf{punto} o un \textbf{vector}.
+
+\subsection{Potencias de i}
+
+Se toma el resto de la división $n/4$, y:
+
+\begin{align*}
+    i^{0} = 1  \\
+    i^{1} = i  \\
+    i^{2} = -1 \\
+    i^{3} = -i
+\end{align*}
+
+\subsection{Operaciones en forma binómica}
+
+\textbf{Suma}
+
+Se suma lo real con lo real, lo imaginario con lo imaginario.
+
+\textbf{Multiplicación}
+
+Se multiplican como binomios:
+
+\begin{align*}
+    (2 + 3i) \cdot (4 + 5i) = 8 + 12i + 10i + 15i^2 = 8 + 22i - 15 = -7 + 22i
+\end{align*}
+
+\textbf{Producto de conjugados}
+
+Es $a^2 + b^2$ (sin $i$):
+
+\begin{equation*}
+    (3 - 5i) \cdot (3 + 5i) = 9 + 15i - 15i - 25i^2 = 9 + 25 = 34
+\end{equation*}
+
+\textbf{División de complejos}
+
+Se deduce multiplicando el numerador y denominador por el conjugado del
+denominador:
+
+\begin{align*}
+    \frac{a + bi}{c + di} & = \frac{(a + bi) * (c - di)}{(c + di) * (c - di)} \\
+                          & = \frac{(ac + bd) + (bc - ad)i}{c^2 + d^2}                                                \\
+\end{align*}
+
+\subsection{Forma polar}
+
+Formado por el \textbf{módulo} y su \textbf{argumento} (ángulo respecto del 
+semieje positivo x).
+
+\textbf{Módulo.}
+
+\begin{equation*}
+    |z| = \sqrt{a^2 + b^2}
+\end{equation*}
+
+\textbf{Argumento.}
+
+\begin{align*}
+    arg(z) = \arctan\left( \frac{b}{a} \right)
+\end{align*}
+
+Según cuadrante:
+\begin{itemize}
+    \item $1^o$: Queda como está
+    \item $2^o$: Le sumo $180^o$ ($\pi$)
+    \item $3^o$: Le sumo $180^o$ ($\pi$)
+    \item $4^o$: Le sumo $360^o$ ($2\pi$)
+\end{itemize}
+
+\textbf{Forma trigonométrica y polar}
+
+\begin{equation*}
+    z = a + bi = |z|(\cos\alpha + i\sen\alpha) = (|z||\alpha)
+\end{equation*}
+
+\textbf{Conjugado.}
+
+Ángulo en sentido contrario respecto del semieje x.
+Simétrico respecto del eje $y$.
+Otra manera de $\bar{z}$.
+
+\textbf{Opuesto.}
+
+Ángulo más $180^o$. O sea, $-z$.
+
+\subsection{Operaciones forma polar}
+
+Suma y resta no se pueden hacer.
+
+\textbf{Multiplicación.}
+
+Multiplicamos módulos y sumamos argumentos.
+
+\begin{align*}
+    z_1 \cdot z_2 = 
+    |z_1|\cdot |z_2|\cdot \left[ \cos\alpha+\beta + i\sen\alpha+\beta \right]
+\end{align*}
+
+\textbf{División.}
+
+Divido módulos y resto argumentos:
+
+\begin{align*}
+    z_1/z_2 = |z_1|/|z_2|\cdot \left[ \sen(\alpha-\beta) + i\cos(\alpha-\beta) \right]
+\end{align*}
+
+\textbf{Potencia.}
+
+Elevo el módulo a $n$ y multiplico el argumento por $n$:
+
+\begin{align*}
+    z_1^n = |z_1|^n\cdot \left[ \sen(\alpha\cdot n) + i\cos(\alpha\cdot n) \right]
+\end{align*}
+
+Esto es el \textbf{Teorema de De Moivre}.
+
+\textbf{Raíz n-ésima.}
+
+Todo complejo tiene $n$ raíces $n$-ésimas.
+Hacemos raíz $n$-ésima del módulo y dividimos el argumento por $n$,
+pero como son $n$ raíces, hay que ir de $k=0...n-1$:
+
+\begin{align*}
+    \sqrt[n]{z} = \sqrt[n]{|z|} \left[ \cos\left(\frac{\alpha+2k\pi}{n}\right) + i\sen\left(\frac{\alpha + 2k\pi}{n}\right) \right] \, \text{, con } \, k = 0,1...n-1
+\end{align*}
+
+Queda un hexágono regular, en una circunferencia de radio $\sqrt[n]{|z|}$.
+
+\subsection{Complejos en forma exponencial}
+
+Napier descubre $e$, y Eluer trabaja y desarrolla la constante.
+
+La relación $e$ con $\sen$ y $\cos$  se conoce como \textbf{fórmula de Euler:}
+
+\begin{align*}
+    e^{i\cdot\alpha} = \cos\alpha + i\sen\alpha
+\end{align*}
+
+Permite representar complejos con una notación más corta:
+
+\begin{align*}
+    z = |z|\cdot e^{i\cdot\alpha}
+\end{align*}
+
+Notar que es \textbf{necesario trabajar con radianes}.
+
+\textbf{Logaritmo de complejos.}
+
+\begin{align*}
+    \ln z = \ln |z| + \alpha\cdot i
+\end{align*}
+
+\textbf{Exponencial compleja.}
+
+$v^u$, ambos complejos:
+
+\begin{align*}
+    v^u = e^{u\cdot\ln v}
+\end{align*}

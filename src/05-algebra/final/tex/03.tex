@@ -1,0 +1,191 @@
+\section{Matrices}
+
+\subsection{Introducción}
+
+Una matriz es un ordenamiento rectangular de escalares,
+en $m$ filas y $n$ columnas,
+Se designa: $A \in \mathbb{R}^{m \times n}$.
+Cada uno de los números que la compone es un \textbf{elemento},
+que se \textit{distingue} por su posición.
+
+$m\times n$ es el tamaño, \textbf{orden}, tipo o \textbf{forma} de la matriz.
+
+\subsection{Matrices particulares}
+
+\textbf{Matriz columna.}
+
+Matriz de forma:
+
+\begin{equation*}
+    A \in R^{m\times1}
+\end{equation*}
+
+\textbf{Matriz fila.}
+
+Matriz de forma:
+
+\begin{equation*}
+    A \in R^{1\times n}
+\end{equation*}
+
+\textbf{Matriz nula.}
+
+Matriz con todos elementos 0.
+
+\textbf{Matriz cuadrada.}
+
+Matriz donde $m = n$, es decir, $A \in R^{n\times n}$
+
+\textbf{Matriz traspuesta.}
+
+Se denota $A^T$, se obtiene cambiado cada fila en columna.
+
+Propiedades:
+\begin{itemize}
+    \item $(A+B)^T = A^T + B^T$
+    \item $(kA)^T = k\cdot A^T$
+    \item $(A^T)^T = A$
+    \item $(A\cdot B)^T = B^T \cdot A^T$ (da vuelta el producto)
+\end{itemize}
+
+\textbf{Matriz simétrica.}
+
+Cuando $A=A^T$.
+
+\textbf{Matriz triangular superior.}
+
+Cuando todos los elementos bajo la diagonal principal son 0.
+
+\textbf{Matriz triangular inferior.}
+
+Cuando todos los elementos bajo la diagonal principal son 0.
+
+\textbf{Matriz diagonal.}
+
+Todos los elementos, salvo la diagonal, son 0.
+
+\textbf{Matriz identidad.}
+
+Matriz diagonal donde todos los elementos de la diagonal son 1.
+
+\subsection{Igualdad de matrices}
+
+Cuando las matrices son de igual forma, y además sus elementos respectivos 
+son iguales.
+
+\subsection{Operaciones con matrices}
+
+\textbf{Suma y resta.}
+
+Cuando son iguales: se suma o resta elemento por elemento.
+
+\textbf{Producto de un escalar por matriz.}
+
+Se multiplica cada elemento por el escalar.
+
+\textbf{Producto de matrices.}
+
+Dada $A \in R^{m\times n}$ y $B \in R^{n\times p}$, devuelve una matriz 
+$C \in R^{m\times p}$.
+
+Columnas de la primera DEBEN ser iguales a filas de la segunda.
+
+El producto de matrices NO ES CONMUTATIVO.
+
+\subsection{Determinante}
+
+Permite saber si una matriz tiene inversa
+y si un sistema de ecuaciones lineales tiene solución,
+cuando es \textbf{distinto de 0}.
+
+\textbf{Propiedades.}
+
+Propiedad 1.
+
+El determinante del producto es igual al producto de sus determinantes.
+
+\begin{equation*}
+    |A\cdot B| = |A| \cdot |B|
+\end{equation*}
+
+Propiedad 2.
+
+Si hay fila o columna 0, el determinante es 0.
+
+Propiedad 3.
+
+Si multiplico fila o columna por escalar $k$, 
+el determinante es multiplicado por $k$.
+
+Propiedad 4.
+
+Se puede extraer $k$ a $n$ filas o columnas,
+dividiendo el determinante por el factor común $k^n$.
+
+Esto es consecuencia de la propiedad anterior.
+
+Propiedad 5.
+
+Si se cambia el orden de una fila o columna,
+el determinante cambia de signo.
+
+Propiedad 7.
+
+Si una matriz es invertible, el determinante de la inversa es el inverso 
+del determinante:
+
+\begin{equation*}
+    |A^{-1}| = 1/|A|
+\end{equation*}
+
+Propiedad 8.
+
+El determinante de $A$ es igual al determinante de traspuesta de $A$:
+
+\begin{equation*}
+    |A| = |A^T|
+\end{equation*}
+
+Propiedad 9.
+
+Si una fila o columna es combinación lineal de otras, 
+el determinante es 0.
+
+Propiedad 10.
+
+El determinante permanece constante si a una fila le sumamos otra 
+multiplicada por un escalar.
+
+Propiedad 11.
+
+El determinante de una matriz triangular es el producto de su diagonal.
+
+\textbf{Submatriz.}
+
+Es la matriz que obtenemos cuando suprimimos una fila $i$ y una columna $j$.
+
+
+\subsection{Matriz adjunta}
+
+\textbf{Adjunto de un elemento.}
+
+Es el determinante de la submatriz, con signo positivo o negativo de acuerdo 
+a si $i+j$ es par o impar.
+
+Básicamente con esto calculamos el determinante.
+
+La matriz adjunta es la que se obtiene remplazando cada elemento por su adjunto.
+
+
+\subsection{Matriz inversa}
+
+La matriz inversa de $A$ es aquella que multiplicada por $A$ devuelve la 
+matriz identidad.
+
+\begin{equation*}
+    A^{-1}\cdot A = A\cdot A^{-1} = I 
+\end{equation*}
+
+\textbf{Propiedades de la inversión.}
+
+Si $AB$ es invertible, entonces: $(AB)^{-1} = B^{-1}\cdot A^{-1}$.
