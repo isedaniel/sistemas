@@ -179,13 +179,48 @@ La matriz adjunta es la que se obtiene remplazando cada elemento por su adjunto.
 
 \subsection{Matriz inversa}
 
-La matriz inversa de $A$ es aquella que multiplicada por $A$ devuelve la 
-matriz identidad.
+Si $A$ es matriz cuadrada, con determinante $|A| \neq 0$,
+existe $A^{-1}$, tal que:
 
 \begin{equation*}
     A^{-1}\cdot A = A\cdot A^{-1} = I 
 \end{equation*}
 
+Una matriz que admite inversa es \textbf{regular}.
+Una matriz que no admite inversa es \textbf{singular}.
+
 \textbf{Propiedades de la inversión.}
 
-Si $AB$ es invertible, entonces: $(AB)^{-1} = B^{-1}\cdot A^{-1}$.
+\textbf{1.} Si $AB$ es invertible, entonces: $(AB)^{-1} = B^{-1}\cdot A^{-1}$.
+
+\textbf{2.} $(kA)^{-1} = k^{-1}\cdot A^{-1}$
+
+\textbf{3.} $(A^{-1})^T = (A^T)^{-1}$
+
+\textbf{Cálculo.}
+
+Dos formas:
+\begin{enumerate}
+    \item Método de la adjunta 
+    \item Método de Gauss
+\end{enumerate}
+
+\textbf{Método de la adjunta.}
+
+\begin{align*}
+    A^{-1} = \frac{\left[ adj(A) \right]^T}{|A|}
+\end{align*}
+
+Adjunta era sustituir cada elemento por el determinante de su submatriz.
+
+\textbf{Método de Gauss.}
+
+Definimos la matriz por bloques $G=(A|I)$, siendo $I$ la matriz identidad.
+Operamos por fila hasta que del lado izquierdo quede la identidad,
+quedando la inversa del lado derecho.
+
+\textbf{Aplicación.}
+
+Sirve para despejar productos de matrices en ecuaciones matriciales:
+
+Obtener X siendo $A\cdot X = B \implies A^{-1}\cdot A\cdot X = I\cdot X = A^{-1}\cdot B$
