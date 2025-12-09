@@ -1,1 +1,487 @@
 \section{Vectores, rectas y planos}
+
+\subsection{Vector}
+
+Elemento del espacio vectorial.
+Se pueden representar en el plano $R^2$ o en el espacio $R^3$.
+
+Ejemplos de magnitudes físicas vectoriales: velocidad,
+fuerza. Puesto que su efecto no depende solo de su magnitud,
+sino de la dirección en la que actúan.
+
+Un vector $AB$ es un segmento orientado que va de un \textbf{origen}
+a un \textbf{extremo}.
+
+\subsubsection{Elementos}
+
+Dirección: dirección de la recta que contiene al vector.
+
+Sentido: va del origen $A$ al extremo $B$.
+
+Módulo: longitud del segmento, se representa $|AB|$.
+Es siempre positivo o 0.
+Si es 1: es un vector unitario o \textbf{versor}.
+
+\subsubsection{Vectores equipolentes}
+
+Decimos que dos vectores son \textbf{equipolentes} cuando tienen igual
+módulo, dirección y sentido.
+
+\subsubsection{Vectores libres}
+
+El conjunto de todos los vectores equipolentes se llama \textbf{vector libre}.
+Cada \textbf{vector fijo} es un representante del conjunto vector libre.
+
+\subsubsection{Vector fijo}
+
+Es un representante del vector libre, tiene módulo, dirección, sentido y 
+origen.
+
+\subsubsection{Vector opuesto}
+
+Mismo módulo, dirección, sentido opuesto.
+
+\begin{align*}
+    AB = -BA
+\end{align*}
+
+\subsubsection{Vectores concurrentes}
+
+Vectores concurrentes son vectores que comparten origen.
+
+\subsubsection{Vector de posición}
+
+El vector de posición $P$ es el que une el origen de coordenadas con el punto 
+$P$.
+
+\subsection{Operaciones con vectores}
+
+Suma: con regla de la poligonal o regla del paralelogramo.
+
+Regla de la poligonal es hacer coincidir el origen de un vector con el extremo 
+del otro, la suma es el vector que va del origen del primero al extremo del 
+segundo.
+
+Regla del paralelogramo es poner el origen de los dos en común,
+trazar rectas paralelas y obteniendo un paralelogramo,
+la diagonal coincide con la suma.
+
+Resta: es la suma del opuesto del vector.
+
+\begin{align*}
+    \vec{w} = \vec{v} + -\vec{u}
+\end{align*}
+
+\textbf{Producto de un escalar por un vector.}
+
+Mantiene dirección, cambia \textbf{módulo}. 
+El \textbf{sentido} cambia si el escalar $k$ es negativo.
+
+\textbf{Ángulo entre dos vectores.}
+
+Es el menor ángulo que forman dos vectores,
+por lo que puede variar desde $0^o$ a $180^o$.
+
+\textbf{Proyección de un vector sobre otro}
+
+Se traza, desde el extremo de un vector, una recta perpendicular al otro.
+Desde el origen común, se traza el \textbf{vector proyección} de $u$ sobre $v$.
+Si el ángulo fuese obtuso, se traza desde el extremo de $u$ hasta la proyección 
+de $v$ (y viceversa).
+
+Si forman un ángulo de $90^o$ no hay proyección, por lo que el vector proyección 
+sería el vector nulo.
+
+\textbf{Calcular el módulo del vector proyección.}
+
+Como trazamos una perpendicular desde el extremo hacia el otro vector 
+-o hacia su proyección, en caso de que el ángulo sea obtuso-
+el vector $u$ sería hipotenusa de un triángulo rectángulo, 
+por lo que el módulo del vector proyección sería:
+
+\begin{align*}
+    |P| = \cos\alpha \cdot |u|
+\end{align*}
+
+Aqui se ve que si $\alpha$ mide $90^o$, $|P|$ = 0.
+
+\subsubsection{Vectores opuestos}
+
+Mismo módulo, misma dirección, \textbf{sentidos opuestos}.
+
+\subsubsection{Coordenada del vector}
+
+Extremo menos origen:
+
+\begin{align*}
+    \vec{AB} = B - A
+\end{align*}
+
+\subsection{Módulo del vector}
+
+Pitágoras con las componentes del vector:
+
+\begin{align*}
+    |\vec{v}| = \sqrt{v_x^2 + v_y^2}
+\end{align*}
+
+\subsubsection{Operaciones analíticas}
+
+Suma y resta es suma y resta de componentes.
+
+\textbf{Producto escalar.}
+
+Sumatoria del producto de las componentes.
+
+\begin{align*}
+    u \cdot v = u_x \cdot v_x + u_y \cdot v_y
+\end{align*}
+
+También resulta de multiplicar los módulos por el ángulo que forman:
+
+\begin{align*}
+    u \cdot v = |u| \cdot |v| \cdot \cos\alpha
+\end{align*}
+
+De aquí deducimos que, \textbf{para saber el ángulo que forman} dos vectores:
+
+\begin{align*}
+    \cos\alpha = \frac{u \cdot v}{|u| \cdot |v|}
+\end{align*}
+
+\textbf{Escalar por vector.}
+
+Vector que resulta de multiplicar el escalar por cada componente.
+
+\subsubsection{Condición de ortogonalidad}
+
+Dos vectores son ortogonales -perpendiculares- si su producto escalar es 0:
+
+\begin{align*}
+    u \cdot v = 0
+\end{align*}
+
+\subsubsection{Ortonormales}
+
+Cuando son perpendiculares y \textbf{además son unitarios}.
+
+\subsubsection{Cosenos directores}
+
+Coseno de los ángulos que forma el vector respecto de los ejes coordenados:
+
+\begin{align*}
+    \cos\alpha = \frac{v_x}{|v|} &\hspace{24pt} \cos\beta = \frac{v_y}{|v|}
+\end{align*}
+
+Con esto puedo saber si dos vectores son paralelos, porque tendrían 
+iguales cosenos directores:
+
+\begin{align*}
+    \frac{v_x}{u_x} = \frac{v_y}{u_y} = \frac{|v|}{|u|}
+\end{align*}
+
+\subsubsection{Normalización}
+
+Para convertir un vector en vector unitario -con módulo = 1-:
+
+\begin{align*}
+    \vec{n} = \frac{v}{|v|}
+\end{align*}
+
+
+\subsection{Vectores en el espacio}
+
+Es la generalización de lo descrito para el vector en el plano,
+pero a una \textbf{tercera coordenada $z$}.
+
+\subsubsection{Proyección de $u$ sobre $v$}
+
+Igual que en el plano:
+
+\begin{align*}
+    P_{u,v} = \frac{u \cdot v}{|v|}
+\end{align*}
+
+Resulta en un número real, obviamente.
+
+\subsubsection{Producto vectorial}
+
+Esta es una operación propia de $R^3$.
+Resulta en otro vector \textit{perpendicular} tanto a $u$ como a $v$,
+con sentido siguiendo la regla del pulgar.
+
+\begin{align*}
+    u \times v = 
+    \begin{vmatrix}
+    i & j & k \\
+    u_x & u_y & u_z \\
+    v_x & v_y & v_z \\    
+    \end{vmatrix}
+\end{align*}
+
+Cuando los vectores son \textbf{paralelos},
+el producto vectorial devuelve el \textbf{vector nulo} $0_v$
+
+El módulo del producto vectorial es:
+
+\begin{align*}
+    |u \times v| = |u||v| \cdot \sen\alpha
+\end{align*}
+
+El módulo del producto vectorial coincide con el área del paralelogramo 
+que forman $u$ y $v$.
+
+El producto vectorial no es conmutativo.
+
+\subsubsection{Producto mixto}
+
+Es combinar producto vectorial y producto escalar. Devuelve un \textbf{real}.
+
+\begin{align*}
+    (u \times v) \cdot w = u \cdot (v \times w)
+\end{align*}
+
+Se calcula con un determinante de los tres vectores:
+
+\begin{align*}
+    \begin{vmatrix}
+        u_x & u_y & u_z \\
+        v_x & v_y & v_z \\
+        w_x & w_y & w_z \\
+    \end{vmatrix}
+\end{align*}
+
+Geométricamente, el producto mixto es igual al volumen del paralelepípedo 
+que forman $u$, $v$ y $w$.
+
+\textbf{Propiedad.}
+Tres vectores son \textbf{coplanares} si el producto mixto entre ellos es igual a 0.
+
+\subsubsection{Condición de paralelismo}
+
+Igual que con los cosenos directores, pero ahora incluyendo la tercera dimensión:
+
+\begin{align*}
+    \frac{a_x}{b_x} = \frac{a_y}{b_y} = \frac{a_z}{b_z} 
+\end{align*}
+
+\subsubsection{Vector unitario}
+
+Se calcula igual:
+
+\begin{align*}
+    v_n = \frac{v}{|v|}
+\end{align*}
+
+
+\subsection{Rectas en el espacio}
+
+Tenemos el conjunto \textbf{espacio} $R^3$, sus elementos son \textbf{puntos},
+destacamos el subcojunto \textbf{planos}, dentro de cada plano hay a su vez 
+otro subconjunto que son las \textbf{rectas}.
+
+\subsubsection{Ecuación vectorial de la recta}
+
+La recta es un conjunto de puntos de un plano, alineados con un punto $P$,
+con una dirección dada por un \textbf{vector director} $v$, siendo su expresión:
+
+\begin{align*}
+    (x,y,z) = \lambda v + P
+\end{align*}
+
+\subsubsection{Ecuación paramétrica de la recta}
+
+Si operamos el producto por un escalar y la suma en la expresión anterior:
+
+\begin{align*}
+    (x,y,z) = (\lambda x_v + x_p,\cdots)
+\end{align*}
+
+Si con eso planteamos un sistema tenemos:
+
+\begin{align*}
+    \begin{cases}
+        x = x_p + \lambda \cdot x_v \\
+        y = y_p + \lambda \cdot y_v \\
+        z = z_p + \lambda \cdot z_v
+    \end{cases}
+\end{align*}
+
+Estas son las ecuaciones paramétricas, expresamos cada componente del punto 
+en función de un parámetro $\lambda$.
+
+\subsubsection{Ecuación general o ecuaciones simétricas de la recta}
+
+Si despejamos el parámetro e igualamos:
+
+\begin{align*}
+    \frac{x - x_p}{x_v} = \frac{y - y_p}{y_v} = \frac{z - z_p}{z_v}
+\end{align*}
+
+\subsubsection{Posiciones relativas de dos rectas en el espacio}
+
+En el \textbf{plano} las rectas pueden:
+\begin{enumerate}
+    \item Cortarse
+    \item Ser paralelas (siendo coincidentes cuando son la misma)
+\end{enumerate}
+
+En el \textbf{espacio} las rectas pueden tener tres posiciones:
+\begin{enumerate}
+    \item Paralelas, tienen la misma dirección, pudiendo ser coincidentes
+    \item Incidentes o secantes, se tocan en un punto $P$
+    \item \textbf{Alabeadas}, no se cortan ni son paralelas: 
+    están en planos distintos
+\end{enumerate}
+
+\subsubsection{Punto de intersección de dos rectas}
+
+Se obtiene igualando las paramétricas de la recta.
+Si el sistema es compatible determinado, vamos a encontrar el punto que iguala 
+los parámetros.
+
+Si es \textbf{incompatible} las rectas son \textbf{alabeadas}.
+
+\subsubsection{Distancia entre un punto y la recta en el espacio}
+
+La distancia entre un punto $M$ y la recta se deduce de la relación entre 
+el vector director $v$ y el punto $P$ de la recta:
+
+\begin{align*}
+    d(M, r) = \frac{|\vec{PM} \times \vec{v}}{|v|}
+\end{align*}
+
+\subsection{Ecuaciones del plano}
+
+\subsubsection{Ecuación general del plano}
+
+Dados dos puntos, tenemos una única recta que pasa por esos dos $\bar{PQ}$.
+Por $PQ$ pasan infinitos planos.
+
+Si tengo un vector $v$, existen infinitos planos perpendiculares a él.
+
+Pero si tenemos un \textbf{vector normal} $n$ y un \textbf{punto} $P$, 
+un \textbf{plano} queda determinado.
+
+La ecuación general del plano es:
+
+\begin{align*}
+    Ax + By + Cz + d = 0
+\end{align*}
+
+Siendo $n = (A,B,C)$ componentes del vector director,
+y $d$ se obtiene evaluando la ecuación general en $P$.
+
+Para graficarlo, naturalmente hacemos $y=0,z=0$ y así sucesivamente,
+para ver donde intersecan con los ejes.
+
+De aquí se deduce también que: \textbf{tres puntos no alineados definen un plano}.
+
+\subsubsection{Plano a partir de tres puntos}
+
+Con los tres puntos $P$, $Q$, y $M$, hacemos dos vectores,
+por ejemplo, $\bar{PQ}$ y $\bar{PM}$.
+
+Después operamos producto vectorial para obtener el \textbf{vector normal}
+al plano.
+
+Con el vector normal más uno de los puntos, determinamos la ecuación general.
+
+\subsubsection{Ecuación vectorial paramétrica del plano}
+
+Asi mismo, dados dos vectores no paralelos y un punto,
+podemos definir el plano.
+
+Con la ecuación vectorial paramétrica, dados $u$, $v$ y $P$:
+
+\begin{align*}
+    (x,y,z) =  P + \alpha u + \beta v
+\end{align*}
+
+Para pasar de la general a la paramétrica despejamos una de las variables,
+que queda dependiendo de las otras dos,
+con eso construimos un vector y reescribimos.
+
+Para volver calculamos al revés, unificamos en una sola cosa,
+procurando que quede en función de dos variables y llegamos a la ecuación general.
+
+\subsubsection{Propiedades de los planos}
+
+\begin{enumerate}
+    \item Dado un plano, hay puntos que pertenecen y puntos que no
+    \item Para saber si pertenecen, evaluamos con la ecuación general
+    \item Si dos planos tienen un punto en común, se cortan en una recta,
+    que se obtiene igualando las ecuaciones generales 
+    \item Si dos rectas tienen un punto en común, se puede trazar un plano 
+    que las contiene 
+    \item Por tres puntos que no pertenecen a una recta se puede trazar un solo plano 
+\end{enumerate}
+
+\subsubsection{Posiciones relativas de dos rectas}
+
+Si $a$ y $b$ son dos rectas, estas pueden ser:
+\begin{enumerate}
+    \item copalanares: secantes, paralelas, o la misma 
+    \item Alabeadas: no coplanares
+\end{enumerate}
+
+\subsubsection{Posición relativa entre recta y plano}
+
+Un plano y una recta que no está en él, ni se tocan, son \textbf{paralelos}.
+
+Se sabe porque el \textbf{vector director} de la recta es \textbf{perpendicular} 
+al \textbf{vector normal} del plano, es decir:
+
+\begin{align*}
+    u \cdot v = 0
+\end{align*}
+
+Si existe un punto donde se toquen: son \textbf{incidentes}.
+
+Si una recta es \textbf{perpendicular al plano}, es perpendicular a todas las 
+rectas pertenecientes al plano.
+
+\subsubsection{Posiciones relativas de dos planos}
+
+Puede ocurrir que:
+\begin{enumerate}
+    \item Son paralelos: no intersecan o son el mismo 
+    \item Son secantes: existe una recta que es su intersección
+\end{enumerate}
+
+Si dos planos son perpendiculares a una misma recta,
+quiere decir que son paralelos. 
+
+Y viceversa: dos rectas perpendiculares a un plano son paralelas.
+
+\subsubsection{Distancia punto a un plano}
+
+Es la menor distancia del punto a los infinitos puntos del plano:
+
+\begin{align*}
+    d(P,\pi) = \frac{|P \cdot n + D|}{|n|}
+\end{align*}
+
+\subsubsection{Intersección entre dos planos}
+
+Es una recta $r$ si los planos no son paralelos.
+
+Se obtiene igualando sus ecuaciones generales.
+Podemos poner dos variables en función de una,
+juntar y encontrar una expresión para el vector director de la recta y el punto.
+
+Verificamos el punto reemplazando en los planos.
+
+\subsubsection{Intersección tres planos}
+
+Puede dar:
+\begin{enumerate}
+    \item Un punto
+    \item Una recta 
+    \item Vacío (no solo si son paralelos, pueden ser alabeados entre si)
+\end{enumerate}
+
+\subsubsection{Intersección recta y plano}
+
+Tomamos las paramétricas de la recta y reemplazamos en la general del plano.
+La intersección es el valor del parámetro.
