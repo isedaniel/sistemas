@@ -1,0 +1,242 @@
+\section{Subespacios vectoriales}
+
+\subsection{Introducción}
+
+Un \textbf{espacio vectorial} es un conjunto no vacío $V$,
+cuyos elementos se denominan \textbf{vectores},
+y tiene definidas dos operaciones:
+suma como ley de composición interna (sigue dentro de $V$)
+y producto de escalar por vector composición externa ($k$ es externo, pero 
+el resultado $v$ sigue dentro de $V$).
+
+De acuerdo a la definición, $R^3$ es espacio vectorial. 
+Todos los espacios $R^n$, con $n \geq 1$ son espacios vectoriales.
+
+\subsection{Subespacio vectorial}
+
+$W$ es subespacio de $V$, si cumple con los criterios de ser \textit{espacio 
+vectorial}.
+
+\subsection{Condiciones necesarias y suficientes para caracterizar un subespacio}
+
+\begin{enumerate}
+    \item $\vec{0}$ está en $W$
+    \item Si $\vec{u}$ y $\vec{v}$ están, $\vec{u}+\vec{v}$ está 
+    \item Si $\vec{v}$ está, $k\cdot\vec{v}$ está.
+\end{enumerate}
+
+Entonces:
+
+\begin{enumerate}
+    \item Vemos que esté el vector nulo
+    \item Vemos dos vectores y los sumamos
+    \item Multiplicamos un vector por -1 para buscar su opuesto
+\end{enumerate}
+
+\subsection{Subespacios triviales}
+
+\begin{enumerate}
+    \item V es subespacio trivial de si mismo
+    \item El subespacio que contiene solo al vector nulo
+\end{enumerate}
+
+
+\subsection{Combinación lineal}
+
+Una combinación lineal de dos o más vectores es un vector,
+que se obtiene de sumar esos vectores multiplicados por algun escalar.
+
+Cualquier vector en el plano se puede representar como una combinación lineal 
+de dos vectores, \textit{siempre que estos no sean paralelos},
+es decir, que tengan distinta dirección.
+
+La combinación lineal para obtener cada vector es \textit{única}.
+
+\begin{equation*}
+    \vec{m} = x\vec{u} + y\vec{v} + z\vec{w}
+\end{equation*}
+
+Si resolviendo este sistema llegamos a un SCI, se puede expresar como combinación 
+lineal de infinitas maneras.
+
+En $R^2$ podemos generar cualquier vector con dos vectores no paralelos.
+Si tenemos 3 vectores no paralelos, podemos generar todo de infinitas formas.
+
+En $R^3$ podemos generar cualquier vector con tres vectores 
+\textit{no coplanares}, es decir, que ninguno sea combinación lineal de los otros
+(se chequea con Teorema de Cramer).
+Si tenemos menos de 3, no generamos todo $R^3$ y hay que usar 
+método de Gauss para ver sobre qué plano estamos.
+
+Si tenemos más de 3, generamos todo vector de infinitas formas.
+
+\subsection{Conjuntos generadores}
+
+(Un poco se anticipa en el apartado anterior).
+
+Un conjunto generador de $V$ es un conjunto de vectores $A$ que,
+con combinaciones lineales, pueden generar a $V$, por ejemplo:
+
+\begin{equation*}
+    A = \left\{ (1,0),(0,1) \right\} \,\text{generan } R^3
+\end{equation*}
+
+\subsection{Subespacio generado}
+
+Dado un conjunto generador $A$, el \textbf{subespacio generado} $W$ 
+es el conjunto de combinaciones lineales posibles usando $A$,
+que generan $W$ pero no a todo el espacio $V$.
+
+Para ver el subespacio generado por $(1,0,2)$ y $(0,0,1)$:
+
+\begin{equation*}
+    \alpha(1,0,2) + \beta(0,0,1) = (\alpha, 0, 2\alpha + \beta)
+\end{equation*}
+
+Es decir, genera todos los vectores del plano $y=0$.
+
+Si tengo 3 vectores $(1,0,0), (0,1,0), (0,2,1)$, calculo el determinante,
+da distinto de 0, por lo tanto, para construir el vector que quiera voy a 
+tener valores de los parámetros, este conjunto \textbf{genera} $R^3$.
+
+Si tengo 3 vectores $(1,0,0),(0,1,1),(1,1,1)$, 
+calculo el determinante tengo 0.
+Esto quiere decir que no voy a poder generar el vector que quiera.
+
+Para conocer el plano uso Método de Gauss con matriz ampliada y 
+busco que una de sus filas sea 0.
+
+\begin{equation*}
+\left(
+\begin{array}{ccc|c}
+1&0&1&x \\
+0&1&1&y \\
+0&1&1&z \\
+\end{array}
+\right)
+\end{equation*}
+
+A la tercera fila le resto la segunda y obtengo:
+
+\begin{equation*}
+\left(
+\begin{array}{ccc|c}
+1&0&1&x \\
+0&1&1&y \\
+0&0&0&z-y \\
+\end{array}
+\right)
+\end{equation*}
+
+Hecho que la última fila sea 0, concluyo que es compatible para el plano $z-y=0$.
+Estos vectores generan el \textbf{subespacio} $z-y=0$.
+
+En el caso de matrices,
+para generar $R^{2\times3}$ necestaría $2\times3$ matrices, 
+que no sean combinación lineal.
+
+\subsection{Dependencia lineal}
+
+Si tengo un conjunto de vectores $V$,
+lo igualo al vector $0_v$,
+es decir,
+planteo un \textit{sistema homogéneo},
+decimos que el conjunto es linealmente independiente si la solución trivial 
+es la \textbf{única} solución.
+
+Si además de la solución trivial tengo infinitas soluciones,
+el sistema es sistema compatible indeterminado,
+por lo tanto, es linealmente dependiente.
+
+Alternativamente,
+si uno de los vectores es combinación lineal de los otros,
+el conjunto es \textbf{dependiente}.
+
+Planteo el sistema homogéneo,
+si la única solución es 0, LI, sino LD.
+
+\textbf{Propiedades.}
+
+\textbf{1.}
+
+El conjunto \(\left\{ 0_v \right\}\) es el único conjunto de un solo 
+vector que es LD. Todos los demás son LI.
+
+\textbf{2.}
+
+Si un conjunto de vectores contiene $0_v$, es LD.
+
+\subsection{Intepretación geométrica}
+
+Son LD solo si son paralelos.
+En $R^3$ son paralelos si son coplanares,
+es decir, el determinante de la matriz de coeficientes tiene que dar 0.
+
+\subsection{Base}
+
+Decimos que el conjunto de vectores $B$ es base de $V$ si:
+1. es linealmente independiente y 2. genera $V$.
+
+Ejemplo: $B=(1,0)(1,1)$ es base de $R^2$. 
+$C=(1,0),(1,1),(2,0)$ no es base de $R^2$, porque es linealmente dependiente.
+
+La base canónica de $R^2$ es $B=(1,0),(0,1)$.
+
+Toda base de $R^n$ tiene $n$ vectores.
+
+\subsection{Dimensión}
+
+La dimensión de un espacio vectorial es la cantidad de vectores que componen su 
+base, es decir, la base de $R^n$ es $n$.
+
+Al espacio compuesto por el vector nulo se le asigna base 0:
+
+\begin{equation*}
+    dim(\left\{ 0_v \right\}) = 0
+\end{equation*}
+
+\textbf{Propiedades.}
+
+1. Todo conjunto de $n$ vectores LI es una base.
+2. Todo conjunto de más de $n$ vectores es LD, no es base.
+
+\subsection{Base y dimensión de subespacio vectorial}
+
+Si $S$ es subespacio de $V$, entonces $dim(S) \leq dim(V)$.
+La dimensión del subespacio tiene que ver con la cantidad de variables libres 
+de las que disponemos para combinar linealmente y generar vectores.
+
+\subsection{Operaciones con subespacios}
+
+\textbf{Intersección}
+
+Si tenemos los subespacios $S$ y $T$, tales que:
+
+\begin{align*}
+    S = {P: x - 3z = 0} \\
+    T = {Q: x + y - z = 0}
+\end{align*}
+
+La intersección $T\cap S$ está formado por los vectores que pertenecen 
+simultáneamente a $S$ y a $T$.
+Es decir, aquellos que \textit{satisfacen ambas ecuaciones}.
+
+Llegamos a $(3,-2,1)$, que es base de $S\cap T$.
+
+\textbf{Suma de subespacios.}
+
+Es el conjunto de los generadores de los dos subespacios, $S$ y $T$.
+
+La base de $S$ es $(3z,y,z) = z(3,0,1) + y(0,1,0)$, es decir,
+$B_S = \left\{ (3,0,1),(0,1,0) \right\}$.
+
+Base de $T$: $x = z - y \implies (z-y,y,z) = z(1,0,1) + y(-1,1,0)$,
+entonces la base es $(1,0,1) + (-1,1,0)$.
+
+Por definición, como vamos a tener 4 vectores,
+el conjunto sería LD, para armar la base nos quedamos con el primero no coplanar,
+en este caso probamos si $(1,0,1)$ verifica la ecuación de $S$:
+$1 - 3 \neq 0$, por lo tanto no es coplanar, lo usamos.
+
+La base de $S+T$ es $(3,0,1),(0,1,0),(1,0,1)$, genera $R^3$.
+

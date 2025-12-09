@@ -1,0 +1,362 @@
+\section{Cónicas}
+
+\subsection{Recta}
+
+\subsubsection{Ecuación}
+
+\begin{align*}
+    y = mx + b
+\end{align*}
+
+Siendo $m$ la pendiente, $b$ la ordenada.
+
+Dos rectas paralelas tienen igual pendiente.
+
+Dos rectas son perpediculares si su pendiente es la \textbf{inversa multiplicativa cambiada de signo}.
+
+\begin{align*}
+    m = -\frac{1}{m_2}
+\end{align*}
+
+\subsubsection{Ecuación dados dos puntos}
+
+\begin{align*}
+    m = \frac{y_2 - y_1}{x_2 - x_1}
+\end{align*}
+
+\subsubsection{Punto medio entre dos puntos}
+
+\begin{align*}
+    M = \left( \frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2} \right)
+\end{align*}
+
+\subsubsection{Distancia}
+
+Pitágoras.
+
+\subsubsection{Distancia de la recta a un punto}
+
+Escribimos la recta de forma implícita:
+
+\begin{align*}
+    Ax + By + C = 0
+\end{align*}
+
+Y dado el punto $P(p_1,p_2)$:
+
+\begin{align*}
+    d(P,r) = \frac{|A \cdot p_1 + B \cdot p_2 + C|}{\sqrt{A^2 + B^2}}
+\end{align*}
+
+\subsubsection{Distancia de una recta al origen}
+
+Se deduce de la expresión anterior:
+
+\begin{align*}
+    d(O, r) = \frac{|C|}{\sqrt{A^2 + B^2}}
+\end{align*}
+
+
+\subsection{Cónicas}
+
+Las cónicas resultan de la intersección de un cono de expresión $z^2 = y^2 + x^2$,
+con un plano.
+
+En función de la relación entre el ángulo de conicidad $\alpha$ y la inclinación
+del plano respecto del eje del cono $\beta$, se obtienen las distintas cónicas.
+
+\begin{itemize}
+    \item Circunferencia, la intersencción de la cónica y un plano perpendicular al eje principal del cono.
+    \item Elipse, plano inclinado que corta una de las hojas de la superficie
+    \item Parábola, corta una de las hojas y es paralelo a la generatriz
+    \item Hipérbola, corta ambas hojas del cono
+\end{itemize}
+
+\subsection{Circunferencia}
+
+El plano que corta a la cónica tiene un ángulo $\beta = 90^o$ respecto del 
+eje, es decir, es perpendicular al eje.
+
+\textbf{Definición.}
+
+Es el lugar geométrico donde los puntos que la forman equidistan de un punto 
+fijo que se llama centro:
+
+\begin{align*}
+    Circ(C, r) = P: d(C,P) = r
+\end{align*}
+
+\subsubsection{Ecuación de la circunferencia centro (0,0)}
+
+\begin{align*}
+    x^2 + y^2 = r^2
+\end{align*}
+
+\subsubsection{Ecuación canónica, de centro (a,b)}
+
+\begin{align*}
+    (x-a)^2 + (y-b)^2 = r^2
+\end{align*}
+
+\subsubsection{Ecuación general}
+
+Resulta de desarrollar la canónica:
+
+\begin{align*}
+    x^2 + y^2 + Ax + By + C = 0
+\end{align*}
+
+Para volver a la canónica completamos el cuadrado.
+
+Si tenemos puntos para construir la circunferencia usamos esta.
+
+\textbf{Condiciones para que sea circunferencia.}
+\begin{enumerate}
+    \item Los coeficientes de $x^2$ e $y^2$ deben ser iguales
+    \item No deben tener término $xy$
+    \item El radio al cuadrado debe ser mayor a 0
+\end{enumerate}
+
+\subsubsection{Ecuación de la tangente y normal a la circunferencia}
+
+Con circunferencia de centro $C$ y un punto $P$ perteneciente a la misma.
+
+La \textbf{recta normal} es la que contiene a $C$ y $P$.
+
+\textbf{recta tangente} es la perpendicular a la normal.
+
+Simplemente calculo la pendiente de la recta normal y con la perpendicular 
+tengo la tangente.
+
+\subsection{Elipse}
+
+Es la sección producida en una superficie cónica por un plano oblícuo al eje,
+que no sea paralelo a la generatriz, y que su ángulo sea mayor al de la 
+generatriz y distinto de $90^o$.
+
+\begin{align*}
+    \alpha < \beta \neq 90^o
+\end{align*}
+
+Es una curva cerrada.
+
+Se define como el lugar geométrico de los puntos cuya suma de distancias a 
+dos puntos fijos -llamados \textit{focos}- es constante.
+
+\subsubsection{Elementos de la elipse}
+
+Focos: son los puntos fijos $F$ y $F'$.
+
+Eje mayor o focal: es el segmento que pasa por los focos y llega a la elipse. Mide $2a$
+
+Eje menor: es el eje que divide por la mitad a la distancia focal, de medida $2b$.
+
+Centro: es donde se interscan los ejes.
+
+Distancia focal: Distancia entre los dos focos, $2c$
+
+Vértices: puntos de intersección de la elipse con los ejes mayor y menor
+
+Ejes de simetría: rectas que contienen al eje mayor y menor 
+
+Centro de simetría: coincide con el centro de la elipse 
+
+La distancia de cualquier punto $P$ de la elipse a los focos permanece constante:
+
+\begin{align*}
+    PF + PF' = 2a
+\end{align*}
+
+\subsubsection{Excentricidad de la elipse}
+
+Determina que tan alargada o redonda es. Es el cociente entre el 
+semieje focal y el semieje mayor:
+
+\begin{align*}
+    e = \frac{c}{a}
+\end{align*}
+
+Puede variar entre 0 y 1.
+
+Cuando la excentricidad es 0, estamos ante una circunferencia.
+
+\subsubsection{Ecuación de la elipse centrada en origen}
+
+\begin{align*}
+    \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1
+\end{align*}
+
+Recordar que:
+
+\begin{align*}
+    c^2 = a^2 + b^2
+\end{align*}
+
+Cuando los focos están sobre la vertical:
+
+\begin{align*}
+        \frac{x^2}{b^2} + \frac{y^2}{a^2} = 1
+\end{align*}
+
+Es decir, $a > b$ siempre.
+
+\subsubsection{Ecuación de la elipse centro $(x_0, y_0)$}
+
+\begin{align*}
+    \frac{(x - x_0)^2}{a^2} + \frac{(y^2 - y_0)^2}{b^2} = 1
+\end{align*}
+
+Si está centrada en el eje vertical, intercambian denominador.
+Solo si el denominador de y es mayor al denominador de x.
+
+\subsubsection{Ecuación general de la elipse}
+
+\begin{align*}
+    Ax^2 + By^2 + Cx + Dy + E = 0
+\end{align*}
+
+Siendo $A$ distinto de  $B$ y mayores a 0.
+
+Para pasar de esta a la otra, igual que en la circunferencia, 
+completamos cuadrado e igualamos a uno el segundo componente.
+
+\subsubsection{Ecuación de recta tangente a la elipse en un punto}
+
+\begin{align*}
+        \frac{x*x_0}{a^2} + \frac{y*y_0}{b^2} = 1
+\end{align*}
+
+
+\subsection{Hipérbola}
+
+La hipérbola es el lugar geométrico que se mueven de tal manera que el 
+valor absoluto de la diferencia de sus distancias a dos puntos fijos 
+-llamados focos- es constante. Es decir:
+
+\begin{align*}
+    |PF-PF'| = 2a
+\end{align*}
+
+\subsubsection{Elementos}
+
+Vértices: $(\pm a, 0)$
+
+Focos: $(\pm c, 0)$
+
+Extremos del eje conjugado: $(0, \pm b)$
+
+Eje real: $2a$
+
+Eje imaginario o conjugado: $2b$
+
+Eje focal: $2c$
+
+Centro: centro de simetría.
+
+Condición es:
+
+\begin{align*}
+    c^2 = a^2 + b^2 \\
+    c > b \\
+    c > a \\
+\end{align*}
+
+\subsubsection{Excentricidad}
+
+\begin{align*}
+    e = \frac{c}{a} \, (e > 1)
+\end{align*}
+
+\subsubsection{Ecuación canónica de centro en origen}
+
+Con eje focal sobre el eje x:
+
+\begin{align*}
+    \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1
+\end{align*}
+
+Con eje focal sobre y:
+
+\begin{align*}
+    - \frac{x^2}{b^2} + \frac{y^2}{a^2} = 1
+\end{align*}
+
+(Se centra en el que queda positivo)
+
+\subsubsection{Ecuación canónica con centro $(x_0, y_0)$}
+
+\begin{align*}
+    \frac{(x-x_0)^2}{a^2} - \frac{(y-y_0)^2}{b^2} = 1
+\end{align*}
+
+Recordar que si se centra en eje vertical cambian los signos y los denominadores.
+
+Se trabaja igual que la otra,
+dejamos sobre el segundo término el independiente, 
+buscamos igualarlo a 0 y completar los cuadrados.
+
+\subsubsection{Hipérbola equilátera}
+
+\begin{align*}
+    xy = k
+\end{align*}
+
+\subsubsection{Ecuación de la recta tangete a una hipérbola centrada en origen}
+
+\begin{align*}
+        \frac{x*x_0}{a^2} - \frac{y*y_0}{b^2} = 1
+\end{align*}
+
+
+\subsection{Parábola}
+
+Es el lugar geométrico de los puntos del plano que equidistan de un punto fijo,
+que se llama foco, y de una recta fija, que llamamos directriz.
+
+\subsubsection{Elementos}
+
+Foco: punto fijo F 
+
+Directriz: recta fija d 
+
+Parámetro p: distancia del foco a la directriz, se designa por $p$
+
+Eje: Recta perpendicular a la directriz, pasa por el foco 
+
+Vértice: intersección parábola con su eje, punto medio entre directriz y foco 
+
+\subsubsection{Ecuación de la parábola centrada en origen}
+
+Hay dos casos, Parábola de $V(0,0)$, eje horizontal:
+
+\begin{align*}
+    y^2 = 2px
+\end{align*}
+
+Parábola de $V(0,0)$, eje vertical:
+
+\begin{align*}
+    x^2 = 2py
+\end{align*}
+
+
+\subsubsection{Ecuación de la parábola centrada en $V(a,b)$}
+
+Centrada en eje horizontal:
+
+\begin{align*}
+    (y-b)^2 = 2p(x-a)
+\end{align*}
+
+Centrada en vertical: 
+
+\begin{align*}
+    (x-a)^2 = 2p(y-b)
+\end{align*}
+
+\subsubsection{Pasaje general a canónica}
+
+Ponemos la cuadrática para un lado, la lineal para el otro con el coeficiente 
+independiente.
+
+Completamos el cuadrado y tomamos factor comun para el vértice $V(a,b)$.

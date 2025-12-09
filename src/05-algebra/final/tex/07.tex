@@ -1,0 +1,90 @@
+\section{Autovalores, autovectores, autoespacios}
+
+Tengo $A$ matriz $n \times n$,
+$\lambda$ es autovalor de $A$ si hay un vector columna $v$ no nulo,
+que cumpla:
+
+\begin{align*}
+    A \cdot v = \lambda \cdot v
+\end{align*}
+
+$v$ es el autovector asociado al autovalor $\lambda$.
+
+Para encontrarlos operamos:
+
+\begin{align*}
+    |A-\lambda I| = 0_v
+\end{align*}
+
+Esta es la \textbf{ecuación característica de A}.
+Las raíces de la ecuación característica son los \textbf{autovalores} de A.
+
+Para encontrar los autovectores resolvemos, con cada autovalor:
+
+\begin{align*}
+    (A-\lambda I)
+    \begin{pmatrix}
+        x \\ y
+    \end{pmatrix} =
+    \begin{pmatrix}
+        0 \\ 0
+    \end{pmatrix}
+\end{align*}
+
+La solución de este sistema siempre es un \textbf{subespacio},
+denominado \textbf{autoespacio}.
+Devolvemos la \textbf{base}.
+
+Los autovectores siempre son LI.
+
+Para verificar que esté bien usamos la primera expresión:
+
+\begin{align*}
+    A \cdot v = \lambda \cdot v
+\end{align*}
+
+\textbf{Propiedades.}
+
+\begin{enumerate}
+    \item En una matriz triangulada, los autovalores son los elementos de la 
+    diagonal principal
+    \item Si por lo menos uno de los autovalores es 0, 
+    la matriz es singular (determinante 0).
+    \item La suma de autovalores es la suma de elementos de la diagonal principal.
+\end{enumerate}
+
+\subsection{Matrices similares}
+
+$A$ y $B$ son matrices semejantes si:
+
+\begin{align*}
+    B=P^{-1} \cdot A \cdot P
+\end{align*}
+
+\textbf{Propiedades de las semejantes.}
+
+Tienen los mismos autovalores.
+
+\subsection{Matriz diagonalizable}
+
+$A$ es diagonalizable si es similar a una matriz diagonal $D$:
+
+\begin{align*}
+    P^{-1} \cdot A \cdot P = D
+\end{align*}
+
+\textbf{Condiciones que tiene que cumplir.}
+
+\begin{enumerate}
+    \item $A$ tiene autovectores LI
+\end{enumerate}
+
+Construimos $P$ con los autovectores como columnas.
+Si $|P| \neq 0$, esto es, es \textit{regular} y \textit{no singular},
+es invertible.
+
+Si calculando autovectores, encontramos un autovalor con multiplicidad algebraica
+mayor a la dimensión del autoespacio asociado, entonces nos va a faltar un 
+autovector para que $P$ sea regular, por lo tanto esa matriz no es diagonalizable.
+
+\textbf{El orden de los autovalores en D es igual al de los autovectores en P.}

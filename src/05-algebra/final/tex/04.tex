@@ -1,2 +1,150 @@
 \section{Sistemas de ecuaciones}
 
+\subsection{Introducción}
+
+Un sistema de dos ecuaciones y dos incógnitas tiene una solución cuando hay un par
+$(x_1, y_1)$ que satisface ambas ecuaciones a la vez.
+
+Para comprobar se reemplaza.
+
+\subsection{Clasificación}
+
+Esta clasificación abarca todo sistema lineal $m$ ecuaciones con $n$ incógnitas 
+$m \times n$:
+
+\subsubsection{Sistema compatible determinado}
+
+Tiene una sola solución $(x_1, y_1)$.
+En sistemas lineales en $R^2$ equivale a dos rectas que se intersecan en un punto.
+
+\subsubsection{Sistema compatible indeterminado}
+
+Tiene infinitas soluciones, en $R^2$ son dos rectas coincidentes,
+cualquier punto de la recta funciona como solución.
+
+En $R^3$ puede ser la intersección de dos planos, que también forma una recta,
+de infinitos puntos.
+
+\subsubsection{Sistema incompatible}
+
+No tiene solución. Gráficamente en $R^2$ son dos rectas paralelas.
+
+En $R^3$ existe el caso de las \textit{rectas alabeadas}, es decir,
+que no son coplanares y por lo tanto no se intersecan.
+
+\subsection{Dos métodos}
+
+Los dos métodos clásicos de resolución son \textbf{igualación} y \textbf{sustitución}.
+
+Si es compatible \textit{determinado}, devuelven un número.
+Si es \textit{indeterminado}, devuelve una igualdad verdadera de dos números.
+
+Si es \textit{incompatible}, devuelve un absurdo.
+
+\subsection{Sistema lineal de tres incógnitas}
+
+Son \textit{lineales}, porque son polinomios de grado uno, y no hay 
+productos de las variables entre si, tipo $xy$.
+
+\subsection{Método de Gauss}
+
+Escribimos la matriz de coeficientes ampliada, que incluye la matriz de 
+coeficientes $A$ y la matriz de términos independientes $K$:
+
+\begin{equation*}
+    G = (A|K)
+\end{equation*}
+
+Hacemos combinaciones lineales hasta que tenemos un sistema escalonado,
+y de ahí resolvemos con ecuaciones.
+
+Si llego a una \textbf{contradicción}, el sistema es \textbf{incompatible}.
+
+Si llego a una fila $(0,0,0|0)$, es \textbf{compatible indeterminado},
+con lo que queda puedo establecer la recta intersección.
+
+\subsection{Regla de Cramer}
+
+Aplica para lineales que cumplan:
+
+\begin{enumerate}
+    \item Número de ecuaciones igual a número de incógnitas
+    \item Determinante de matriz de coeficientes distinto de 0
+\end{enumerate}
+
+Si cumplen, es compatible determinado y se denomina \textbf{sistema de Cramer}.
+
+\begin{enumerate}
+    \item Calculo el determinante de la matriz de coeficientes.
+    \item Para cada variable, sustituyo su columna por la matriz de términos independientes.
+    \item El valor de cada incógnita resulta de dividir el determinante de cada 
+    incógnita por el determinate de la matriz de coeficientes
+\end{enumerate}
+
+Ejemplo: 
+
+\begin{equation*}
+    \frac{\Delta_X}{\Delta}
+\end{equation*}
+
+\subsection{Teorema de Cramer}
+
+Permite analizar las soluciones de sistemas de ecuaciones lineales.
+
+El sistema tiene que ser cuadrado (\textbf{ecuaciones = incógnitas}).
+
+Si el determinante de la matriz de coeficientes $A$ es $|A|\neq 0$,
+es compatible determinado.
+
+Si $|A| = 0$, puede ser indeterminado o incompatible.
+
+\subsection{Sistema homogéneo de ecuaciones lineales}
+
+Un sistema de ecuaciones lineales es homogéneo si todos los \textbf{términos 
+independientes} son \textit{iguales a 0}, es decir, la matriz columna $k$ 
+de términos independientes tiene todos elementos 0.
+
+Todo sistema de ecuaciones lineales homogéneo tiene, como mínimo,
+la solución trivial, pero puede tener además infinidad de soluciones
+si es \textbf{SCI}.
+
+Aplicando regla de Crame, si el determinante es 0, un sistema de ecuaciones 
+homogéneo tiene infinitas soluciones.
+
+
+\subsection{Rango de una matriz}
+
+Es la mayor submatriz cuadrada que podemos encontrar cuyo determinante sea 
+distinto de 0. 
+
+Se puede entender como el número de filas o columnas linealmente independientes 
+que la matriz contiene.
+
+Una línea es linealmente dependiente cuando resulta de la combinación 
+lineal de las otras líneas de la matriz.
+
+Se simboliza $rang(A)$.
+
+
+\subsection{Teorema Rouché-Frobenius}
+
+Si el rango de la matriz de coeficientes $A$ es distinto del rango de la ampliada,
+el sistema es \textbf{incompatible}.
+
+\begin{equation*}
+    rang(A) \neq rang(A*) \implies\,\text{Sistema incompatible}
+\end{equation*}
+
+Si coinciden, es compatible. Ahora, para ser determinado,
+el rango debe ser igual al número de incógnitas,
+es decir,
+debe haber tantas líneas linealmente independientes como incógnitas.
+
+Si hay menos líneas independientes que incógnitas,
+es compatible indeterminado.
+
+Cuando el rango es igual, pero menor a $n$, consecuentemente el sistema 
+es compatible pero indeterminado, podemos calcular el 
+\textbf{grado de libertad} del sistema, de acuerdo a la diferencia entre 
+el rango y $n$. Por ejemplo, un sistema de rango 2, con 3 variables,
+tendrá una variable libre, su grado de libertad será 1.

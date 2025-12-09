@@ -1,0 +1,157 @@
+\section{Transformaciones lineales}
+
+Una transformación lineal es una función, que tiene dominio y codominio,
+con la particualidad que estos son \textbf{espacios vectoriales}.
+
+Es una regla que transforma vectores del espacio vectorial $V$ a vectores
+en $W$.
+
+No toda función que transforme $V\to W$ es una transformación lineal.
+
+Tiene que cumplir tres condiciones:
+
+\begin{align*}
+    T(u+v) = T(u) + T(v)      \\
+    T(k\cdot v) = k\cdot T(v) \\
+    T(0_v) = 0_w
+\end{align*}
+
+En la práctica, esto se logra con expresiones que:
+
+\begin{enumerate}
+    \item sean lineales
+    \item no multipliquen argumentos, o sea, no $xy$ y del estilo.
+    \item no haya términos independientes
+\end{enumerate}
+
+\subsection{Teorema fundamental de las tranformaciones lineales}
+
+Dados los espacios vectoriales $V$ y $W$,
+siendo $B = v_n$ base de $V$,
+y $w_n$ vectores de $w$,
+existe \textbf{una única} transformación lineal que verifica:
+
+\begin{align*}
+    T(v_n) = w_n
+\end{align*}
+
+Para buscar la transformación tomamos un vector genérico $(x,y)$,
+lo escribimos como resultado de transformación lineal de la base,
+$(x,y) = \alpha(1,0) + \beta(1,1)$.
+
+Las letras griegas son las coordenadas del vector de la base.
+Planteamos el sistema de ecuaciones y las depejamos.
+
+\begin{align*}
+    \begin{cases}
+        x = \alpha + \beta
+        y = \beta \implies \alpha = x - y
+    \end{cases}
+\end{align*}
+
+Aplicamos $T$ a ambos lados: $T(x,y) = \alpha T(1,0) + \beta T(1,1)$
+
+Sabemos que $T(1,0) = (0,1,0)$ y que $T(1,1) = (0,1,0)$, por lo tanto:
+
+\begin{align*}
+    T(x,y) = \alpha (0,1,0) + \beta (0,1,0) \\
+    T(x,y) = (x - y) (0,1,0) + y (0,1,0) \\
+    T(x,y) = (0, x - y + y, 0)
+\end{align*}
+
+Así obtenemos la expresión de la transformación: $T(x,y) = (0,x,0)$
+
+
+\subsection{Núcleo de una TL}
+
+El núcleo de la TL se denota $Nu(T)$, y es la base que resulta de igualar 
+la TL a $0_v$.
+
+Igualamos la TL a 0, despejamos y obtenemos una expresión, que la separamos en 
+vectores, esa es la base del núcleo.
+
+\begin{align*}
+    (x-2y, 0, 2x-4y) = (0,0,0) \implies x = 2y
+\end{align*}
+
+Como $z$ no aparece, \textbf{está libre}, entonces:
+
+\begin{align*}
+    (2y,y,z) = y(2,1,0) + z(0,0,1)
+\end{align*}
+
+La base del núcleo es $Nu(T) = (2,1,0),(0,0,1)$. Es de dimensión 2.
+
+\subsection{Imagen de una TL}
+
+Resulta de dividir en vectores la expresión que define la TL,
+por ejemplo:
+
+\begin{align*}
+    (x-2y, 0, 2x-4y) = x(1,0,2) + y(-2,0,-4)
+\end{align*}
+
+Como son LD, tomamos uno solo para la base: $Im(T) = (1,0,2)$. Es de dimensión 1.
+
+\subsection{Teorema de las dimensiones}
+
+Establece la relación entre dimensión de $V$, $Nu(V)$ e $Im(V)$:
+
+\begin{align*}
+    dim(V) = dim(Nu(T)) + dim(Im(T))
+\end{align*}
+
+
+\subsection{Clasificación de las transformaciones lineales}
+
+Son funciones y como tales pueden ser inyectivas, sobreyectivas y biyectivas.
+
+Sobreyectivas quería decir que podemos llegar a todos los elementos del 
+codominio. En otras palabras, si va a $R^2$, nuestra función abarca todo $R^2$
+con almenos un valor del dominio.
+Para todo valor en $Y$ hay un $x$ con el cual llegar.
+
+Inyectiva quiere decir que, para todo $Y$, hay solo un $x$ con el que podemos 
+llegar.
+
+Biyectivas, llegamos a todos y además solo a través de un $x$.
+
+Una transformación lineal es:
+
+\begin{itemize}
+    \item Monomorfismo si es inyectiva 
+    \item Epimorfismo si es sobreyectiva 
+    \item Isomorfismo si es biyectiva 
+    \item Endomorfismo si $V = W$
+\end{itemize}
+
+Si el núcleo de una TL es el vector nulo $0_v$,
+la TL es un monomorfismo. 
+
+Si la imagen es todo $W$, es epimorfismo.
+
+Si el núcleo es $0_v$ y además genera todo $W$, es isomorfismo.
+
+No es necesario analizar inyectividad y sobreyectividad por separado,
+una implica a la otra y solo ocurre cuando dominio y codominio tienen la 
+misma dimensión.
+
+\subsection{Matriz asociada a una TL}
+
+Es la matriz de coeficientes de la transformación lineal.
+
+\subsection{Inversa de la TL}
+
+Si tengo una transformación lineal biyectiva,
+es decir, que es un isomorfismo, 
+existe una transformación lineal inversa.
+
+Para determinarla construimos la asociada:
+
+\begin{align*}
+    M = \begin{pmatrix}
+        x \\ y \\ z
+    \end{pmatrix}
+\end{align*}
+
+Buscamos su inversa, y con ella encontramos la TL inversa.
