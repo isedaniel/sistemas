@@ -5,8 +5,8 @@
 2. [x] Matemática Discreta
 3. [x] Fundamentos de Programación
 4. [x] Organización de Empresas
-5. [ ] Álgebra y Geometría Analítica
-6. [ ] Física I
+5. [x] Álgebra y Geometría Analítica
+6. [x] Física I
 7. [x] Arquitectura de Computadores
 8. [x] Análisis de Sistemas I
 9. [x] Análisis de Sistemas II
