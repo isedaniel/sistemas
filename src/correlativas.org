@@ -1,0 +1,89 @@
+
+|---+--------------------+-----------------------------------------+---------------------|
+| A | Código             | Materia                                 | Correlativas        |
+|---+--------------------+-----------------------------------------+---------------------|
+|   | Primer Año         |                                         |                     |
+|---+--------------------+-----------------------------------------+---------------------|
+| X | I1101              | Análisis Matemático I                   |                     |
+| X | I1102              | Fundamentos de Programación             |                     |
+| X | I0129              | Matemática Discreta                     |                     |
+| X | I1103              | Organización de Empresas                |                     |
+| X | I0100              | Álgebra y Geometría Analítica           | I1101               |
+| X | I0106              | Física I                                | I1101               |
+| X | I0113              | Arquitectura de Computadoras            | I0219               |
+| X | I1209              | Estructuras de Datos y Algoritmos       | I1102, I0129        |
+|---+--------------------+-----------------------------------------+---------------------|
+|   | Segundo Año        |                                         |                     |
+|---+--------------------+-----------------------------------------+---------------------|
+| X | I1201              | Análisis Matemático II A                | I1101               |
+|   | I1202              | Física II A                             | I0106               |
+| X | I1203              | Fundamentos de Economía                 | –                   |
+|   | I0232              | Sintaxis y Semántica del Lenguaje       | I1209               |
+| X | I0210              | Análisis de Sistemas I                  | I1103, I1209, I0100 |
+|   | I1211              | Análisis Matemático II B                | I1201               |
+| X | I0211              | Análisis de Sistemas II                 | I0210               |
+|   | I0310              | Comunicaciones                          | I1209, I0113, I1202 |
+| X | I0226              | Paradigmas de Programación              | I0232               |
+| X | I1221              | Base de Datos I                         | I0210               |
+|---+--------------------+-----------------------------------------+---------------------|
+|   | Tercer Año         |                                         |                     |
+|---+--------------------+-----------------------------------------+---------------------|
+|   | I1312              | Base de Datos II                        | I1221               |
+|   | I1313              | Programación Avanzada I                 | I0226               |
+|   | I0312              | Diseño de Sistemas I                    | I0211, I1221        |
+|   | I0304              | Probabilidad y Estadística              | I0100               |
+|   | I1315              | Redes de Comunicación                   | I0310               |
+|   | I0233              | Sistemas Operativos                     | I1315               |
+|   | I0313              | Diseño de Sistemas II                   | I1313, I1312, I0312 |
+|   | I1329              | Programación Avanzada II                | I1313               |
+|   | I0376              | Ingeniería de Software I                | I0226, I0312        |
+|   | I1331              | Arquitectura de Computación en la Nube  | I1312, I1315        |
+|---+--------------------+-----------------------------------------+---------------------|
+|   | Cuarto Año         |                                         |                     |
+|---+--------------------+-----------------------------------------+---------------------|
+|   | I0487              | Desarrollo Avanzado de Software         | I1329, I0376        |
+|   | I0420              | Investigación Operativa                 | I0304               |
+|   | I0486              | Seguridad Informática                   | I0233, I1331        |
+|   | I1402              | Gestión de la Calidad                   | I0304               |
+|   | I0485              | Ingeniería de Software II               | I0376, I0313        |
+|   | I1316              | Teoría y Sistemas de Control            | I1202, I1211        |
+|   | I1427              | Sistemas de Gestión                     | I0420               |
+|   | I0507              | Inteligencia Artificial                 | I0487, I1312        |
+|   | I0432              | Simulación                              | I0304, I1211        |
+|   | I1415              | Gestión y Evaluación de Proyectos       | I1402, I1203, I0485 |
+|---+--------------------+-----------------------------------------+---------------------|
+|   | Quinto Año         |                                         |                     |
+|---+--------------------+-----------------------------------------+---------------------|
+|   | I1511              | Proyectos de Tecnología Informática     | I1415, I0486, I0485 |
+|   | I1                 | Electiva I                              | –                   |
+|   | I1512              | Inteligencia de Negocios                | I0432, I0507        |
+|   | I0503              | Administración Gerencial                | I1427, I1415        |
+|   | I1525              | Proyecto Integrador de Sistemas (Anual) | Todo                |
+|   | I1                 | Electiva II                             | –                   |
+|   | I1520              | Auditoría Operativa                     | I1427               |
+|   | I0401              | Seguridad, Higiene y Medio Ambiente     | –                   |
+|   | I0500              | Legislación y Ejercicio Profesional     | –                   |
+|   | I1525              | Proyecto Integrador de Sistemas (Anual) | Todo                |
+|---+--------------------+-----------------------------------------+---------------------|
+|   | Otros              |                                         |                     |
+|---+--------------------+-----------------------------------------+---------------------|
+|   | I1130              | Emprendedorismo I                       | TALLER              |
+|   | I1131              | Emprendedorismo II                      | TALLER              |
+|   | I0303              | Inglés I                                | TALLER              |
+|   | I0446              | Inglés II                               | TALLER              |
+|   | I1230              | Comunicación Efectiva I                 | TALLER              |
+|   | I1231              | Comunicación Efectiva II                | TALLER              |
+|   | I1330              | Trabajo colaborativo I                  | TALLER              |
+|   | I1332              | Trabajo colaborativo II                 | TALLER              |
+|   | I0555              | Práctica Profesional Supervisada        |                     |
+|---+--------------------+-----------------------------------------+---------------------|
+|   | Materias electivas |                                         |                     |
+|---+--------------------+-----------------------------------------+---------------------|
+|   | I1107              | Ecosistema Digital                      | –                   |
+|   | I1104              | Sistemas de Representación              | –                   |
+|   | I1401              | Metodología de la Investigación         | –                   |
+|   | I1508              | Marketing Digital y Analítica Web       | –                   |
+|   | I1216              | Sistemas Embebidos I                    | –                   |
+|   | I0536              | Comercialización                        | –                   |
+|---+--------------------+-----------------------------------------+---------------------|
+
