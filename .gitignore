@@ -1,4 +1,5 @@
 # some tex aux files
+*.dvi
 *.pdf
 *.log
 *.aux
