@@ -16,13 +16,13 @@
 |   | Segundo Año        |                                         |                     |
 |---+--------------------+-----------------------------------------+---------------------|
 | X | I1201              | Análisis Matemático II A                | I1101               |
-|   | I1202              | Física II A                             | I0106               |
+| X | I1202              | Física II A                             | I0106               |
 | X | I1203              | Fundamentos de Economía                 | –                   |
 |   | I0232              | Sintaxis y Semántica del Lenguaje       | I1209               |
 | X | I0210              | Análisis de Sistemas I                  | I1103, I1209, I0100 |
 |   | I1211              | Análisis Matemático II B                | I1201               |
 | X | I0211              | Análisis de Sistemas II                 | I0210               |
-|   | I0310              | Comunicaciones                          | I1209, I0113, I1202 |
+| X | I0310              | Comunicaciones                          | I1209, I0113, I1202 |
 | X | I0226              | Paradigmas de Programación              | I0232               |
 | X | I1221              | Base de Datos I                         | I0210               |
 |---+--------------------+-----------------------------------------+---------------------|
