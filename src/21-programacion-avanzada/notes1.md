@@ -172,7 +172,7 @@ class Persona
 
 Persona p2 = new Persona();
 
-p2.Presentarse(); // Mensaje a la 
+p2.Presentarse(); // Mensaje a la instancia de la persona
 ```
 
 También se puede declarar:
@@ -182,3 +182,9 @@ var p3 = new Persona();
 
 Persona p4 = new();
 ```
+
+# Condiciones uso de IA
+
+Se puede usar, pero la condición es que hay que entender todo el output.
+
+Si en la evaluación no sabemos defender el código, tenemos problemas.
