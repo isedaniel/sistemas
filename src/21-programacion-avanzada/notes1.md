@@ -105,6 +105,80 @@ propias del objeto.
 Ejemplo:
 Gato: Atributos: Color, peso. Métodos: maullar(), saltar()
 
+## Algunas características de C\#
+
+Es un lenguaje que compila a código _bytes_ para una máquina virtual.
+Propio del intérprete de la máquina virtual.
+
+Tiene la misma idea de Java, de programar una vez y que funcione en cualquier
+arquitectura.
+
+El `runtime` le dice al procesador que hacer. Es distinto a compilar a código 
+máquina como hace un compilador de `C` por ejemplo.
+
+Lo **importante para poder compilar** es el archivo del proyecto y el archivo
+\*.cs.
+
+Para crear el proyecto: `dotnet new console -o PATH`
+
+Para restaurar el proyecto: `dotnet restore`
+
+Para compliar: `dotnet build`
+
+Para correr: `dotnet run`
+
+Generalmente mandamos directo `dotnet run` que corre incluye a los otros dos.
+
+## Clase de ejemplo
+
+```csharp
+class Persona
+{
+    public string Nombre = "";
+    public string Apellido = "";
+    private int _edad = 0;
+    private int dni = 0;
+}
 ```
 
+Snipet básico para crear una clase.
+Ya vemos la Abstracción.
+Estos no son los únicos atributos de una persona real.
+Pero son los datos que serían relevantes para nuestro sistema.
+
+Los atributos por defecto son privados.
+
+Por convención, todo atributo público en C\# tiene nombre con `PascalCase`,
+arrancan con mayúscula.
+
+Los privados arrancan con `_`. Aunque también puede ser minúscula.
+
+En C\# no se llaman atributos, sino campos o _field_.
+Un atributo en C\# es lo que en Python sería un _decorador_.
+
+## Métodos 
+
+Se declaran en la clase.
+
+Refieren a los comportamientos propios de una clase.
+
+Un _mensaje_ es pedirle a un objeto que ejecute un método:
+
+```csharp
+class Persona
+{
+    public void Presentarse() { ... }
+}
+
+Persona p2 = new Persona();
+
+p2.Presentarse(); // Mensaje a la 
+```
+
+También se puede declarar:
+
+```csharp
+var p3 = new Persona();
+
+Persona p4 = new();
 ```
