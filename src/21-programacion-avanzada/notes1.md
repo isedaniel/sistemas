@@ -188,3 +188,4 @@ Persona p4 = new();
 Se puede usar, pero la condición es que hay que entender todo el output.
 
 Si en la evaluación no sabemos defender el código, tenemos problemas.
+
