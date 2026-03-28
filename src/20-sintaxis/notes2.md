@@ -83,9 +83,31 @@ La gramática permite llegar a un conjunto _set_ del lenguaje.
 
 A partir de un lenguaje, ¿se puede deducir una gramática?
 
-Quedamos en 46.
+# Gramática de formal de ejemplo
 
+$$G = (\Sigma_T, \Sigma_N, S, P)$$
 
-# TODO
+$$\Sigma_T = \{a, b\}$$
+$$\Sigma_N = \{S\}$$
+$$P = \{S ::== aSb, S ::== ab\}$$
 
-- [ ] Resolver ejercicios y entregar ejercicios
+Este lenguaje se representa igualmente como $a^n \cdot b^n$.
+
+# Forma abreviada
+
+Las reglas de pueden expresar $P = \{S ::= aSb, \> S ::= ab\}$ o
+$P = \{S ::= aSb | ab\}$.
+
+# Recursividad
+
+$$P = \{ N ::= CN | C, \> C ::= 0|1|2|3|4|5|6|7|8|9 \}$$
+
+Puedo tener recursividad a derecha:
+
+$$N \to CN \to 1N \to 1CN \to 12CN \to \cdots$$
+
+# Jerarquía de gramáticas
+
+Tipos de gramáticas según las resticciones que imponen.
+
+Quedo 1:44
