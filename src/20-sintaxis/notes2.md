@@ -108,6 +108,62 @@ $$N \to CN \to 1N \to 1CN \to 12CN \to \cdots$$
 
 # Jerarquía de gramáticas
 
-Tipos de gramáticas según las resticciones que imponen.
+Tipos de gramáticas según las restricciones que imponen.
 
-Quedo 1:44
+Tipos de gramáticas: Chosmky se puso a buscar una clasificación de las
+gramáticas. Después de estudiarlas mucho separa en cuatro conjuntos
+diferentes.
+
+## Tipo 3
+
+Las más estricta. Por ciertas reglas algunas palabras no se pueden formar.
+
+## Tipo 2
+
+Un poco más laxa.
+
+## Tipo 1
+
+Más laxa.
+
+## Tipo 0
+
+Se puede armar cualquier cosa.
+
+En el parcial podría aparecer: dadas estas reglas, ¿de qué tipo de gramática
+estamos hablando? ¿Dadas estas reglas, de qué jerarquía es?
+
+Viendo las reglas tenemos que saber determinar de qué tipo de jerarquía
+estamos hablando.
+
+# Ejemplos de gramáticas
+
+Recordar: formado por cuatro elementos. Con eso podemos definir una
+gramática. Con un **proceso de derivación** vemos las combinaciones
+posibles. Con eso llegamos al **lenguaje**.
+
+Lo interesante es más bien ir desde el **lenguaje** a la gramática.
+
+Este tema es clásico.
+Quedaría leer la teoría y resolver los ejercicios.
+Se puede encontrar explicado de formas muy complicadas.
+No deja de ser lo mismo.
+Una tupla que define una gramática que permite construir un lenguaje,
+haciendo los ejercicios de derivación.
+
+# Expresiones regulares
+
+Es una forma de usar las reglas gramaticales.
+Es una forma (rebuscada) de escribir una variación, como la que
+hacemos para ir desde una gramática a un lenguaje.
+
+Sirven para buscar y **validar** datos.
+
+# Definir un lenguaje
+
+(Por ejemplo Java). También se puede definir con estas reglas de
+producción.
+
+Hay que intentar resolver los ejercicios y subir al foro.
+Dudas y resultados.
+
