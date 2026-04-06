@@ -1,7 +1,14 @@
 
 # TODO
 
-- [ ] Redes: leer y resolver trabajos prácticos
-- [ ] Sintaxis: revisar último apunte
-- [ ] Programación avanzada: leer apuntes y resolver prácticos
-- [ ] BD2: revisar clases y resolver laboratorios
+- [ ] Redes: revisar clase pasada
+- [ ] Sintaxis: revisar clase pasada, revisar apuntes, hacer ejercicios
+  - [ ] Revisar clase pasada
+  - [ ] Revisar apuntes
+  - [ ] Resolver ejercicios
+- [ ] Programación avanzada:
+  - [ ] Leer apuntes
+  - [ ] Resolver prácticos
+- [ ] BD2:
+  - [ ] Revisar clases
+  - [ ] Resolver laboratorios
