@@ -15,7 +15,6 @@ date: 1/4/26
 
 - Reglas de producción
 
-- TODO: Resolver ejercicios de gramáticas
 
 # Jerarquías de Chosmky
 
@@ -53,4 +52,18 @@ $$\Sigma = \{a, b, c \cdots z\}$$
 
 Ejemplo de expresión regular:
 $$\{a | b\} \cdot c = \{a, b\} \cdot c = \{ac, bc\}$$
+
+# Equivocarse
+
+No siempre es un problema (salvo en el examen).
+
+# TODO
+
+- [ ] Leer apunte de expresiones regulares
+
+- [ ] Hacer tutorial `regexone`.
+
+- [ ] Resolver ejercicios de gramáticas
+
+- [ ] Rever videos
 
