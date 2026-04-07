@@ -1,14 +1,19 @@
 
 # TODO
 
-- [ ] Redes: revisar clase pasada
-- [ ] Sintaxis: revisar clase pasada, revisar apuntes, hacer ejercicios
-  - [ ] Revisar clase pasada
-  - [ ] Revisar apuntes
-  - [ ] Resolver ejercicios
-- [ ] Programación avanzada:
-  - [ ] Leer apuntes
-  - [ ] Resolver prácticos
-- [ ] BD2:
-  - [ ] Revisar clases
-  - [ ] Resolver laboratorios
+- Redes
+  - resolver práctico 4
+
+- Sintaxis
+  - Revisar clase pasada
+  - Revisar apuntes
+  - Resolver ejercicios
+
+- Programación avanzada
+  - Leer apuntes
+  - Resolver prácticos
+
+- BD2
+  - Revisar clases
+  - Resolver laboratorios
+
