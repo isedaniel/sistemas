@@ -5,7 +5,6 @@
   - resolver práctico 4
 
 - Sintaxis
-  - Revisar clase pasada
   - Revisar apuntes
   - Resolver ejercicios
 
