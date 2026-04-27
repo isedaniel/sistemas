@@ -10,7 +10,8 @@ date: 20 de abril
 Los requerimientos funcionales tienen que estar divididos: uno para agregar,
 otro para eliminar, otro para actualizar.
 
-La mejor base de datos trabaja como el *verdulero*
+La mejor base de datos trabaja como el *verdulero*: cada cosa va en su propia
+bolsa, en su propio cajón. (Minuto 40)
 
 # Devoluciones a nosotros
 
@@ -26,86 +27,88 @@ El primero tiene que ser el de cliente. En este caso, alumnos.
 
 // TODO: Para la clase que viene: documento SRS 830
 
-Estudio de factibilidad legal.
+// TODO: Factibilidad legal
 
-Para la clase que viene hay que subir.
+Para la clase del 27 de abril tenemos que subir el documento.
 
-Parcial el 4 de mayo. Entra todo lo que estamos haciendo. Incluye preguntas
-respecto de cómo solucionar problemas. Qué hacemos nosotros para resolver un
-problema. Hay que encontrar los problemas en los requerimientos. En eso
-consiste el primer parcial. Verdadero o falso, preguntas para desarrollar,
-análisis de archivos.
+# Parcial 4 de mayo
+
+Entra todo lo que estamos haciendo.
+
+- Incluye preguntas respecto de cómo solucionar problemas. Qué hacemos nosotros para resolver un problema. Hay que
+encontrar los problemas en los requerimientos
+
+- Un multiple choice
+
+- Un verdadero falso
+
+- Un análisis de requerimientos a corregir
 
 # Gráfico de burbuja
 
-Nombre, numeramos. Entidades con un rectángulo. El ciente le proporciona al
-sistema sus datos.
+Se supone que vimos todos los diagramas, salvo diagrama de flujo de datos.
 
-Metemos entonces: rectángulo de Cliente, va a óvalo Clientes. Tenemos una
-flecha que va del rectángulo al óvalo clientes. Esta flecha muestra cómo
-circulan los datos por el sistema. Una vez que tenemos los datos, hay que
-guardarlos.
+A la hora de hacer un sistema lo podemos hacer:
 
-Los guardamos en una *TABLA* de una base de datos. Se lo representa con líneas
-paralelas. Con el nombre de la entidad, en este caso Clientes. El alta del
-cliente se representa con flecha de burbuja hacia la tabla de almacenamiento.
+- Desarrollo tradicional: diagrama de flujo de datos
 
-En una flecha que va y viene del óvalo, tengo una cruz. Ahí represento alta,
-actualización y baja.
+- Desarrollo orientado a objetos: casos de uso, diagrama de secuencia
 
-Supongamos que nuestra empresa vende productos. Tenemos la burbuja 2 que son
-los productos, tenemos una tabla que se llama también Productos. Como estos se
-pueden dar de alta, baja, consulta y modificación, tenemos flecha que va,
-vuelve y tiene cruz por arriba. Quién me da los datos? Nadie.
+Desde un punto de vista tradicional, hacemos el diagrama de flujo de datos.
 
-Tenemos una tercer burbuja, ventas 3, cómo tenemos las ventas? Tomamos datos de
-cliente, que es quien compra, y datos de productos, que son los productos que
-compra. Tenemos flechas ida y vuelta a las tablas, respectivamente clientes y
-productos. Como al cliente lo identificamos por DNI, como `foreign key`, y
-código de producto, también como `FK`, ponemos `DNI` y `cod_prod` como
-características de la flecha.
+Las burbujas son una abstracción de una entidad del mundo real. Generalmente,
+algo que existe en el mundo real. Por ejemplo, un módulo de clientes. Que lo
+ponemos en una burbuja.
 
-¿Qué sale del óvalo? Una factura, que sería un rectángulo.
+¿De dónde obtenemos los datos del cliente? Del propio cliente. Por lo tanto la
+entidad cliente, representada por el rectángulo cliente, proporciona datos al
+módulo de cliente, representado por una burbuja. Ese es el flujo de datos: de
+la entidad al módulo.
 
-Esto es más o menos lo mismo que el diagrama de casos de uso. En casos de uso
-cliente será una persona dibujada, las flechas serán `extend` o `include`. Pero
-representa lo mismo.
+Una vez que tenemos los datos, los guardamos: en una tabla, de una base de
+datos. La tabla se representa con dos líneas paralelas. Una flecha va del
+módulo a la tabla.
 
-No puede haber nada suelto. TODO tiene que estar conectado. Ese es el DFD.
-Diagrama de Flujo de Datos.
+La entidad manda Datos de cliente al módulo. El módulo tiene una flecha que va
+a la tabla, cuando guardo y consulto, y tiene una flecha que vuelve, que
+representa la corrección. Si la tacho con una cruz, a la flecha que va y viene,
+también implica eliminación. En este caso, el cliente se puede ingresar,
+consultar, actualizar y eliminación. Flecha que va y viene <-x-> con cruz en el
+medio.
 
-# Acomplamiento y cohesión
+Si tenemos otro módulo, por ejemplo el módulo Productos, módulo número 2, va en
+una burbuja. Los productos se pueden dar de alta, de baja, modificar y
+consultar: Flecha ida y vuelta con cruz. Quién me da los datos? Nadie, los
+tengo que obtener yo. Entonces, no hay entidad que suministre los datos.
 
-BACA con b larga. Significa: Bajo Acomplamiento Cohesión Alta.
+Tenemos la burbuja 3, el módulo de Ventas. De dónde toma sus datos. De
+Productos y de Clientes. De dónde salen. De las tablas de la base de datos. Qué
+datos viajan. En el caso de la boleta, lo que identifica al cliente. Por
+ejemplo, el DNI, entonces en la flecha que va y viene escribimos DNI. En el
+caso del producto, el código de barras. No siempre tenemos que incluir todos
+los datos.
 
-Bajo Acomplamiento es que cada módulo sea lo más independiente posible de los
-demás. Si un módulo depende de otros cuatro, tenemos un acomplamiento alto. Hay
-que hacer cada módulo lo más independiente posible. De manera tal que si
-modifico uno, no tenga que modificar otros.
+Qué sale de ventas. Una factura. Es una entidad, etnocnes va en rectángulo. La
+factura lleva sus datos, por lo tanto la flecha dice "Datos Factura". Se lo
+pone con un color distinto para que sepa que es un documento de salida.
 
-Cohesión alta significa que cada módulo haga una sola cosa.
+Este diagrama representa el flujo de datos dentro del sistema. Representa lo
+mismo que el diagrama de casos de uso.
 
-(Note: es la filosofía UNIX, módulos que hagan una sola cosa cada uno).
+Requisitos: todas las entidades tienen que estar conectadas. Las burbujas no se
+conectan entre sí (por lo general, salvo que los módulos usen información en
+memoria sin pasar por bases de datos). Pero por lo general, van a base de datos
+y de ahí lo toma otro módulo.
 
-Esto es la base para un sistema bien diseñado.
+Si hay una burbuja que hace muchas cosas, hay que dividirla en más burbujas.
+Esto se denomina *explotar* una burbuja. Se hace porque no estamos cumpliendo
+con el acomplamiento y la cohesión, dos reglas básicas.
 
-# Diagrama de flujo de datos - Nivel 0
+- Acoplamiento: cada módulo dependa lo menos posible de otros. Cada uno lo más
+  independiente posible. Que cada uno se modifique por separado.
 
-DFD de nivel 1: Diagrama de sistema.
+- Cohesión: que cada uno haga una sola cosa.
 
-Una vez que tenemos el de nivel 1, hacemos el de nivel 0: el DFD de nivel 0.
-Se llama Diagrama de Contexto. El diagrama de contexto es una sola burbuja,
-grande, que representa a todo el sistema.
-
-Por ejemplo, una sola burbuja que dice "sistema de ventas", solo se pone
-aquellas cosas que son externas al sistema, en este caso, la entidad cliente,
-si hubiera entidad proveedor, entidad proveedor. Representamos con flechas el
-flujo de datos desde las *entidades* al sistema.
-
-En definitiva, el sistema como una caja negra.
-
-# DFD
-
-Armando el DER nos damos cuenta que nos faltan o sobran almacenamientos,
-entonces volvemos al DFD y actualizamos.
+Siempre recordar BACA: bajo acomplamiento, cohesión alta. (Note: filosofía
+UNIX).
 
