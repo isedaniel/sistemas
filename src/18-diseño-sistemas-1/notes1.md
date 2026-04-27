@@ -180,4 +180,84 @@ Tiene tres patas (a veces cuatro):
 De ese análisis sale el informe con estudio de factibilidad, diagrama de Pertt,
 Diagrama de Gantt, que sirven fundamentalmente para estimar tiempos.
 
-(quedo en 1:00)
+El cliente va a hacer tres preguntas:
+
+- Cuánto va a costar
+
+- Cuánto tiempo vas a tardar (Diagrama de Pertt o de Gantt)
+
+- Cuánto tiempo voy a demorar en recuperar la inversión (Nota: ecuación de
+costo beneficio)
+
+Siempre estimar de más. Si mi diagrama dice 7 meses, estimamos 9. Si suceden
+imprevistos, lo entregamos en 9. Si lo entregamos antes, el cliente va a estar
+más contento.
+
+Lo mismo con el costo: siempre presupuestar de más y devolvemos la plata
+cualquier cosa. Así no pedimos más después. Cliente y nosotros contentos.
+
+Una vez está todo esto. Recién aquí hacemos el diseño del sistema.
+
+# Diagrama del flujo de datos
+
+El cliente da el Ok. Aquí empezamos a trabajar en el diseño del sistema.
+Primero hacemos el diseño global, en papel. Qué hacemos.
+
+Graficamos como se mueven los datos dentro del sistema que estamos diseñando.
+Cómo se comunica una parte con otra. Cómo se mueven los datos por el sistema
+que estamos diseñando.
+
+# Diagrama de entidad-relación
+
+Es el diseño de la base de datos. Se diseña por un lado el sistema y por otro
+la base.
+
+Una vez tenemos la base, la optimizamos, con las reglas de normalización, para
+optimizar la base de datos. (Formas normales)
+
+Si hacemos nuestro diseño orientado a objetos, usamos: casos de uso e historias
+de usuario.
+
+Hasta los casos de uso hacemos el diseño. Eso es lo que corresponde a esta
+materia. No vamos a programar. Pero vamos a hacer todo el resto del trabajo. Se
+lo damos al programador y él lo hace.
+
+# Notas sobre programación orientada a objetos
+
+No es lo más común. Frente a cada proyecto tomamos decisiones. Para algunas
+cosas nos conviene. Para otras no. Hay casos en los cuales es imposible usar la
+POO.
+
+# Programación, pruebas, implementación
+
+El programador programa. Pasamos a etapa de pruebas. Una vez que sabemos que
+todo está bien vamos al cliente. Implementamos. Luego de la implementación,
+pasamos la prueba, vemos que todo funciona. Pasamos a mantenimiento.
+
+# Mantenimiento
+
+Regla número 1: Si algo funciona, no se toca. La etapa de pruebas está para
+eso. La etapa de mantenimiento tiene que consistir en hacer *agregados*
+(agregar funcionalidades).
+
+El mantenimiento *no* incluye resolver errores. Si tiene errores hicimos algo
+mal.
+
+# Desmantelamiento
+
+Es cuando el sistema deja de usarse, por el motivo que fuere: cambio de rubro
+de la empresa, cambios en políticas de la empresa, cambios en la dirección de
+la empresa, cambios en la normativa legal que implica cambiar un sistema (o
+directamente lo deja obsoleto).
+
+Un sistema viejo no necesariamente está obsoleto. La muestra son los sistemas
+hechos en COBOL. Es decir, en ese caso, el problema es que no hay
+programadores, no que los sistemas no funcionen.
+
+Esos sistemas se llaman *sistemas heredados* (*Legacy*).
+
+# Cursada
+
+Cuando hay temas nuevos, estamos atentos al foro, el profe nos habla. Si el
+profe no pone nada, no tenemos clase sincrónica, sino que nos encontramos luego
+de desarrollar las prácticas.
