@@ -1,154 +1,81 @@
 ---
-title: Notas Segunda Clase Diseño de Sistemas 1
+title: Notas de clase
 author:
 - Daniel
-date: 2026-03-30
+date: 30 de marzo
 ---
 
-(Revisar primeros 35 minutos de la clase).
+# Gestión de un proyecto de Software
 
-# Dirigir
+Ya sabemos qué es el ciclo. Ahora tenemos que ver cómo gestionamos un proyecto
+de Software. Gestionar un proyecto implica:
 
-- Decirle a los demás lo que tienen que hacer.
-  - Sin metodologías ágiles: director, gerente
-  - En metodologías agiles: no hay director, hay otros roles
-    - Product Owner (PO): exclusivo de SCRUM. No está en otras
-    metodologías ágiles.
+- Planificar: decidir qué vamos a hacer. Un cliente me pide un *software*.
+  Puedo desarrollar o asesorar para que compre un *software* que ya existe. La
+  tercera opción puede ser: la reestructuración de la empresa. Sin necesidad de
+  software. Hay algo que la empresa está haciendo mal. No es necesario
+  *software*, ni desarrollado a medida ni comprar un paquete. Y hay una cuarta
+  opción. Resolver algo ilegal que está pasando dentro de la empresa.
 
-# Monitorear
+Una auditoría se puede hacer porque hay procesos que no se están cumpliendo.
+Esa también es una de las competencias de los ingenieros en sistemas.
 
-Observar el progreso del proyecto: vamos bien, mal, como vamos con tiempos,
-costos, etc.
+En principio, gestionar es planificar. Teniendo el plan, tenemos que *organizar
+el plan*. Aquí entra ver tiempos, costos. Se puede implementar un Gantt y otras
+herramientas para organizar tiempos.
 
-# Controlar
+Tercer punto, asignar personal: elegir las personas adecuadas para cada tarea.
+No se puede asignar a ojo. Tenemos que concer al personal. Conocer sus
+características. Sus habilidades. Sus puntos fuertes y débiles. En general en
+el área de *software* tenemos: los que tienen habilidades de comunicación y los
+que quieren desarrollar y no hablar con la gente. Es difícil encontrar alguien
+bueno en ambas.
 
-Emprender acciones para corregir problemas que van apareciendo.
-Diagnosticamos que vamos mal con el tiempo: implementamos una serie de
-acciones para recuperar el tiempo perdido.
+Cuarto punto, viene *dirigir*, decirle a los demás lo que tienen que hacer.
+Normalmente, si usamos metodologías ágiles no hay director, hay otros roles que
+se encargan de esto. Por ejemplo, el *Product Owner*, exclusivo de SCRUM.
 
-# Representar
+Definidos estos cuatro puntos básicos, hay que hacer otras actividades.
 
-Más de un perfil tipo PO: Servir de vínculo entre clientes y desarrolladores.
-Que todo el mundo entienda para dónde vamos y por qué.
+Una es *monitorear*. Vamos bien, mal, atrasados, cómo vamos con los costos.
+Observar cómo es el progreso del proyecto.
 
-# Innovar
+La siguiente acción es *controlar*: emprender acciones frente a ese monitoreo
+que estamos haciendo. En el monitoreo diagnosticamos y aquí ejecutamos.
 
-Más importante y tal vez la más difícil.
-¿Qué significa? Incorporar alguno nuevo es mejorar.
-Innovar es hacer algo *totalmente* distinto a lo que ya estamos haciendo.
-Mejora es incorporar algo. Innovar es hacer algo *completamente* nuevo.
+*Representar*: vincular desarrolladores y usuarios.
 
-Nueva *feature* no es innovar. Innovar es hacer algo nuevo que nadie haya
-hecho antes. Ejemplo: hoy en día hay tendencias de construcción fuera de
-lo tradicional, como _steel framing_, construcción en seco. Completamente
-distinto de usar ladrillo, arena, cemento, etcétera.
+La más importante, tal vez la más difícil, *innovar*. Hacer una cosa distinta a
+lo que existía. Innovar es proponer una solución novedosa. Por ejemplo, la
+construcción no tradicional. Eso es innovar. Podría ser nuevo en el sector.
 
-Podría ser totalmente nuevo para un sector en particular.
+Nos vamos a enfrentar a *problemas*. Eso se relaciona con la *gestión de
+riesgos*. Problemas interpersonales, falta de comunicación, cambios en
+requerimientos.
 
-# Gestión de riesgos
+# Estándares de trabajo
 
-Enfrentar fechas límites, cambios inesperados, conflictos de personal,
-problemas de comunicación, tener metas no medibles (KPI), negociación,
-falta de estándares y medidas de calidad, documentación mal hecha o
-faltante, dos o tres personas haciendo lo mismo, falta de compromiso,
-cambios inesperados en los requerimientos.
+Tenemos que implementar estándares.
 
-En base a esto, establecemos estándares de trabajo:
-- Emplear metodologías bien definidas. Más vale mala metodología que niguna.
+- Establecer una metodología (mejor que no tener ninguna)
 
-- Establecer estándares de medida que permitan medir el avance del proyecto
+- Establecer estándares de medidas, que podamos medir el avance en números
 
-- Estimar correctamente costos y tiempos.
+- Estimar costos y tiempos
 
-- Replantearnos resultados en cosas que no están saliendo como queremos que
-salgan.
+- Replantearnos resultados en cosas que no están saliendo como queríamos que
+  salgan. Replantear por eso cómo venimos trabajando.
 
-En nuestra profesión, algunas cosas a tener en cuenta:
+Hay cuestions específicas de nuestra profesión.
 
-- Complejidad: los proyectos de software son muy complejos, las cosas
-pueden no salir como esperábamos.
+- Compejidad: el software es complejo
 
-- Flexibilidad: el software tiene que poder responder a los cambios que
-aparezcan.
+- Flexibilidad: puede cambiar nuestros desafíos
 
-- Invisibles para el usuario: el trabajo de un arquitecto se ve.
-El avance de la obra se va viendo.
-En nuestra profesión el avance a veces no se ve. El cliente no entiende
-nada de lo que estamos haciendo. No podamos mostrar el diagrama de casos
-de uso, la base de datos. Para el cliente nuestro trabajo es *invisible*.
-Al cliente, por esta *incertidumbre*, le pueden entrar dudas sobre el
-retorno de la inversión. Las *metodologías ágiles* puede ayudar a reducir
-ese problema, pero no eliminarlo del todo.
+- Invisibilidad para el usuario: el cliente no ve el progreso, a diferencia de
+  otros oficios como la arquitectura. Con las metodologías ágiles podemos
+  reducir este problema.
 
-# Autores fundamentales
+# Principios para el desarrollo de software
 
-Roger Pressman. Ian Sommervile. Edward.
-
-# Roger Pressman
-
-Para llevar adelante un proyecto tenemos que tener en claro la regla de las
-4P:
-
-- Personal
-
-- Producto
-
-- Proceso
-
-- Proyecto
-
-Esas 4P tienen unas preguntas asociadas.
-
-*Personal:* quiénes los vamos a hacer.
-
-*Producto:* qué vamos a fabricar.
-
-*Proceso:* cómo lo voy a hacer.
-
-*Proyecto:* para qué lo voy a hacer.
-
-Con eso tenemos un esquema para presente y futuro.
-Podemos diagnosticar dónde estamos ahora y qué vamos a hacer para llegar
-a los objetivos que queremos alcanzar.
-
-Todo esto está subido en el aula en unos apuntes.
-
-# Clases subsiguientes
-
-A medida que aprendemos, vamos a ir trabajando en el práctico cuatrismestral.
-Formar grupos de 4 personas, ni más ni menos.
-
-Vamos a tener propuestas y cada grupo va a tener que trabajar en cada tema.
-No elegir cosas pretenciosas porque va a ser complicado.
-Ejemplo: grupo 1, propuestas: software para delivery de productos,
-veterinaria y una fábrica.
-El profe analiza cada propuesta y asigna.
-Qué es lo importante: hacer una práctica profesional real.
-Esto implica que el lugar exista en la realidad. No puede ser inventado.
-Tener una experiencia de hacer una elicitación, hablar con la gente.
-Alguno tiene que tener acceso a un negocio o empresa real.
-No vamos a construir el sistema, solo lo vamos a diseñar en papel.
-Para experimentar los problemas y dificultades de la etapa de diseño.
-Vamos a trabajar con una metodología ágil, elegimos cuál aplicamos.
-Definimos roles de cada uno.
-Vamos a ir presentando cada cierta cantidad de tiempo los avances del
-trabajo.
-
-Para la clase que viene:
-tener definido grupo, integrantes y propuestas.
-
-Definido grupo y tema, hacemos la *elicitación*. Lo fundamental es,
-además de obtener documentación,
-definir requerimientos funcionales y no funcionales del sistema a construir.
-
-Ya tenemos habilitados la plantilla y el ejemplo.
-La plantilla está vacía. La plantilla es igual, tiene que ver con las
-normas de desarrollo de software.
-Siempre que vamos a hacer un desarrollo, hay que usar esa plantilla.
-Depende del país para el cual vamos a trabajar.
-Es una cuestión legal.
-
-Entonces:
-- armar grupos
-- armar 3 propuestas de trabajo
-
+Autores fundamentales. (Minuto 37)
