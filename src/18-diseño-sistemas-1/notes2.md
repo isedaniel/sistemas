@@ -78,4 +78,41 @@ Hay cuestions específicas de nuestra profesión.
 
 # Principios para el desarrollo de software
 
-Autores fundamentales. (Minuto 37)
+Autores fundamentales del desarrollo de software:
+
+- Roger Pressman
+
+- Ian Sommerville
+
+- Edward Yourdon
+
+Tres fundamentales y básicos. Pressman plantea que para llevar adelante un
+desarrollo hay que tener en cuenta las 4P:
+
+- Personal: quiénes lo van a a desarrollar.
+
+- Proceso: cómo lo vamos a desarrollar.
+
+- Producto: qué vamos a desarrollar.
+
+- Proyecto: para qué vamos a desarrollar esto.
+
+Presenta un esquema de presente y futuro: dónde estamos ahora y hacia dónde
+queremos ir.
+
+# Siguientes clases
+
+A medida que desarrollamos las clases vamos a ir trabajando en el trabajo
+práctico cuatrimestral. Nadie puede trabajar solo ni de a dos. Grupos de 4 a 6,
+no más que eso.
+
+Cada grupo de trabajo presenta tres propuestas de diseño de software. El
+profesor asigna el diseño a cada grupo. No hay que hacer cosas pretenciosas. La
+institución para la que vamos diseñar el software tiene que ser real, no puede
+ser inventada. Formado el grupo, acodarmos temas. En base a instituciones.
+Reales. Sin importar distancias. No nos afecta. Lo importante es tener acceso.
+Cada cierta cantidad de tiempo vamos presentando avances.
+
+Luego de definir el sistema. Desarrollamos la plantilla SRS 830, válida para
+toda América.
+

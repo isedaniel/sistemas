@@ -11,11 +11,12 @@ Entra todo lo visto. Si o si:
 
 - Multiple choice.
 
-- Verdadero/falso
+- Verdadero/falso.
 
-- Preguntas a desarrollar
+- Situación problemática, que tenemos que resolver con los conocimientos que
+  tenemos hasta el momento.
 
-- Archivos a corregir
+- Graficar diagrama de flujo de datos.
 
 # Notas sobre los requerimientos funcionales
 
@@ -66,4 +67,71 @@ renglones.
 
 Si consideramos que ya podemos ordenar el backlog y el SRS, lo armamos.
 
-TODO: Revisar clase
+# Diagrama de flujo de datos
+
+Se arma con entidades externas, módulos del sistema y tablas de bases de datos.
+Ahora vamos a ver explosión de burbujas y burbujas temporales. Así como el paso
+de información de burbuja a burbuja.
+
+Trabajamos el nivel 0 y el nivel 1. Tenemos la burbuja 1. Burbuja 2. Y burbuja
+3. Hay cosas a tener en cuenta. No puede suceder que la burbuja 1 tenga muchas
+flechas de entrada. Una burbuja que recibe mucho se llama resumidero infinito.
+El problema es que solo entren o solo salgan.
+
+Tampoco puede haber una burbuja apuntando a otra sin almacenamiento previo. En
+la mayoría de los casos, la información pasa a una base de datos y de ahí lo
+toma otro módulo. La flecha directa implica que los datos en memoria se toman
+directamente, no se guardan nunca en bases de datos. Es más común en sistemas
+de tiempo real. Como equipamiento médico.
+
+Otro problema. Una burbuja hace muchas cosas. Eso está mal. No estamos
+trabajando bien.
+
+Nuestra metodología es *top-down*: un problema grande lo dividimos en problemas
+más chicos. Qué cosas no estaría cumpliendo esta burbuja. Tendría poca
+cohesión. Acomplamiento: cuando una depende de otras. Cohesión: cuando hace
+una sola cosa. Hay que determinar cada cosa y subdividir.
+
+Subidividir se llama **explosión**. De una burbuja, en un siguiente nivel, hago
+la burbuja 1.1, 1.2, 1.3, etcétera.
+
+Puede ser que muchas burbujas se conecten a la misma tabla, no hay problema.
+
+Pero puede pasar que aparezcan nuevas tablas. Cuando aparece una nueva tabla en
+un nivel inferior, tengo que incorporarla al nivel superior.
+
+Supongamos que en nivel 2 sigue siendo mucho. En nivel tres, volvemos a
+dividir: tenemos burbuja 1.2.1, 1.2.2, y así sucesivamente. Si aparece otra
+tabla en el nivel 3, nuevamente la subimos.
+
+Para evitar las explosiones, tener en cuenta desde el inicio BACA: bajo
+acomplamiento, cohesión alta: que los módulos sean independientes, que hagan
+una sola cosa.
+
+Pensar por ejemplo, en nuestra interfaz. En el menú tenemos opciones. Si
+clickeo en esta opción: cuántos submenús me aparecen. Si tengo 3 submenús,
+exploto la burbuja.
+
+Para evitarme explotar, cómo hago. A veces corresponde una acción a cada
+módulo. Por ejemplo, en lugar de un módulo listado, listamos en cada uno de los
+módulos. Previsualizamos de antemano para evitar explotar.
+
+Estamos en condiciones de hacer el Diagrama de Flujo de datos.
+
+// TODO: Diagrama de flujo de datos
+
+Después del parcial tenemos que tener un bosquejo del DFD del sistema.
+
+# Devolución a nuestro trabajo
+
+No es necesario separar en módulos los requerimientos funcionales.
+
+Antes de los requisitos de consulta, hay que poner requerimiento funcional de
+darlo de alta.
+
+Antes de toda consulta, hay que poner el alta. Create, Read, Update, Delete.
+
+Tenemos que reordenar por módulo.
+
+Sistema de gestión de notas tiene que ser el foco.
+
