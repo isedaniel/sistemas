@@ -2,7 +2,6 @@
 # TODO
 
 - Diseño Sistemas
-  - Repasar para parcial
 
 - Redes
 
