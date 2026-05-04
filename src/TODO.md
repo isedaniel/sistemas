@@ -1,18 +1,25 @@
 
 # TODO
 
+- Diseño Sistemas
+  - Repasar para parcial
+
 - Redes
-  - resolver práctico 4
 
 - Sintaxis
+  - Revisar clases
   - Revisar apuntes
   - Resolver ejercicios
 
 - Programación avanzada
+  - Revisar última clase
   - Leer apuntes
   - Resolver prácticos
 
 - BD2
-  - Revisar clases
+  - Clase 2
+  - Clase 3
+  - Clase 4
   - Resolver laboratorios
+  - Resolver ejemplos
 
