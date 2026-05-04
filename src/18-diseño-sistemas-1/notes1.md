@@ -1,5 +1,5 @@
 ---
-title: Notas primera clase
+title: Notas de clase
 author:
 - Daniel
 date: 16 de marzo
@@ -7,60 +7,69 @@ date: 16 de marzo
 
 # Origenes de un sistema
 
-Diseño de un sistema es lidiar con algo que puede o no existir. Y tenemos que
-lidiar con eso.
+Diseño de un sistema es lidiar con algo que puede o no existir. ¿Dónde nace un
+sistema?
 
-¿Dónde nace un sistema? 
+Hay dos caminos para el nacimiento de un sistema:
 
-Hay dos caminos posibles:
+- Un cliente solicita un sistema porque *percibe* que lo necesita.
 
-- Alguien nos solicita porque *cree* que necesita un sistema.
+- Diseñamos un sistema porque vemos una oportunidad de negocio.
 
-- Podemos diseñar un sistema porque vemos una oportunidad de negocio que
-  podemos aprovechar.
+En el primer caso un cliente piensa que necesita un sistema. Nuestro trabajo,
+en un primer momento, es determinar si eso es realmente así.
 
-# Primer paso de un diseño: entrevista
+En el segundo caso, creemos que puede haber una oportunidad de negocio creando
+un sistema que cumple una función novedosa. Y lo diseñamos.
+
+# Primera entrevista
 
 Un cliente nos llama porque necesita un sistema. ¿Qué hacemos?
 
-Primera entrevista con el cliente, tomamos un cafe, escuchamos la idea.
-Todo se cobra. Tratamos de indagar en la necesidad de esa persona. Ver si
-necesita un sistema, capaz existe otra solución, que no requiere diseñar un
-sistema nuevo.
+Primera entrevista con el cliente, tomamos un cafe, escuchamos su situación
+actual. Todo se cobra. Esta entrevista también. (NOTE(dan): depende).
+Tratamos de indagar en sus necesidades. Ver si realmente necesita un sistema, 
+capaz existe una solución que no requiere diseñar un sistema a medida.
 
-Luego de esa entrevista, hacemos un informe, donde ponemos por escrito todo lo
-que hemos hablado con esta persona. La volvemos a llamar y nos encontramos.
-Charlamos sobre el **primer informe**. Llevamos dos copias, nos fijamos si está
-de acuerdo, si está de acuerdo, lo firma. Nos quedamos con una copia y la otra
-se la queda el cliente.
+Luego de la entrevista hacemos un informe. Ponemos por escrito todo lo
+charlado. Nos volvemos a encontrar y analizamos el **primer informe**. 
+
+Llevamos dos copias. Si está de acuerdo con el informe lo firma. Nos quedamos
+una copia y la otra para el cliente.
 
 Pueden pasar dos cosas:
 
-- Esto es lo que hablamos, lo firmo.
+- El cliente dice: esto es lo que hablamos, lo firmo.
 
-- Me olvide de contarte esto, lo otro, reelaboramos el informe y volvemos a
-  elaborar.
+- O dice: Me olvide de contarte esto, lo otro, reelaboramos el informe y
+  volvemos a charlar.
 
-¿Por qué hacemos esto? En el informe escribimos las necesidades, lo que nos
-dice el cliente, la descripción *general* del sistema que quiere. Es para tener
-un archivo al que remitirnos por si el cliente después cambia de opinión. Son
-un *resguardo legal* de lo que vamos trabajando. El primero no es tan
-importante, pero es un resguardo desde el principio. También es una forma de
-mostrar profesionalidad. Mostramos documentación que avala el trabajo que
-estamos por hacer. Todavía no mostramos requerimientos, no los tenemos, solo
-una idea muy vaga de lo que el cliente quiere hacer.
+En el informe escribimos las necesidades que el cliente manifiesta, lo que nos
+dice, la *descripción general* del sistema que quiere. El objetivo es un
+archivo al que remitirnos por si el cliente después cambia de opinión. El
+informe es un *resguardo legal* de lo que vamos trabajando.
+
+El primer informe no es tan importante en términos técnicos. Pero es un
+resguardo. También es una forma de mostrar profesionalismo. Mostramos
+documentación que avala el trabajo que estamos por hacer.
+
+Todavía no especificamos requerimientos. No los tenemos. Ni los podemos tener.
+El objetivo es plantea una idea a grandes rasgos sobre lo que el cliente quiere
+hacer.
 
 Pasamos a la segunda etapa.
 
-# Relevamiento (elicitación)
+# Relevamiento (o elicitación)
 
-Un sistema siempre existe: es un conjunto de elementos que actúa de manera
-coordinada para lograr un objetivo. Lo que podemos ver es si existe un *sistema
-informático*. Con independencia de si hay o no un sistema informático, hay un
-sistema *social*, una asociación de personas funcionando.
+Notar que un sistema siempre existe: es un conjunto de elementos, actuando de
+forma coordinada para lograr un objetivo.
 
-El objetivo del relevamiento es entender cómo funciona la empresa, qué tarea
-hace cada uno, cómo se organizan.
+Con independencia de si la empresa cuenta o no con un *sistema informático*,
+siempre hay un sistema *social*, una asociación de personas funcionando, con
+mayor o menor eficiencia y eficacia, en pos de un objetivo común.
+
+La idea del relevamiento o elicitación es entender cómo funciona ese sistema,
+cómo funciona la empresa, qué tarea hace cada uno, cómo se organizan.
 
 ¿Qué hago en el relevamiento? No importa el tamaño de la organización, primero
 pedimos el *organigrama*. Muestra la estructura de la empresa. Cómo está
@@ -72,56 +81,58 @@ organizada. Pueden pasar dos cosas:
 
 - No tenemos organigrama: lo armamos nosotros
 
-¿Para qué necesito el organigrama? Para armar las entrevistas. Tenemos que
-programar cómo vamos a hacer las entrevistas, si vamos a utilizar otras
-técnicas de recolección de datos como cuestionario, utilizar otro medio, etc.
-El organigrama es una herramienta para planificar nuestro relevamiento.
-A niveles inferiores, generalmente es más sencillo acceder a relevar
-información.
+¿Para qué necesito el organigrama? Para armar las entrevistas.
+
+Tenemos que programar cómo vamos a hacer las entrevistas, si vamos a utilizar
+otras técnicas de recolección de datos como cuestionario, utilizar otro medio,
+etc. El organigrama es una herramienta para planificar nuestro relevamiento. A
+niveles inferiores, generalmente es más sencillo acceder a relevar información.
+Hablar con un gerente puede no ser tan sencillo.
 
 Tenemos entrevistas con todos los actores que se vinculan con el sistema. En
-este paso podemos entrevistar, hacer observación directa, o cuestionario.
-También podemos hacer un muestreo, mucha gente hace lo mismo, entonces tomamos
+este paso podemos entrevistar, hacer observación directa o cuestionarios.
+También podemos hacer un muestreo, si muchas personas hacen lo mismo. Tomamos
 un subconjunto de los actores. Ese subconjunto es la muestra.
 
 ¿Cómo construyo la muestra? Voy con el jefe y pregunto: cuál es el más antiguo,
-cuál es el más nuevo, y uno entre medio. Pregunto por el más antiguo porque es
-el que más conoce a la empresa. Pregunto por el nuevo porque tiene ideas
-diferentes al que tiene mucho tiempo en la empresa. El del medio sirve para
-equilibrar un poco la balanza. (Nota: En definitiva, buscamos *experiencias*
+cuál es el más nuevo, y uno en el medio. Pregunto por el más antiguo porque es
+el que más conoce la empresa. Pregunto por el nuevo porque tiene ideas
+diferentes al que tiene mucha experiencia. Y el del medio sirve para equilibrar
+un poco la balanza. (Note(dan): En definitiva, buscamos *experiencias*
 distintas).
 
 *Cosa fundamental*. Cómo hago las entrevistas.
 
-¿Qué hago primero? Me *presento* de manera formal. El objetivo es *transmitir
+¿Qué hago primero? Me *presento* formalmente. El objetivo es *transmitir
 tranquilidad*, no estamos para evaluar nada. Si no hacemos esto, la persona se
 pone a la defensiva y dificulta nuestro trabajo.
 
 En segunda instancia, cómo almaceno los datos de la entrevista. *Nunca
 grabamos*. Jamás de los jamases bajo ningún punto de vista grabar las
-entrevistas. A la vieja usanza. Lápiz y papel y vamos anotando. Los
-desarrolladores a veces trabajamos de psicólogos, tenemos que escuchar cosas
-que no son relevantes a nosotros. Pero tenemos que trabajar con eso. Tenemos
-que *llevarlos a cosas que sean relevantes para nosotros*, de forma humana. La
-grabación puede poner al entrevistado a la defensiva.
+entrevistas. A la vieja usanza. Lápiz y papel.
 
-En tercera instancia, preguntamos: hay documento que utilices en tu trabajo. Si
-hay por ejemplo, nota de pedido, remito. *Pedimos una copia de toda la
-documentación*. Porque probablemente el sistema va a tener que generar esa
-documentación.
+Los desarrolladores a veces trabajamos de psicólogos. Tenemos que escuchar
+cosas que no son relevantes a para nuestro trabajo. Pero tenemos que trabajar
+con eso. Tenemos que *llevarlos a cosas relevantes*, pero de forma humana.
 
-Luego de hacer el laburo, vamos a tener los requerimientos.
+En tercera instancia, preguntamos: qué documentos usas en tu trabajo. Si hay
+notas de pedido, remitos, etc. *Pedimos una copia de toda la documentación*.
+Porque es muy probable que el sistema tenga que generar esa documentación.
+
+Después de las entrevistas y la elicitación, tenemos los requerimientos.
 
 # Requerimientos
 
 Hay requerimientos funcionales y no funcionales. La forma más fácil de
-entenderla es:
+distinguirlos es:
 
-- Los requerimientos funcionales son aquellas cosas que tenemos que programar
-  en un lenguaje de programación.
+- Los requerimientos funcionales son aquellos aspectos del sistema que tenemos
+  que programar nosotros.
 
 - Un requerimiento no funcional no necesita ser programado, tiene que ver con
-  el entorno de nuestro sistema.
+  el entorno en que se despliega nuestro sistema.
+
+Si tengo que programarlo, es requerimiento funcional.
 
 Por ejemplo, en un cajero automático tenemos que programar toda la interfaz,
 que solicite la tarjeta, que solicite la clave. La disponibilidad del cajero
@@ -133,14 +144,14 @@ involucran cómo lo hace. Tiene que ver con el entorno, *no* con lo que el
 sistema hace en sí mismo.
 
 Los requerimientos, funcionales o no, *NO se agrupan*. Alta, baja, consulta,
-listado, son cuatro requerimientos funcionales distintos. Por qué. Porque cada
-uno se programa por separado. (Nota: Lo que se programa por separado es un
+listado, son cuatro requerimientos funcionales distintos. Porque cada uno se
+programa por separado. (Note(dan): Lo que se programa por separado es un
 requerimiento funcional separado).
 
 # Informe + RF + RNF
 
 Hacemos un informe, con el relevamiento, requerimientos funcionales, no
-funcionales, lo presentamos y se firma.
+funcionales, lo presentamos. Si el cliente está de acuerdo, firma nuevamente.
 
 # Cuándo cobramos
 
@@ -151,9 +162,10 @@ algunas etapas.
 Como profesionales, no podemos hacer las cosas gratis. Tenemos que cobrar desde
 la primera entrevista. Cada etapa del ciclo de vida se va cobrando. Si es un
 sistema grande que lleva muchos meses de trabajo, puede que nunca cobremos,
-puede pasar de todo, se puede fundir la empresa, etc.
+puede pasar de todo, se puede fundir la empresa. Por lo tanto, se cobra por
+etapa.
 
-# Etapa de análisis
+# Etapa de análisis. Estudio de factibilidad
 
 Después de analizar todo, hacemos el estudio de factibilidad, que consiste en
 ver si es posible o no hacer el sistema.
@@ -190,30 +202,30 @@ El cliente va a hacer tres preguntas:
 costo beneficio)
 
 Siempre estimar de más. Si mi diagrama dice 7 meses, estimamos 9. Si suceden
-imprevistos, lo entregamos en 9. Si lo entregamos antes, el cliente va a estar
-más contento.
+imprevistos, lo entregamos en 9. Si no suceden imprevistos, lo entregamos
+antes. De cualquier forma, el cliente va a estar contento.
 
 Lo mismo con el costo: siempre presupuestar de más y devolvemos la plata
-cualquier cosa. Así no pedimos más después. Cliente y nosotros contentos.
+cualquier cosa. Así no pedimos más después. Pedir más después es una
+complicación. Devolviendo dejamos al cliente contento.
 
-Una vez está todo esto. Recién aquí hacemos el diseño del sistema.
+Teniendo esto, empieza el diseño del sistema.
 
-# Diagrama del flujo de datos
+# Diagrama del flujo de datos (DFD)
 
 El cliente da el Ok. Aquí empezamos a trabajar en el diseño del sistema.
 Primero hacemos el diseño global, en papel. Qué hacemos.
 
 Graficamos como se mueven los datos dentro del sistema que estamos diseñando.
-Cómo se comunica una parte con otra. Cómo se mueven los datos por el sistema
-que estamos diseñando.
+Cómo se comunica una parte con otra.
 
-# Diagrama de entidad-relación
+# Diagrama de Entidad-Relación (DER)
 
 Es el diseño de la base de datos. Se diseña por un lado el sistema y por otro
 la base.
 
-Una vez tenemos la base, la optimizamos, con las reglas de normalización, para
-optimizar la base de datos. (Formas normales)
+Una vez tenemos la base, la optimizamos, siguiendo las reglas de normalización,
+para optimizar la base de datos. (Formas normales)
 
 Si hacemos nuestro diseño orientado a objetos, usamos: casos de uso e historias
 de usuario.
@@ -232,7 +244,7 @@ POO.
 
 El programador programa. Pasamos a etapa de pruebas. Una vez que sabemos que
 todo está bien vamos al cliente. Implementamos. Luego de la implementación,
-pasamos la prueba, vemos que todo funciona. Pasamos a mantenimiento.
+pasamos la prueba, vemos que todo funcione. Pasamos a mantenimiento.
 
 # Mantenimiento
 
@@ -240,15 +252,15 @@ Regla número 1: Si algo funciona, no se toca. La etapa de pruebas está para
 eso. La etapa de mantenimiento tiene que consistir en hacer *agregados*
 (agregar funcionalidades).
 
-El mantenimiento *no* incluye resolver errores. Si tiene errores hicimos algo
-mal.
+El mantenimiento *no* incluye resolver errores. Si tiene errores es porque
+hicimos algo mal.
 
 # Desmantelamiento
 
 Es cuando el sistema deja de usarse, por el motivo que fuere: cambio de rubro
-de la empresa, cambios en políticas de la empresa, cambios en la dirección de
-la empresa, cambios en la normativa legal que implica cambiar un sistema (o
-directamente lo deja obsoleto).
+de la empresa, cambios en políticas de la empresa, cambios en la dirección,
+cambios en la normativa legal que implica cambiar un sistema (o directamente lo
+deja obsoleto).
 
 Un sistema viejo no necesariamente está obsoleto. La muestra son los sistemas
 hechos en COBOL. Es decir, en ese caso, el problema es que no hay
@@ -261,3 +273,4 @@ Esos sistemas se llaman *sistemas heredados* (*Legacy*).
 Cuando hay temas nuevos, estamos atentos al foro, el profe nos habla. Si el
 profe no pone nada, no tenemos clase sincrónica, sino que nos encontramos luego
 de desarrollar las prácticas.
+

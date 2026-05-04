@@ -10,12 +10,16 @@ date: 30 de marzo
 Ya sabemos qué es el ciclo. Ahora tenemos que ver cómo gestionamos un proyecto
 de Software. Gestionar un proyecto implica:
 
-- Planificar: decidir qué vamos a hacer. Un cliente me pide un *software*.
-  Puedo desarrollar o asesorar para que compre un *software* que ya existe. La
-  tercera opción puede ser: la reestructuración de la empresa. Sin necesidad de
-  software. Hay algo que la empresa está haciendo mal. No es necesario
-  *software*, ni desarrollado a medida ni comprar un paquete. Y hay una cuarta
-  opción. Resolver algo ilegal que está pasando dentro de la empresa.
+- Planificar: decidir qué vamos a hacer.
+
+Un cliente me pide un *software*.
+
+- Puedo desarrollar o asesorar para que compre un *software* que ya existe. La
+  tercera opción puede ser: la reestructuración
+de la empresa. Sin necesidad de software. Hay algo que la empresa está haciendo
+mal. No es necesario *software*, ni desarrollado a medida ni comprar un
+paquete. Y hay una cuarta opción. Resolver algo ilegal que está pasando dentro
+de la empresa.
 
 Una auditoría se puede hacer porque hay procesos que no se están cumpliendo.
 Esa también es una de las competencias de los ingenieros en sistemas.
@@ -66,7 +70,7 @@ Tenemos que implementar estándares.
 - Replantearnos resultados en cosas que no están saliendo como queríamos que
   salgan. Replantear por eso cómo venimos trabajando.
 
-Hay cuestions específicas de nuestra profesión.
+Hay cuestiones específicas de nuestra profesión.
 
 - Compejidad: el software es complejo
 

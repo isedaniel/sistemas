@@ -44,17 +44,11 @@ encontrar los problemas en los requerimientos
 
 - Un análisis de requerimientos a corregir
 
-# Gráfico de burbuja
-
-Se supone que vimos todos los diagramas, salvo diagrama de flujo de datos.
-
-A la hora de hacer un sistema lo podemos hacer:
+# Diagrama de flujo de datos
 
 - Desarrollo tradicional: diagrama de flujo de datos
 
 - Desarrollo orientado a objetos: casos de uso, diagrama de secuencia
-
-Desde un punto de vista tradicional, hacemos el diagrama de flujo de datos.
 
 Las burbujas son una abstracción de una entidad del mundo real. Generalmente,
 algo que existe en el mundo real. Por ejemplo, un módulo de clientes. Que lo
@@ -88,7 +82,7 @@ ejemplo, el DNI, entonces en la flecha que va y viene escribimos DNI. En el
 caso del producto, el código de barras. No siempre tenemos que incluir todos
 los datos.
 
-Qué sale de ventas. Una factura. Es una entidad, etnocnes va en rectángulo. La
+Qué sale de ventas. Una factura. Es una entidad, entonces va en rectángulo. La
 factura lleva sus datos, por lo tanto la flecha dice "Datos Factura". Se lo
 pone con un color distinto para que sepa que es un documento de salida.
 
@@ -102,7 +96,7 @@ y de ahí lo toma otro módulo.
 
 Si hay una burbuja que hace muchas cosas, hay que dividirla en más burbujas.
 Esto se denomina *explotar* una burbuja. Se hace porque no estamos cumpliendo
-con el acomplamiento y la cohesión, dos reglas básicas.
+con el acoplamiento y la cohesión, dos reglas básicas.
 
 - Acoplamiento: cada módulo dependa lo menos posible de otros. Cada uno lo más
   independiente posible. Que cada uno se modifique por separado.
