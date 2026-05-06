@@ -75,6 +75,8 @@ representa _valores de los atributos del sistema_.
 Cada nodo representa distintos estados del sistema. Cada estado representa
 valores que asumen las variables del sistema.
 
+(QUEDO: 00:22:00)
+
 
 El conjunto finito de estados se puede representar con un grafo.
 
