@@ -1,4 +1,3 @@
-
 ---
 title: Tercera Clase de Sintaxis y Semántica del Lenguaje
 date: 1 de abril

@@ -1,26 +1,31 @@
 ---
-title: Cuarta clase
-author:
-- Daniel
+title: Cuarta Clase de Sintaxis y Semántica del Lenguaje
 date: 8 de abril
 ---
 
-# Jerarquía de Chomsky
+# Jerarquía de Chosmky
 
-Tipo 3 la más restrictiva a tipo 0 la menos restrictiva.
+Permite clasificar gramáticas de acuerdo a sus reglas. Los lenguajes de
+programación son de tipo 2 y algunas cuestiones de tipo 1.
 
-`Nota:
-Los lenguajes de programación son tipo 2, con algunas cuestiones de tipo 1.`
+De acuerdo a las reglas, genero los lenguajes. Puede haber un ida y vuelta.
+Desde un lenguaje busco una gramática.
+
+También están los autómatas. Son máquinas de datos que pueden procesar
+símbolos. Las gramáticas se vinculan también con autómatas al igual que con los
+lenguajes. Y los autómatas con los lenguajes.
+
 
 # Autómatas
 
-Máquinas de datos que pueden procesar símbolos.
+Son máquinas de datos que procesan símbolos.
 
-Cada nivel de las gramáticas se relaciona con un tipo de autómata.
+Los autómatas también tienen niveles, al igual que la jerarquía de las
+gramáticas. Cada nivel de las gramáticas se relaciona con un tipo de autómata.
 
-Sigue habiendo cuatro niveles de lenguajes, gramáticas y autómatas.
+Sigue habiendo cuatro niveles de lenguajes, gramáticas y autómatas. Cada nivel
+se relaciona entre si.
 
-Cada nivel se relaciona entre si.
 
 # Tipos de autómatas
 
@@ -32,23 +37,44 @@ Cada nivel se relaciona entre si.
 
 - Autómatas tipo 3: Autómatas finitos
 
-TODO: investigar máquina de Turing.
+// TODO: investigar máquina de Turing
 
-Es un autómata, pero una herramienta super importante en informática.
+Es un autómata, pero una herramienta super importante en informática. Muchos
+algoritmos se basan en la máquina de Turing para demostrarse. Es un elemento
+teórico central de las ciencias de la computación.
+
+Una máquina de Turing puede correr cualquier cosa. Aunque es complicada para el
+trabajo cotidiano.
+
 
 # Autómata finito
 
-Definición: tupla de 5 elementos. $A = (K, \Sigma, s, F, f)$
+Se parece a las gramáticas. En este caso lo definimos como una tupla de 5
+elementos. $A = (K, \Sigma, s, F, f)$
 
 - K: conjunto finito de estados
 
 - $\Sigma$: alfabeto de símbolos de _entrada_
 
-- s: estado inicial, $s \in K$
+- s: estado inicial, que pertenece a K $s \in K$
 
 - F: conjunto de estados finales, $F \in K$
 
 - f: funciones de transición, colecciones de reglas.
+
+
+# Repaso de grafos
+
+Tenemos nodos (estados) y aristas. 
+
+Qué sería un estado. Representa una condición del sistema. Por ejemplo,
+representando un auto. Una condición del sistema puede ser `Apagado`. Otra
+condición `Encendido y detenido`. Y la tercera `En movimiento`. Cada estado
+representa _valores de los atributos del sistema_.
+
+Cada nodo representa distintos estados del sistema. Cada estado representa
+valores que asumen las variables del sistema.
+
 
 El conjunto finito de estados se puede representar con un grafo.
 
