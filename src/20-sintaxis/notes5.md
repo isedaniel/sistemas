@@ -1,20 +1,24 @@
 ---
-title: Notas quinta clase
-author:
-- Daniel
+title: Quinta Clase de Sintaxis y Semántica del Lenguaje
 date: 22 de abril
 ---
 
-# Simplificación de AFD
+Por qué es relevante profundizar hoy en Sistemas. Porque no estamos estudiando
+para ser usuarios. Estamos estudiando para ser ingenieros.
 
-AFD es autómata finito determinístico. Están estos y los no determinísticos.
-Ahora vamos a ver los determinísticos.
+(Quedamos 00:05:00)
+
+# Simplificación de Autómata Finito Determinístico (AFD)
+
+Un autómata puede ser determinístico o no determinístico. Depende de si, dado
+un nodo/estado, y una entrada, el nodo destino es siempre el mismo.
+
 Tenemos grafo y representación en la matriz. Los dos dicen esencialmente lo
-mismo. Tengo inicio, posiciones finales y caminos posibles. Si tenemos un grafo
-grande (equivalente a matriz grande) la simplificación genera el AFD mínimo que
-soporta el mismo lenguaje. (Es decir, esto plantea la posibilidad de grafos o
-matrices redundantes para representar un lenguaje, puedo simplificarlo y que
-sea equivalente).
+mismo.
+
+Dado un grafo grande, la simplificación genera un AFD equivalente que soporta
+el mismo lenguaje. (Es decir, una matriz o grafo redundante se reduce a uno no
+redundante).
 
 Un *comportamiento* es una tupla con los posibles nodos a los que puedo ir.
 Entonces, determino los comportamientos para cada nodo, en definitiva a qué
