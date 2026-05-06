@@ -175,18 +175,19 @@ puede encontrar explicado de formas muy complicadas. No deja de ser lo mismo.
 Una tupla que define una gramática que permite construir un lenguaje, haciendo
 los ejercicios de derivación.
 
-# Expresiones regulares
+# Próxima clase
 
-Es una aplicación práctica de las reglas gramaticales.
-Es una forma de usar las reglas gramaticales.
+Vamos a profundizar en gramáticas. Y su representación en forma de grafos. Que
+se relaciona con autómatas.
 
-Las expresiones regulares son una forma (rebuscada) de escribir una variación,
-como la que hacemos para ir desde una gramática a un lenguaje.
+# Aplicación práctica
 
-En este caso, las expresiones regulares se usan para buscar y _validar_ datos.
+Las Expresiones Regulares (RE) son una forma _diferente_ de
+expresar gramáticas formales. Es su aplicación práctica directa.
+
+Se usan para buscar y _validar_ datos.
 
 # Definir un lenguaje
 
 (Por ejemplo Java). Se puede definir un lenguaje con las reglas gramaticales.
 
-(1:51:00)
