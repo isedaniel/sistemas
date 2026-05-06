@@ -1,28 +1,22 @@
 ---
-title: Notas Segunda Clase
-author:
-- Daniel
-date: 25/3/26
+title: Segunda Clase de Sintaxis y Semántica del Lenguaje
+date: 25 de marzo
 ---
 
 # Repaso
 
-Símbolo: Unidad indivisible
+- Símbolo. Es unidad indivisible.
 
-Alfabeto: conjunto de símbolos
+- Alfabeto. Conjunto finito, no vacío, de símbolos.
 
-Palabras: combinaciones de los elementos de las palabras.
-Se generan a partir del alfabeto.
-Hay diferentes operaciones para generar las palabras:
+- Palabra: Combinaciones de símbolos concatenados. Se generan partiendo por un
+  alfabeto. Hay diferentes operaciones para generar las palabras:
+  * Concatenación
+  * Rotación
+  * Potenciación
 
-* Concatenación
-
-* Rotación
-
-* Potenciación
-
-Las operaciones _idempotentes_ se pueden simplificar:
-las que se revierten entre si, como la potencia negativa aplicada dos veces.
+Las operaciones _idempotentes_ se pueden simplificar: las que se revierten
+entre si, como la potencia negativa aplicada dos veces.
 
 Con las palabras se puede generar un conjunto infinito de combinaciones.
 
@@ -34,101 +28,133 @@ del lenguaje natural, pero no es lo mismo.
 Los seres humanos nos entendemos _de milagro_, porque el lenguaje es
 tremendamente ambiguo.
 
-Las gramáticas: describen, validan, generan: un lenguaje.
+Las gramáticas son reglas. Que permiten describir, generar o validar un
+lenguaje. Por ejemplo:
 
-Por ejemplo: la primer letra de cada oración va con mayúscula.
+- La primer letra de cada oración va con mayúscula.
+- Una variable en Python no puede empezar por un número.
 
-Las reglas permiten pasar de las palabras al lenguaje.
+Permiten _validar un lenguaje_. Esto es, distinguir _qué palabras son válidas_
+y cuáles no, de forma sistemática.
 
-Así permiten _validar un lenguaje_, es decir, permite decir _qué palabras
-son válidas_ y cuáles no, de forma sistemática.
+Las *reglas gramaticales* permiten _generar_ un lenguaje. Y validar: determinar
+qué palabras son válidas y qué palabras no.
 
-Ejemplo: las variables en C no pueden empezar con un número.
+Ejemplo: defino un lenguaje. Mi alfabeto es $\Sigma = \{ 0 \dots 9 \}$, y las
+reglas, que $dd/mm/AAAA$. Definimos ese formato y algunas reglas para los
+símbolos que puede tener.
 
-Las **reglas** permiten _generar_ el lenguaje: qué palabras son válidas
-y qué palabras no.
+Ejemplo 2: generar passwords a partir de reglas de generación.
 
-# Gramática formal
+# Gramática Formal
 
-Definción: $G = (\Sigma_T, \,\Sigma_N, \,S, \,P)$
+Para hacer las reglas establecemos la gramática formal. Para definir una
+gramática formal utilizamos una tupla que incluya cuatro elementos:
 
-Es una tupla, o cuaterna.
-No tiene llaves, sino paréntesis.
-Eso quiere decir que tiene un orden.
-Es la diferencia entre un conjunto (_set_) y una _tupla_.
+- $G = (\Sigma_T, \Sigma_N, S, P)$
 
-Características:
+Es una tupla(técnicamente, cuaterna). La diferencia es que un conjunto
+(_set_) no es ordenado, y una _tupla_ por definición es ordenada.
+
+Elementos de la gramática formal:
 
 $\Sigma_T$: Alfabeto de símbolos terminales
 
 $\Sigma_N$: Alfabeto de símbolos NO terminales
 
-$S$: Símbolo inicial (_axioma_), perteneciente a $\Sigma_N$
+$S$: Símbolo inicial (_axioma_), perteneciente a Símbolos no terminales
+$\Sigma_N$
 
 $P$: conjunto finito y acotado de reglas de producción
 
-Define una regla para hacer reemplazos.
-Arranco por el símbolo inicial y siguiendo las reglas de producción tengo las
-palabras válidas e inválidas.
+# Proceso de transformación.
 
-Con esto podemos definir un lenguaje de programación.
-No alcanza para determinar si compila o no, pero alcanza para hacer una
-validación **sintáctica** del lenguaje.
+- Símbolos terminales $\Sigma_T = \{ a, b \}$.
+- Símbolos No terminales $\Sigma_N = \{ S, T \}$.
+- Símbolo inicial: $S ::= aT$.
+- Reglas: $P = \{ S::= aT, T ::= a, T ::= b \}$
 
-Esto se puede llevar a la electrónica para validar un circuito.
+Tengo los símbolos terminales y no terminales. Notar que son disjuntos. En las
+reglas defino el _axioma_ o símbolo inicial. Arranco por ahí. $aT$. La $T$ hay
+que sustituirla por alguna de las reglas: $T::=a$ o $T::=b$. 
+
+Entonces, las palabras válidas para esta gramática serían $\{ aa, ab \}$.
+Notar que son palabras compuestas exclusivamente por símbolos terminales.
+
+Con reglas gramaticales se puede definir un lenguaje de programación. No
+alcanza para determinar si compila. Pero alcanza para validar
+*sintácticamente*.
+
+También se puede llevar a la electrónica para validar un circuito.
 
 # Lenguaje asociado
 
-La gramática permite llegar a un conjunto _set_ del lenguaje.
+La gramática permite llegar a un lenguaje $L$. En el ejemplo, llegamos a
+$L=\{aa, ab\}$.
 
-A partir de un lenguaje, ¿se puede deducir una gramática?
+Los símbolos no terminales no aparecen en el lenguaje. Por convención, los
+símbolos no terminales se escriben en mayúscula y los terminales en minúscula.
 
-# Gramática de formal de ejemplo
+A partir de una gramática se puede definir un lenguaje. A partir de un
+lenguaje, se puede _inferir_ una gramática.
+
+# Otra gramática de formal de ejemplo
 
 $$G = (\Sigma_T, \Sigma_N, S, P)$$
 
 $$\Sigma_T = \{a, b\}$$
 $$\Sigma_N = \{S\}$$
-$$P = \{S ::== aSb, S ::== ab\}$$
+$$P = \{S ::= aSb, S ::= ab\}$$
 
-Este lenguaje se representa igualmente como $a^n \cdot b^n$.
+
+Notar que usando una sola regla $S$, de forma _recursiva_, podemos definir un
+lenguaje. Tenemos un caso base $S ::= ab$ y un caso recursivo $S ::= aSb$.
+
+Notar también que Este lenguaje se puede representar como la concatenación:
+$a^n \cdot b^n$.
 
 # Forma abreviada
 
-Las reglas de pueden expresar $P = \{S ::= aSb, \> S ::= ab\}$ o
+Las reglas de pueden expresar $P = \{S ::= aSb, S ::= ab\}$ o
 $P = \{S ::= aSb | ab\}$.
 
-# Recursividad
+Permite expresar un símbolo no terminal con todas sus variantes.
 
-$$P = \{ N ::= CN | C, \> C ::= 0|1|2|3|4|5|6|7|8|9 \}$$
+# Gramática formal y recursividad
 
-Puedo tener recursividad a derecha:
+- $P = \{ N ::= CN|C, C ::= 0|1|2|3|4|5|6|7|8|9 \}$
 
-$$N \to CN \to 1N \to 1CN \to 12CN \to \cdots$$
+Con estas reglas puedo tener recursividad a la derecha:
 
-# Jerarquía de gramáticas
+- $N \to CN \to 1N \to 1CN \to 12CN \to \cdots$
 
-Tipos de gramáticas según las restricciones que imponen.
+También podríamos tener recursividad a la izquierda, mediante la regla:
+$N ::= NC$
 
-Tipos de gramáticas: Chosmky se puso a buscar una clasificación de las
-gramáticas. Después de estudiarlas mucho separa en cuatro conjuntos
-diferentes.
+# Jerarquía de Gramáticas
 
-## Tipo 3
+Las gramáticas se clasifican de acuerdo a las restricciones que se imponen.
 
-Las más estricta. Por ciertas reglas algunas palabras no se pueden formar.
+Tipos de gramáticas. Establecidas por Chomsky. Hizo una jerarquía. Que
+clasifica en cuatro conjuntos.
 
-## Tipo 2
+- Gramáticas regulares o Tipo 3
 
-Un poco más laxa.
+Las más restrictiva. A través de las reglas de producción, se definen las
+palabras. Hay palabras no válidas.
 
-## Tipo 1
+- Gramáticas independientes del contexto o Tipo 2
+
+Permiten un conjunto mayor de reglas para generar más palabras. Un poco más
+laxa.
+
+- Gramáticas sensibles al contexto o Tipo 1
 
 Más laxa.
 
-## Tipo 0
+- Gramáticas irrestrictas o Tipo 0
 
-Se puede armar cualquier cosa.
+Básicamente se puede definir cualquier cosa en esta gramática.
 
 En el parcial podría aparecer: dadas estas reglas, ¿de qué tipo de gramática
 estamos hablando? ¿Dadas estas reglas, de qué jerarquía es?
@@ -139,31 +165,28 @@ estamos hablando.
 # Ejemplos de gramáticas
 
 Recordar: formado por cuatro elementos. Con eso podemos definir una
-gramática. Con un **proceso de derivación** vemos las combinaciones
-posibles. Con eso llegamos al **lenguaje**.
+gramática. Con un _proceso de derivación_ vemos las combinaciones
+posibles. Con eso llegamos a un _lenguaje_.
 
-Lo interesante es más bien ir desde el **lenguaje** a la gramática.
+(Lo más interesante es ir del lenguaje a la gramática).
 
-Este tema es clásico.
-Quedaría leer la teoría y resolver los ejercicios.
-Se puede encontrar explicado de formas muy complicadas.
-No deja de ser lo mismo.
-Una tupla que define una gramática que permite construir un lenguaje,
-haciendo los ejercicios de derivación.
+Este tema es clásico. Quedaría leer la teoría y resolver los ejercicios. Se
+puede encontrar explicado de formas muy complicadas. No deja de ser lo mismo.
+Una tupla que define una gramática que permite construir un lenguaje, haciendo
+los ejercicios de derivación.
 
 # Expresiones regulares
 
+Es una aplicación práctica de las reglas gramaticales.
 Es una forma de usar las reglas gramaticales.
-Es una forma (rebuscada) de escribir una variación, como la que
-hacemos para ir desde una gramática a un lenguaje.
 
-Sirven para buscar y **validar** datos.
+Las expresiones regulares son una forma (rebuscada) de escribir una variación,
+como la que hacemos para ir desde una gramática a un lenguaje.
+
+En este caso, las expresiones regulares se usan para buscar y _validar_ datos.
 
 # Definir un lenguaje
 
-(Por ejemplo Java). También se puede definir con estas reglas de
-producción.
+(Por ejemplo Java). Se puede definir un lenguaje con las reglas gramaticales.
 
-Hay que intentar resolver los ejercicios y subir al foro.
-Dudas y resultados.
-
+(1:51:00)
