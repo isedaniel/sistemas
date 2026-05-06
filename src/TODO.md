@@ -2,23 +2,21 @@
 # TODO
 
 - Diseño Sistemas
+  - Preparar entrega DFD
 
 - Redes
+  - Preparar clase Unidad 6
 
 - Sintaxis
-  - Revisar clases
-  - Revisar apuntes
-  - Resolver ejercicios
+  - Preparar clase compiladores
 
 - Programación avanzada
   - Revisar última clase
-  - Leer apuntes
-  - Resolver prácticos
+  - Practicar
 
 - BD2
   - Clase 2
   - Clase 3
   - Clase 4
-  - Resolver laboratorios
-  - Resolver ejemplos
+  - Practicar ejemplos
 
