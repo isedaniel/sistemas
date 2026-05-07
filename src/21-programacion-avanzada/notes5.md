@@ -265,4 +265,76 @@ catch
 }
 ```
 
-(Quedo: 03:00:00)
+# Cast condicional
+
+Puedo checkear el tipo de un objeto sobre una clase base. De ahí, según el
+tipo, casteo y opero. (Se me ocurre que puedo también hacer un método virtual y
+meter override en las subclases).
+
+```csharp
+if (empleado is Desarrollador)
+{
+    ((Desarrollador)empleado).Desarrollar();
+}
+else if (empleado is Disenador)
+{
+    ((Disenador)empleado).Disenar();
+}
+```
+
+# Excepciones propias
+
+Creamos una excepción propia `EdadInvalidaException`. Por convención, todas
+terminas en `Exception`. Hereda de la clase base `Exception`.
+
+```csharp
+using System;
+
+public class EdadInvalidaException
+{
+    public EdadInvalidadException : base() {}
+
+    public EdadInvalidaException(string mensaje) : base(mensaje) {}
+}
+```
+
+Tenemos 2 constructores. Uno por defecto que llama al constructor de
+`Exception` y otro que manda le mensaje al constructor de `Exception` que
+recibe una string.
+
+La usamos:
+
+```csharp
+public class Validador
+{
+    public static void ValidarEdad(int edad)
+    {
+        if (edad < 18)
+        {
+            throw EdadInvalidaException("No puede ser menor a 18 años");
+        }
+    }
+}
+```
+
+Por último, en `Main`, la manejamos con un bloque `try-catch`.
+
+# Excepción interna
+
+Cuando una función tira una `Exception`, puedo pasarle otra excepción, que
+sería la _excepción interna_.
+
+```csharp
+try
+{
+    // ...
+}
+catch (InvalidOperationException ex) // Capturo en ex
+{
+    throw new Exception("Excepción!", ex); // Paso ex
+}
+```
+
+Con una `InnerException`, puedo llamar luego `ex.InnerException.Message`, para
+escalar una excepción entre niveles.
+
