@@ -18,6 +18,7 @@ Hacemos explícito el espacio de nombre de `Program.cs`, encabezando con
 `namespace ejercicio1;`.
 
 Editamos la configuración del proyecto y deshabilitamos _namespace implícito_.
+`<ImplicitUsings>disable</ImplicitUsings>`.
 
 Para los ejercicios de esta materia, por lo general, vamos a crear clases
 públicas.
@@ -78,6 +79,190 @@ Una clase abstracta _no puede_ ser instanciada.
 
 Revisar en apunte.
 
+# Sobrecarga de métodos
+
+Mientras tenga firmas distintas, puedo volver a declarar métodos con el mismo
+nombre.
+
+La firma está compuesta por el identificador del método y los tipos de sus
+argumentos. Ejemplo `int Sumar(int a, int b) {}` tiene firma `Sumar(int, int)`.
+
+Puedo declarar un sumar que sume doubles. `double Sumar(double a, double b)`.
+Tenemos firma `Sumar(double, double)`. Esta posibilidad de reutilizar el
+identificador, cambiando la firma, se conoce como **sobrecarga** de un método.
+
 # Sobrecarga de operadores
 
-(00:53:00)
+Podemos (re)definir los operadores. Esto se conoce como **sobrecarga de
+operadores**.
+
+Para eso sobrecargamos con `public static int operator +(int a, int b)`.
+
+# Método .ToString()
+
+Todas las clases tienen este método. Puedo sobreescribir cómo convertir nuestro
+objeto en cadena.
+
+`public override string ToString() { return "string"; }`
+
+Cuando paso el objeto en `Console.WriteLine()` va a llamar a este método.
+
+# Clases y métodos estáticos
+
+No puedo instanciar una clase estática. Pero por un motivo distinto a una clase
+abstracta.
+
+Una clase abstracta está pensada para ser clase base de otras clases que van a
+herdar de ella.
+
+Una clase estática es para definir y llamar métodos auxiliares. Por ejemplo:
+
+```csharp
+public static class Matematica
+{
+    public static int Sumar(int a, int b) {}
+}
+```
+
+Depués llamo con `Matematica.Sumar(1, 2)`. Defino métodos auxiliares que voy a
+utilizar en mi programa.
+
+# Genéricos
+
+Vimos el tipo Lista. Por ejemplo, lista de racionales.
+`List<Racional> racionales = new List<Racional>();`
+
+Para usarla tenemos que encabezar con `using System.Collections.Generic`.
+
+Pero podemos hacer nuestra propia lista con genéricos.
+
+```csharp
+public class ListaEnlazada<T>
+{
+    public T valor; // C# pone aquí lo que pasemos
+    public ListaEnlazada<T> siguiente = null;
+}
+```
+
+Creamos con:
+
+```csharp
+ListaEnalzada<Racional> nodo1 = new ListaEnlazada<Racional>();
+nodo1.valor = new Racional(1, 2);
+
+// Creamos otro nodo
+
+ListaEnlazada<Racional> nodo2 = new ListaEnlazada<Racional>();
+nodo1.siguiente = nodo2;
+
+// Recorremos
+
+ListaEnlazada<Racional> actual = nodo1;
+while (actual != null)
+{
+    Console.WriteLine(actual.valor);
+    actual = actual.siguiente;
+}
+```
+
+También podría definir un método dentro de la lista para agregar elementos:
+
+```csharp
+public class ListaEnlazada<T>
+{
+    // ...
+    public void Add(T elemento)
+    {
+        siguiente = new ListaEnlazada<T>() { valor = elemento.valor }
+    }
+}
+```
+
+# Excepciones
+
+Permiten controlar el flujo de programa. Particularmente cuando pase algo
+inesperado.
+
+Hasta ahora controlamos con las estructuras tradicionales: `if`, `for`,
+`while`.
+
+Las excepciones se usan cuando pasa algo inesperado: disco lleno, no tengo
+conexión, hubo un error, etc.
+
+Una muy común es cuando dividimos un número por 0. Si tenemos una excepción no
+controlada, el programa se termina, como en este caso. Para manejarla usamos un
+bloque `try-catch`.
+
+```csharp
+try
+{
+    Matematica.Dividir(1, 0);
+}
+catch
+{
+    Console.WriteLine("No se puede dividir por 0.");
+}
+```
+
+El programa continua su funcionamiento normal. Controlamos la excepción y el
+flujo del programa sigue.
+
+Siempre que vayamos a usar recursos del sistema: archivo, socket de red, etc.
+Tenemos que gestionar estas excepciones.
+
+Muchas veces, teniendo éxito o no, tenemos que devolver recursos al sistema.
+Hacemos eso con un bloque `finally`.
+
+```csharp
+try
+{
+    // ...
+}
+catch
+{
+    // ...
+}
+finaly
+{
+    if (reader != null)
+    {
+        reader.Dispose();
+    }
+}
+```
+
+Otra forma de hacer esto es con un bloque `using`:
+
+```csharp
+using (StreamReader reader = File.OpenText("archivo.txt"))
+{
+    // ...
+}
+```
+
+También podemos usar `throw` para lanzar una excepción. Hay muchos tipos de
+excepciones que podemos lanzar. Por ejemplo:
+
+```csharp
+throw new InvalidOperationException("No se puede dividir por 0");
+```
+
+Después hago un `try-catch` que maneje la excepción:
+
+```csharp
+try
+{
+    // ...
+}
+catch (InvalidOperationException ex)
+{
+    // Gestiono InvalidOperation
+    Console.WriteLine(ex);
+}
+catch
+{
+    // Gestiono el resto de excepciones
+}
+```
+
+(Quedo: 03:00:00)
