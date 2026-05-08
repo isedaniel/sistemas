@@ -146,10 +146,22 @@ Cuando uno conecta distintas tablas. Se puede hacer de distintas formas.
 Depende de las tablas. Esto es interno. Es para que sepamos qué hace el
 optimizador.
 
-- Nested Loop Join: el más simple. Cuando tenemos pocos registros. O
-  CrossJoins.
+- Nested Loop Join: el más simple. Cuando tenemos pocos registros. También
+  aplica a CrossJoins.
 
-- Merge Join: cuando tenemos JOIN grandes.
+- Merge Join: cuando tenemos `JOIN` relativamente grandes. En tablas ordenadas.
 
 - Hash Join: útil para grandes conjuntos de datos. Se usa en Datawarehouses.
-  Cuando tenemos grandes volúmenes de datos.
+  Cuando tenemos grandes volúmenes de datos. Más paralelizable y escalable. Se
+  usa cuando las tablas no tienen índices. Consume mucha memoria.
+
+# Particionado de tablas
+
+Tiene sus ventajas y complejidades. Si no tengo tabla particionada y meto
+`DELETE`: tiene que ir a la tabla a borrar uno por uno.
+
+Si tengo particionada, por una diferencia que sea relevante para mi, puedo usar
+`TRUNCATE` y lo hago instantáneo. El problema de `TRUNCATE` es que no hay
+`ROLLBACK`.
+
+
