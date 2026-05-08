@@ -263,4 +263,79 @@ INSERT INTO estudiantes (idEstudiante, nombre, edad, estado, email) VALUES
 Notar que si los mails fuesen iguales, el registro debería fallar por la
 restricción de que el campo mail debe ser único.
 
-QUEDO 2:06:00.
+Adicionalmente, a la tabla de estudiantes le pusimos la restricción de edad
+mayor o igual 18. El estudiante 3 va a fallar en agregarse a la tabla.
+
+# Restricciones de integridad lógica
+
+Si hago un `INSERT` a `inscripciones`:
+
+```sql
+INSERT INTO inscripciones (idEstudiante, idCurso) VALUES
+(1, 1),
+(2, 2),
+(3, 1);
+```
+
+Como el estudiante 3 falló en anotarse, este `INSERT` a inscripciones también
+va a fallar. La restricción `FOREIGN KEY` en `idEstudiante` impide que agregue
+una inscripción con un `idEstudiante` que no existe en la tabla `estudiantes`.
+
+`ON DELETE CASCADE` eliminaría además una inscripción si elimino alguno de los
+estudiantes o alguno de los cursos.
+
+Por ello tengo que dar de alta las inscripciones en el orden que corresponde:
+`estudiantes -> cursos -> inscripciones`.
+
+# Elegir DB
+
+Cuando estamos en Management Studio, recordar elegir la base de datos que
+corresponda para hacer los laboratorios.
+
+# Query para traer nombres
+
+Traemos los nombres de estudiantes y cursos:
+
+```sql
+SELECT E.nombre AS Estudiante, C.nombreCurso AS Curso
+FROM inscripciones I
+JOIN estudiantes E ON I.idEstudiante = E.idEstudiante
+JOIN cursos C ON I.idCurso = C.idCurso;
+```
+
+Si quisiera, puedo hacer una `VIEW` de esta _query_:
+
+```sql
+CREATE VIEW vw_nombres_estudiantes_cursos AS -- ...query
+```
+
+# UPDATE
+
+Las _query_ `UPDATE` también tienen que cumplir las restricciones que pusimos
+creando la tabla.
+
+# DELETE teniendo ON DELETE CASCADE
+
+Si hago una _query_ `DELETE FROM estudiantes WHERE idEstudiante = 2;`, también
+borra las inscripciones que tengan `FK` de `idEstudiante = 2`. Esto pasa por la
+restricción `ON DELETE CASCADE`.
+
+# FOREIGN KEY
+
+Las tablas que tienen FK las tenemos que completar al último. Porque depende de
+las que no tienen FK. 
+
+También funcionan como restricciones para guardar la integridad de la base de
+datos. Impiden que pueda borrar _registros_ de los que dependan otros
+registros. Por ejemplo, borrar un estudiante con inscripciones activas.
+
+# Sub Querys
+
+Puedo hacer _sub querys_. Los rodeo entre paréntesis, en medio de una _query_.
+
+# Restricciones
+
+Son muy importantes para plasmar las reglas de negocio en el motor de base de
+datos. Tener bien reflejadas las ideas de negocio en la base de datos nos evita
+perder plata, por lo menos por problemas de DB.
+
