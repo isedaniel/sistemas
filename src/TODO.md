@@ -5,18 +5,15 @@
   - Preparar entrega DFD
 
 - Redes
-  - Preparar clase Unidad 6
+  - Práctico Unidad 6
+  - Preparar clase Unidad 7
 
 - Sintaxis
   - Preparar clase compiladores
 
 - Programación avanzada
-  - Revisar última clase
-  - Practicar
+  - Preparar clase
 
 - BD2
-  - Clase 2
-  - Clase 3
-  - Clase 4
-  - Practicar ejemplos
+  - Practicar DER
 
