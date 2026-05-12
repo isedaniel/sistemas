@@ -1,6 +1,4 @@
 ---
-title: 
-author:
-- Daniel
-date: 
+title:
+date:
 ---
