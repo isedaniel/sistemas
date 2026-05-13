@@ -1,5 +1,5 @@
 ---
-title: Notes from Multivariable Calc, from Khan Academy
+title: Notes from Multivariable Calc, Khan Academy
 ---
 
 # Vector-valued functions
@@ -34,4 +34,7 @@ second one got a bigger magnitude. So $r_2$ is *faster*.
 
 The multivariable chain rule can be written as a dot product of $\Nabla f|_v$
 and $\vec{v}'(t)$.
+
+This looks like a directional derivative. Instead of a vector, it uses a
+derivative of a vector.
 
