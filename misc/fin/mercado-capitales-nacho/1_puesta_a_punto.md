@@ -1,4 +1,4 @@
-`// TIME(dan): 1:58:00`
+`// TIME(dan): 2:10:00`
 
 # Módulo 1 - Puesta a punto
 
@@ -239,3 +239,40 @@ dada por `FLUJO - NOMINAL`.
 Ejemplo. Letra `S30J1`. Tengo días restantes. Precio nominal hoy. Valor al
 cierre. `(V - P) * T_{Directa} / D_{Dias} * T_{Anual}`.
 
+# Ejercicio de bonos
+
+Nos preparamos para la clase de bonos. Tenemos un problema.
+
+1. Bono a 5 años, por 10.000 USD.
+2. Bono a 10 años, por 10.000 USD.
+3. Bono a 20 años, por 10.000 USD.
+
+Tasa de 6%, 9% y 11%. Interés anual. Por qué cambia la tasa. Porque mientras
+más largo sea, mayor riesgo.
+
+En Excel ponemos los pagos por año de cada bono. Un renglón de intereses. Otro
+de capital.
+
+A medida que el bono va pagando capital, solo paga intereses sobre el capital
+residual. Cae el valor de los intereses.
+
+Si sumamos todo el flujo llegamos a un número. Ese es el flujo total de fondos.
+`Valor nominal del flujo`. Si compro a ese valor, la tasa es 0.
+
+Si lo pago al 100, me rinde al 9 anual. Si lo pago 10, la TIR es mucho mayor.
+
+El flujo de fondos futuros no se mueve. Se mueve el precio nominal del bono en
+el mercado secundario. Con ese cambio en el precio cambia de forma implícita la
+tasa y por lo tanto la TIR.
+
+Las empresas de primera línea colocan a menos tasa, para todos los plazos.
+Empresas de tercera línea colocan a más tasa, para todos los plazos. Con esto
+ponemos un `Benchmark`. Una vara por encima y por abajo para la `TIR` del bono.
+
+En un bono tengo `Precio`, y calculo `TIR`, `DM` y `PPV`. A tal precio nomial,
+tengo una `TIR`.
+
+`TIR` y `VNA` te traen el valor del flujo de fondos futuros a hoy, sin importar
+las diferencias entre los flujos de fondo que representan.
+
+Sube la paridad. Comprime la TIR.
