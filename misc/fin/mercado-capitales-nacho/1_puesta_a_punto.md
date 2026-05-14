@@ -276,3 +276,14 @@ tengo una `TIR`.
 las diferencias entre los flujos de fondo que representan.
 
 Sube la paridad. Comprime la TIR.
+
+Con esto introducimos los conceptos de `DM` y `PPV`. `DM` muestra cuánto se
+mueve por punto de compresión de `TIR`.
+
+`PPV` marca el plazo promedio de vida del bono. `PPV` más largo: el flujo está
+más hacia el fondo que hacia adelante. A la inversa, si tengo el `PPV` bajo,
+tengo la mayoría del flujo hacia adelante y no tanto hacia atrás.
+
+`DM` cuánto se mueve el nominal en relación al cambio porcentual el `TIR`.
+`PPV` dónde se concentran los flujos de fondos futuros de un instrumento.
+
