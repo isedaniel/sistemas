@@ -1,4 +1,3 @@
-`// TIME(dan): 2:10:00`
 
 # Módulo 1 - Puesta a punto
 
