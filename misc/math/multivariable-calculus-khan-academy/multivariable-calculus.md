@@ -38,3 +38,11 @@ and $\vec{v}'(t)$.
 This looks like a directional derivative. Instead of a vector, it uses a
 derivative of a vector.
 
+# Curvature of a Helix
+
+It follows a vector-valued function: $\vec{s}(t) = (\cos(t), \sin(t), t/5)$.
+
+The derivative is: $\vec{s'}(t) = (-\sin(t), \cos(t), 1/5)$.
+
+The expression for the curvature is: $K = \frac{|dT/dt|}{|dS/dt|}$.
+
