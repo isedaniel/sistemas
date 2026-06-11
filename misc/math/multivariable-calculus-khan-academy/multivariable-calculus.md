@@ -46,3 +46,15 @@ The derivative is: $\vec{s'}(t) = (-\sin(t), \cos(t), 1/5)$.
 
 The expression for the curvature is: $K = \frac{|dT/dt|}{|dS/dt|}$.
 
+# Curvature cycloid
+
+Vector-valued function: $\vec{S}(t) = (x(t), y(t)) = (t - \sin t, 1 - \cos t)$.
+
+The expression for the curvature is:
+$\kappa = \frac{x'y'' - y'x''}{((x')^2 + (y')^2)^{3/2}}$.
+
+But the underlying idea is: derivative of the Tangent Unit Vector $\vec{T}$.
+
+To solve any curvature, get: $x', x'', y', y''$ and solve the expression for
+$\kappa$.
+
