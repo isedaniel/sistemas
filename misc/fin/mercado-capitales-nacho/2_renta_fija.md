@@ -41,8 +41,44 @@ de Inversión (FCI) y bonos.
 
 Categorizan bonos de acuerdo al riesgo. Por ejemplo: *Standard & Poor's*.
 
-Calificaciones. AAA, AA+, ... BBB, BB+, ... CCC, D.
+Calificaciones. AAA, AA, ... BBB, BB, ... CCC, CC, C, D.
 
 Lo más importante: Qué precio piden en relación al riesgo que corro.
 
-`// TIME(dan): 00:26:00`
+(No importa el presidente. No es bueno pagar paridad en Argentina por los
+próximos 10 años).
+
+# Prospecto de una obligación negociable.
+
+Incluye:
+
+Empresa. Quién emite.
+
+Colocador. Quién coloca.
+
+Clase. Puede haber distintas clases con diferentes características.
+
+Valor nominal. La par.
+
+Vencimiento.
+
+Pago de interés. El plazo.
+
+Amortización. Puede ser _bullet_ u otra.
+
+Tramo no competitivo.
+
+Forma de integración. Moneda en que se paga el capital.
+
+Calificación de riesgo. Y calificadora.
+
+Período de difusión.
+
+Período de licitación.
+
+Fecha de emisión.
+
+Ley aplicable. Argentina, New York, etc. (Los minoristas no hacemos juicio. Nos
+adherimos o no a lo que sentencie la corte. Por ejemplo, con un 50% de adhesión
+se pueden cambiar las cláusulas. La ALYC te llama y adhieres o no).
+
