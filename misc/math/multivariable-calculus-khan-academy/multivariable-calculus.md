@@ -58,3 +58,8 @@ But the underlying idea is: derivative of the Tangent Unit Vector $\vec{T}$.
 To solve any curvature, get: $x', x'', y', y''$ and solve the expression for
 $\kappa$.
 
+# Derivative of a vector-valued function
+
+Given a vector-valued function, $V(t, s) = (t^2 - s^2, st, ts^2 - st^2)$, the
+derivative can be computed to one or the other of the variables.
+
