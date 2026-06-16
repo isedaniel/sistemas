@@ -36,6 +36,15 @@ de Inversión (FCI) y bonos.
 
 - Lámina mínima: 100, 1000, 1500, 150.000. Para buscar inversores más grandes y
   menor liquidez o viceversa.
+  
+- Tramo no competitivo: queremos entrar sin importar la tasa. Para minoristas.
+
+- Moneda de pago: Moneda en que se paga, en el caso argentino, incluyendo el
+  tipo de cambio. Esto indica qué supone el instrumento. Por ejemplo, un bono
+  atado al oficial en Argentina supone protección frente a la devaluación o 
+  liberación del cepo.
+  
+`// TIME(dan): 40m`
 
 # Calificadoras de riesgo
 
@@ -47,38 +56,4 @@ Lo más importante: Qué precio piden en relación al riesgo que corro.
 
 (No importa el presidente. No es bueno pagar paridad en Argentina por los
 próximos 10 años).
-
-# Prospecto de una obligación negociable.
-
-Incluye:
-
-Empresa. Quién emite.
-
-Colocador. Quién coloca.
-
-Clase. Puede haber distintas clases con diferentes características.
-
-Valor nominal. La par.
-
-Vencimiento.
-
-Pago de interés. El plazo.
-
-Amortización. Puede ser _bullet_ u otra.
-
-Tramo no competitivo.
-
-Forma de integración. Moneda en que se paga el capital.
-
-Calificación de riesgo. Y calificadora.
-
-Período de difusión.
-
-Período de licitación.
-
-Fecha de emisión.
-
-Ley aplicable. Argentina, New York, etc. (Los minoristas no hacemos juicio. Nos
-adherimos o no a lo que sentencie la corte. Por ejemplo, con un 50% de adhesión
-se pueden cambiar las cláusulas. La ALYC te llama y adhieres o no).
 

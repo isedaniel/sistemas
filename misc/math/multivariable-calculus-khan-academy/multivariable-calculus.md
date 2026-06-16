@@ -61,5 +61,5 @@ $\kappa$.
 # Derivative of a vector-valued function
 
 Given a vector-valued function, $V(t, s) = (t^2 - s^2, st, ts^2 - st^2)$, the
-derivative can be computed to one or the other of the variables.
+partial derivative can be computed for one or the other of the variables.
 
