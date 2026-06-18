@@ -25,10 +25,10 @@ derivative mean? Given a second parametrization, $r_2(t) = (2t, 4t^2)$, the
 graphic is the same, but gets to the same point with half the value of $t$. It
 can be said that the second graph is *moving* faster than the first.
 
-What happened with the derivative? $r' = (1, 2t)$. $r_2' = (2, 8t)$.
+What happened with the derivative? $r' = (1, 2t)$. $r2' = (2, 8t)$.
 The first derivative, evaluated at 1, returns a vector tangent to the curve.
 The second derivative, evaluated at 1/2, returns the same direction. But the
-second one got a bigger magnitude. So $r_2$ is *faster*.
+second one got a bigger magnitude. So $r2$ is _faster_.
 
 # Vector form of the multivariable chain rule
 
@@ -63,3 +63,6 @@ $\kappa$.
 Given a vector-valued function, $V(t, s) = (t^2 - s^2, st, ts^2 - st^2)$, the
 partial derivative can be computed for one or the other of the variables.
 
+The partial derivative of a vector-valued fuction represent how the surface
+$ts$ is transformed to a three-dimension surface in $xyz$, each coordinate 
+resulting from its expression.
