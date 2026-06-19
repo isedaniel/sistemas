@@ -108,7 +108,7 @@ Entonces:
 
 Bajo la par no es igual a barato. Depende de la paridad y de las _expectativas_.
 
-# Yield Anual
+## Yield Anual
 
 Cupon este año / Precio de mercado.
 
@@ -117,7 +117,24 @@ en relación a todo el flujo de fondos (a _finish_).
 
 Utilidad. Se relaciona con los intereses corridos.
 
+## DM y PPV
+
+Tenemos tres bonos. Todo valen 100. Los 3 tienen 12% de interés anual. Pero el primero paga $10 de amortización por año. El segundo paga $ 20 por año a partir del sexto año. El terceo paga $ 100 al final.
+
+El primero tiene una TIR del 12. La Duration Mod (DM) mide la sensibilidad el
+precio frente al cambio del 1% en la TIR. Si la TIR se mueve 1%, el precio se
+mueve 3.62%. El PPV es el promedio ponderado de vida del bono. La fórmula está
+en el Excel.
+
+En el segundo
+
+
+# Decisiones
+
+Se toman considerando todos los indicadores. No hay uno solo que permita tomar
+decisiones.
+
 ```c
-// NOTE(dan): Quedo 1h 1m
+// NOTE(dan): Quedo 1h 16m
 ```
 

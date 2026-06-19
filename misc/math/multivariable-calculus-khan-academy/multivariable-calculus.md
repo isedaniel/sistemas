@@ -66,3 +66,11 @@ partial derivative can be computed for one or the other of the variables.
 The partial derivative of a vector-valued fuction represent how the surface
 $ts$ is transformed to a three-dimension surface in $xyz$, each coordinate 
 resulting from its expression.
+
+# Partial derivative of vector field
+
+A vector field has the same number of input and output variable. E.g.: 
+$\vec{V}(x, y) = (xy, y^2 - x^2)$.
+
+A partial derivative in x will be: $\vec{v}_x = (y, -2x)$. A representation of
+the partial derivative is a **Vector Field**.
