@@ -99,5 +99,4 @@ print(db.ventas.aggregate([
 			total: 1,
 		}
 	}
-*/
 ]));
