@@ -6,3 +6,6 @@ Compilar y correr:
 
 Crear con clase `Program` y método `Main`:
 `dotnet new console -O Name --use-program-main`
+
+Agregar controlador de EntityFramework para Sqlite:
+`dotnet package add Microsoft.EntityFrameworkCore.Sqlite`
