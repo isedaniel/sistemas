@@ -74,3 +74,20 @@ $\vec{V}(x, y) = (xy, y^2 - x^2)$.
 
 A partial derivative in x will be: $\vec{v}_x = (y, -2x)$. A representation of
 the partial derivative is a **Vector Field**.
+
+# Compute curvature $\kappa$ for vector-valued functions
+
+1. Compute function derivative: 
+   $$\nabla \vec{S}$$
+
+2. Normalize derivative: 
+   $$T = \nabla s / |\nabla s|$$
+
+3. Derivative of normalized vector:
+   $$dT/dt$$
+
+4. Magnitude of $T'$
+   $$|T'|$$
+   
+5. Divide magnitude of $T'$ by $|\nabla|$
+
