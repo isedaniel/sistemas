@@ -18,7 +18,7 @@
 | X | I1201              | Análisis Matemático II A                | I1101               |
 | X | I1202              | Física II A                             | I0106               |
 | X | I1203              | Fundamentos de Economía                 | –                   |
-|   | I0232              | Sintaxis y Semántica del Lenguaje       | I1209               |
+| X | I0232              | Sintaxis y Semántica del Lenguaje       | I1209               |
 | X | I0210              | Análisis de Sistemas I                  | I1103, I1209, I0100 |
 |   | I1211              | Análisis Matemático II B                | I1201               |
 | X | I0211              | Análisis de Sistemas II                 | I0210               |
@@ -28,11 +28,11 @@
 |---+--------------------+-----------------------------------------+---------------------|
 |   | Tercer Año         |                                         |                     |
 |---+--------------------+-----------------------------------------+---------------------|
-|   | I1312              | Base de Datos II                        | I1221               |
-|   | I1313              | Programación Avanzada I                 | I0226               |
-|   | I0312              | Diseño de Sistemas I                    | I0211, I1221        |
+| X | I1312              | Base de Datos II                        | I1221               |
+| X | I1313              | Programación Avanzada I                 | I0226               |
+| X | I0312              | Diseño de Sistemas I                    | I0211, I1221        |
 |   | I0304              | Probabilidad y Estadística              | I0100               |
-|   | I1315              | Redes de Comunicación                   | I0310               |
+| X | I1315              | Redes de Comunicación                   | I0310               |
 |   | I0233              | Sistemas Operativos                     | I1315               |
 |   | I0313              | Diseño de Sistemas II                   | I1313, I1312, I0312 |
 |   | I1329              | Programación Avanzada II                | I1313               |
