@@ -1,0 +1,35 @@
+#+title: Compact Guide
+#+tags: @work @home @club
+
+* A head line.
+** Another headline.
+THis is the content.
+** Another one.
+THis is more content.
+** TODO A TODO headline.
+This is a task.
+*** TODO Another TODO headline. :: description for the element
+**** An element. [4/6]
+***** DONE Another element. description :description:work:home:home:
+***** DONE Another element. :description:work:
+***** DONE :work:home:
+***** TODO :work:home:
+***** TODO :description:
+***** DONE :description:
+**** An element
+**** TODO [#C]
+** TODO [#A]
+*** TODO
+| Name | Phone | Age        |
+|------+-------+------------|
+| Dani |   123 | Lot        |
+| Noe  |   345 | Lot more   |
+| Beli |   456 | Little one |
+
+| A column | Another column | Yet another | Another one | The last |
+|----------+----------------+-------------+-------------+----------|
+|          |                |             |             |          |
+|          |                |             |             |          |
+
+[[/Users/dani/Documents/lento.png]]
+[[file:compact-guide.org][Compact]]
