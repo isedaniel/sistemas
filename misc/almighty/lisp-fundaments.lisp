@@ -1,13 +1,4 @@
 
-(+ (* 1 2) (/ 4 2)) ; => 4 (3 bits, #x4, #o4, #b100)
-
-"This is a string."
-
-777                                     ; -> 777
-
-'my-num                                 ; => MY-NUM
-
-
 ;; Global variable with defvar
 (defvar *debug* t)
 ;; Can't redefine with defvar
@@ -98,3 +89,92 @@
   (apply #'+ args))
 (add 1 2 3)
 ;; => 6
+
+;; A function return the last value
+(defvar *a-var*)
+(defun do-stuff ()
+    (format nil "The value is ~a." (random 10)))
+(do-stuff)
+
+;; Early return with return-from
+(defun early-return ()
+  (let ((nums '(2 3 4 5)))
+    (dolist (n nums)
+      (when (oddp n)
+        (return-from early-return (format nil "~a is not even." n))))))
+(early-return)
+
+;; Return multiple values with values
+(defun multiple-return ()
+  (values
+   (+ 2 1)
+   (* 2 7)
+   (/ 200 25)))
+(multiple-return)
+
+;; Bind multiple values with multiple-value-bind
+(defun multi-bind ()
+  (multiple-value-bind (a b c) (multiple-return)
+    (format nil "~a + ~a + ~a = ~a" a b c (+ a b c))))
+(multi-bind)
+
+;; Destructuring list with destructuring-bind
+(defun destruct-list ()
+  (destructuring-bind (a b c) '(1 2 4)
+    (format nil "~a * ~a * ~a = ~a" a b c (* a b c))))
+(destruct-list)
+
+;; Variables are passed by value
+(defvar *a-num* 5)
+(defun add-5 (num)
+  (setf num (+ num 5)))
+(add-5 *a-num*)
+*a-num*
+;; => 5
+
+;; But global variables can be setf inside a function
+(defun setf-add-5 ()
+  (setf *a-num* (+ *a-num* 5)))
+(setf-add-5)
+*a-num*
+;; => 10
+
+;; Functions are firstclass, can be passed with function
+(defun square (x) (* x x))
+(mapcar (function square) '(1 2 3 4 5))
+;; => (1 4 9 16 25)
+
+;; Or the equivalent reader macro #'
+(mapcar #'square '(1 2 3 4 5))
+ ; => (1 4 9 16 25)
+
+;; funcall and apply take a function and apply it to the rest of the arguments
+(funcall #'+ 1 2 3)
+ ; => 6
+
+(apply #'+ '(4 5 6))
+ ; => 15
+
+;; Anonymous functions can be created with lambda
+(mapcar (lambda (x) (* x x x)) '(1 2 3 4 5))
+ ; => (1 8 27 64 125)
+
+;; List can be created with list and the elements
+(list 1 2 3)
+ ; => (1 2 3)
+
+;; With quote and a list
+(quote (1 2 3))
+ ; => (1 2 3)
+
+;; Or with the reader-macro '
+'(1 2 3)
+ ; => (1 2 3)
+
+;; List are simply linked lists of cons cells
+(cons 1 (cons 2 (cons 3 nil)))
+ ; => (1 2 3)
+;; cons cells have two parts: a car and a cdr
+;; car contains data
+;; and cdr contains either a cons or nil that terminate the branch
+;; Common Lisp code is written using these very same cells
