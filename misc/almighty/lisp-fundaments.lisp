@@ -178,3 +178,6 @@
 ;; car contains data
 ;; and cdr contains either a cons or nil that terminate the branch
 ;; Common Lisp code is written using these very same cells
+(quote (defun cube (x)
+   (* x x x)))
+ ; => (DEFUN CUBE (X) (* X X X))
