@@ -181,3 +181,54 @@
 (quote (defun cube (x)
    (* x x x)))
  ; => (DEFUN CUBE (X) (* X X X))
+;; The line between Code and Data does not exist in Common Lisp
+
+;; length returns how many items are in the list
+(length '(these are some list items))
+ ; => 5
+
+;; reverse reverse
+(reverse '(is this list))
+ ; => (LIST THIS IS)
+
+;; first, second ... tenth get items in position
+(second '(first second third))
+ ; => SECOND
+
+;; member searches for an item and return the item and the rest of the list
+(member 'list '(this is list with items))
+ ; => (LIST WITH ITEMS)
+
+;; of course, nil if not found
+(member 'list '(this has items))
+ ; => NIL
+
+;; nth returns the nth (note the zero index)
+(nth 3 '(zero one two three))
+ ; => THREE
+
+;; position returns the position of the element
+(position 'list '(this is yet another list with items))
+ ; => 4
+
+;; append appends
+(append '(a list with items) '(and more items))
+ ; => (A LIST WITH ITEMS AND MORE ITEMS)
+
+;; list can have key/value elements
+(defvar *list* '(:name 'Danilo :age 42))
+ ; => *LIST*
+*list*
+ ; => (:NAME 'DANILO :AGE 42)
+
+;; getf can get a valur
+(getf *list* :name)
+ ; => 'DANILO
+
+;; getf and setf combined can set values
+(setf (getf *list* :name) 'Noli)
+(setf (getf *list* :age) 30)
+*list*
+ ; => (:NAME NOLI :AGE 30)
+
+;; other data structures can be made from lists, for example, trees
