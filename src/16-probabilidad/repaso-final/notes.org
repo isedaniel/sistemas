@@ -2,13 +2,40 @@
 #+AUTHOR: Dan
 #+DATE: 2026-07-13
 
-* Unidad 1
-** 1 - Por qué estudiar estadística
-- Definiciones contextuales.
+* TODO Estudio
+** TODO Unidad 1 [1/5]
+*** DONE 1 - Por qué estudiar estadística
+*** TODO 2 - Descripción gráfica de los datos
+*** TODO 3 - Descripción numérica de los datos
+*** TODO Guia teórica
+*** TODO Guia práctica
+** TODO Unidad 2 [0/3]
+*** TODO Guía teórica
+*** TODO Teoría
+*** TODO Práctica
+** TODO Unidad 3 [0/3]
+*** TODO Distribuciones Cap 3
+*** TODO Guia teórica A
+*** TODO Guia teórica B
+** TODO Unidad 4 [0/4]
+*** TODO 04A Distribuciones discretas
+*** TODO 04B Distribuciones contínuas
+*** TODO Guía práctica 3
+*** TODO Guía práctica 4
+** TODO Unidad 8 [0/4]
+*** TODO Guía teórica
+*** TODO Mínimos cuadrados
+*** TODO Recta de mínimos cuadrados
+*** TODO Regresión lineal simple y correlación
+
+* Notas
+** Unidad 1
+*** 1 - Por qué estudiar estadística
 - Población y Muestra.
 - Parámetro (característica de la población) y Estadístico (característica de la
   muestra).
 - Muestreo Aleatorio Simple.
 - Estadística Descriptiva y Estadística Inferencial.
-** 2 - Descripción Gráfica de los datos
+*** 2 - Descripción Gráfica de los datos
 -
+
