@@ -84,6 +84,12 @@ Si el tamaño de la muestra /n/ es par, es la media de las dos observaciones
 intermedias.
 ***** Moda
 Si existe, es el valor que aparece con mayor frecuencia.
+***** Media geométrica
+Otra medida de tendencia central importante. Es la n-ésima raíz del producto de
+/n/ números.
+#+begin_src latex
+X_g = \sqrt^n{x_1 x_2 ... x_n}
+#+end_src
 **** Medidas de Variabilidad
 Describen la variabilidad o dispersión respecto de la media.
 ***** Rango
@@ -133,3 +139,84 @@ Si comparamos por ejemplo un gran almacen con otros pequeños, la desviación
 típica del grande parecerá mucho mayor. El coeficiente de variación resuelve
 este problema de diferencia de escala.
 **** Medidas de datos agrupados
+***** Media ponderada
+Sumatoria del producto de cada dato /x/ por su ponderación /w/, dividido por la
+sumatoria de la ponderación.
+#+begin_src latex
+X_p = \sum{w_ix_i} / \sum{w_i}
+#+end_src
+***** Media aproximada de datos agrupados
+Por ejemplo, en una encuesta en lugar de responder edad exacta, responden
+eligiendo una categoría.  En ese caso, los datos están agrupados, podemos usar
+la media aproximada de datos agrupados.  Dadas /K/ clases, con frecuencia /f/,
+puntos medios /m/, con muestra de /n/ casos, la media aproximada de datos
+agrupados es:
+#+begin_src latex
+X = \sum{f_im_i} / n
+#+end_src
+***** Varianza aproximada de datos agrupados
+Mismo caso, nuestros datos vienen agrupados, calculamos varianza para ellos, con punto medio /m/, media aproximada /X/, frecuencia /f/ y /n/ observaciones:
+#+begin_src latex
+s^2 = \sum{f_i(m_i - X)^2} / (n - 1)
+#+end_src
+***** Desviación típica muestral
+Es la raíz cuadrada de la varianza aproximada de datos agrupados.
+#+begin_src latex
+s = \sqrt{s^2}
+#+end_src
+**** Medidas de relaciones entre variables
+***** Covarianza
+Medida de la relación lineal entre dos variables /x/ e /y/ con medias /X/ e /Y/,
+en /n/ observaciones.
+Un valor positivo indica relación lineal directa. Un valor negativo indica
+relación lineal decreciente.
+#+begin_src latex
+Cov(x, y) = s_{xy} = \sum{(x_i - X)(y_i - Y)} / (n - 1)
+#+end_src
+***** Coeficiente de Correlación
+Generalmente más útil porque da una medida estandarizada de la relación lineal
+que indica tanto el sentido como el grado. Comparte signo con la covarianza.
+Va de -1 a 1.
+Se calcula dividiendo la covarianza por el producto de las desviaciones típicas
+de las dos variables /S_x/ y /S_y/.
+#+begin_src latex
+r = s_{xy} / (s_xs_y)
+#+end_src
+Una regla útil práctica es que existe relación si se cumple que:
+#+begin_src latex
+|r| >=  2 / \sqrt{n}
+#+end_src
+**** Relaciones lineales funcionales
+Ya tenemos medidas para describir la relación. Ahora vemos cómo aproximar las
+relaciones entre dos variables mediante una ecuación lineal.
+#+begin_src latex
+Y = \beta_0 + \beta_1X
+#+end_src
+Siendo /Y/ la variable dependiente, /X/ la variable independiente, /beta_0/ la
+ordenada al origen y /beta_1/ la pendiente de la función.
+El modelo calcula la media de /Y/ para cada valor de /X/. Esta es la *idea base*
+para obtener relaciones funcionales. Lo ideal es calcular el mejor valor para
+los coeficientes /beta/.
+Generalmente se calculan con /regresión por mínimos cuadrados/.
+***** Regresión por mínimos curadrados
+Selecciona la recta que mejor se ajusta dado un conjunto de puntos. La distancia
+de cada punto respecto de la recta se denomina residuo /e_i/. Se busca una
+ecuación que minimice la sumatoria de residuos positivos y negativos. El método
+más popular es la regresión de mínimos cuadrados.
+Tener cuidado con puntos extremos, que pueden influir mucho sobre la pendiente.
+Calculamos la pendiente /b_1/ con:
+#+begin_src latex
+b_1 = Cov(x, y) / S^2_x = S_y / S_x
+#+end_src
+Es decir, es el desvío estándar de y /S_y/ dividido el desvío típico de x /S_x/.
+La ordenada /b_0/ es:
+#+begin_src latex
+b_0 = Y - b_1X
+#+end_src
+Siendo la media /Y/ y la media /X/.
+**** Sesgo
+Si es positivo, la distribución está sesgada hacia la derecha. Negativo si está
+sesgada hacia la izquierda. 0 si es simétrica.
+#+begin_src latex
+\sum{(x_i - X)^3} / (ns^3)
+#+end_src
