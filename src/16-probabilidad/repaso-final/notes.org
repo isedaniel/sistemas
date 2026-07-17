@@ -4,10 +4,10 @@
 #+OPTIONS: tex:t
 
 * TODO Estudio
-** TODO Unidad 1 [2/5]
+** TODO Unidad 1 [3/5]
 *** DONE 1 - Por qué estudiar estadística
 *** DONE 2 - Descripción gráfica de los datos
-*** TODO 3 - Descripción numérica de los datos
+*** DONE 3 - Descripción numérica de los datos
 *** TODO Guia teórica
 *** TODO Guia práctica
 ** TODO Unidad 2 [0/3]
