@@ -1,11 +1,12 @@
 #+TITLE: Repaso Final Probabilidad y Estadística
 #+AUTHOR: Dan
 #+DATE: 2026-07-13
+#+OPTIONS: tex:t
 
 * TODO Estudio
-** TODO Unidad 1 [1/5]
+** TODO Unidad 1 [2/5]
 *** DONE 1 - Por qué estudiar estadística
-*** TODO 2 - Descripción gráfica de los datos
+*** DONE 2 - Descripción gráfica de los datos
 *** TODO 3 - Descripción numérica de los datos
 *** TODO Guia teórica
 *** TODO Guia práctica
@@ -31,11 +32,104 @@
 * Notas
 ** Unidad 1
 *** 1 - Por qué estudiar estadística
-- Población y Muestra.
-- Parámetro (característica de la población) y Estadístico (característica de la
-  muestra).
-- Muestreo Aleatorio Simple.
-- Estadística Descriptiva y Estadística Inferencial.
+**** Población
+Conjunto completo de todos los objetos o eventos en estudio, de tamaño /N/.
+**** Muestra
+Subconjunto observado, de tamaño muestral /n/. Se selecciona porque es más
+simple y económico de analizar que la población.
+**** Objetivo de la estadística
+Hacer afirmaciones válidas sobre la población basándonos en la muestra.
+**** Muestreo Aleatorio Simple
+Seleccionar una muestra de /n/ objetos eligiendo estrictamente al azar, esto es,
+todos los elementos de la población tienen la misma probabilidad de ser
+seleccionados.
+**** Parámetro
+Característica correspondiente a la población.
+**** Estadístico
+Característica correspondiente a la muestra de la población. El objetivo de la
+estadística es estimar parámetros a partir de estadísticos.
+**** Estadística Descriptiva
+Métodos gráficos y numéricos para resumir y procesar datos, convirtiéndolos en
+información.
+**** Estadística Inferencial
+Métodos para hacer predicciones, previsiones y estimaciones, que se usan para
+transformar información en conocimiento.
 *** 2 - Descripción Gráfica de los datos
--
+**** Construcción de Distribución de frecuencia
+1. Decidir número de intervalos /k/
+2. Determinar la amplitud /w/: $w = (x_{max} - x_{min}) / k$. Redondear
+   al alza (siguiente entero).
+3. Redondear /w/ al alza (siguiente entero).
+4. Los intervalos no deben solaparse.
+**** Guía para decidir número de intervalos
 
+| Muestra     | Intervalos |
+|-------------+------------|
+| Menos de 50 |        5-7 |
+| 50 a 100    |        7-8 |
+| 101 a 500   |       8-10 |
+| 501 a 1000  |      10-11 |
+| 1001 a 5000 |      11-14 |
+| Más de 5000 |      14-20 |
+
+*** 3 - Descripción numérica de los datos
+**** Medidas de Tendencia Central
+***** Media aritmética
+ #+begin_src latex
+\line{x} = (x_1 + x_2 + ... x_n) / n
+ #+end_src
+***** Mediana
+Observación que ocupa el lugar central del conjunto de observaciones ordenadas.
+Si el tamaño de la muestra /n/ es par, es la media de las dos observaciones
+intermedias.
+***** Moda
+Si existe, es el valor que aparece con mayor frecuencia.
+**** Medidas de Variabilidad
+Describen la variabilidad o dispersión respecto de la media.
+***** Rango
+Diferencia entre observación mayor y menor.
+#+begin_src latex
+R = x_n - x_1
+#+end_src
+***** Rango intercuartílico
+Diferencia entre el tercer cuartil Q_3 y el primer cuartil Q_1:
+#+begin_src latex
+R_{ic} = Q_3 - Q_1
+#+end_src
+***** Resumen de cinco números
+Cinco medidas descriptivas: mínimo, primer cuartil, mediana, tercer cuartil y
+máximo: $$
+#+begin_src latex
+\{x_1, q_1, M, q_3, x_n\}
+#+end_src
+***** Varianza
+Suma de los cuadrados de las diferencias entre observación y media, divididas
+por la población o por la muestra /n/ - 1.
+Se eleva al cuadrado para evitar valores negativos.
+#+begin_src latex
+s^2 = \sum{(x_i - X)^2} / (n - 1)
+#+end_src
+***** Desviación típica
+Como la varianza se eleva al cuadrado, queda en otra unidad. La desviación
+típica es la raíz cuadrada de la varianza.
+#+begin_src latex
+s = \sqrt{s^2}
+#+end_src
+***** Teorema de Chebychev
+Porcentaje de observaciones mínimas dentro de un intervalo \(\mu + ks\).
+#+begin_src latex
+100[1 - (1/k^2)]%
+#+end_src
+En muchas poblaciones reales, el porcentaje de valores es mucho mayor al
+/mínimo/ que calcula el teorema de Chebychev.
+La regla empírica es que un 68% está dentro de un desvío estándar.
+Un 95% está dentro de 2 desvíos.
+***** Coeficiente de variación
+Medida que expresa la desviación típica en porcentaje de la media:
+#+begin_src latex
+C_v = s / X * 100%
+#+end_src
+Si comparamos por ejemplo un gran almacen con otros pequeños, la desviación
+típica del grande parecerá mucho mayor. El coeficiente de variación resuelve
+este problema de diferencia de escala.
+**** Medidas de datos agrupados
