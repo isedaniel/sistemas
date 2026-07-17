@@ -4,11 +4,11 @@
 #+OPTIONS: tex:t
 
 * TODO Estudio
-** TODO Unidad 1 [3/5]
+** TODO Unidad 1 [4/5]
 *** DONE 1 - Por qué estudiar estadística
 *** DONE 2 - Descripción gráfica de los datos
 *** DONE 3 - Descripción numérica de los datos
-*** TODO Guia teórica
+*** DONE Guia teórica
 *** TODO Guia práctica
 ** TODO Unidad 2 [0/3]
 *** TODO Guía teórica
@@ -220,3 +220,71 @@ sesgada hacia la izquierda. 0 si es simétrica.
 #+begin_src latex
 \sum{(x_i - X)^3} / (ns^3)
 #+end_src
+
+*** Guía teórica
+**** Definición de Estadística
+Rama del conocimiento científico que se ocupa del análisis numérico y la
+interpretación de resultados provenientes de experimentos u observaciones de
+naturaleza aleatoria. El análisis numérico emplea herramientas provenientes de
+las matemáticas: Álgebra, Análisis, Geometría y Cálculo.
+**** Tipos de datos
+***** Cuantitativos
+Se pueden representar con números. Ejemplo, peso de una persona.
+****** Contínuas
+Pueden asumir infinitos valores dentro de un intervalo dado.
+****** Discretas
+Pueden asumir valores enteros.
+Esta distinción es conceptual: en realidad no se puede trabajar con variables
+realmente contínuas. Todo proceso de medición tiene un grado de precisión que
+lleva a perder el sentido de continuidad.
+***** Cualitativos
+No se pueden representar con número. Ejemplo, sexo de la persona.
+**** Frecuencia absoluta
+Cantidad de veces que se repite un valor para una variable.
+**** Frecuencia relativa
+Cantidad de veces que se repite un valor para una variable, en relación a la
+cantidad de observaciones /n/: h_i = f_i / n
+**** Intervalos
+Se utilizan cuando se trabaja con variables continuas o hay muy pocas
+observaciones con valores iguales. Se construyen intervalos con la misma
+/amplitud/.
+La amplitud /c/ es igual al rango (x_max - x_min), dividio la cantidad de
+intervalos /m/.
+En caso que /c/ no sea un número entero, se cambia mínimo y/o máximo para
+acomodar. /c/ tiene que ser entero.
+**** Intervalo modal, moda en valores agrupados
+Cuando tenemos intervalos, el modo se calcula incrementando el límite inferior
+en proporcional a las frecuencias que lo rodean.
+Calculamos /D1/ y /D2/.
+/D1/ es la diferencia entre la frecuencia del intervalo modal /f_i/ y la frecuencia del intervalo anterior /f_i-1/.
+#+begin_src latex
+D_1 = f_i - f_{i - 1}
+#+end_src
+/D2/ es la frecuencia del intervalo modal menos la frecuencia del intervalo posterior.
+#+begin_src latex
+D_2 = f_i - f_{i + 1}
+#+end_src
+Entonces:
+#+begin_src latex
+M_i = L_i + c( D_1 / (D_1 + D_2) )
+#+end_src
+Siendo L_i el límite inferior y c la amplitud del intervalo.
+**** Mediana en valores agrupados
+#+begin_src latex
+M_e = L_i + c[(n+1)/2 - F_{-1}] / [F_i - F_{-1}]
+#+end_src
+Siendo L_i el límite inferior del intervalo mediana, esto es, aquel cuya
+frecuencia acumulada Fi sea mayor a la mitad de la cantidad de observaciones
+/n/.
+**** Cuartiles, deciles, percentiles para valores agrupados
+#+begin_src latex
+C_i = L_i + c[(in/4) - F_{-1}] / [F_i - F_{-1}]
+#+end_src
+Siendo L_i el límite inferior del intervalo cuartil, es decir, aquel con
+Frecuencia acumulada F_i mayor al 25% del número de observaciones /n/.  i se
+cambia según estemos buscando el primer o tercer cuartil.
+
+Para lo que sería deciles y percentiles se cambia el denominador 4 por 10 o 100
+según corresponda.
+
+*** Guía práctica
