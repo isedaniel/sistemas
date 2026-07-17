@@ -232,3 +232,50 @@
  ; => (:NAME NOLI :AGE 30)
 
 ;; other data structures can be made from lists, for example, trees
+(defparameter *tree* (quote (defun sum (x y) (+ x y))))
+ ; => *TREE*
+*TREE*
+ ; => (DEFUN SUM (X Y) (+ X Y))
+(car *tree*)
+ ; => DEFUN
+(cdr *tree*)
+ ; => (SUM (X Y) (+ X Y))
+
+;; copy-tree returns a copy
+(copy-tree *TREE*)
+ ; => (DEFUN SUM (X Y) (+ X Y))
+
+;; subst returns a new tree with substitute leaves
+(subst 'z 'y *tree*)
+ ; => (DEFUN SUM (X Z) (+ X Z))
+
+;; sublis can do the same but with multiple leaves
+(sublis '((sum . substract)
+          (+ . -)
+          (x . a)
+          (y . b))
+        *tree*)
+ ; => (DEFUN SUBSTRACT (A B) (- A B))
+
+;; sublis take an asociation list, alist or table. A list with nested list
+(defparameter *en-to-ja-table* '((one . ichi)
+                                 (two . ni)
+                                 (three . san)))
+ ; => *EN-TO-JA-TABLE*
+
+;; in alist the car is the key and the cdr the value
+;; alist can be searched by key with assoc
+(assoc 'two *en-to-ja-table*)
+ ; => (TWO . NI)
+;; or by value with rassoc
+(rassoc 'san *en-to-ja-table*)
+ ; => (THREE . SAN)
+
+;; regular list can be used instead of dotted list
+(defparameter *en-to-ja-list* '((one ichi)
+                                (two ni)
+                                (three san)))
+ ; => *EN-TO-JA-LIST*
+;; but it needs cadr to get the value
+(cadr (assoc 'two *en-to-ja-list*))
+ ; => NI
