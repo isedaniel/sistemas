@@ -257,13 +257,13 @@
         *tree*)
  ; => (DEFUN SUBSTRACT (A B) (- A B))
 
-;; sublis take an asociation list, alist or table. A list with nested list
+;; sublis take an asociation list (alist) or table. A list with nested list
 (defparameter *en-to-ja-table* '((one . ichi)
                                  (two . ni)
                                  (three . san)))
  ; => *EN-TO-JA-TABLE*
 
-;; in alist the car is the key and the cdr the value
+;; in an alist the car is the key and the cdr the value
 ;; alist can be searched by key with assoc
 (assoc 'two *en-to-ja-table*)
  ; => (TWO . NI)
@@ -271,11 +271,103 @@
 (rassoc 'san *en-to-ja-table*)
  ; => (THREE . SAN)
 
-;; regular list can be used instead of dotted list
+;; a regular list can be used instead of dotted list
 (defparameter *en-to-ja-list* '((one ichi)
                                 (two ni)
                                 (three san)))
  ; => *EN-TO-JA-LIST*
 ;; but it needs cadr to get the value
-(cadr (assoc 'two *en-to-ja-list*))
- ; => NI
+(cadr (assoc 'one *en-to-ja-list*))
+ ; => ICHI
+
+;; list can be treated as sets with adjoin
+(adjoin 'three '(one two three))
+ ; => (ONE TWO THREE)
+(adjoin 'four '(one two three))
+ ; => (FOUR ONE TWO THREE)
+
+;; set contents can be compared with intersection
+(defparameter *a-set* '(one two three four five))
+ ; => *A-SET*
+(defparameter *another-set* '(three two one zero))
+ ; => *ANOTHER-SET*
+(intersection *a-set* *another-set*)
+ ; => (ONE TWO THREE)
+
+;; we have union
+(union *a-set* *another-set*)
+ ; => (FIVE FOUR THREE TWO ONE ZERO)
+
+;; difference: elements in first that are not in last
+(set-difference *a-set* *another-set*)
+ ; => (FIVE FOUR)
+(set-difference *another-set* *a-set*)
+ ; => (ZERO)
+
+;; subsetp: t if first is subset of last
+(subsetp '(one two three) *a-set*)
+ ; => T
+(subsetp *a-set* '(one two three))
+ ; => NIL
+
+;; setf can be used to modify values in lists
+(defvar *some-alist* '((A . 1) (B . 2) (C . 3)))
+ ; => *SOME-ALIST*
+*some-alist*
+ ; => ((A 1) (B 2) (C 3))
+
+(setf (second (assoc 'c *some-alist*)) 7)
+ ; => 7
+*some-alist*
+ ; => ((A 1) (B 2) (C 7))
+
+;; comparison operators for numbers are the usual, except for the inequality
+(= 1 1)
+ ; => T
+(/= 1 1)
+ ; => NIL
+(> 199 180)
+ ; => T
+(>= 155 155)
+ ; => T
+(< 7 19)
+ ; => T
+(<= 77 777)
+ ; => T
+
+;; for symbols, list, other objects, eq, eql, equal or equalp are used
+;; each test equality at different degree
+(defparameter *deez-nums* '(1 2 3 4 5))
+ ; => *DEEZ-NUMS*
+(defparameter *your-nums* '(1 2 3 4 5))
+ ; => *YOUR-NUMS*
+(defparameter *da-nums* '(one two three four five))
+ ; => *DA-NUMS*
+
+(eq *deez-nums* *your-nums*)
+ ; => NIL, two different lists
+(eq *deez-nums* *deez-nums*)
+ ; => T
+(eq 'one 'one)
+ ; => T, symbols are reused from same package
+(eq '(1 2 3) '(1 2 3))
+ ; => NIL, but not two lists
+(eq "hello" "hello")
+ ; => NIL, as expected
+
+;; eql is the same as eq, but if arguments are CHAR or NUM values are compared
+(eql #\a #\a)
+ ; => T
+
+;; equal test structural similarity
+(equal '(1 2 3) '(1 2 3))
+ ; => T
+(equal "hello" "hello")
+ ; => T
+
+;; equalp is lenient, good for case-insensitive testing
+(equalp "hello" "HELLO")
+ ; => T
+;; and across number types
+(equalp 1 1.0)
+ ; => T
