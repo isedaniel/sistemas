@@ -9,26 +9,26 @@
 *** DONE 2 - Descripción gráfica de los datos
 *** DONE 3 - Descripción numérica de los datos
 *** DONE Guia teórica
-*** TODO Guia práctica
+*** TODO Guia práctica 1
 ** TODO Unidad 2 [0/3]
 *** TODO Guía teórica
-*** TODO Teoría
-*** TODO Práctica
+*** TODO Walpole Cap. 2
+*** TODO Análisis Combinatorio Notas Profe
+*** TODO Guía Práctica 2
 ** TODO Unidad 3 [0/3]
-*** TODO Distribuciones Cap 3
+*** TODO Walpole Cap 3
 *** TODO Guia teórica A
 *** TODO Guia teórica B
+*** TODO Guía Práctica 3
 ** TODO Unidad 4 [0/4]
 *** TODO 04A Distribuciones discretas
 *** TODO 04B Distribuciones contínuas
-*** TODO Guía práctica 3
 *** TODO Guía práctica 4
 ** TODO Unidad 8 [0/4]
 *** TODO Guía teórica
 *** TODO Mínimos cuadrados
 *** TODO Recta de mínimos cuadrados
 *** TODO Regresión lineal simple y correlación
-
 * Notas
 ** Unidad 1
 *** 1 - Por qué estudiar estadística
