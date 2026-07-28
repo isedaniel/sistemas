@@ -287,36 +287,37 @@ cambia según estemos buscando el primer o tercer cuartil.
 Para lo que sería deciles y percentiles se cambia el denominador 4 por 10 o 100
 según corresponda.
 
-*** Guía práctica
-**** 2
-Tengo una serie de producción de maíz desde el 30 al 69. En miles de toneladas.
 
-1. Construir tabla de frecuencias con m=6 y calcular los 4 tipos de frecuencia
+* Distribuciones Discretas
 
-Primero determinamos la amplitud /c/.
+** TODO Distribución Uniforme Discreta
 
-c = (x_max - x_min) / m
-x_max = 11,480
-x_min = 836
-m = 6
+** TODO Distribución de Bernoulli
 
-#+begin_src elisp
-(/ (- 11480 836) 6.0)
-#+end_src
+** TODO Distribución Binomial
 
-#+RESULTS:
-: 1774.0
+** TODO Distribución Polinomial
 
-El intervalo es 1774. Construimos la tabla.
+** TODO Distribución Hipergeométrica
 
-| Intervalo    | f_i | F_i |  h_i |  H_i |
-|--------------+-----+-----+------+------|
-| [836-2610)   |   3 |   3 | .075 | .075 |
-| [2610-4384)  |   9 |  12 | .225 |   .3 |
-| [4384-6158)  |  11 |  23 | .275 | .575 |
-| [6158-7932)  |   7 |  30 | .175 |  .75 |
-| [7932-9706)  |   5 |  35 | .125 | .875 |
-| [9706-11480) |   5 |  40 | .125 |  1.0 |
-| Total        |  40 |     |      |      |
+** TODO Distribución Geométrica
 
-Calculamos media para datos agrupados.
+** TODO Distribución Binomial Negativa
+
+** TODO Distribución de Poisson
+
+* Distribuciones Contínuas
+
+** TODO Distribución Uniforme Contínua
+
+** TODO Distribución Normal
+
+** TODO Distribución Gamma
+
+** TODO Distribución Beta
+
+** TODO Distribución Ji-Cuadrado
+
+** TODO Distribución t de Student
+
+** TODO Distribución F de Snedecar
