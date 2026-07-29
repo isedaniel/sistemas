@@ -178,14 +178,15 @@ V(x) = (.97)(.03) \approx 0.029
 
 ** Distribución Polinomial
 
-Pertenece a las distribuciones multivariantes de probabilidad, porque es el
-modelo que describe el comportamiento de $k$ variables aleatorias.
-Se puede pensar como la generalización de la distribución binomial.
+Pertenece a las distribuciones multivariables de probabilidad, es el modelo que
+describe el comportamiento de $k$ variables aleatorias. Se puede pensar como la
+generalización de la distribución binomial.
 
 Dado un experimento aleatorio repetido $n$ veces, con $k$ resultados posibles,
 mutuamente excluyentes, con $P_1 ... P_k$ representando las probabilidades de
-cada categoría. Si $x_1$ es la variable aleatoria que reprenta el número de
-veces que se obtiene el resultado $R_1$, y se verifican las restricciones:
+cada categoría. Con $x_1$ variable aleatoria que representa el número de veces que
+se obtiene el resultado $R_1$, $x_2$ análoga para $R_2$, y así sucesivamente, y
+se verifican las restricciones:
 
 #+BEGIN_EXPORT latex
 \begin{align*}
@@ -195,3 +196,118 @@ x_1 + x_2 + \dots + x_k = n &\qquad  0 \leq x_i \leq n
 #+END_EXPORT
 
 Entonces:
+
+#+begin_export latex
+\begin{align*}
+P(x_1, x_2, ... x_k) = \frac{n!}{x_1! x_2! ... x_k!} (p_1)^{x_1}(p_2)^{x_2} ... (p_k)^{x_k}
+\end{align*}
+#+end_export
+
+Es una expresión /k-dimensional/, pero puede expresarse como
+/(k-1)-dimensional/, puesto que:
+
+#+begin_export latex
+\begin{align*}
+P_1 + ... + P_k = 1 \\
+P_k = 1 - (P_1 + ... + P_{k - 1}) \\
+\text{y:} \\
+x_1 + ... + x_k = n \\
+x_k = n - (x_1 + ... + x_{k - 1})
+\end{align*}
+#+end_export
+
+Esta reducción también ocurre en la binomial, aunque de forma implícita:
+$p + q = 1 \implies q = 1 - p$
+
+La expresión:
+
+\[
+\frac{n!}{x_1! ... x_k!}
+\]
+
+Representa las permutaciones con repetición de /n/ elementos constituidos de a
+$k$ subclases distintas compuestas por $x_i$ elementos idénticos. Es la generalización
+de la distribución binomial, en que empleamos:
+
+\[
+\binom{n}{x} = \frac{n!}{x! (n-x)!}
+\]
+
+Finalmente, esperanza matemática y varianza se expresan:
+
+#+begin_export latex
+\[
+\begin{cases}
+E(x_i) = n p_i, & \text{ con } i=1,2,...k. \\
+V(x_i) = n p_i(1-p_i), & \text{ con } i=1,2,...k.
+\end{cases}
+\]
+#+end_export
+
+Ejemplo.
+Tengo un experimento con tres resultados excluyentes: $c_1$, $c_2$ y $c_3$.
+Sus probabilidades son $p_1$, $p_2$ y $p_3$ respectivamente.
+Se realizan $n=10$ pruebas independientes. Se pide obtener la probabilidad de
+obtener 2, 3 y 5 resultados de cada clase, considerando que $p_1 =.2$, $p_2 =.5$
+y $p_3 =.3$.
+
+Las variables $x_i$ representan el número de veces que se obtienen los
+resultados $c_i$. Por lo tanto: $0 \leq x_i \leq 10$ y $x_1+x_2+x_3=10$.
+
+#+begin_export latex
+\begin{align*}
+P(x_1=2, x_2=3, x_3=5; .2, .5, .3; n=10) = \frac{10!}{2!3!5!}(.2)^2(.5)^3(.3)^5 \approx .306
+\end{align*}
+#+end_export
+
+** Distribución Hipergeométrica
+
+Una variable aleatoria discreta $X$ sigue una distribución hipergeométrica si:
+
+#+begin_export latex
+\begin{align*}
+P(X) =
+\begin{cases}
+\frac{\binom{Np}{x}\binom{Nq}{n - x}}{\binom{N}{n}} & \text{ para } x = 0, 1, ... n. \\
+0 & \text{ para otros valores de } x
+\end{cases}
+\end{align*}
+#+end_export
+
+Este modelo describe un experimento con dos resultados posibles, mutuamente
+excluyentes, en cada una de las $n$ repeticiones. La diferencia fundamental con
+la distribución binomial radica en que el modelo hipergeométrico describe un
+proceso de muestreo /sin/ reposición, lo que implica que la probabilidad de
+éxito /no/ es constante y los resultados /no/ son estadísticamente
+independientes.
+
+Sus media y varianza son:
+
+#+begin_export latex
+\begin{align*}
+E(x) = np \\
+V(x) = \frac{N-n}{N-1}npq
+\end{align*}
+#+end_export
+
+La representación gráfica para $N=10$, $n=4$, $x=4$ es:
+
+[[./img/hipergeometrica.png]]
+
+Ejemplo.
+De un mazo se extraen cuatro cartas. ¿Cuál es la probabilidad de que sean dos
+oros y dos de cualquier otro palo? El mazo tiene 40 cartas.
+
+Si definimos $X$ como la cantidad de cartas cuyo palo es oro, $n=4$ es el número
+de extracciones y $N=40$ el número total de cartas.
+
+#+begin_export latex
+\begin{align*}
+P(X) = \frac{ \binom{10}{2} \binom{30}{2} }{ \binom{40}{4} } = .2142
+\end{align*}
+#+end_export
+
+Notar que solo se usa cuando hay extracción sin reposición. Si hubiere
+reposición corresponde distribución binomial.
+
+** Distribución Geométrica
