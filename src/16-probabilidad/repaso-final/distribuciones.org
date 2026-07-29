@@ -311,3 +311,87 @@ Notar que solo se usa cuando hay extracción sin reposición. Si hubiere
 reposición corresponde distribución binomial.
 
 ** Distribución Geométrica
+
+Una variable aleatoria discreta $X$ sigue una distribución geométrica si:
+
+#+begin_export latex
+\begin{align*}
+P(X=x) = f(x) =
+  \begin{cases}
+    p(1 - p)^{x-1} & \text{ para } x=1,2, ... n \\
+    0             & \text{ para otros valores de } x
+  \end{cases}
+\end{align*}
+#+end_export
+
+Esta distribución describe el comportamiento del número de repeticiones
+requeridas para obtener el primer /éxito/ en una sucesión de pruebas
+independientes, cada una regida por la *ley de Bernoulli*, siendo $p$
+probabilidad de éxito.
+
+Media y varianza se calculan:
+
+#+begin_export latex
+\begin{align*}
+  E(x) = \frac{1}{p} \\
+  V(x) = \frac{q}{p^2}
+\end{align*}
+#+end_export
+
+Ejemplo. ¿Cuál es la probabilidad de seleccionar un tornillo no defectuoso
+al extraer cuatro de una caja que contiene 95% de no defectuosos?
+
+Tenemos $p=.95$ y $x=4$, por lo tanto:
+
+#+begin_export latex
+\begin{align*}
+  P(x=4, p=.95) = (.95)(1 - .95)^{4-1} = \approx .000119
+\end{align*}
+#+end_export
+
+** Distribución binomial negativa
+
+Una variable aleatoria discreta $X$ sigue una distribución binomial negativa
+si:
+
+#+begin_export latex
+\begin{align*}
+P(X=x) = f(x) = \begin{cases}
+  \binom{r+x-1}{x} p^r(1-p)^x & \text{ para } x=0,1 ... n. \\
+  0 & \text{ para otros valores de x.}
+\end{cases}
+\end{align*}
+#+end_export
+
+Este modelo es adecuado para describir el número de /fracasos/ que se
+producen en una sucesión de repeticiones independientes de *procesos de
+Bernoulli*, antes de que ocurra el /r/-ésimo /éxito/. La cantidad de
+repeticiones necesarias para lograr exactamente /r/ éxitos es igual a $r$
+más la cantidad de fracasos previos.
+
+Media y varianza se calculan:
+
+#+begin_export latex
+\begin{align*}
+E(x)=\frac{rq}{p} \\
+V(x)=\frac{rq}{p^2}
+\end{align*}
+#+end_export
+
+Ejemplo. Un fabricante de pirotecnia asegura una eficacia de .90. ¿Cuál es
+la probabilidad de que requieran 11 disparos para lograr 4 éxitos?
+
+Los elementos son número de fracasos $x=7$, número de éxitos $r=4$,
+probabilidad de éxito $p=.9$. Entonces:
+
+#+begin_export latex
+\begin{align*}
+P(x=7, r=4, p=.9)= \binom{4+7-1}{7}(.9)^4(.1)^7 = 7.9\times10^{-7}
+\end{align*}
+#+end_export
+
+La probabilidad es muy pequeña porque el experimento refiere a la calidad de
+la pirotecnia, que es muy alta como para requerir 11 intentos para obtener 4
+éxitos.
+
+** Distribución de Poisson
