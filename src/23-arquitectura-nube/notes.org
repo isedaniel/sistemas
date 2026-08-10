@@ -1,0 +1,29 @@
+#+title: Notas de Clase de Arquitectura de Computación en la Nube
+#+date: <2026-08-10 Mon>
+
+* Primera Clase
+** Plataforma
+
+Nos vamos a loguear en una plataforma. Usamos mail de UdeMM.
+
+Tenemos artículos, recursos. Se recomienda que los veamos. Luego vienen los
+módulos, que son el contenido de la materia.
+
+Al final de cada módulo tenemos una evaluación de conocimientos.
+Se /recomienda/ completar. Porque podemos obtener un /badge/. No es una
+certificación, pero suma. No es obligatorio.
+
+Tenemos dos evaluaciones. Son preguntas a desarrollar. Y ejercicios para hacer.
+Tenemos que completar de un día para el otro.
+
+Completar el curso incrementa mucho las chances de aprobar y puede incrementar
+la nota por concepto.
+
+Nos encontramos todos los lunes 6.10 para resolver consultas. El contenido es
+autoadministrado.
+
+Algunos módulos son más importantes que otros. Revisar el temario oficial
+para saber eso.
+
+Los módulos tienen laboratorios, con entornos /AWS Sandbox/, para practicar.
+
