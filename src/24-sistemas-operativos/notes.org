@@ -1,0 +1,53 @@
+#+title: Notas de Sistemas Operativos
+#+date: <2026-08-11 Tue>
+
+* Primera Clase
+** Objetivo
+
+Ver problemas vinculados con sistemas operativos. Entender cómo funcionan.
+Cómo funcionan por detrás de la interfaz. Pasan muchas cosas, algunas buenas,
+otras malas. El sistema operativo tiene que lidiar con todas ellas.
+
+** Definición
+
+Software que funciona como intermediación entre el Hardware y el usuario, sea
+humano o entidad automatizada.
+
+Sirve de intérprete entre usuario y la máquina.
+
+Es un software distinto al resto, con cuatro características que lo distinguen.
+
+Se ejecuta solo al momento de arrancar la computadora.
+
+** Núcleo
+
+El sistema carga el núcleo. Es un software extremandamente simple, chico y
+fácil. El resto de componentes no forma parte del sistema operativo. Es el
+revoque.
+
+Hay sistemas operativos que tienen /micronúcleo/ y sistemas operativos con
+núcleos monolíticos.
+
+** Módulo I
+
+Tenemos una introducción, que profundiza en lo que hablamos. Además tenemos
+otro apunte y un video corto para revisar. Por último, tenemos dos trabajos
+prácticos. El primero es sobre la evolución de los sistemas operativos y el
+segundo WebOS, sobre sistemas operativos web.
+
+Con respecto a los sistemas Web, vamos a investigar qué son, cuáles están
+vigentes, si se utilizan, expectativas a futuro, características de cada uno.
+Hay que buscar 5. Nombre, creador, características, si sige vigente o no.
+
+Para la siguiente clase. Trabajar el apunte, ver el video, resolver los
+prácticos. Se entregan en 15 días.
+
+** Condiciones de aprobación
+
+Dos parciales aprobados. Todos los TP entregados.
+
+Los parciales tienen dos partes. Una teórica y otra práctica. Tenemos
+multiple-choice capciosos y análisis de situaciones prácticas, donde tenemos
+que argumentar con lenguaje técnico y preciso.
+
+c
