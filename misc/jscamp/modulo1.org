@@ -1,0 +1,72 @@
+#+title: Notas Módulo 1
+
+* Por qué aprender programación
+
+Está más viva que nunca. El mercado de trabajo está difícil. No se puede
+garantizar ni sueldo ni trabajo. Pero todavía vale la pena.
+
+1. La inteligencia artificial va a incrementar nuestra productividad. El
+   diferencial no está en la herramienta: todas las personas pueden usarlas. El
+   diferencial está en /entender/ cómo funcionan los sistemas web para trabajar
+   con lo que devuelve la inteligencia artificial. *La IA necesita
+   programadores*.
+
+2. Todo está incorporando software. Electrodomésticos, automóviles. La
+   digitalización se está acelerando.
+
+3. Carrera profesional y oportunidades. No se están buscando tantos. Pero si
+   marcas la diferencia, a la larga vas a tener resultados.
+
+4. Pensamiento crítico. Te ayuda a conocer y conocerte a ti mismo.
+
+5. Emprendimiento. Oportunidades para construir tus propios productos.
+
+* Qué es programación. Qué es Fullstack. Qué es Frontend y Backend
+
+*Frontend*. Lo que ve el cliente. La interfaz con la que el usuario interactúa.
+
+*Backend*. Donde se hacen los cálculos, se resuelven los temas de negocio, el
+servidor.
+
+*Fullstack*. Un perfil profesional que se puede encargar tanto del /Frontend/
+como del /Backend/. Una persona que puede hacer el ciclo completo del producto y
+entregarlo al cliente.
+
+* Presentación del Proyecto
+
+Vamos a hacer un proyecto durante el /bootcamp/. Veremos HTML, CSS, JS, Node,
+React y SQL.
+
+Vamos a hacer *DevJobs*. Un buscador de ofertas de empleo.
+
+* Diseñando el proyecto
+
+Usamos la herramienta de inteligencia artificial *Stitch* de Google. Podemos generar una aplicación web o aplicación de escritorio. Nos genera un conjunto de páginas. También permite /iterar/.
+
+Se puede descargar el código, exportar a Figma. Link del proyecto:
+https://stitch.withgoogle.com/projects/7508115667617706440.
+
+* Requisitos
+
+1. Constancia. Asistir a las clases, ver los videos, hacer los ejercicios.
+
+2. Resolver problemas. Es normal encontrarse con problemas. Hay que aprender a
+   resolverlos.
+
+3. Autonomía. Buscar ser autónomos en la resolución de problemas.
+
+* Qué instalar
+
+1. Un navegador basado en /Chromium/. Porque vamos a usar las herramientas de
+   desarrollo de /Chrome/.
+
+2. Una cuenta de Github.
+
+3. Visual Studio Code.
+
+4. GitHub Copilot. Tiene capa gratuita.
+
+* Extensiones a instalar
+
+1. Live Preview. Levanta un servidor local para ver lo que estamos
+   desarrollando.

@@ -1,0 +1,34 @@
+#+title: Notas Módulo 2
+#+date: <2026-08-13 Thu>
+
+* HTML
+
+HyperText Markup Language. Lenguaje de Marcado de Hipertexto. Sirve para
+estructurar el documento.
+
+* <!DOCTYPE html>
+
+Es la primera etiqueta. Le indica al navegador que es un archivo HTML. Siempre
+en la primera línea. Se entiende sin la etiqueta, pero es buena práctica
+incluirlo.
+
+* <html>
+
+Etiqueta. Se usa generalmente el atributo ~lang~ para indicar el lenguaje. Cada
+etiqueta puede contener otras. Así se /estructura/ el lenguaje. La etiqueta
+~html~ es la /etiqueta raíz/.
+
+* <head>
+
+Contiene los metadatos del documento y de la web. En esta anidamos etiquetas
+que describen la página. Como ~<title>~ y ~<meta>~. No hace falta conocerlas de
+memoria.
+
+Algunas etiquetas de metadatos importantes son:
+
+- ~<title>~, título de la página.
+- ~<meta charset="UTF-8" />~, para elegir el mapa de caracteres.
+- ~<meta name="description" />~, para especificar la descripción de nuestra
+  página. Sirve para los motores de búsqueda.
+
+Se pueden incluir con ~emmet~, ejemplo: ~meta:desc~.
