@@ -446,3 +446,4 @@ FodyWeavers.xsd
 *Gemfile
 *.ruby-version
 
+.DS_Store
