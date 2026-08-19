@@ -2,47 +2,48 @@
 # Módulo 2 - Renta Fija
 
 Hasta dentro de lo que es renta fija vimos caución, plazo fijo, cheques y
-letras. Hoy vamos a ver Obligaciones Negociables (ONs), Fondos Comunes
-de Inversión (FCI) y bonos.
+letras. Hoy vamos a ver Obligaciones Negociables (ONs), Fondos Comunes de
+Inversión (FCI) y bonos.
 
 # Características de Bonos
 
-- Emisor: El Estado -> Bono. Una empresa -> ON
+**Emisor**: Si es el Estado, se llama Bono. Si es una empresa, Obligación
+Negociable.
 
-- Monto de emisión: Ej. 10M. Es importante para saber si una deuda es pagable.
-  Una empresa valuada en 100.000 USD no puede emitir 50M. Si esa situación se
-  diera, va a costar colocar el instrumento en el primario, luego caerá precio
-  en el secundario, etc.
+**Monto de emisión**: Ej. 10M. Es importante para saber si una deuda es pagable.
+Una empresa valuada en 100.000 USD no puede emitir 50M. Si esa situación se
+diera, va a costar colocar el instrumento en el primario, luego caerá precio en
+el secundario, etc.
 
-- Moneda de integración: moneda que reciben. Pesos, dólares, euros, incluso
-  bonos de la propia empresa. La moneda de pago puede ser distinta. (Cambiar
-  una ON por otra no está mal visto, siempre que la empresa demuestre que lo
-  necesita.)
+**Moneda de integración**: moneda que recibe el emisor. Pesos, dólares, euros,
+incluso bonos de la propia empresa. La moneda de pago puede ser distinta.
+(Cambiar una ON por otra no está mal visto, siempre que la empresa demuestre
+que lo necesita.)
 
-- Plazo del bono: 5, 10, 20 años.
+**Plazo del bono**: 5, 10, 20 años.
 
-- Valor nominal: 1/100
+**Valor nominal**: 1/100
 
-- Renta: intereses por el capital. Puede ser fija o variable.
+**Renta**: intereses pagados por el capital. Puede ser fija o variable.
 
-- Plazos de pago: trimestral, semestral, anual.
+**Plazos de pago**: trimestral, semestral, anual.
 
-- Amortización: Pago de capital. Puede ser: todo junto al final, cuotas a
-  partir de cierta fecha, una cantidad por período. (El mercado se _regula
-  solo_: hay demanda o no de acuerdo a las condiciones).
+**Amortización**: Pago de capital. Puede ser: todo junto al final, cuotas a
+partir de cierta fecha, una cantidad por período. (El mercado se _regula solo_:
+puede haber demanda del instrumento o no de acuerdo a las condiciones).
 
-- Legislación: dónde vamos a discutir si hay algún problema. Legislación
-  extranjera es más seguro. En Argentina hay menor seguridad jurídica.
+**Legislación**: en qué Corte vamos a discutir si hay algún problema.
+Legislación extranjera es más seguro. En Argentina hay menor seguridad jurídica.
 
-- Lámina mínima: 100, 1000, 1500, 150.000. Para buscar inversores más grandes y
-  menor liquidez o viceversa.
+**Lámina mínima**: 100, 1000, 1500, 150.000. Si un instrumento apunta buscar inversores más grandes
+y menor liquidez o viceversa.
   
-- Tramo no competitivo: queremos entrar sin importar la tasa. Para minoristas.
+**Tramo no competitivo**: queremos entrar sin importar la tasa. Para minoristas.
 
-- Moneda de pago: Moneda en que se paga, en el caso argentino, incluyendo el
-  tipo de cambio. Esto indica qué supone el instrumento. Por ejemplo, un bono
-  atado al oficial en Argentina supone protección frente a la devaluación o 
-  liberación del cepo.
+**Moneda de pago**: Moneda en que se paga, en el caso argentino, incluyendo el
+tipo de cambio. Esto indica qué supone el instrumento. Por ejemplo, un bono
+atado al oficial en Argentina supone protección frente a la devaluación o
+liberación del cepo.
   
 # Calificadoras de riesgo
 
@@ -59,26 +60,25 @@ próximos 10 años).
 
 Tenemos una planilla para revisar bonos.
 
-- Nombre. ON: `Empresa/Serie/Clase`
+**Nombre**. ON: `Empresa/Serie/Clase`
 
-- Ticker.
+**Ticker**.
+**Vencimiento**.
 
-- Vencimiento.
+**Amortización** (Al Vto., 3-anual).
 
-- Amortización (Al Vto., 3-anual).
+**Cupón** (Semestral, trimestral, etc). Cada cuánto dan renta.
 
-- Cupón (Semestral, trimestral, etc). Cada cuánto dan renta.
+**Próximo vencimiento**. Fecha del próximo pago. Acompaña una letra, dependiendo
+del tipo de pago: Renta (R), Capital (C).
 
-- Próximo vencimiento. Fecha del próximo pago. Acompaña una letra, dependiendo
-  del tipo de pago: Renta (R), Capital (C).
-  
-- Cotización (con fecha).
+**Cotización** (con fecha).
 
-- Renta anual. En %. Ej.: Fija=6.5; Var.=3.5.
+**Renta anual**. En %. Ej.: Fija=6.5; Var.=3.5.
 
-- TIR anual. Rendimiento a _finish_.
+**TIR anual**. Rendimiento a _finish_.
 
-- DM. Si la TIR se mueve 1%, cuánto se mueve el precio en %.
+**DM**. Si la TIR se mueve 1%, cuánto se mueve el precio en %.
 
 # Además
 
@@ -119,22 +119,60 @@ Utilidad. Se relaciona con los intereses corridos.
 
 ## DM y PPV
 
-Tenemos tres bonos. Todo valen 100. Los 3 tienen 12% de interés anual. Pero el primero paga $10 de amortización por año. El segundo paga $ 20 por año a partir del sexto año. El terceo paga $ 100 al final.
+Tenemos tres bonos. Todo valen 100. Los 3 tienen 12% de interés anual. Pero el
+primero paga $10 de amortización por año. El segundo paga $ 20 por año a partir
+del sexto año. El terceo paga $ 100 al final.
 
 El primero tiene una TIR del 12. La Duration Mod (DM) mide la sensibilidad el
 precio frente al cambio del 1% en la TIR. Si la TIR se mueve 1%, el precio se
 mueve 3.62%. El PPV es el promedio ponderado de vida del bono. La fórmula está
 en el Excel.
 
-En el segundo
-
-
 # Decisiones
 
 Se toman considerando todos los indicadores. No hay uno solo que permita tomar
 decisiones.
 
-```c
-// NOTE(dan): Quedo 1h 16m
-```
+# Must Know
 
+## Tasa Libor
+
+La **LIBOR** (_London InterBank Offered Rate_, tipo interbancario de oferta de
+Londres), es una tasa de referencia diaria basada en las tasas de interés a la
+cual los bancos ofrecen fondos _no_ asegurados a otros bancos en el mercado
+monetario mayorista o interbancario.
+
+## BADLAR
+
+Tasa de interés de plazos fijos a 30 días mayores de millón de pesos.
+Instrumentos se pueden especificar en BADLAR + 2% por ejemplo.
+
+# Tipos de bonos
+
+## Bonos Tasa Fija
+
+**Hard Dollar**. Cotizan en pesos, dólares, dólares cable. Bonos soberanos. Nos
+enfocamos en los de mayor volumen: AL30 y GD30.
+
+En el ticker, los dos últimos números señalan el año de vencimiento. Las dos 
+letras señalan la legislación: AL local, GD internacional.
+
+Como son reestructurados, no quitaron capital, pero pagan un interés muy chico.
+
+**Bonos Tasa Fija en Pesos**. Bonos del tesoro nacional. Pagan tasa fija en
+pesos. Por eso el precio, con inflación creciente, se cae. El mercado regula lo
+que no regulan las condiciones.
+
+**Obligaciones negociables en dólares y en pesos**. Se puede comprar la mayoría
+de instrumentos en pesos o dólares. Pero se va a pagar en dólares. En el 
+secundario la puedo vender en pesos.
+
+Algunos BROKER muestran buena información, como Rava, pero no todos.
+
+**Bonos CER**. Son los TX. Pagan tasas fijas en pesos sobre saldo de capital.
+Salen con valor nominal 100 y acumulan capital en pesos. CER es un coeficiente
+que se actualiza todos los días. El bono sigue ese coeficiente.
+
+```c
+// Quedo en 1H34M
+```
