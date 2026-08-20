@@ -1,11 +1,10 @@
-#+title: Notas Diseño de Sistemas 2
-#+date: <2026-08-12 Wed>
+# Notas Diseño de Sistemas 2
 
 # Clase 1
 ## Objetivo de la materia
 
 Ya trabajamos en el diseño del sistema tradicionales. En esta materia vamos
-a trabajar en el diseño de #sistemas web#. Es decir, #ingeniería web#.
+a trabajar en el diseño de **sistemas web**. Es decir, **ingeniería web**.
 
 ## Atributos de sistemas web
 
@@ -135,3 +134,43 @@ en la calidad. Y además es más abierta a los cambios.
 ## TODO Trabajar el apunte que subió el profe
 
 ## TODO Hacer el trabajo práctico. Se entrega en quince días.
+
+# Clase 2
+
+## Regla de las 3U
+
+Tres parámetros importantes a tener en cuenta: usabilidad,
+
+## 10 Heurísticas de Usabilidad
+
+Tengo un nene. Lo despierto a la mañana para llevarlo a la escuela. Amanece con
+fiebre. El pediatra nos atiende. Lo mira al nene y dice "tiene sarampión". Cómo
+sabe eso sin hacer ningún diagnóstico. Por **experiencia**.
+
+Otro ejemplo. El mecánico. Falla el auto, el mecánico escucha cómo arranca y
+sabe que tiene. Cómo sabe. Por **experiencia**.
+
+**Heurística**. Tiene que ver con conocimientos adquiridos a través de la
+experiencia. Por experiencia, Jakob Nielsen propone 10 principios.
+
+Fundamentos del diseño UX (experiencia de usuario). Reglas de oro desarrolladas
+desde 1994. Para prevenir problemas de interacción _antes_ de que afecten al
+usuario.
+
+1. **Estado del sistema**. El sistema tiene que mantener siempre informados a
+los usuarios de lo que está sucediendo. Ejemplo: indicadores de carga.
+
+2. **Lenguaje real**. La interfaz debe hablar el lenguaje del usuario con
+conceptos familiares en lugar de términos técnicos. Ejemplo: papelera de
+reciclaje.
+
+3. **Salidas de emergencia**. Un usuario puede realizar una acción por error.
+Necesitan una salida de emergencia marcada, para abandonar un estado no deseado
+sin procesos extensos. Ejemplo: Botón Deshacer <C-z>.
+
+4. **Consistencia**. Los usuarios _no deberían_ preguntarse si diferentes
+acciones significan lo mismo. Seguir las convenciones de la plataforma. Ejemplo:
+mantener la ubicación del menú de navegación en una página web.
+
+5. **Prevención de errores**. Un diseño que cuide al usuario de errores comunes.
+Ejemplo: desactivar botones de envío hasta completar campos requeridos.
