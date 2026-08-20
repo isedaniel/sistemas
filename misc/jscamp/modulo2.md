@@ -63,7 +63,7 @@ resetear, para que la visualización de nuestra página sea .
 
 En lugar de utilizar solo `<div>` y `<span>` conviene utilizar las etiquetas 
 semánticas que correspondan. Eso hace que nuestra página sea más comprensible
-para motores de búsqueda y para personas. Ejemplo:
+para motores de búsqueda y para la accesibilidad de nuestros usuarios. Ejemplo:
 
 - `<aside>`
 - `<section>`
