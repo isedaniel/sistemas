@@ -171,8 +171,60 @@ Algunos BROKER muestran buena información, como Rava, pero no todos.
 
 **Bonos CER**. Son los TX. Pagan tasas fijas en pesos sobre saldo de capital.
 Salen con valor nominal 100 y acumulan capital en pesos. CER es un coeficiente
-que se actualiza todos los días. El bono sigue ese coeficiente.
+que se actualiza todos los días. El bono sigue ese coeficiente. Rinden CER + un
+interés.
+
+**Bono Dollar Linked**. Protegen frente a una devaluación. Suelen pagar poco y 
+nada de interés. Ejemplo: bono de IRSA. Rendía al 4% anual. Precio dólar oficial
+más un interés. También puede rendir negativo.
+
+# Curva de bonos
+
+En el eje X tenemos los plazos. En el eje Y tenemos la tasa. Una curva normal 
+va incrementando lentamente.
+
+Si tengo una curva plana muestra incerteza. Rendimientos parejos hoy y a futuro.
+
+Una curva invertida tiene rendimientos altos al principio y bajos al final. El 
+presente es malo, pero el futuro mejora (pido menos retorno a futuro).
+
+# Riesgo país
+
+Representa cuántos basic points rinde un país por encima de la tasa de riesgo. 
+Es un número simple que expresa el _riesgo de invertir en un país_. Por ejemplo,
+1600 puntos de riesgo país, con TNX del 1%, significa rendimiento del 17%.
+
+# Dólar oficial
+
+El BCRA es comprador y vendedor: todos venden al BCRA y el BCRA vende a los que
+pueden comprar.
+
+# Dólar MEP
+
+Tantos Bonos como ON cotizan en dólares o pesos. El mismo bono se puede comprar 
+con cualquiera de las dos monedas. AL30 o AL30D sirve para diferenciar la
+moneda.  Pero el activo es el mismo. MEP significa Mercado Electrónico de Pagos.
+Para cada instrumento hay un dólar MEP: cada instrumento tiene un precio en
+pesos y en dólares. El mercado va arbitrando. Puedo comprar un instrumento a un 
+precio en pesos y venderlo a un precio en dólares. Hay un tipo de cambio
+implícito en esa operación. No hay monto y no hay cupo límite.
+
+# Dólar CCL
+
+Tantos bonos como ON cotizan también en dólares en el exterior. Ejemplo, AL30C. 
+Contado con liquidación representa cuánto cuesta sacar un dólar del país. Se 
+compra un activo en pesos y se vende en dólares en EEUU. 
+
+El canje es: $C = \frac{D_{MEP}}{D_{CCL}} - 1$. 
+
+Que sea cable quiere decir que se puede girar a IBKR o AmeriTrade.
+
+# Dólar Futuro
+
+Compro pesos a futuro atados al valor del dólar. Pero a un precio ya
+determinado. El gobierno puede dejar que corra o ponerse como oferente para 
+frenar un crecimiento del precio.
 
 ```c
-// Quedo en 1H34M
+// Quedo en 2H3M
 ```
