@@ -226,5 +226,5 @@ determinado. El gobierno puede dejar que corra o ponerse como oferente para
 frenar un crecimiento del precio.
 
 ```c
-// Quedo en 2H3M
+// Quedo en 2H11M
 ```
