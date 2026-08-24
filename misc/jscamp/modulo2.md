@@ -74,3 +74,16 @@ para motores de búsqueda y para la accesibilidad de nuestros usuarios. Ejemplo:
 
 Si necesitáramos usar un `<div>`, podemos especificar el atributo `role=""` para 
 incorporárle semántica por ese lado. Todo se consulta en `MDN`.
+
+# CSS
+
+Significa _Cascading Stylesheet_. Declaramos las reglas de estilo en archivos.
+Su función: declarar los estilos de nuestra página web. 
+
+## Enlazar
+
+Para enlazar tenemos 3 posibilidades: 
+
+- `<link>` en el header.
+- `<style>` en el header.
+- atributo `style` en cada elemento.
