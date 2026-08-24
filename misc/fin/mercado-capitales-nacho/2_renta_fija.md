@@ -1,9 +1,8 @@
-
 # Módulo 2 - Renta Fija
 
-Hasta dentro de lo que es renta fija vimos caución, plazo fijo, cheques y
-letras. Hoy vamos a ver Obligaciones Negociables (ONs), Fondos Comunes de
-Inversión (FCI) y bonos.
+Dentro de lo que es renta fija vimos caución, plazo fijo, cheques y letras. Hoy
+vamos a ver Obligaciones Negociables (ONs), Fondos Comunes de Inversión (FCI) y
+bonos.
 
 # Características de Bonos
 
@@ -225,6 +224,7 @@ Compro pesos a futuro atados al valor del dólar. Pero a un precio ya
 determinado. El gobierno puede dejar que corra o ponerse como oferente para 
 frenar un crecimiento del precio.
 
-```c
-// Quedo en 2H11M
-```
+# Intervención MEP
+
+El BCRA se pone vendedor en AL30 en pesos y comprador en AL30D en dólares para 
+mantener la cotización en un punto que le interesa.
