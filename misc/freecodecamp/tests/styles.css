@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.transform-box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* translate() */
+.translate {
+  transform: translateX(20px);
+}
+
+/* scale() */
+.scale {
+  transform: scale(1.2);
+}
+
+/* rotate() */
+.rotate {
+  transform: rotate(15deg);
+}
+
+/* skew() */
+.skew {
+  transform: skew(10deg, 5deg);
+}
