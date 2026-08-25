@@ -70,8 +70,37 @@ CEDEAR ayudan con esto.
 
 ## OPA
 
-La oferta pública de adquisición (OPA) afecta al precio.
+La oferta pública de adquisición (OPA) afecta al precio. Debería subir, porque 
+si alguien quiere comprar, tiene que comprar por encima del precio de mercado,
+sino nadie le vende.
+
+# Lectura de una acción 
+
+En Yahoo Finance se pueden ver muchos indicadores.
+
+**Ticker**. Cómo se la identifica.
+
+**Última cotización**. El precio al que se hizo al última transacción. Cambio 
+contra el cierre anterior, en precio y porcentaje.
+
+**Previous close**. El cierre anterior. 
+
+**Open**. Precio de apertura del día.
+
+**Bid**. Oferta de compra. El que quiere comprar cuánto ofrece.
+
+**Ask**. El que vende cuánto quiere por acción.
+
+**Day's Range**. Precio mínimo y máximo del día.
+
+**52 Week Range**. En el último año, por dónde se movió.
+
+**Volumen**. Cuántas se transaccionaron hoy.
+
+**Avg. Volume**. Cuál es el promedio diario de transacciones.
+
+Toda esta información sirve para tomar una decisión.
 
 ```java
-// QUEDO: 18M
+// QUEDO: 22M
 ```
