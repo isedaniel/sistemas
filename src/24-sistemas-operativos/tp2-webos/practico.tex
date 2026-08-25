@@ -48,6 +48,8 @@
 % interlineado: 1.0 simple, 1.3 (1.5), 1.6 (doble)
 \linespread{1.3}
 
+\usepackage{makecell}
+
 \begin{document}
 
 \include{titlepage}
@@ -68,8 +70,82 @@ y ofrece un conjunto de funciones que permiten la ejecución de software en un
 equipo y la comunicación y sincronización de información de Entrada y Salida
 (\textit{I/O}), proveniente de los periféricos.
 
-Un sistema operativo tradicional es una interfaz para mediar entre el Hardware y
-el Software. Un sistema web se ejecuta en un equipo remoto y el \textit{cliente}
-accede a él.
+Un sistema operativo tradicional es una interfaz para mediar entre el Hardware
+y el Software. Un sistema web se ejecuta en un equipo remoto y el
+\textit{cliente} accede a él.
+
+Otro aspecto que diferencia a un sistema operativo web de un sistema operativo
+tradicional es la gestión de recursos. En un sistema operativo tradicional la
+memoria del sistema y el procesador tienen que ser gestionados localmente. La
+memoria RAM y la CPU tienen que ser gestionadas y compartidas por todos los
+procesos que corran en el sistema. En constraste, en un sistema web, el
+principal proceso que debe correr el Hardware local es el \textit{browser} que
+se usará para acceder al servidor. En ese sentido, el rendimiento en un sistema
+operativo web depende de la capacidad para renderizar el navegador y del ancho
+de banda de la comunicación con el servidor.
+
+\pagebreak
+
+\section*{Conclusión}
+
+Como se pudo analizar en el trabajo, los sistemas operativos web llevan varios 
+años en el mercado. Existen muchos otros ejemplos de sistemas operativos web,
+pero consideramos que los mencionados son suficientes a los efectos de mostrar
+que es una tecnología que viene desarrollándose hace tiempo y que en el mundo 
+interconectado, con posibilidades de educación y trabajo a distancia, conservan 
+una vigencia. Esto se observa en el crecimiento experimentado por Chrome OS, 
+siendo hoy el segundo o tercer sistema operativo en equipos portátiles más 
+importante del mundo. 
+
+El crecimiento en el ancho de banda y la flexibilidad para trabajar desde 
+casi cualquier lugar constituyen la principal ventaja comparativa por la que 
+estos sistemas se destacan en la actualidad. Si a eso se suma la potencialidad 
+que se observa hoy en el desarrollo de Software como Servicio y la Inteligencia 
+Artificial, cabe suponer que su importancia irá en incremento.
+
+El traslado de Office de aplicación local, a convertirse hoy en Office 365,
+aplicación completamente orientada al trabajo en la web, permite suponer que 
+ese podría ser el destino de una parte importante de los sistemas de trabajo en 
+el futuro próximo.
+
+Una limitación importante que podríamos señalar en este punto, de la que 
+adolecen todos los sitemas operativos web, por su propia arquitectura, es la 
+necesidad que tienen -naturalmente- de disponer de una conexión continua y 
+rápida a Internet. Aunque esta limitación parecería ir reduciéndose. Cabe 
+mencionar el caso de Starlink, que ofrece hoy quizá la mejor conexión a Internet 
+del país, en lugares en los que antes era literalmente imposible acceder. Aunque 
+ello no significa que esta debilidad deje de existir. Cualquier persona que use 
+recurrentemente la infraestructura de red de nuestro país sabe que aun tenemos 
+mucho por mejorar tanto en velocidad como en fiabilidad.
+
+\pagebreak
+
+\section*{Glosario}
+
+Sistema Operativo Web(\textit{WebOs}): Plataforma de software que ofrece una
+interfaz y funciones de un sistema operativo tradicional dentro de un navegador
+web, ejecutando sus procesos reales en un servidor remoto en lugar de la máquina
+local.
+
+Navegador (\textit{Browser}): Aplicación de software que permite la
+interpretación y el renderizado de tecnologías web, como HTML5 y JavaScript.
+
+Entrada/Salida (\textit{I/O}): Procesos de transferencia y sincronización de
+información entre una computadora y los dispositivos periféricos (teclado,
+mouse, almacenamiento) con que cuenta.
+
+Software como Servicio (\textit{SaaS}): Modelo de distribución de software
+basado en la nube. Las aplicaciones se alojan en un Servidor remoto y los
+usuarios acceden a ellas directamente a través de Internet .
+
+Máquina Virtual (\textit{VM}): Software que emula el funcionamiento
+de una computadora física, permitiendo la ejecución de un sistema operativo y
+aplicaciones.
+
+AJAX (\textit{Asynchronous JavaScript and XML}): Conjunto de tecnologías
+que permite a una aplicación web actualizar datos de forma asíncrona. Para ello
+se comunica con el servidor en segundo plano, evitando la recarga de toda la
+página y permitiendo que los primeros WebOS tengan una interfaz interactiva y
+fluida.
 
 \end{document}
