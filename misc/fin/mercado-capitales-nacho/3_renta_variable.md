@@ -130,6 +130,52 @@ empresa. Los _ratios_ sirven para hacer comparaciones.
 estimaciones de grandes bancos y corporaciones que hacen análisis de las
 empresas.
 
+## Beta
+
+Una empresa de beta bajo, como Coca Cola `$KO`, es una empresa establecida, con 
+negocios maduros, demanda estable. Esto se ve en el Beta de .34.
+
+En contraste, Tesla `$TSLA`, empresa en crecimiento, negocio nuevo, Beta de
+1.80.
+
+Beta bajo significa: cuesta crecer, cuesta caer. Rol defensivo.
+
+## Must Know
+
+**Acciones Blue Chip**. Compañías muy bien establecidas, ganan plata con
+regularidad. Ej.: `$KO`. Porque las fichas más valiosas de poker son azules.
+
+**FAANG**. Facebook, Apple, Amazon, Netflix, Google. Las tecnológicas. Visto en
+2018. El concepto es darse cuenta dónde _está el crecimiento_.
+
+## Índices
+
+Compuesto por diferentes acciones.
+
+### S&P 500
+
+Están las 500 más grandes de Estados Unidos. Ordenadas por capitalización de 
+Mercado. Se dice el más realista. Hay otros S&P con distintas cantidades.
+
+### NASDAQ
+
+Empresas no financieras, que coticen en NASDAQ, se dice que son las
+"tecnológicas". Con capitalización > 500M USD.
+
+## Sector bursátil
+
+Forma de subdividir las miles de acciones que hay. Cada una es miembro de algún
+sector. Cada sector tiene un ETF. 
+
+Hay sectores defensivos y sectores agresivos. Los defensivos son los de Beta 
+bajo. Por ejemplo, sectores de consumo básico. Caen menos cuando cae, crecen 
+menos cuando todo crece.
+
+Los sectores se mueven en conjunto, por _rotación_. **Rotación** refiere al
+movimiento de los inversores se pasan de un sector a otro. Qué quiere decir. Los
+flujos de inversión tienden de un sector a otro. Las rotaciones se relacionan
+con expectativas a nivel mundial.
+
 ```java
-// QUEDO: 40M
+// QUEDO: 1H 
 ```
