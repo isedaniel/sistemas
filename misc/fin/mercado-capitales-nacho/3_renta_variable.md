@@ -176,6 +176,47 @@ movimiento de los inversores se pasan de un sector a otro. Qué quiere decir. Lo
 flujos de inversión tienden de un sector a otro. Las rotaciones se relacionan
 con expectativas a nivel mundial.
 
+## Scoring
+
+Podemos hacer un **scoring**. Resulta de entender qué hace mi cabeza cuando voy 
+a comprar una acción. Scoring es asignar un puntaje en base a una encuesta que 
+vamos a hacer para decidir si queremos comprar o no. No es una verdad. Sino una 
+base para hacer nuestro propio scoring para tomar decisiones.
+
+1. Es una empresa del pasado. Era exitosa hace 10 años. Si: 1, No: 0.
+2. Es una empresa del presente. Exitosa hoy (+/- 2 años). Si: 1, No: 0.
+3. Es una empresa del futuro. La imaginamos exitosa en 10 años. Si: 2, No: -2,
+No sé: 0
+4. Gana plata. Si: 1, No: 0
+5. Sus ventas vienen creciendo, ultimos 4 años. Si: 1, No: 0
+6. Paga dividendos. Si: 2, No: 0
+7. Tiene altas barreras de entrada (es fácil que tenga un competidor o no, la
+competencia tiene que invertir mucho para entrar o no). Si: 2, No: 0
+8. Sus ingresos provienen de distintos mercados (diferentes productos y
+servicios). Si: 1, No: 0
+9. Sus ingresos provienen de distintas regiones, países, continentes. Si: 1, No:
+0
+
+Con esto armamos un Excel que nos sirva para tomar decisiones.
+
+Se arman cuadrantes. En el superior izquierdo mayor a 10. De ahi hacia la
+derecha vamos bajando de dos en dos: 8 y 9, 6 y 7, menos de 6. Clasificamos las
+acciones en distintos tipos de acciones.
+
+Las de arriba: acciones de valor (Value). Las de abajo: acciones de crecimiento
+(Growth).
+
+La idea es **armar nuestro scoring** para elaborar **nuestra estrategia**.
+
+## Cedears
+
+Certificados de depósito argentinos. Un banco compra acciones del extranjero,
+las guarda un banco y nosotros compramos derechos sobre esas acciones, entre
+ellos, el de cobgrar dividendos. Es la forma que tenemos en Argentina de
+adquirir empresas en el exterior. Cualquier puede comprar una Acción en el
+extranjero. Se la doy al Comafi y ellos me dan el Certificado. Ese Certificado
+lo puedo guardar, cobrar dividendos o venderlos en pesos.
+
 ```java
-// QUEDO: 1H 
+// QUEDO: 1H 30M
 ```
