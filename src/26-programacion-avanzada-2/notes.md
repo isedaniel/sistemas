@@ -226,3 +226,163 @@ h1 {
 Qué parte mide esto. En este caso, el _content_. Pero `<h1>` no ocupa 100 de
 alto, porque el formato _predefinido_ por el navegador incluye `21.44px` hacia
 arriba y hacia abajo, es decir, el alto total del elemento es `142.88px`.
+
+# Clase 3
+
+## Protocolo HTTP
+
+**Protocolo.**
+
+Pila de protocolos (Stack). Conjunto de protocolos que permiten el funcionamiento
+de Internet.
+
+**Modelo OSI vs. Modelo TCP/IP**. El modelo TCP/IP se corresponde mejor con 
+Internet.
+
+HTTP es un protocolo para obtener recursos. Como documentos HTML. Que a su vez 
+pueden contener texto, imágenes, video, scripts. También pueden ser recursos en
+otros lenguajes: JSON, XML. El servidor entrega _representaciones_ de estos 
+recursos. Mediante HTTP enviamos una **solicitud**. Podemos pedir al servidor 
+qué representación queremos y el servidor devuelve una **respuesta**.
+
+La comunicación es **cliente-servidor**. El cliente es un navegador, que envía
+la solicitud a una máquina destino, que es el **servidor**.
+
+**HTTP** es _extensible_. Por encima de la capa HTTP tenemos otros lenguajes. 
+Por debajo de HTTP tenemos capa de transporte TCP y capa IP.
+
+## Cliente
+
+En nuestra asignatura el cliente generalmente va a ser un _navegador_. Pero no 
+es el único tipo de cliente. Por ejemplo, una aplicación de consola puede enviar
+solicutdes HTTP. Para el servidor lo relevante no suele ser el cliente, sino la
+solicitud.
+
+## Servidor Web
+
+No necesariamente es una máquina. Puede ser una instancia de _Software_, como
+una máquina virtual. O varias máquinas. Pero a efectos prácticos, se lo
+considera todo como **servidor**.
+
+## Proxy
+
+Entre el navegador y el servidor puede haber muchas máquinas a nivel de
+transporte. Por lo general, para el cliente es igual. Esto se denomina como 
+**transparente**. No es relevante si contesta _el_ servidor o un _proxy_.
+
+## Características HTTP
+
+- Es **simple**. Es relativamente simple de construir un cliente y de leer para
+un humano.
+- Es **extensible**. 
+- Es **stateless**. Sin estado. No hay relación entre dos solicitudes sucesivas.
+Pero _no es sessionless_, sin sesión. No puedo enviar una solicitud pensando en 
+que la aplicación que recibe guarda registro de las interacciones. Cada
+solicitud tiene que ser atómica.
+- Protocolo HTTP y conexiones.
+
+## Características comunes controladas por HTTP
+
+**Caching**. Puede indicar a servidor o clientes qué y por cuánto tiempo se 
+almacena. Esto permite guardar recursos, en primer lugar en el navegador, para 
+mejorar la experiencia del usuario, reducción de tiempo, etc.
+
+**Autenticación**. Puede proveer autenticación básica, por ejemplo con
+encabezados o _Cookies_. (Las Cookies, en definitiva, se convierten en
+encabezados). Permiten mantener las _sesiones_.
+
+**Sesiones**. Permite mantener estados, como carritos de compra,
+*configuraciones,
+
+## Mensajes HTTP
+
+**Solicitudes**. 
+- Incluyen un método (generalmente GET, POST). 
+- Path, la ruta.
+- Versión HTTP. Hasta la 1.1 podemos leer.
+- Encabezados
+- Cuerpo
+
+**Respuesta**. 
+- No trae verbo/método.
+- Incluye versión.
+- Código de estado, si tuvo éxito. 200 es éxito. En los 300 redirecciones. Fuera 
+de ese rango, errores. 400 del lado del cliente. Por ejemplo, solicitamos un 
+recurso que no existe (404). En el rango de los 500, errores del lado del
+servidor.
+- Mensaje de Estado, traducción al inglés del código. Ejemplo, 200 Ok, 404 Not
+Found.
+- Encabezados, clave-valor, cada uno en línea nueva.
+- Cuerpo, el recurso que solicitamos, por ejemplo un documento HTML que el 
+navegador renderiza.
+
+## HTTPS
+
+Versión encriptada de HTTP. Utiliza TLS (anteriormente SSL). Se aseguran contra
+ataques _Man in the Middle_. Requiere que el servidor provea un certificado
+digital válido. TLS 1.0 y 1.1 ya no son soportados.
+
+Utiliza **encriptación asimétrica**. Hay dos llaves públicas, una del cliente y 
+una del servidor. Por otra parte, cliente y servidor tienen su llave privada.
+Se usan una privada y una pública para encriptar y desencriptar, de manera tal 
+que quien esté en el medio nunca tenga el par para desencriptar.
+
+## Cache
+
+Almacena una respuesta asociada a una solicitud y la usa para dar respuestas a
+solicitudes subisiguientes. Hay muchas ventajas en usar cache. Por ejemplo,
+agilizar velocidad de respuesta. No volver a usar el servidor para procesar algo 
+que ya procesamos.
+
+Puede ser controlada por el cliente y por el servidor.
+
+## URL Forwarding
+
+Permite redirigir una URL hacia otra. Permite que un mismo recurso tenga más de
+una dirección URL.
+
+## Cookies HTTP
+
+Una **Cookie** es una porción de información que el navegador envía al usuario,
+por medio de los encabezados de la respuesta. El navegador puede almacenar, 
+modificar o eliminar esas Cookies. En cada solicitud puede volver a enviarlas.
+Permiten _recordar información de estado_. Con las Cookies tenemos sesiones.
+
+Se usan para:
+- adminitrar sesiones 
+- Personalizar productos 
+- Seguimiento de los usuarios
+
+## DNS
+
+Cada servidor tiene su dirección IP. Pero suelen ser difíciles de recordar.
+Para eso existen los servidores DNS (_Domain Name Service_), que almacena las
+correspondecias entre dominios, como `google.com`, y direcciones IP, como
+`8.8.8.8`.
+
+Hay distintos registros DNS en servidores DNS.
+- Tipo A, más comunmente usados
+- AAAA (IPv6), igual a A pero para IPv6 
+- CNAME, dirigen un dominio de alias a uno canónico. Ej., en lugar de
+`google.com` y `www.google.com`, tenemos un `CNAME` enlazado al mismo registro
+A. Esto permite actualizar en un solo _subdominio_.
+- ALIAS, permite apuntar dominios distintos al mismo servidor.
+
+## Dirección IP
+
+Identifica a un dispositivo de forma única. Definida con una etiqueta numérica,
+formada por un número de 32 bits, representado como 4 números de 8 bits
+separados por puntos, por ejemplo, `108.174.10.10`.
+
+## Alojamiento Web
+
+Servidores. Tenemos distintos tipos.
+- Alojamiento compartido, varios dominios comparten un mismo recurso.
+- VPS, es compartido, pero cada uno tiene un servidor privado virtual
+- Hosting dedicado, un servidor propio pero mantenido por un proveedor
+- Hosting cloud, permite hostear en redes de servidores físicos y virtuales en
+diversas ubicaciones geográficas. Permitiendo:
+  - Escalabilidad
+  - Disponibilidad
+  - Relación costo-beneficio
+  - Seguridad
