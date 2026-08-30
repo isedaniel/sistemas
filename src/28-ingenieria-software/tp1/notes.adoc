@@ -1,0 +1,77 @@
+= Notas para el TP1
+Daniel
+
+.Consigna
+* Establecer las particularidades de la Ingeniería de Software
+* Notar las profesiones vinculadas y sus aportes de la IS
+* Conexión entre estos conceptos y la definición de IS de Sommerville
+
+.Informática
+Ciencia que estudia el procesamiento automático de la información. Se consolida
+con la aparición de las computadoras en los 40. Permitieron eficacia en el 
+manejo de grandes volúmenes de datos.
+
+.Software
+Soporte lógico de un sistema informático. Utiliza los componentes físicos
+(Hardware) haciendo posible el uso de la computadora.  Sistemas informáticos
+para que la máquina responda a las órdenes humanas y devuelva la información que
+necesitamos. Es creación de propiedad intelectual.
+
+.Software de aplicación
+Se usa para funciones concretas. Ejemplo: procesadores de texto.
+
+.Software de programación
+Herramientas para diseñar e implementar programas.
+
+.Lenguaje de programación
+Lenguaje artificial para interactuar con la máquina.
+
+.Ingeniería de Software
+Se encarga del Software desde el inicio hasta la implementación. Aplican
+teorías, métodos, buscando resolver problemas. Trabajan con restricciones
+financieras y organizacionales. No solo comprende los procesos técnicos. Sino
+que incluye la gestión de proyectos y el apoyo a la producción.
+
+.Empresas de Software
+Se conforman por equipos. Se busca gente que conozca el rubro: analistas
+funcionales. Componente administrativo: recursos humanos, administración,
+finanzas, es un 10%. El resto, está en desarrollo de Software. Además de
+ingenieros incluye diseñadores, expertos en comunicación.
+
+.Argentina en el rubro de Ingeniería de Software
+Actor joven en _Outsourcing_. Todavía tratando de ganar mercado y
+posicionándose. Estratégicamente es un buen destino para _Outsourcing_.
+
+.Perfiles
+Diferentes tipos. 
+* En su mayoría técnicos, de áreas de sistemas. Ingenierías, licenciaturas. 
+* Hay áreas de diseño, diseño gráfico, 
+* Administración de empresas, economistas. Función más ligada a entender el
+* negocio del cliente, desarrollar especificaciones funcionales. 
+
+.Visión de Argentina en el extrajero
+Como Mercado no existimos. Por la piratería. Sin embargo, el dólar carísimo 
+facilita el desarrollo de la industria del Software. El dólar barato nos pone en 
+necesidad de vender calidad antes que precio.
+
+.Sector de Software
+Tecnologías de Información y Comunicaciones. Arranca desde los 70. No se podía 
+ver la importancia estratégica que tiene hoy. Con la privatización en los 90 se 
+moderniza el equipamiento. Con la devaluación del peso en 2001 Argentina se
+vuelve competitiva.
+
+.Investigación y Desarrollo
+En un primer momento, en el 2002, exportamos por tipo de cambio, horas hombre.
+Cuando el salario en dólares crece porque se atrasa el tipo de cambio, hay que 
+empezar a exportar por calidad e innovación. Investigación y desarrollo tiene 
+que ver con esa calidad. Otros países de Latinoamérica son más baratos. Por eso 
+tenemos que destacar por calidad. Las universidades públicas colaboran con esa 
+calidad.
+
+.Futuro
+Hay que trabajar en capacitación. Colaborar para que los jóvenes estudien. Está
+decayendo el ingreso a las universidades. Hay que estudiar y entrenar. El 
+Software es la nueva revolución industrial. La industria del conocimiento tiene
+un rol fundamental en el desarrollo del país. Va a crecer a tasas de 2 dígitos.
+En facturación y exportaciones. Nuestro insumo son recursos humanos. Hay que 
+estar preparados para el cambio constante.
