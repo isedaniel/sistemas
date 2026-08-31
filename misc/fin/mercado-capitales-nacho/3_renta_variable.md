@@ -210,13 +210,95 @@ La idea es **armar nuestro scoring** para elaborar **nuestra estrategia**.
 
 ## Cedears
 
-Certificados de depósito argentinos. Un banco compra acciones del extranjero,
-las guarda un banco y nosotros compramos derechos sobre esas acciones, entre
-ellos, el de cobgrar dividendos. Es la forma que tenemos en Argentina de
-adquirir empresas en el exterior. Cualquier puede comprar una Acción en el
-extranjero. Se la doy al Comafi y ellos me dan el Certificado. Ese Certificado
-lo puedo guardar, cobrar dividendos o venderlos en pesos.
+Certificados de depósito argentinos. El banco COMAFI compró acciones del
+extranjero,
+las guarda y nosotros compramos derechos sobre esas acciones, entre
+ellos, el de cobrar dividendos. Es la forma que tenemos en Argentina de
+adquirir empresas en el exterior. 
 
-```java
-// QUEDO: 1H 30M
-```
+Además, cualquier persona puede comprar una Acción en el
+extranjero. El Comafi puede custodiarla y generar los CEDEARs. Y a la inversa también: con una determinada cantidad de CEDEARs puedo pedir a Comafi que me envíe una acción al extranjero.
+
+Cada CEDEAR tiene tres componentes en su precio.
+
+* Acción en el Mercado: Precio del activo subyacente.
+* Precio CCL: Precio del dólar. Cada activo tiene su CCL correspondiente.
+* Ratio de conversión: a cuántos CEDEARs equivale cada acción.
+
+Es proporcional al precio de la acción y al precio del CCL. El valor depende de 
+como se muevan estos valores.
+
+$$
+P_{CEDEAR} = \frac{P_{ACCION} * P_{CCL}}{RATIO}
+$$
+
+El ratio lo conocemos, es fijo. El Precio de la Acción lo conocemos por Yahoo 
+Finance. Lo que calculamos es el CCL. Vamos a saber el CCL que pagamos en cada 
+momento.
+
+Si un CEDEAR paga un dólar distinto, se arbitra. Si un comprador paga por encima
+del precio de mercado, el _Market Maker_ (COMAFI) vende todo lo que necesita. 
+Compra afuera y revende al comprador que está por encima. Es decir, se arbitra.
+
+# ADR
+
+ADRs es lo mismo. Son American Depository Recepts. Cuando una acción no es
+americana, no cotiza la acción, sino el ADR. 
+
+# ETF
+
+_Exchange Traded Funds_. Objetivo: _diversificar_. Hay cientos de ETF.
+
+Ejemplos. 
+
+* `$EWZ`. iShares MSCI Brazil ETF. Trata de replicar el MSCI Brazil 25/50. MSCI
+es una calificadora.  Contiene las 25 más representativas de Brasil. iShares son
+ETF de Black Rock.
+
+* `$EEM`. Mercados emergentes.
+
+Son fondos de inversión cotizados que tienden a perseguir un índice de
+referencia.
+
+También existen ETF que buscan duplicar o triplicar los movimientos de los
+índices. Multiplican las ganancias pero también las pérdidas. 
+
+Pueden pagar los dividendos o reinvertirlos.
+
+# FCI - Fondo Común de Inversión
+
+Es un patrimonio que se conforma con paortes de personas físicas o jurídicas que
+invierten en él para obtener rentabilidad.
+
+Puede ser.
+* Renta fija
+  * _Money Market_: invierten en plazos fijos.
+  * Bonos ONs extranjeros
+  * Bonos ONs locales
+* Mixta
+* Renta variable
+
+Se conforma con:
+* Cuotapartistas. Los inversores.
+* Sociedad gerente, que administra.
+* Sociedad depositaria, que resguarda.
+
+La sociedad gerente y depositaria tienen que ser dos distintas por legislación.
+Como vivimos en Argentina, por ejemplo, Santander Rio Asset Management,
+Matrícula CNV 15 puede ser la gerente. Y Santander Rio SA, Matricula CNV 13, la
+depositaria.
+
+El FCI tiene un *Reglamente de Gestión*. Especifica los instrumentos en que
+puede invertir y la proporción permitida para cada uno. Se especifica un
+*Objetivo* y un cuáles son sus *límites*.
+
+*Tipos de FCI*. 
+* Money Markets, _Fondos de Liquidez_. Horizonte a un día. Puro si invierte
+únicamente en plazo fijo, cuenta remunerada y caución.  
+* Super Ahorro Plus. Paga más intereses, por lo que seguramente no es Puro.
+Invierte en otros instrumentos además de plazo fijo, cuenta remunerada y
+caución.
+* Fondos renta fija. Ya invierten en Letras además de caución, cuenta remunerada
+y plazo fijo. Por eso suelen tener plazos de rescate más largos: porque
+invierten en instrumentos de _menor liquidez_. Necesitan tiempo para salir a 
+vender esos instrumentos _sin dañar_ el valor de la cuotaparte del fondo.
