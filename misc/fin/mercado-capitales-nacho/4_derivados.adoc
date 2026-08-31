@@ -1,0 +1,107 @@
+= Notas del Módulo 4 - Derivados
+Dan <ise.daniel@gmail.com>
+v 0.1, 2026-08-31
+
+Esta clase es con Juan (creo que https://twitter.com/deltavega_[@DeltaVega_]),
+del _broker_ Cono Sur Inversiones.
+
+.Objetivo
+Una buena introducción. Conocer el instrumento, cuál es su función, cuál es su
+uso, perspectivas a tomar. Importante tener bien aceitado el uso de instrumentos más básicos, porque estos _derivan_ de los instrumentos vistos hasta ahora.
+
+No vamos a profundizar en la matemática, sino en los conceptos e introducirnos
+en las _estategias_.
+
+Hasta ahora vimos instrumentos de *Renta Fija* y *Renta Variable*. Sabemos que
+teniendo un mercado en común, son herramientas distintas. 
+
+.Derivados
+Tienen la particularidad de que abarcan todos los intrumentos, Pueden elaborarse
+con distintos _activos subyacentes_.
+
+Si armásemos una matriz por _tipo de activo_, se lo puede ubicar como una _clase
+particular_ de activo, pese a ser un derivado de los otros.
+
+== Futuros
+
+Primer instrumento derivado, pese a que tiene cierta complejidad.
+
+.Definción
+Es un contrato entre partes. Ambas se compromente a comprar o vender un activo,
+a un determinado precio para una determinada fecha. Comprometemos un activo, con
+un precio, a una fecha. Concertamos a futuro _algo que va a ocurrir_.
+
+.Funcionamiento
+Se puede comprar o vender. Una vez concertado, integramos un *Margen*. Es una 
+suerte de _seguro_ o seña. Integramos una parte del capital. Para tener certeza
+de que vamos a cumplir con nuestra obligación. Se dice que se _integra_ una parte de la _garantía_ o de la _exposición_, por un _porcentaje_ de la operación.
+
+El concepto central es que en un momento 0 se _integra_ la garantía y esta se devuelve al final.
+
+.Ventajas
+Es sencillo. Por definición tiene un pago simétrico. Permite diversificar la
+cartera y principalmente apalancarnos. Permite tomar una exposición mayor al
+capital que tengo en mi cartera. Con poco capital puedo tomar mayor exposición.
+
+.Objetivos de los participantes en el Mercado de Futuros
+Se operan con tres grandes objetivos (en realidad aplica a todos los derivados).
+Hay tres _tipos_ de jugadores, de acuerdo al tipo de operatoria.
+
+. Coberturista. Persona que utiliza los futuros (u otro derivado) para cubrirse.
+Por ejemplo, un producto agropecuario que hace maíz. Está expuesto a los granos.
+Ya compro los insumos y sembró. Si el maíz sube, vende más caro. Si baja, puede
+perder. En el momento en que siembra puede vender _Futuros de Maíz_. Concierto
+con otra persona a cambio de una cantidad preestablecida. Cubro mi riesgo porque
+ya estoy comprado. No cubro riesgo clima ni riesgo político, etc. Pero cubro 
+precio. El coberturista, se dice, está _naturalmente comprado_. Ya puso plata en
+sus insumos.
+
+. Arbitrajistas. Habitualmente intermediarios financieros. Entienden la matriz
+matemática y lógica detrás del instrumento. Con cálculos, utilizan los momentos
+de precio para sacar réditos sin exposición al riesgo. Quienes hacen uso sin ser
+participantes financieros, no ven la milésima matemática. Hay actores que pueden
+sacar pequeños márgenes mirando todo el día la pantalla. Le pone un límite al
+mercado y da _límites_ al mercado. Iguala los precios.
+
+. Especulador. No de manera peyorativa. Se caracteriza por tomar posición con 
+apalancamiento. Toma una posición *LONG* (comprada) comprada o *SHORT*
+(vendida). Su principal actividad es tratar de predecir el movimiento. Permite 
+tener liquidez. En todo mercado hay diferentes puntos de vista. Compradores y 
+vendedores. Los especuladores aydan en el proceso de _Price Discovery_. Aportan
+liquidez y tienden a unir las puntas.
+
+.Márgenes, garantías y Apalancamiento
+Tomar una posición por un capital superior con una inversión relativamente
+chica. Como tomamos una posición poniendo una garantía, llamada *Márgen*, se 
+puede integrar en efectivo o títulos. Es decir, puedo usar unos activos para 
+apalancarme en otros.
+
+Todo instrumento (siempre que no sea un derivado) se puede utilizar como márgen.
+
+El márgen permite determinar el *grado* de apalancamiento. Por ejemplo, un
+contrato de 100, integrado en 10, tiene una palanca de 10/1. Se integran 10 por
+100 contratados. 1% de movimiento del activo es 10% respecto del márgen.
+
+Al cierre del mercado se hace una valuación de las garantías, por cambio en el
+activo subyacente. Si no se integra la garantía se cierra la posición. Eso es lo
+que se llama *Margin Call*.
+
+.Composición del precio de un Futuro
+Dos componentes bien definidos:
+
+. Precio del activo subyacente
+. Precio de la tasa libre de riesgo
+
+Es el precio del subyacente multiplicado por la tasa libre de riesgo.
+
+Ejemplo. Estamos viendo Galicia. El subyacente vale `$123.85`, el futuro vale 
+`$133.95`. La diferencia es `$10.10`. La tasa directa el `8.16%`. Si la
+dividimos por los días del contrato.
+
+Si el precio de Galicia no se mueve, todos los días se va descontando un poquito
+del precio. El precio de la tasa va cayendo.
+
+[source,java]
+----
+// Voy: 27M
+----
