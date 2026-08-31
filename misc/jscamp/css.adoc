@@ -1,0 +1,103 @@
+= Notas de Curso de CSS desde Cero
+Dan <ise.daniel@gmail.com>
+v 0.1, 2026-08-31
+
+Aquí incluyo las notas del curso https://www.youtube.com/watch?v=hrxjBqZWsb0[CSS
+desde Cero].
+
+== CSS
+
+Aparece en diciembre 1996. Con soporte primero en Explorer 3.  Es un lenguaje
+declarativo, de marcado, para describir la presentación de un documento, en el
+caso del desarrollo web, de un documento HTML. 
+
+.W3C
+Lo estandariza la *World Wide Web Consortium* (W3C).
+
+.Cascada
+**C**ascade **S**tyle **S**heet. Hojas de Estilos en Cascada. Hojas de Estilos 
+refiere al conjunto de reglas a aplicar. Cascada refiere a que las reglas se 
+aplican en un _orden específico_. Ese _orden_ depende de unas reglas. Y pueden 
+implicar _sobreescritura_, es decir, unas reglas pueden sobreescribir otras de
+acuerdo a unas reglas determinadas.
+
+.Recursos recomendados
+* Curso de CSS de Google en https://web.dev[web.dev]
+* https://developer.mozilla.org[Mozilla Developer Network (MDN) Web Docs].
+
+== Dónde se especifican los estilos
+
+Hay tres formas.
+
+.Etiqueta `<style>`
+Suele ir dentro de `<head>`.
+[source, html]
+----
+<style>
+  /* Declaramos que los elementos h1 sean azules */
+  h1 {
+    color: rgba(21, 21, 230, 0.75);
+  }
+</style>
+----
+
+.Atributo `style` en una etiqueta
+[source, html]
+----
+<h1 style="color: blue">Este título es azul.</h1>
+----
+
+== Selectores
+
+.Elementos
+Se pueden utilizar directamente los nombres de los elementos.
+[source, css]
+----
+/* elegimos los anchors */
+a {
+  color: blue;
+}
+----
+
+.Clases
+Utilizamos un punto.
+[source, css]
+----
+/* elegimos los elementos clase .azul */
+.azul {
+  color: blue;
+}
+----
+
+.Id
+Utilizamos el numeral. Hay que tratar de evitar ID para estilizar porque 
+estaríamos repitiendo estilos.
+[source, css]
+----
+/* elegimos el elemento de ID #azul */
+#azul {
+  color: blue;
+}
+----
+
+== Herencia
+
+Algunas propiedades se heredan. Por ejemplo, `font-family`. 
+[source, css]
+----
+/* El resto de elementos del body va a heredar la font-family sans-serif */
+body {
+  font-family: sans-serif;
+}
+
+/* Por el concepto de cascada, sin embargo, podemos sobreescribir  */
+h1 {
+  font-family: monospace;
+  border: 3px solid #09f;
+}
+----
+
+[source, css]
+----
+/* Voy en 40M */
+----
