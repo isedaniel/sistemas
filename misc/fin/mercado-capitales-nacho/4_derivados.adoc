@@ -1,6 +1,7 @@
 = Notas del Módulo 4 - Derivados
 Dan <ise.daniel@gmail.com>
 v 0.1, 2026-08-31
+:stem:
 
 Esta clase es con Juan (creo que https://twitter.com/deltavega_[@DeltaVega_]),
 del _broker_ Cono Sur Inversiones.
@@ -94,14 +95,68 @@ Dos componentes bien definidos:
 
 Es el precio del subyacente multiplicado por la tasa libre de riesgo.
 
-Ejemplo. Estamos viendo Galicia. El subyacente vale `$123.85`, el futuro vale 
-`$133.95`. La diferencia es `$10.10`. La tasa directa el `8.16%`. Si la
-dividimos por los días del contrato.
+.Ejemplo 
+- Vemos Galicia. 
+- El *subyacente* stem:[S], la acción, hoy vale `$123.85`. 
+- El *futuro* stem:[F], vale `$133.95`. 
+- La *diferencia*, stem:[F - S], es `$10.10`. 
+- La *Tasa Directa*, stem:[T_D = (F-S)/S * 100 = 8.155%], aproximadamente,
+`8.16%`. 
+- La *tasa efectiva diaria*, es decir, la división por la cantidad de días que
+faltan para el cumplimiento del contrato stem:[8.16% / 77 = .106%].
+- Si la _anualizamos_, multiplicando stem:[.106% * 365 = 38.66%], obtenemos la
+*Tasa Nominal Anual*.
+- La expresión para la TNA se puede resumir en stem:[T_(NA) = (F-S)/S xx 365/t
+xx 100].
 
-Si el precio de Galicia no se mueve, todos los días se va descontando un poquito
-del precio. El precio de la tasa va cayendo.
+****
+Notar que el Futuro resulta del Subyacente más el Interés stem:[r], tal que:
+[stem]
+++++
+    F = S + (1 + r times t/365)
+++++
+Siendo stem:[t] los días hasta el vencimiento del Futuro.
+****
+
+Si el subyacente S y la tasa de interés r no se mueven, el futuro va cayendo de
+precio todos los días, es decir, la diferencia va a tender a 0. Por lo tanto, la
+tasa directa tiende a 0.
+
+La *tasa de interés libre de riesgo* es Argentina es la *tasa de caución*.
+
+.Ojo con las comisiones
+Si bien la tasa debiera ser siempre la misma, podemos tener un _diferencial_
+notorio. Aún así puede no ser rentable el arbitraje, por la existencia de
+comisiones.  Las comisiones pueden ser mayores al beneficio del _trade_.
+
+.Apalancamiento
+Supongamos que analizamos Galicia. Cotiza en el mercado local, en el extranjero
+y tiene un futuro propio.
+
+Tenemos una comitente con $250.000. Creemos que va a tener un movimiento brusco al alza, por el motivo que fuere. Si no existieran los derivados, compro todo mi
+capital con acciones. Unas 1000.
+
+¿Cuántos futuros podría comprar por ese mismo capital? Cada contrato de Galicia,
+un _lote_, equivale a 100 acciones. Supongamos que me alcanza para 100 lotes, es
+decir, 10.000 acciones de Galicia. Tengo un _apalancamiento_ de 5 a 1. Puedo
+comprar 1000 acciones hoy, o 10.000 en el lote. 
+
+¿Cuál es el _pay-off_ por cada decisión? Comprando el lote, la ganancia (o
+pérdida) se multiplica por 5.
+
+.Arbitrajista
+Se trata de entender cuál es la matemática pesada detrás de los derivados, para
+asumir pequeñas ganancias libres de riesgo. Generalmente requieren de un gran
+capital para obtener un rendimiento considerable.
+
+Supongamos que tenemos un amigo de perfil conservador, en el mismo lugar que el
+otro. Este amigo ve que el TNA de Galicia es del `38.66%`. Ve la caución y estå
+en `30.5%`. En finanzas las tasas se trabajan en anual, para que sean
+comparables. El diferencial de tasa es de 8 puntos. 
+
+Entonces, 
 
 [source,java]
 ----
-// Voy: 27M
+// Voy: 40M
 ----
