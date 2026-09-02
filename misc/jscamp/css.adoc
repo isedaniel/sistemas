@@ -19,7 +19,7 @@ Lo estandariza la *World Wide Web Consortium* (W3C).
 refiere al conjunto de reglas a aplicar. Cascada refiere a que las reglas se 
 aplican en un _orden específico_. Ese _orden_ depende de unas reglas. Y pueden 
 implicar _sobreescritura_, es decir, unas reglas pueden sobreescribir otras de
-acuerdo a unas reglas determinadas.
+acuerdo a unas reglas determinadas. Se profundiza abajo.
 
 .Recursos recomendados
 * Curso de CSS de Google en https://web.dev[web.dev]
@@ -51,6 +51,7 @@ Suele ir dentro de `<head>`.
 
 .Elementos
 Se pueden utilizar directamente los nombres de los elementos.
+
 [source, css]
 ----
 /* elegimos los anchors */
@@ -61,6 +62,7 @@ a {
 
 .Clases
 Utilizamos un punto.
+
 [source, css]
 ----
 /* elegimos los elementos clase .azul */
@@ -72,6 +74,7 @@ Utilizamos un punto.
 .Id
 Utilizamos el numeral. Hay que tratar de evitar ID para estilizar porque 
 estaríamos repitiendo estilos.
+
 [source, css]
 ----
 /* elegimos el elemento de ID #azul */
@@ -80,9 +83,52 @@ estaríamos repitiendo estilos.
 }
 ----
 
+Los selectores se pueden combinar, con un espacio de por medio. El primer 
+elemento es el padre. El segundo el hijo.
+
+[source, css]
+----
+/* elegimos el strong dentro de un párrafo.
+ * aquí notamos que es una práctica interesante leer selectores de derecha a 
+ * izquierda
+ */
+p strong {
+  color: blue;
+}
+----
+
+Hay que tener un poco de cuidado con estos selectores. Si tenemos elementos 
+anidados las reglas se pueden aplicar dos veces. Ejemplo, el selector `ul li`
+aplicado a:
+
+[source, html]
+----
+<ul>
+  <li>Elemento base</li>
+    <ul>
+      <li>Elemento anidado</li>
+    </ul>
+</ul>
+----
+
+Se puede usar `>` para aplicar solo a los hijos directos. Selecciona solo los 
+elementos inmediatamente hijos del elemento de la izquierda. 
+
+[source, css]
+----
+article > p {
+  font-size: 16px;
+}
+----
+
+`~` permite elegir los operadores que están después, pero a la vez son hermanos.
+Es decir, hijos del mismo elemento. `+` es lo mismo, pero tienen que ser
+hermanos directos. Tiene que venir _justo_ después.
+
 == Herencia
 
 Algunas propiedades se heredan. Por ejemplo, `font-family`. 
+
 [source, css]
 ----
 /* El resto de elementos del body va a heredar la font-family sans-serif */
@@ -97,7 +143,41 @@ h1 {
 }
 ----
 
+.Formal Definition
+En *MDN* tenemos la _Formal Definition_ de cada propiedad. En dicha sección 
+encontramos:
+
+- Valor inicial
+- A qué elementos aplica
+- Si *hereda* o no
+- Valor computado
+- Tipo de animación
+
+Además de muchos otros aspectos, como la sintaxis, ejemplos.
+
+== Pseudoclases
+
+Los elementos tienen _estados_. Por ejemplo, cuando ponemos el cursor por encima
+de un elemento, está en estado de _hover_. Con esto podemos incorporar cierta 
+interactividad a la interfaz. Que reaccione a cambios en el estado.
+
 [source, css]
 ----
-/* Voy en 40M */
+/* seleccionamos los anchor cuando el curso está por encima */
+a:hover {
+  /* ... */
+  outline: 3px solid rgb(231, 57, 57);
+}
+----
+
+En las herramientas de desarrollo se pueden _checkear_. Por ejemplo, simular el
+`:hover` para testear.
+
+== Cascada
+
+
+
+[source, css]
+----
+/* Voy en 1H 3M */
 ----
