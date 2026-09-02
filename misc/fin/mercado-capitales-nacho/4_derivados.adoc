@@ -154,9 +154,75 @@ otro. Este amigo ve que el TNA de Galicia es del `38.66%`. Ve la caución y est�
 en `30.5%`. En finanzas las tasas se trabajan en anual, para que sean
 comparables. El diferencial de tasa es de 8 puntos. 
 
-Entonces, 
+Hace un short de Galicia. Se endeuda al 30.5% para comprar 10.000 acciones. 
+Necesita $1.238.500 para las 10.000 acciones que, recordemos, valen $123.85 cada
+una. El costo de ese capital es:
+
+[stem]
+++++
+(.305/365)(77)(1238500) = 79688
+++++
+
+Si vendo al cierre de Abril a $133.95, obtenemos $1.339.500. Quedan $21.312.
+
+Tenemos dos *riesgos* particulares. 
+
+Los futuros varía todos los días. Van generando una diferencia diaria. Si el
+futuro sube, tenemos una diferencia positiva. Si el futuro baja, tenemos que
+integrar.  Si Galicia bajara, como estoy vendido, va a ingresar dinero y ese
+dinero lo puedo caucionar, para generar una tasas adicional.
+
+Otro riesgo sería que la caución puede no estar calzada. Puede vencer antes. En
+ese caso, no se a qué tasa me voy a refinanciar para la operación.
+
+.Coberturistas
+Aquellos que tratan de eliminar uno de los riesgos en su actividad, por ejemplo,
+el _riesgo precio_ en una actividad, como la agricultura.
+
+Otro ejemplo. Vendemos bicicletas. Tenemos que pagar USD 100.000 es producto 
+para dentro de 3 meses. Pero nuestras ventas se cobran en pesos. Para asegurar
+el valor podemos utilizar el dólar futuro. Podríamos cerrar una compra futuro,
+cerrando un precio para julio.
+
+En cuanto tenga los pesos para pagar, puede comprar por ejemplo una Letra del 
+Tesoro, con vencimiento anterior. Si, por ejemplo, el costo de dólar futuro es
+es 31.84% y la letra paga TNA del 35.39%, hay un diferencial de TNA de 3.55%.
+
+.Tipos de futuros, en cuanto a liquidación
+. Contratos por diferencias. _Cash settlement_. Contratos que al finalizar la
+vida, paga la diferencia por la valuación. Por ejemplo, al finalizar el contrato
+de Galicia, se liquidan las diferencias. Si estoy comprado y subió, recibo la 
+diferencia. Si estoy vendido y subió, tengo que poner la diferencia.
+. Contratos contra entrega. Entrego el subyacente. Se da en los contratos 
+agrarios. O _commodities_ energéticos como el petróleo. Existe un intercambio 
+físico. 
+
+Los futuros de activos financieros suelen ser _Cash settlement_. Los contratos
+contra entrega suelen hacerse para contratos agrarios. En Argentina, los
+agrarios suelen ser mixtos.
+
+Al finalizar cada rueda, el mercado (Rofex, por ejemplo), corre las diferencias,
+acreditando el _diferencial_ del contrato. El _Mark to Market_ se deriva de 
+la diferencia entre el cierre de hoy y el de ayer, multiplicado por 
+
+.Carry Trade
+Generalmente se utiliza mal. Era un _trade_ que consistía en analizar la tasa de
+futuros del dólar. Vendes los dólares contra el mercado _spot_. Comprabas dólar
+futuro y ponías los pesos a una TNA. Esta es la _adaptación argentina_ del
+carry. Entraron muchos dólares que, cuando tuvieron que salir, el sistema no 
+pudo aguantar.
+
+.Mercado de Futuros
+A diferencia del mercado accionario, es un mercado de suma cero. Por cada uno 
+que gana un peso hay otro que lo pierde. Para cada contrato hay un comprador y
+un vendedor.
+
+Por su naturaleza, ayuda a entender qué quiere el BCRA respecto del dólar. 
+Permite _setear_ expectativas de devaluación. Se sabe que el BCRA interviene y
+con eso _setea_ expectativas.
+
 
 [source,java]
 ----
-// Voy: 40M
+// Voy: 1H 25M
 ----
