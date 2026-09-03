@@ -1,8 +1,10 @@
-= Notas Diseño de Sistemas 2
+= Notas de clase, Diseño de Sistemas 2
+:toc:
 
-.TODO 
+== TODO 
 . Revisar el contenido de las clases
 . Resumir apuntes que subió el profe
+. Práctico Arquitectura Cliente-Servidor (no hacer punto que propone solución).
 
 == Clase 1
 
@@ -120,8 +122,8 @@ ingeniería -> pruebas -> evaluación.
 . Los requisitos se modelan en cuatro dimensiones: contenido, interacción,
 función y configuración.
 
-. La subcontratación y la medición son decisiones /estratégicas/: impactan
-en el costo, calidad y precios.
+. La subcontratación y la medición son decisiones /estratégicas/: impactan en el
+costo, calidad y precios.
 
 
 == Clase 2
@@ -163,3 +165,47 @@ la ubicación del menú de navegación en una página web.
 
 . *Prevención de errores*. Un diseño que cuide al usuario de errores comunes.
 Ejemplo: desactivar botones de envío hasta completar campos requeridos.
+
+== Clase 3, 2 de septiembre
+
+=== Arquitectura
+La visión jerárquica del sistema, que abarca en su totalidad. Tiene 3
+componentes principales.
+. Una estructura globa, que define bloques de código, bases de datos,
+servidores, servicios externos.
+. Relaciones, que indica la interacción entre los componentes
+. Requerimientos no funcionales: escalabilidad, seguridad, etc.
+
+Las arquitecturas tienen *patrones* comunes. Por ejemplo, un *monolito*, no
+tiene partes. Es todo una sola cosa. Las *arquitecturas monolíticas* sirven para
+sistemas chicos, especializados, con poca complejidad. 
+
+Además tienen *capas*. Que refiere a los distintos componentes.
+
+Patrones, dentro de arquitectura, no refiere a patrones de diseño. Patrones de
+diseño se usa en programación. Refiere a soluciones reutilizables, que pueden
+encajarse unas con otras -como un rompecabezas-.
+
+=== Arquitectura cliente-servidor
+
+.Funcionamiento
+. El cliente envía una petición al servidor
+. El servidor procesa la solicitud
+. El servidor responde
+. La comunicación suele darse mediante protocolos comunes HTTP, FTP o SQL
+
+.Ejemplo
+Ejemplo de cliente/servidor. Cliente: navegador (Chromium). Servidor: un
+servidor web (Apache, nginx). El navegador solicita una página. El servidor 
+procesa la solicitud y envía el contenido.
+
+.Ventajas
+. Centralización de recursos y datos
+. Mejor administración de la información
+. _Escalabilidad_, se pueden añadir más clientes con cierta facilidad
+. Seguridad mejor controlada desde el servidor
+
+.Desventajas
+. Dependencia del servidor: si falla, los clientes no acceden
+. Puede requerir de una inversión mayor en _Hardware_ y seguridad
+. Saturación si hay demasiados clientes conectados en simultáneo
