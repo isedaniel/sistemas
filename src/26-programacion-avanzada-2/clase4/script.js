@@ -53,7 +53,7 @@ console.log(`El nombre es: ${nombre3}`);
 
 
 // Hacemos las comparaciones con === para que sean estrictas
-const myArr = [1, 2, 3];
+const myArr = [1, 2, 3, 4, 5, 6, 7];
 if (myArr.length === "0") {
     // Nunca va a entrar aquí, porque estamos comparando un string
 }
@@ -63,3 +63,13 @@ else if (myArr.length === 0) {
 else {
     console.log(`Tiene ${myArr.length} elementos.`);
 }
+
+// Podemos definir fucniones lambda o flecha, asignarlas a una variable o 
+// pasarlas como argumento
+const even = n => n % 2 === 0;
+
+console.log(myArr.filter(even));
+// => [2, 4, 6]
+
+console.log(myArr.filter(n => n % 2 !== 0));
+// => [1, 3, 5, 7]
