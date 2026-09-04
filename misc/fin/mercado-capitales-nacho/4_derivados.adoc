@@ -221,6 +221,23 @@ Por su naturaleza, ayuda a entender qué quiere el BCRA respecto del dólar.
 Permite _setear_ expectativas de devaluación. Se sabe que el BCRA interviene y
 con eso _setea_ expectativas.
 
+== Opciones
+
+Tipo de derivado, con particularidades que lo hacen diferente al resto. Pese a 
+su complejidad matemática, están presentes en casi todos los aspectos de nuestra
+vida. Uno de los más fascinantes.
+
+.Definición
+Es un contrato temporal, en el cual se da al comprador un derecho, _no_ una 
+obligación, y el vendedor una _eventual_ obligación, de comprar o vender un 
+activo subyacente, a un determinado precio, a una determinada fecha.
+
+.Tipos de opciones
+- *Call*. Opción de compra.
+- *Put*. Opción de venta.
+
+Veamos al _Call Option_ como una seña. El 
+
 
 [source,java]
 ----
