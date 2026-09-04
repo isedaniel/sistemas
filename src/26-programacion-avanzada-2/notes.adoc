@@ -1,0 +1,20 @@
+= Notas de Clase, Programación Avanzada 2
+
+== Clase 4
+
+Arrancamos JS.
+
+.Ejecución
+. Se puede ejecutar en *Consola*.
+. Embebido en HTML con `<script>`. Como buena práctica, embeber al final del 
+HTML, para no retrasar la carga de la página.
+. En un archivo aparte, indicado con el atributo `src`:
+
+[source, html]
+----
+<script src="script.js">
+</script>
+----
+
+4. Con *nodejs*. Puedo entrar al _REPL_ con el comando `node`, o ejecutar un 
+archivo con `node script.js`.
