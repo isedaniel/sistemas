@@ -236,10 +236,43 @@ activo subyacente, a un determinado precio, a una determinada fecha.
 - *Call*. Opción de compra.
 - *Put*. Opción de venta.
 
-Veamos al _Call Option_ como una seña. El 
+Veamos al _Call Option_ como una seña. Pago una seña por ejemplo por un auto, 
+eso significa que puedo comprar a un determinado precio, hasta una determinada
+fecha. Llegado el momento, integro el resto del capital y compro.
+
+Una _Put Option_ se asemeja a un seguro para el auto. Pago una prima. Si ocurre
+un hecho, como por ejemplo una rotura de vidrio, me devuelven una cantidad de 
+dinero. Pero si no existe la rotura, no se me paga nada.
+
+Es decir, en ambos casos se paga.
+
+Las opciones son seguros contra la volatilidad. Me puede cubrir al alza o me 
+puedo cubrir a la baja. Puedo asegurar un precio de compra con un _Call_ o un 
+precio de venta, en caso que el activo baje. con un _Put_. 
+
+Una opción necesariamente tiene un *activo subyacente*, un *strike price*
+(precio de ejercicio) y una *fecha de vencimiento*.
+
+Quien compre una opción _paga_ una prima. Quien venga una opción cobra esa prima
+y _podría_ tener que asumir obligaciones.
+
+.Lectura
+Ejemplo `GFG120.AB`.
+. `CFG`. Grupo Financiero Galicia. Subyacente.
+. `C`. Call. Tipo de Opción.
+. `120`: Precio de ejercicio. Strike Price.
+. `AB`: Abril. Fecha de ejercicio.
+
+.Tipo de Ejercicio
+. Europeas. Solo pueden ser ejercidas en la fecha de vencimiento
+. Americanas. Se pueden ejercer en cualquier momento desde la compra
+. Otros. Asiáticas, Knock-FF. Cada una tiene diferentes características y
+perfiles de vencimiento.
+
+El 98% de las opciones son americanas.
 
 
 [source,java]
 ----
-// Voy: 1H 25M
+// Voy: 1H 40M
 ----
