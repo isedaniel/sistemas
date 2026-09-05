@@ -8,7 +8,8 @@ del _broker_ Cono Sur Inversiones.
 
 .Objetivo
 Una buena introducción. Conocer el instrumento, cuál es su función, cuál es su
-uso, perspectivas a tomar. Importante tener bien aceitado el uso de instrumentos más básicos, porque estos _derivan_ de los instrumentos vistos hasta ahora.
+uso, perspectivas a tomar. Importante tener bien aceitado el uso de instrumentos
+más básicos, porque estos _derivan_ de los instrumentos vistos hasta ahora.
 
 No vamos a profundizar en la matemática, sino en los conceptos e introducirnos
 en las _estategias_.
@@ -35,9 +36,12 @@ un precio, a una fecha. Concertamos a futuro _algo que va a ocurrir_.
 .Funcionamiento
 Se puede comprar o vender. Una vez concertado, integramos un *Margen*. Es una 
 suerte de _seguro_ o seña. Integramos una parte del capital. Para tener certeza
-de que vamos a cumplir con nuestra obligación. Se dice que se _integra_ una parte de la _garantía_ o de la _exposición_, por un _porcentaje_ de la operación.
+de que vamos a cumplir con nuestra obligación. Se dice que se _integra_ una
+parte de la _garantía_ o de la _exposición_, por un _porcentaje_ de la
+operación.
 
-El concepto central es que en un momento 0 se _integra_ la garantía y esta se devuelve al final.
+El concepto central es que en un momento 0 se _integra_ la garantía y esta se
+devuelve al final.
 
 .Ventajas
 Es sencillo. Por definición tiene un pago simétrico. Permite diversificar la
@@ -133,7 +137,8 @@ comisiones.  Las comisiones pueden ser mayores al beneficio del _trade_.
 Supongamos que analizamos Galicia. Cotiza en el mercado local, en el extranjero
 y tiene un futuro propio.
 
-Tenemos una comitente con $250.000. Creemos que va a tener un movimiento brusco al alza, por el motivo que fuere. Si no existieran los derivados, compro todo mi
+Tenemos una comitente con $250.000. Creemos que va a tener un movimiento brusco
+al alza, por el motivo que fuere. Si no existieran los derivados, compro todo mi
 capital con acciones. Unas 1000.
 
 ¿Cuántos futuros podría comprar por ese mismo capital? Cada contrato de Galicia,
@@ -271,8 +276,57 @@ perfiles de vencimiento.
 
 El 98% de las opciones son americanas.
 
+Si soy comprador de una _Call_ tengo una _Long Call_. Gano si el subyacente sube
+por encima de un determinado monto. Si soy vendedor de una _Call_, tengo un 
+_Short Call_. Gano si el activo se cae por debajo del _strike_.
+
+.Valuación
+Tiene varias metodologías de valuación.
+
+. Árboles binomiales, en base a comportamiento pasado, cómo podría comportarse
+. Black, Scholes y Merton, lo mismo pero de manera contínua
+. Monte Carlo, usa los mismos _inputs_ del ábol binomial pero los fuerza por 
+iteración
+
+.Elemento explícitos de valuación
+. Precio del subyacente
+. Precio de ejercicio (strike)
+. Tiempo a expiración
+. Volatilidad histórica
+. Tasa de interés
+
+.Elementos implícitos de valuación
+. Volatitilidad implícito, principal, no único, elemento implícito de valuación.
+No es perceptible simple vista. En términos teóricos, es la volatilidad que está
+esperando el mercado. Es cuantificable pero no observable y habla sobre la 
+expectativa del mercado. 
+
+Las opciones son seguros contra la volatilidad. Si creemos que el mercado va a 
+estar muy movido, y los actores del mercado tienden a acordar en eso, la VI va a
+tender a subir. Si los actores creen que va a crecer la volatilidad, por mas que
+la acción valga lo mismo, el costo de la opción va a ser más alto.
+
+.Riesgo
+Hay métricas de riesgo, que tienen que ver con la sensibilidad frente a
+distintos factores. Son _las griegas_.
+. Delta, tasa de cambio nominal por cada dólar de cambio del subyacente
+. Gamma, segunda derivada del cambio nominal por dólar, tasa de cambio de delta
+. Theta
+. Vega
+. Rho
+
+.Estrategias
+Hay infinidad de estrategias. La más conocidas es el _Married Put_. Ejemplo. 
+Compro Galicia y compro un Put (Long Put). Si sube gano, si cae tengo una opción
+para cubrirme.
+
+La análoga es el _Covered Call_. Tenemos un LONG GGAL. Vendemos un _Call_, es 
+decir _Short Call_. Limito la ganancia de Galicia. Sirve para ganar una tasa y
+bajar costo de compra de un activo.
+
+Lo que buscamos en _generar funciones_. 
 
 [source,java]
 ----
-// Voy: 1H 40M
+// Voy: 2H 05M
 ----
