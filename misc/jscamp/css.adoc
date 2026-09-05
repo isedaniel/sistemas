@@ -2,7 +2,8 @@
 Dan <ise.daniel@gmail.com>
 v 0.1, 2026-08-31
 
-Aquí incluyo las notas del curso https://www.youtube.com/watch?v=hrxjBqZWsb0[CSS
+Aquí incluyo las notas del curso
+https://www.youtube.com/playlist?list=PLUofhDIg_38q7l8gV4IVCz_pjUeyD99_j[CSS
 desde Cero].
 
 == CSS
@@ -175,9 +176,76 @@ En las herramientas de desarrollo se pueden _checkear_. Por ejemplo, simular el
 
 == Cascada
 
+Uno de los conceptos más importantes. Refiere al sistema de sobre-escritura de 
+estilos. Frente a dos declaraciones, cuál es la que prevalece. Todo CSS se basa
+en este principio. Puesto que todo elemento tiene ya estilos por defecto. Lo que
+hacemos es sobreescribir. 
+
+.Especificidad
+Es un concepto central para entender la cascada. CSS determina la
+_especificidad_ para cada selector. El selector de mayor especificidad es el que
+se termina aplicando. 
+
+Es un cálculo de tres niveles. En la primera puntuación considera IDs. La
+segunda clases, atributos y pseudo-clases. La tecera elementos y
+pseudo-elementos. El primer nivel vale más que el segundo, y este más que el 
+tercero (como en el medallero olímpico: 1 de oro vale más que 99 de plata). 
+
+Cuando dos declaraciones tienen la _misma especificidad_, la que prevalece es la
+que está _más abajo_.
+
+[source, css]
+----
+p {
+  color: #09f;
+}
+
+/* misma especificidad, este prevalece */
+p {
+  color: red;
+}
+----
+
+La especificidad se puede ver en las *Herramientas de Desarrollo*.
+
+Si usamos estilos _en línea_, directamente sobre los elementos HTML o
+introducidos con JS, podemos saltarnos la especificidad. Aunque no es una
+práctica recomendada, porque estaríamos rompiende la distribución de roles.
+
+También puede saltarse con `!important`. Aunque si dos estilos tienen
+`!important`, terminan desemptando por alguno de los otros criterios.
+
+== Display
+
+Tenemos en línea `inline` y tenemos en bloque `block`. Hay otros, pero esos son
+los principales. En línea como el texto, en bloque como los títulos (agregan un
+salto de línea, se apilan, en lugar de ponerse al costado como el texto).
+
+.Box-sizing
+Controla qué consideramos con `height` y `width`. Con `content-box`, el que 
+viene por defecto, controlan el _content_. Con `box-sizing: border-box;` hacemos
+que el `width` y el `height` determinen el tamaño desde el borde hacia adentro.
+
+== Overflow
+
+Por defecto, `overflow: visible;`. Tenemos otros:
+
+. `hidden`: que no se vea. No se ve ni agrega scroll.
+. `scroll`: no se ve, pero el navegador agrega barras de desplazamiento.
+. `auto`: es como scroll, pero si no lo necesita no va a poner barras.
+Generalmente, si queremos `scroll` usamos este.
+
+La barra se puede estilar con herramientas como `Scrollbar Playground`.
+
+Para texto podemos usar `text-overflow: ellipsis`, que agrega puntos
+suspensivos. Por defecto es `text-overflow: clip;`.
+
+== Position
+
+
 
 
 [source, css]
 ----
-/* Voy en 1H 3M */
+/* Voy en video 2 Flex 16M */
 ----
