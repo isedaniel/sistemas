@@ -1,6 +1,6 @@
 = Notas del Módulo 4 - Derivados
 Dan <ise.daniel@gmail.com>
-v 0.1, 2026-08-31
+v 0.1, 2026-09-07
 :stem:
 
 Esta clase es con Juan (creo que https://twitter.com/deltavega_[@DeltaVega_]),
@@ -324,9 +324,27 @@ La análoga es el _Covered Call_. Tenemos un LONG GGAL. Vendemos un _Call_, es
 decir _Short Call_. Limito la ganancia de Galicia. Sirve para ganar una tasa y
 bajar costo de compra de un activo.
 
-Lo que buscamos en _generar funciones_. 
+Lo que buscamos es _generar funciones_. Ejemplo, hay un activo volando, pero no 
+queremos ingresar por si hay baja. Generamos una _Covered Call_, que en
+definitiva equivale a comprar el activo más abajo.
 
-[source,java]
-----
-// Voy: 2H 05M
-----
+Tenemos _Stradole_. Compramos volatilidad. Compramos un _Call_ y _Put_ de la 
+misma base. Generamos ganancias con los movimientos.
+
+.Broker Argentino
+En el Panel de Opciones muestra la plaza. Se puede ver en IAMC (Instituto 
+Argentino del Mercado de Capitales). Vencen al tercer viernes de cada mes par.
+Se pueden ejercer hasta el miércoles o jueves primer turno.
+
+.Conclusión
+Mundo dentro del mercado. Tienen naturaleza de oferta y demanda pero una 
+particularidad lógica y matemática. La pérdida es limitada. Uno puede ser 
+arbitrajista. La opciones permiten expandir usos.
+
+== Qué llevarnos
+
+Son instrumentos aceleradores de decisiones. Se puede ganar y perder mucho.
+Generalmente hay están bien _priceados_ porque son operadas por personas con
+experiencia.
+
+Libros. Hall, derivados. Operaciones financieras, Marini.

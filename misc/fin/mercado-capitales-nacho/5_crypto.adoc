@@ -1,0 +1,4 @@
+= Notas del Módulo 5 - Crypto
+Dan <ise.daniel@gmail.com>
+v 0.1, 2026-09-07
+:stem:
