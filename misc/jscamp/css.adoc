@@ -242,10 +242,96 @@ suspensivos. Por defecto es `text-overflow: clip;`.
 
 == Position
 
+.static
+Se posicionan por defecto de forma estática. Se van apilando. Si tenemos por 
+ejemplo 2 `div` dentro de una `section`, se colocan uno debajo del otro.
 
+.absolute
+Si es absoluto, podemos decir dónde posicionarlo respecto de `top` y `right`.
+Se posiciona respecto del documento. Sin embargo, a veces preferimos que sea
+relativo a otro elemento.
 
+.relative
+Si hacemos por ejemplo una `section` que sea `position: relative`, el `div` hijo
+puede tener `position: absolute`, y se posicionaría de acuerdo al container, que
+tiene _seteada_ la posición relativa. 
+
+.fixed
+Es similar al absolute, pero fijado a la pantalla. Como los "asistenes IA" o los
+accesos a _Whatsapp_ que suelen poner en las páginas web. Es decir, fijo
+respecto del _viewport_.
+
+.sticky
+Relativo a su contendor, pero mientras voy _scrolleando_ me va siguiendo. Es 
+decir, te sigue en la pantalla mientras esté dentro del contenedor.
+
+== Z index
+
+Las páginas se renderizan en 2D. Para decidir qué elemento aparece por encima de
+otro tenemos un *contexto de apilamiento*. Refiere al concepto de _produndidad_
+en la renderización. Es complicado.
+
+Un elemento raíz crea un *contexto de apilamiento*. Que refiere a que puede 
+tener un elemento por encima de él. Muchas propiedades crean contextos de 
+apliamiento. Se puede ver la cantidad de propiedades que los crean en MDN. Una 
+vez que se crea una contexto se puede definir cuál está por encima.
+
+== Flex
+
+El 95% de las cosas se pueden resolver con _Flex_. Hay diferentes `display`.
+Tenemos este HTML.
+
+[source, html]
+----
+<section class="parent">
+  <div class="item">
+    1
+  </div>
+  <div class="item">
+    2
+  </div>
+  <div class="item">
+    3
+  </div>
+</section>
+----
+
+Y especificamos el CSS.
 
 [source, css]
 ----
-/* Voy en video 2 Flex 16M */
+body {
+
+}
+
+.parent {
+  display: block;
+}
+
+.item {
+  border: 1px solid;
+  opacity: .9;
+  width: 100px;
+  height: 100px;
+  background: #09f;
+}
+
+.item:first-child {
+  background: yellow;
+}
+
+.item:last-child {
+  background: red;
+}
+----
+
+Así, queda uno encima del otro. Por defecto se apilan. Si cambiasemos la
+declaración de la clase `.item`, agregando `display: inline` se mostraría en 
+línea. Esto implicaría, en primer lugar, que pierden su tamaño. Simplemente se
+ajustan al texto, en este caso, 1, 2, 3. Se comporta como texto. Uno al lado del
+otro.
+
+[source, css]
+----
+/* Voy en video 2 Flex 48M */
 ----
