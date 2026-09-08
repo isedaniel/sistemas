@@ -2,3 +2,126 @@
 Dan <ise.daniel@gmail.com>
 v 0.1, 2026-09-07
 :stem:
+
+Hoy colabora https://x.com/jmvergara97[@jmvergara97]. 
+
+Cuando algo pasa de moda, se quedan los que saben.
+
+== Objetivo
+
+Arrancamos desde cero. Pero sin dejar de lado la parte técnica. La mayoría de 
+personas habla sin estar metida en tema. Hay que tener una mirada general pero
+además entrar un poco a lo técnico.
+
+== Qué son
+
+Es un activo digital, creado por _software_. La creación se conoce como
+_minería_. Utiliza _Hardware_ y _Software_, que se asienta sobre un registro 
+contable gigante que se conoce como _Blockchain_. Tiene características 
+revolucionarias sobre otros activos.
+
+=== Características
+
+.Confidencialidad
+Permite transaccionar de forma anónima.
+
+.Irreversibilidad
+Otorga seguridad a las transacciones.
+
+.Costos
+Pueden ser muy bajos en relación al sistema tradicional. Grandes volúmenes a 
+bajo costo.
+
+La primera es *Bitcoin*. El resto surgen para resolver los _problemas_ que
+tiene.
+
+== Qué es el dinero
+
+Surge para resolver un problema. La escritura surge para asentar registros 
+contables. Históricamente, pasamos por:
+
+. Trueque
+. Oro
+. Metales preciosos
+. Papel moneda
+. Papel electrónico
+. Crypto
+
+== Bitcoin
+
+Surge con la crisis de 2008. Los bancos centrales emitieron para salvar al 
+sistema financiero. Es positivo en la medida que se cuida al sistema financiero.
+Pero es negativo en términos _inflacionarios_. Para contrarrestar 
+este último problema surge *Bitcoin*. Plantea el desafío de tener una moneda sin
+autoridad central.
+
+Para solventar la inexistencia de una autoridad central, se plantea un activo
+_escaso_ digital, con una capacidad de emisión limitada. A medida que la gente 
+va conociendo la moneda va creciendo en cotización.
+
+La infraestructura permite que cualquiera pueda acceder a la red. 
+
+== Sistema bancario tradicional
+
+Tenemos diferentes actores.
+
+.Clientes
+Nosotros, los clientes. Ahorramos por seguridad y para generar una rentabilidad.
+Esa es la _tasa pasiva_.
+
+.Bancos
+Con esos ahorros el banco presta, para generar una rentabilidad. Esa es la _tasa
+activa_. La diferencia entre la tasa activa y la pasiva es el _spread_ bancario
+y es con ella el banco gana dinero.
+
+El banco distingue los fondos de cada cliente de acuerdo a su _identidad_. 
+
+.Regulador
+En nuestro caso, el _Banco Central_. Licencia quiénes pueden trabajar como 
+bancos. Establece las normas y permite -o no- participar del rubro. El regulador
+establece la _normativa_.
+
+== Sistema bitcoin & blockchain
+
+Se replican estas categorías, pero funcionan de otra forma. 
+
+.Usuarios
+Cada uno tiene su _wallet_, que cuenta con una _clave privada_ y una _clave 
+pública_. La clave pública funciona como un _CBU_. Permite transferir a ese 
+usuario. La clave privada es una combinación de 12 o 24 palabras. Permite 
+acceder a los fondos.
+
+Las _Wallets_ permiten el almacenamiento de cryptomonedas. Se pueden clasificar
+en:
+
+- Hot wallet. Monederos online, conectados a una red _peer to peer_ de forma 
+permenente.
+- Cold wallet. Billeteras que pueden funcionar sin conexión.
+
+Supongamos que tengo 2 usuarios, A y B. A tiene 5 BTC y B tiene 0. Si A quiere
+enviar a B 5 BTC, cómo hacemos. 
+
+. B envía a A su _clave pública_.
+. A utiliza su clave privada para acceder a su wallet 
+. Envía, con la clave pública de B, los 5 BTC.
+
+La transacción se asienta en una _Blockchain_, que funciona como una asiento 
+contable. Se copia en todo el mundo. Todos pueden ver lo que pasa, pero no se
+puede saber quiénes son los actores. Todas las computadoras de la blockchain 
+están conectadas entre si. Estos son los mineros.
+
+.Mineros
+Procesan las transacciones y validan que todo sea correcto. El proceso de 
+minería. Hay un _bloque de transacciones_. Los bloques se hacen cada 10 minutos.
+Se juntan las transacciones y los mineros las validan. Validar un bloque implica
+resolver un problema. Se vincula con _hashes_. 
+
+El problema viene con la solución y hay que encontrar el procedimiento. Este 
+problema se resuelve probando. Es decir, se basa en _poder de cómputo_. Cuando
+un minero resuelve el bloque, las transacciones se aprueban. El envío se
+asienta.
+
+[source, java]
+----
+// Quedo en 32M
+----
