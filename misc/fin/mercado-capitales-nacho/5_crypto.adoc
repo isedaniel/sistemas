@@ -119,9 +119,20 @@ resolver un problema. Se vincula con _hashes_.
 El problema viene con la solución y hay que encontrar el procedimiento. Este 
 problema se resuelve probando. Es decir, se basa en _poder de cómputo_. Cuando
 un minero resuelve el bloque, las transacciones se aprueban. El envío se
-asienta.
+asienta. El problema se conoce como _proof of work_. Le agrega un grado de
+dificultad a la red, permitiendo que los bloques no sean aprobados por la misma
+persona. De esta forma no hay poder computacional que permita tener la mitad 
+más uno de los mineros, permitiendo hacer lo que quiera con la red. 
+
+Un *hash* es un conjunto de datos con criptografía aplicada -de ahí
+criptomodendas. El problema consiste en resolver la cantidad de 0 que requiere
+para resolver el _hash_. Tenemos que encontrar la cantidad de 0 que hagan que el
+bloque sea correcto. El problema garantiza competencia y seguridad.
+
+Cada vez que se resuelve un bloque, el minero que lo resuelve recibe una
+recompensa.
 
 [source, java]
 ----
-// Quedo en 32M
+// Quedo en 45M
 ----
