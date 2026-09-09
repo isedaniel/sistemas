@@ -1,0 +1,552 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% símbolos
+\usepackage{amsmath, amssymb}
+
+% gráficos
+%\usepackage{tikz}
+
+% plots
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% separación fórmulas en align
+%\setlength{\jot}{8pt}
+
+% espacio entre párrafos
+\usepackage{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true,
+%    urlcolor=blue]{hyperref}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+% tipografía cheta
+%\usepackage{tgadventor}
+%\renewcommand*\familydefault{\sfdefault}
+%\usepackage[T1]{fontenc}
+
+% interlineado: 1.0 simple, 1.3 (1.5), 1.6 (doble)
+\linespread{1.3}
+
+\usepackage{makecell}
+
+\begin{document}
+
+\include{titlepage}
+
+\pagebreak
+
+\section*{Consigna 1}
+
+\emph{No hay dudas que Linus Torvalds basó la primera versión de Linux en Minix.
+Sin embargo, más allá de las discusiones técnicas, no hubo conflictos legales
+entre Torvalds y Tanenbaum. ¿Puede considerarse esto un caso de piratería
+informática?}
+
+\textbf{b. No, porque son OS distintos}
+
+No puede ser considerado un caso de piratería informática, puesto que Linus, 
+reconociendo la fuerte influencia que tuvo Tanenbaum y Minix sobre el desarrollo
+del \emph{kernel} Linux, tomó decisiones de arquitectura que diferencian
+claramente un núcleo de otro. Minix opta en su diseño por un micronúcleo, por lo 
+que una parte importante del sistema operativo se ejecuta como procesos
+independientes, fuera del núcleo, comunicándose mediante mensajes. En cambio, 
+Linux fue concebido como un núcleo monolítico, lo que implica que el sistema 
+operativo es un único binario, que se ejecuta entermente en modo \emph{kernel}.
+
+\section*{Consigna 2}
+
+\emph{Aunque la influencia de Minix en Linux es muy profunda, Torvalds no
+respetó la arquitectura propuesta por Tanenbaum. Esto implica, por ende, que
+hablamos de OS diferentes.  }
+
+\textbf{Verdadero.}
+
+Como detallamos en la respuesta anterior, las diferencias de arquitectura entre 
+ambos sistemas permite hablar de dos sistemas operativos diferentes. Aunque
+Linus admita la profunda influencia que Tanenbaum y Minix tuvieron sobre su 
+núcleo, las diferencias en arquitectura nos llevan a distinguirlos como dos
+sistemas operativos diferentes.
+
+\section*{Consigna 3}
+
+\emph{ La característica del núcleo de Linux más criticada por Tanenbaum fue su
+concepción como núcleo monolítico. Esto significa que: }
+
+\textbf{Cualquier cambio requiere su completa recompilación}
+
+Al tratarse de un solo archivo binario, cualquier cambio que se haga sobre el 
+núcleo de Linux requiere que se recompile completamente. A diferencia de lo que 
+sucede con un micronúcleo, en el cual una parte importante del sistema operativo 
+se ejecuta como procesos independientes, por fuera del núcleo.
+
+\section*{Consigna 4}
+
+\emph{El creador de Minix defendía, y nada parece invitarnos a pensar que haya
+cambiado de opinión, que los micronúcleos son superiores, entre otras razones,
+debido a su mayor portabilidad. ¿En que factor cree que se basa para afirmar
+esto?}
+
+\textbf{El tamaño del núcleo}
+
+Al tratarse de un micronúcleo, con una porción importante del sistema
+ejecutándose como procesos independientes, la cantidad de código ligada a la 
+arquitectura es reducida. La mayor parte de los servicios en espacio de usuario,
+como el sistema de archivos, la administración de memoria, se ejecutan como 
+procesos independientes. Adaptar el núcleo a una nueva CPU requiere de
+modificaciones únicamente sobre el micronúcleo. Por ello Tanenbaum señalaba que 
+el núcleo monolítico de Linux era un paso hacia el pasado.
+
+\section*{Consigna 5}
+
+\emph{La mayor parte de los sistemas operativos antiguos es monolítica, por lo
+que el sistema operativo al completo es un único archivo que se ejecuta en modo
+supervisor. Este modo de ejecución se conoce también como:}
+
+\textbf{Modo Kernel}
+
+El modo supervisor se conoce también como modo Kernel. Esto significa que el 
+núcleo tiene control total sobre el \emph{Hardware}, puede ejecutar cualquier 
+instrucción y acceder a toda la memoria y registros del sistema.
+
+\section*{Consigna 6}
+
+\emph{La alternativa de un sistema basado en micronúcleos, es que la mayor parte
+del sistema operativo se ejecuta como procesos independientes, muchos de ellos
+fuera del núcleo.  Desde este punto de vista, ¿podríamos decir que estos
+procesos independientes ejecutados fuera del núcleo son hilos del núcleo?  }
+
+\textbf{No lo son, justamente por tratarse de procesos independientes. Un hilo
+depende de un proceso}
+
+En Minix, por la arquitectura de micronúcleo, los componentes del sistema
+operativo, como son el administrador de memoria o el sistema de ficheros, se 
+ejecutan como procesos independietes, fuera del núcleo. Esto implica que tienen
+sus propias regiones de memoria asignadas y se comunican con el núcleo mediante 
+el intercambio de mensajes. Esto implica que \emph{no son} hilos.
+
+\section*{Consigna 7}
+
+\emph{Además del diseño del kernel, el debate se ramificó hacia otros temas
+distintos, tales como qué arquitectura de microprocesador vencería a otras en el
+futuro, en este punto, ambos se equivocaron pues el desarrollo de los
+microprocesadores superó las expectativas de ese momento. ¿podríamos decir que
+este desarrollo vino de la mano del desarrollo de la industria electrónica?}
+
+\textbf{Verdadero}
+
+Si, ya que el desarrollo del Hardware naturalmente va de la mano del desarrollo 
+de la industria electrónica.
+
+\section*{Consigna 8}
+
+\emph{Si bien inicialmente Tanenbaum no se adentró en detalles técnicos para
+explicar por qué sentía que el diseño de microkernel era mejor, sí sugirió que
+estaba mayormente relacionado con la portabilidad, argumentando que el núcleo
+Linux estaba estrechamente ligado a la línea de procesadores x86. ¿A que se
+refería con esto?}
+
+\textbf{A una línea de microprocesadores pertenecientes a la empresa INTEL}
+
+Linus diseñó el núcleo Linux específicamente para el chip 386, perteneciente a 
+Intel, por lo que Tanenbaum criticó que el código dependía de las
+particularidades físicas de la arquitectura de Intel. 
+
+\section*{Consigna 9}
+
+\emph{En el momento de la discusión se argumentó que “diseñar un sistema
+específicamente para hardware económico causaría que tuviese problemas de
+portabilidad en el futuro”.  Luego de casi 30 años, está afirmación resultó
+ser:}
+
+\textbf{Verdadera}
+
+Linux, al estar diseñado para procesadores más potentes, evolucionó y fue
+portado con éxito a prácticamente todas las arquitecturas existentes, entre las 
+que cabe mencionar a x86-64, ARM, PowerPC y Spark.
+
+\section*{Consigna 10}
+
+\emph{Muchas personas asocian Linux con un sistema operativo destinado solo a
+ser utilizado por expertos, en servidores o en computadoras personales.
+¿Considera que esta era la idea de Torvalds al momento de desarrollarlo?}
+
+\textbf{No, dado que lo que se desarrolló fue solo el núcleo, no la interfaz con
+el usuario}
+
+Linus desarrolló exclusivamente el núcleo Linux, como un proyecto personal, por 
+curiosidad y para aprender, en especial el funcionamiento del procesador 80386
+de Intel. 
+
+\section*{Consigna 11}
+
+\emph{En un momento del debate se indica que MINIX tenía fallas de diseño
+intrínsecas, nombrando la falta de multithreading (multihilos), como un ejemplo
+específico. ¿Cree que tenía sentido esa discusión en esos momentos?}
+
+\textbf{No, era una cuestión técnica con vistas a futuro, ya que los
+microprocesadores utilizados en la época tenían poca capacidad de
+multiprocesamiento}
+
+Claramente era una discusión técnica con vistas a futuro, ya que las
+computadoras personales del momento tenían chips de procesamiento muy reducido 
+comparado con lo que vino después. 
+
+\section*{Consigna 12}
+
+\emph{Ken Thomson, desarrollador de MULTICS junto a Brian Kernighan, el otro
+padre del UNIX y compañero de Thomson, lo llamó irónicamente UNICS. Más adelante
+lo que hicieron Thomson, Kernighan y Dennis Ritchie fue reescribir UNIX en C,
+rompiendo la tradición de sistemas operativos escritos en lenguaje ensamblador
+(1973). Esto aumentaba la portabilidad del sistema hacia otras máquinas. Por
+esto, LINUX trata a casi todo como si fuera un archivo y una vez que se aprende
+a manejar los archivos, se puede manejar todos los objetos del sistema. ¿Puede
+considerarse a esto una ventaja de los OS con núcleo monolítico?}
+
+\textbf{No, la perspectiva es valida tanto para OS con núcleo monolítico como
+con micronúcleo. La diferencia está en la modularidad, no en como se vea el OS
+desde el punto de vista de la teoría.}
+
+El concepto UNIX de "todo es un archivo" es un concepto que se puede implementar 
+en un sistema con independencia de la arquitectura del núcleo. Tanto Linux como 
+Minix pueden implementarlo.
+
+\section*{Consigna 13}
+
+\emph{En aquellos tiempos las computadoras eran muy costosas, pero hubo un señor
+llamado Gary Kildall que aprovechando que se comenzaban a comercializar los
+primeros micros con procesadores 8080 (hacia 1974 - 75) , revolucionó todo lo
+conocido con un sistema operativo llamado CP/M. Frente a un ordenador de decenas
+de miles de dolares, las personas y las empresas podían adquirir equipos por
+1000 ó 2000 dolares y Kildall fue quien puso en marcha la entrega de un sistema
+operativo con un ordenador comprado.  Es decir, al comprar el ordenador también
+estabas pagando la licencia del sistema operativo. Era posible comprar el
+ordenador por un lado y el sistema operativo por el otro. ¿Con que nombre se
+conocen hoy en día este tipo de licencias?}
+
+\textbf{Copyright}
+
+Gary Kildall vendía una licencia para utilizar el sistema operativo, pero no 
+acompañaba con esta el código fuente, de forma tal que el usuario final pudiera
+modificarlo de acuerdo a sus necesidades, condición fundamental para hablar de 
+Software Libre o Código Abierto.
+
+\section*{Consigna 14}
+
+\emph{MINIX es extremadamente pequeño, la parte que se ejecuta en modo de kernel
+tiene menos de 4000 líneas de código ejecutable. Las partes que se ejecutan en
+modo de usuario están divididas en pequeños módulos que están aislados uno de
+otro. Esta modularidad, es la que lo hace altamente portable.}
+
+\textbf{Verdadero, al estar los módulos aislados uno del otro, hacen que sea más
+fácil adaptarlos a diferentes arquitecturas}
+
+Como señala Tanenbaum, uno de sus principales argumentos a favor de la
+arquitectura de micronúcleo era la facilidad de adaptarlo a nuevas
+arquitecturas, que probablemente surgirían en el futuro. Tanenbaum señalaba que 
+esta era la principal ventaja frente a un núcleo monolítico como el de Linus,
+que estaba fuertemente vinculado a la arquitectura x86.
+
+\section*{Consigna 15}
+
+\emph{
+La diferencia principal entre los sistemas operativos micronúcleo y monolíticos,
+es que los primeros implementan las funcionalidades del núcleo con llamadas de
+sistema que se ejecutan como procesos servidores en espacio de usuario. Por lo
+tanto, las distintas funcionalidades son separadas y son estos servidores los
+que las proveen cuando son solicitadas. En cambio, un núcleo monolítico
+implementa todas estas funcionalidades por si mismo, por lo que su complejidad
+se ve incrementada.
+}
+
+\textbf{
+     Que la complejidad del OS se vea incrementada, no implica que el mismo no sea
+portable. Simplemente es más compleja su portabilidad.
+}
+
+Como lo demuestra la experiencia de Linux, mayor complejidad no implica
+imposibilidad de portarlo. De hecho, Tanenbaum no señala la imposibilidad, sino 
+la dificultad.
+
+\section*{Consigna 16}
+
+\emph{
+En el caso planteado, no se hace referencia en ningún momento al usuario, ¿por
+qué?
+}
+
+\textbf{
+Los sistemas operativos tienen una parte orientada al usuario, y otra, el núcleo
+duro, orientado al hardware. El debate se basa en las características del
+núcleo, por eso no se menciona al usuario.
+}
+
+Se trata de un debate sobre la arquitectura de los núcleos, no sobre la interfaz
+de usuario.
+
+\section*{Consigna 17}
+
+\emph{
+La discusión entre las ventajas y desventajas de los dos tipos de núcleos, da a
+entender que el núcleo monolítico no es adaptable en contraposición con el micro
+núcleo, sin embargo, Linux se puede adaptar a cualquier tipo de dispositivo,
+entorno y hardware de plataformas como lo son las computadoras, los portátiles,
+computadoras de bolsillo, teléfonos móviles, consolas de vídeo-juegos, entre
+otras opciones, desde cualquier lugar del mundo.
+}
+
+\textbf{Esto se debe a la cantidad de desarrolladores, empresas y variantes que
+presenta. Al contrario que MINIX, Linux no para de ser actualizado
+constantemente.}
+
+Como señala Tanenbaum, su núcleo estaba orientado principalmente al uso
+educativo. Si bien Linus desarrolló su núcleo también como un proyecto personal 
+y de aprendizaje, coincidió con las herramientas que había desarrollado GNU y 
+comenzó la distribución de un sistema \emph{UNIX-like}, listo para ser utilizado 
+y libre. Su popularidad primero en el ámbito de los servidores lo llevó a
+convertirse en el jugador central que es hoy en toda la infraestructura
+informática global.
+
+\section*{Consigna 18}
+
+\emph{
+    En MINIX todas las tareas de la capa 2 y el código de la capa 1 se combinan
+    para formar un solo programa binario llamado núcleo, aunque a pesar de que
+    son compilados juntos cuando el núcleo y los manejadores de interrupciones
+    se están ejecutando estos tienen mayores privilegios que las tareas.
+}
+
+\textbf{
+    Esto no afecta a la idea de OS con micro núcleo, ya que, si bien dos de las
+    4 capas se compilan juntas, las otras no.
+}
+
+La arquitectura de micronúcleo no se invalida, puesto que se preserva la 
+modularidad, al estar la mayor parte del sistema operativo (capa 3) y las 
+aplicaciones (capa 4) completamente aisladas del núcleo principal, ejecutándose 
+como procesos separados y comunicándose mediante mensajes.
+
+\section*{Consigna 19}
+
+\emph{Al contrario de MINIX, en Linux existe la posibilidad de poder instalar o
+cambiar cualquier entorno gráfico a través de distintos tipos de elementos como
+lo son programas, ventanas, el entorno de escritorio y además agregar
+animaciones para una experiencia más agradable. Esta característica podemos
+decir que hace de Linux un OS:}
+
+\textbf{
+    Personalizable
+}
+
+Poder elegir distintos elementos como son programas, ventanas, entorno de 
+escritorio y además agregar animaciones es típico de un sistema personlizable.
+
+\section*{Consigna 20}
+
+\emph{
+    Suponga que la historia hubiese sido al revés, es decir, que el núcleo de Linux se
+hubiera tomado como base para el de MINIX y el tipo de núcleo de cada uno no hubiera
+cambiado
+}
+
+\textbf{
+    Hubiese sido un trabajo formidable por parte de Tanenbaum ya que hubiera
+convertido un núcleo monolítico en micro núcleo y la discusión seguiría siendo la
+misma
+}
+
+Pasar de una arquitectura monolítica a una de micronúcleo no es sencillo, ya 
+que implica descomponer y reesctructurar al completo el monolito. La discusión,
+es de suponer, hubiera existido igual, aunque en diferentes términos.
+
+\section*{Consigna 21}
+
+\emph{
+    Si Tanenbaum tomara el núcleo de Linux como base para el de MINIX
+}
+
+\textbf{
+    Tendría problemas legales.
+}
+
+Podría llegar a tener problemas legales si vendiera su producto sin venderlo 
+acompañado del código fuente, violando la licencia de Linux. Sin embargo, Linux 
+se puede vender (y se vende, como Red Hat). Solo que respetando la licencia,
+acompañando el software con el código.
+
+\section*{Consigna 22}
+
+\emph{
+     Una característica muy importante es que Linux se puede adaptar a cualquier
+     tipo de dispositivo, entorno y hardware.
+}
+
+\textbf{
+    Lo cual significa que venció las predicciones de Tanenbaum acerca que solo
+    era válido para tecnologías X86. Hoy funciona con cualquier tipo de
+    microprocesador
+}
+
+Las predicciones de Tanenbaum resultaron erradas, aunque no su señalamiento de 
+que el núcleo monolítico, por su arquitectura, estaba fuertemente arraigado en 
+la arquitectura de Intel x86.
+
+\section*{Consigna 23}
+
+\emph{
+    Tanenbaum concibió MINIX con un enfoque puramente educacional (aunque luego
+    comenzó a cobrar por su uso) y por lo tanto, no permitió que se realicen
+    modificaciones importantes sobre el ya que esto complicaría su
+    funcionamiento. ¿Qué cree que hubiera pasado si hubiera tenido otro enfoque?
+}
+
+No creo que hubiera cambiado demasiado la historia. La mayoría de los sistemas 
+operativos más populares tienen núcleos monolíticos.
+
+\section*{Consigna 24}
+
+\emph{
+    En lo que se refiere a seguridad podemos decir que es unas de las
+    características más populares del sistema operativo Linux. Esto se debe a
+    que este sistema se considera por muchos expertos como libre y transparente,
+    por lo cual nadie se interesa en crear virus para perjudicar a los otros
+    usuarios de la red.
+}
+
+\textbf{
+    Esta característica de libre y transparente se debe a la filosofía de su
+    autor. Al ser un sistema que está en constante evolución impide a los
+    desarrolladores de virus, malware, etc. que sea de su interés.
+}
+
+Al enriquecerse con los aportes de miles de desarrolladores de todo el mundo, el 
+sistema Linux cuenta con seguridad robusta (lo que no implica que no sea blanco
+de ataques por parte de piratas, de hecho, atacan recurrentemente al software 
+libre, la diferencia es que hay muchas personas observando y pueden encontrar 
+estos ataques).
+
+\section*{Consigna 25}
+
+\emph{
+    Tanenbaum argumentó que diseñar un sistema específicamente para hardware
+    económico causaría que tuviese problemas de portabilidad en el futuro. Esto
+    resulto:
+}
+
+\textbf{
+    Verdadero
+}
+
+Resultó verdadero, ya que a Minix le costó adaptarse al Hardware nuevo, mientras 
+Linux pudo adaptarse a muchas arquitecturas diferentes. 
+
+\section*{Consigna 26}
+
+\emph{
+    El sistema operativo Linux tiene la característica de poseer una gran
+    robustez que se puede traducir en una mejor estabilidad en su funcionamiento
+    operativo. Existe la posibilidad de que un equipo permanezca encendido
+    durante meses sin que las aplicaciones se vean afectadas con errores.
+}
+
+\textbf{
+    Esto se debe a su desarrollo como núcleo monolítico, ya que las rutinas del
+    mismo están mas que suficientemente probadas.
+}
+
+Al tratarse de un núcleo monolítico, esto es, todos los componentes esenciales 
+y controladores clave funcionan integrados en el espacio del sistema, la 
+estabilidad operativa termina estando fuertemente vinculada a la mudrez del
+código, por lo que las rutinas suficientemente probadas le otorgan gran
+robustez.
+
+\section{Consigna 27}
+
+\emph{
+    Casi a la par del desarrollo de Linux y MINIX, nacen los OS BSD (clones de
+    UNIX diseñados en la universidad de Berkeley). Y una nueva clase de
+    licencia, las licencias BSD. El más conocido de estos es Mac OS. Las
+    licencias BSD permiten utilizar código aportado de manera libre como base
+    para productos propietarios.  ¿Es el mismo concepto adoptado por Tanenbaum
+    para MINIX?
+}
+
+\textbf{
+No, porque Tanenbaum no tomo código libre para el desarrollo de MINIX sinó que
+lo generó el mismo
+}
+
+Tanenbaum desarrolló, como se dijo con anterioridad, el sistema con propósito 
+educativo y cumplió con dicho propósito con creces. No tomó código libre.
+
+\section*{Consigna 28}
+
+\emph{
+    Según la estructura de MINIX, la capa 2 contiene todo lo concerniente a los
+    procesos de E/S, uno por cada tipo de dispositivos (tareas). Tenemos tareas
+    para discos, impresoras, relojes, interfaces de red y tareas de sistema, que
+    si bien no son dispositivos de sistema sí tienen por finalidad el servicio
+    de copiado entre diferentes regiones de memoria para procesos que no cuentan
+    con los privilegios para realizarlos ellos mismos.
+}
+
+\textbf{
+    Desde este punto de vista, esta es la capa encargada de la sincronización de
+    relojes
+}
+
+La Capa 2 contiene todo lo concerniente a los procesos de E/S, uno por cada tipo
+de dispositivos (tareas), incluyendo relojes.
+
+\section*{Consigna 29}
+
+\emph{
+    Desde su concepción, Linux se caracterizó por ser un OS abierto y gratuito.
+    ¿Qué cree que pasaría si dejara de serlo?
+}
+
+\textbf{
+    No cambiaria mucho la situación. Quien lo elige lo hace por sus
+    características, no porque sea gratis.
+}
+
+No cambiaría mucho, porque habría un \textit{fork} y listo. Como sucedió con 
+Red Hat y Rocky Linux.
+
+\section*{Consigna 30}
+
+\emph{
+     El equipo de desarrollo de Torvalds se encarga siempre del Kernel de Linux
+     mientras que otros desarrolladores se encargan de las distribuciones
+     grandes. ¿Podemos pensar que esto es un problema para el equipo de
+     desarrollo?
+}
+
+\textbf{No, por el contrario. Esto libera al equipo de desarrollo del núcleo de
+ocuparse de otros aspectos.}
+
+Una parte central de la historia de Linux fue que las distribuciones se
+encargaran del usuario final, mientras Linus se concentraba en dirigir el 
+desarrollo del kernel. Mal no le fue.
+
+\end{document}

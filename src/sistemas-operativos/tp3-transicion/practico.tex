@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% símbolos
+\usepackage{amsmath, amssymb}
+
+% gráficos
+%\usepackage{tikz}
+
+% plots
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% separación fórmulas en align
+%\setlength{\jot}{8pt}
+
+% espacio entre párrafos
+%\usepackage[skip=10pt plus1pt, indent=12pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true,
+%    urlcolor=blue]{hyperref}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+% tipografía cheta
+%\usepackage{tgadventor}
+%\renewcommand*\familydefault{\sfdefault}
+%\usepackage[T1]{fontenc}
+
+% interlineado: 1.0 simple, 1.3 (1.5), 1.6 (doble)
+\linespread{1.3}
+
+\usepackage{makecell}
+
+\begin{document}
+
+\include{titlepage}
+
+\pagebreak
+
+\section*{Respuesta 1}
+
+La transición C implica que el proceso pasa de Preparado (\emph{Ready}) a En 
+Ejecución (\emph{Running}). Si hace una transición \textbf{A}, pasaría de
+\emph{Running} a \emph{Waiting}, o bloqueado, esperando por un evento, quizá de
+Entrada/Salida, esto es, \emph{I/O}.
+
+Si el Sistema Operativo aplicara \emph{Round-Robin} debería de asignar tiempo de 
+ejecución al Proceso siguiente en la \emph{rueda}, es decir, al siguiente
+proceso en la secuencia. El proceso, por su parte, se bloquea y se coloca en la 
+cola de espera de dispositivos, la \emph{Device Queue}, asociada al evento que 
+corresponda. El planificador de corto plazo toma al siguiente proceso de la 
+\emph{Ready Queue} y comienza una nueva Transición C. Cuando ocurra el evento 
+que el proceso esperaba, tendríamos una Transición D, pasando de Bloqueado a 
+\emph{Ready}, incorporándose a la \emph{Ready Queue}, esperando a que la
+secuencia nuevamente lo incluya en una Transición C.
+
+Si, en cambio, usase \emph{FIFO}, esto implicaría que debe esperar a que el 
+proceso se ejecute completamente antes de asignar tiempo al proceso siguiente.
+Como el procesos está en estado \emph{Waiting}, debería de esperar a que el 
+evento se cumpla para continuar con el proceso y, eventualmente, pasar a otro.
+
+\section*{Respuesta 2}
+
+Si frente a una Transición A (\emph{Running} $\to$ \emph{Waiting}) el sistema no 
+cuenta con memoria, debería de intervenir el planificador a Mediano Plazo
+(\emph{Scheduler}), enviando el proceso a Intercambio (\emph{swap}), a la espera 
+del evento que finalmente lo deposite en la \emph{Ready Queue}.
+
+\section*{Respuesta 3}
+
+Si el sistema cuenta con recursos para la ejecución, el proceso pasaría a la 
+\emph{Device Queue}, a la espera del evento que le permita una transición D, 
+permitiéndole retornar así a la \emph{Ready Queue} y, en cuanto la secuencia 
+del algoritmo \emph{Round-Robin} lo permita, pasar a \emph{Running} mediante una 
+nueva transición C.
+
+\section*{Respuesta 4}
+
+Si el sistema está aguardando que el usuario ingrese información, esto es, tiene 
+un proceso que pasa de \emph{Running} a \emph{Waiting}, estamos frente a una
+transición A. Una vez que el usuario ingrese la clave, el proceso sale de la 
+\emph{Device Queue} hacia la \emph{Ready Queue}, recibió la señal que estaba 
+esperando, por lo que se trata de una transición D.
+
+\section*{Respuesta 5}
+
+El proceso de encriptación va a acceder de forma concurrente al mismo espacio en 
+memoria que escribió el primero proceso. El proceso de encriptación es un 
+\textbf{proceso cooperante}, puesto que se van a sincronizar para alcanzar un 
+objetivo común, en este caso, encriptar el vector en memoria que contiene el
+\emph{password} ingresado. El sistema operativo deberá de encargarse, en este
+caso, de que los procesos se sincronicen adecuadamente. Una vez encriptado, ya
+se encargará el gestor de la base de datos de ordenar el acceso al registro
+donde está guardada la clave encriptada.
+
+\end{document}
