@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, margin=2.54cm]{geometry}
+
+% español
+\usepackage[spanish]{babel}
+
+% imágenes
+\usepackage{graphicx}
+%\graphicspath{{img}}
+
+% fuentes de conjuntos numéricos
+\usepackage{amsfonts}
+
+% símbolos
+\usepackage{amsmath, amssymb}
+
+% gráficos
+%\usepackage{tikz}
+
+% plots
+%\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+
+% shapes
+%\usetikzlibrary{shapes.geometric}
+
+% separación fórmulas en align
+%\setlength{\jot}{8pt}
+
+% espacio entre párrafos
+\usepackage{parskip}
+%\usepackage[skip=10pt plus1pt, indent=12pt]{parskip}
+
+% cancelar términos
+\usepackage{cancel}
+
+% links
+%\usepackage[colorlinks=true,
+%    urlcolor=blue]{hyperref}
+
+% incluir pdfs
+%\usepackage{pdfpages}
+
+% tipografía cheta
+%\usepackage{tgadventor}
+%\renewcommand*\familydefault{\sfdefault}
+%\usepackage[T1]{fontenc}
+
+% interlineado: 1.0 simple, 1.3 (1.5), 1.6 (doble)
+%\linespread{1.3}
+
+\begin{document}
+
+\include{titlepage}
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Introducción}
+
+La arquitectura de Cliente-Servidor es un modelo para el diseño de
+\emph{Software}, que implica la división del sistema en dos componentes 
+principales: el \textbf{Cliente} y el \textbf{Servidor}. El Cliente solicita
+servicios o recursos por parte del Servidor, y este último provee esos servicios 
+o recursos. Esta arquitectura se orienta principalmente a los sistemas que se 
+basan en la comunicación por una red aunque, como veremos, no es el único caso 
+de uso que tiene.
+
+El funcionamiento de la arquitectura de Cliente-Servidor, a grandes rasgos, 
+implica:
+\begin{enumerate}
+    \item El Cliente envía una \emph{petición} al Servidor, solicitando un 
+    determinado recurso.
+
+    \item El Servidor \emph{procesa} esa solicitud, esto es, determina que el 
+    cliente sea quien dice ser, que tenga los permisos para acceder al recurso 
+    que solicita, que la petición esté correctamente constituida y que el 
+    recurso exista y esté disponible.
+    
+    \item Luego del procesamiento, el Servidor elabora una \emph{respuesta}, 
+    que es recibida y procesada, a su vez, por el Cliente.
+\end{enumerate}
+
+Esta comunicación suele darse mediante el uso de un protocolo, como son el HTTP,
+el FTP o el SQL. 
+
+Un ejemplo típico de esta arquitectura es el acceso a una página web. Desde un 
+navegador, como puede ser \emph{Chromium}, se introduce una URL, esto es, se 
+solicita a un \textbf{servidor web} un determinado recurso. Este Servidor, que 
+puede ser un servidor \emph{Apache}, elabora la respuesta y la envía hacia el 
+Cliente, en este caso, recibimos los documentos para que nuestro navegador 
+renderice la página web.
+
+La arquitectura Cliente-Servidor tiene muchas ventajas, entre las que podemos 
+señalar:
+\begin{itemize}
+    \item La centralización de los recursos y los datos en un Servidor 
+    
+    \item La posibilidad de administrar mejor la información desde el Servidor 
+    
+    \item La posibilidad de \textbf{escalar} el servicio de ser necesario, esto 
+    es, al recibir muchas solicitudes
+    
+    \item La seguridad se puede controlar mejor desde el Servidor
+\end{itemize}
+
+Pero también pueden señalarse algunas de sus desventajas, entre las que podemos 
+nominar:
+\begin{itemize}
+    \item La dependencia del Servidor, lo que implica que, ante la caída del 
+    mismo, todos los clientes quedarían sin acceso al servicio 
+    
+    \item Puede llegar a requerir una inversión importante en Hardware y 
+    Seguridad 
+    
+    \item Puede existir \textbf{saturación}, si hay demasiados clientes 
+    conectándose en simultáneo
+\end{itemize}
+
+
+
+\end{document}
