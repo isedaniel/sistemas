@@ -134,5 +134,5 @@ recompensa.
 
 [source, java]
 ----
-// Quedo en 45M
+// Quedo en 1H
 ----
