@@ -132,7 +132,41 @@ bloque sea correcto. El problema garantiza competencia y seguridad.
 Cada vez que se resuelve un bloque, el minero que lo resuelve recibe una
 recompensa.
 
+.Desarrolladores
+Comunidad Open Source, que desarrollan el Software y _ponen_ la normativa. En el
+sistema financiero tradicional, los bancos tienen que _aceptar_ lo que haga el 
+Banco Central. Aquí hay que _ponerse de acuerdo_. Ejemplo, se quiere introducir
+una mejora de rendimiento. Para cambiar el código tiene que haber acuerdo.
+
+Si no hay acuerdo -una parte importante-, puede pasar dos cosas: 
+
+- Se descarta
+- Nace un proyecto nuevo
+
+Este último caso se conoce como _hard fork_. Se separa de la red y trabaja con
+el nuevo código. _Ethereum_ se creó porque tenía diferencias. No solo
+transferencia de dinero.
+
+== Por qué sube el precio
+
+.Política monetaria
+Rama de la política económica que utliza como variable la cantidad de dinero,
+buscando mantener la estabilidad y cumplir con objetivos de inflación, desempleo
+y crecimiento. Se basa en decisiones de la autoridad monetaria -v. g.: FED,
+BCRA. En particular, modificar la cantidad de dinero o la tasa de interés.
+
+El M0 en USA hace referencia al agregado monetario. Cantidad de billetes que 
+circulan. Gran aumento desde que dejó el patrón oro en el 71. Tiene valor por la
+confianza en la FED.
+
+.Halving
+Cada 4 años se reduce ala mitad la recompensa por bloque. Eso limita la emisión
+teórica de Bitcoin. Estamos en 3.125 BTC. En 2028 vamos a 1.5625 BTC. Se espera
+que llegue a 0 en 2140. En el Halving el precio sube. BTC tiene una cantidad 
+limitada. Su tasa de expansión es decreciente. Teóricamente permite cuidarse de
+la inflación FIAT.
+
 [source, java]
 ----
-// Quedo en 1H
+// Quedo en 1H 16M
 ----
