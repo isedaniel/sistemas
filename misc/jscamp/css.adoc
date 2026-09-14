@@ -325,13 +325,35 @@ body {
 }
 ----
 
-Así, queda uno encima del otro. Por defecto se apilan. Si cambiasemos la
-declaración de la clase `.item`, agregando `display: inline` se mostraría en 
-línea. Esto implicaría, en primer lugar, que pierden su tamaño. Simplemente se
-ajustan al texto, en este caso, 1, 2, 3. Se comporta como texto. Uno al lado del
-otro.
+Así, queda uno encima del otro. Por defecto se apilan. `display: block`. Si
+cambiasemos la declaración de la clase `.item`, agregando `display: inline` se
+mostraría en línea. Esto implicaría, en primer lugar, que pierden su tamaño.
+Simplemente se ajustan al texto, en este caso, 1, 2, 3. Se comporta como texto.
+Uno al lado del otro.
 
-[source, css]
+Ahora, cambiamos en el elemento contenedor, a `display: flex`. Esto convierte en
+un contenedor en fila. Que sea fila o columna viene dado por `flex-direction`, 
+por defecto es `flex-direction: row`. Pero se puede cambiar a `flex-directon:
+column`. También puede ser `flex-direction: row-reverse`.
+
+Este es el concepto central de Flex: _trabajamos con un eje_. Grid se enfoca en
+filas _y_ columnas.
+
+.`flex-wrap`
+Qué hace al final de línea. 
+
+. `nowrap`: valor por defecto. Que no agregue otra línea, aunque no entre.
+Ajusta el contenido que tenemos para que no sea necesario el sálto de línea.
+. `wrap`: si no cabe, metemos salto de línea.
+
+.`flex-flow`
+Forma abreviada de `flex-direction` + `flex-wrap`. V. g.: `row nowrap`
+
+.`flex-grow`
+Por defecto, cada elemento va a ocupar el espacio que tenga. Esto viene dado por
+`flex-grow: 0`.
+
+[source]
 ----
-/* Voy en video 2 Flex 48M */
+// Video 2, Flex, 1H
 ----
