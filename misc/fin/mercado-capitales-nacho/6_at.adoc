@@ -1,0 +1,47 @@
+= Módulo 6 - Análisis técnico
+Dan <ise.daniel@gmail.com>
+v 0.1, 2026-09-14
+:stem:
+
+Recta final del curso. Hoy https://x.com/CD_AnalisisTec[Cristian Díaz]. En la 
+primera parte vemos la teoría, en la segunda la práctica. Nos llevamos 3 o 4 
+cosas más importantes.
+
+== Qué es
+
+Herramienta usada a  nivel global, para cualquier activo. Principalmente
+acciones y cripto.
+
+Es el estudio de movimientos del mercado, usando gráficos. Pronostica futuras
+tendencias para invertir a favor de la misma. Las probabilidades de éxito se 
+maximizan yendo _con_ el mercado, no contra.
+
+3 premisas. 
+
+. Los movimientos del precio descuentan todo
+. Los precios se mueven por tendencias
+. La historia se repite
+
+== Los movimientos descuentan todo
+
+Cualquier cosa que pueda afectar, sean políticas, fundamentales, psicológicas,
+se reflejan en el precio. Esos factores afectan oferta y demanda, es decir
+flujo, y eso determina el precio. V. g.: un balance mejor al esperado, aumenta 
+la demanda por encima de la oferta y tenemos una suba.
+
+Mediante el gráfico se busca la tendencia.
+
+== Los precios se mueven por tendencias
+
+Una tendencia es tiende a continuar. Por eso indentificamos y operamos a favor.
+
+== La historia se repite
+
+Se identifican estructuras, asociadas con la _psicología humana_. Los patrones
+se identificaron y clasificaron en el pasado. Se asume que siguen funcionando a
+futuro.
+
+[source]
+----
+// 10M
+----

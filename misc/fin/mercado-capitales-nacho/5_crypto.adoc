@@ -164,9 +164,33 @@ Cada 4 años se reduce ala mitad la recompensa por bloque. Eso limita la emisió
 teórica de Bitcoin. Estamos en 3.125 BTC. En 2028 vamos a 1.5625 BTC. Se espera
 que llegue a 0 en 2140. En el Halving el precio sube. BTC tiene una cantidad 
 limitada. Su tasa de expansión es decreciente. Teóricamente permite cuidarse de
-la inflación FIAT.
+la inflación de moneda FIAT. Es decir, el suministro de moneda FIAT crece con el
+tiempo. Por lo tanto, misma cantidad compra menos. En cambio BTC, al ser oferta
+decreciente, misma cantidad compra cada vez más.
 
-[source, java]
-----
-// Quedo en 1H 16M
-----
+.Ingreso de actores
+Compañías de finanzas, tecnologías, manufactura, comienzan a adoptar uso y eso
+empuja el precio.
+
+== Altcoins
+
+Otros proyectos. Cada una se implementa a partir de su propia cadena de bloques
+(_blockchain_). Y su propia red _Peer-to-peer_. No todas usan _proof of work_.
+Otras usan _prrof to stake_, como _Ether_, moneda de la red _Ethereum_.
+
+== Stablecoins
+
+Cripto con valor ligado a moneda fiduciaria. Como dólar o euro. La ventaja es 
+que no te expones a la volatilidad. Sirven para pagos, _short_ BTC.
+
+== Dónde se compra y vende
+
+.Exchange nacionales
+En blanco.
+
+.Peer to peer
+Entre personas. Por plataformas como Binance. También lo ofrecen las
+_"financieras"_.
+
+.Exchange internacionales
+Más liquidez, por lo tanto mejores precios.
