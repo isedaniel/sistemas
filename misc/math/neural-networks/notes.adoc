@@ -1,0 +1,84 @@
+= Neural Networks
+Dan <ise.daniel@gmail.com>
+v0.1, 2026-09-14
+:stem:
+
+== But what is?
+
+We can recognize digits. Writing a program that do that is not so easy. This is
+the classic problem to understand what Neural Networks are.
+
+There are many variants. But we are looking to the vanilla, _multilayer 
+perception_.
+
+*Nerural networks* are inspired by the brain. But what does that mean? In this 
+context we should think a neuron as a node that holds a number. A neuron can be
+each one of the pixels. Each one can be the first layer. The last layer should 
+be the 10 digits. The medium are the _hidden layers_. For this example we use 
+2 _hidden layers_.
+
+The activation of one layer determine the activation of the next layer. It is 
+loosely analogous of how a biological brain work. If we feed an image, that 
+pattern cause a pattern in the next, and that causes a layer pattern in the 
+output layer. 
+
+.What are we expecting from layers?
+
+We torn digits to pieces, like the lines we use to draw the digits on paper. In
+the best case, the neron network will have the subcomponents in the _hidden 
+layer_. We can do the same with each piece. Each layer light neurons. The 
+objetive is detect _patterns_.  Lots of types of data can be analyzed with this.
+
+Each connection has a _weight_. The weight connects a neuron from a layer with
+the next one. Weights can be positive or negative. The value of each network of
+the next layer is computed by:
+
+[stem]
+++++
+w_0a_0 + ... + w_na_n
+++++
+
+Being _w_ weight, _a_ activation. But this value can be either positive or 
+negative. So we should squeeze it to _v_ stem:[: 0 <= v <= 1]. The *sigmoid* 
+function can be used for that. The logistic curve.
+
+[stem]
+++++
+sigma(x) = 1/(1+e^{-x})
+++++
+
+So, the *neuron* *activation* can be expressed:
+
+[stem]
+++++
+sigma(w_0a_0 + ... + w_na_n)
+++++
+
+Is "how positive" the sum is. But in some cases, we need the _bias_ for the 
+activation, like how high it need to be to the neuron to take it as active.
+
+[stem]
+++++
+sigma(w_0a_0 + ... + w_na_n - b)
+++++
+
+That is for each neuron. Activation and weights can be written as a matrix 
+product, and the bias as a sum of a matrix. Then, the sigmoid is applied to 
+each result. This can be compressed to:
+
+[stem]
+++++
+a^{(1)} = sigma(Wa^{(0)} + b)
+++++
+
+The activation of layer stem:[a^{(1)}] is a matrix that result of the operation
+on matrices weight stem:[W], first layer stem:[a^{(0)}] and bias matrix
+stem:[b].
+
+This expression is also easily translated to a programming language such as 
+Python.
+
+Altough, sigmoid is not used anymore, but ReLU, that is, stem:[max(0, a)].
+
+
+== How it learns
