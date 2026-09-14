@@ -324,3 +324,35 @@ Es una técnica de estimación colaborativa y anónima. Se basa en el método De
 clásico. Busca consenso entre expertos mediante múltiples rondas. Se usa en 
 proyectos con alta incertidumbre.
 
+== Quinta clase, 12 de septiembre
+
+Hoy vemos tema nuevo. Esto no entra en el primer parcial. Primer parcial: módulo
+1 y hasta metodologías ágiles. Semana que viene consultas para el parcial.
+
+Hoy establecemos fechas de entrega para los próximos prácticos. Será para 
+después del parcial.
+
+=== Gestión de riesgos
+
+.Análisis de riesgos
+Se hace en cualquier ámbito. No solo software. Un cirujano tiene muchos riesgos.
+*Riesgo* es aquello que _puede llegar a pasar_ y nos puede ocasionar problemas.
+Existen muchos riesgos. Vamos a considerar los más típicos, en un momento 
+determinado.
+
+La gestión de riesgos es dinámica: se va actualizando a medida que avanzamos. En
+un principio algo puede ser poco riesgoso e ir incrementando con el tiempo.
+
+.Gestión de riesgo
+Consiste en _catalogar_ riesgos, de forma general a formas específicas.
+
+En primera instancia, de forma general, los clasificamos en:
+
+- Riesgos de proyecto: afectan tiempos o recursos, ejemplo, pérdida de un
+programador. V. g., se vuela el dólar.
+- Riesgos del producto: afectan la calidad o rendimiento del _Software_. Una 
+rutina tarda mucho, el motor de base de datos no es el adecuado. Otro, de
+calidad, un software que cumple con su cometido, pero tiene una mala interfaz,
+no es un problema de rendimiento, sino de calidad.
+- Riesgos del negocio: afectan a la organización, por ejemplo, otra empresa 
+ofrece un producto similar a precio menor.
