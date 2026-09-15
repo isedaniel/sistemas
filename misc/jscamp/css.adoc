@@ -331,13 +331,16 @@ mostraría en línea. Esto implicaría, en primer lugar, que pierden su tamaño.
 Simplemente se ajustan al texto, en este caso, 1, 2, 3. Se comporta como texto.
 Uno al lado del otro.
 
-Ahora, cambiamos en el elemento contenedor, a `display: flex`. Esto convierte en
-un contenedor en fila. Que sea fila o columna viene dado por `flex-direction`, 
-por defecto es `flex-direction: row`. Pero se puede cambiar a `flex-directon:
-column`. También puede ser `flex-direction: row-reverse`.
+Ahora, cambiamos en el elemento contenedor, a `display: flex`. Esto convierte
+en un contenedor en fila. Que sea fila o columna viene dado por
+`flex-direction`, por defecto es `flex-direction: row`. Pero se puede cambiar a
+`flex-directon: column`. También puede ser `flex-direction: row-reverse`.
 
 Este es el concepto central de Flex: _trabajamos con un eje_. Grid se enfoca en
 filas _y_ columnas.
+
+Podemos distribuir el espacio dentro del _container_ o elemento padre con
+`justify-content`.
 
 .`flex-wrap`
 Qué hace al final de línea. 
@@ -347,11 +350,44 @@ Ajusta el contenido que tenemos para que no sea necesario el sálto de línea.
 . `wrap`: si no cabe, metemos salto de línea.
 
 .`flex-flow`
-Forma abreviada de `flex-direction` + `flex-wrap`. V. g.: `row nowrap`
+Forma abreviada de `flex-direction` + `flex-wrap`. V. g.: `flex-flow: row
+nowrap`
 
-.`flex-grow`
-Por defecto, cada elemento va a ocupar el espacio que tenga. Esto viene dado por
-`flex-grow: 0`.
+.`flex-basis`
+Por defecto, cada elemento va a ocupar el espacio que corresponda. Si el
+elemento _container_ es más grande, dejan espacio. Esto viene dado por
+`flex-grow: 0`. Si queremos que ocupe todo el espacio tenemos que setear
+`flex-grow: 1`. 
+
+Además tenemos `flex-shrink: 1`, los elementos pueden reducir
+su tamaño. Es decir, si container es chico, achica los elementos que están
+dentro.
+
+La clave esta en `flex-basis: auto`, que implica que los elementos tengan el
+tamaño en `auto`, que se achiquen pero que no se agranden. Es decir, si lo
+dejamos en auto pero le damos a `flex-grow`, van a poder crecer. `flex-basis:
+0` es distribuir igual el espacio. `flex-basis: auto` tiene en cuenta el
+contenido.
+
+La forma abreviada es `flex: 1`. Equivale a: `grow: 1; shrink: 1; basis: 0`.
+
+También podemos setear en cada uno el flex. Si por ejemplo usamos:
+
+[source, css]
+----
+.item:first-child {
+	flex: 2;
+}
+----
+
+El primero va a tomar 2 veces lo que correspondería. Si son 3 hijos, va a tomar
+2, 1 y 1. 
+
+.`order`
+Permite ordenar según el valor numérico. V.g.: `order: 3` lo pones tercero.
+
+.Práctica
+Flexbox froggy.
 
 [source]
 ----
