@@ -62,8 +62,60 @@ petróleo.
 - Teníamos muchas regulaciones cambiarias. Bajaba salida y entrada, bajaba
   flujo. Queda un mercado muy abocado a lo comercial: no se puede entrar, no se
 puede salir: crece el peso de lo comercial: los granos.
-- El Zar: es verdad, pero sigue siendo estacional. Primer semestre sobra,
+- El *Zar*: es verdad, pero *sigue siendo estacional*. Primer semestre sobra,
   segundo falta. Es cierto que el primero estás _muy_ sobrado. Las compras de
-la primera parte no van a pasar en la segunda.
+la primera parte no van a pasar en la segunda. Por eso el BCRA se mete de a
+poco. Comprar 10M por día es _muy_ positivo. Puede pasar que no compre. Es lo
+que se esperaba.
+- El BCRA comprando pone _piso_ al dólar. Si no hubiesen comprado sería más
+  bajo. El ancla no puede ser el dólar si están comprando.
+- Dentro de ese contexto: los *últimos meses*, *dejan de poner piso y pisan*.
+  Por el _cambio de estacionalidad_ de la que hablamos. Se le puso techo 
+devolviendo. Vende _$LELINK_ que indexa por oficial. Se lleva pesos con eso y
+_sube_ la tasa.
+- Pero: la *volatilidad* es mala. Hace que los actores retrasen decisiones, se
+  comporten defensivos. Eso no implica fijar a cualquier precio. Un precio 
+creíble permite anclar expectativas. Y dejar que se mueva un poco puede anclar.
 
-QUEDO EN: 31M
+.Actividad
+- Mayo más o menos. Junio mejor. Julio el peor dato. Industria y construcción
+  un desastre. 
+- *Gobierno*: si la economía hace piso, necesita que sea ahora. Pero los datos
+  de empleo siguen siendo malos. _Lo positivo:_ el mercado no mira 2027. Cuando
+mire 2027 se va a poner volátil. Hay que tratar que la economía se recupere en 
+este trimestre. Hoy está peor. No camina lo que mueve el trabajo en núcleos
+urbanos. Todavía "hay tiempo". Si no se recupera este último trimestre, se 
+puede volver loco el mercado. Octubre, elecciones en Brasil. Si gana Lula, 
+corrección del Real.
+- *Inflación*. Sigue en torno a 2%. La baja es errática e inercial. Va a seguir
+  así. La volatilidad de precios es alta: es difícil elegir sectores para sacar
+_outlier_ porque cualquier sector se dispara un mes y baja al siguiente.
+
+.Crédito y Mora
+- *2024*. Boom de crédito. Muchos componentes. General: excepcional.
+  Condiciones complejas, de repago dudodas. Telón de fondo: se entra en
+estancamiento. Por lo tanto, lógico el crecimiento de la mora. Mucho crédito se
+tomó pensando en licuación. Se ajustan los ingresos, se complica el mercado de
+trabajo y crece la mora. 
+- Además, la volatilidad de tasa pre-electoral hizo que bajen los préstamos. Se
+  recobra la mora con los que ya existen. También presiona sobre el medido de
+la mora.
+- El lío está en préstamos de familias. Pagando mínimo de tarjeta de crédito.
+- El boom de crédito se hizo a 80% TNA. Tasas reales del 40% anual. La deuda
+  crece más rápido que el ingreso. 
+- El préstamo se pacta fijo. Pero si el ingreso disponible se afina, es
+  esperable que no se priorice el pago del préstamo.
+- No llega a ser un problema sistémico, tipo crisis sub-prime.
+- Si el telón de fondo se recompone, debería recomponerse la mora. Es decir,
+  depende de la actividad. Si el gobierno no recupera la actividad, se va a
+complicar.
+- Mora: si el moroso empieza a pagar, aunque esté en refinanciamiento, tiene
+  que garpar 5 meses. I.e., la estadística no va a bajar rápidamente.
+- *No es un problema entre privados*. Los bancos centrales velan por la
+  estabilidad del sistema financiero. Porque el Estado es el regulador del
+sistema financiero y lo tiene que cuidar. Es rol del Banco Central.
+- El presidente del Banco Central tiene que cuidar su comunicación. Se analiza
+  la carta orgánica del banco central en el próximo episodio. La independencia
+se construye respetando la carta orgánica. Por lo tanto, no puede twittear así.
+Ni hacer comunicados conjuntos con el Tesoro.
+
