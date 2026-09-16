@@ -5,6 +5,8 @@
 . Revisar el contenido de las clases
 . Resumir apuntes que subió el profe
 . Práctico Arquitectura Cliente-Servidor (no hacer punto que propone solución).
+. Práctico SOA
+. Práctico comparativo
 
 == Clase 1
 
@@ -209,3 +211,53 @@ procesa la solicitud y envía el contenido.
 . Dependencia del servidor: si falla, los clientes no acceden
 . Puede requerir de una inversión mayor en _Hardware_ y seguridad
 . Saturación si hay demasiados clientes conectados en simultáneo
+
+== Clase 5, 16 de septiembre
+
+=== Arquitectura Micro Servicios (MSA)
+
+- Variación de SOA.
+- Consiste en construir una aplicación como conjunto de pequeños servicios
+independientes, tanto a nivel de código como de infraestructura, que se
+comunican entre ellos con mecanismos ligeros, de baja latencia.
+- Cada servicio:
+    * Gestiona una única parte de negocio, de forma exclusiva
+    * Debe poder desplegarse y escalarse de forma independiente, sin tener 
+    efectos sobre el resto de servicios
+
+.Arquitectura
+- Peticiones de clientes
+- Van a una capa de interfaz de usuario. El cliente no sabe cuántos micro
+servicios se están utilizando.
+- Debajo están los micro servicios, cada uno con sus módulos.
+
+.Características de software
+- Se puede descomponer en partes independientes.
+- Cada uno se puede desplegar y modificar sin afectar al resto.
+
+.Características de organización
+- 
+
+.Características de arquitectura
+- Cada uno es independiente: no acuden a la misma base de datos: no se
+sobrecarga una misma base de datos ni tenemos problemas de concurrencia.
+
+.Características de aviso y actuación
+- Al estar varios comunicados, necesiatamos sistemas de aviso y actuación para 
+registrar fallos, recibir advertencias, comunicar a soporte. Debe favorecer la 
+gestión.
+
+.Ventajas de Microservicios frente a Arquitectura Monolítica
+image::image.png[Ventajas de Microservicios]
+
+== Primer Parcial
+
+. Semana que viene tenemos clase de consulta. Se conectan los que lo necesiten.
+No es obligatorio participar.
+. Parcial arranca 20:00. Se hacen las consultas y empezamos.
+. Se entrega a las 22:00.
+. Multiple-Choice: pueden tener ninguna, una o varias respuestas correctas.
+. Se juzgan enunciados y se justifica únicamente lo falso.
+. Situaciones prácticas. Planteamos una situación y tenemos que enunciar cómo lo
+resolveríamos, recurriendo a los conceptos que vimos: qué arquitectura usar,
+cuáles son los argumentos en que nos basamos.
