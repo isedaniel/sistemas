@@ -41,7 +41,71 @@ Se identifican estructuras, asociadas con la _psicología humana_. Los patrones
 se identificaron y clasificaron en el pasado. Se asume que siguen funcionando a
 futuro.
 
+== Teoría de Dow
+
+Padre del análisis técnico. Dio su nombre la Dow-Jones. 
+
+.3 tendencias
+El mercado tiene 3 tendencias. La lateral es pausa. 
+
+. Tendencia alcista: Si tenemos picos superiores y valles superiores.
+
+. Tendencia bajista: Pricos inferiores y valles inferiores
+
+. Pausa de tendencia: Picos y valles a misma altura.
+
+.3 fases de mercado
+. Acumulación
+. Participación pública
+. Distribución
+
+1. Acumulación
+Los inversores, generalmente institucionales, comprenden que las malas noticias
+se han descontado. Al no haber malas noticias, debería comenzar un nuevo ciclo.
+
+Comienzan a llevar en ese nivel la oferta, tomando de los que, por el motivo que
+fuera, liquidan. Se nota por el poco flujo. De a poco van llevando posiciones.
+Generalmente en una pausa de tendencia.
+
+2. Participación pública
+Se caracteriza por movimientos alcistas. Se acaba el proceso lateral y el volumen bajo. Se observa demanda, de minoristas e institucionales. El precio muestra una tendencia alcista. Mínimos y máximos crecientes. 
+
+En esta fase las probailidades están a nuestro favor. Los inversores notan que
+el ciclo ha cambiado.
+
+3. Distribución
+Cuando no puede estar mejor. Todo el mundo comprando. Los astutos que compraron
+cuando estaba mal comienzan a liquidar. De a poco y progresivamente. Como son 
+grandes los que van saliendo, tenemos una pausa en la tendencia de nuevo. Al 
+precio le _cuesta subir_.
+
+____
+Una tendencia está en vigor hasta que da señales definitivas de retroceso
+____
+
+== Leer un gráfico
+
+[horizontal]
+Vela:: Materialización de cada jornada
+Eje vertical:: Precio
+Eje horizontal:: Tiempo
+
+Con pocas herramientas de análisis gráfico ya se puede trabajar. 
+
+Las empresas del mismo sector se mueven de forma similar.
+
+.Velas
+Representa una jornada bursátil.
+[horizontal]
+Línea fina:: Mínimo y máximo
+Cuerpo:: Apertura y cierre
+Verde/roja:: Roja si el cierre es inferior, verde si el cierre es superior
+
+Las velas tienen formas y cada una significa cosas distintas.
+
+== Tendencias
+
 [source]
 ----
-// 10M
+// 34M
 ----
