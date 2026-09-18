@@ -1,0 +1,30 @@
+= Notas de Parte diario, 18 de septiembre de 2026
+Dan <ise.daniel@gmai.com>
+v0.1, 2026-09-18
+
+Mis notas sobre Parte Diario, de Alberto Ades.
+
+Terceros viernes de septiembre vence una parte importante de futuros y
+opciones. Tiende a generar movimiento muy significativos. Compran para
+_hedgear_ la posición. Es posible ver buena _performance_ por esto.
+
+[horizontal]
+.Indicadores más importantes
+USA:: Neutra
+Asia:: Arriba
+Europa:: Abajo
+Petróleo:: Abajo
+
+.Japón
+Subió la tasa. Estaba descontado. Tasa en nivel más elevado en 30 años.
+DOs miembros votaron en contra. Se pone en cuestión si la suba sigue,
+por lo tanto el Yen se deprecia, en consecuencia suben bolsas asiáticas
+por crecimiento de la competitividad.
+
+.Diesel
+Galón en 6 USD. Tensión en el Farmbelt. Sube por restricción de oferta.
+Destrucción de refinerías a nivel global.
+
+.Déficit Fiscal Estadounidense
+En 6%. Alto para un país que crece.
+
