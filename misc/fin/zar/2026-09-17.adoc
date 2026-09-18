@@ -83,7 +83,9 @@ Central.
 - El Banco Central _debería_ beneficiar sectores.
 - No va a poder financiar al tesoro, no puede comprar títulos. Se eliminan los
   adelantos transitorios. La emisión tiene dos mecanismos: adelantos
-transitorios y ganancias contables. Se transfieren al tesoro. En la práctica, se
-
-QUEDO: 56M
+transitorios y ganancias contables. Se transfieren al tesoro. En la práctica,
+se sacan los mecanismos de emisión y se impide que el Tesoro se meta con
+ganancias. Habilita a que compre activos en moneda local. Está bien que sea
+isla. Por ahí muy atado de manos. Pero esto es Argentina. No hay carta orgánica
+que cambie eso.
 
