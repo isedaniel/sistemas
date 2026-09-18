@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de Precios - Tienda de Café</title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="prices.html">Lista de Precios</a>
+        <a href="about.html">Sobre Nosotros</a>
+    </nav>
+    <main>
+        <table id="prices">
+            <thead>
+                <th>Imagen</th>
+                <th>Producto</th>
+                <th>Precio</th>
+            </thead>
+        </table>
+    </main>
+    <script>
+        const table = document.getElementById("prices");
+
+        function addProduct(producto, imagen, precio) {
+            const row = document.createElement("tr");
+            table.appendChild(row);
+
+            const img = document.createElement("img");
+            img.src = "img/" + imagen;
+            img.style = "width: 100px; height: auto; border-radius: 10px; margin: 10px;";
+            const imgCell = document.createElement("td");
+            imgCell.appendChild(img);
+            row.appendChild(img);
+
+            const product = document.createElement("td");
+            product.innerText = producto;
+            product.style = "padding: 10px"
+            row.appendChild(product);
+
+            const price = document.createElement("td");
+            price.innerText = `$ ${precio}`;
+            price.style = "padding: 10px"
+            row.appendChild(price);
+        }
+        
+        addProduct("Café Clásico", "clasico.jpg", 10);
+        addProduct("Café Expreso", "expreso.jpg", 20);
+        addProduct("Café Orgánico", "planta_de_cafe.jpg", 30);
+    </script>
+</body>
+
+</html>
