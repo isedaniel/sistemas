@@ -354,6 +354,9 @@ Forma abreviada de `flex-direction` + `flex-wrap`. V. g.: `flex-flow: row
 nowrap`
 
 .`flex-basis`
+El tamaño base del elemento.
+
+.`flex-grow`
 Por defecto, cada elemento va a ocupar el espacio que corresponda. Si el
 elemento _container_ es más grande, dejan espacio. Esto viene dado por
 `flex-grow: 0`. Si queremos que ocupe todo el espacio tenemos que setear
@@ -369,6 +372,7 @@ dejamos en auto pero le damos a `flex-grow`, van a poder crecer. `flex-basis:
 0` es distribuir igual el espacio. `flex-basis: auto` tiene en cuenta el
 contenido.
 
+.`flex: 1`
 La forma abreviada es `flex: 1`. Equivale a: `grow: 1; shrink: 1; basis: 0`.
 
 También podemos setear en cada uno el flex. Si por ejemplo usamos:
@@ -391,5 +395,5 @@ Flexbox froggy.
 
 [source]
 ----
-// Video 2, Flex, 1H
+// Video 2, Flex, 1H 5M
 ----
