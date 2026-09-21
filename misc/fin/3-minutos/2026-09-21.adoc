@@ -1,0 +1,60 @@
+= Notas, Economía en 3 minutos
+Dan <ise.daniel@gmail.com>
+v0.2, 2026-09-21
+
+La idea es tomar nota y dejar emerger lo más importante para el análisis. 
+Armar una plantilla con la cual hacer mi propio análisis de coyuntura. 
+Para eso vamos a tomar nota del Colo, del Parte Diario y del Zar. 
+Vemos qué termina saliendo.
+
+.Fecha
+Lunes 21 de septiembre de 2026.
+
+.Indicadores a monitorear semana anterior
+- Costo de la construcción
+- Inflación mayorista
+- Datos PBI segundo trimestre
+- Desempleo
+- Balance comercial agosto
+- Números fiscales
+- Reunión de la FED
+- Encuestas Brasil
+
+.FED
+Subió tasa.
+Dió a entender que no van a aflojar
+
+.Argy
+- Riesgo país sube.
+- Actividad en segundo trimestre fueron malos pero no tan malos.
+- Consumo cayó fuerte. 
+- Inversión cae por quinto trimestre consecutivo. 
+Aunque cada vez cae menos.
+Quizá haga piso.
+- Julio flojo. 
+Agosto no está claro. 
+Podría llegar a venir mejor septiembre.
+- Desempleo subió.
+Pero menos feo de lo que parece.
+7.9% de desempleo.
+45% pasó a trabajar.
+El desempleo crece porque crece la población activa.
+Más gente laburando.
+Caída en la calidad del trabajo.
+- Superávit primario, atrás de los años anteriores, pero no va a descarrilar.
+Tiene que subir recaudación, no hay mucho espacio para continuar el recorte.
+- Presupuesto 2027. 
+Un poco más realista.
+Pero incorpora ruido político.
+
+.Próxima semana
+- Conflicto en Medio Oriente
+- Conflictos en el oficialismo
+- Sale PBI julio.
+Ventas _shoppings_.
+
+.Observaciones
+- Seguir publicaciones INDEC, que emerjan los patrones.
+- Seguir licitaciones de Bonos.
+Hay que aprender a leer las licitaciones.
+
