@@ -1,0 +1,324 @@
+= Notas sobre la teoría
+Dan <ise.daniel@gmail.com>
+v0.2, 2026-09-18
+:stem:
+:imagesdir: ./img
+:lang: es
+
+== Discretización
+Entonces, estamos viendo cómo solucionar, con *métodos numéricos*, lo que
+serían _ecuaciones diferenciales en derivadas parciales_, también llamadas
+PDEs.
+
+La incógnita es una función de 2 o más variables.
+
+El problema _suele_ depender de tiempo stem:[t] y de una dimensión espacial 
+stem:[x] o más. 
+
+Esto implica que tenemos que construir una *grilla de discretización* para
+*cada variable independiente*.
+
+== Advección lineal en 1 dimensión
+
+La ecuación de *advección lineal unidimensional* se escribe:
+
+[stem]
+++++
+(del u)/(del t) + c (del u)/dx = 0
+++++
+
+Representa una *onda*, que se propaga con velocidad stem:[c], en dirección
+stem:[x], sin cambio de forma. 
+
+Con condición inicial stem:[u(x, 0) = u_0(x)], tiene solución exacta dada por 
+stem:[u(x,t) = u_0(x - ct)], que se verifica si tomamos la derivada de la
+solución en timepo y espacio, para luego reemplazar en la ecuación diferencial.
+
+Considerando la solución exacta, se observa que su forma no cambia, siempre es
+la misma onda incial stem:[u_0], desplazada en dirección de stem:[x]. Es además
+constante a lo largo de las llamadas *curvas características* stem:[x - ct =
+cte].
+
+.Curvas características
+image::curvas-caracteristicas.png[Curvas características]
+
+== Diferencias finitas
+
+Tengo un gráfico espacio-tiempo. Las coordenadas verticales representan el 
+avance en el tiempo, stem:[t^n] a stem:[t^(n+1)]. Las coordenadas horizontales,
+el avance en el espacio, stem:[x_(i-1)], stem:[x_i] y stem:[x_(i+1)]. Se puede
+forman una grilla, en la que asignamos a cada punto un índice espacial y otro
+temporal:
+
+[stem]
+++++
+{:
+    [t^(n+1),rarr, *, *, *],
+    [t^n,rarr, *, *, *],
+    [,, x_(i-1),x_i,x_(i+1)]
+:}
+++++
+
+La solución numérica para el punto medio-superior se indica stem:[u_i^(n+1)]. Un
+fragmento de grilla tendría los valores de solución numérica:
+
+[stem]
+++++
+{:
+    [*, *, *],
+    [u_(i-1)^(n+1), u_(i)^(n+1), u_(i+1)^(n+1)],
+    [*, *, *],
+    [u_(i-1)^(n), u_(i)^(n), u_(i+1)^(n)],
+    [*, *, *],
+    [u_(i-1)^(n-1), u_(i)^(n-1), u_(i+1)^(n-1)]
+:}
+++++
+
+Esta es una *grilla de discretización* y se puede denotar como el resultado de 
+pasos constantes stem:[Delta t] y stem:[Delta x]:
+
+[stem]
+++++
+{
+    (x_i= i Delta x),
+    (t^n = n Delta t)
+:}
+++++
+
+Entonces:
+
+[stem]
+++++
+u_i^n = u(i Delta x, n Delta t)
+++++
+
+== Discretizando la ecuación de modelo
+
+Vemos ahora cómo discretizar la ecuación de advección lineal en una dimensión.
+Tanto en tiempo como en espacio. Primero discretizamos la coordenada espacial 
+stem:[x], en puntos stem:[i = 0 ... N]. Luego, intervalos de tiempo discreto de
+tamaño stem:[Delta t].
+
+Por la definición de derivada, sabemos que para stem:[Delta x] suficientemente
+pequeños se cumple:
+
+[stem]
+++++
+(del u)/(del x) ~~ (u(x + Delta x, t) - u(x,t))/(Delta x)
+++++
+
+Esta definición se puede aplicar a todo punto stem:[x_i]. Pero no es el único 
+modo de estimar la derivada.
+
+La interpretación geométrica de la derivada, en función de una variable, es una
+recta de pendiente _tangente_ a la curva stem:[u(x)]. Si graficamos el resultado
+de la expresión anterior, obtenemos la recta *exacta*.
+
+- Si nos aproximamos por valores superiores, decirmos que es un operador en 
+diferencias _hacia adelante_.
+- Si, en cambio, nos aproximamos desde valores menores, tenemos un operador en 
+direferencias _hacia atras_.
+- Si usáramos ambos puntos, a cada lado de stem:[x_i], se trataría de un
+operador en diferencias _centrado_, con denominador stem:[2 Delta x].
+
+.Aproximación geométrica de la derivada
+image::approximations.png[Approximations]
+
+Es decir, tenemos 3 formas posibles de representar una forma discreta de
+stem:[(del u)/(del x)]:
+
+- diferencia en adelanto, _forward_, que usa stem:[x_i] y stem:[x_i + Delta x].
+- diferencia en atraso, _backward, que usa stem:[x_i] y stem:[x_i - Delta x].
+- diferencia centrada, que usa ambos puntos.
+
+Las 3 fórmulas son:
+
+1. Diferencia _Forward_
+
+[stem]
+++++
+(del u)/(del x) ~~ (obrace(u(x_(i+1)))^(u " en el posterior") - obrace(u(x_i))^("En " x_i))/(Delta x)
+++++
+
+2. Diferencia _Backward_
+
+[stem]
+++++
+(del u)/(del x) ~~ (obrace(u(x_(i)))^(u " en " x_i) - obrace(u(x_i-1))^("En " x_i-1))/(Delta x)
+++++
+
+3. Diferencia _central_
+
+[stem]
+++++
+(del u)/(del x) ~~ (obrace(u(x_(i+1)))^(u " en el posterior") - obrace(u(x_i-1))^("En el anterior"))/(Delta x)
+++++
+
+Se puede adoptar, por ejemplo, una diferencia de adelanto para la derivada 
+temporal. Y una diferencia en atraso para la espacial. La ecuación discreta 
+quedaría:
+
+[stem]
+++++
+(u_i^(n+1)-u_i^n)/(Delta t) + c (u_i^n - u_(i-1)^n)/(Delta x) = 0
+++++
+
+Si consideramos que tenemos las condiciones iniciales, la única incógnita sería
+stem:[u_i^(n+1)]. Si la despejamos, obtenemos:
+
+[stem]
+++++
+u_i^(n+1) = u_i^n - c (Delta t)/(Delta x) (u_i^n - u_(i-1)^n)
+++++
+
+Esta es la *grilla de cálculo* o _stencil_. 
+Permite resolver la ecuación, empleando el esquema de diferencias
+_forward-time/backward-space_.
+
+.Grilla de cálculo o _Stencil_
+image::stencil.png[Stencil]
+
+== Primer ejemplo
+
+.Importa librerías y setea opciones
+[source, python]
+--
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Seteamos font.family y font.size para los gráficos
+plt.rcParams['font.family'] = 'serif'
+plt.rcParams['font.size'] = 16
+--
+
+El ejemplo define una ecuación de convección lineal en una dimensión tipo 
+_square wave_, siguiendo la expresión:
+
+[stem]
+++++
+u(x, 0) = {
+    (2 " para " .5 <= x <= 1),
+    (1 " para el resto entre " (0, 2))   
+:}
+++++
+
+Cuyo gráfico sería:
+
+.Onda cuadrada o _Square wave_
+image::square-wave.png[Square Wave]
+
+Se definen algunas variables:
+
+[source, python]
+--
+nx = 41 # Número de puntos espaciales discretos
+L = 2.0 # tamaño del dominio de la función (0,2)
+dx = L/(nx - 1) # tamaño de la grilla espacial
+nt = 25 # número de pasos de tiempo
+dt = .02 # tamaño de los pasos de tiempo
+c = 1.0 # velocidad de convección
+
+# vector que va de .05 en .05, desde 0 a 2
+# va a funcionar como las coordenadas de los puntos
+x = np.linspace(0, L, num=nx) 
+--
+
+Para graficar la onda cuadrada debemos modificar `u0`.
+Primero debemos obtener los `x` que cumplan stem:[.5 =< x =< 1].
+Usando `np.where()` obtenemos un vector de índices, cuyos valores satisfacen
+la condición que pasamos como argumento.
+Con `np.logical_and()` definimos la condición `x >= .5` y `x >= 1`:
+
+[source, python]
+--
+u0 = np.ones(nx) # un vector con 41 unos, son la condición inicial
+# mask es un vector de índices, con las posiciones en que x es mayor o igual a
+# .5 y menor o igual a 1
+mask = np.where(np.logical_and(.5 <= x, x <= 1.0))
+--
+
+Usando ese vector, seteamos que `u0` sea igual a 2 en dichas posiciones:
+
+[source, python]
+--
+# 2 en las posiciones de la mask
+u0[mask] = 2
+--
+
+Con este vector graficamos la onda cuadrada:
+
+[source, python]
+--
+plt.figure(figsize=(4,4)) # seteamos el tamaño
+plt.title("Condición inicial") # el título
+plt.xlabel("x") # el label del eje horizontal
+plt.ylabel("u") # el label del eje vertical
+plt.grid() # le agregamos un grid
+# la curva(puntos, valores, opciones...)
+plt.plot(x, u0, color="C0", linestyle="--", linewidth=2) 
+plt.xlim(0, L) # límites del eje horizontal (L = 2)
+plt.ylim(0, 2.5) # límites del eje vertical
+--
+
+.Output: condición inicial
+image::condicion-inicial.png[Condición inicial]
+
+La idea ahora es escribir el código para la forma discreta de la ecuación,
+siguiendo el esquema _forward time/backward space_.
+Para cada elemento del vector hay que operar:
+
+[stem]
+++++
+u_i^(n+1) = u_i^n - c (Delta t)/(Delta x) (u_i^n - u_(i-1)^n)
+++++
+
+Imaginemos 2 operaciones iterativas: una en espacio y la otra en tiempo.
+Hay un bucle espacial dentro del bucle temporal, como muestra a continuación:
+
+[source, python]
+--
+u = u0.copy() # copiamos el vector
+for n in range(1, nt): # recordar nt era el número de pasos en el tiempo
+    un = u.copy() # vector temporal, que guarda el u previo
+    for i in range(1, nx): # nx era el número de pasos en el espacio
+        u[i] = un[i] - c * dt / dx * (un[i] - un[i - 1])
+--
+
+Podemos graficar el vector solución `u`, luego de un avance de `nt` pasos en el 
+tiempo:
+
+[source, python]
+--
+plt.figure(figsize=(4,4))
+plt.xlabel('x')
+plt.ylabel('u')
+plt.grid()
+plt.plot(x, u0, label='Inicial', color='C0', linestyle='--', linewidth=2)
+plt.plot(x, u, label=f'nt = {nt}', color='C1', linestyle='-', linewidth=2)
+plt.legend()
+plt.xlim(0, L)
+plt.ylim(0, 2.5)
+--
+
+.Solución discretizada con 25 pasos
+image::nt25.png[Solución discretizada]
+
+La onda se ha desplazado hacia la derecha y cambió de forma.
+Esto es esperable, ya que estamos haciendo una aproximación discretizada a una 
+Ecuación Diferencial Continua. 
+Los errores van a aparecer.
+
+== Error de truncamiento espacial
+
+Recordar que una *serie de Taylor* es una suma infinita de términos que sirve 
+para aproximar funciones complejas mediante polinomios fáciles de manejar.
+Cada término es una derivada de la función para un determinado punto.
+
+Si hacemos una desarrollo en serie de Taylor para los términos espaciales, se 
+puede observar que el esquema en atraso, _backward_, produce un _método de
+primer orden en espacio_: 
+
+[stem]
+++++
+(del u)/(del x)(x_i) = 
+++++
