@@ -1,0 +1,18 @@
+= Notas, Economía en 3 minutos
+Dan <ise.daniel@gmail.com>
+v0.2, 2026-
+
+La idea es tomar nota y dejar emerger lo más importante para el análisis. 
+Armar una plantilla con la cual hacer mi propio análisis de coyuntura. 
+Para eso vamos a tomar nota del Colo, del Parte Diario y del Zar. 
+Vemos qué termina saliendo.
+
+.Fecha
+
+
+.A monitorear
+- 
+
+.Observaciones
+- 
+
