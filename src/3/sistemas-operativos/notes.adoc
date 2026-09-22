@@ -1,6 +1,8 @@
 = Notas de Clase, Sistemas Operativos
 Dan <ise.daniel@gmail.com>
 v 0.6, 2026-09-22
+:imagesdir: ./img
+:stem:
 
 .TODO 
 . Revisar clases y trabajar las notas
@@ -234,6 +236,7 @@ Hay tres tipos de problemas de concurrencia.
 
 . Problemas de lectores y escritores
 . Problemas de productores y consumidores
+. Problemas de concurrencia
 
 .Problemas de lectores y escritores
 Se da cuando más de un proceso quiere acceder para escribir al mismo recurso.
@@ -249,6 +252,8 @@ Un proceso es *productor*: genera datos.
 Otro es *consumidor*: toma esos datos.
 Este problema requiere de *servicios* para que los procesos se _comuniquen_ y 
 _sincronicen_.
+
+.Problemas de concurrencia
 
 .Mutex
 Semáforo de dos colores.
@@ -332,19 +337,19 @@ procesos, hilos de distintos procesos).
 === Planificación
 
 El sistema tiene un proceso interno que se llama _Planificador_ (_Scheduler?_).
-
-Los diferentes estados tienen una relación directa con las _prioridades_. 
+De acuerdo a qué es lo que se está ejecutando, el planificador decide las 
+transciones de los procesos.
 
 La planificación se puede hacer de tres formas posibles:
 
-. A largo plazo
-. A mediano plazo
-. A corto plazo
+. A largo plazo: procesos que van a cola de espera
+. A mediano plazo: procesos que hay que poner en espera
+. A corto plazo: procesos en ejecución inmediatamente
 
 === Algoritmos de planificación 
 
-Hay dos tipos de algoritmos de planificación y todo sistema aplica los dos,
-dependiendo de lo que necesite.
+Hay dos tipos de algoritmos de planificación.
+Todo sistema operativo aplica los dos, dependiendo de lo que necesite.
 
 .Round-Robin
 Rotativamente asigna tiempos de ejecución a distintos procesos.  
@@ -353,4 +358,104 @@ El orden de asignación es secuencial y siempre igual.
 Los procesos que terminan de ejecutarse salen del anillo. 
 Los que todavía siguen en ejecución permanencen en él.
 
+Por ejemplo, le asigna un tiempo al proceso A.
+Si se ejecutó, pasa al siguiente.
+Si no se ejecutó, pero se acabó el tiempo, lo bloquea y pasa al siguiente.
+El proceso A debe esperar, en ese caso, a que de toda la vuelta al anillo.
+Los ejecutados van saliendo del anillo.
+Los que restan en ejecución siguen dando vueltas hasta terminar su ejecución.
+
+El tiempo asignado es siempre el mismo para todos los procesos.
+
 .FIFO o FCFS (First Come First Serve)
+Primero en entrar es el primero en salir.
+Se usa típicamente para colas de impresión.
+
+== Cuarta clase, 8 de septiembre
+
+Dijimos que todo sistema operativo tiene que tener:
+
+. Un sector de arranque o _booteo_
+. Una interfaz de comandos
+. Un núcleo o _kernel_
+. Y un sistema de archivos
+
+En esta clase vamos a ver los sistemas de archivos.
+
+Hoy en día la mayoría de los discos nuevos son de _estado sólido_. 
+Pero vamos a ver el funcionamiento del _disco rígido_, que sigue vigente.
+
+Todo disco rígido tiene:
+
+. Estructura física
+. Estructura lógica
+
+Dentro de la carcaza hay un disco metálico, plateado.
+Esos discos se conocen como *platos*.
+Se graba por ambas caras.
+Usando un cabezal magnético.
+
+Un disco de pasta, por ejemplo, tiene surcos, en forma de espiral.
+A medida que gira, la púa se acerca al medio, con movimientos espiralados.
+En un disco son _concéntricas_, como en un tiro al blanco.
+Cada cícurlo concéntrico se conoce como *pista*.
+
+Si por ejemplo tengo la pista 9, la novena contando desde afuera.
+Tengo una 9 arriba y abajo de cada plato.
+La pista exterior se conoce como _pista 0_.
+
+Luego tenemos el concepto de *cilindro*.
+Un cilindro está compuesto por todas las pistas del mismo número.
+Este, a diferencia de los anteriores, pertenece a la *estructura lógica*.
+
+Un *sector* es una _porción_ de la pista.
+Se denomina *conjunto de sectores* a todos los sectores desde la pista 0 a la 
+interior.
+
+Un conjunto de sectores dentro de una misma pista se conoce como *clúster*.
+
+.Estructura Física de un Disco Rígido
+image::disco-rigido-estructura-fisica.png[]
+
+La primera pista es la pista 0.
+El sector 0 es el primer sector.
+La primera cara es la cara 0.
+Ahí se guarda la información de _booteo_.
+El _Master Boot Record_.
+
+La información no se guarda de forma contigua.
+Las partes de un archivo se pueden guardar en diferentes sectores.
+Este fenómeno se conoce como *fragmentación*.
+La desfragmentación de discos permite resolver este problema.
+
+=== FAT, File Allocation Table
+
+Tabla de Asignación de Archivos. 
+FAT.
+A medida que avanzaron los sistemas operativos se hizo crecer la FAT.
+En las primeras versión se usó FAT 8 o 12.
+Luego vinieron 16 y 32.
+A día de hoy se usa NTFS.
+
+Para distinguir entre FAT se usa una regla.
+
+. Se obtiene el número de sectores en el volumen
+. Se resta el espacio de sectores reservados
+. Se resta el ocupado por las FAT
+. Se resta el espacio ocupado por el directorio raíz
+. A ese total se divide por el número de sectores en un cluster redondeado.
+El resultado es el número de cluesters en el área de datos.
+Si stem:[R >= 65525], es FAT32.
+
+La FAT tiene cada archivo asociado con un lugar de disco.
+Cuando se va al sector 2, al final, tiene dónde sigue el archivo.
+Es como una _Linked-List_.
+Una cadena.
+No necesariamente son consecutivos.
+
+.FAT
+image::fat.png[]
+
+Los problemas son:
+. Fragmentación, no son consecutivos
+. Apuntan al mismo sector, problemas de concurrencia
