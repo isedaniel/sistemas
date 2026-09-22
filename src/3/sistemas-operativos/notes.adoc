@@ -1,97 +1,108 @@
 = Notas de Clase, Sistemas Operativos
 Dan <ise.daniel@gmail.com>
-v 0.4, 2026-09-01
+v 0.5, 2026-09-21
 
 .TODO 
 . Revisar clases y trabajar las notas
-. Elaborar resúmenes de los apuntes
-. Prácticos
+- Vamos: 11-ago, 16M
+. Resumir los apuntes
 
 
 == Primera clase, 11 de agosto
 
-.Objetivo
-Ver problemas vinculados con sistemas operativos. Entender cómo funcionan.
-Cómo funcionan por detrás de la interfaz. Pasan muchas cosas, algunas buenas,
-otras no tanto. El sistema operativo tiene que lidiar con todas ellas.
+.Objetivo de la materia
+Ver problemas vinculados a los sistemas operativos. 
+Entender cómo funcionan por detrás de la interfaz. 
+En el _backend_ pasan muchas cosas, buenas y no tanto. 
+El sistema operativo tiene que lidiar con todas ellas.
+
+Se van a presentar distintos sistemas operativos.
+Lo importante es conocer que no se agota en los más conocidos: Windows, Linux,
+MacOS o Android.
+
+Veremos las cosas que tienen todos en común.
 
 .Definición de sistema operativo
 Software que se ocupa de la intermediación entre el Hardware y el Usuario, sea
 humano o entidad automatizada.
 
-Sirve de intérprete entre usuario y la máquina.
+Sirve de intérprete entre usuario y máquina.
 
 Es un software distinto al resto, con cuatro características que lo distinguen.
 
-Se ejecuta solo al momento de arrancar la computadora.
+. Tiene su propio *sistema de archivos*.
+El sistema operativo puede administrar las cosas que trabajamos y guardamos.
+Los sistemas pueden generar archivos, pero no decidir dónde guardarlos.
+Es un sistema de organización de la información.
+. Tiene un *intérprete de comandos*.
+Es una interfaz, en la que puedo escribir instrucciones y ejecutar comandos.
+Para algunos casos de uso puede ser mejor que la interfaz gráfica.
+. Tiene un *núcleo*, también llamado *kernel*.
+Cada sistema operativo tiene su propio kernel.
+. Se *ejecuta a sí mismo* al momento de arrancar la computadora.
+No necesita del usuario para comenzar a funcionar.
+La carga se hace con una _rutina de booteo_.
 
-.Núcleo
-El sistema carga el núcleo. Es un software extremandamente simple, chico y
-fácil. El resto de componentes no forma parte del sistema operativo. Es el
-revoque.
+Hoy en día hay electrodomésticos con sistemas operativos.
+Que, por ejemplo en televisores, permiten conectarse a internet y acceder a 
+servicios orientados a ellos.
 
-Hay sistemas operativos que tienen /micronúcleo/ y sistemas operativos con
-núcleos monolíticos.
+.Rutina de _booteo_
+El sistema carga en memoria su núcleo.
+Lo demás no es parte del núcleo, sobre él se ejecuta el resto de cosas.
+El resto de componentes no forma parte del sistema operativo. 
+El sistema operativo es el _motor_ del auto.
 
-.Módulo I
-Tenemos una introducción, que profundiza en lo que hablamos. Además tenemos
-otro apunte y un video corto para revisar. Por último, tenemos dos trabajos
-prácticos. El primero es sobre la evolución de los sistemas operativos y el
-segundo WebOS, sobre sistemas operativos web.
+Algunos tienen _micronúcleo_. Otros, como Linux, núcleo _monolítico_.
+Cada uno tiene sus ventajas y desventajas.
 
-Con respecto a los sistemas Web, vamos a investigar qué son, cuáles están
-vigentes, si se utilizan, expectativas a futuro, características de cada uno.
-Hay que buscar 5. Nombre, creador, características, si sige vigente o no.
-
-Para la siguiente clase. Trabajar el apunte, ver el video, resolver los
-prácticos. Se entregan en 15 días.
-
-
-.Condiciones de aprobación
-Dos parciales aprobados. Todos los TP entregados.
-
-Los parciales tienen dos partes. Una teórica y otra práctica. Tenemos
-multiple-choice capciosos y análisis de situaciones prácticas, donde tenemos
-que argumentar con lenguaje técnico y preciso.
 
 === Notas Video Sistemas Operativos
 
 .Historia
-En los 40 y principios de los 50. Las computadoras ocupaban habitaciones
-enteras y ejecutaban un programa a la vez. Se programaba con tarjetas perforadas
-y la máquina podía estar días procesando.
+40 y principios de los 50. 
+Las computadoras ocupaban habitaciones enteras. 
+Ejecutaban un programa a la vez, que podía durar días. 
+Se programaba con tarjetas perforadas.
 
-A medida que las computadoras crecen en rendimiento, el tiempo humano comenzó a
-ser el cuello de botella.  Por eso nace el procesamiento por lotes.
+A medida que crece el poder de cómputo, el tiempo humano comenzó a ser el cuello
+de botella.
+Por eso nace el *procesamiento por lotes*.
 
-Las computadoras, además de crecer en pode de cómputo, bajan de precio e
-incorporan dispositivos periféricos, que requieren de controaldores.
+Además de crecer en poder de cómputo, bajan de precio e incorporan dispositivos
+periféricos, que requieren de controladores.
 
 A fines de los 50, las computadoras podían ejecutar varias programas a la vez,
 aprovechando los tiempos muertos, como, por ejemplo, cuando se envía un trabajo
-a imprimir.  Este concepto se denomina *multitarea*.
+a imprimir. Este concepto se denomina *multitarea*.
 
-*Gestión de Memoria*. Ejecutar muchos programas requiere maneter memoria para
-cada uno.  Se empieza a asignar espacios de memoria para cada programa. Cuando
-los programas requieren de mayor memoria, el sistema les entrega bloques de
-memorias separados.  El problema de este sistema es que no se puede conocer bien
-la ubicación de la memoria. Para ello se desarrolla el concepto de *memoria
-virtual*. Cada programa tiene su memoria asignada. Si un programa falla, no
-puede afectar a otros programas. Además, aparece la protección de memoria, que
-impide que un programa lea la memoria asignada a otros.
+.Gestión de Memoria
+Ejecutar muchos programas requiere mantener memoria para cada uno.  
+A cada uno se le asigna su espacio.
+Cuando requieren de más memoria, se les entrega bloques separados.
+Pero los programas no pueden gestionar por sí solos la memoria física.
+Por eso nace el concepto de *Memoria virtual*.
+Cada programa cuenta con su memoria asignada.
+Si un programa llegara a fallar, no puede afectar a los demás.
 
-En los años 70, una misma computadora podía atender varias terminales. Para
-ello, se desarrollan los sistemas operativos de tiempo compartido. En ese
-momento nace Multics, sistema operativo de tiempo compartido. En ese contexto
-nace Unix, con un núcleo simple y herramientas separadas, con programas y
-bibliotecas.  Con el tiempo, aparecieron compiladores y editores de texto para
-el sistema, lo que lo convirtió en el sistema más popular.
+Emerge además el concepto de *protección de memoria*.
+Que implica que un programa no puede leer la memoria asignada a otro.
 
-En los años 80, las computadoras continuaron bajando sus precios, convirtiéndose
-en equipos hogareños.
+En los 70s, una misma computadora podía atender varias terminales. 
+Por ello se desarrollan los *sistemas operativos de tiempo compartido*.
+Nace Multics. 
+Y luego Unix, con un núcleo simple y herramientas separadas, con programas y
+bibliotecas.  
+Con el tiempo, aparecen compiladores y editores de texto para el sistema, lo que
+lo convirtió en el más popular.
+
+En los 80s, las computadoras siguienron bajando sus precios, convirtiéndose en
+equipos hogareños.
 
 En la actualidad, los sistemas operativos están en nuestros equipos, teléfonos,
-televisores. Hoy en día, son muy resilientes, fallan rara vez.
+televisores. 
+Son muy resilientes, fallan rara vez.
+
 
 == Segunda clase, 18 de agosto
 
@@ -99,17 +110,21 @@ televisores. Hoy en día, son muy resilientes, fallan rara vez.
 Se trata de cómo el sistema organiza y ejecuta el trabajo.
 
 .Proceso 
-Es un programa en ejecución. Tiene su propio espacio de memoria aislado del
-resto. Tiene un espacio de memoria propio, recursos asignados como archivos
-abiertos, conexiones de red, identificadores de sistema. Tiene un _Process ID_
-que el sistema usa para identificarlo.
+Es un programa en ejecución. 
+Tiene su propio espacio de memoria aislado del resto. 
+Cuenta además con recursos asignados como archivos abiertos, conexiones de red,
+identificadores de sistema. 
+El sistema usa un _Process ID_ para identificarlo.
 
 .Hilo
-Es una unidad de ejecución dentro de un proceso. Varios hilos comparten la misma
-memoria. Como una familia comparte una casa. Hay una memoria compartida, donde
-está el código, los datos, heap comunies. Solo la pila es propia de cada hilo.
-Lac reación es más liviana. Y hay riesgo de _sincronización de carrera_. Tema
-que veremos más adelante.
+Es una unidad de ejecución dentro de un proceso. 
+Varios hilos comparten la misma memoria. 
+Como una familia comparte una casa. 
+En la memoria compartida está el código, los datos, la heap. 
+Solo la pila es propia de cada hilo.
+La creación es más liviana. 
+Y hay riesgo de _sincronización de carrera_. 
+Tema que veremos más adelante.
 
 .Procesos vs. Hilos
 [cols="1,2,2"]
@@ -141,13 +156,13 @@ El proceso es la casa. Sus hilos son sus habitantes.
 
 .Transición A
 Cuando el programa necesita un elemento para continuar (sea dato, señal, etc.).
-El proceso se encuentra esperando que _algo_ pase. Como cuando un sistema nos
-pide contraseña. Se queda esperando que la ingresemos.
+El proceso se encuentra esperando que _algo_ pase. 
+Como cuando un sistema pide una contraseña al usuario y aguarda que la ingrese.
 
 .Transición B
 Cuando el programa ha utilizado un tiempo asignado de procesador y tiene que
-dejar el paso al siguiente proceso. El sistema frena ese proceso y deja que otro
-continue.
+dejar el paso al siguiente proceso. 
+El sistema frena ese proceso y deja que otro continue.
 
 .Transición C
 El proceso se encontraba _preparado_.
@@ -156,12 +171,12 @@ El proceso se encontraba _preparado_.
 
 .Cambio de contexto
 Cuando se pasa de una transición a otra hablamos de un _cambio de contexto_. 
-Puede ser _parcial_ (entre hilos del mismo proceso) o _completo_ ().
+Puede ser _parcial_ (entre hilos del mismo proceso) o _completo_ (cambio de
+proceso).
 
 === Planificación
 
-Los diferentes estados tienen una relación directa con lo que se denomina
-_prioridades_. 
+Los diferentes estados tienen una relación directa con las _prioridades_. 
 
 La planificación se puede hacer de tres formas posibles:
 
@@ -175,9 +190,10 @@ Hay dos tipos de algoritmos de planificación y todo sistema aplica los dos,
 dependiendo de lo que necesite.
 
 .Round-Robin
-Rotativamente asigna tiempos de ejecución a distintos procesos.  Se conoce
-también como algoritmo de rueda, puesto que el orden de asignación es siempre la
-misma, de forma secuencial. Los procesos que terminan de ejecutarse salen del
-anillo. Los que todavía siguen en ejecución permanencen en el anillo.
+Rotativamente asigna tiempos de ejecución a distintos procesos.  
+Se conoce también como algoritmo de rueda, porque se puede visualizar como una.
+El orden de asignación es secuencial y siempre igual.
+Los procesos que terminan de ejecutarse salen del anillo. 
+Los que todavía siguen en ejecución permanencen en él.
 
 .FIFO o FCFS (First Come First Serve)
