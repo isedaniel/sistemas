@@ -1,10 +1,10 @@
 = Notas de Clase, Sistemas Operativos
 Dan <ise.daniel@gmail.com>
-v 0.5, 2026-09-21
+v 0.6, 2026-09-22
 
 .TODO 
 . Revisar clases y trabajar las notas
-- Vamos: 11-ago, 16M
+- Quedo 17M, 25-ago
 . Resumir los apuntes
 
 
@@ -106,25 +106,41 @@ Son muy resilientes, fallan rara vez.
 
 == Segunda clase, 18 de agosto
 
-.Procesos e Hilos
-Se trata de cómo el sistema organiza y ejecuta el trabajo.
+Tema de hoy: procesos e hilos.
+Concepto usado por el sistema operativo para la organización y ejecución del 
+trabajo.
 
 .Proceso 
-Es un programa en ejecución. 
-Tiene su propio espacio de memoria aislado del resto. 
-Cuenta además con recursos asignados como archivos abiertos, conexiones de red,
-identificadores de sistema. 
-El sistema usa un _Process ID_ para identificarlo.
+Es una instancia de un programa en ejecución. 
+Tiene su propio espacio de memoria aislado del resto.
+En él se guardan el código y los datos.
+Cuenta además con recursos asignados.
+Tales como archivos abiertos, conexiones de red, identificadores de sistema. 
+El sistema usa un número, el _Process ID_, para identificarlo.
+
+Cuando la máquina arranca se ejecutan muchos procesos de forma automática.
+Por ejemplo, el antivirus Windows Defender.
 
 .Hilo
-Es una unidad de ejecución dentro de un proceso. 
-Varios hilos comparten la misma memoria. 
-Como una familia comparte una casa. 
-En la memoria compartida está el código, los datos, la heap. 
+Es una unidad de ejecución dentro de un proceso.
+Los hilos de un mismo proceso comparten el espacio de memoria.
+Código, datos y _heap_ son comunes.
 Solo la pila es propia de cada hilo.
-La creación es más liviana. 
-Y hay riesgo de _sincronización de carrera_. 
-Tema que veremos más adelante.
+
+Crear un hilo es más liviano.
+Cuesta menos tiempo y memoria que crear un proceso.
+
+Hay riesgo de _condiciones de carrera_. 
+Tema que veremos más adelante, es un problema de _sincronización de procesos.
+
+Ejemplo, el autoguardado de Word.
+Se ejecuta con independencia del usuario.
+La detección de nuestro _input_.
+Dónde estamos haciendo click, qué teclas tocamos.
+Cada uno es un hilo.
+
+Se puede pensar al proceso como una casa.
+Los hilos serían como una familia, que comparte la casa.
 
 .Procesos vs. Hilos
 [cols="1,2,2"]
@@ -132,49 +148,190 @@ Tema que veremos más adelante.
 |Aspecto |Proceso |Hilo
 
 |Memoria 
-|Espacio propio, Aislado                        
-|Compartida entre Hilos del proceso 
+|Espacio propio, aislado del resto
+|Compartida entre Hilos del mismo proceso 
 
 |Costo de creación 
 |Alto
 |Bajo
 
 |Comunicación
-|Requiere IPC (pipes, sockets)
-|Directa, mismo espacio de memoria 
+|Requiere IPC (_buffers, pipes, sockets_)
+|Directa: comparten el mismo espacio de memoria 
 
 |Aislamiento
 |Alto: un fallo en un proceso no afecta al resto 
-|Bajo
+|Bajo: un hilo puede afectar a los otros
 |===
 
-El proceso es la casa. Sus hilos son sus habitantes.
+=== Por qué son importantes
+
+La elección entre procesos e hilos depende de las prioridades.
+
+.Aislamiento y robustez
+Si se requiere resiliencia frente a fallos, convienen procesos separados.
+
+.Eficiencia y comunicación
+Para tareas relacionadas, que requieren acceder a los mismo datos de forma 
+rápida, convienen los hilos.
+
+.El _Scheduler_ decide
+El sistema operativo reparte procesos e hilos entre los núcleos de la CPU.
+
+Ejemplo.
+Tengo dos instancias de Excel.
+Hago doble click en un archivo y trabajo en él.
+Luego hago doble click en otro archivo.
+Tengo dos procesos.
+Cada uno tiene su propia memoria.
+Cada uno tiene su propio `PID`.
+Cada instancia tiene su hilo para la interfaz y su hilo para el cálculo, por 
+ejemplo.
+Si una de las instancias se cae, la otra no se ve afectada.
+
+En Ingeniería de Software es fundamental elegir correctamente nuestra
+arquitectura para aprovechar los conceptos de *Procesos* e *Hilos* de acuerdo
+a las _necesidades_.
+
+=== Estados de los Procesos
+
+El *estado* de un proceso se define por la actividad en que se encuentra.
+Pueden ser 5:
+
+. Nuevo, _New_: cuando el proceso es creado, pero todavía no se ejecuta.
+. Listo, _ready_: listo para ejecución, a espera de tiempo de procesador.
+. En ejecución, _running_: cuando procesado asignado y ejecuta instrucciones.
+. Bloqueado, _waiting_: a la espera de un evento, v. g., de entrada/salida.
+. Finalizado, _terminated_: finalizó ejecución.
+
+.Esquema de transiciones de estado
+
+=== Preguntas
+
+.¿La carga del Kernel es un proceso?
+Sí, de por sí es un proceso.
+
+.¿Un comando es un hilo?
+Un comando interno, interior al kernel, es un hilo del kernel.
+Un comando externo, como `tree`, es un proceso independiente.
+
+.¿Qué pasa con los hilos cuando termina un proceso?
+Se terminan.
+Porque están dentro del proceso.
+
+Esto sucede en Windows.
+Pero no sucede en Linux.
+Existe el concepto de *proceso zombie*.
+El proceso murió pero el hilo sigue.
+Porque maneja de una forma distinta.
+
+=== Concurrencia
+
+.Problemas clásicos de concurrencia
+Es un problema que emerge cuando dos procesos quieren acceder, al mismo tiempo,
+al mismo recurso.
+Hay tres tipos de problemas de concurrencia.
+
+. Problemas de lectores y escritores
+. Problemas de productores y consumidores
+
+.Problemas de lectores y escritores
+Se da cuando más de un proceso quiere acceder para escribir al mismo recurso.
+Se resuelve impidiendo que dos procesos escriban sobre el mismo recurso al 
+mismo tiempo.
+
+Cuando un proceso solicita permiso de _escritura_ sobre un recurso, el sistema
+operativo impide que cualquier otro proceso escriba sobre él.
+
+.Problemas de productores y consumidores
+Hay procesos que generan datos para que los utilicen otros. 
+Un proceso es *productor*: genera datos.
+Otro es *consumidor*: toma esos datos.
+Este problema requiere de *servicios* para que los procesos se _comuniquen_ y 
+_sincronicen_.
+
+.Mutex
+Semáforo de dos colores.
+Habilita (o no) la ejecución de un proceso.
+
+Para algunas situaciones no alcanza un semáforo de dos luces.
+Porque se despedicia tiempo.
+Ese otro sistema se conoce como _variable condicional_.
+
+.Variable condicional
+Es un mutex pero de tres luces.
+La variable condicional tiene los mismo dos, pero incorpora _wait_ y _signal_.
+Implica _pasar con cuidado_.
+No es complicado de implementar.
+
+.Deadlock, o _exclusión mutua_ 
+Dos procesos llegan al mismo tiempo al mismo recurso.
+Como cuando dos autos quieren pasar por un punte de una sola mano.
+Se encuentran por la mitad.
+_Qué hacemos_.
+Es sencillo: uno lo tiramos al río.
+
+Así se resuelve un _deadlock_: se mata uno de los dos procesos.
+Se lo termina y se lo vuelve a ejecutar desde el principio.
+El usuario no lo nota.
+Esto sería Windows.
+
+Linux es distinto.
+Tiene la instrucción `kill` para elegir el proceso a matar.
+Cualquier sistema operativo moderno tiene que lidiar con estos problemas.
+
 
 == Tercera clase, 25 de agosto
 
+Mac es caro.
+Pero muy bien diseñado.
+Enfocado en usabilidad.
+
+Linux es gratis.
+Pero muchos consideran que es difícil.
+Como cuando surgió DOS.
+
+En el medio tenemos Windows.
+No tan difícil.
+Pero no gratis.
+
 === Transiciones
 
+Vimos que los procesos podían tener diferentes estados.
+Cuando cambia de estado decimos que hace una *transición* de procesos.
+
+Hay cuatro transiciones posibles.
+Cada una tiene un nombre, dado por una letra.
+
 .Transición A
-Cuando el programa necesita un elemento para continuar (sea dato, señal, etc.).
-El proceso se encuentra esperando que _algo_ pase. 
+Cuando un programa necesita un elemento para continuar (dato, señal, etc.).
+El proceso se encuentra a la espera de que un _evento_ ocurra.
+
 Como cuando un sistema pide una contraseña al usuario y aguarda que la ingrese.
 
 .Transición B
 Cuando el programa ha utilizado un tiempo asignado de procesador y tiene que
 dejar el paso al siguiente proceso. 
 El sistema frena ese proceso y deja que otro continue.
+Es lo que haría el _mutex_ cuando bloquea un proceso.
+
+El sistema asigna tiempo de ejecución a cada proceso.
+Si no termina, lo frena y le da paso a otro.
 
 .Transición C
-El proceso se encontraba _preparado_.
+El proceso se encuentra _preparado_ y pasa a _ejecución_.
 
 .Transición D
+Cuando pasa de _bloqueado_ a _preparado_.
 
 .Cambio de contexto
 Cuando se pasa de una transición a otra hablamos de un _cambio de contexto_. 
 Puede ser _parcial_ (entre hilos del mismo proceso) o _completo_ (cambio de
-proceso).
+procesos, hilos de distintos procesos).
 
 === Planificación
+
+El sistema tiene un proceso interno que se llama _Planificador_ (_Scheduler?_).
 
 Los diferentes estados tienen una relación directa con las _prioridades_. 
 
