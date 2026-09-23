@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página</title>
+</head>
+<body>
+    <ul>
+
+    </ul>
+    <button>Nuevo Elemento</button>
+    <script>
+        const $ = selector => document.querySelector(selector);
+        const list = $('ul');
+        const button = $('button');
+        button.addEventListener('click', () => {
+            const el = document.createElement('li');
+            el.innerText = 'Nuevo Elemento';
+            list.appendChild(el);
+        });
+    </script>
+</body>
+</html>

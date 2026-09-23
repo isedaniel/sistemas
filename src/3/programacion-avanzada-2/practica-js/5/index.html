@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page</title>
+</head>
+
+<body>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore illum ab voluptates animi, et accusantium
+        eligendi veritatis reprehenderit voluptatum doloribus assumenda quas hic exercitationem commodi impedit totam
+        aliquid tempore. Consequatur. Lorem.
+    </p>
+    <button>Cambiar fondo</button>
+    <p id="color">Color: #FFFFFF</p>
+
+    <script>
+        const $ = selector => document.querySelector(selector);
+
+        function generateColor() {
+            return `#${Math.floor(Math.random() * 0xFFFFFF)
+                .toString(16)
+                .padStart(6, '0')}`;
+        }
+
+        $('button').addEventListener('click', () => {
+            const color = generateColor();
+            $('p').style = `background-color: ${color}`;
+            $('#color').innerHTML = `Color: ${color}`;
+        })
+    </script>
+
+</body>
+
+</html>
