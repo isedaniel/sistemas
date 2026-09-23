@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 6</title>
+
+  <style>
+    .format {
+      background-color: #09f;
+      border: 2px solid #111;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 2em;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, exercitationem ratione, numquam inventore molestiae
+    sequi corporis accusantium delectus nam ipsum laborum necessitatibus, odit ex similique asperiores eligendi
+    aspernatur nesciunt? Omnis!
+  </p>
+  <button id="add-class">Agregar clase</button>
+  <button id="remove-class">Quitar clase</button>
+<script>
+  const $ = (selector) => document.querySelector(selector);
+  const p = document.querySelector('p');
+  
+  $('#add-class').addEventListener('click', () => $('p').classList = ['format'])
+
+  $('#remove-class').addEventListener('click', () => $('p').classList = []);
+</script>
+</body>
+
+
+</html>
