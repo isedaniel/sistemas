@@ -18,7 +18,7 @@ stem:[x] o más.
 Esto implica que tenemos que construir una *grilla de discretización* para
 *cada variable independiente*.
 
-== Advección lineal en 1 dimensión
+=== Advección lineal en 1 dimensión
 
 La ecuación de *advección lineal unidimensional* se escribe:
 
@@ -35,14 +35,14 @@ stem:[u(x,t) = u_0(x - ct)], que se verifica si tomamos la derivada de la
 solución en timepo y espacio, para luego reemplazar en la ecuación diferencial.
 
 Considerando la solución exacta, se observa que su forma no cambia, siempre es
-la misma onda incial stem:[u_0], desplazada en dirección de stem:[x]. Es además
-constante a lo largo de las llamadas *curvas características* stem:[x - ct =
-cte].
+la misma onda incial stem:[u_0], desplazada en dirección de stem:[x]. 
+Es además constante a lo largo de las llamadas *curvas características* stem:[x
+- ct = cte].
 
 .Curvas características
 image::curvas-caracteristicas.png[Curvas características]
 
-== Diferencias finitas
+=== Diferencias finitas
 
 Tengo un gráfico espacio-tiempo. Las coordenadas verticales representan el 
 avance en el tiempo, stem:[t^n] a stem:[t^(n+1)]. Las coordenadas horizontales,
@@ -59,8 +59,8 @@ temporal:
 :}
 ++++
 
-La solución numérica para el punto medio-superior se indica stem:[u_i^(n+1)]. Un
-fragmento de grilla tendría los valores de solución numérica:
+La solución numérica para el punto medio-superior se indica stem:[u_i^(n+1)].
+Un fragmento de grilla tendría los valores de solución numérica:
 
 [stem]
 ++++
@@ -92,7 +92,7 @@ Entonces:
 u_i^n = u(i Delta x, n Delta t)
 ++++
 
-== Discretizando la ecuación de modelo
+=== Discretizando la ecuación de modelo
 
 Vemos ahora cómo discretizar la ecuación de advección lineal en una dimensión.
 Tanto en tiempo como en espacio. Primero discretizamos la coordenada espacial 
@@ -111,8 +111,9 @@ Esta definición se puede aplicar a todo punto stem:[x_i]. Pero no es el único
 modo de estimar la derivada.
 
 La interpretación geométrica de la derivada, en función de una variable, es una
-recta de pendiente _tangente_ a la curva stem:[u(x)]. Si graficamos el resultado
-de la expresión anterior, obtenemos la recta *exacta*.
+recta de pendiente _tangente_ a la curva stem:[u(x)]. 
+Si graficamos el resultado de la expresión anterior, obtenemos la recta
+*exacta*.
 
 - Si nos aproximamos por valores superiores, decirmos que es un operador en 
 diferencias _hacia adelante_.
@@ -137,21 +138,27 @@ Las 3 fórmulas son:
 
 [stem]
 ++++
-(del u)/(del x) ~~ (obrace(u(x_(i+1)))^(u " en el posterior") - obrace(u(x_i))^("En " x_i))/(Delta x)
+(del u)/(del x) ~~ 
+    (obrace(u(x_(i+1)))^(u " en el posterior") 
+    - obrace(u(x_i))^("En " x_i))/(Delta x)
 ++++
 
 2. Diferencia _Backward_
 
 [stem]
 ++++
-(del u)/(del x) ~~ (obrace(u(x_(i)))^(u " en " x_i) - obrace(u(x_i-1))^("En " x_i-1))/(Delta x)
+(del u)/(del x) ~~ 
+    (obrace(u(x_(i)))^(u " en " x_i) 
+    - obrace(u(x_i-1))^("En " x_i-1))/(Delta x)
 ++++
 
 3. Diferencia _central_
 
 [stem]
 ++++
-(del u)/(del x) ~~ (obrace(u(x_(i+1)))^(u " en el posterior") - obrace(u(x_i-1))^("En el anterior"))/(Delta x)
+(del u)/(del x) ~~ 
+    (obrace(u(x_(i+1)))^(u " en el posterior") 
+    - obrace(u(x_i-1))^("En el anterior"))/(Delta x)
 ++++
 
 Se puede adoptar, por ejemplo, una diferencia de adelanto para la derivada 
@@ -178,7 +185,7 @@ _forward-time/backward-space_.
 .Grilla de cálculo o _Stencil_
 image::stencil.png[Stencil]
 
-== Primer ejemplo
+=== Primer ejemplo
 
 .Importa librerías y setea opciones
 [source, python]
@@ -269,7 +276,9 @@ Para cada elemento del vector hay que operar:
 
 [stem]
 ++++
-u_i^(n+1) = u_i^n - c (Delta t)/(Delta x) (u_i^n - u_(i-1)^n)
+u_i^(n+1) = 
+    u_i^n 
+    - c (Delta t)/(Delta x) (u_i^n - u_(i-1)^n)
 ++++
 
 Imaginemos 2 operaciones iterativas: una en espacio y la otra en tiempo.
@@ -308,7 +317,7 @@ Esto es esperable, ya que estamos haciendo una aproximación discretizada a una
 Ecuación Diferencial Continua. 
 Los errores van a aparecer.
 
-== Error de truncamiento espacial
+=== Error de truncamiento espacial
 
 Recordar que una *serie de Taylor* es una suma infinita de términos que sirve 
 para aproximar funciones complejas mediante polinomios fáciles de manejar.
@@ -321,4 +330,179 @@ primer orden en espacio_:
 [stem]
 ++++
 (del u)/(del x)(x_i) = 
+    (u(x_i) - u(x_(i-1))) / (Delta x)
+    + (Delta x)/2 (del^2 u)/(del x^2)(x_i)
+    - (Delta x^2)/6 (del^3 u)/(del x^3)(x_i)
+    + ...
 ++++
+
+Esto es, el término dominante que se desestima en la aproximación es de orden 
+stem:[O(Delta x)].
+El esquema de diferencias _forward-time/backward-space_ es de primer orden en 
+espacio como en tiempo. 
+Los errores de truncamiento son stem:[O(Delta t, Delta x)].
+
+Comentario: En definitiva, nos está diciendo que el error es de orden del Delta.
+
+=== Advección no lineal
+
+La ecuación de advección en una dimensión no lineal se obtiene reemplazando la
+velocidad de onda constante stem:[c] por la variable stem:[u]:
+
+[stem]
+++++
+(del u)/(del t) + u(del u)/(del x) = 0
+++++
+
+Es no lineal, porque tenemos el producto de la solución y una de sus derivadas:
+stem:[u (del u)/(del x)].
+
+Usamos el mismo _esquema de discretización_ que para el caso lineal: 
+diferencia hacia adelante en tiempo y hacia atrás en espacio.
+La ecuación discretizada resulta en:
+
+[stem]
+++++
+(u_i^(n+1) - u_i^n)/(Delta t) + u_i^n (u_i^n - u_(i-1)^n)/(Delta x) = 0
+++++
+
+Resolviendo la única incógnita, stem:[u_i^(n+1)], obtenemos una ecuación que 
+permite avanzar en el tiempo:
+
+[stem]
+++++
+u_i^(n+1) = u_i^n 0 u_i^n (Delta t)/(Delta x) (u_i^n 0 u_(i -1)^n)
+++++
+
+En `Python`, reinicializamos la variable `u` y reingresamos los parámetros 
+numéricos:
+
+[source, python]
+--
+nx = 41 # número de puntos espaciales discretos
+L = 2 # tamaño del dominio de la función, (0,2)
+dx = L/(nx - 1) # tamaño de la grilla espacial
+#nt = 25 # número de pasos de tiempo
+nt = 10
+dt = .02 # tamaño de los pasos de tiempo
+#c = 1.0 # velocidad de convección
+# ya no opera
+
+# vector que va de .05 en .05, desde 0 a 2
+# va a funcionar como las coordenadas de los puntos
+x = np.linspace(0, L, num=nx) 
+u0 = np.ones(nx) # un vector con 41 unos, son la condición inicial
+
+# mask es un vector de índices, con las posiciones en que x es mayor o igual a
+# .5 y menor o igual a 1
+mask = np.where(np.logical_and(.5 <= x, x <= 1.0))
+
+# 2 en las posiciones de la mask
+u0[mask] = 2
+--
+
+Comentario: 
+Es decir, todo igual, salvo que ya no tenemos `c` y `nt = 10`.
+
+La solución no lineal se obtiene cambiando una línea, `un[i]` en lugar de `c`:
+
+[source, python]
+--
+u = u0.copy()
+for n in range(1, nt): # nt = 10
+    un = u.copy() # u previo
+    for i in range(1, nx): # nx = 41
+        u[i] = un[i] - un[i] * dt / dx * (un[i] - un[i - 1])
+--
+
+Se puede resolver más elegante usando `NumPy`.
+
+La operación vectorizada para stem:[u_i - u_(i-1)]:
+
+.Operación vectorizada
+image::vectorizedstencil.png[]
+
+[source, python]
+--
+u = u0.copy()
+for n in range(1, nt): # nt = 10
+    u[1:] = u[1:] - u[1:] * dt/dx * (u[1:]- u[:-1])
+--
+
+Comentario: 
+Básicamente lo mismo, solo que en lugar de doble _for-loop_ hace directo la 
+operación con los vectores `u`.
+
+Al igual que en caso discreto, se pierden los "lados afilados" de la forma.
+Queda _redondeada_.
+Pero en el caso no lineal también pierde la simetría.
+Del lado izquierdo el crecimiento de la curva es algo más _lento_.
+Mientras mantiene mayor decrecimiento del derecho.
+Pero no es un problema de error numérico, sino de física.
+
+Es por el reemplazo de la velocidad constante stem:[c] por la solución de
+stem:[u].
+Diferentes partes de la onda se mueven a diferentes velocidades.
+
+== Introducción a la solución en diferencias finitas de PDEs
+
+=== Estabilidad y condición de CFL
+
+En este cuaderno se explora de qué forma el cambio en los parámetros de la 
+discretización puede afectar la solución numérica.
+
+En primer lugar se experimenta con el *número de puntos en la grilla* `nx`.
+El código corresponde al caso de advección lineal.
+
+[source, python]
+--
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.rcParams['font.family'] = 'serif'
+plt.rcParams['font.size'] = 16
+
+def linear_convection(nx, L=2, c=1, dt=.025, nt=20):
+    """
+    Resuelve la ecuación de convección lineal para 1D con velocidad constante
+    c, en el dominio [0, L] y grafica la solución junto a las condiciones 
+    iniciales.
+    
+    Parámetros:
+    nx: Número de puntos en la grilla para discretizar el dominio
+    L: Tamaño del dominio
+    c: velocidad de convección
+    dt: tamaño del paso en el tiempo
+    nt: cantidad de pasos a computar
+    """
+    # discretizamos la grilla espacial
+    dx = L / (nx - 1)
+    # vector de ceros, de tamaño nx
+    x = np.linspace(0, L, num=nx)
+
+    # condiciones iniciales
+    u0 = np.ones(nx)
+    mask = np.where(np.logical_and(x >= .5, x <= 1))
+    u0[mask] = 2
+
+    # integrar la solución en tiempo
+    u = u0.copy()
+    for n in range(1, nt):
+        u[1:] = u[2:] - c * dt/dx * (u[1:] - u[:-1])
+
+    # graficar solución
+    plt.figure(figsize(4,4))
+    plt.xlabel('x')
+    plt.ylabe('u')
+    plt.grid()
+    plt.plot(x, u0, label='initial', color='C0', linestyle='--', linewidth=2)
+    plt.plot(x, u, label=f'nt = {nt}', color='C1', linestyle='-', linewidth=2)
+    plt.legend()
+    plt.xlim(0,L)
+    plt.ylim(0,2.5)
+--
+
+Comentario:
+A medida que se aumenta la cantidad de puntos en la grilla `nx` la solución se
+va acercando a la base.
+Pero después de un número, se desarma:
