@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validación de Formulario</title>
+</head>
+
+<body>
+  <form id="miFormulario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre">
+    <button type="submit">Enviar</button>
+  </form>
+  <p id="mensajeError" style="color: red"></p>
+  <ul id="enviados">
+  </ul>
+  <script>
+    const form = document.querySelector('#miFormulario');
+    const nameInput = document.querySelector('#nombre');
+    const sent = document.querySelector('#enviados');
+    const error = document.querySelector('#mensajeError');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (nameInput.value) {
+        error.innerText = '';
+        const li = document.createElement('li');
+        li.innerText = nameInput.value;
+        sent.appendChild(li);
+      }
+      else {
+        error.innerText = 'Error: nombre vacío.';
+      }
+    });
+  </script>
+</body>
+
+</html>

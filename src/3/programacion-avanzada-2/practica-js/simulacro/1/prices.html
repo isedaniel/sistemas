@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Precios - Tienda de Café</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="prices.html">Lista de Precios</a>
+    <a href="about.html">Sobre Nosotros</a>
+  </nav>
+
+  <main>
+    <h1>Lista de Precios</h1>
+    <table>
+      <tr>
+        <th>Imagen</th>
+        <th>Producto</th>
+        <th>Precio</th>
+      </tr>
+    </table>
+  </main>
+  <script>
+    function addProduct(image, name, price) {
+      const row = document.createElement('tr');
+
+      const img = document.createElement('img');
+      img.src = image;
+      const imgCell = document.createElement('td');
+      imgCell.appendChild(img);
+      row.appendChild(imgCell);
+
+      const product = document.createElement('td');
+      product.innerText = name;
+      row.appendChild(product);
+
+      const priceCell = document.createElement('td');
+      priceCell.innerText = `$ ${price}`;
+      row.appendChild(priceCell);
+
+      const table = document.querySelector('table');
+      table.appendChild(row);
+    }
+
+    addProduct('img/clasico.jpg', 'Café Clásico', 10);
+    addProduct('img/expreso.jpg', 'Café Expreso', 20);
+    addProduct('img/organico.jpg', 'Café Orgánico', 30);
+  </script>
+</body>
+
+</html>
