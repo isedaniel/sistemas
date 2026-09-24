@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad 2</title>
+  <style>
+    body {
+      font-size: 1.1em;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    button {
+      margin: 5px;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="usuarios"></div>
+  <form onsubmit="filtrar(event)">
+    <input type="text" placeholder="Nombre">
+    <button type=submit>Filtrar</button>
+  </form>
+  <button id="post">Post</button>
+  <button id="error-post">Post Errónea</button>
+  <script>
+    const usuariosDiv = document.querySelector('#usuarios');
+
+    let usuarios = [];
+    async function leerUsuarios(url) {
+      try {
+        const res = await fetch(url);
+
+        if (!res.ok) {
+          throw new Error('Error en la solicitud');
+        }
+
+        usuarios = await res.json();
+        renderizarUsuarios(usuarios);
+      }
+      catch (e) {
+        console.error(e);
+        usuariosDiv.innerText = e;
+        usuariosDiv.classList = ['error'];
+      }
+    }
+
+    function renderizarUsuarios(usuarios) {
+      usuariosDiv.classList = [];
+      usuariosDiv.innerHTML = '';
+      usuarios.forEach(element => {
+        const usuario = document.createElement('p');
+        usuario.innerText = `Nombre: ${element['name']}\n`
+          + `Usuario: ${element['username']}\n`
+          + `Email: ${element['email']}`;
+        usuariosDiv.appendChild(usuario);
+      });
+    }
+
+    const input = document.querySelector('input');
+    function filtrar(event) {
+      event.preventDefault();
+
+      const filtrados = usuarios.filter(e => {
+        return e['name'].toLowerCase().includes(input.value.toLowerCase());
+      });
+      renderizarUsuarios(filtrados);
+    }
+
+    leerUsuarios('https://jsonplaceholder.typicode.com/users');
+
+    function postErroneo() {
+      leerUsuarios('https://jsonplaceholder.typicode.com/usuarioss')
+    }
+    const botonPostErroneo = document.querySelector('#error-post');
+
+    botonPostErroneo.addEventListener('click', () => postErroneo());
+  </script>
+</body>
+
+</html>
