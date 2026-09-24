@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad 9</title>
+</head>
+
+<body>
+  <button>Agregar párrafo</button>
+  <script>
+    const text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Similique porro tenetur necessitatibus labore ab, perspiciatis nesciunt dignissimos vitae consequatur! Ab ullam molestiae exercitationem praesentium beatae error debitis repellat esse tempora."
+
+    const btn = document.querySelector('button');
+    btn.addEventListener('click', () => {
+      const body = document.querySelector('body');
+      const p = document.createElement('p');
+      p.innerText = text;
+      body.appendChild(p);
+    });
+  </script>
+
+</body>
+
+</html>
