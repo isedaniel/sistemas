@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preinscripción a Talleres</title>
+  <link rel="stylesheet" href="estilos/main.css">
+</head>
+
+<body>
+  <header>
+    <h1 class="margen-arriba">Preinscripción a Talleres</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#informacion">Información</a></li>
+      <li><a href="#tabla-informativa">Tabla Informativa</a></li>
+      <li><a href="#seccion-formulario">Formulario de Inscripción</a></li>
+      <li><a href="http://www.udemm.edu.ar" target="_blank" rel="noopener noreferrer">Sitio web de la Universidad</a>
+      </li>
+    </ul>
+  </nav>
+
+  <hr>
+  <section id="informacion">
+    <h2 class="margen-arriba">Información</h2>
+    <article>
+      <h3 class="resaltar">Arquitectura Web y Estilos CSS</h3>
+      <p>
+        En este taller vamos a aprender a estructurar correctamente un Sitio
+        Web, utilizando tecnologías como <em>HTML</em>, <em>CSS</em> y
+        <em>JavaScript</em>, siguiendo <em>buenas prácticas</em>.
+      </p>
+      <h3 class="resaltar">Introducción a la Programación de Sistemas</h3>
+      <p>
+        En este taller vamos a trabajar la programación de sistemas <em>a bajo
+          nivel</em>, mediante las herramientas que nos provee el ecosistema de
+        <em>C++</em>.
+      </p>
+      <h3>Importante</h3>
+      <p>
+        Los talleres extracurriculares están orientados a complementar la
+        formación práctica de los estudiantes. Recordá que los cupos son
+        estrictamente limitados y se asignan por orden de llegada.
+      </p>
+    </article>
+  </section>
+
+  <hr>
+  <section id="tabla-informativa">
+    <table>
+      <tr>
+        <th>Código de Taller</th>
+        <th>Nombre</th>
+        <th>Cupos Disponibles</th>
+      </tr>
+      <tr>
+        <td>TL-01</td>
+        <td>Arquitectura Web y Estilo CSS</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td>TL-02</td>
+        <td>Introducción a la Porgramación de Sistemas</td>
+        <td>15</td>
+      </tr>
+    </table>
+  </section>
+
+  <hr>
+  <section id="seccion-formulario">
+    <h2>Formulario de Inscripción</h2>
+
+    <form action="paginas/exito.html" method="get" id="formulario">
+      <label for="nombre">Nombre y Apellido:</label>
+      <input type="text" name="nombre" id="nombre" placeholder="Juan Pérez">
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="usuario@example.com">
+
+      <label for="edad">Edad:</label>
+      <input type="number" name="edad" id="edad">
+
+      <label for="taller">Taller:</label>
+      <input type="text" name="taller" id="taller">
+
+      <label for="terminos">Acepto términos y condiciones:</label>
+      <input type="checkbox" name="terminos" id="terminos" checked>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <hr>
+  <footer>
+    <p>Copyright 2026 Programación Avanzada II</p>
+  </footer>
+
+</body>
+
+</html>
