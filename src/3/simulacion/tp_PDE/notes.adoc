@@ -505,4 +505,41 @@ def linear_convection(nx, L=2, c=1, dt=.025, nt=20):
 Comentario:
 A medida que se aumenta la cantidad de puntos en la grilla `nx` la solución se
 va acercando a la base.
-Pero después de un número, se desarma:
+Se va _volviendo más cuadrada_.
+
+Pero después de un número, se desarma: si la evaluamos en `nx = 85` la onda se 
+desarma.
+Qué está pasando.
+En cada iteración usamos los datos de la solución en tiempo stem:[n].
+Así computamos la soución en stem:[n+1].
+En las primeras iteraciones las soluciones son cada vez más precisas, a medida
+que aumentamos el número de puntos en la grilla `nx`.
+El error de la discretización se reduce.
+Tenemos una onda que luce cada vez más como una onda cuadrada.
+
+En cada iteración la solución avanza un paso en el tiempo stem:[Delta t].
+Representada por `dt = .025`.
+Para cada paso se evalúa stem:[u] para cada punto stem:[x_i].
+Pero luego de cierto tiempo stem:[Delta t], la onda se ha trasladado una
+distancia superior a stem:[Delta x].
+La solución se vuelve *inestable*.
+El tamaño `dx` es inversamente proporcional al número de puntos `nx`.
+A medida que crece la cantidad de puntos de la grilla `nx`, `dx` se achica.
+Cuando `dx` es menor a stem:[c Delta t] (que sería la distancia recorrida en un
+paso), no se puede resolver la ecuación correctamente.
+
+Considerar la siguiente ilustración:
+
+.Dominio de dependencia
+image::CFLcondition.png[]
+
+El triángulo verde representa el *dominio de dependencia* del modelo numérico.
+Por cada paso en el tiempo, stem:[u_i^(n+1)] depende de stem:[u_i^n] y
+stem:[u_(i-1)^n].
+
+Cuando stem:[c Delta t] es más chico que stem:[Delta x],
+la linea trazada desde stem:[(i, n+1)] aterriza dentro de stem:[(i-1, n)] e
+stem:[(i, n)].
+Decimos entonces que el *dominio de dependencia* matemático de la solución 
+de las Ecuaciones Diferenciales en Derivadas Parciales está contenido dentro del
+*dominio de dependencia* del modelo numérico.
