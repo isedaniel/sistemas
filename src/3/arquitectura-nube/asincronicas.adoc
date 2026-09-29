@@ -1,0 +1,226 @@
+= Notas de Clases Asincrónicas
+Dan <ise.daniel@gmail.com>
+v0.1, 26-09-26
+
+== Primer Módulo
+
+.Qué es infraestructura de TI
+No solo Software, Hardware, datos.
+Es todo.
+
+En tanto profesional tengo que conseguir la *configuración* adecuada.
+Para que la organización funcione de la forma en que se espera.
+Generalmente, hacer todo lo posible con un presupuesto limitado.
+
+.Infraestructura TI
+Conjunto de tecnologías que constituyen la base requerida por las organizaciones
+para crear sus sistemas de información.
+
+Cada organización tiene que diseñarla y administrarla de la mejor forma posible.
+
+.Workstation vs. Server
+Ambas tienen Hardware y Software.
+Pero el Server está preparado para mucha carga de trabajo.
+
+Tiene tres formatos clásicos:
+
+. Tower, gabinete
+. Formato rack
+. Formato blade, con conectores de fibra
+
+El Formato blade por ejemplo tiene doble fuente,
+disco con redundancia.
+Una workstation no tiene eso.
+
+Los componentes son de mayor calidad, diseñados para trabajar todo el tiempo.
+
+En cuanto a *sistemas operativos*, están optimizados para servicios, esto es,
+procesos en background.
+
+En infraestructura TI tenemos *servicios*, como DNS, DHCP, web, email.
+Los dispositivos que forman parte de la red tienen acceso a esos servicios.
+
+La infraestructura de la red está compuesta por muchos dispositivos, por
+ejemplo, switches para cada red local, usuarios remotos que se conectan por 
+internet, etc.
+
+Todos esos servicios solían estar en una sala de servidores.
+Hoy por hoy todo esto suele mudarse a *Datacenter Cloud*.
+Aunque algunas empresas combinan ambos.
+La nube es cientos de Datacenters, en todo el mundo.
+
+.Ecosistema de TI, según Laudon & Laudon
+. Sistemas operativos, Software
+. Software de aplicaciones empresariales, como ERP, CRM, BI.
+. Gestión de datos y almacenamientos, SQL
+. Tecnologías complementarias, virtualización, containerización
+. Plataformas de Harware, Mainframes, servidores, wortstations
+. Plataformas de redes y telecomunicaciones
+. Plataformas y servicios de internet
+. Servicios de consultaría e integración, empresas expertas en integrar entornos
+empresariales complejos, como Accenture 
+(rubro ideal para arrancar.
+Permite observar muchos mercados verticales: Oil and Gas, Salud, Banca.)
+
+=== Conceptos relacionados
+
+.TCO.
+_Total Cost Ownership_.
+Costo total de propiedad.
+Ejemplo, en un auto tengo que considerar costo del vehículo, patente, seguro,
+cochera. 
+Todo hace al costo de propiedad.
+En _Software_ pasa lo mismo.
+Compro un server y tengo que pagar por el Hardware, Software, recursos humanos.
+
+Va más allá de la compra inicial.
+Representa el costo real de un activo durante su ciclo de vida.
+Incluye:
+
+* Costos directos (adquisición): compra de Hardware, licencias de Software.
+* Costos indirectos (operación): consumo de energía, refrigerción, espacio
+* Costo de mantenimiento: actualizaciones, soporte, renovaciones de garantía
+* Costos ocultos: capacitación de personal, tiempo de inactividad, costos de 
+migración o disposición final.
+
+.Obsolescencia tecnológica.
+Puede ser de Hardware o Software.
+
+Salen nuevas tecnologías y tenemos que gestionar el cambio o la adaptación.
+Por ejemplo, podemos tener repuestos difíciles o costosos.
+Software que acaba su ciclo de vida.
+Nuevos componentes con interfaces no compatibles.
+Etc.
+
+Hay riesgos asociados con la obsolecencia.
+Brechas de seguridad por falta de parches,
+incompatibilidad entre Hardware y Software,
+aumento de costos de mantenimiento,
+de consumo de energía.
+
+Hay que pensar en la mitigación, 
+la estrategia para la renovación.
+
+.CAPEX y OPEX
+Capital Expenditure. 
+Por ejemplo, plata que tengo que poner para tener el auto.
+
+Operation Expenditure.
+Plata para que funcione el auto.
+
+En informática, no siempre es necesario comprar, como cuando alquilamos un auto.
+Ese es el rol de la *NUBE*.
+Es un modelo de _pago por consumo_.
+Permite escalar rápidamente y transformar grandes inversiones en gastos
+mensuales predecibles.
+Esto vio Jeff hace muchos años.
+
+.Código abierto vs propietario
+En el Software Propietario se paga por el derecho de uso.
+Una licencia.
+La ventaja es el soporte técnico garantizado por el fabricante,
+la integración certificada.
+La desventaja el costo, la dependencia de un proveedor (vendor lock-in)
+
+El software de código abierto permite ver y modificar el código.
+Incluso venderlo, dependiendo de la licencia.
+Software propietario viene empaquetado.
+Lo puedo usar como está o construir por encima.
+Pero no lo puedo modificar.
+La ventaja del Software libre es el costo de licenciamiento cero, 
+en la mayoría de los casos,
+la alta flexibilidad,
+no hay atadura a un proveedor.
+La desventaja es que el TCO puede aumentar por costos de personal especializado,
+o pagar soporte empresarial, como Red Hat.
+
+.SLI
+Service Level Indicator.
+Indicador de Nivel de Servicio.
+Métrica específica para determinar si el servicio _está bien_.
+
+Enfoque: es el qué.
+Define una medida cuantitativa de desempeño.
+
+Ejemplos:
+* Latencia: tiempo que tarda en completarse una solicitud, en milisegundos.
+* Disponibilidad: fracción de tiempo que el servicio es capaz de responder con
+éxito.
+* Tasa de errores: porcentaje de solicitudes que fallan con código 500s.
+* Rendimiento (Throughput): número de transacciones por segundo.
+
+Para esto se usa el monitoreo.
+Hay _software_ que expone en un _dashboard_ el SLI.
+Mido solo lo relevante.
+Puesto que tiene un costo.
+
+.SLO
+Service Level Objetive.
+Objetivo de Nivel de Servicio.
+
+Valor objetivo o rango de valores objetivos que el SLI debe cumplir para que el
+servicio se considere aceptable.
+
+.SLA
+Service Level Agreement.
+Acuerdo de Nivel de Serivicio.
+
+Es ya el contrato formal (legal y comercial) que se firma con el cliente.
+
+Enfoque: es qué pasa si no cumplimos.
+
+Se compone de uno o varios SLO y define consecuencias como reembolsos en caso 
+de incumplimiento.
+
+Diferencia clave: SLO es un objetio interno de igneniería.
+SLA es una promesa externa de negocio.
+
+El SLO debe ser más agresivo que el SLA.
+Para tener márgen de maniobra.
+
+Ejemplo:
+99.0% devuelvo 10%.
+Hasta 95% devuelvo 30%.
+Menos del 95% devuelvo el 100%.
+
+.Alta disponibilidad
+Capacidad de un sistema de permanecer accesible la mayor cantidad de tiempo 
+posible.
+
+_High Availability_, HA.
+
+Enfoques:
+
+* Eliminación de puntos únicos de fallo (SPOF): diseño la arquitectura pensando
+en que la caída de un componente, sea servidor, switch, disco, no detenga todo
+el sistema.
+* Redundancia y failover:
+Uso componentes duplicados
+(activo-pasivo o activo-activo).
+Mecanismos de conmutación automáticos frente a errores,
+para redirigir tráfico en caso de ser necesario.
+
+.Escalabilidad
+* Vertical: mejorar la capacidad del servidor, por ejemplo, en SQL.
+* Horizontal: añadir más nodos al sistema para distribuir la carga de trabajo.
+Modelo preferido por la computación en la nube.
+* Elasticidad: ligada a nube, capacidad de crecer y reducir recursos.
+
+.Interoperabilidad
+Capacidad de mi sistema de trabajar con otros.
+Por ejemplo, tengo que tener API, implementación de protocolos de la industria,
+usar formatos de datos universales (JSON, XML).
+
+Integración mediante API Restful o GraphQL, para permitir que sistemas 
+heterogéneos se comuniquen.
+
+Prevención de silos.
+
+=== Cambios disruptivos en infraestructura tradicional
+
+. Enlaces de datos de alta capacidad
+. Cloud computing
+. IaC
+. Mobile
+. DevOps / SRE
+. IA

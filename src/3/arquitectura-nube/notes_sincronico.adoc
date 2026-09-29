@@ -1,0 +1,50 @@
+= Notas de Encuentros Sincrónicos, Arquitectura de Computación en la Nube
+Dan <ise.daniel@gmail.com>
+v0.1, 26-09-26
+
+== Clase, 10 de agosto
+
+.Temas
+. Condiciones de cursada
+. Plataforma
+. Evaluación
+
+En Cloud constantemente están saliendo cosas nuevas.
+Se trata de estar al día.
+Pero no es sencillo.
+
+=== Plataforma
+
+Nos vamos a loguear en una plataforma.
+Usamos mail de UdeMM.
+Tenemos videos de las clases en la plataforma de UdeMM.
+Se recomienda verlos. 
+
+Luego vienen los módulos de la plataforma de *AWS Academy*.
+Al final de cada módulo tenemos una evaluación. 
+Se _recomienda_ completar. 
+Porque podemos obtener un _badge_. 
+En Credly.
+No es una certificación, pero suma. 
+No es obligatorio, pero suma (a la nota).
+
+=== Evaluación 
+
+Tenemos dos evaluaciones. 
+Son preguntas a desarrollar. 
+Y ejercicios para hacer.
+Tenemos que completar de un día para el otro.
+
+Completar el curso incrementa mucho las chances de aprobar. 
+Y puede incrementar la nota por concepto.
+
+Nos encontramos todos los lunes 6.10 para resolver consultas. 
+El contenido es autoadministrado.
+
+Algunos módulos son más importantes que otros. 
+Revisar el temario oficial para saber eso.
+
+Los módulos tienen laboratorios, con entornos _AWS Sandbox_, para practicar.
+
+== Clase, 24 de agosto
+

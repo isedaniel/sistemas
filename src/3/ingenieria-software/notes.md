@@ -143,12 +143,16 @@ Agilidad es:
 
 ## Cómo empezar un proyecto Agile
 
-Existe una técnica que se llama _Agile Inception_. Qué es. La fase inicial para
-alinear al equipo. Se define visión, objetivos y alcance. Esencial para empezar
-de forma clara.
+Existe una técnica que se llama _Agile Inception_. 
+Es la fase inicial para alinear al equipo. 
+Se define visión, objetivos y alcance. 
+Esencial para empezar de forma clara.
 
-Segundo, definimos el por qué. Por qué estamos aquí. A quién benificia el
-proyecto. Cómo lo vamos a medir.
+Definimos el por qué. 
+Por qué estamos aquí. 
+A quién benificia el proyecto. 
+Qué es lo que queremos lograr.
+Y cómo vamos a medir el éxito.
 
 Para eso hacemos dos cosas.
 - Elevator Pitch. Es una breve presentación del proyecto, de 30 segundos, que
@@ -180,15 +184,20 @@ mal.
 
 ## SCRUM
 
-Qué es un SCRUM. Una posición específica en un partido de Rugby. En la que
-disputamos la pelota. El objetivo es _entregar un producto lo más rápido
-posible._ La calidad del producto está en segundo lugar, lo más importante es el
-tiempo. Es decir, fijamos costo y fijamos alcance. Tratamos de minimizar tiempo.
+Qué es un SCRUM. 
+Una posición específica en un partido de Rugby. 
+En la que disputamos la pelota. 
+
+El objetivo es _entregar un producto lo más rápido posible._ 
+La calidad del producto está en segundo lugar, lo más importante es el
+tiempo. 
+Es decir, fijamos costo y fijamos alcance. 
+Tratamos de minimizar tiempo.
 
 Ideal para: necesidad de obtener resultados pronto, donde innovación,
-competitividad, flexibilidad y productividad son fundamentales. Para entornos
-complejos, pero no tanto. Si hay mucha complejidad hay otras metodologías que
-son mejores.
+competitividad, flexibilidad y productividad son fundamentales. 
+Para entornos complejos, pero no tanto. 
+Si hay mucha complejidad hay otras metodologías que son mejores.
 
 Roles. Hay tres.
 - Product Owner

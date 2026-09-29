@@ -102,15 +102,19 @@ cambio de metodología. Por eso se puede hacer.
 
 === Lean
 
-Metodología ligera, sin muchas complicaciones. El enfoque es la eficiencia, el
-aprendizaje contínuo y la entrega rápida de valor. Es decir, comparte algunos 
-aspectos con SCRUM (entrega rápida), comparte valores con Kanban (eficiencia, 
-aprendizaje continuo). 
+Metodología ligera, sin muchas complicaciones. 
+Enfocada en la eficiencia, el aprendizaje contínuo y la entrega rápida de valor.
+Es decir, comparte algunos aspectos con SCRUM (entrega rápida), comparte valores
+con Kanban (eficiencia, aprendizaje continuo).
+Pero es distinta.
 
-Nace en Toyota, década del 50. Se basa en la eliminación de desperdicios y la 
-mejora contínua. Cada vez que hacemos algo lo hacemos mejor. Lo que hacemos es 
-adaptar los principios de Lean a la industria del software. Buscamos maximizar
-valor, minimizar desperdicios.
+Nace en Toyota, década del 50.
+Se basa en la eliminación de desperdicios y la mejora contínua (Kaizen).
+Cada vez que hacemos algo lo hacemos mejor. 
+
+Lo que hacemos en tanto ingenieros de software es adaptar los principios de Lean
+a la industria del software (nació en la industria automotriz).
+Buscamos maximizar valor, minimizar desperdicios.
 
 .Principios
 . Elminar desperdicios
@@ -121,19 +125,20 @@ valor, minimizar desperdicios.
 . Ver el todo
 
 .Eliminar desperdicio
-Lo que no agrega valor se elimina. Código innecesario, funcionalidades no
-usadas, etc.
+Lo que no agrega valor se elimina. 
+Código innecesario, funcionalidades no usadas, etc.
 
 .Ampliar aprendizaje
 Validación temprana, ciclos cortos de retroalimentación, entregas frecuentes y 
-prototipos. Sin pulir detalles.
+prototipos. 
+Sin pulir detalles.
 
 .Decidir lo más tarde posible
-No tomamos decisiones a las apuradas. Las tomamos cuando se dispone de la mayor
-cantidad posible de información.
+No tomamos decisiones a las apuradas.
+Las tomamos cuando se dispone de la mayor cantidad posible de información.
 
 .Entregar lo más rápido posible
-Entregas tempranas que generen _feedback_ y adaptarse a las necesidades del 
+Entregas tempranas que generen _feedback_ y adaptar a las necesidades del 
 cliente.
 
 .Empoderar al equipo
@@ -144,62 +149,106 @@ Integración contínua, pruebas automatizadas y prácticas de desarrollo que
 aseguren calidad desde el principio. 
 
 .Ver el todo
-Optimizamos el sistema completo, no partes individuales. Se busca la eficiencia 
-general.
+Optimizamos el sistema completo, no partes individuales. 
+Se busca la eficiencia general, no la particular.
+No sirve un sistema de 7 módulos con uno eficiente y el resto no.
+Eso genera desperdicio, contrario a la filosofía de Lean.
 
 .Ventajas
 - Menor tiempo de entrega
 - Mayor calidad
 - Mejor colaboración
 - Satisfacción del cliente
+- Alta adaptabilidad a cambios frecuentes
 
 .Requerimientos
-- Cambio cultural profundo
-- Gran compromiso organizacional
-- Demanda liderazgo distribuido y madurez 
+- Cambio cultural profundo. 
+Acostumbrarse a cumplir con todos estos requisitos a rajatabla.
+- Gran compromiso organizacional.
+Para asumir el cambio cultural necesario.
+- Demanda liderazgo distribuido y madurez en procesos.
+A diferencia del resto, aquí no existen roles.
+No hay _scrum master_, _product owner_ ni dinamizador (Kanban).
+Por eso requiere cambio cultural y compromiso organizacional.
+
+Por ejemplo,
+si estamos asesorando a una organización y queremos implementar Lean,
+sin el compromiso organizacional y el cambio cultural profundo, 
+es imposible de implementar.
 
 === Extreme Programming (XP)
 
-No abarca a toda la organización ni al diseño de un proyecto. Es exclusiva del 
-equipo que se dedica a programar. Es decir, abarca solo la etapa de desarrollo 
-propiamente dicha
+No abarca a toda la organización ni al diseño de un proyecto. 
+Es exclusiva del equipo que se dedica a programar.
+Es decir, abarca solo la etapa de desarrollo.
 
-Metodología creada por Kent Beck. Busca mejorar la calidad del software.
+Metodología creada por Kent Beck. 
+Busca mejorar la calidad del software.
+Y la capacidad de adaptación al cambio.
 
 .Objetivos
 . Entregar software funcional rápidamente
 . Reducir errores mediante pruebas constantes
 . Facilitar cambios en requerimientos
 . Mejorar la comunciación con el cliente
+. Aumentar calidad del código
 
 .Valores
-. Comunicación, colaboración continua entre todos
-. Simplicidad, desarrollar solo lo necesario
-. Feedback, retroalimentación rápida y frecuente
-. Coraje, capacidad para refactorizar (rehacer una solución) y cambiar
-. Respeto, trabajo colaborativo, confianza mutua
+. Comunicación: colaboración continua entre todos
+. Simplicidad: desarrollar solo lo necesario
+. Feedback: retroalimentación rápida y frecuente por parte del cliente
+. Coraje: capacidad para refactorizar (rehacer una solución) y cambiar.
+En algunas situaciones es preferible rehacer una solución que corregir una
+hecha.
+. Respeto: trabajo colaborativo y confianza mutua
 
 .Principales prácticas
 . _Pair programming_, programar en parejas
-. Desarrollo guiado por pruebas
+. Desarrollo guiado por pruebas (Test Drive Development)
 . Integración contínua
 . Refactorización constante
 . Pequeñas entregas frecuentes
 . Propiedad colectiva del código
 
 .Pair Programming
-Dos trabajan en la misma tarea. Uno escribe, el otro revisa. Mejora la calidad,
-reduce errores. Favorece el aprendizaje y la colaboración. No es buena idea que
-sean muy dispares en experiencia.
+Dos trabajan en la misma tarea. 
+Uno escribe y el otro revisa en tiempo real. 
+Y viceversa.
+Permite mejorar la calidad y reducir errores.
+Favorece el aprendizaje y la colaboración.
+
+Tiene algunos desafíos.
+
+* Las parejas tienen que compartir estilo de programación
+* El armado de las parejas puede ser complicado 
+  ** Por malos entendidos, problemas personales.
+  ** Por diferencias grandes en experiencia: 
+  uno no tiene mucho que enseñar al otro.
+
+.Propiedad colectiva del código
+El código pertenece al cliente.
+Es como cuando el arquitecto hace una obra.
+Está obligado a entregar el plano.
+Esto siempre hablando de software a pedido.
+
+Si vendemos productos terminados no estamos obligados.
+
+Esto no incluye los _scripts_ propios que nos hacemos para automatizar.
 
 .Test Driven Development
-Primero se escribe la prueba. Se desarrolla el mínimo código necesario. Se 
-refactoriza. Por eso se dice ciclo red, yellow, green.
+Primero se escribe la prueba. 
+Se desarrolla el mínimo código necesario. 
+Se refactoriza si hace falta. 
+Y arranca de nuevo el ciclo.
+
+Por eso se dice ciclo _red, yellow, green_.
 
 .Integración contínua
-El código se integra varias veces por día. Las pruebas automáticas verifican que
-todo funcione. Permite detectar rápido errores y reducir problemas de
-integración al final del proyecto.
+El código se integra varias veces por día. 
+Se prueba el código completo.
+Las pruebas automáticas verifican que todo funcione. 
+Permite detectar rápido errores. 
+Reduce problemas de integración al final del proyecto.
 
 .Ciclo de vida
 . Recolectamos historias de usuario
@@ -272,12 +321,14 @@ importante.
 Hay técnicas para estimar costos.
 
 .T-Shirt Sizing
-Talles de remeras. Técnica de estimación relativa. Le asignamos a cada tarea un
-talle de remera. 
+Talles de remeras. 
+Técnica de estimación relativa. 
+Le asignamos a cada tarea un talle de remera. 
 
 
-Es una técnica de estimación relativa. Para *implementarla*. El equipo asigna a
-cada tarea un valor de remera. Cada talle representa la dificultad de una tarea.
+Es una técnica de estimación relativa. 
+Para *implementarla*. El equipo asigna a cada tarea un valor de remera. 
+Cada talle representa la dificultad de una tarea.
 
 - XS, trivial
 - S, menos de un día
@@ -285,23 +336,27 @@ cada tarea un valor de remera. Cada talle representa la dificultad de una tarea.
 - L, dos o tres
 - XL, más de tres o descomposición
 
-Estos valores dependen de la experiencia del equipo. Un desafío puede ser S para
-una equipo y L para otro.
+Estos valores dependen de la experiencia del equipo. 
+Un desafío puede ser S para una equipo y L para otro.
 
-Conviene usarla cuando queremos hacer una estimación rápida. Sirve para
-reuniones en las que queremos reasignar tareas y actualizar rápidamente el 
-_backlog_. 
+Conviene usarla cuando queremos hacer una estimación rápida. 
+Sirve para reuniones en las que queremos reasignar tareas. 
+Y actualizar rápidamente el _backlog_. 
 
-Entre sus *ventajas* es rápida y fácil, fomenta la colaboración. Entre sus 
-*desventajas*, menos precisa, subjetiva, no sirve para medir horas ni
-*cronogramas.
+Entre sus *ventajas* es rápida y fácil, fomenta la colaboración. 
+Entre sus *desventajas*, menos precisa, subjetiva. 
+No sirve para medir horas ni *cronogramas.
 
 .Planning Poker
-Método de estimación colaborativa. Suele asociarse con SCRUM. Usamos valores de
-la serie de Fibonacci _modificada_: 0, 1, 2, 3, 5, 8, 13, 20, 40, 100. Cada 
-miembro tiene 10 cartas. En la reunión, a la hora de estimar la dificultad, 
-levantamos cartas de acuerdo a la dificultad de la tarea. Se establecen por 
-mayoría. Si no hay mayoría, debatimos muy brevemente y levantamos de nuevo.
+Método de estimación colaborativa. 
+Suele asociarse con SCRUM. 
+Usamos valores de la serie de Fibonacci _modificada_: 
+0, 1, 2, 3, 5, 8, 13, 20, 40, 100. 
+Cada miembro tiene 10 cartas. 
+En la reunión, a la hora de estimar la dificultad, 
+levantamos cartas de acuerdo a la dificultad de la tarea. 
+Se establecen por mayoría. 
+Si no hay mayoría, debatimos muy brevemente y levantamos de nuevo.
 Votamos y votamos hasta llegar a un acuerdo.
 
 .Three-point Estimation
@@ -320,9 +375,12 @@ Al resultado le sumamos y restamos la desviación estándar para tener un rango 
 valores.
 
 .Wideband Delphi
-Es una técnica de estimación colaborativa y anónima. Se basa en el método Delphi
-clásico. Busca consenso entre expertos mediante múltiples rondas. Se usa en 
-proyectos con alta incertidumbre.
+Es una técnica de estimación colaborativa y anónima. 
+Se basa en el método Delphi clásico. 
+Busca consenso entre expertos mediante múltiples rondas. 
+Se usa en proyectos con alta incertidumbre.
+
+Wideband Delphi incluye al Product Owner (o al rol equivalente que representa al cliente/negocio) en el proceso de estimación, ya que su presencia es clave para aclarar dudas sobre los requisitos, dar contexto sobre las características solicitadas y validar las suposiciones del equipo antes y durante las rondas de estimación.
 
 == Quinta clase, 12 de septiembre
 
