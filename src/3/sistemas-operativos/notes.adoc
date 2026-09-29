@@ -5,9 +5,6 @@ v 0.6, 2026-09-22
 :stem:
 
 .TODO 
-. Revisar clases y trabajar las notas
-- Quedo 17M, 25-ago
-. Resumir los apuntes
 
 
 == Primera clase, 11 de agosto
@@ -19,8 +16,8 @@ En el _backend_ pasan muchas cosas, buenas y no tanto.
 El sistema operativo tiene que lidiar con todas ellas.
 
 Se van a presentar distintos sistemas operativos.
-Lo importante es conocer que no se agota en los más conocidos: Windows, Linux,
-MacOS o Android.
+Lo importante es conocer que no se agota en los más conocidos: 
+Windows, Linux, MacOS o Android.
 
 Veremos las cosas que tienen todos en común.
 
@@ -459,3 +456,94 @@ image::fat.png[]
 Los problemas son:
 . Fragmentación, no son consecutivos
 . Apuntan al mismo sector, problemas de concurrencia
+
+== Clase, 29 de septiembre
+
+Qué es Linux.
+El Kernel.
+
+GNU creó herramientas como `gcc` y `glibc`, 
+con las cuales se crean las distribuciones de GNU/Linux.
+
+=== Tres capas de Linux
+
+.Kernel
+Se encarga de la gestión de memoria y controladores de _Hardware_.
+
+.Filosofía
+* Todo es un archivo.
+Teclados, discos, conexiones de red, son todos archivos.
+* Programas pequeños.
+Herramientas especializadas, combinables para tareas complejas.
+* Configuración en archivos de texto.
+Los ajustes se guardan en texto plano legible.
+No existe el concepto de registro de Windows.
+* Sensible a mayúsculas y minúsculas.
+Distingue `archivo.txt` de `Archivo.txt`.
+
+.Estructura de directorios
+* Tiene un root `/`.
+* `/bin` y `/sbin`, contiene comandos esenciales y de administración
+* `/etc`, archivos de configuración del sistema
+* `/home`, directorios personales de los usuarios
+* `/root`, carpeta personal del administrador del sistema
+* `/tmp`, `/var`, archivos temporales y esas cosas 
+* `/dev`, archivos que representan dispositivos
+
+.Usuarios, root, sudo
+Cada usuario tiene un identificador numérico.
+No se identifican por nombre sino por número.
+Uno se llama `root`.
+Ese es el administrador del sistema.
+
+Hay un comando que se llama `sudo`, 
+que permite tomar privilegios temporales para algunas cosas.
+
+.Permisos
+* `r`, _read_ - 4, permiso para leer
+* `w`, _write_
+* `x`, _execute_
+
+Típicamente, notación octal:
+[source]
+--
+755 = rwx(propietario)|r-x(grupo)|r-x(otros)
+--
+
+Se cambian con:
+[source]
+--
+chmod +x archivo
+--
+
+.Terminal
+En ella escribimos los comandos.
+
+[source, bash]
+--
+ls -l /home
+--
+
+El comando es `ls`.
+La opción `-l`, formato detallado.
+El argumento `/home`, el directorio que queremos listar.
+
+.Pipes, redirección, operadores
+* `|` es un pipe. 
+Conecta la salida de un programa con la entrada del siguiente.
+* `>`, `>>`.
+Redirige la salida hacia un archivo.
+* `&&`, `||`.
+Condicionales, ejecuta comandos de acuerdo al éxito o fracaso del comando
+previo.
+
+.Distribuciones
+* Debian, paquete `deb`
+* Red Hat, paquetes `rpm`
+* Arch, _rolling release_, gestor `pacman`
+
+Se intala _software_ desde repositorios.
+
+* `apt` en Debian
+* `dnf` en Red Hat
+* `pacman` en Arch
