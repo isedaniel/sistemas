@@ -2,55 +2,133 @@
 :toc:
 
 == TODO 
-. Leer apuntes
 . Revisar clases
+* clase 1: 36M
 . Resumir apuntes
 . Práctico Arquitectura Cliente-Servidor (no hacer punto que propone solución).
 . Práctico SOA
 . Práctico comparativo
 
-== Clase 1
+== Clase 12 de agosto
 
 .Objetivo de la materia
-Ya trabajamos en el diseño del sistema tradicionales. En esta materia vamos
-a trabajar en el diseño de **sistemas web**. Es decir, **ingeniería web**.
+En diseño de sistemas I vimos disño de _software convencional_.
+En esta materia vamos a profundizar en el diseño de *sistemas web*.
+Es decir, pensar los desafíos propios de la ingeniería de software,
+pero enfocados en sistemas web.
+
+.Desarrollador de software convencional
+Trabaja con diagramas de flujo y algoritmos.
+Pero con una lógica diferente.
+Elaboran código para cumplir con los requerimientos funcionales propuestos.
+
+En el caso de *sistemas heredados*,
+muchas veces tanto riesgo como costo de modificación son muy altos.
+La organización no está dispuesta a arriesgar su principal fuente de negocio.
+Por lo que se desarrolla un nuevo sistema,
+denominado *sistema satélite*,
+que tiene la capacidad de comunicarse con el sistema heredado,
+para proveer las nuevas funcionalidades requeridas.
+
+Por ejemplo, los sistemas COBOL,
+comunes en el sector financiero.
+Hacemos un módulo por afuera para que funcione.
+
+Un desarrollador típico hace todo esto:
+
+- diseña diagramas de flujo y algoritmos
+- documenta
+- usa lenguajes como Java, C++
+- desarrolla para diferentes plataformas
+
+.Desarrollador web
+Se tiene que ocupar de otas cosas.
+La interfaz de usuario web se construye con otras tecnologías.
+Tiene que funcionar en los navegadores web más importantes.
+Usa otros lenguajes de desarrollo.
+
+.Ventajas desarrollo tradicional
+- No require de internet
+- Mejor integración y, en general, rendimiento
+- Suelen ser más económicos, porque el sistema se compra, no se renta.
+En desarrollo web por lo general se abona una suscripción mensual por uso del
+software.
 
 .Atributos de sistemas web
 Características que los distinguen del software convencional.
-. Intensidad de red. El sistema reside en una red. Está abierto a una comunidad
-diversa de clientes. En el desarrollo convencional conocemos al cliente. Aquí
-tenemos que preparar un sistema para usuarios diversos.
-. Concurrencia. Una gran cantidad de usuarios pueden acceder al mismo tiempo.
-La probabilidad de problemas de concurrencia es mucho mayor.
-. Carga imprevisible. El volumen de uso varía: pueden haber muchos o pocos
-usuarios usando el sistema en poco tiempo.
-. Rendimiento. El tiempo de respuesta es un atributo crítico. Y depende de
-muchos factores.
-. Disponibilidad. Los sistemas convencionales no requieren funcionamiento
-continuo. En cambio, los sistemas web tienen que estar disponibles siempre.
-. Dirigida por datos. La aplicación web accede y genera contenido hacia bases de
-datos.
-. Evolución contínua. Cambia de forma constante, no en versiones (como en el
-software tradicional).
-. Seguridad. Requiere considerar la protección del contenido y los canales
+
+. Intensidad de red. 
+El sistema reside en una red. 
+Está abierto a una comunidad diversa de clientes. 
+En el desarrollo convencional conocemos al cliente. 
+En desarrollo web tenemos que preparar un sistema para usuarios diversos.
+
+. Concurrencia. 
+Una gran cantidad de usuarios pueden acceder al mismo tiempo.
+El riesgo de enfrentar problemas de concurrencia es mucho mayor.
+
+. Carga imprevisible. 
+El volumen de uso varía: 
+pueden haber muchos usuarios usando el sistema en poco tiempo.
+Es decir, son comunes los picos de uso.
+
+. Rendimiento. 
+El tiempo de respuesta es un factor crítico. 
+Y depende de muchos factores.
+No es tan sencillo de probar como en un sistema _desktop_.
+(28M)
+
+. Disponibilidad. 
+Los sistemas convencionales _desktop_ no requieren funcionamiento continuo. 
+En cambio, los sistemas web tienen que estar disponibles siempre.
+24x7x365.
+
+. Dirigida por datos. 
+La aplicación web accede y genera contenido hacia bases de datos.
+
+. Evolución contínua. 
+Cambia de forma constante, no en versiones (como en el software tradicional).
+
+. Seguridad. 
+Requiere considerar la protección del contenido y los canales
 seguros en un grado mayor al software de escritorio convencional.
 
-Estratos de la ingeniría web:: Cuatro capas apoyadas entre sí.
-. Herramientas. Soporte automatizado o semiautomatizado para el proceso y
-métodos. Es decir, herramientas en simultáneo que se ejecutan para resolver
-problemas concretos.
-. Métodos. Técnicas para construir la aplicación web: análisis, diseño,
-generación de páginas, pruebas. Pueden no ocurrir los mismos pasos que en el
-desarrollo convencional.
-. Proceso. Marcos de trabajo para aplicar métodos y entregar tecnología de forma
+[horizontal]
+Estratos de la ingeniría web:: 
+Cuatro capas apoyadas entre sí.
+Herramientas:: 
+Soporte automatizado o semiautomatizado para el proceso y métodos. 
+Es decir, 
+herramientas en paralelo que se ejecutan para resolver problemas concretos.
+Métodos:: 
+Técnicas para construir la aplicación web: 
+análisis, diseño, generación de páginas, pruebas. 
+Pero no es el mismo ciclo de vida.
+Algunos pasos _pueden_ no ser necesarios.
+
+Proceso:: 
+Marcos de trabajo para aplicar métodos y entregar tecnología de forma
 consistente.
-. Compromiso de calidad: tiene que ser confiable y de alta calidad.
+
+Compromiso de calidad:: 
+tiene que ser confiable y de alta calidad.
 
 .Proceso de ingeniería aplicado a la web
-. Formulación. Qué es lo que queremos construir. Decidir qué vamos a hacer.
-. Planificación. Consiste en definir tiempos, costos, recursos humanos, roles,
-acciones. La planificación depende de la metodología utilizada (Scrum, Kanban,
-etc.).
+. Formulación. 
+Qué es lo que queremos construir. 
+Decidir qué vamos a hacer.
+
+. Planificación. 
+Consiste en definir: 
+
+* tiempos
+* costos
+* recursos humanos y roles
+* acciones y secuencia
+
+La planificación depende de la metodología utilizada (Scrum, Kanban, etc.).
+Es un ciclo repetitivo.
+Por lo que resulta conveniente la aplicación de metodologías ágiles.
 
 .Mejore prácticas
 . Comprender el negocio y los objetivos. Toda empresa tiene misión y visión.
