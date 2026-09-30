@@ -2,8 +2,9 @@
 :toc:
 
 == TODO 
-. Revisar el contenido de las clases
-. Resumir apuntes que subió el profe
+. Leer apuntes
+. Revisar clases
+. Resumir apuntes
 . Práctico Arquitectura Cliente-Servidor (no hacer punto que propone solución).
 . Práctico SOA
 . Práctico comparativo
