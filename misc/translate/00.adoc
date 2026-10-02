@@ -1,0 +1,121 @@
+= Método de traducción por bloques estructurales
+:stem:
+
+Para traducir del español al inglés con el método de traducción por bloques
+estructurales, la clave está en:
+
+* *Comprimir y reordenar* las Frases Nominales (FN) 
+* *Identificar la precisión del tiempo y aspecto* en las Frases Verbales (FV)
+
+== Pasos
+
+. *Aislamiento de Frases Verbales (FV):*
+Identificar el núcleo del verbo en español.
+Determinar si en inglés requiere modal, tiempo compuesto, aspecto continuo o
+una estructura idiomática (_phrasal verb_).
+
+. *Identificación de Frases Nominales (FN):*
+Delimitar el sujeto, objetos y complementos.
+En español, estos suelen estar expandidos con preposiciones (ej. *de*, *para*).
+
+. *Traducción e Inversión por Bloques:*
+Traducir cada bloque invirtiendo la estructura del sintagma nominal (mover
+calificadores a la izquierda del sustantivo núcleo y eliminar preposiciones
+innecesarias en inglés).
+
+. *Composición y Ensamblaje:*
+Ajustar el orden estricto de la oración en inglés (_Sujeto + Verbo + Objeto_ /
+SVO).
+
+== Diferencias clave
+
+.En Frases Nominales (FN)
+
+. Paso de "núcleo + de + modificador" a "modificador + núcleo":
+
+[stem]
+++++
+underbrace("sistema de gestión")_("núcleo + de + modificador") 
+=> 
+underbrace("management system")_("modificador + núcleo")
+++++
+
+. *Inversión de adjetivos:* 
+Los adjetivos calificativos se desplazan atrás del núcleo.
+
+[stem]
+++++
+"Una decisión crítica" => "A critical decision"
+++++
+
+. *Eliminación de artículos innecesarios:* 
+El español usa artículos definidos para conceptos abstractos o generales
+mientras que el inglés los omite:
+
+[stem]
+++++
+"La tecnología es útil" => "Technology is useful"
+++++
+
+.En Frases Verbales (FV)
+
+. *Sujetos explícitos obligatorios:*
+Como el español tiene conjugaciones ricas, el sujeto suele estar implícito (ej.
+_"Consideramos que..."_).
+En inglés *siempre* debe añadirse el sujeto explícito (_"We consider that..."_).
+
+. *Precisión en tiempos pasados:* 
+Distinguir si un pretérito indefinido/imperfecto equivale a un *Simple Past*
+(*did*), *Present Perfect* (*has done*) o *Used to*.
+
+. *Uso de gerundios como sujetos:* 
+Cuando una FV actúa como sujeto en español (*"Viajar enseña..."*), en inglés la
+FV nominalizada suele ser un gerundio (*"Traveling teaches..."*).
+
+== Ejemplo 1
+
+> _El departamento de recursos humanos implementará un nuevo programa de
+capacitación._
+
+[horizontal]
+Identificar Frase Verbal:: implementará => will implement
+Identificar Frases Nominales::
+* FN1 (Sujeto): El departamento de recursos humanos. 
+** Núcleo: *departamento* / Modificador: *recursos humanos*
+** Inversión: *The human resources department*
+* FN 2 (Objeto): un nuevo programa de capacitación.
+** Núcleo: *programa* / Modificadores: *nuevo*, *capacitación*
+** Inversión: *a new training program*
+Composición final::
+_"The human resources department will implement a new training program."_
+
+== Ejemplo 2
+
+> _Se deben evaluar minuciosamente las medidas de seguridad del proyecto._
+
+[horizontal]
+Identificar Frase Verbal:: 
+Se deben evaluar minuciosamente => Must be thoroughly evaluated.
+Identificar Frases Nominales::
+* FN1 (Objeto/Sujeto en pasiva): las medidas de seguridad del proyecto.
+** Núcleo: _medidas_ / Modificadores: _seguridad_, _proyecto_
+** Inversión en inglés: _The project safety measures_
+Composición final::
+_"The project safety measures must be thoroughly evaluated."_
+
+## Comparativa Directa del Proceso
+
+|===
+|Aspecto |Español => Inglés |Inglés => Español
+
+|*Sintagma Nominal* 
+|Comprime (_de/para_ => adjetivación) 
+|Expande (adjetivo antepuesto => pospuesto con preposición) 
+
+|*Sujeto* 
+|Hay que *añadirlo* si es tácito 
+|Se puede *omitir* o posponer
+
+|*Estructura* |Estricta (Sujeto + Verbo + Objeto) 
+|Flexible (admite VSO, OVS, etc.)
+|===
