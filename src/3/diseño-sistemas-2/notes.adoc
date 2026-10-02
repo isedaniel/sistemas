@@ -3,7 +3,7 @@
 
 == TODO 
 . Revisar clases
-* clase 1: 36M
+* clase 9/9: 19M
 . Resumir apuntes
 . Práctico Arquitectura Cliente-Servidor (no hacer punto que propone solución).
 . Práctico SOA
@@ -291,52 +291,202 @@ procesa la solicitud y envía el contenido.
 . Puede requerir de una inversión mayor en _Hardware_ y seguridad
 . Saturación si hay demasiados clientes conectados en simultáneo
 
-== Clase 5, 16 de septiembre
+== Clase 9 de septiembre
+
+=== Arquitectura Orientada a Servicios (Service-Oriented Architecture)
+
+.Objetivo
+Transformar aplicaciones monolíticas en servicios autónomos e interoperables.
+
+.Glosario
+[horizontal]
+Negocio:: Actividad o función que el software apoya. 
+Incluye tareas, procesos y reglas de la organización.
+(v.g., Banco: otorgar préstamos, procesar pagos).
+Lógica de negocio:: Instrucciones, cálculos y validaciones, que el software
+implementa para cumplir esos procesos.
+Encapsulamiento:: Agrupación de datos y métodos en una misma unidad, ocultando
+detalles internos a modo de protección.
+Servicios:: Unidad de encapsulamiento de la lógica de negocio.
+Cada servicio se ocupa de una parte concreta.
+Contrato:: Define la funcionalidad de un servicio: entrada, salida y protocolos
+de comunicación.
+
+.Concepto general
+Es un estilo arquitectónico que organiza las funciones de un sistema como 
+servicios independientes, reutilizables y débilmente acoplados.
+
+* Mediante *descomposición* se sustituyen blosque monolíticos por componentes 
+funcionales autónomos, conocidos como *servicios*.
+
+* Están *orientados al negocio*:
+Cada servicio representa un proceso real, v.g., procesar un pago. 
+
+* Utilizan *protocolos estándar* para la comunicación, como `SOAP/HTTP`,
+`JSON/HTTP`.
+
+.Características clave de los servicios
+* Servicios de bajo acomplamiento.
+(_Loose coupling_).
+Un servicio no necesita conocer las estructuras de datos internas,
+la gestión de transacciones ni el lenguaje de implementación de otro servicio
+con el que interactúa.
+
+* Servicios configurables y visuales.
+Permiten el ensamblado de aplicaciones, combinando componentes sin exposición de
+código interno, facilitando la adición, configuración o reemplazo de servicios.
+
+* Interoperabilidad total.
+Cualquier servicio puede colaborar con otro, con independencia de sus detalles 
+de implementación, tecnologías empleadas o proveedores diferenciados.
+
+* Independencia de ubicación.
+Los consumidores invocan interfaces estándarizadas, con independencia de la
+ubicación física de la infraestructura de residencia del servicio.
+
+.Enterprise Service Bus
+El Bus de Servicio Empresarial (ESB) es un componente centralizador, que integra
+sistemas _legacy_ y _backend_, exponiéndolos como interfaces reutilizables.
+Se ocupa de: 
+
+* la *traducción*, 
+transformando modelos de datos e interfaces que pueden ser heterogéneas,
+permitiendo la comunicación entre los servicios.
+
+* el *direccionamiento*,
+enrutando peticiones, de acuerdo a reglas de negocio o contenido de los
+mensajes, y realizando orquestaciones, coordinando flujos complejos, v.g.,
+llamar al servicio A; si responde `OK`, llama a B; si B falla, deshace A.
+
+* la *centralización*,
+facilitando la gobernanza y el mantenimiento del ecosistema.
+
+.Principios fundamentales
+* Bajo acomplamiento (_Loose Coupling_): 
+las dependencias deben de reducirse al mínimo, un cambio interno en un servicio
+no debe afectar al resto de consumidores.
+
+* Abstracción:
+oculta completamente la lógica de programación y tecnología subyacente, 
+exponiendo únicamente lo necesario, mediante contrato.
+
+* Reutilización:
+los servicios se conciben, desde su diseño, para ser operados por múltiples 
+aplicaciones o procesos de negocio.
+
+* Autonomía:
+cada servicio ejerce control total sobre su propia lógica de ejecución, datos y
+entorno.
+
+.Principios de diseño
+* Sin estado (_statelessness_):
+idealmente, no mantienen estado entre llamados, maximizando la escalabilidad.
+
+* Descubribilidad:
+pueden ser localizados y descritos mediante un catálogo público y centralizado.
+
+* Composabilidad:
+pueden combinarse para orquestar procesos de negocio complejos.
+
+.Flujo de invocación
+. Publicación:
+el proveedor publica el servicio y su interfaz en el registro.
+
+. Búsqueda:
+el consumidor consulta el registro, buscando una funcionalidad específica.
+
+. Contrato:
+el registro informa la ubicación y el contrado WSDL/API del servicio
+
+. Ejecución:
+el consumidor invoca al proveedor, de forma directa o canalizada por el ESB.
+
+== Clase 16 de septiembre
 
 === Arquitectura Micro Servicios (MSA)
 
-- Variación de SOA.
+- Es una variación de SOA.
+Tienen muchos aspectos en común.
 - Consiste en construir una aplicación como conjunto de pequeños servicios
 independientes, tanto a nivel de código como de infraestructura, que se
 comunican entre ellos con mecanismos ligeros, de baja latencia.
+Esto también es similar a SOA.
 - Cada servicio:
     * Gestiona una única parte de negocio, de forma exclusiva
-    * Debe poder desplegarse y escalarse de forma independiente, sin tener 
-    efectos sobre el resto de servicios
+    * Debe poder desplegarse y escalarse de forma independiente, 
+    sin tener efectos sobre el resto de servicios
+    * Puede estar escrito en el lenguaje que mejor se adapte.
+    Un microservicio puede usar NoSQL y otros SQL.
+    * Se comunican a través de peticiones, por ejemplo HTTP.
 
 .Arquitectura
 - Peticiones de clientes
-- Van a una capa de interfaz de usuario. El cliente no sabe cuántos micro
-servicios se están utilizando.
-- Debajo están los micro servicios, cada uno con sus módulos.
+- Van a una capa de interfaz de usuario. 
+Es *transparente* para el usuario:
+El cliente no sabe cuántos microservicios se están utilizando.
+- Debajo están los microservicios, cada uno con sus módulos.
 
-.Características de software
-- Se puede descomponer en partes independientes.
-- Cada uno se puede desplegar y modificar sin afectar al resto.
+.Características de Software
+* Se puede descomponer en partes independientes.
+Cada servicio puede ser desplegado y modificado sin afectar al resto.
 
 .Características de organización
-- 
+* Contrasta con la arquitectura monolítica.
+Tiene en cuenta aspectos como capacidades, necesidades y preferencias de
+negocio.
+Se usan módulos multifuncionales, consiguendo creación de un módulo común para
+todos.
+La gran ventaja es el ahorro de tiempo y la comodidad del mantenimiento.
 
 .Características de arquitectura
-- Cada uno es independiente: no acuden a la misma base de datos: no se
-sobrecarga una misma base de datos ni tenemos problemas de concurrencia.
+- Cada módulo es independiente: 
+cuenta con su propia base de datos, evitando sobrecarga y caída.
+- Incluye sistemas de aviso y actuación: 
+por tratarse de varios microservicios comunicados,
+se necesitan sistemas de aviso y actuación para reaccionar y/o recuperar frente 
+a fallos, generando una advertencia, contactando a soporte, etc.
+Es importante que sea positivo, favoreciendo una buena gestión de los módulos
+funcionales restantes.
 
-.Características de aviso y actuación
-- Al estar varios comunicados, necesiatamos sistemas de aviso y actuación para 
-registrar fallos, recibir advertencias, comunicar a soporte. Debe favorecer la 
-gestión.
+=== Ventajas de Microservicios frente a Arquitectura Monolítica
 
-.Ventajas de Microservicios frente a Arquitectura Monolítica
-image::image.png[Ventajas de Microservicios]
+|===
+|Categoría |Arquitectura Monolítica |Arquitectura de Microservicios
+
+|Código
+|Una base de código única para toda la aplicación
+|Múltiples bases de código, una para cada microservicio
+
+|Comprensibilidad
+|Puede ser confuso y/o difícil de mantener
+|Mayor facilidad de comprensión y mantenimiento
+
+|Despliegue
+|Implementaciones complejas, con ventanas de mantenimiento y paradas programadas
+|Despliegue sencillo. Cada microservicio se implementa de forma individual, con
+un tiempo de inactividad mínimo
+
+|Lenguaje
+|Típicamente desarrollado en un mismo lenguaje
+|Cada microservicio se puede desarrollar en su propio lenguaje
+
+|Escalamiento
+|Escala la aplicación completa
+|Cada microservicio se puede escalar por separado
+|===
 
 == Primer Parcial
 
-. Semana que viene tenemos clase de consulta. Se conectan los que lo necesiten.
+. Semana que viene tenemos clase de consulta. 
+Se conectan los que lo necesiten.
 No es obligatorio participar.
-. Parcial arranca 20:00. Se hacen las consultas y empezamos.
+. Parcial arranca 20:00. 
+Se hacen las consultas y empezamos.
 . Se entrega a las 22:00.
-. Multiple-Choice: pueden tener ninguna, una o varias respuestas correctas.
+. Multiple-Choice: 
+pueden tener ninguna, una o varias respuestas correctas.
 . Se juzgan enunciados y se justifica únicamente lo falso.
-. Situaciones prácticas. Planteamos una situación y tenemos que enunciar cómo lo
-resolveríamos, recurriendo a los conceptos que vimos: qué arquitectura usar,
-cuáles son los argumentos en que nos basamos.
+. Situaciones prácticas. 
+Planteamos una situación y tenemos que enunciar cómo lo resolveríamos, 
+recurriendo a los conceptos que vimos.
+Enfocarse en el uso de lenguaje preciso, exhaustivo y técnico.
