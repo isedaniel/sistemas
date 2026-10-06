@@ -1,6 +1,7 @@
 = Notas de Clases Asincrónicas
 Dan <ise.daniel@gmail.com>
-v0.1, 26-09-26
+v0.1, 2026-09-10
+:toc:
 
 == Primer Módulo
 
@@ -41,7 +42,7 @@ En infraestructura TI tenemos *servicios*, como DNS, DHCP, web, email.
 Los dispositivos que forman parte de la red tienen acceso a esos servicios.
 
 La infraestructura de la red está compuesta por muchos dispositivos, por
-ejemplo, switches para cada red local, usuarios remotos que se conectan por 
+ejemplo, switches para cada red local, usuarios remotos que se conectan por
 internet, etc.
 
 Todos esos servicios solían estar en una sala de servidores.
@@ -58,7 +59,7 @@ La nube es cientos de Datacenters, en todo el mundo.
 . Plataformas de redes y telecomunicaciones
 . Plataformas y servicios de internet
 . Servicios de consultaría e integración, empresas expertas en integrar entornos
-empresariales complejos, como Accenture 
+empresariales complejos, como Accenture
 (rubro ideal para arrancar.
 Permite observar muchos mercados verticales: Oil and Gas, Salud, Banca.)
 
@@ -68,7 +69,7 @@ Permite observar muchos mercados verticales: Oil and Gas, Salud, Banca.)
 _Total Cost Ownership_.
 Costo total de propiedad.
 Ejemplo, en un auto tengo que considerar costo del vehículo, patente, seguro,
-cochera. 
+cochera.
 Todo hace al costo de propiedad.
 En _Software_ pasa lo mismo.
 Compro un server y tengo que pagar por el Hardware, Software, recursos humanos.
@@ -80,7 +81,7 @@ Incluye:
 * Costos directos (adquisición): compra de Hardware, licencias de Software.
 * Costos indirectos (operación): consumo de energía, refrigerción, espacio
 * Costo de mantenimiento: actualizaciones, soporte, renovaciones de garantía
-* Costos ocultos: capacitación de personal, tiempo de inactividad, costos de 
+* Costos ocultos: capacitación de personal, tiempo de inactividad, costos de
 migración o disposición final.
 
 .Obsolescencia tecnológica.
@@ -98,11 +99,11 @@ incompatibilidad entre Hardware y Software,
 aumento de costos de mantenimiento,
 de consumo de energía.
 
-Hay que pensar en la mitigación, 
+Hay que pensar en la mitigación,
 la estrategia para la renovación.
 
 .CAPEX y OPEX
-Capital Expenditure. 
+Capital Expenditure.
 Por ejemplo, plata que tengo que poner para tener el auto.
 
 Operation Expenditure.
@@ -127,7 +128,7 @@ Incluso venderlo, dependiendo de la licencia.
 Software propietario viene empaquetado.
 Lo puedo usar como está o construir por encima.
 Pero no lo puedo modificar.
-La ventaja del Software libre es el costo de licenciamiento cero, 
+La ventaja del Software libre es el costo de licenciamiento cero,
 en la mayoría de los casos,
 la alta flexibilidad,
 no hay atadura a un proveedor.
@@ -169,7 +170,7 @@ Es ya el contrato formal (legal y comercial) que se firma con el cliente.
 
 Enfoque: es qué pasa si no cumplimos.
 
-Se compone de uno o varios SLO y define consecuencias como reembolsos en caso 
+Se compone de uno o varios SLO y define consecuencias como reembolsos en caso
 de incumplimiento.
 
 Diferencia clave: SLO es un objetio interno de igneniería.
@@ -184,7 +185,7 @@ Hasta 95% devuelvo 30%.
 Menos del 95% devuelvo el 100%.
 
 .Alta disponibilidad
-Capacidad de un sistema de permanecer accesible la mayor cantidad de tiempo 
+Capacidad de un sistema de permanecer accesible la mayor cantidad de tiempo
 posible.
 
 _High Availability_, HA.
@@ -211,7 +212,7 @@ Capacidad de mi sistema de trabajar con otros.
 Por ejemplo, tengo que tener API, implementación de protocolos de la industria,
 usar formatos de datos universales (JSON, XML).
 
-Integración mediante API Restful o GraphQL, para permitir que sistemas 
+Integración mediante API Restful o GraphQL, para permitir que sistemas
 heterogéneos se comuniquen.
 
 Prevención de silos.

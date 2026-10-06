@@ -1,5 +1,68 @@
 = Notas AWS Academy
 Dan <ise.daniel@gmail.com>
-v0.1
 
-== Primer Módulo
+== Tercer módulo
+
+.Introducción
+* Seguridad -> buenas prácticas.
+* Debe observarse en todas las capas
+
+.Principios de seguridad de AWS
+- Modelo de responsabilidad compartida:
+AWS se encarga de la responsabilidad _de_ la nube,
+el usuario de la seguridad _en_ la nube.
+
+.Principios de diseño para el pilar de seguridad
+- Permisos para acceder a los recursos.
+
+.Principio del menor privilegio:
+- Otorgar solo los privilegios que sean necesarios para realizar el trabajo
+- Empezar con el menor conjunto e ir incrementando a medida que sea necesario.
+- Revocar lo que ya no son necesarios
+
+.Use encryptation
+- Proteger datos en tránsito usando encriptación.
+- Protecting data at rest throug client-side encryption:
+encrypted in the client before the server.
+- Server encryption:
+encrypted in the server before saving the data.
+
+AWS Identity and Access Management (IAM)
+
+Auntenticación.
+Certificar identidad.
+
+Autorización.
+Qué puede hacer el autenticado.
+
+Soporta autenticación múltiple (MFA).
+
+Permite crear identificación granural.
+
+.Terminología
+- Recurso.
+Cosas guardadas.
+
+- Entidad.
+Recursos usados para autenticación *usuarios y roles*.
+
+- Identidad.
+Recrusos que pueden ser autorizados (usuarios, grupos, roles).
+
+- Política.
+Documento que define qué recursos pueden ser accedidos por cada recurso.
+
+Clave de acceso.
+Sirve para la AWS CLI.
+
+.Mejores prácticas
+- Seguir el principio de menor privilegio.
+- Habilitar factor múltiple de autenticación.
+
+.Proteger al usuario root
+- Para tareas diarias, crear un usuario administrativo.
+- No usar al root porque tiene todos los privilegios.
+
+.Mejores prácticas para usuarios y grupos
+- Cuando sea posible: roles para autorizaciones temporales.
+- Grupos para autorizaciones.
