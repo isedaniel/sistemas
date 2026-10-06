@@ -99,7 +99,7 @@ Al precio le _cuesta subir_.
 
 > Una tendencia está en vigor hasta que da señales definitivas de retroceso
 
-== Leer un gráfico
+== Lectura de un gráfico
 
 [horizontal]
 Vela:: Materialización de cada jornada
