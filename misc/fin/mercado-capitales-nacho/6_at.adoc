@@ -3,85 +3,101 @@ Dan <ise.daniel@gmail.com>
 v 0.1, 2026-09-14
 :stem:
 
-Recta final del curso. Hoy https://x.com/CD_AnalisisTec[Cristian Díaz]. En la 
-primera parte vemos la teoría, en la segunda la práctica. Nos llevamos 3 o 4 
-cosas más importantes.
+Recta final del curso. 
+Hoy https://x.com/CD_AnalisisTec[Cristian Díaz]. 
+En la primera parte vemos la teoría, en la segunda la práctica. 
+Nos llevamos las 3 o 4 cosas más importantes.
 
-== Qué es
+== Definición
 
-Herramienta usada a  nivel global, para cualquier activo. Principalmente
-acciones y cripto.
+El *Análisis Técnico* es el estudio de los movimientos del mercado usando
+gráficos. 
+Es una herramienta usada a nivel global, para todo tipo de activo. 
+Aunque, en particular, renta variable y cripto.
 
-Es el estudio de movimientos del mercado, usando gráficos. Pronostica futuras
-tendencias para invertir a favor de la misma. Las probabilidades de éxito se 
-maximizan yendo _con_ el mercado, no contra.
+Se trata de pronosticar la tendencia futura, para invertir a su favor.
+Las probabilidades de éxito se maximizan yendo _con_ el mercado, no contra él.
 
-3 premisas. 
+Se basa en 3 premisas. 
 
 . Los movimientos del precio descuentan todo
 . Los precios se mueven por tendencias
 . La historia se repite
 
-== Los movimientos descuentan todo
+== Los movimientos del precio descuentan todo
 
-Cualquier cosa que pueda afectar, sean políticas, fundamentales, psicológicas,
-se reflejan en el precio. Esos factores afectan oferta y demanda, es decir
-flujo, y eso determina el precio. V. g.: un balance mejor al esperado, aumenta 
-la demanda por encima de la oferta y tenemos una suba.
+Cualquier dimensión que pueda afectar, sean políticas, fundamentos,
+psicológicas, se reflejan en el precio.
+Esos factores afectan oferta y demanda, es decir, el flujo.
+Y el *flujo determina el precio*.
+V. g.: un balance mejor al esperado, aumenta la demanda por encima de la oferta
+y tenemos una suba.
 
-Mediante el gráfico se busca la tendencia.
+Mediante el análisis del gráfico se busca la tendencia.
 
 == Los precios se mueven por tendencias
 
-Una tendencia es tiende a continuar. Por eso indentificamos y operamos a favor.
+Una tendencia suele continuar.
+Por eso las indentificamos y operamos a favor.
 
 == La historia se repite
 
-Se identifican estructuras, asociadas con la _psicología humana_. Los patrones
-se identificaron y clasificaron en el pasado. Se asume que siguen funcionando a
-futuro.
+Se identifican estructuras, asociadas con la _psicología humana_.
+Los patrones se identificaron y clasificaron en el pasado.
+Se asume que siguen funcionando a futuro.
 
 == Teoría de Dow
 
-Padre del análisis técnico. Dio su nombre la Dow-Jones. 
+Padre del análisis técnico.
+Dio su nombre al índice Dow-Jones. 
+Reconoce *3 tendencias*.
 
-.3 tendencias
-El mercado tiene 3 tendencias. La lateral es pausa. 
+.Tendencia alcista
+Si tenemos picos y valles crecientes.
 
-. Tendencia alcista: Si tenemos picos superiores y valles superiores.
+.Tendencia bajista
+Picos y valles descendentes.
 
-. Tendencia bajista: Pricos inferiores y valles inferiores
+.Pausa de tendencia
+Picos y valles a misma altura.
 
-. Pausa de tendencia: Picos y valles a misma altura.
+A partir de las 3 tendencias se reconocen *3 fases de mercado*:
 
-.3 fases de mercado
 . Acumulación
 . Participación pública
 . Distribución
 
-1. Acumulación
+.Acumulación
 Los inversores, generalmente institucionales, comprenden que las malas noticias
-se han descontado. Al no haber malas noticias, debería comenzar un nuevo ciclo.
+se han descontado.
+Al no haber malas noticias, debería comenzar un nuevo ciclo.
 
 Comienzan a llevar en ese nivel la oferta, tomando de los que, por el motivo que
-fuera, liquidan. Se nota por el poco flujo. De a poco van llevando posiciones.
+fuera, liquidan.
+Se nota por el poco flujo.
+De a poco van llevando posiciones.
 Generalmente en una pausa de tendencia.
 
-2. Participación pública
-Se caracteriza por movimientos alcistas. Se acaba el proceso lateral y el volumen bajo. Se observa demanda, de minoristas e institucionales. El precio muestra una tendencia alcista. Mínimos y máximos crecientes. 
+.Participación pública
+Se caracteriza por movimientos alcistas.
+Se acaba el proceso lateral y el volumen bajo.
+Se observa demanda, de minoristas e institucionales.
+El precio muestra una tendencia alcista.
+Mínimos y máximos crecientes. 
 
-En esta fase las probailidades están a nuestro favor. Los inversores notan que
-el ciclo ha cambiado.
+En esta fase las probailidades están a nuestro favor.
+Los inversores notan que el ciclo ha cambiado.
 
-3. Distribución
-Cuando no puede estar mejor. Todo el mundo comprando. Los astutos que compraron
-cuando estaba mal comienzan a liquidar. De a poco y progresivamente. Como son 
-grandes los que van saliendo, tenemos una pausa en la tendencia de nuevo. Al 
-precio le _cuesta subir_.
+.Distribución
+Cuando no puede estar mejor.
+Todo el mundo comprando.
+Los astutos que compraron cuando estaba mal comienzan a liquidar.
+De a poco y progresivamente.
+Como son grandes los que van saliendo, tenemos una pausa en la tendencia de
+nuevo.
+Al precio le _cuesta subir_.
 
-____
-Una tendencia está en vigor hasta que da señales definitivas de retroceso
-____
+> Una tendencia está en vigor hasta que da señales definitivas de retroceso
 
 == Leer un gráfico
 
