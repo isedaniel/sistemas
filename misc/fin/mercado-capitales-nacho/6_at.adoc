@@ -118,10 +118,50 @@ Cuerpo:: Apertura y cierre
 Verde/roja:: Roja si el cierre es inferior, verde si el cierre es superior
 
 Las velas tienen formas y cada una significa cosas distintas.
+Por ejemplo, *vela martillo*.
 
 == Tendencias
 
+Indican la direción del mercado.
+El mercado no se mueve de forma lineal, sino en _zig zag_.
+Si estamos en una tendencia alcista, 
+los movimientos bajistas se denominan *contratendenciales*.
+
+Los movimientos no pueden ser lineales.
+A medida que un activo sube, los inversores _toman ganancias_.
+Generan así un movimiento contratendencial.
+En el movimiento contratendencial se suben los nuevos jugadores.
+Un movimiento lineal,
+sin movimientos contratendenciales,
+es una mala señal.
+No es un activo muy operado.
+
+== Soportes y resistencias
+
+.Resistencia
+Punto a partir del cual la oferta supera a la demanda y hace que el precio 
+muestre una comportamiento a la baja.
+
+.Soporte
+Lo contrario.
+A un precio, aparece la demanada, mostrando un comportamiento al alza.
+
+.Revelancia
+Resistencias y soportes son *mas relevantes* cuanto más contactos tenga el
+precio donde haya reversión del comportamiento.
+
+.Longitud
+Resistencia con mayor duración es más relevante.
+
+.Voúmen
+Se agrandan las barras, indica mayor congestión.
+Si en una resistencia tenemos crecimiento de volumen, hay muchos vendedores:
+la resistencia es _difícil_ de superar.
+
+.Números redondos
+Inciden psicológicamente.
+
 [source]
 ----
-// 34M
+// 44M
 ----
