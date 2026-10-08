@@ -1,0 +1,99 @@
+= Resumen Arquitectura basada en Componentes
+
+La ingeniería de Software es el refinamiento continuo de grados cada vez 
+mayores de desacoplamiento.
+
+Comenzando con los dispositivos electromecánicos, estos requerían de la
+modificación de la estructura mecánica de la máquina para cambiar un algoritmo.
+El _programa_ estaba acoplado al diseño mecánico de la "computadora".
+
+Las primeras computadoras electrónicas de propósito general permitían trabajar
+con cualquier problema.
+El inconveniente era que el código ejecutado estaba escrito en lenguaje máquina.
+El programa quedaba así acoplado al _Hardware_ de cada computadora.
+
+El lenguaje _ensamblador_ permitió desacoplar el código del _Hardware_ de la 
+máquina, acoplándolo a la _arquitectura_ de la computadora.
+
+En la década del sesenta, lenguajes como `FORTRAN` y `COBOL` introducen la 
+noción de *compiladores*. 
+El código es desacoplado del _Hardware_ y de la _arquitectura_.
+El problema en este caso es que el código no era estructurado, basado en la 
+programación con `GOTO`, por lo que el programa estaba acoplado a su propia 
+estructura.
+
+En la década del setenta emerge la progrmaación estructurada, con lenguajes como
+`Pascal` o `C`.
+La unidad básica de reutilización de código era la función.
+El problema que enfrentan las funciones es su acoplamiento a los datos.
+Si los datos eran globales, un cambio en una función podía afectar el 
+comportamiento de otra.
+
+La solución a este problema aparece en la década del 80, con lenguajes como 
+_Smalltalk_ y más adelante _C++_.
+La orietnación a objetos permite empaquetar en funciones y datos.
+El mecanismo de reutilización del código es la clase, con conceptos como
+herencia, polimorfismo y asociación de clases.
+Aunque la orientación a objetos también tenía sus inconvenientes.
+Las aplicaciones generadas eran monolíticas.
+Los desarrolladores compilaban grandes bases de código cada vez que efectuaban
+un cambio.
+Además, la clase se trabajaba en un lenguaje de programación.
+La aplicación pasaba a estar acoplada al mismo.
+Un cliente de _Smalltalk_ no puede consumir una función de `C++`.
+
+La solución fue evolucionando con el tiempo, incorporando tecnologías como 
+bibliotecas estáticas y dinámicas, culminando durante los noventa con
+tecnologías de arquitectura basada en componentes como Component Object Model
+(COM).
+La arquitectura basda en componentes hace disponibles componentes binarios 
+que son intercambiables e interopreables.
+En lugar de compartir archivos de código fuente, el cliente y el servidor 
+acuerdan un sistema de tipos binario y un modo de representar los metadatos.
+El cliente programa solamente ante una abstracción del servicio:
+un contrato denominado *interfaz*.
+Mientras la interfaza sea inmutable, el servicio puede evolucionar de acuerdo a
+la necesidad.
+
+La composición permite que componentes prefabricados sean reutilizados al 
+reordenarlos en composiciones novedosas.
+Los componentes de software son unidades de ejecución, producción y construcción
+independiente, que pueden ser compuestas en un sistema funcional.
+Para permitir la composición, un componente se adhiere a un modelo de componente
+particular y tiene como objetivo una plataforma de componentes en particular.
+
+== Angular
+
+Angular es un _framework_ web desarrollado por Google.
+Provee una colección de herramientas, APIs y bibliotecas, que tienen como 
+objetivo simplificar el flujo de trabajo del desarrollo de aplicaciones web.
+
+.Componentes en Angular
+Los componentes son la pieza de construcción fundamental.
+Cada componente representa una parte de una página web.
+Organizar una aplicación en componentes ayuda a proveer una estructura,
+separando el código en partes específicas, fáciles de mantener,
+que pueden crecer de forma independiente.
+
+Cada componente de Angular consta de:
+
+- Una *clase* en `TypeScript`, donde se define la lógica.
+- Un selector, que define cómo utilizar el componente en un documento `HTML`
+- Un _template_ `HTML`, que define coómo se renderiza el componente en el DOM.
+- Un estilo de CSS
+
+.Servicios en Angular
+Cuando es necesario compartir lógica,
+Angular usa el patrón conocido como *Inyección de dependencias* (_Dependency
+Injection_).
+Permite crear un servicio que puede ser inyectado en los componentes,
+sin perder la centralización de la lóigca en una única fuente,
+cumpliendo con el principio de *única fuente de verdad* (_Single Source of
+Truth_).
+
+Los servicios se escriben en TypeScript y se declaran con el decorador 
+`@injectable`.
+Para utilizar un servicio debemos:
+
+. Importarlo
+. Declara un campo donde se inyecta
