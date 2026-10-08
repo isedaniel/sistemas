@@ -490,3 +490,291 @@ pueden tener ninguna, una o varias respuestas correctas.
 Planteamos una situación y tenemos que enunciar cómo lo resolveríamos, 
 recurriendo a los conceptos que vimos.
 Enfocarse en el uso de lenguaje preciso, exhaustivo y técnico.
+
+== Clase 7 de octubre
+
+Vimos metodología cascada, metodologías ágiles.
+Existen otras.
+Metodología espiral.
+Prototipado.
+Vamos a ver prototipado.
+
+=== Enfoque por prototipos
+
+Diseño de sistemas basados en un enfoque por prototipos.
+
+Nació hace mucho.
+El principal problema de la metodología de cascada es que el cliente da 
+_feedback_ al final.
+
+.Brecha de comunicación
+El *cliente* conoce el negocio a la perfección.
+Pero no sabe _expresarlo_ en un lenguaje técnico.
+El *equipo* conoce el _lenguaje técnico_,
+pero no conoce el negocio.
+Por eso se dice que existe una *brecha lingüística*.
+
+.Especificaciones ambiguas
+Hacemos suposiciones sobre lo que el cliente pide.
+Derivan en requerimientos contradictorios e incompletos.
+
+.Cambios tardíos y costosos
+El usuario descubre lo que _realmente_ necesita con el sistema completo.
+Dificultando y retrasando cambios.
+
+Ejemplo, un cliente nos dice que necesita un celular que _saque muy buenas
+fotos_. 
+No sabemos que son _buenas fotos_.
+Hay un problema lingüístico.
+Y en la metodología de cascada esto se ve al final.
+Por eso el *enfoque por prototipos* se enfoca en ir entregando,
+de forma _iterativa e incremental_,
+un _pedacito_ nuevo de sus sistema.
+Presentamos diferentes prototipos.
+Para trabajar sobre la brecha lingüística.
+
+Ejemplo 2.
+Tenemos que hacer un _software_ para un club deportivo.
+En primer lugar,
+haemos el módulo de socios.
+Se lo presentamos al cliente.
+Ve la interfaz, prueba el funcionamiento.
+Y el cliente ofrece _feedback_.
+Una vez que da el ok, pasamos al segundo prototipo.
+Por ejemplo, módulo deportes.
+Luego profesores.
+Al final del proyecto, probando cada prototipo, llegamos a lo que el cliente 
+quería.
+
+.Diferencia con metodologías ágiles
+A diferencia de las metodologías ágiles, no *ponemos el foco en tiempo*.
+No tenemos _sprints_ con duración exacta, como en SCRUM.
+Tampoco consideramos la _calidad_ del producto, como en Kanban.
+
+=== Tres pilares del prototipado
+
+.Iteración
+Construcción continua en ciclos sucesivos de requerimientos.
+
+.Participación activa
+El cliente evalúa y orienta durante todo el ciclo.
+
+.Reducción de riesgo
+Validación rápida para evitar construir el producto incorrecto.
+
+=== Clasificación de prototipos
+
+.Según destino final
+- Desechables.
+_Quick and dirty_.
+Se construye con rapidez, a bajo costo, para clarificar requerimientos.
+Después de clarificados, nos deshacemos del prototipo.
+Se descarta luego de cumplir el objetivo.
+
+- Evolutivos.
+Refinados iterativamente hasta convertirse en producto final.
+Requiere de *arquitectura previa robusta*.
+No se puede hacer a las apuradas.
+
+.Según nivel de fidelidad
+- Baja fidelidad.
+Pueden ser bocetos en papel o pizarra.
+No son funcionales.
+Son ultraeconómicos, ideales para etapas tempranas.
+
+- Alta fidelidad.
+Maqueta interactiva en Figma o prototipo en código.
+Pemite evaluar usabilidad y detalles finos.
+
+=== Alcance funcional y enfoque técnico
+
+.Prototipo horizontal
+Cubre múltiples funciones, de forma superficial,
+por ejemplo,
+maqueta de todas las pantallas sin lógica interna.
+
+.Prototipo vertical
+Implementación completa de pocas funciones críticas.
+Por ejemplo,
+un solo módulo de _login_.
+
+.Interfaz
+Foco en navegación, diseño y experiencia de usuario.
+Se busca estética usabilidad e inclusión de distintos usuarios.
+
+.Funcional
+Foco en reglas de negocio, calculos, procesamiento.
+
+.Arquitectura
+Validación técnica de requerimientos.
+APIs.
+Interación tecnológica.
+
+=== Prototipado vs. Modelo de cascada
+
+|===
+|Criterio |Modelo de Cascada |Enfoque por prototipos
+
+|Estrategia
+|Previsión: especificación completa al inicio
+|Experimentación: ciclos iterativos continuos
+
+|Detección de errores
+|Tardía, en etapa de pruebas o producción
+|Temprana, en primeras iteraciones
+
+|Rol del usuario
+|Puntual: participa al inicio y entrega final
+|Continuo: interviene en cada revisión
+
+|Métrica de avance
+|Fases documentadas completadas
+|Versiones funcionales evaluables
+|===
+
+=== Ventaja clave del prototipado
+
+=== Riesgos y limitaciones a controlar
+
+.Expectativas irreales
+El cliente ve el prototipo y supone que el sistema está terminado.
+Crea expectativas irreales.
+
+.Bluce infinito
+Refinación de prototipos sin terminar nunca.
+
+.Basura convertida en sistema
+Prototipo desechable convertido en el sistema definitivo.
+
+=== Cuando usar el enfoque
+
+.Recomendado
+. Requerimientos altamente inciertos o ambigüos.
+. Usuarios poco experimentados en _abstracción.
+. Dominio novedoso para el equipo de desarrollo.
+. Interfaces complejas y usabilidad crítica.
+. Cliente disponible para participar de la iteración.
+
+.Desaconsejado
+. Requerimientos estables y conocidos.
+. Cliente no disponible para participar.
+. Sistemas críticos con cero margen de riesgo.
+. Plazos cerrados que no admiten iteración.
+. Contratos a precio fijo inflexibles.
+
+=== Condiciones de éxito y errores frecuentes
+
+.Condiciones de éxito
+. Alineación previa:
+el cliente tiene que saber que el prototipo no es entregable.
+. Disciplina:
+descartar prototipos desechables a tiempo
+. Control de versiones:
+buena gestión de cambios y refinamientos
+. Metas por iteración:
+objetivos claros para evitar improvisación
+
+.Errores frecuentes
+. Sobre-ingeniería:
+invertir demasiada calidad en prototipos desechables.
+. 
+
+=== Conclusión
+
+El *prototipo* en un _puente de comunicación_ entre el _cliente_ y el _equipo_.
+
+=== Pruebas de calidad y validación de prototipos
+
+Son pruebas de fiabilidad, durabilidad, repetibilidad.
+
+.Por qué validar
+. Asegura que el diseño cumple los requisitos técnicos y funcionales.
+Cada prototipo cumple lo que se espera de él.
+Que sea eficiente, eficaz, cumpla con los tiempos de respuesta esperados, 
+satisfaga al cliente.
+
+. Reduce costos y mejora fiabilidad del producto final.
+
+. Permite detectar defectos antes del desarrollo completo o lanzamiento final.
+
+. Aumenta satisfacción del usuario
+
+=== Tipos de pruebas
+
+.Funcionales
+Ingresar al _login_ y ver que el sistema responda de forma adecuada.
+
+.No funcionales
+Evaluar el sistema en diferentes momentos del día.
+En momentos de poco y mucho tráfico.
+
+.Unitarias
+Probar una parte del código.
+Ni siquiera un módulo.
+Por ejemplo, una función.
+
+.Integración
+Pruebas del módulo completo: que las funciones se integran de adecuadamente.
+
+.Sistema
+Que el módulo se integra bien al sistema.
+Que el sistema hace lo que el usuario quiere.
+
+.Aceptación
+
+.Manuales
+La que hace una persona sentada frente al sistema.
+
+.Automatizadas
+Pruebas que hace el sistema por si mismo, por ejemplo, usando inteligencia 
+artificial.
+
+.Regresión y exploratorias
+Luego de hacer una integración, volver atrás y probar todo junto
+
+.Carga y estrés
+Someter al sistema a una carga excesiva de datos en un momento particular.
+
+.Seguridad
+
+.Usabilidad
+Qué tan cómodo le parece al usuario.
+
+=== Fiabilidad
+
+Es la probabilidad de que el sistema funcione sin fallas durante un período de 
+tiempo determinado.
+
+=== Repetitibilidad y reproducibilidad
+
+.Repetibilidad
+Capacidad de obtener los mismos resultados con las mismas pruebas en condiciones
+iguales
+
+.Reproducibilidad
+Capacidad de replicar resultados en entornos o condiciones diferentes.
+Por ejemplo, probar nuestro sistema web en distintos dispositivos.
+
+.Validación
+Importante validación manual de pruebas automatizadas.
+
+.Relación de consistencia
+
+=== Validación del prototipo
+
+. Comparación de prototipo con las especificaciones y criterios de aceptación.
+. Cuánto se condice lo que entregamos con lo que solicitaron.
+. Evaluación en uso real, con usuarios.
+. Documentación de resultados y hacer trazabilidad.
+
+=== Herramientas comunes
+
+. Frameworks de pruebas automatizadas, como JUnit.
+. Herramietnas de integración contínua, como Jenkins.
+. Herramientas de análisis estático de código, como ESLint.
+No implica código correcto, sino que cumpla criterios, como cantidad de líneas.
+
+=== Conclusión
+
+Para saber que un prototipo está construido correctamente tiene que ser
+validado.
