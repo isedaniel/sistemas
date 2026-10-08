@@ -161,7 +161,73 @@ la resistencia es _difícil_ de superar.
 .Números redondos
 Inciden psicológicamente.
 
+== Análisis de Gráficos
+
+Vemos líneas de tendencias.
+Se definen *validadas* cuando tienen 3 contactos o más precisos.
+*Probables* cuando tienen menos de 3.
+Las líneas validadas son las más útiles.
+Un soporte alcista es un *soporte dinámico*,
+que se mueve al alza.
+Cuando el activo toque nuevamente el soporte dinámico,
+uno tiende a pensar que es punto de reversión al alza,
+por lo tanto, punto de entrada para el inversor.
+
+El precio en que el activo quiebra el soporte, ponemos un _stop loss_.
+Que implica liquidar la posición para evitar las pérdidas.
+
+Una resistencia quebrada al alza puede servir como piso.
+
+== Operación
+
+Compro en el soporte.
+Pongo stop-loss por debajo.
+Vendo cuando reconoce la resistencia.
+
+Las líneas se trazan en el extremo inferior de las velas
+(el mínimo de la jornada).
+
+.Operación de procesos laterales
+No compramos cerca del nivel de resistencia.
+Sería mala estrategia.
+Si quiebra la resistencia es una señal de fortaleza.
+Ahí compramos.
+
+.Gaps
+Cuando hay un gap entre un día y otro,
+podemos trazar un soporte horizontal o estático.
+Lo contrario ocurre con los gaps bajistas:
+el gap marca una resistencia estática u horizontal.
+
+== Patrones de cambio y continuidad de tendencia
+
+.Hombro-cabeza-hombro
+Una tendencia alcista alcanza un punto y luego quiebra a la baja.
+Esta acción en tendencia alcista probablemente ha finalizado su ciclo.
+(Pierde el soporte dinámico y el soporte estático de canal lateral).
+
+.Patrón inferior triple
+Lo mismo pero haciendo un valle.
+A partir de ahí rompería al alza.
+
+== Estudio de medias móviles
+
+Una media móvil es el precio promedio de un período del pasado.
+Por ejemplo, la media móvil de las últimas 10 ruedas.
+La línea muestra el precio promedio.
+Permite suavizar y definir tendencias.
+
+.Permite definir compras y ventas
+Si el precio pasa de arriba hacia abajo es venta.
+Si el precio pasa de abajo hacia arriba es compra.
+
+Pueden operar como resistencias o soportes dinámicos.
+Cuando quiebra la media hacia arriba es compra.
+Cuando quiebra la media a la baja es venta.
+Es mejor entrar con el activo por encima de la media móvil y acompañar el
+ascenso.
+
 [source]
 ----
-// 44M
+// 1H 15M
 ----
