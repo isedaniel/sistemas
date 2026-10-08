@@ -224,8 +224,8 @@ Si el precio pasa de abajo hacia arriba es compra.
 Pueden operar como resistencias o soportes dinámicos.
 Cuando quiebra la media hacia arriba es compra.
 Cuando quiebra la media a la baja es venta.
-Es mejor entrar con el activo por encima de la media móvil y acompañar el
-ascenso.
+En ocasiones conviene entrar con el activo por encima de la media móvil y
+acompañar el ascenso.
 
 [source]
 ----
