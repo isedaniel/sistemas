@@ -24,15 +24,11 @@
 % shapes
 %\usetikzlibrary{shapes.geometric}
 
-% separación fórmulas en align
-%\setlength{\jot}{8pt}
-
 % espacio entre párrafos
 \usepackage{parskip}
-%\usepackage[skip=10pt plus1pt, indent=12pt]{parskip}
 
-% cancelar términos
-\usepackage{cancel}
+% cancelar términos en ecuaciones
+%\usepackage{cancel}
 
 % links
 %\usepackage[colorlinks=true,
@@ -49,6 +45,11 @@
 % interlineado: 1.0 simple, 1.3 (1.5), 1.6 (doble)
 %\linespread{1.3}
 
+% bibliografía
+%\usepackage[backend=biber, style=ieee, sorting=nyt]{biblatex}
+%\bibliography{bib}
+%\usepackage{csquotes}
+
 \begin{document}
 
 \include{titlepage}
@@ -63,7 +64,7 @@ La arquitectura Cliente-Servidor es un modelo de diseño de \emph{Software},
 basado en la división del sistema en dos componentes principales:
 el \textbf{Cliente} y el \textbf{Servidor}.
 
-Para su funcionamiento sigue el \emph{ciclo de petición y respuesta}:
+Su funcionamiento sigue el \emph{ciclo de petición y respuesta}:
 \begin{itemize}
     \item El Cliente envía una \emph{petición} al Servidor,
     solicitando un recurso.
@@ -72,36 +73,34 @@ Para su funcionamiento sigue el \emph{ciclo de petición y respuesta}:
     \emph{respuesta}.
     
     \item El Servidor \emph{envía} esa respuesta al Cliente.
+
+    \item El Cliente recibe la respuesta y la procesa.
 \end{itemize}
 
-El Cliente solicita servicios o recursos y el Servidor provee esos servicios o
-recursos.
 Toda la comunicación sigue un \textbf{protocolo},
-que especifica las \emph{reglas} que tanto el Servidor como el Cliente usarán
-para comunicarse.
+que especifica las \emph{reglas} que tanto el Servidor como el Cliente usan para
+comunicarse.
 
-Por ejemplo, el navegador web \emph{Chromium}, envía una petición a un servidor
-web \emph{Apache}.
-\emph{Apache} recibe la solicitud, la procesa y elabora una respuesta, que puede
+Por ejemplo, el navegador web \emph{Chromium} envía una petición a un servidor
+web, servido con \emph{Apache}.
+El servidor recibe la solicitud, la procesa y elabora una respuesta, que puede
 ser el renderizado de una página web escrita en \emph{PHP}.
-Esta respuesta es enviada al cliente, el navegador \emph{Chromium}, que la 
-renderiza a su vez para el usuario.
+La respuesta se envía al cliente, que la renderiza para el usuario.
 Toda la comunicación se hace siguiendo las reglas especificadas por los
 protocolos TCP/IP y HTTP.
 
-La arquitectura Cliente-Servidor tiene muchas ventajas, entre las que podemos 
-señalar:
+La arquitectura Cliente-Servidor cuenta entre sus ventajas:
 \begin{itemize}
-    \item La centralización de los recursos y los datos en un Servidor 
+    \item La \emph{centralización} de los recursos y los datos en un Servidor.
     
-    \item La posibilidad de administrar mejor la información desde el Servidor 
+    \item La posibilidad de \emph{administrar la información}desde el Servidor.
     
-    \item La posibilidad de escalar el servicio añadiendo más clientes
+    \item La posibilidad de \emph{escalar} el servicio añadiendo más clientes.
     
-    \item La seguridad se puede controlar mejor desde el Servidor
+    \item El \emph{control} de la seguridad desde el Servidor.
 \end{itemize}
 
-También se pueden señalar algunas de sus desventajas:
+Aunque cuenta con algunas desventajas:
 \begin{itemize}
     \item \emph{Dependencia del servidor}:
     ante una falla, los clientes pierden acceso al servicio.
@@ -113,8 +112,9 @@ También se pueden señalar algunas de sus desventajas:
     clientes en simultáneo.
 \end{itemize}
 
-Los casos exitosos elegidos para el análisis en el trabajo práctico son:
-\begin{enumerate}
+Para el trabajo práctico se eligieron cuatro casos exitosos de implementación de 
+esta arquitectura:
+\begin{itemize}
     \item Netflix, servicio de \emph{streaming} de video.
     
     \item Spotify, servicio de \emph{streaming} de música y \emph{Podcasts}.
@@ -123,27 +123,27 @@ Los casos exitosos elegidos para el análisis en el trabajo práctico son:
     
     \item Gmail, aplicación pionera en la provisión de \emph{email} en el
     navegador.
-\end{enumerate}
+\end{itemize}
 
-La elección de estas aplicaciones se fundamenta en los desafíos que enfrentan.
+Se eligieron estas aplicaciones por ser casos exitosos en los desafíos más 
+importantes que enfrentan este tipo de arquitecturas.
 Todas deben recibir, procesar y enviar grandes volúmenes de datos.
-Deben ser capaces de responder a los picos en la demanda.
-Y deben proveer servicios de autenticación y autorización, para cuidar la 
-seguridad y privacidad de sus clientes.
-Todo esto para los más diversos dispositivos, móviles, \emph{Smart TV},
-estaciones de trabajo.
-Es decir, enfrentan desafíos de rendimiento, escalabilidad, seguridad y 
-experiencia de usuario.
+Deben ser capaces de responder a grandes picos de demanda.
+Están obligadas a cuidar la seguridad y privacidad de sus clientes,
+ofreciendo servicios de autenticación y autorización.
+Todo ello mientras tienen presencia en distintos dispositivos,
+incluyendo computadoras de escritorio, teléfonos, portátiles y televisores.
+En otras palabras, todas enfrentan grandes desafíos de rendimiento,
+escalabilidad, seguridad y experiencia de usuario.
 
-En lo que respecta a los casos de implementaciones problemáticas, las elecciones
-son:
+En lo que respecta a los casos de implementaciones problemáticas, se eligieron:
 \begin{enumerate}
     \item SIU Guaraní
-    \item SimCity
+    \item El lanzamiento del videojuego SimCity
     \item Bolsas y Mercados Argentinos (BYMA)
 \end{enumerate}
 
-En los tres casos se observan los problemas que debe enfrentar arquitectura de
+En los tres casos se observan problemas comunes en la arquitectura de
 Cliente-Servidor: cuellos de botella, problemas de seguridad, dependencia
 crítica y sobrecarga del servidor.
 
@@ -151,19 +151,15 @@ crítica y sobrecarga del servidor.
 
 \subsection{Netflix}
 
-Netflix es principalmente un proveedor de servicios de \emph{streaming} de
-video, enfocado en series y películas.
-Enfrenta grandes desafíos de ingeniería en lo que respecta a rendimiento: debe
-grandes volúmenes de datos a cientos de miles de clientes de todo el mundo, que 
-se conectan desde dispositivos muy diferentes en capacidades de cómputo, como 
-son los dispositivos móviles o los \emph{Smart TV}.
-
-de \emph{streaming} de video, que implementa esta arquitectura y sirve video en 
-dispositivos de los más variados. El Servidor debe de proveer autenticación, 
-catálogo, perfiles y transmisión de video en tiempo real, por lo que supone un 
-caso de análisis particularmente interesante. Además de ser una de las compañias
-más exitosas del mundo y quizá uno de los mejores lugares para trabajar como 
-Ingeniero de Sistemas.
+Netflix es un proveedor de servicios de \emph{streaming} de video, enfocado en
+series y películas.
+Enfrenta grandes desafíos de ingeniería en lo que respecta a rendimiento:
+debe recibir, procesar y enviar grandes volúmenes de datos a cientos de miles de
+clientes de todo el mundo, que se conectan desde dispositivos muy diferentes en
+capacidades de cómputo.
+El Servidor debe de proveer autenticación, catálogo, perfiles y transmisión de
+video en tiempo real, por lo que supone un caso de análisis particularmente
+interesante.
 
 \subsection{Spotify}
 
@@ -206,5 +202,8 @@ aplicaciones web asíncronas, modelo para las que vendrían luego.
 \subsection{Bolsas y Mercados Argentinos (BYMA)}
 
 \section{Conclusiones}
+
+%\printbibliography[heading=bibintoc, title={Bibliografía}]
+
 
 \end{document}
