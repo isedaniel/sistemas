@@ -1,0 +1,25 @@
+= Notas de clase 8 de octubre
+
+Usamos `ng` para crear el proyecto de `angular`.
+
+[source, sh]
+--
+ng new proyecto
+--
+
+Para crear un nuevo componente:
+
+[source, sh]
+--
+ng generate component nombreDeComponente
+--
+
+Incorporamos el componente en `app.html` y con el autocompletado dejamos que 
+importe todo lo necesario.
+
+Crear un servicio:
+
+[source, sh]
+--
+ng generate service nombreDeServicio
+--

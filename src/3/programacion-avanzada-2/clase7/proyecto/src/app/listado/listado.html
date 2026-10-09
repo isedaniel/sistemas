@@ -1,0 +1,10 @@
+<button (click)="agregarTarea()">Agregar tarea</button>
+
+<h2>Tareas:</h2>
+
+<ul>
+    @for (tarea of tareas; track $index) {
+        <h3>{{tarea.name}} (id:{{ tarea.id }})</h3>
+        <p>{{ tarea.descripcion }}</p>
+    }
+</ul>
