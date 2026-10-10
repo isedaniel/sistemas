@@ -1,0 +1,39 @@
+:root {
+    background-color: #39f;
+    font-family: monospace;
+    font-size: 2rem;
+}
+
+#playing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    width: 250px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.left {
+    align-self: flex-start;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    font-size: 1.125rem;
+    flex-wrap: wrap;
+}
+
+.right {
+    align-self: flex-end;
+}
