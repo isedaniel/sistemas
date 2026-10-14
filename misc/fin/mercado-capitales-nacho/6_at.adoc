@@ -217,6 +217,10 @@ Por ejemplo, la media móvil de las últimas 10 ruedas.
 La línea muestra el precio promedio.
 Permite suavizar y definir tendencias.
 
+Las más populares son la de 20, 50 y 100 ruedas.
+A corto plazo, usar una media corta.
+A largo plazo, mirar una media largas.
+
 .Permite definir compras y ventas
 Si el precio pasa de arriba hacia abajo es venta.
 Si el precio pasa de abajo hacia arriba es compra.
@@ -227,7 +231,21 @@ Cuando quiebra la media a la baja es venta.
 En ocasiones conviene entrar con el activo por encima de la media móvil y
 acompañar el ascenso.
 
+== Conclusiones
+- Siempre operar a favor de la tendencia de mercado.
+Pero con _stop-loss_.
+No confiar ciegamente.
+
+- Un piso puede operar como resistencia luego de que se quiebra.
+
+- Un soporte o una resistencia no es exacta. 
+Es un espacio donde se congestionan los precios.
+Pueden romper un poco pero rebotan.
+Se _congestionan_ en esas posición.
+
+- Un quiebre geniuno se hace con alto volumen.
+
 [source]
 ----
-// 1H 15M
+// 1H 45M
 ----
