@@ -10,15 +10,19 @@ Aquí vamos a ir tomando las notas de _todas_ las clases.
 
 Vamos a revisar 5 metodologías ágiles: SCRUM, KANBAN, SCRUMBAN, LEAN y XP.
 
-Qué es AGILE. Es el nombre genérico que reciben.
+Qué es AGILE.
+Es el nombre genérico que reciben.
 
-Las metodologías ágiles tienen mucho tiempo. Por ejemplo, Kanban es de 1940,
-proviene de Toyota.
+Las metodologías ágiles tienen mucho tiempo.
+Por ejemplo, Kanban es de 1940, proviene de Toyota.
 
-Qué pasa generalmente. La mayoría suele declarar que usa SCRUM. Ahondando, se
-suele ver que no emplean una metodología ágil, sino que mezclan varias. Cada una
-tiene sus particularidades. Por ejemplo, usar un tablero (proviene de KANBAN) en
-SCRUM. La combinación de metodologías tiene que estar bien pensada.
+Qué pasa generalmente.
+La mayoría suele declarar que usa SCRUM.
+Ahondando, se suele ver que no emplean una metodología ágil, sino que mezclan
+varias.
+Cada una tiene sus particularidades.
+Por ejemplo, usar un tablero (proviene de KANBAN) en SCRUM.
+La combinación de metodologías tiene que estar bien pensada.
 
 ## Filosofía Agile
 

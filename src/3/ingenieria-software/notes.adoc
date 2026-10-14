@@ -534,3 +534,31 @@ Es herramienta de asistencia.
 No reemplaza la responsabilidad de los equipos humanos.
 Automatizar no garantiza calidad.
 La IA es un acelerador, no un sustituto.
+
+== Clase 10 de octubre
+
+=== Trabajo práctico integrador
+
+Integra riesgos y testing.
+Trabajamos con la empresa Logitrack.
+Incluye diagnóstico de la empresa, gestión de riesgos y planificación ágil.
+Tenemos un mes.
+
+Arranca con fundamentación, objetivos, contexto general de la empresa.
+Nuestro equipo de trabajo.
+A diferencia de trabajos anteriores, aquí es mucho más explícito.
+Tomamos menos decisiones.
+Tenemos por ejemplo integrantes, responsabilidades, habilidades, herramientas
+con que trabaja el equipo.
+Hasta el 4.6 es el entorno del sistema:
+cómo funciona,
+qué tecnologías usa.
+En el 4.6 aprecen los problemas y el 4.7 plantea los límites.
+
+En el punto 5 empieza lo que tenemos que resolver.
+Para la semana que viene presentamos la Etapa A.
+Hay que entregar una ficha de análisis, de 1 a 2 páginas, que incluya las 
+especificaciones dadas.
+
+En la etapa B tenemos otro informe, con otros requerimientos.
+Y seguimos así.
