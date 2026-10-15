@@ -1,0 +1,16 @@
+---
+title: "Lecture 1, Part II; Introduction of Financial Markets, Financial Terms and Concepts"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+New instructor presentation (Jake Xia).
+He is talking about his career and the course.
+He has background in engineering.
+Started in *research*, transition to *Quant*.
+Transition to *trading* in Morgan Stanley, until today.
+Morgan Stanley focused in external funds, and so did the instructor.
+They went to MIT to recruit.
+Bright students in quantitative, but lack finance background.
