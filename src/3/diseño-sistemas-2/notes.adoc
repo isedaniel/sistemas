@@ -1,7 +1,8 @@
 = Notas de clase, Diseño de Sistemas 2
 :toc:
 
-== TODO 
+== TODO
+
 . Revisar clases
 * clase 9/9: 19M
 . Resumir apuntes
@@ -14,24 +15,18 @@
 .Objetivo de la materia
 En diseño de sistemas I vimos disño de _software convencional_.
 En esta materia vamos a profundizar en el diseño de *sistemas web*.
-Es decir, pensar los desafíos propios de la ingeniería de software,
-pero enfocados en sistemas web.
+Es decir, pensar los desafíos propios de la ingeniería de software, pero enfocados en sistemas web.
 
 .Desarrollador de software convencional
 Trabaja con diagramas de flujo y algoritmos.
 Pero con una lógica diferente.
 Elaboran código para cumplir con los requerimientos funcionales propuestos.
 
-En el caso de *sistemas heredados*,
-muchas veces tanto riesgo como costo de modificación son muy altos.
+En el caso de *sistemas heredados*, muchas veces tanto riesgo como costo de modificación son muy altos.
 La organización no está dispuesta a arriesgar su principal fuente de negocio.
-Por lo que se desarrolla un nuevo sistema,
-denominado *sistema satélite*,
-que tiene la capacidad de comunicarse con el sistema heredado,
-para proveer las nuevas funcionalidades requeridas.
+Por lo que se desarrolla un nuevo sistema, denominado *sistema satélite*, que tiene la capacidad de comunicarse con el sistema heredado, para proveer las nuevas funcionalidades requeridas.
 
-Por ejemplo, los sistemas COBOL,
-comunes en el sector financiero.
+Por ejemplo, los sistemas COBOL, comunes en el sector financiero.
 Hacemos un módulo por afuera para que funcione.
 
 Un desarrollador típico hace todo esto:
@@ -51,75 +46,66 @@ Usa otros lenguajes de desarrollo.
 - No require de internet
 - Mejor integración y, en general, rendimiento
 - Suelen ser más económicos, porque el sistema se compra, no se renta.
-En desarrollo web por lo general se abona una suscripción mensual por uso del
-software.
+En desarrollo web por lo general se abona una suscripción mensual por uso del software.
 
 .Atributos de sistemas web
 Características que los distinguen del software convencional.
 
-. Intensidad de red. 
-El sistema reside en una red. 
-Está abierto a una comunidad diversa de clientes. 
-En el desarrollo convencional conocemos al cliente. 
+. Intensidad de red.
+El sistema reside en una red.
+Está abierto a una comunidad diversa de clientes.
+En el desarrollo convencional conocemos al cliente.
 En desarrollo web tenemos que preparar un sistema para usuarios diversos.
 
-. Concurrencia. 
+. Concurrencia.
 Una gran cantidad de usuarios pueden acceder al mismo tiempo.
 El riesgo de enfrentar problemas de concurrencia es mucho mayor.
 
-. Carga imprevisible. 
-El volumen de uso varía: 
-pueden haber muchos usuarios usando el sistema en poco tiempo.
+. Carga imprevisible.
+El volumen de uso varía: pueden haber muchos usuarios usando el sistema en poco tiempo.
 Es decir, son comunes los picos de uso.
 
-. Rendimiento. 
-El tiempo de respuesta es un factor crítico. 
+. Rendimiento.
+El tiempo de respuesta es un factor crítico.
 Y depende de muchos factores.
-No es tan sencillo de probar como en un sistema _desktop_.
-(28M)
+No es tan sencillo de probar como en un sistema _desktop_. (28M)
 
-. Disponibilidad. 
-Los sistemas convencionales _desktop_ no requieren funcionamiento continuo. 
+. Disponibilidad.
+Los sistemas convencionales _desktop_ no requieren funcionamiento continuo.
 En cambio, los sistemas web tienen que estar disponibles siempre.
 24x7x365.
 
-. Dirigida por datos. 
+. Dirigida por datos.
 La aplicación web accede y genera contenido hacia bases de datos.
 
-. Evolución contínua. 
+. Evolución contínua.
 Cambia de forma constante, no en versiones (como en el software tradicional).
 
-. Seguridad. 
-Requiere considerar la protección del contenido y los canales
-seguros en un grado mayor al software de escritorio convencional.
+. Seguridad.
+Requiere considerar la protección del contenido y los canales seguros en un grado mayor al software de escritorio convencional.
 
 [horizontal]
-Estratos de la ingeniría web:: 
-Cuatro capas apoyadas entre sí.
-Herramientas:: 
-Soporte automatizado o semiautomatizado para el proceso y métodos. 
-Es decir, 
-herramientas en paralelo que se ejecutan para resolver problemas concretos.
-Métodos:: 
-Técnicas para construir la aplicación web: 
-análisis, diseño, generación de páginas, pruebas. 
+Estratos de la ingeniría web:: Cuatro capas apoyadas entre sí.
+Herramientas::
+Soporte automatizado o semiautomatizado para el proceso y métodos.
+Es decir, herramientas en paralelo que se ejecutan para resolver problemas concretos.
+Métodos:: Técnicas para construir la aplicación web: análisis, diseño, generación de páginas, pruebas.
 Pero no es el mismo ciclo de vida.
 Algunos pasos _pueden_ no ser necesarios.
 
-Proceso:: 
-Marcos de trabajo para aplicar métodos y entregar tecnología de forma
-consistente.
+Proceso::
+Marcos de trabajo para aplicar métodos y entregar tecnología de forma consistente.
 
-Compromiso de calidad:: 
+Compromiso de calidad::
 tiene que ser confiable y de alta calidad.
 
 .Proceso de ingeniería aplicado a la web
-. Formulación. 
-Qué es lo que queremos construir. 
+. Formulación.
+Qué es lo que queremos construir.
 Decidir qué vamos a hacer.
 
-. Planificación. 
-Consiste en definir: 
+. Planificación.
+Consiste en definir:
 
 * tiempos
 * costos
@@ -132,8 +118,8 @@ Por lo que resulta conveniente la aplicación de metodologías ágiles.
 
 .Mejore prácticas
 . Comprender el negocio y los objetivos. Toda empresa tiene misión y visión.
-Qué visión tiene de si misma y cuál es su misión: para qué se hizo. El
-desarrollo de software tiene que ir de la mano de los objetivos de la empresa.
+Qué visión tiene de si misma y cuál es su misión: para qué se hizo.
+El desarrollo de software tiene que ir de la mano de los objetivos de la empresa.
 Hacer un /estudio de mercado/: hay otras empresas, tienen el mismo objetivo.
 Desarrollo de consecuentemente con esta información.
 . Desarrollo incremental, con entregas peqieñas y frecuentes.
@@ -179,9 +165,9 @@ Razones y riesgos para el outsourcing.
 - Garantías de mantenimiento y soporte
 - Claridad contractual: alcance, tiempos, propiedad intelectual
 
-Para hacer la subcontratación se licita. Hacemos una solicitud, tenemos
-oferentes y tomamos una decisión. No necesariamente por tiempo o dinero, sino el
-que más se adecúe a nuestras necesidades.
+Para hacer la subcontratación se licita.
+Hacemos una solicitud, tenemos oferentes y tomamos una decisión.
+No necesariamente por tiempo o dinero, sino el que más se adecúe a nuestras necesidades.
 
 .Medición para la ingeniería web
 . Tamaño y complejidad. Número de páginas y enlaces, complejidad en la
@@ -192,10 +178,11 @@ disponibilidad.
 del equipo.
 
 .Ideas clave
-La ingeniería web combina un proceso ágil e iterativo, con atención constante a
-la calidad, la seguridad y las necesidades del usuario.  Por eso el profe
-descarta SCRUM. No está enfocada en la calidad. Y prefiere KANBAN, que se enfoca
-en la calidad. Y además es más abierta a los cambios.
+La ingeniería web combina un proceso ágil e iterativo, con atención constante a la calidad, la seguridad y las necesidades del usuario.
+Por eso el profe descarta SCRUM.
+No está enfocada en la calidad.
+Y prefiere KANBAN, que se enfoca en la calidad.
+Y además es más abierta a los cambios.
 
 . El proceso es incremental: formulación -> planeación -> análisis ->
 ingeniería -> pruebas -> evaluación.
@@ -206,7 +193,6 @@ función y configuración.
 . La subcontratación y la medición son decisiones /estratégicas/: impactan en el
 costo, calidad y precios.
 
-
 == Clase 2
 
 .Regla de las 3U
@@ -215,34 +201,42 @@ Tres parámetros importantes a tener en cuenta: usabilidad,
 .10 Heurísticas de Usabilidad
 
 .Heurística
-Tengo un nene. Lo despierto a la mañana para llevarlo a la escuela. Amanece con
-fiebre. El pediatra nos atiende. Lo mira al nene y dice "tiene sarampión". Cómo
-sabe eso sin hacer ningún diagnóstico. Por *experiencia*.
+Tengo un nene.
+Lo despierto a la mañana para llevarlo a la escuela.
+Amanece con fiebre.
+El pediatra nos atiende.
+Lo mira al nene y dice "tiene sarampión".
+Cómo sabe eso sin hacer ningún diagnóstico.
+Por *experiencia*.
 
-Otro ejemplo. El mecánico. Falla el auto, el mecánico escucha cómo arranca y
-sabe que tiene. Cómo sabe. Por *experiencia*.
+Otro ejemplo.
+El mecánico.
+Falla el auto, el mecánico escucha cómo arranca y sabe que tiene.
+Cómo sabe.
+Por *experiencia*.
 
-La heurística se relaciona con conocimientos adquiridos a través de la
-experiencia. Por experiencia, Jakob Nielsen propone 10 principios para analizar
-la usabilidad.
+La heurística se relaciona con conocimientos adquiridos a través de la experiencia.
+Por experiencia, Jakob Nielsen propone 10 principios para analizar la usabilidad.
 
-.Fundamentos del diseño UX (experiencia de usuario). 
-Reglas de oro desarrolladas desde 1994. Para prevenir problemas de interacción
-_antes_ de que afecten al usuario.
+.Fundamentos del diseño UX (experiencia de usuario).
+Reglas de oro desarrolladas desde 1994. Para prevenir problemas de interacción _antes_ de que afecten al usuario.
 
 . *Estado del sistema*. El sistema tiene que mantener siempre informados a los
-usuarios de lo que está sucediendo. Ejemplo: indicadores de carga.
+usuarios de lo que está sucediendo.
+Ejemplo: indicadores de carga.
 
 . *Lenguaje real*. La interfaz debe hablar el lenguaje del usuario con conceptos
-familiares en lugar de términos técnicos. Ejemplo: papelera de reciclaje.
+familiares en lugar de términos técnicos.
+Ejemplo: papelera de reciclaje.
 
 . *Salidas de emergencia*. Un usuario puede realizar una acción por error.
-Necesitan una salida de emergencia marcada, para abandonar un estado no deseado
-sin procesos extensos. Ejemplo: Botón Deshacer `<C-z>`.
+Necesitan una salida de emergencia marcada, para abandonar un estado no deseado sin procesos extensos.
+Ejemplo: Botón Deshacer `<C-z>`.
 
 . *Consistencia*. Los usuarios _no deberían_ preguntarse si diferentes acciones
-significan lo mismo. Seguir las convenciones de la plataforma. Ejemplo: mantener
-la ubicación del menú de navegación en una página web.
+significan lo mismo.
+Seguir las convenciones de la plataforma.
+Ejemplo: mantener la ubicación del menú de navegación en una página web.
 
 . *Prevención de errores*. Un diseño que cuide al usuario de errores comunes.
 Ejemplo: desactivar botones de envío hasta completar campos requeridos.
@@ -250,22 +244,25 @@ Ejemplo: desactivar botones de envío hasta completar campos requeridos.
 == Clase 3, 2 de septiembre
 
 === Arquitectura
-La visión jerárquica del sistema, que abarca en su totalidad. Tiene 3
-componentes principales.
+
+La visión jerárquica del sistema, que abarca en su totalidad.
+Tiene 3 componentes principales.
 . Una estructura globa, que define bloques de código, bases de datos,
 servidores, servicios externos.
 . Relaciones, que indica la interacción entre los componentes
 . Requerimientos no funcionales: escalabilidad, seguridad, etc.
 
-Las arquitecturas tienen *patrones* comunes. Por ejemplo, un *monolito*, no
-tiene partes. Es todo una sola cosa. Las *arquitecturas monolíticas* sirven para
-sistemas chicos, especializados, con poca complejidad. 
+Las arquitecturas tienen *patrones* comunes.
+Por ejemplo, un *monolito*, no tiene partes.
+Es todo una sola cosa.
+Las *arquitecturas monolíticas* sirven para sistemas chicos, especializados, con poca complejidad.
 
-Además tienen *capas*. Que refiere a los distintos componentes.
+Además tienen *capas*.
+Que refiere a los distintos componentes.
 
-Patrones, dentro de arquitectura, no refiere a patrones de diseño. Patrones de
-diseño se usa en programación. Refiere a soluciones reutilizables, que pueden
-encajarse unas con otras -como un rompecabezas-.
+Patrones, dentro de arquitectura, no refiere a patrones de diseño.
+Patrones de diseño se usa en programación.
+Refiere a soluciones reutilizables, que pueden encajarse unas con otras -como un rompecabezas-.
 
 === Arquitectura cliente-servidor
 
@@ -276,9 +273,11 @@ encajarse unas con otras -como un rompecabezas-.
 . La comunicación suele darse mediante protocolos comunes HTTP, FTP o SQL
 
 .Ejemplo
-Ejemplo de cliente/servidor. Cliente: navegador (Chromium). Servidor: un
-servidor web (Apache, nginx). El navegador solicita una página. El servidor 
-procesa la solicitud y envía el contenido.
+Ejemplo de cliente/servidor.
+Cliente: navegador (Chromium).
+Servidor: un servidor web (Apache, nginx).
+El navegador solicita una página.
+El servidor procesa la solicitud y envía el contenido.
 
 .Ventajas
 . Centralización de recursos y datos
@@ -300,11 +299,9 @@ Transformar aplicaciones monolíticas en servicios autónomos e interoperables.
 
 .Glosario
 [horizontal]
-Negocio:: Actividad o función que el software apoya. 
-Incluye tareas, procesos y reglas de la organización.
-(v.g., Banco: otorgar préstamos, procesar pagos).
-Lógica de negocio:: Instrucciones, cálculos y validaciones, que el software
-implementa para cumplir esos procesos.
+Negocio:: Actividad o función que el software apoya.
+Incluye tareas, procesos y reglas de la organización. (v.g., Banco: otorgar préstamos, procesar pagos).
+Lógica de negocio:: Instrucciones, cálculos y validaciones, que el software implementa para cumplir esos procesos.
 Encapsulamiento:: Agrupación de datos y métodos en una misma unidad, ocultando
 detalles internos a modo de protección.
 Servicios:: Unidad de encapsulamiento de la lógica de negocio.
@@ -313,14 +310,13 @@ Contrato:: Define la funcionalidad de un servicio: entrada, salida y protocolos
 de comunicación.
 
 .Concepto general
-Es un estilo arquitectónico que organiza las funciones de un sistema como 
-servicios independientes, reutilizables y débilmente acoplados.
+Es un estilo arquitectónico que organiza las funciones de un sistema como servicios independientes, reutilizables y débilmente acoplados.
 
-* Mediante *descomposición* se sustituyen blosque monolíticos por componentes 
+* Mediante *descomposición* se sustituyen blosque monolíticos por componentes
 funcionales autónomos, conocidos como *servicios*.
 
 * Están *orientados al negocio*:
-Cada servicio representa un proceso real, v.g., procesar un pago. 
+Cada servicio representa un proceso real, v.g., procesar un pago.
 
 * Utilizan *protocolos estándar* para la comunicación, como `SOAP/HTTP`,
 `JSON/HTTP`.
@@ -328,55 +324,42 @@ Cada servicio representa un proceso real, v.g., procesar un pago.
 .Características clave de los servicios
 * Servicios de bajo acomplamiento.
 (_Loose coupling_).
-Un servicio no necesita conocer las estructuras de datos internas,
-la gestión de transacciones ni el lenguaje de implementación de otro servicio
-con el que interactúa.
+Un servicio no necesita conocer las estructuras de datos internas, la gestión de transacciones ni el lenguaje de implementación de otro servicio con el que interactúa.
 
 * Servicios configurables y visuales.
-Permiten el ensamblado de aplicaciones, combinando componentes sin exposición de
-código interno, facilitando la adición, configuración o reemplazo de servicios.
+Permiten el ensamblado de aplicaciones, combinando componentes sin exposición de código interno, facilitando la adición, configuración o reemplazo de servicios.
 
 * Interoperabilidad total.
-Cualquier servicio puede colaborar con otro, con independencia de sus detalles 
-de implementación, tecnologías empleadas o proveedores diferenciados.
+Cualquier servicio puede colaborar con otro, con independencia de sus detalles de implementación, tecnologías empleadas o proveedores diferenciados.
 
 * Independencia de ubicación.
-Los consumidores invocan interfaces estándarizadas, con independencia de la
-ubicación física de la infraestructura de residencia del servicio.
+Los consumidores invocan interfaces estándarizadas, con independencia de la ubicación física de la infraestructura de residencia del servicio.
 
 .Enterprise Service Bus
-El Bus de Servicio Empresarial (ESB) es un componente centralizador, que integra
-sistemas _legacy_ y _backend_, exponiéndolos como interfaces reutilizables.
-Se ocupa de: 
+El Bus de Servicio Empresarial (ESB) es un componente centralizador, que integra sistemas _legacy_ y _backend_, exponiéndolos como interfaces reutilizables.
+Se ocupa de:
 
-* la *traducción*, 
-transformando modelos de datos e interfaces que pueden ser heterogéneas,
-permitiendo la comunicación entre los servicios.
+* la *traducción*,
+transformando modelos de datos e interfaces que pueden ser heterogéneas, permitiendo la comunicación entre los servicios.
 
 * el *direccionamiento*,
-enrutando peticiones, de acuerdo a reglas de negocio o contenido de los
-mensajes, y realizando orquestaciones, coordinando flujos complejos, v.g.,
-llamar al servicio A; si responde `OK`, llama a B; si B falla, deshace A.
+enrutando peticiones, de acuerdo a reglas de negocio o contenido de los mensajes, y realizando orquestaciones, coordinando flujos complejos, v.g., llamar al servicio A; si responde `OK`, llama a B; si B falla, deshace A.
 
 * la *centralización*,
 facilitando la gobernanza y el mantenimiento del ecosistema.
 
 .Principios fundamentales
-* Bajo acomplamiento (_Loose Coupling_): 
-las dependencias deben de reducirse al mínimo, un cambio interno en un servicio
-no debe afectar al resto de consumidores.
+* Bajo acomplamiento (_Loose Coupling_):
+las dependencias deben de reducirse al mínimo, un cambio interno en un servicio no debe afectar al resto de consumidores.
 
 * Abstracción:
-oculta completamente la lógica de programación y tecnología subyacente, 
-exponiendo únicamente lo necesario, mediante contrato.
+oculta completamente la lógica de programación y tecnología subyacente, exponiendo únicamente lo necesario, mediante contrato.
 
 * Reutilización:
-los servicios se conciben, desde su diseño, para ser operados por múltiples 
-aplicaciones o procesos de negocio.
+los servicios se conciben, desde su diseño, para ser operados por múltiples aplicaciones o procesos de negocio.
 
 * Autonomía:
-cada servicio ejerce control total sobre su propia lógica de ejecución, datos y
-entorno.
+cada servicio ejerce control total sobre su propia lógica de ejecución, datos y entorno.
 
 .Principios de diseño
 * Sin estado (_statelessness_):
@@ -408,12 +391,11 @@ el consumidor invoca al proveedor, de forma directa o canalizada por el ESB.
 - Es una variación de SOA.
 Tienen muchos aspectos en común.
 - Consiste en construir una aplicación como conjunto de pequeños servicios
-independientes, tanto a nivel de código como de infraestructura, que se
-comunican entre ellos con mecanismos ligeros, de baja latencia.
+independientes, tanto a nivel de código como de infraestructura, que se comunican entre ellos con mecanismos ligeros, de baja latencia.
 Esto también es similar a SOA.
 - Cada servicio:
     * Gestiona una única parte de negocio, de forma exclusiva
-    * Debe poder desplegarse y escalarse de forma independiente, 
+    * Debe poder desplegarse y escalarse de forma independiente,
     sin tener efectos sobre el resto de servicios
     * Puede estar escrito en el lenguaje que mejor se adapte.
     Un microservicio puede usar NoSQL y otros SQL.
@@ -421,9 +403,8 @@ Esto también es similar a SOA.
 
 .Arquitectura
 - Peticiones de clientes
-- Van a una capa de interfaz de usuario. 
-Es *transparente* para el usuario:
-El cliente no sabe cuántos microservicios se están utilizando.
+- Van a una capa de interfaz de usuario.
+Es *transparente* para el usuario: El cliente no sabe cuántos microservicios se están utilizando.
 - Debajo están los microservicios, cada uno con sus módulos.
 
 .Características de Software
@@ -432,63 +413,65 @@ Cada servicio puede ser desplegado y modificado sin afectar al resto.
 
 .Características de organización
 * Contrasta con la arquitectura monolítica.
-Tiene en cuenta aspectos como capacidades, necesidades y preferencias de
-negocio.
-Se usan módulos multifuncionales, consiguendo creación de un módulo común para
-todos.
+Tiene en cuenta aspectos como capacidades, necesidades y preferencias de negocio.
+Se usan módulos multifuncionales, consiguendo creación de un módulo común para todos.
 La gran ventaja es el ahorro de tiempo y la comodidad del mantenimiento.
 
 .Características de arquitectura
-- Cada módulo es independiente: 
+- Cada módulo es independiente:
 cuenta con su propia base de datos, evitando sobrecarga y caída.
-- Incluye sistemas de aviso y actuación: 
-por tratarse de varios microservicios comunicados,
-se necesitan sistemas de aviso y actuación para reaccionar y/o recuperar frente 
-a fallos, generando una advertencia, contactando a soporte, etc.
-Es importante que sea positivo, favoreciendo una buena gestión de los módulos
-funcionales restantes.
+- Incluye sistemas de aviso y actuación:
+por tratarse de varios microservicios comunicados, se necesitan sistemas de aviso y actuación para reaccionar y/o recuperar frente a fallos, generando una advertencia, contactando a soporte, etc. Es importante que sea positivo, favoreciendo una buena gestión de los módulos funcionales restantes.
 
 === Ventajas de Microservicios frente a Arquitectura Monolítica
 
 |===
-|Categoría |Arquitectura Monolítica |Arquitectura de Microservicios
+| Categoría                                                                       | Arquitectura Monolítica | Arquitectura de Microservicios
 
-|Código
-|Una base de código única para toda la aplicación
-|Múltiples bases de código, una para cada microservicio
+| Código
 
-|Comprensibilidad
-|Puede ser confuso y/o difícil de mantener
-|Mayor facilidad de comprensión y mantenimiento
+| Una base de código única para toda la aplicación
 
-|Despliegue
-|Implementaciones complejas, con ventanas de mantenimiento y paradas programadas
-|Despliegue sencillo. Cada microservicio se implementa de forma individual, con
-un tiempo de inactividad mínimo
+| Múltiples bases de código, una para cada microservicio
 
-|Lenguaje
-|Típicamente desarrollado en un mismo lenguaje
-|Cada microservicio se puede desarrollar en su propio lenguaje
+| Comprensibilidad
 
-|Escalamiento
-|Escala la aplicación completa
-|Cada microservicio se puede escalar por separado
+| Puede ser confuso y/o difícil de mantener
+
+| Mayor facilidad de comprensión y mantenimiento
+
+| Despliegue
+
+| Implementaciones complejas, con ventanas de mantenimiento y paradas programadas
+
+| Despliegue sencillo. Cada microservicio se implementa de forma individual, con
+
+| Lenguaje
+
+| Típicamente desarrollado en un mismo lenguaje
+
+| Cada microservicio se puede desarrollar en su propio lenguaje
+
+| Escalamiento
+
+| Escala la aplicación completa
+
+| Cada microservicio se puede escalar por separado
 |===
 
 == Primer Parcial
 
-. Semana que viene tenemos clase de consulta. 
+. Semana que viene tenemos clase de consulta.
 Se conectan los que lo necesiten.
 No es obligatorio participar.
-. Parcial arranca 20:00. 
+. Parcial arranca 20:00.
 Se hacen las consultas y empezamos.
 . Se entrega a las 22:00.
-. Multiple-Choice: 
+. Multiple-Choice:
 pueden tener ninguna, una o varias respuestas correctas.
 . Se juzgan enunciados y se justifica únicamente lo falso.
-. Situaciones prácticas. 
-Planteamos una situación y tenemos que enunciar cómo lo resolveríamos, 
-recurriendo a los conceptos que vimos.
+. Situaciones prácticas.
+Planteamos una situación y tenemos que enunciar cómo lo resolveríamos, recurriendo a los conceptos que vimos.
 Enfocarse en el uso de lenguaje preciso, exhaustivo y técnico.
 
 == Clase 7 de octubre
@@ -504,14 +487,12 @@ Vamos a ver prototipado.
 Diseño de sistemas basados en un enfoque por prototipos.
 
 Nació hace mucho.
-El principal problema de la metodología de cascada es que el cliente da 
-_feedback_ al final.
+El principal problema de la metodología de cascada es que el cliente da _feedback_ al final.
 
 .Brecha de comunicación
 El *cliente* conoce el negocio a la perfección.
 Pero no sabe _expresarlo_ en un lenguaje técnico.
-El *equipo* conoce el _lenguaje técnico_,
-pero no conoce el negocio.
+El *equipo* conoce el _lenguaje técnico_, pero no conoce el negocio.
 Por eso se dice que existe una *brecha lingüística*.
 
 .Especificaciones ambiguas
@@ -522,29 +503,23 @@ Derivan en requerimientos contradictorios e incompletos.
 El usuario descubre lo que _realmente_ necesita con el sistema completo.
 Dificultando y retrasando cambios.
 
-Ejemplo, un cliente nos dice que necesita un celular que _saque muy buenas
-fotos_. 
+Ejemplo, un cliente nos dice que necesita un celular que _saque muy buenas fotos_.
 No sabemos que son _buenas fotos_.
 Hay un problema lingüístico.
 Y en la metodología de cascada esto se ve al final.
-Por eso el *enfoque por prototipos* se enfoca en ir entregando,
-de forma _iterativa e incremental_,
-un _pedacito_ nuevo de sus sistema.
+Por eso el *enfoque por prototipos* se enfoca en ir entregando, de forma _iterativa e incremental_, un _pedacito_ nuevo de sus sistema.
 Presentamos diferentes prototipos.
 Para trabajar sobre la brecha lingüística.
 
-Ejemplo 2.
-Tenemos que hacer un _software_ para un club deportivo.
-En primer lugar,
-haemos el módulo de socios.
+Ejemplo 2. Tenemos que hacer un _software_ para un club deportivo.
+En primer lugar, haemos el módulo de socios.
 Se lo presentamos al cliente.
 Ve la interfaz, prueba el funcionamiento.
 Y el cliente ofrece _feedback_.
 Una vez que da el ok, pasamos al segundo prototipo.
 Por ejemplo, módulo deportes.
 Luego profesores.
-Al final del proyecto, probando cada prototipo, llegamos a lo que el cliente 
-quería.
+Al final del proyecto, probando cada prototipo, llegamos a lo que el cliente quería.
 
 .Diferencia con metodologías ágiles
 A diferencia de las metodologías ágiles, no *ponemos el foco en tiempo*.
@@ -589,14 +564,11 @@ Pemite evaluar usabilidad y detalles finos.
 === Alcance funcional y enfoque técnico
 
 .Prototipo horizontal
-Cubre múltiples funciones, de forma superficial,
-por ejemplo,
-maqueta de todas las pantallas sin lógica interna.
+Cubre múltiples funciones, de forma superficial, por ejemplo, maqueta de todas las pantallas sin lógica interna.
 
 .Prototipo vertical
 Implementación completa de pocas funciones críticas.
-Por ejemplo,
-un solo módulo de _login_.
+Por ejemplo, un solo módulo de _login_.
 
 .Interfaz
 Foco en navegación, diseño y experiencia de usuario.
@@ -613,23 +585,31 @@ Interación tecnológica.
 === Prototipado vs. Modelo de cascada
 
 |===
-|Criterio |Modelo de Cascada |Enfoque por prototipos
+| Criterio                                     | Modelo de Cascada | Enfoque por prototipos
 
-|Estrategia
-|Previsión: especificación completa al inicio
-|Experimentación: ciclos iterativos continuos
+| Estrategia
 
-|Detección de errores
-|Tardía, en etapa de pruebas o producción
-|Temprana, en primeras iteraciones
+| Previsión: especificación completa al inicio
 
-|Rol del usuario
-|Puntual: participa al inicio y entrega final
-|Continuo: interviene en cada revisión
+| Experimentación: ciclos iterativos continuos
 
-|Métrica de avance
-|Fases documentadas completadas
-|Versiones funcionales evaluables
+| Detección de errores
+
+| Tardía, en etapa de pruebas o producción
+
+| Temprana, en primeras iteraciones
+
+| Rol del usuario
+
+| Puntual: participa al inicio y entrega final
+
+| Continuo: interviene en cada revisión
+
+| Métrica de avance
+
+| Fases documentadas completadas
+
+| Versiones funcionales evaluables
 |===
 
 === Ventaja clave del prototipado
@@ -676,8 +656,7 @@ objetivos claros para evitar improvisación
 
 .Errores frecuentes
 . Sobre-ingeniería:
-invertir demasiada calidad en prototipos desechables.
-. 
+invertir demasiada calidad en prototipos desechables. .
 
 === Conclusión
 
@@ -690,8 +669,7 @@ Son pruebas de fiabilidad, durabilidad, repetibilidad.
 .Por qué validar
 . Asegura que el diseño cumple los requisitos técnicos y funcionales.
 Cada prototipo cumple lo que se espera de él.
-Que sea eficiente, eficaz, cumpla con los tiempos de respuesta esperados, 
-satisfaga al cliente.
+Que sea eficiente, eficaz, cumpla con los tiempos de respuesta esperados, satisfaga al cliente.
 
 . Reduce costos y mejora fiabilidad del producto final.
 
@@ -726,8 +704,7 @@ Que el sistema hace lo que el usuario quiere.
 La que hace una persona sentada frente al sistema.
 
 .Automatizadas
-Pruebas que hace el sistema por si mismo, por ejemplo, usando inteligencia 
-artificial.
+Pruebas que hace el sistema por si mismo, por ejemplo, usando inteligencia artificial.
 
 .Regresión y exploratorias
 Luego de hacer una integración, volver atrás y probar todo junto
@@ -742,14 +719,12 @@ Qué tan cómodo le parece al usuario.
 
 === Fiabilidad
 
-Es la probabilidad de que el sistema funcione sin fallas durante un período de 
-tiempo determinado.
+Es la probabilidad de que el sistema funcione sin fallas durante un período de tiempo determinado.
 
 === Repetitibilidad y reproducibilidad
 
 .Repetibilidad
-Capacidad de obtener los mismos resultados con las mismas pruebas en condiciones
-iguales
+Capacidad de obtener los mismos resultados con las mismas pruebas en condiciones iguales
 
 .Reproducibilidad
 Capacidad de replicar resultados en entornos o condiciones diferentes.
@@ -776,5 +751,205 @@ No implica código correcto, sino que cumpla criterios, como cantidad de líneas
 
 === Conclusión
 
-Para saber que un prototipo está construido correctamente tiene que ser
-validado.
+Para saber que un prototipo está construido correctamente tiene que ser validado.
+
+== Clase del 14 de octubre
+
+=== Sistema de tiempo real
+
+Por ejemplo, un sistema que monitorea en tiempo real las pulsaciones de la persona.
+Si algún indicador está mal, emite una señal de alarma.
+Otro ejemplo es un sistema de un avión.
+Un semáforo, por ejemplo los preparados para no videntes.
+Un _airbag_, que reacciona a un choque.
+
+En general, dependen mucho del _Hardware_.
+
+Se puede definir como un sistema íntimamente conectado con el entorno.
+Tiene capacidad de reacción frente a eventos.
+Responden a estímulos del entorno, dentro de un plazo de tiempo determinado.
+Son difíciles de desarrollar.
+No se utiliza cualquier herramienta.
+
+Un sistema de tiempo real es *crítico* cuando tiene tiempos de respuesta que deben respetarse _estrictamente_.
+Un sistema crítico que emite una respuesta tardía puede tener consecuencias fatales.
+En un sistema de tiempo real acrítico se pueden tolerar retrasos ocasionales.
+
+Ejemplos generales en robótica, mecatrónica y domótica.
+
+.Mecatrónica
+Combinación de componentes mecánicos y electrónicos.
+Por ejemplo, un robot en la industria automotriz.
+Sus sistemas de tiempo real tienen que actuar en un período de tiempo predeterminado.
+Cada robot tiene que coordinarse en tiempo y espacio, para evitar fallas.
+
+.Domótica
+Relacionado con las casas inteligentes.
+Por ejemplo, el portón detecta mi auto y se abre automáticamente.
+Las luces de la casa de prender y se apagan en respuesta a eventos.
+
+=== Propiedades de un sistema en tiempo real
+
+=== Qué necesitamos para construir un sistema de tiempo real
+
+* Soporte para concurrencia.
+Temporización.
+Planificación determinista.
+Acceso a recursos.
+
+=== Metodología de Diseño de Sistemas de Tiempo Real
+
+Los sistemas de tiempo real (STR) dependen del resultado y del momento en que 
+ocurre.
+El tiempo de respuesta es crítico.
+
+.Tipos
+* STR duros: sin tolerancia a retrasos (airbar, reactor nuclear).
+* STR blandos: toleran demoras (video _streaming_).
+
+.Características de los STR
+* Determinismo temporal
+* Concurrencia
+* Sincronización
+* Prioridades
+* Planificación
+* Interacción con el entorno
+
+=== Modelos de diseño de sistemas de tiempo real
+
+.Modelo esencial
+Qué hace el sistema.
+Funcionalidad.
+Diagrama de Flujo de Datos.
+
+.Modelo de implementación
+Cómo lo hace.
+Cuál es el _Hardware_, _Software_, tiempos.
+
+.Modelo de Procesadores
+Estructura del _Hardware_ y comunicación.
+
+.Modelo de Tareas
+Unidades concurrentes con prioridad y plazo.
+
+.Modelo de Módulos
+Componente cohesionados y acoplados débilmente.
+
+=== Metodología de Ward y Mellor
+
+Basada en el análisis estructurado, basado en el DFD, extendido para STR.
+Separa el Modelo Esencial (el qué) del modelo de Implementación (el cómo).
+Introduce el Modelo de Control con Diagramas de Transición de Estado (DTE).
+El sistema puede estar activo.
+Ante un envento, realiza una acción.
+Y luego vuelve al estado inicial.
+
+.Ventajas
+* Claridad funcional y temporal
+* Integración de 
+
+=== Redes de Petri
+
+Herramienta formal para modelar concurrencia y sincronización.
+Los estados se llaman Plazas, las transiciones Eventos, Arcos y Tokens.
+Permiten simular y analizar el comportamiento del sistema.
+
+.Aplicaciones
+* Verificar bloques e interbloqueas
+* Simular 
+
+=== Diseño con UML y Orientación a Objetos
+
+Como es orientado a objetos usamos UML.
+UML permite modelar sistemas de tiempo real con múltiples vistas.
+
+.Diagramas más usados
+* Casos de uso para las interacciones del sistema.
+* Clases y objetos: para componentes
+* Secuencia: para comunicación
+
+=== Conclusiones
+
+El modelo esencial muestra qué hace el sistema.
+El modelo de implementación cómo lo hace.
+Ward y Mello integra control y funcionalidad.
+Redes de Petri permiten análisis de concurrencia.
+
+=== Metodología de Ward y Mellor
+
+Diseño estructurado para sistemas de tiempo real.
+
+.Objetivo
+* Analizar sistemas que interactúan con su entorno físico.
+* Separar la lógica funcional del control temporal.
+* Integrar modelos funcionales y de control.
+En general dados por componentes de Hardware como sensores.
+* Facilitar diseño e implementación de sistemas complejos.
+Un ejemplo es un simulador de vuelo.
+Sistemas que simulan cada uno de los componentes.
+Cada uno es un sistema de tiempo real independiente.
+Después funcionan juntos.
+
+.Modelos principales
+
+.Modelo ambiental
+Define límites del sistema.
+Identifica entidades externas y flujos de interacción.
+Utiliza un diagrama de contexto para representar entradas y salidas.
+
+.Modelo esencial
+* Describe funcinoes del sistema sin considerar la implementación física.
+
+.Modelo de control
+* Añade la dimensión temporal al análisis.
+* Emplea diagrama de transición de estados (DTE).
+
+.Relación entre modelos
+El modelo esencial define qué hace el sistema.
+El modelo de control define cómo lo hace.
+
+.Ventajas
+* Claridad de la estructura.
+* Separación entre lógica y control.
+
+.Desventajas
+* Requiere experiencia técnica.
+* Complejo en sistemas muy grandes.
+* No modela concurrencia real.
+
+.Ejemplo
+Sistema de semáforo.
+El sensor detecta vehículos.
+Un controlador procesa.
+Un módulo actuador cambia las luces.
+Hay un modelo de control.
+Un modelo de estado para cada una de las luces: verde -> amarillo -> rojo.
+Transiciones por tiempo o eventos, como emergencia, fallo.
+
+=== Redes de Petri en Sistemas de Tiempo Real
+
+Herramienta formal para representar concurrencia, sincronización y comunicación.
+No funcionamiento.
+Cómo se sincronizan, comunican, qué hacemos frente a problemas de concurrencia.
+
+Modelan flujo de información o recursos mediante lugares, transiciones y tokens.
+
+.Token
+Significa ficha.
+Es un permiso que se da dentro de un sistema.
+Van pasando de un proceso a otro, dando permiso de ejecución.
+Es un permiso para ejecución de un proceso.
+
+.Limitación temporal y necesidad de extensión
+Se desarrollaron extensiones de las Redes de Petri para incluir el tiempo.
+En un principio era sencillo y elemental.
+Hoy en día es un poco más complicado.
+
+.Redes de Petri temporaizadas
+Agregan tiempo de retardo en lugares o transiciones
+
+.Redes con intervalos temporales
+Cada transición tiene una ventana de ejecución.
+
+.Redes estocásticas
+Tiempos de disparo aleatorios, análisis de rendimiento.
