@@ -562,3 +562,190 @@ especificaciones dadas.
 
 En la etapa B tenemos otro informe, con otros requerimientos.
 Y seguimos así.
+
+== Clase 17 de octubre
+
+=== Auditoría de Software
+
+No es solo revisar código.
+Es un proceso sistemático y profundo para evaluar si un sistema (o conjunto de 
+sistemas) cumple con criterios de seguridad, eficiencia, cumplimiento normativo
+y alineación con objetivos de negocio.
+Implica aspectos técnicos y operativos.
+Es un buen negocio.
+
+Es un proceso de evaluación independiente que analiza:
+
+* Cómo está construido el _Software_.
+* Cómo funciona en la práctica.
+* Cómo se gestiona su desarrollo y mantenimiento.
+* Qué riesgos presenta
+
+Su objetivo es detectar:
+
+* Errores o fallas.
+* Vulnerabilidades de seguridad.
+* Ineficiencias.
+* Incumplimientos (legales o de estándares).
+* Probemas en procesos de desarrollo.
+
+Si no tenemos acceso al código, tenemos herramientas para verificar.
+
+.Objetivos principales
+* Garantizar calidad del sistema
+* Detectar riesgos técnicos y operativos
+* Verificar cumplimiento de normas (ISO, buenas prácticas)
+* Evaluar seguridad informática
+* Mejorar procesos de desarrollo (DevOps, testing, documentación)
+* Asegurar que el software cumple las reglas de negocio
+
+Aunque usemos Linux, tenemos que certificar que cumpla su cometido.
+Además, puede ser necesario una licencia, como Red Hat.
+
+.Aspectos a auditar
+. Código fuente
+Que sea de calidad (legibilidad, modularidad), use buenas prácticas, complejidad
+mínima posible, sin duplicación y que exista documentación interna.
+Si necesitamos, contratamos un experto.
+
+. Arquitectura del sistema
+Diseño (capas, microservicio, monolítico).
+Escalabilidad.
+Mantenibilidad.
+Uso de patrones.
+
+. Seguridad
+Vulnerabilidades (inyecciones SQL, XSS).
+Manejo de autenticación y autorización.
+Portección de datos.
+Cumplimiento de normativas.
+
+. Pruebas (testing)
+Existencia de tests unitarios, integrales.
+Cobertura de pruebas.
+Automatización.
+
+. Gestión del proyecto.
+Metodologías usadas (scrum, kanban).
+Control de versiones.
+Gestión de cambios.
+Documentación.
+
+. Infraestructura.
+Servidores.
+Cloud.
+Configuración.
+Backups.
+Monitoreo.
+
+. Cumplimiento normativo.
+Licencias de software.
+Protección de datos.
+
+El equipo se arma con expertos en cada área.
+
+=== Cómo se hace
+
+(Tiene un ciclo de vida, como todo).
+
+. Planificación
+. Recolectar información
+. Análisis
+. Evaluación
+
+.Planificación
+Se define:
+
+* Alcance
+* Objetivos
+* Criterios de evaluación
+* Recursos y tiempos
+
+Por ejemplo, auditar solo la seguridad de una aplicación web.
+
+.Recolectar información
+Se obtiene:
+
+* Código fuente o documentación en caso que sea imposible
+* Documentación
+* Diagramas usados para el desarrollo
+* Acceso al sistema para pruebas
+* Entrevistas con desarrolladores, (si es que están)
+
+.Análisis
+El trabajo más técnico.
+
+* Análisis estático
+
+* Análisis dinámico
+
+.Evaluación
+Se comparan resultados con:
+
+* Buenas prácticas
+* Estándares
+* Requisitos de negocio
+
+Se identifican:
+
+* Hallazgos
+* Riesgos
+* Nivel de criticidad (muy poco o muy críticos)
+
+.Elaboración del informe
+
+* Se elabora un documento para cada problema.
+* A cada problema se le asigna un nivel de riesgo.
+* Se ofrecen evidencias sobre las afirmaciones.
+* Se hace recomendaciones concretas.
+
+Este informe es el producto más importante de la auditoría.
+Se da un plazo para las sugerencias.
+
+.Seguimiento
+Verificar que se implementaron las mejoras.
+Puede implicar reauditorías.
+Se hace a partir de un plan de acción.
+Se puede auditar un poco más, no solo el ámbito donde se encontraron errores.
+
+=== Herramientas
+
+.Análisis de código
+SonarQube, ESLint.
+
+.Seguridad
+OWASP ZAP, Burp Suite.
+
+.Dependencias
+Snyk, Dependabot.
+
+.Testing
+JUnit, Selenium.
+
+.Performance
+JMeter.
+
+Las herramientas son buenas, arrojan resultados, pero no tienen criterio.
+Nosotros tenemos el criterio.
+Las decisiones pasan por nosotros que somos los profesionales del área.
+
+=== Tipos de aduitoría
+
+.Interna
+
+.Externa
+
+.Enfocada en seguridad
+
+=== Por qué son importantes
+
+Evitan problemas graves, como:
+
+* Fallas críticas en producción
+* Pérdida de datos
+* Ataques
+* Costos altos de mantenimiento
+* Incumplimiento legales
+
+Evitar problemas que eventualmente sean irreversibles, como perder datos de 
+clientes.
