@@ -4,19 +4,19 @@ v 0.6, 2026-09-22
 :imagesdir: ./img
 :stem:
 
-.TODO 
+.TODO
 
 
 == Primera clase, 11 de agosto
 
 .Objetivo de la materia
-Ver problemas vinculados a los sistemas operativos. 
-Entender cómo funcionan por detrás de la interfaz. 
-En el _backend_ pasan muchas cosas, buenas y no tanto. 
+Ver problemas vinculados a los sistemas operativos.
+Entender cómo funcionan por detrás de la interfaz.
+En el _backend_ pasan muchas cosas, buenas y no tanto.
 El sistema operativo tiene que lidiar con todas ellas.
 
 Se van a presentar distintos sistemas operativos.
-Lo importante es conocer que no se agota en los más conocidos: 
+Lo importante es conocer que no se agota en los más conocidos:
 Windows, Linux, MacOS o Android.
 
 Veremos las cosas que tienen todos en común.
@@ -43,13 +43,13 @@ No necesita del usuario para comenzar a funcionar.
 La carga se hace con una _rutina de booteo_.
 
 Hoy en día hay electrodomésticos con sistemas operativos.
-Que, por ejemplo en televisores, permiten conectarse a internet y acceder a 
+Que, por ejemplo en televisores, permiten conectarse a internet y acceder a
 servicios orientados a ellos.
 
 .Rutina de _booteo_
 El sistema carga en memoria su núcleo.
 Lo demás no es parte del núcleo, sobre él se ejecuta el resto de cosas.
-El resto de componentes no forma parte del sistema operativo. 
+El resto de componentes no forma parte del sistema operativo.
 El sistema operativo es el _motor_ del auto.
 
 Algunos tienen _micronúcleo_. Otros, como Linux, núcleo _monolítico_.
@@ -59,9 +59,9 @@ Cada uno tiene sus ventajas y desventajas.
 === Notas Video Sistemas Operativos
 
 .Historia
-40 y principios de los 50. 
-Las computadoras ocupaban habitaciones enteras. 
-Ejecutaban un programa a la vez, que podía durar días. 
+40 y principios de los 50.
+Las computadoras ocupaban habitaciones enteras.
+Ejecutaban un programa a la vez, que podía durar días.
 Se programaba con tarjetas perforadas.
 
 A medida que crece el poder de cómputo, el tiempo humano comenzó a ser el cuello
@@ -76,7 +76,7 @@ aprovechando los tiempos muertos, como, por ejemplo, cuando se envía un trabajo
 a imprimir. Este concepto se denomina *multitarea*.
 
 .Gestión de Memoria
-Ejecutar muchos programas requiere mantener memoria para cada uno.  
+Ejecutar muchos programas requiere mantener memoria para cada uno.
 A cada uno se le asigna su espacio.
 Cuando requieren de más memoria, se les entrega bloques separados.
 Pero los programas no pueden gestionar por sí solos la memoria física.
@@ -87,11 +87,11 @@ Si un programa llegara a fallar, no puede afectar a los demás.
 Emerge además el concepto de *protección de memoria*.
 Que implica que un programa no puede leer la memoria asignada a otro.
 
-En los 70s, una misma computadora podía atender varias terminales. 
+En los 70s, una misma computadora podía atender varias terminales.
 Por ello se desarrollan los *sistemas operativos de tiempo compartido*.
-Nace Multics. 
+Nace Multics.
 Y luego Unix, con un núcleo simple y herramientas separadas, con programas y
-bibliotecas.  
+bibliotecas.
 Con el tiempo, aparecen compiladores y editores de texto para el sistema, lo que
 lo convirtió en el más popular.
 
@@ -99,22 +99,22 @@ En los 80s, las computadoras siguienron bajando sus precios, convirtiéndose en
 equipos hogareños.
 
 En la actualidad, los sistemas operativos están en nuestros equipos, teléfonos,
-televisores. 
+televisores.
 Son muy resilientes, fallan rara vez.
 
 
 == Segunda clase, 18 de agosto
 
 Tema de hoy: procesos e hilos.
-Concepto usado por el sistema operativo para la organización y ejecución del 
+Concepto usado por el sistema operativo para la organización y ejecución del
 trabajo.
 
-.Proceso 
-Es una instancia de un programa en ejecución. 
+.Proceso
+Es una instancia de un programa en ejecución.
 Tiene su propio espacio de memoria aislado del resto.
 En él se guardan el código y los datos.
 Cuenta además con recursos asignados.
-Tales como archivos abiertos, conexiones de red, identificadores de sistema. 
+Tales como archivos abiertos, conexiones de red, identificadores de sistema.
 El sistema usa un número, el _Process ID_, para identificarlo.
 
 Cuando la máquina arranca se ejecutan muchos procesos de forma automática.
@@ -129,7 +129,7 @@ Solo la pila es propia de cada hilo.
 Crear un hilo es más liviano.
 Cuesta menos tiempo y memoria que crear un proceso.
 
-Hay riesgo de _condiciones de carrera_. 
+Hay riesgo de _condiciones de carrera_.
 Tema que veremos más adelante, es un problema de _sincronización de procesos.
 
 Ejemplo, el autoguardado de Word.
@@ -146,20 +146,20 @@ Los hilos serían como una familia, que comparte la casa.
 |===
 |Aspecto |Proceso |Hilo
 
-|Memoria 
+|Memoria
 |Espacio propio, aislado del resto
-|Compartida entre Hilos del mismo proceso 
+|Compartida entre Hilos del mismo proceso
 
-|Costo de creación 
+|Costo de creación
 |Alto
 |Bajo
 
 |Comunicación
 |Requiere IPC (_buffers, pipes, sockets_)
-|Directa: comparten el mismo espacio de memoria 
+|Directa: comparten el mismo espacio de memoria
 
 |Aislamiento
-|Alto: un fallo en un proceso no afecta al resto 
+|Alto: un fallo en un proceso no afecta al resto
 |Bajo: un hilo puede afectar a los otros
 |===
 
@@ -171,7 +171,7 @@ La elección entre procesos e hilos depende de las prioridades.
 Si se requiere resiliencia frente a fallos, convienen procesos separados.
 
 .Eficiencia y comunicación
-Para tareas relacionadas, que requieren acceder a los mismo datos de forma 
+Para tareas relacionadas, que requieren acceder a los mismo datos de forma
 rápida, convienen los hilos.
 
 .El _Scheduler_ decide
@@ -184,7 +184,7 @@ Luego hago doble click en otro archivo.
 Tengo dos procesos.
 Cada uno tiene su propia memoria.
 Cada uno tiene su propio `PID`.
-Cada instancia tiene su hilo para la interfaz y su hilo para el cálculo, por 
+Cada instancia tiene su hilo para la interfaz y su hilo para el cálculo, por
 ejemplo.
 Si una de las instancias se cae, la otra no se ve afectada.
 
@@ -237,17 +237,17 @@ Hay tres tipos de problemas de concurrencia.
 
 .Problemas de lectores y escritores
 Se da cuando más de un proceso quiere acceder para escribir al mismo recurso.
-Se resuelve impidiendo que dos procesos escriban sobre el mismo recurso al 
+Se resuelve impidiendo que dos procesos escriban sobre el mismo recurso al
 mismo tiempo.
 
 Cuando un proceso solicita permiso de _escritura_ sobre un recurso, el sistema
 operativo impide que cualquier otro proceso escriba sobre él.
 
 .Problemas de productores y consumidores
-Hay procesos que generan datos para que los utilicen otros. 
+Hay procesos que generan datos para que los utilicen otros.
 Un proceso es *productor*: genera datos.
 Otro es *consumidor*: toma esos datos.
-Este problema requiere de *servicios* para que los procesos se _comuniquen_ y 
+Este problema requiere de *servicios* para que los procesos se _comuniquen_ y
 _sincronicen_.
 
 .Problemas de concurrencia
@@ -266,7 +266,7 @@ La variable condicional tiene los mismo dos, pero incorpora _wait_ y _signal_.
 Implica _pasar con cuidado_.
 No es complicado de implementar.
 
-.Deadlock, o _exclusión mutua_ 
+.Deadlock, o _exclusión mutua_
 Dos procesos llegan al mismo tiempo al mismo recurso.
 Como cuando dos autos quieren pasar por un punte de una sola mano.
 Se encuentran por la mitad.
@@ -313,7 +313,7 @@ Como cuando un sistema pide una contraseña al usuario y aguarda que la ingrese.
 
 .Transición B
 Cuando el programa ha utilizado un tiempo asignado de procesador y tiene que
-dejar el paso al siguiente proceso. 
+dejar el paso al siguiente proceso.
 El sistema frena ese proceso y deja que otro continue.
 Es lo que haría el _mutex_ cuando bloquea un proceso.
 
@@ -327,14 +327,14 @@ El proceso se encuentra _preparado_ y pasa a _ejecución_.
 Cuando pasa de _bloqueado_ a _preparado_.
 
 .Cambio de contexto
-Cuando se pasa de una transición a otra hablamos de un _cambio de contexto_. 
+Cuando se pasa de una transición a otra hablamos de un _cambio de contexto_.
 Puede ser _parcial_ (entre hilos del mismo proceso) o _completo_ (cambio de
 procesos, hilos de distintos procesos).
 
 === Planificación
 
 El sistema tiene un proceso interno que se llama _Planificador_ (_Scheduler?_).
-De acuerdo a qué es lo que se está ejecutando, el planificador decide las 
+De acuerdo a qué es lo que se está ejecutando, el planificador decide las
 transciones de los procesos.
 
 La planificación se puede hacer de tres formas posibles:
@@ -343,16 +343,16 @@ La planificación se puede hacer de tres formas posibles:
 . A mediano plazo: procesos que hay que poner en espera
 . A corto plazo: procesos en ejecución inmediatamente
 
-=== Algoritmos de planificación 
+=== Algoritmos de planificación
 
 Hay dos tipos de algoritmos de planificación.
 Todo sistema operativo aplica los dos, dependiendo de lo que necesite.
 
 .Round-Robin
-Rotativamente asigna tiempos de ejecución a distintos procesos.  
+Rotativamente asigna tiempos de ejecución a distintos procesos.
 Se conoce también como algoritmo de rueda, porque se puede visualizar como una.
 El orden de asignación es secuencial y siempre igual.
-Los procesos que terminan de ejecutarse salen del anillo. 
+Los procesos que terminan de ejecutarse salen del anillo.
 Los que todavía siguen en ejecución permanencen en él.
 
 Por ejemplo, le asigna un tiempo al proceso A.
@@ -379,7 +379,7 @@ Dijimos que todo sistema operativo tiene que tener:
 
 En esta clase vamos a ver los sistemas de archivos.
 
-Hoy en día la mayoría de los discos nuevos son de _estado sólido_. 
+Hoy en día la mayoría de los discos nuevos son de _estado sólido_.
 Pero vamos a ver el funcionamiento del _disco rígido_, que sigue vigente.
 
 Todo disco rígido tiene:
@@ -406,7 +406,7 @@ Un cilindro está compuesto por todas las pistas del mismo número.
 Este, a diferencia de los anteriores, pertenece a la *estructura lógica*.
 
 Un *sector* es una _porción_ de la pista.
-Se denomina *conjunto de sectores* a todos los sectores desde la pista 0 a la 
+Se denomina *conjunto de sectores* a todos los sectores desde la pista 0 a la
 interior.
 
 Un conjunto de sectores dentro de una misma pista se conoce como *clúster*.
@@ -427,7 +427,7 @@ La desfragmentación de discos permite resolver este problema.
 
 === FAT, File Allocation Table
 
-Tabla de Asignación de Archivos. 
+Tabla de Asignación de Archivos.
 FAT.
 A medida que avanzaron los sistemas operativos se hizo crecer la FAT.
 En las primeras versión se usó FAT 8 o 12.
@@ -462,7 +462,7 @@ Los problemas son:
 Qué es Linux.
 El Kernel.
 
-GNU creó herramientas como `gcc` y `glibc`, 
+GNU creó herramientas como `gcc` y `glibc`,
 con las cuales se crean las distribuciones de GNU/Linux.
 
 === Tres capas de Linux
@@ -487,7 +487,7 @@ Distingue `archivo.txt` de `Archivo.txt`.
 * `/etc`, archivos de configuración del sistema
 * `/home`, directorios personales de los usuarios
 * `/root`, carpeta personal del administrador del sistema
-* `/tmp`, `/var`, archivos temporales y esas cosas 
+* `/tmp`, `/var`, archivos temporales y esas cosas
 * `/dev`, archivos que representan dispositivos
 
 .Usuarios, root, sudo
@@ -496,7 +496,7 @@ No se identifican por nombre sino por número.
 Uno se llama `root`.
 Ese es el administrador del sistema.
 
-Hay un comando que se llama `sudo`, 
+Hay un comando que se llama `sudo`,
 que permite tomar privilegios temporales para algunas cosas.
 
 .Permisos
@@ -529,7 +529,7 @@ La opción `-l`, formato detallado.
 El argumento `/home`, el directorio que queremos listar.
 
 .Pipes, redirección, operadores
-* `|` es un pipe. 
+* `|` es un pipe.
 Conecta la salida de un programa con la entrada del siguiente.
 * `>`, `>>`.
 Redirige la salida hacia un archivo.
@@ -547,3 +547,131 @@ Se intala _software_ desde repositorios.
 * `apt` en Debian
 * `dnf` en Red Hat
 * `pacman` en Arch
+
+== Clase, 13 de octubre
+
+=== Memoria en Sistemas operativos
+
+Conceptos fundamentales, técnicas de gestión y memoria virtual.
+
+=== Por qué gestionar la memoria
+
+Porque es un recurso limitado.
+Tiene una capacidad finita, compartida por múltiples procesos y aplicaciones.
+El sistema operativo debe administrar asignación y liberación.
+Una gestión eficiente permite ejecución simultánea y sin conflictos de múltiples
+procesos.
+
+=== Almacenamiento primario y secundario
+
+Se clasifica en dos grandes categorías.
+
+Almacenamiento primario (RAM).
+Contiene programas y datos temporalmente, mientras se encuentran en uso por el
+procesador.
+De acceso rápido.
+
+Almacenamiento secundario (disco rígido, ssd, otros medios persistentes).
+
+=== Tipos de memoria
+
+.Random Access Memory (RAM)
+Memoria de acceso aleatorio.
+Memoria operativa de la computadora.
+Se limpia cuando se apaga.
+
+.Read-Only Memory (ROM)
+Memoria de solo lectura.
+Tipo de almacenamiento volátil.
+Presente en ordenadores y equipos electrónicos.
+Almacena el Firmware esencial para el funcionamiento del equipo.
+
+.Memoria virtual
+
+.Memoria Cache
+Memoria muy rápida y de relativamente poco tamaño.
+Usada por el procesador.
+
+=== Evolución histórica
+
+En los primeros sistemas la memoria no alcanzaba para la ejecución del programa
+completo.
+Para solucionar este problema los programas se dividían en capas.
+Las capas se cargaban y descargaban desde el disco según fuesen necesarias.
+Esta técnica permitió ejecutar aplicaciones mayores a la memoria disponible.
+
+.Programación modular
+Los programas se desarrollan mediante programación modular en sistemas modernos.
+Se dividen aplicaciones en módulos independientes.
+Cada uno realiza funciones específicas.
+Cada módulo se puede cargar y ejecutar en la medida en que sea necesario.
+Se optimiza el uso de la memoria y se facilita el desarrollo, mantenimiento y
+reutilización.
+
+.Memoria virtual
+Permite que la parte en ejecución permanezca en memoria RAM.
+Las partes no utilizadas se mantienen en disco rígido.
+Así se puede ejecutar programas con requerimientos de memoria mayores a la
+memoria disponible en el sistema.
+
+=== Funcionamiento de la memoria virtual
+
+Tenemos un programa en ejecución que necesita una cierta cantidad de memoria
+para ser ejecutado.
+El proceso solicita memoria.
+El sistema operativo carga las páginas necesarias.
+Pasa a memoria RAM en la medida en que sea necesario.
+
+.Ventajas
+Permite la ejecución de programas que requieren de una cantidad de memoria
+mayor a la disponible en el sistema.
+
+.Desventajas
+El acceso al Disco es más lento que el acceso a memoria RAM.
+Un exceso de intercambio degrada el rendimiento.
+
+.Protección y concurrencia
+Cada proceso opera en su espacio, sin interferir al resto.
+
+=== Organización de la memoria
+Se buscan procesos alternativos al modelo de memoria virtual.
+Una de las primeras estrategias fue la partición fija de memoria.
+La RAM se divide en bloques de tamaño predeterminado.
+Cada bloque se destina al alojamiento de un proceso.
+Simplifica la administración de memoria.
+Pero puede generar fragmentación.
+
+.Paginación
+Dividimos la memoria en bloques de tamaño físico (frames).
+Los programas se dividen en bloques de mismo tamaño (páginas).
+Cada página se carga en un frame.
+Las páginas de un mismo programa pueden estar en distintos lugares.
+
+Ventajas de la paginación:
+Reduce fragmentación externa.
+
+.Segmentación
+Organiza los programas en unidades lógicas de tamaño variable llamados
+segmentos.
+Cada segmento representa una parte funcional del programa, como el código, los
+datos, la pila.
+Permite una organización cercana a la estructura real de la aplicación.
+
+.Swapping
+Qué pasa cuando la memoria RAM no alcanza para los procesos en ejecución.
+Swapping es el intercambio de procesos entre memoria RAM y una parte del disco
+rígido, denominada Swap.
+
+.Swap-in, Swap-out
+Entrada o salida de Swap.
+
+.Memoria virtual vs. Swapping
+Memoria virtual intercambia partes de programas.
+Swapping intercambia procesos completos.
+
+.Implementación del espacio de intercambio
+Tanto Windows como Linux utilizan espacio en disco para complementar la memoria
+principal.
+Ambos sistemas reservan una parte del disco para el Swap.
+Windows reserva entre un 2.5% a 5%.
+Linux destina un 20% de la capacidad del disco a Swap.
