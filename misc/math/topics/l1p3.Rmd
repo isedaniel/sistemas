@@ -1,0 +1,60 @@
+---
+title: "Lecture 1, Part III: Bond 'Mathematics'"
+output: html_document
+---
+
+[Lecture 1, Part III.](https://www.youtube.com/watch?v=NZ3Mva95UsQ)
+
+``` {r}
+# time: 6m
+```
+
+## Discounting and Bond Math
+
+Central for finance (and for life).
+
+### Interest
+
+Supose we have one dollar.
+It is invested.
+What happens in a year?
+We get $1+r$.
+$r$ is the **interest**.
+In $n$ years, you expect $(1+r)^n$.
+
+What happens in half of the year?
+
+* $(1+r/2)$.
+* If you re-invest, at the end of the year: $(1 + r/2)^2$.
+* So, for $n$ periods, $(1+ r/2)^{2n}$.
+
+Generalizing for $m$ periods:
+
+* $(1+r/m)$ for $m$ time.
+* $(1+r/m)^m$ by the end of the year.
+* $(1+r/m)^{mn}$ for $n$ years.
+
+What if we take $\lim_{m \to \infty}$,
+as we are able to invest every millisecond:
+
+* $\lim_{m \to \infty} (1+r/m)^{mn} = e^{mn}$.
+* This is how $e$ was discovered by Bernoulli.
+
+### Discounting
+
+Suppose we know we will receive a dollar in a year.
+How much should we pay?
+
+Say that is $x$ dollars.
+We borrow $x$.
+In one year I have a dollar, and I have to repay $x$ with interest,
+so I have $1 - x(1+r)$.
+
+* If $1 - x(1+r)$ is more than zero, then we will take infinite money.
+* If it is less than zero, nobody will borrow.
+* So it *has* to be zero: $1 - x(1+r) = 0$.
+* Finally, $x = \frac{1}{1 + r}$.
+
+This is called **discounting**.
+To pay for a dollar in a year, we need to discount.
+This is the discounting factor.

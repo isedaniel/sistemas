@@ -11,6 +11,127 @@ He is talking about his career and the course.
 He has background in engineering.
 Started in *research*, transition to *Quant*.
 Transition to *trading* in Morgan Stanley, until today.
-Morgan Stanley focused in external funds, and so did the instructor.
-They went to MIT to recruit.
-Bright students in quantitative, but lack finance background.
+Morgan Stanley focused in external funds, and so did the instructor,
+came to MIT to recruit.
+Bright students in quantitative, but lack finance insight.
+That's the class objective.
+
+## What is finance
+
+* Markets.
+
+Exchange goods in the original form.
+Stock exchange started with the same idea.
+But the products are different.
+ 
+* Products.
+
+  * **Money**, currencies. Like dollar, euro. 
+  *Bitcoin*.
+
+  * **Stock**. Equity indices, ETFs, IPOs, Primary/secondary.
+  IPO: from private to public.
+  The first sell is the primary.
+  The secondary is the operation when listed.
+
+  * **Bonds**, Loans, Credit Products, Interest Rates, Commodities,
+  Real Estate, Mortgages, ABS.
+  E.g.: the government take money and assume an *obligation* to pay back.
+  But the can also *default*.
+  So *bonds* have *risk*.
+ 
+  * **Derivatives**, Options, Futures, Forwards, Swaps, derivatives, 
+  structured products.
+  Contracts derived from other contracts.
+  Some have right, but not obligation.
+  
+* Participants.
+
+  * Commercials banks: deposits, lending.
+  Take deposits and lend the money to business.
+  
+  * Investment banks: equity, fixed income, IBD, Corporate Finance, Raise 
+  Capital.
+  JP Morgan was a commercial bank.
+  But turn to investment bank again.
+  3 main divisions.
+  Equity for stocks.
+  Fixed income (bonds), other concepts.
+  IBD, corporate finance, raising money for IPO.
+  Services for the clients.
+  
+  * Asset Management (E&F, Pension).
+  Produce products like funds.
+  
+  * Wealth Management (family office).
+  Helping the wealthy family to manage their wealth.
+  
+  * Hedge funds.
+  Trading entities.
+  Use their capital to generate returns.
+  
+  * Retail Investors.
+  Brokers.
+  
+  * Central Banks.
+  Policy driven.
+  
+  * Corporates
+
+* Objectives:
+
+  Maximize gain, minimize loss.
+  
+  Investors have money, need return.
+  Borrowers need money, have risks.
+  The trade between lender and borrower is the main driving force of the 
+  financial markets.
+  
+* Trader Types:
+
+  * Hedger: reduce risk
+  * Market maker: earn bid and offer
+  * Proprietary Trade and Fund Portfolio Manager: seek return taking risk
+
+## How is this all related to Math?
+
+Finacial Math is used for:
+
+* Princing Model:
+  Relative value, arbitrage-free.
+  All this instruments are quite complicated.
+  Maths is useful for pricing.
+  
+* Risk Management:
+  sizing, portfolio construction, capital allocation, leverage, liquidity,
+  counterpart, human risk aversion, greed/fear.
+  When you take risk, the first question is how big the position should be?
+  When do you sell?
+  When do you take profit?
+  Is a quantitative process.
+  Let math speak.
+  
+* Trading strategies:
+  Holy Grail strategy, perpetual money machine, robo-trader.
+  Can you make a trading strategy?
+  Let the machine make money for you.
+  Find those secrets.
+  How do you find them?
+  Do people always learn from their experiences?
+  Behavioral economics say this is possible: people is not always rational.
+  
+  
+* Key
+  
+  Understand your own objectives and constraints.
+  How much are you going to expend?
+  How much are you prepared to loose?
+  Are you going long or short term?
+  
+  Pick an area of what you are the best at, vs the rest of the market.
+  Why other people should give you the money?
+  
+  Find the suitable strategy for you.
+  
+  Math is a powerful tool. That is your edge!
+  If math is your strength, you need to make math you edge.
