@@ -232,8 +232,8 @@ En ocasiones conviene entrar con el activo por encima de la media móvil y
 acompañar el ascenso.
 
 == Conclusiones
-- Siempre operar a favor de la tendencia de mercado.
-Pero con _stop-loss_.
+- Operar a favor de la tendencia de mercado, pero con _stop-loss_.
+Puede fallar.
 No confiar ciegamente.
 
 - Un piso puede operar como resistencia luego de que se quiebra.
@@ -245,7 +245,19 @@ Se _congestionan_ en esas posición.
 
 - Un quiebre geniuno se hace con alto volumen.
 
-[source]
-----
-// 1H 45M
-----
+- No casarse con ningún papel.
+Cuando un papel quiebra la tendencia hay que cuidar el capital.
+Ser operador de largo plazo no implica sostener una acción a la baja.
+Si el papel pierde la tendencia se vende.
+Aunque lo fundamental indique otra cosa.
+Técnicamente se ha debilitado.
+
+- Si un papel se sitúa en piso se toma una posición LONG.
+Pero con un _stop-loss_ ajustado.
+
+- Cuando un activo está lateral, la media móvil no me sirve.
+Juega el rectángulo.
+
+- Simplificar los gráficos.
+Los líneas lejanas no son tan útiles.
+Utilizar solo lo que corresponda al contexto que estamos analizando.
