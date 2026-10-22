@@ -1,0 +1,11 @@
+---
+title: "Módulo 7 - Análisis Fundamental"
+output: html_document
+---
+
+[Módulo 7](https://www.youtube.com/watch?v=38-qSA2V7iI).
+Lo da el gran [Max](https://x.com/laninmz).
+
+## Análisis Fundamental
+
+Metodología de análisis de activos.
