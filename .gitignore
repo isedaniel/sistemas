@@ -13,7 +13,6 @@
 *.dpth
 *.gz
 *.md5
-*.json
 *.toc
 *.nav
 *.snm
