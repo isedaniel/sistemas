@@ -11,14 +11,14 @@ export class CounterComponent {
 
     constructor() {
         setInterval(() => {
-            this.counterSignal.update(curr => curr += 1)
+            this.counterSignal.update((curr: number) => curr += 1)
             console.log('tick');
         }, 2000);
     }
     increaseBy(value: number) {
         this.counter += value;
 
-        this.counterSignal.update((curr) => curr + value);
+        this.counterSignal.update((curr: number) => curr + value);
     }
 
     reset() {
