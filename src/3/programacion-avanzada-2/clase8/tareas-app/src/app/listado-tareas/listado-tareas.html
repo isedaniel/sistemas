@@ -1,0 +1,8 @@
+<button (click)="obtenerTareas()">Obtener tareas</button>
+
+@if (this.tareas$ |async; as tareas) {
+    @for (tarea of tareas; track tarea.id) {
+        <h2>{{ tarea.id }}</h2>
+        <p>{{ tarea.nombre }}</p>
+    }
+}
