@@ -1,0 +1,30 @@
+---
+title: "Lecture 2: Linear Algebra"
+output: html_document
+---
+
+[Lecture 2, Linear Algebra.](https://www.youtube.com/watch?v=0uimNNIuUyY&)
+
+``` {r}
+# time: 2m
+```
+
+## Vectors
+
+* Vector $v$ in $m$ dimensional space $\mathbf{v} \in R^m$.
+* Ordered list of $m$ numbers $(v_1, \dots, v_m)$.
+* Typically a column vector:
+
+$$
+  \begin{align}
+    \mathbf{v} &= \begin{bmatrix}
+      v_1 \\
+      \vdots \\
+      v_m
+    \end{bmatrix}
+  \end{align}
+$$
+
+* Graphical representation: a point in two dimensional space.
+Or a directed line segment from the origin.
+Both can be useful.

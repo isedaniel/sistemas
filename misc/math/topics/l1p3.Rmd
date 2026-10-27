@@ -11,46 +11,50 @@ output: html_document
 
 ## Discounting and Bond Math
 
-Central for finance (and for life).
+Interest rates, bonds are central for finance --and for life.
 
 ### Interest
 
-Supose we have one dollar.
+What is interest? 
+
+Supose we have one dollar in the bank.
 It is invested.
 What happens in a year?
 We get $1+r$.
-$r$ is the **interest**.
-In $n$ years, you expect $(1+r)^n$.
+$r$ is the **interest rate**.
 
-What happens in half of the year?
+If you reinvest, in two years it is $(1+r)(1+r)$.
+Generalizing, in $n$ years, you expect $(1+r)^n$.
+
+What happens if you take your money in half of the year?
 
 * $(1+r/2)$.
 * If you re-invest, at the end of the year: $(1 + r/2)^2$.
 * So, for $n$ periods, $(1+ r/2)^{2n}$.
 
-Generalizing for $m$ periods:
+Generalizing, dividing $m$ periods:
 
 * $(1+r/m)$ for $m$ time.
 * $(1+r/m)^m$ by the end of the year.
 * $(1+r/m)^{mn}$ for $n$ years.
 
 What if we take $\lim_{m \to \infty}$,
-as we are able to invest every millisecond:
+as if we are able to reinvest every millisecond:
 
-* $\lim_{m \to \infty} (1+r/m)^{mn} = e^{mn}$.
-* This is how $e$ was discovered by Bernoulli.
+* $\lim_{m \to \infty} (1+r/m)^{mn} = e^{rn}$.
+* That is how $e$ was discovered by Bernoulli.
 
 ### Discounting
 
 Suppose we know we will receive a dollar in a year.
-How much should we pay?
+How much should we pay for this right?
 
 Say that is $x$ dollars.
 We borrow $x$.
 In one year I have a dollar, and I have to repay $x$ with interest,
 so I have $1 - x(1+r)$.
 
-* If $1 - x(1+r)$ is more than zero, then we will take infinite money.
+* If $1 - x(1+r)$ is greater than zero, then we will have infinite money.
 * If it is less than zero, nobody will borrow.
 * So it *has* to be zero: $1 - x(1+r) = 0$.
 * Finally, $x = \frac{1}{1 + r}$.
@@ -58,3 +62,53 @@ so I have $1 - x(1+r)$.
 This is called **discounting**.
 To pay for a dollar in a year, we need to discount.
 This is the discounting factor.
+Assuming anualized compound.
+
+The price for $N$ dollars in the future:
+
+$$p = \frac{n}{1+r}$$
+
+Assuming continuos compound:
+
+$$p = N \cdot e^{-rn}$$
+
+This gets us to financial instruments based on interest rates.
+
+### Price of a coupon bond
+
+Borrow $P$ now. Pay periodic coupons $C$ and notional payment $N$ at the end.
+
+Assuming annual coupons, price $P$ of a bond is:
+
+$$
+P = \frac{C}{(1+r)} + \frac{C}{(1+r)^2} + \cdots +
+\frac{C}{(1+r)^n} + \frac{N}{(1 + r)^n} =
+\\ C \frac{(1 + r)^n - 1}{r(1 + r)^n}
+$$
+
+### Yield 
+
+Bonds are traded in markets.
+So we need to compare their prices.
+But they are not directly comparable.
+We need a comparable measure.
+That is **yield**.
+
+* Yield is a discount rate needed to obtain current price of a bond.
+* Yield of *par bond* is equal to coupon
+* Yield of *n year zero coupon* is $y = \frac{1}{\sqrt[n]{P}} - 1$
+* Price decreases with yield and increses with coupon
+
+### Yield curve
+
+* Term structure of yields.
+Bond of different maturities may have different yields.
+People want more yield for longer periods.
+* Discount factors can be bootstrapped from the yield curve.
+* Inverted yield curve is predictor for recession.
+
+### Bond price sensitivities
+
+* Duration: $D = - \frac{1}{P}\frac{dP}{dy}$
+
+* Bond prices are sensitive to yields.
