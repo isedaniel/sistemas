@@ -1,0 +1,41 @@
+html {
+    background-color: black;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+footer {
+    background-color: dimgrey;
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer .lists {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 25px;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li {
+    padding: 5px;
+    text-align: center;
+}
+
+footer li a:hover {
+    color: aquamarine;
+}
+
+footer p {
+    text-align: center;
+    padding: 25px;
+}
