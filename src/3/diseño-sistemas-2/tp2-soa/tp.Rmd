@@ -1,0 +1,152 @@
+---
+lang: es-AR
+output: 
+  pdf_document:
+    number_sections: true
+header-includes:
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage[default]{cantarell}
+  - \usepackage{setspace}
+  - \onehalfspacing
+---
+
+\begin{titlepage}
+    \centering
+    \includegraphics[width=.3\textwidth]{../../../img/udemm-logo.png}
+    
+    \vspace{0.2cm}
+    {\Large Facultad de Ingeniería} \\
+    \vspace{0.3cm}
+    {\Large Ingeniería en Sistemas} \\
+    \vspace{2cm}
+    
+    {\huge \bfseries Trabajo Práctico} \\
+    \vspace{0.5cm}
+    {\Large Arquitectura Orientada a Servicios} \\
+    
+    \vfill
+    
+    \begin{align*}
+      \textbf{Asignatura:} & \quad \text{Diseño de Sistemas II} \\
+      \textbf{Docente:} & \quad \text{Mg. Daniel Omar García} \\
+      \textbf{Alumno:} & \quad \text{Daniel Ise} \\
+      \textbf{Legajo:} & \quad 28547 \\
+    \end{align*}
+    
+    \vspace{1.5cm}
+    
+    Octubre, 2026
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+# Introducción
+
+# Arquitectura Orientada a Servicios
+
+La Arquitectura Orientada a Servicios (SOA, *Service-Oriented Architecture*),
+tiene como **objetivo** la construcción de aplicaciones como servicios autónomos
+e interoperables.
+Es un estilo arquitectónico que organiza las funciones de un sistema como
+componentes independientes, re-utilizables y débilmente acoplados.
+
+En SOA, los bloques monolíticos se sustituyen por componentes 
+funcionales autónomos, denominados **servicios**.
+Cada servicio se *orienta al negocio*: representa un proceso real como, por 
+ejemplo, procesar un pago.
+Para comunicarse utilizan *protocolos estándar*, como `SOAP/HTTP` o `JSON/HTTP`.
+
+Los servicios tienen *bajo acoplamiento*.
+No necesitan conocer las estructuras de datos, gestión de transacciones ni 
+lenguaje de implementación del resto de servicios.
+Son *configurables y visuales*, puesto que permiten el ensamblado de
+aplicaciones mediante la combinación, facilitando la adición, configuración o
+reemplazo de servicios.
+Colaboran entre sí con independencia de sus detalles de implementación,
+tecnologías o proveedores.
+Para ello recurren a *interfaces estandarizadas*.
+
+Suelen contar con un componente centralizador,
+conocido como **Bus de Servicio  Empresarial** (ESB, *Enterprise Service Bus*).
+El ESB integra sistemas de legado (*legacy*),
+permitiendo su exposición como interfaces re-utilizables.
+Se ocupa de la *traducción* de modelos de datos e interfaces, permitiendo la 
+comunicación entre nuevos servicios y sistemas de legado.
+Se encarga del *direccionamiento*, siguiendo reglas de negocio o
+especificaciones en mensajes, orquestando y coordinando flujos complejos.
+También permite la *centralización*, facilitando gobernanza y mantenimiento del
+sistema.
+
+La arquitectura SOA se basa en **principios fundamentales**:
+
+* El **bajo acoplamiento**, que implica la reducción de dependencias al mínimo.
+Un cambio en un servicio no debe afectar a los consumidores del mismo.
+
+* La **abstracción**, representa el ocultamiento de la lógica de programación y 
+tecnología subyacente del servicio, limitándose a la exposición de lo necesario,
+mediante el concepto de **contrato**.
+
+* **Reutilización**,
+los servicios se conciben, desde su diseño, para ser operados por múltiples
+aplicaciones o procesos de negocio.
+
+* **Autonomía**,
+cada servicio controla su lógica de ejecución, datos y entorno.
+
+Asimismo, sostiene **principios de diseño**:
+
+* Sin estado (*statelessness*):
+se trata de no mantener estado entre llamados, maximizando escalabilidad.
+
+* Descubribilidad:
+pueden ser localizados y descritos mediante un catálogo público y centralizado.
+
+* Composabilidad:
+pueden combinarse para orquestar procesos de negocio complejos.
+
+Su **flujo de invocación** sigue los pasos:
+
+1. Publicación:
+el proveedor publica el servicio y su interfaz en el registro.
+
+2. Búsqueda:
+el consumidor consulta el registro, buscando una funcionalidad específica.
+
+3. Contrato:
+el registro informa la ubicación y el contrato `WSDL/API` del servicio
+
+4. Ejecución:
+el consumidor invoca al proveedor, de forma directa o canalizada por el ESB.
+
+# Beneficios de la Arquitectura Orientada a Servicios
+
+El diseño de aplicaciones siguiendo la arquitectura SOA ofrece ventajas
+significativas en comparación con la arquitectura monolítica.
+
+## Seguridad más clara
+
+En la arquitectura SOA, cada servicio está desacoplado y encapsulado.
+Estos ocultan su lógica interna, detalles de implementación y tecnologías,
+comunicándose entre sí siguiendo los límites establecidos por los
+**contratos**.
+De esta forma, SOA permite la aplicación centralizada o granular de políticas de
+autenticación y autorización, facilitando la administración de la seguridad.
+
+## Facilidad de testeo
+
+
+
+## Mejor mantenibilidad
+
+## Desarrollo en paralelo
+
+## Fácil escalabilidad
+
+## Monitoreo preciso
+
+## Interoperabilidad
+
+# Arquitectura Cliente-Servidor y Arquitectura Orientada a Servicios
