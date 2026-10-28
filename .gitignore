@@ -10,6 +10,7 @@
 *.out
 .directory
 .Rhistory
+.RData
 *.dpth
 *.gz
 *.md5
