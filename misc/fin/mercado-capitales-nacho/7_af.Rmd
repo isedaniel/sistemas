@@ -1,6 +1,7 @@
 ---
 title: "Módulo 7 - Análisis Fundamental"
-output: html_document
+output:
+  pdf_document: default
 ---
 
 [Módulo 7](https://www.youtube.com/watch?v=38-qSA2V7iI).
@@ -8,4 +9,69 @@ Lo da el gran [Max](https://x.com/laninmz).
 
 ## Análisis Fundamental
 
-Metodología de análisis de activos.
+El análisis fundamental es una metodología de análisis complementaria al
+análisis técnico.
+
+## Precio y valor
+
+* Precio: costo de un activo.
+Cuánto sale comprar o vender.
+* Valor: percepción subjetiva.
+Cuánto *debería* salir.
+Si el valor que le doy es superior al precio, compro.
+
+En empresa:
+
+* Precio: del mercado.
+* Valor: percepción del precio que *debería* tener una empresa,
+que puede ser mayor o menor al precio.
+
+Pueden ser:
+
+* Precio = valor
+* precio $\neq$ valor
+  * precio < valor
+  * precio > valor
+
+Cuando el precio se mayor al valor se vende.
+Cuando es menor al valor se compra.
+
+Se determinan:
+
+* Precio $\to$ en el mercado
+* Valor:
+  * Descuentos flujo de caja
+  * Activo o patrimonio / cantidad de acciones
+  * Método de valuación relativa
+
+1. Valor futuro de flujo de fondos:
+
+* Similar a renta fija
+* Estimo flujo futuro de una empresa
+* Descuento el flujo a una tasa y determino un **valor real** de la empresa
+
+2. Tomo el patrimonio y divido por cantidad de acciones.
+
+Ej. Byma tiene *treasuries*. 
+Pero cotizaba debajo del valor de esos *treasauries*.
+El precio del mercado era menor al patrimonio de la empresa.
+
+3. Método de valuación relativa
+
+Se comparan *ratios* de empresa contra *ratios* del sector, industria o mercado.
+
+Dentro de valuación relativa hablamos de:
+
+* Price to sales
+* Price to cashflow
+
+## Price to sales
+
+$$
+  \frac{\text{Market Cap}}{\text{Ventas (TTM)}} =
+  \frac{\text{Precio Acción}}{\text{Ventas Acción}}
+$$
+``` {r}
+# voy en 19m
+
+```
