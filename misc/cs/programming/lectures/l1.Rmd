@@ -1,0 +1,63 @@
+---
+title: "L01 Functional Programming UC Berkeley CS 61A, 2010"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Scheme
+
+Uses polish notation for operator:
+
+``` {racket}
+(+ 1 2 3)
+```
+
+Function composition:
+
+``` {racket}
+(* (+ 1 2 3) (- 3 2))
+```
+
+Evaluates from inside to outside:
+
+``` {racket}
+(* (+ 1 2 3) (- 3 2))
+```
+
+Get SICP. Sleep over it.
+
+(Class give credits if the weakest of a group get better grades.
+Nice incentive.)
+
+Don't cut corners.
+Life is made of habits.
+Get good habits.
+Don't cheat.
+
+Define a function:
+
+``` {racket}
+(define (square x)
+ (* x x))
+```
+
+`x` is the *parameter*.
+`(* x x)` is the *body*.
+If I call `(square 2)`, `2` is the *argument*.
+
+``` {lisp}
+(define (plural wd)
+ (if (equal? (last wd) 'y)
+  (word (butlast wd) 'is)
+  (word wd 's)))
+```
+
+We can use *recursion*, for *pig Latin*:
+
+``` {lisp}
+(define (pigl wd)
+ (if (member? (first wd) '(a e i o u))
+     (word wd 'ay)
+     (pigl (word (bf wd) (fisrt wd)))))
+```
