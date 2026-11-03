@@ -675,3 +675,96 @@ principal.
 Ambos sistemas reservan una parte del disco para el Swap.
 Windows reserva entre un 2.5% a 5%.
 Linux destina un 20% de la capacidad del disco a Swap.
+
+== Clase, 3 de noviembre
+
+=== Espacio de direcciones
+
+Vimos que la memoria tiene direcciones.
+Los programas apuntan a las direcciones.
+Se produce swapping, segmentación, paginación, según corresponda.
+Vimos prioridades de ejecución.
+Tenemos que considerar que los programas no deberían acceder directamente a
+memoria física.
+Debe existir algo en el medio que permita ordenar la ejecución.
+Eso es el *espacio de direcciones*.
+
+Es una abstracción de la memoria.
+Una memoria física sin abstracción es el acceso directo a la celda real de la
+memoria.
+Si un programa escribe una parte de la memoria ocupada por el sistema operativo
+podemos tener problemas de funcionamiento (o seguridad).
+Por eso aparece la _abstracción de memoria_.
+
+Bajo esquema sin abstracción, solo se puede ejecutar un proceso por vez.
+No existiría multitarea.
+La ejecución segura de un proceso requeriría bajar a disco todo proceso en
+espera.
+Siendo entonces inviable.
+Además, un salto puede llevar a una instrucción incorrecta.
+Por eso se inventó la _abstracción de memoria._
+
+La forma más simple es usar dos registros:
+
+* Base
+* Límite
+
+El registro *base* es el inicio del espacio asignado.
+El registro *límite* es el tamaño.
+Base + límite es la memoria del proceso.
+
+Si hay _particionamiento fijo_ la memoria se divide en particiones de mismo
+tamaño.
+La ventaja es su simplicidad y facilidad de implementación.
+El problema es que se desperdicia espacio.
+
+Si el _particionamiento es dinámico_, se asigna de acuerdo a necesidad del
+proceso.
+Pero tiene fragmentación externa.
+Fragmentación interna es la fragmentación lógica.
+Fragmentación externa es la discontinuidad de las particiones.
+
+La *ubicación de procesos en memoria* puede involucrar tres algoritmos
+distintos:
+
+* Mejor ajuste (_best-fit_).
+Busca el bloque que más se aproxime.
+
+* Primer ajuste (_first-fit_)
+El primer bloque suficientemente grande.
+
+* Siguiente ajuste (_next-fit_).
+Ubica en un bloque suficientemente grande desde última colocación.
+
+.Conclusiones
+El espacio de direcciones sirve para proteger la memoria de los procesos.
+Para mejorar la administración de memoria.
+Los algoritmos buscan optimizar el uso de RAM.
+
+=== Virtualización y emulación
+
+Todo sistema operativo moderno tiene capacidad de virtualización y emulación.
+
+.Virtualización
+Hay un sistema _host_, anfitrión.
+Y un sistema _guest_, virtualizado.
+
+.Emulación
+Implementación por software del hardware de otro sistema.
+Permite ejecutar una arquitectura diferente.
+Emulamos el hardware de otra plataforma.
+
+.Traducción predictiva
+Anticipa código futuro, traduciendo instrucciones antes de necesitarlas.
+
+.Compilación Just-in-time (JIT)
+Almacena código traducido, mejorando rendimiento.
+
+.Emulación vs. simulación
+Emulación reproduce mecanismos reales.
+Emula hardware que no existe.
+Se comporta como si el hardware emulado estuviera presente.
+
+Simulación no simula hardware, representa comportamientos de interés.
+Por ej.: simulación de vuelo.
+El hardware existe en la realidad y simula el comportamiento del avión.
