@@ -1,9 +1,5 @@
 = Notas de Clase, Programación Avanzada 2
 
-== TODO
-
-- [ ] Resumir de la clase 8 en adelante para el parcial
-
 == Clase 4
 
 Arrancamos JS.
