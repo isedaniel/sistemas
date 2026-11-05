@@ -1163,7 +1163,7 @@ Después módulos chiquitos.
 Está dividio en 3 modulos:
 
 . Obtener el pedido
-  . Leer
+  .. Leer
   . Validar
 . Calcular total transformación
   . Descuento
