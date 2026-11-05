@@ -975,3 +975,205 @@ Cada transición tiene una ventana de ejecución.
 
 .Redes estocásticas
 Tiempos de disparo aleatorios, análisis de rendimiento.
+
+== Clase del 4 de noviembre
+
+=== Sistemas distribuidos
+
+.Ventajas
+* Economía.
+Mejor precio/rendimiento que un único _mainframe_.
+* Velocidad. 
+El conjunto supera a cualquier máquina.
+No estresamos un solo nodo.
+* Confiabilidad.
+Si un nodo falla, el resto sigue.
+Pero depende de la topología de la red.
+* Crecimiento incremental.
+Se suman nodos.
+* Compartir datos, dispositivos, comunicación.
+
+.Desventajas
+* Software. Pocas herramientas, diseño más difícil.
+* Red. Puede saturarse, perder mensajes, caer.
+* Seguridad: más puntos de accesos a proteger.
+* Mayor complejidad: más piezas, más fallas.
+
+=== Sistema operativo de red vs. sistema operativo distribuido
+
+.Sistema de red
+El usuario elige la máquina, sin transparencia.
+
+.Sistema distribuido
+Un único sistema, cada nodo forma parte de un sistema único.
+
+=== Objetivos de diseño
+
+. Transparencia
+
+El usuario trabaja como si estuviera en su propia máquina.
+El usuario no conoce ni necesita conocer para trabajar.
+
+Ocultar que los recursos están repartidos en ubicación, migración, replicación,
+concurrencia y paralelismo.
+
+. Flexibilidad
+
+Micronúcleo: mínimo en el núcleo, el resto como servidores de usuario.
+
+. Confiabilidad
+
+Los datos deben estar siempre disponibles.
+Debe tener tolerancia a fallos.
+Si un nodo sea cae debe seguir funcionando.
+
+. Desempeño
+
+Ajustar la granularidad.
+Grano grueso es mejor.
+
+. Escalabilidad
+
+Evitar componentes y algoritmos centralizados.
+
+.Técnicas de construcción
+Ocultar latencia (con comunicación asincrónica), distribución, replicación y 
+caché.
+
+=== Procesos, hilos, procesadores
+
+Clientes van a un hilo despachador, que envía a Trabajador 1, 2 o 3.
+La memoria es compartida por todos los hilos.
+Pertenecen al proceso servidor.
+Maneja los hilos de muchas máquinas.
+
+.Hilos de usuario
+Son rápidos, pero una llamada bloqueante puede frenar el proceso.
+
+.Hilos del núcleo
+
+=== Dentro de un SO distribuido
+
+.Archivos
+Tienen nombre con transparencia de ubicación.
+Es decir, es transparente en qué máquina esté.
+Debe ser transparente qué nombres podemos usar para el archivo, no importa si va
+a Windows, Linux.
+
+Tiene que haber replicación.
+Se tiene que copiar integramente la información al nodo que sea necesario.
+
+.Memoria
+Está compartida en una topología en estrella.
+Las páginas de memoria viajan en la red.
+La ejecución de un proceso se puede hacer en cualquier nodo.
+Si tenemos una página muy grande puede haber dificultades (que hay que
+considerar).
+La consistencia es un desafío importante, por lo que tenemos que contar con 
+modelos de consistencia (imagino, tipo consistencia eventual en NoSQL).
+
+.Procesos
+En redes, los relojes tienen que funcionar de forma coordinada.
+Un reloj atrasado se tiene que sincronizar.
+
+=== Arquitectura y diseño de sistemas distribuidos
+
+Qué vamos a automatizar.
+Cómo organizamos el sistema.
+Cómo divimos en módulos de buena calidad.
+
+==== Qué automatizar y qué dejar manual
+
+A la hora de hacer un sistema distribuido tenemos que ver qué mantenemos manual,
+que pasamos a automático y qué hacemos semiautomático.
+
+*Manual* queda lo que tenga que ver con personas, formularios, archivos físicos.
+Hay leyes que exigen el archivado de información durante un período mínimo.
+Ejemplo, información de facturación que se tiene que guardar físicamente en
+papel.
+El trabajo manual es más flexible pero tambien lento y con errores.
+
+*Semiautomatizado* es cuando la persona interactúa con el sistema, por ejemplo,
+generando documentación y luego guardándola físicamente.
+El sistema se encarga de validar y procesar.
+La persona hará su parte.
+
+*Automatizado* el sistema hace todo.
+Es más rápido y uniforme, pero más rígido.
+
+Los criterios para decidir tienen que ver con el volumen, la frecuencia, la 
+complejidad, la exactitud, el tiempo de respuesta y el costo-beneficio.
+
+=== Arquitecturas para los datos
+
+.Cliente-servidor
+Hay clientes que piden servicios al servidor a través de la red.
+
+.Mainframe
+Las terminales no tienen proceso propio, todo corre en la central.
+
+.Repositorio
+Módulos hablan por si solos con el repositorio.
+
+=== Arquitecturas relacionadas al flujo de trabajo
+
+.Tiempo real
+Grave: el tiempo.
+Lo crítico es el tiempo.
+Los sistemas en tiempo real tienen que reaccionar inmediatamente a eventos.
+
+.Jerárquica
+Los niveles altos controlan y coordinan a los niveles más bajos, que son los que
+procesan la información.
+
+.Centrada en transacción
+Tienen que cumplir las reglas ACID, atómica, consistente, aislada y durable.
+
+=== Buen diseño tiempo que cumplir: bajo acoplamiento, cohesión alta
+
+.Cohesión (dentro del módulo)
+. Coincidental
+. Lógica
+. Temporal
+. Procedimental
+. Comunicaional
+. Secuencial
+. Funcional
+
+.Acoplamiento (entre módulos)
+Dependen lo menos posible uno de otros.
+No pueden ser 100% independientes porque sino no existiría el sistema.
+Pero mientras menos dependan, menos es el acoplamiento.
+Una modificación en un módulo no requiere modificar otro.
+
+. De contenido
+. Común
+. Externo
+. De control
+. De sello
+. De datos
+. Sin acoplamiento
+
+Meta: cohesión funcional y acoplamiento de datos.
+
+=== Diagrama de estructura de los módulos 
+
+Tenemos un módulo grande que procesa pedidos.
+Después módulos chiquitos.
+Está dividio en 3 modulos:
+
+. Obtener el pedido
+  . Leer
+  . Validar
+. Calcular total transformación
+  . Descuento
+. Emitir factura
+  . Armar
+  . Imprimir
+
+=== Plataformas combinadas
+
+Una aplicación web, aplicación móvil y sucursales, que van al mismo _middleware_
+y pasarelas APIs, colas de mensajes conversión de formatos.
+El middleware va al servidor de lógica de negocio, mainframe de datos críticos
+y nube de servicios externos.

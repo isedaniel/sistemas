@@ -9,6 +9,8 @@ header-includes:
   - \usepackage[default]{cantarell}
   - \usepackage{setspace}
   - \onehalfspacing
+bibliography: referencias.bib
+csl: chicago-notes-bibliography-annotated.csl
 ---
 
 \begin{titlepage}
@@ -45,88 +47,74 @@ header-includes:
 
 # Introducción
 
-# Arquitectura Orientada a Servicios
+El presente trabajo práctico pretende abordar un conjunto de beneficios 
+asociados a la Arquitectura Orientada a Servicios --o SOA, por las siglas de su
+nombre en ingles, *Service-Oriented Architecture*.
+La Arquitectura Orientada a Servicios se basa en la construcción de aplicaciones
+mediante la composición de elementos funcionales autónomos, conocidos como 
+**servicios**^[ @garcia2026].
+Cada servicio se *orienta al negocio*, es decir, representa un proceso real, por 
+ejemplo, el procesamiento de un pago.
+Para la provisión de funciones complejas los servicios se combinan,
+interactuando entre sí mediante *protocolos de comunicación estándar*,
+como `SOAP/HTTP` o `JSON/HTTP`.
 
-La Arquitectura Orientada a Servicios (SOA, *Service-Oriented Architecture*),
-tiene como **objetivo** la construcción de aplicaciones como servicios autónomos
-e interoperables.
-Es un estilo arquitectónico que organiza las funciones de un sistema como
-componentes independientes, re-utilizables y débilmente acoplados.
+SOA se basa en los principios de *bajo acoplamiento*, *abstracción*,
+*reutilización* y *autonomía*.
+Hablar de *bajo acoplamiento* implica que un servicio no necesita conocer las
+estructuras de datos, gestión de transacciones ni lenguaje de implementación del
+resto de servicios.
+Se reducen las dependencias al mínimo, por lo que el cambio en el funcionamiento
+interno de un servicio no afecta al resto.
+El concepto de *abstracción* refiere al ocultamiento de la lógica de
+programación y tecnología subyacente del servicio.
+Este se limita a exponer lo necesaria para la interacción, en lo que se denomina
+como *contrato*.
+Desde sus principios de diseño, un servicio se concibe para ser *reutilizado*,
+operado en múltiples aplicaciones o procesos de negocio.
+Un servicio debe ser *autónomo*, controlar su propia lógica de ejecución, datos
+y entorno.
 
-En SOA, los bloques monolíticos se sustituyen por componentes 
-funcionales autónomos, denominados **servicios**.
-Cada servicio se *orienta al negocio*: representa un proceso real como, por 
-ejemplo, procesar un pago.
-Para comunicarse utilizan *protocolos estándar*, como `SOAP/HTTP` o `JSON/HTTP`.
+Los principios de diseño de la arquitectura SOA incluyen los conceptos de 
+*statelessness* --no mantener estado entre llamados, maximizando escalabilidad--,
+*descubribilidad* --la posibilidad de ser localizados y descritos mediante un 
+catálogo público y centralizado--,
+y *composabilidad* --los estados se orquestan y combinan en procesos de negocio
+de mayor complejidad.
 
-Los servicios tienen *bajo acoplamiento*.
-No necesitan conocer las estructuras de datos, gestión de transacciones ni 
-lenguaje de implementación del resto de servicios.
-Son *configurables y visuales*, puesto que permiten el ensamblado de
-aplicaciones mediante la combinación, facilitando la adición, configuración o
-reemplazo de servicios.
-Colaboran entre sí con independencia de sus detalles de implementación,
-tecnologías o proveedores.
-Para ello recurren a *interfaces estandarizadas*.
+Luego de esta breve definición, en el apartado siguiente se analizarán los 
+beneficios asociados a la Arquitectura SOA, tratando de argumentar en base a la
+información disponible por qué coincidimos (o no) con la afirmación propuesta.
 
-Suelen contar con un componente centralizador,
-conocido como **Bus de Servicio  Empresarial** (ESB, *Enterprise Service Bus*).
-El ESB integra sistemas de legado (*legacy*),
-permitiendo su exposición como interfaces re-utilizables.
-Se ocupa de la *traducción* de modelos de datos e interfaces, permitiendo la 
-comunicación entre nuevos servicios y sistemas de legado.
-Se encarga del *direccionamiento*, siguiendo reglas de negocio o
-especificaciones en mensajes, orquestando y coordinando flujos complejos.
-También permite la *centralización*, facilitando gobernanza y mantenimiento del
-sistema.
-
-La arquitectura SOA se basa en **principios fundamentales**:
-
-* El **bajo acoplamiento**, que implica la reducción de dependencias al mínimo.
-Un cambio en un servicio no debe afectar a los consumidores del mismo.
-
-* La **abstracción**, representa el ocultamiento de la lógica de programación y 
-tecnología subyacente del servicio, limitándose a la exposición de lo necesario,
-mediante el concepto de **contrato**.
-
-* **Reutilización**,
-los servicios se conciben, desde su diseño, para ser operados por múltiples
-aplicaciones o procesos de negocio.
-
-* **Autonomía**,
-cada servicio controla su lógica de ejecución, datos y entorno.
-
-Asimismo, sostiene **principios de diseño**:
-
-* Sin estado (*statelessness*):
-se trata de no mantener estado entre llamados, maximizando escalabilidad.
-
-* Descubribilidad:
-pueden ser localizados y descritos mediante un catálogo público y centralizado.
-
-* Composabilidad:
-pueden combinarse para orquestar procesos de negocio complejos.
-
-Su **flujo de invocación** sigue los pasos:
-
-1. Publicación:
-el proveedor publica el servicio y su interfaz en el registro.
-
-2. Búsqueda:
-el consumidor consulta el registro, buscando una funcionalidad específica.
-
-3. Contrato:
-el registro informa la ubicación y el contrato `WSDL/API` del servicio
-
-4. Ejecución:
-el consumidor invoca al proveedor, de forma directa o canalizada por el ESB.
+En la sección final se ofrecen argumentos sobre la articulación de SOA y la
+arquitectura Cliente-Servidor.
+Ambas no son mutuamente excluyentes, es decir, pueden perfectamente coexistir en
+un mismo sistema, siempre que se respeten los principios asociados a ambas,
+como se podrá observar hacia el final.
 
 # Beneficios de la Arquitectura Orientada a Servicios
 
 El diseño de aplicaciones siguiendo la arquitectura SOA ofrece ventajas
 significativas en comparación con la arquitectura monolítica.
 
-## Seguridad más clara
+El trabajo práctico plantea analizar un conjunto de beneficios asociados a la
+Arquitectura Orientada a Servicios (SOA), ventajas que se sostienen en la 
+comparación con la arquitectura Monolítica.
+Estas ventajas son:
+
+* Definición de seguridad más clara
+* Facilita el *testeo*
+* Mejora la mantenibilidad
+* Favorece el desarrollo en paralelo
+* Facilita la escalabilidad
+* Permite un monitoreo preciso
+* Permite la interoperabilidad
+
+A continuación, se analiza brevemente cada una de estas afirmaciones,
+recurriendo al análisis de bibliografía correspondiente, brindando luego una
+opinión personal al respecto.
+
+## Definición de seguridad más clara
 
 En la arquitectura SOA, cada servicio está desacoplado y encapsulado.
 Estos ocultan su lógica interna, detalles de implementación y tecnologías,
@@ -135,9 +123,14 @@ comunicándose entre sí siguiendo los límites establecidos por los
 De esta forma, SOA permite la aplicación centralizada o granular de políticas de
 autenticación y autorización, facilitando la administración de la seguridad.
 
+Agarro 3 artículos.
+Trato de probar la *learn-by-review* combinando con lo que estoy aprendiendo a 
+escribir.
+Esa es mi investigación, que condenso aquí.
+
 ## Facilidad de testeo
 
-
+A
 
 ## Mejor mantenibilidad
 
@@ -150,3 +143,5 @@ autenticación y autorización, facilitando la administración de la seguridad.
 ## Interoperabilidad
 
 # Arquitectura Cliente-Servidor y Arquitectura Orientada a Servicios
+
+# Bibliografía citada
