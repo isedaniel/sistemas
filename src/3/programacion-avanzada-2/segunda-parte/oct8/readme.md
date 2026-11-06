@@ -14,27 +14,27 @@ componiendo servicios.
 Chequeamos que tengamos `node` y `npm`:
 
 ```bash
-$ node --version
-$ npm --version
+node --version
+npm --version
 ```
 
 Instalamos la herramienta `@angular/cli`, se puede buscar en la web de `npm`.
 
 ```bash
-$ npm install -g @angular/cli
-$ ng version
+npm install -g @angular/cli
+ng version
 ```
 
 Creamos un proyect Angular:
 
 ```bash
-$ ng new nombreproyecto
+ng new nombreproyecto
 ```
 
 Para levantar el servidor de nuestro proyecto:
 
 ```bash
-$ ng serve
+ng serve
 ```
 
 Se detiene con `q`.
@@ -57,10 +57,30 @@ No es ideal compartir como era en `Vanilla JS`.
 Un componente se define por el decorador `@Component({})`.
 El decorador recibe un objeto, donde es importante especificar:
 
-* `imports:`, los módulos que incoporamos.
-* `selector`, cómo se representa en un template que lo componga
+* `imports`, los módulos que incoporamos.
+* `selector`, cómo se representa en un template que lo incluya
 * `styleUrl`, la ruta del css del componente.
+* `templateUrl`, la ruta del html del componente.
+
+Limpiamos el template en `app.html` y la clase `App` para empezar a trabajar.
+
+Para generar un nuevo componente usamos el comando:
 
 ```bash
-# quedo 
+ng generate component nuevoComponente
+```
+
+Se puede usar camelCase y `ng` lo acomoda solo.
+Para invocarlo en `App` usamos el selector.
+
+Puedo generar una interfaz con `ng`:
+
+```bash
+ng generate interface Nombre
+```
+
+La genera en `src/app`.
+
+```bash
+# quedo 1h40m
 ```

@@ -1,0 +1,8 @@
+<h2>tareas</h2>
+<!-- para renderizar sus elementos iteramos con la instrucción @for -->
+<!-- el elemento track ayuda a redibujar la pantalla de forma más eficiente -->
+@for (task of tasks; track task.id) {
+    <!-- llamamos a item-listado para crear cada elemento,
+     pasando cada una de las Task que recibimos de la falsa API -->
+    <app-item-listado [task]="task" />
+}
