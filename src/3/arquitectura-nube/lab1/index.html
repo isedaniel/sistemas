@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Área Informática | Hardware e Insumos</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #0284c7;
+            --accent-hover: #0369a1;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #334155;
+            --text-light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Top Bar & Header */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--text-light);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #020617;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            font-weight: 600;
+            margin: 0 15px;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Catalog Grid Layout (Sustituto moderno a la tabla) */
+        .grid-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card .category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .card .title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 10px 0;
+            color: var(--primary);
+        }
+
+        .card .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0f766e;
+            margin-top: auto;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: #ffffff;
+            border-left: 4px solid #10b981;
+            padding: 15px 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            font-size: 13px;
+            padding: 25px;
+            margin-top: 50px;
+            border-top: 1px solid #1e293b;
+        }
+
+        footer b {
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="ofertas.aspx">Ofertas del día</a>
+    </nav>
+
+    <header>
+        <h1>Área Informática</h1>
+        <p>Hardware e Insumos corporativos para tu empresa</p>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">Catálogo de Productos</h2>
+        
+        <div class="grid-products">
+            <div class="card">
+                <div>
+                    <span class="category">Periféricos</span>
+                    <div class="title">Teclado Logitech K120</div>
+                </div>
+                <div class="price">$15 000</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="category">Periféricos</span>
+                    <div class="title">Mouse Logitech M100</div>
+                </div>
+                <div class="price">$9 000</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="category">Equipos para Oficina</span>
+                    <div class="title">CPU Ryzen 3 + 8G Ram + SSD 240G</div>
+                </div>
+                <div class="price">$400 000</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="category">Monitores</span>
+                    <div class="title">Monitor Philips 19"</div>
+                </div>
+                <div class="price">$150 000</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="category">Insumos para Impresión</span>
+                    <div class="title">Tinta Alternativa x 250ml</div>
+                </div>
+                <div class="price">$5 000</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Contacto Comercial</h2>
+        <div class="contact-box">
+            <p><strong>Ubicación:</strong> Perú 67, Santiago del Estero | <strong>Teléfono:</strong> (385) 4299971</p>
+        </div>
+
+    </div>
+
+    <footer>
+        Página <b>estática</b> servida por IIS en Amazon EC2<br>
+        Daniel Ise · Arquitectura de Computación en la Nube · UdeMM
+    </footer>
+
+</body>
+
+</html>
