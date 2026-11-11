@@ -353,7 +353,7 @@ de Accesos Basado en Roles (RBAC).
 
 7. Dos enunciados que describen con precisión características de infraestructura
    de patrones comunes de recuperación frente a desastres (DR).
-    1. El patrón de luz piloto tiene infraestructura mínima en contínuo
+    1. El patrón de luz piloto tiene infraestructura mínima en continuo
     funcionamiento. El resto de infraestructura se activa cuando ocurre el
     desastre.
     2. El patrón de espera semiactiva tiene una versión reducida de toda la
@@ -361,3 +361,90 @@ de Accesos Basado en Roles (RBAC).
     preestablecidos.
 
 8. 
+
+## Evaluación final
+
+1. Tipo de Identidad para acceso a un bucket específico de S3.
+   - Rol
+
+2. Pasos para determinar acceso o no a un recurso para una entidad de IAM.
+   - Denegación explícita, autorización explícita, denegación implícita.
+
+3. Característica de S3 para evitar sobrescritura accidental.
+   - Control de versiones de S3
+
+4. Acceso seguro de largo plazo a varias cuentas a un Bucket de S3.
+   - Política de bucket
+
+5. Acceso compartido para 300 instancias EC2 Linux.
+   - Elastic Files System (EFS)
+
+6. Instancias de bajo costo y baja prioridad en AWS.
+   - Instancias SPOT.
+
+7. Aplicación en EC2 con SQL Server en RDS. Sobrecarga con informes semanales.
+   Solución de menor costo administrativo.
+   - Réplicas de lectura e informes a partir de esos nuevos puntos de lectura.
+
+8. Aplicación consulta DynamoDB por `user_id`. Ahora necesita consultar por
+   `residents_email`. Solución de mejor rendimiento.
+   - Crear índice secundario global (GSI) para tabla `applicants` con
+   `residents_email` como clave de partición.
+
+9. Bloquear IP maliciosa sin interrumpir tráfico de usuarios de instancia de
+   EC2.
+   - Modificar regla de entrada de la lista de control de acceso a la red (ACL).
+
+10. Aplicación tiene base de datos administrada por el cliente. Necesita acceso
+   a internet para actualizarse pero no debe ser accedida desde afuera.
+   - (no es) Usar subred privada y NAT para permitir acceso a internet.
+
+11. Arquitectura híbrida de bajo costo en AWS.
+   - Usar AWS Site-to-Site VPN
+
+12. Forma más rentable de conectar 3 VPC.
+   - Interconexión de VPC (VPC Peering).
+
+13. Acceso temporal en cuentas de AWS.
+   - AWS Security Token Service (STS).
+
+14. Cifrado a nivel de disco en EC2.
+   - Elastic Block Store (EBS)
+
+15. Producto para reducir costos en arquitectura en AWS con varias cuentas.
+   - AWS Organizations.
+
+16. Equilibrador de carga para AWS Lambda.
+   - Equilibrador de carga de aplicación (ALB).
+
+17. EC2 lee y procesa imágenes, con eventos señalados desde Simple Queue Service
+   (SQS), se lee desde S3 y los metadatos se guardan en DynamoDB. Qué escalar si
+   aumenta el tráfico 10 veces.
+   - EC2.
+
+18. Servicio que ofrece sugerencias en tiempo real para CloudFormation.
+   - Amazon Q Developer.
+
+19. Problemas de rendimiento por aumento de tráfico de lectura en RDS.
+   - Almacenar en caché con Amazon ElastiCache
+
+20. Problemas de rendimiento en EC2 por procesamiento de imágenes cargadas en S3
+   de forma sincrónica. Cómo integrar SQS para resolver el problema.
+   - Guardar en S3, notificar a SQS, EC2 procesa en cuanto puede.
+
+21. Cinco aplicaciones de alta demanda necesitan acceder al mismo evento.
+   - Patrón fan-out: transmitir mediante Simple Notification Service (SNS) a
+   cinco suscriptores de SNS, uno para cada aplicación. Cada una lee de ahí. Si
+   se cae, retoma.
+
+22. Lambda lee mucho RDS.
+   - (no es)Proxy en el medio en EC2
+
+23. API de servicio gratuito limitado, servicio de pago ilimitado en AWS.
+   - API Rest en AWS API Gateway.
+
+24. Solución más simple para  usar scripts de Spark en AWS.
+   - AWS Glue.
+
+25. Estrategia de recuperación de bajo costo en AWS.
+   - Backup and restore.
