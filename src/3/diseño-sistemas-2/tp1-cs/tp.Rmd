@@ -1,0 +1,196 @@
+---
+lang: es-AR
+geometry: margin=2.5cm
+fontsize: 11pt
+output: 
+  pdf_document:
+    number_sections: true
+    latex_engine: pdflatex
+    pandoc_args: "--pdf-engine-opt=--shell-escape"
+header-includes:
+  - \usepackage{graphicx}
+  - \usepackage{float}
+  - \usepackage[default]{cantarell}
+  - \usepackage{setspace}
+  - \onehalfspacing
+  - \usepackage{svg}
+bibliography: referencias.bib
+csl: chicago-notes-bibliography.csl
+---
+
+\begin{titlepage}
+    \centering
+    \includegraphics[width=.3\textwidth]{../../../img/udemm-logo.png}
+    
+    \vspace{0.1cm}
+    {\Large Facultad de Ingeniería} \\
+    \vspace{0.2cm}
+    {\large Ingeniería en Sistemas} \\
+    
+    \vspace{2.5cm}
+    \rule{\linewidth}{0.4mm} \\[0.4cm]
+    {\huge \bfseries Trabajo Práctico} \\[0.3cm]
+    {\Large Arquitectura Cliente-Servidor} \\[0.2cm]
+    \rule{\linewidth}{0.4mm}
+    
+    \vfill
+    
+    \begin{tabular}{r l}
+        \textbf{Asignatura:} & Diseño de Sistemas II \\
+        \textbf{Docente:}    & Mg. Daniel Omar García \\
+        \textbf{Alumno:}     & Daniel Ise \\
+        \textbf{Legajo:}     & 28547 \\
+        \textbf{Fecha:}      & Noviembre, 2026
+    \end{tabular}
+\end{titlepage}
+
+\pagenumbering{roman}
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+# Introducción
+
+La arquitectura Cliente-Servidor es un modelo de diseño de *software* basado en
+la división del sistema en dos componentes principales:
+el *cliente* y el *servidor*[@garcia2026].
+Su funcionamiento sigue el *ciclo de petición y respuesta*:
+
+- El **cliente** envía una *petición* al servidor solicitando un recurso o servicio.
+- El **servidor** *procesa* la solicitud y elabora una *respuesta*.
+- El **servidor** *envía* esa respuesta al cliente.
+- El **cliente** *recibe* la respuesta y la presenta o procesa localmente.
+
+Toda la comunicación se rige por un *protocolo* que especifica las *reglas* de
+que cliente y servidor deben seguir.
+Por ejemplo, el cliente puede ser el navegador web `Chromium`,
+que envía una petición a un servidor web `Apache`.
+El servidor recibe la solicitud, ejecuta la lógica correspondiente en `PHP` y
+genera una respuesta en formato `HTML`,
+que envía de regreso al cliente para que este la renderice en pantalla.
+Este intercambio se realiza siguiendo las reglas de los protocolos `TCP/IP` y
+`HTTP`.
+
+Adoptar una arquitectura Cliente-Servidor ofrece algunas
+**ventajas**[@garcia2026].
+En primer lugar, la **centralización**, dado que los recursos y datos relevantes
+del sistema residen en el servidor.
+Segundo, facilita la **administración** de la información desde un
+único punto, aspecto clave para aplicaciones que deben cumplir, por ejemplo,
+normativas de protección de datos.
+Tercero, permite **escalar** la capacidad de procesamiento para atender a más
+clientes ante incrementos de tráfico.
+Por último, posibilita un mejor **control de la seguridad** mediante políticas
+centralizadas en el servidor.
+
+Este estilo arquitectónico trae también sus **desventajas**[@garcia2026].
+Una aplicación basada en este modelo **depende críticamente del servidor**:
+un error o caída del mismo puede dejar a todos los usuarios sin acceso al
+servicio.
+Asimismo, desplegar y mantener una infraestructura propia suele demandar una
+**inversión significativa** en *hardware* y seguridad.
+Finalmente, el sistema puede sufrir **saturación** frente a picos de usuarios
+concurrentes, si no fue diseñado adecuadamente para escalar.
+
+El presente trabajo práctico analiza cuatro casos exitosos de implementación de
+esta arquitectura:
+
+1. **Netflix**, plataforma de *streaming* de video.
+2. **Spotify**, servicio de *streaming* de audio (en particular, música y
+*podcasts*).
+3. **WhatsApp**, aplicación de mensajería instantánea.
+4. **Gmail**, servicio pionero de correo electrónico web.
+
+Se eligieron estas aplicaciones por ser referentes en la resolución
+de los principales desafíos del modelo Cliente-Servidor: todas gestionan grandes
+volúmenes de datos, responden a picos de demanda y garantizan la
+seguridad y privacidad mediante mecanismos robustos de autenticación y
+autorización.
+Además, operan en varias plataformas, computadoras de escritorio, teléfonos
+móviles, portátiles y televisores, exigiendo altos
+estándares de rendimiento, escalabilidad y experiencia de usuario.
+
+En lo que respecta a los casos de implementaciones problemáticas, se eligieron:
+
+1. **SIU-Guaraní**, sistema de autogestión académica utilizado en universidades
+argentinas.
+2. **SimCity (2013)**, videojuego cuyo lanzamiento exigía conexión permanente a
+internet para jugar.
+3. **Bolsas y Mercados Argentinos (BYMA)**, infraestructura bursátil argentina
+que ha experimentado incidentes en jornadas de alta operatoria.
+
+Estos casos fueron elegidos porque permiten examinar fallas recurrentes del
+modelo frente a picos de concurrencia y dependencia crítica de la red,
+evidenciando riesgos como cuellos de botella, sobrecarga del servidor e
+indisponibilidad del servicio[@garcia2026].
+
+# Casos exitosos
+
+## Netflix
+
+**Netflix** es un proveedor de servicios de *streaming* de video, enfocado en
+series y películas.
+Enfrenta grandes desafíos de ingeniería en lo que respecta a rendimiento:
+debe recibir, procesar y enviar grandes volúmenes de datos a cientos de miles de
+clientes de todo el mundo, que se conectan desde dispositivos muy diferentes en
+capacidades de cómputo.
+El Servidor debe de proveer autenticación, catálogo, perfiles y transmisión de
+video en tiempo real, por lo que supone un caso de análisis particularmente
+interesante.
+
+El UML es un diagrama de secuencia representativo es un usuario conectándose al
+servicio con sus credenciales, eligiendo del catálogo para el que tiene
+autorización, y recibiendo el *streaming* de video.
+
+\includesvg{uml/netflix.svg}
+
+La arquitectura Cliente-Servidor es fundamental para un servicio de streaming,
+que debe enviar grandes volúmenes de datos a muchos usuarios en todo el mundo.
+
+## Spotify
+
+El segundo caso a considerar es el de **Spotify**. Se trata también de un
+servicio de *streaming*, en este caso de audio, siendo quizá el servicio más
+exitoso en su rubro. Sus servidores deben de proveer a los clientes, que
+utilizan todo tipo de dispositivos, de autenticación, recomendaciones, acceso a
+catálogo y transmisión de audio. Se trata de otro caso de una empresa de gran
+éxito, con una amplia variedad de clientes (en términos de dispositivos
+diferenciados), por lo que su análisis reviste de particular importancia.
+
+## Whatsapp
+
+El tercer caso de éxito a considerar es el de **Whatsapp**, una aplicación
+de mensajería instantánea, orientada principal aunque no exclusivamente a la 
+mensajería móvil. El servidor debe de gestionar colas de mensajes,
+notificaciones, autenticación y encriptación, tratando de minimizar, en los
+casos en que corresponda, el consumo de batería en sus clientes. La gran
+difusión de esta aplicación, así como el desafío de ingeniería que supone el
+manejo del enorme flujo de datos diarios, motiva a incluirla en este trabajo 
+práctico.
+
+## Gmail
+
+Por último, el cuarto caso es el de **Gmail**, aplicación pionera en la 
+provisión de *email* en navegador, que utiliza tecnología AJAX del lado del 
+cliente, para permitir el uso del correo electrónico de forma eficiente sin 
+requerir de la instalación de aplicaciones de escritorio, como era el estándar 
+del rubro en el momento de su aparición. Su desarrollo y evolución como 
+aplicación que implementa la arquitectura de Cliente-Servidor parece casi obvia,
+por la innovación que representó en su momento y por ser pionera en las
+aplicaciones web asíncronas, modelo para las que vendrían luego.
+
+
+# Casos problemáticos
+
+## SIU Guaraní
+
+## SimCity
+
+## Bolsas y Mercados Argentinos (BYMA)
+
+# Conclusiones
+
+# Referencias bibliográficas
