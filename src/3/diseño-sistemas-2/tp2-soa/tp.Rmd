@@ -1,49 +1,54 @@
 ---
 lang: es-AR
-output: 
+geometry: margin=2.5cm
+output:
   pdf_document:
     number_sections: true
+    latex_engine: pdflatex
 header-includes:
-  - \usepackage[utf8]{inputenc}
   - \usepackage{graphicx}
+  - \usepackage{float}
   - \usepackage[default]{cantarell}
   - \usepackage{setspace}
   - \onehalfspacing
 bibliography: referencias.bib
-csl: chicago-notes-bibliography-annotated.csl
+csl: chicago-notes-bibliography.csl
 ---
 
 \begin{titlepage}
     \centering
     \includegraphics[width=.3\textwidth]{../../../img/udemm-logo.png}
-    
-    \vspace{0.2cm}
+
+    \vspace{0.4cm}
     {\Large Facultad de Ingeniería} \\
     \vspace{0.3cm}
-    {\Large Ingeniería en Sistemas} \\
-    \vspace{2cm}
-    
-    {\huge \bfseries Trabajo Práctico} \\
-    \vspace{0.5cm}
-    {\Large Arquitectura Orientada a Servicios} \\
-    
+    {\large Ingeniería en Sistemas} \\
+
+    \vspace{2.5cm}
+
+    \rule{\linewidth}{0.5mm} \\[0.4cm]
+    {\huge \bfseries Trabajo Práctico} \\[0.3cm]
+    {\Large Arquitectura SOA} \\[0.2cm]
+    \rule{\linewidth}{0.5mm}
+
     \vfill
-    
-    \begin{align*}
-      \textbf{Asignatura:} & \quad \text{Diseño de Sistemas II} \\
-      \textbf{Docente:} & \quad \text{Mg. Daniel Omar García} \\
-      \textbf{Alumno:} & \quad \text{Daniel Ise} \\
-      \textbf{Legajo:} & \quad 28547 \\
-    \end{align*}
-    
-    \vspace{1.5cm}
-    
-    Octubre, 2026
+
+    \begin{tabular}{r l}
+        \textbf{Asignatura:} & Diseño de Sistemas II \\
+        \textbf{Docente:}    & Mg. Daniel Omar García \\
+        \textbf{Alumno:}     & Daniel Ise \\
+        \textbf{Legajo:}     & 28547 \\
+        \textbf{Fecha:}      & Noviembre, 2026 \\
+    \end{tabular}
 \end{titlepage}
 
-\newpage
+\pagenumbering{roman}
+\thispagestyle{empty}
 \tableofcontents
 \newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 # Introducción
 
