@@ -6,14 +6,12 @@ output:
   pdf_document:
     number_sections: true
     latex_engine: pdflatex
-    pandoc_args: "--pdf-engine-opt=--shell-escape"
 header-includes:
   - \usepackage{graphicx}
   - \usepackage{float}
   - \usepackage[default]{cantarell}
   - \usepackage{setspace}
   - \onehalfspacing
-  - \usepackage{svg}
 bibliography: referencias.bib
 csl: chicago-notes-bibliography.csl
 ---
@@ -131,66 +129,276 @@ indisponibilidad del servicio[@garcia2026].
 
 ## Netflix
 
-**Netflix** es un proveedor de servicios de *streaming* de video, enfocado en
-series y películas.
-Enfrenta grandes desafíos de ingeniería en lo que respecta a rendimiento:
-debe recibir, procesar y enviar grandes volúmenes de datos a cientos de miles de
-clientes de todo el mundo, que se conectan desde dispositivos muy diferentes en
-capacidades de cómputo.
-El Servidor debe de proveer autenticación, catálogo, perfiles y transmisión de
-video en tiempo real, por lo que supone un caso de análisis particularmente
-interesante.
+**Netflix** nació en 1997 como un servicio de alquiler de DVD por correo postal
+y en 2007 transformó su modelo de negocio hacia el *streaming* de video bajo
+demanda, con el propósito de ofrecer acceso inmediato a series y películas desde
+cualquier dispositivo conectado a Internet.
 
-El UML es un diagrama de secuencia representativo es un usuario conectándose al
-servicio con sus credenciales, eligiendo del catálogo para el que tiene
-autorización, y recibiendo el *streaming* de video.
+En este sistema, la arquitectura Cliente-Servidor resulta determinante para
+sostener su operación global.
 
-\includesvg{uml/netflix.svg}
+En lo que respecta a rendimiento y estabilidad, despliega servidores
+perimetrales propios, que funcionan como red de distribución de contenido (CDN),
+conocida como Open Connect [@netflix2026].
+De esta forma, Netflix acerca los archivos de video a los proveedores de
+internet de sus clientes, reduciendo latencia y evitando cuellos de botella en
+sus servidores centrales.
 
-La arquitectura Cliente-Servidor es fundamental para un servicio de streaming,
-que debe enviar grandes volúmenes de datos a muchos usuarios en todo el mundo.
+En cuanto a seguridad, el servidor centraliza la autenticación, gestión de 
+suscripciones y cifrado de contenido mediante protocolos TLS y gestión de 
+derechos digitales (DRM) [@netflix2021].
+
+La experiencia de usuario se basa en la separación de responsabilidad, que
+permite que el cliente ligero (aplicación móvil, navegador o *Smart TV*) adapte
+dinámicamente la calidad del video (*adaptive bitrate streaming*) según el ancho
+de banda disponible, mientras el servidor sincroniza perfiles y recomendaciones
+personalizadas [@netflix2014].
+
+El flujo básico de interacción entre el usuario y la plataforma se ilustra en el
+diagrama de secuencia correspondiente (ver Figura correspondiente en Anexo).
 
 ## Spotify
 
-El segundo caso a considerar es el de **Spotify**. Se trata también de un
-servicio de *streaming*, en este caso de audio, siendo quizá el servicio más
-exitoso en su rubro. Sus servidores deben de proveer a los clientes, que
-utilizan todo tipo de dispositivos, de autenticación, recomendaciones, acceso a
-catálogo y transmisión de audio. Se trata de otro caso de una empresa de gran
-éxito, con una amplia variedad de clientes (en términos de dispositivos
-diferenciados), por lo que su análisis reviste de particular importancia.
+**Spotify** fue fundada en Suecia en 2006 y lanzada en 2008 con el propósito de
+ofrecer una alternativa legal, inmediata y accesible frente a la piratería
+digital, permitiendo el acceso bajo demanda a un catálogo masivo de música y
+*podcasts* desde múltiples dispositivos[@spotitrick2024].
 
-## Whatsapp
+La adopción de una arquitectura Cliente-Servidor resulta clave para sostener su
+operación a escala global en cuatro dimensiones fundamentales[@garcia2026]:
 
-El tercer caso de éxito a considerar es el de **Whatsapp**, una aplicación
-de mensajería instantánea, orientada principal aunque no exclusivamente a la 
-mensajería móvil. El servidor debe de gestionar colas de mensajes,
-notificaciones, autenticación y encriptación, tratando de minimizar, en los
-casos en que corresponda, el consumo de batería en sus clientes. La gran
-difusión de esta aplicación, así como el desafío de ingeniería que supone el
-manejo del enorme flujo de datos diarios, motiva a incluirla en este trabajo 
-práctico.
+En términos de **rendimiento y escalabilidad**, Spotify evolucionó desde un
+modelo híbrido inicial hacia una infraestructura completamente basada en
+servidores en la nube y redes de distribución de contenido (CDN)
+[@gustavsson2019].
+Esto permite entregar fragmentos de audio comprimido desde nodos cercanos al
+usuario, garantizando una reproducción instantánea sin demoras de carga incluso
+ante millones de conexiones concurrentes.
+
+Respecto a la **seguridad**, el servidor centraliza la autenticación mediante
+*tokens*, verifica los permisos de suscripción y controla las restricciones
+geográficas de derechos de autor. Asimismo, el flujo de audio viaja cifrado y
+los archivos almacenados localmente para el modo sin conexión (*offline*)
+permanecen encriptados en el cliente para impedir su copia no autorizada
+[@leenders2018].
+
+En cuanto a la **experiencia de usuario**[cite: 2], la separación entre cliente
+y servidor posibilita funcionalidades como *Spotify Connect* —que sincroniza el
+estado de reproducción en tiempo real entre teléfonos, computadoras y altavoces
+inteligentes— y delega al servidor el procesamiento intensivo de algoritmos de
+recomendación personalizada sin exigir grandes recursos de cómputo al
+dispositivo del usuario.
+
+El flujo de interacción entre la aplicación cliente y los servicios centrales se
+representa en el diagrama correspondiente (ver Figura \ref{fig:spotify} en el
+Anexo).
+
+## WhatsApp
+
+**WhatsApp** fue fundada en 2009 con el propósito de ofrecer una alternativa
+económica, confiable y multiplataforma a los mensajes de texto tradicionales
+(SMS), permitiendo el intercambio instantáneo de mensajes, archivos multimedia y
+llamadas a través de internet.
+
+La arquitectura Cliente-Servidor resulta fundamental para sostener el gran flujo
+diario de intercambios diarios en cuatro dimensiones clave:
+
+En términos de **rendimiento y escalabilidad**, WhatsApp emplea una versión
+optimizada del protocolo XMPP sobre conexiones persistentes y servidores
+desarrollados en Erlang [@bytebytego2025]. Esta combinación permite gestionar
+millones de sesiones concurrentes por nodo con latencia mínima y un tráfico de
+red muy reducido, ideal para conexiones móviles inestables.
+
+Respecto a la **seguridad**, el sistema implementa cifrado de extremo a extremo
+basado en el protocolo Signal [@bytebytego2025].
+Bajo este esquema, los servidores centrales gestionan la autenticación mediante
+el número telefónico y enrutan los paquetes encriptados, sin poseer las claves
+para leer su contenido, eliminando los mensajes de sus colas una vez confirmada
+la entrega.
+
+En cuanto a la **experiencia de usuario**, el servidor actúa como intermediario
+de almacenamiento temporal cuando un cliente pierde conectividad, delegando las
+alertas a los servicios de notificaciones *push* del sistema operativo para
+minimizar el consumo de batería en dispositivos móviles y sincronizando el
+estado con clientes secundarios como *WhatsApp Web*.
+
+El flujo de envío y confirmación de entrega de un mensaje se representa en el
+diagrama correspondiente (ver Figura \ref{fig:whatsapp} en el Anexo).
 
 ## Gmail
 
-Por último, el cuarto caso es el de **Gmail**, aplicación pionera en la 
-provisión de *email* en navegador, que utiliza tecnología AJAX del lado del 
-cliente, para permitir el uso del correo electrónico de forma eficiente sin 
-requerir de la instalación de aplicaciones de escritorio, como era el estándar 
-del rubro en el momento de su aparición. Su desarrollo y evolución como 
-aplicación que implementa la arquitectura de Cliente-Servidor parece casi obvia,
-por la innovación que representó en su momento y por ser pionera en las
-aplicaciones web asíncronas, modelo para las que vendrían luego.
+**Gmail** fue lanzado por Google en 2004 con el propósito de revolucionar el
+correo electrónico web, ofreciendo una capacidad de almacenamiento amplia y un
+motor de búsqueda integrado que eliminaba la necesidad de instalar clientes de
+escritorio tradicionales.
 
+La arquitectura Cliente-Servidor resulta determinante para sostener la operación
+global del servicio en cuatro dimensiones fundamentales:
+
+En términos de **rendimiento**, Gmail fue pionero en el uso intensivo de
+tecnología AJAX en el cliente web [@smith2021]. Esto permite realizar
+peticiones asíncronas en segundo plano para enviar o recibir únicamente datos
+puntuales, evitando recargar la página completa ante cada interacción y
+reduciendo drásticamente el tráfico de red.
+
+Respecto a la **escalabilidad**, los servidores distribuidos de Google
+centralizan el almacenamiento replicado e indexación de miles de millones de
+buzones [@smith2021], absorbiendo picos globales de tráfico sin delegar carga de
+procesamiento al dispositivo del usuario.
+
+En cuanto a la **seguridad**, el servidor gestiona el cifrado en tránsito (TLS),
+la autenticación multifactor y filtros centralizados basados en aprendizaje
+automático que bloquean correos no deseados (*spam*), *phishing* y archivos
+maliciosos antes de que sean descargados por el cliente [@smith2021].
+
+Finalmente, en la **experiencia de usuario**, la separación entre cliente y
+servidor permite ofrecer una interfaz tan fluida como una aplicación nativa, con
+sincronización instantánea entre navegadores y dispositivos móviles, además de
+soporte de lectura y redacción sin conexión mediante caché local.
+
+El flujo de comunicación asíncrona entre el navegador y los servidores de correo
+se representa en el diagrama correspondiente (ver Figura \ref{fig:gmail} en el
+Anexo).
 
 # Casos problemáticos
 
-## SIU Guaraní
+## SIU-Guaraní
+
+**SIU-Guaraní** es el sistema de autogestión utilizado comúnmente en las
+universidades públicas argentinas.
+Durante las fechas críticas de inscripción a materias o mesas de exámenes, la
+plataforma sufre recurrentemente caídas e interrupciones ante picos repentinos
+de concurrencia, dejando a miles de estudiantes imposibilitados de operar.
+
+En este escenario se materializan tres riesgos típicos del modelo
+Cliente-Servidor tradicional[@garcia2026]:
+la **sobrecarga del servidor** web ante el aumento abrupto de peticiones
+simultáneas, la aparición de **cuellos de botella** en la base de datos
+relacional centralizada por contención de transacciones, y una **dependencia
+crítica** de una arquitectura monolítica alojada generalmente en infraestructura
+propia sin elasticidad.
+En conjunto, estos factores derivan en una denegación de servicio de hecho.
+
+Como **alternativa de mejora**, se propone desacoplar el módulo de inscripciones
+en un **microservicio** independiente desplegado detrás de un balanceador de
+carga con autoescalado horizontal.
+Mediante el uso de colas de mensajería asíncrona y una base de datos NoSQL
+orientada a escrituras rápidas, el sistema puede absorber los picos de
+solicitudes en tiempo real sin bloquear al usuario, sincronizando luego los
+registros mediante **consistencia eventual** con la base de datos académica
+central antes de la fecha de examen o inicio de cursada.
 
 ## SimCity
 
+El lanzamiento de **SimCity (2013)** resultó sumamente problemático para los
+*fans* de la saga de simulación y gestión de ciudades [@smith2023].
+Con el objetivo de combatir la piratería, el videojuego exigía conexión
+permanente a los servidores centrales, incluso para partidas en solitario.
+Sin embargo, la infraestructura no estaba preparada para absorber los millones
+de jugadores que intentaron conectarse durante el estreno, provocando caídas
+masivas, pérdida de partidas y un daño reputacional que derivó posteriormente en
+el cierre del estudio desarrollador [@smith2023].
+
+En este incidente se materializaron tres riesgos graves del modelo
+Cliente-Servidor[@garcia2026]: una **dependencia crítica** absoluta respecto de
+la disponibilidad del servidor y la red para ejecutar lógica que podía
+resolverse localmente; la **sobrecarga del servidor** ante la avalancha inicial
+de jugadores; y **cuellos de botella** en los nodos de autenticación y guardado
+en la nube.
+
+Como **alternativa de mejora**[cite: 2], se propone migrar hacia una
+**arquitectura híbrida** combinada con un servicio desacoplado de validación de
+licencias con autoescalado horizontal.
+Bajo este enfoque, el cliente verifica el número de serie contra la base de
+datos de cuentas únicamente durante la activación inicial o al iniciar sesión en
+línea, permitiendo ejecutar el motor de simulación localmente sin conexión
+permanente y reservando la comunicación con los servidores centrales solo para
+el modo multijugador.
+
 ## Bolsas y Mercados Argentinos (BYMA)
 
+**Bolsas y Mercados Argentinos (BYMA)** es la entidad que administra la
+infraestructura tecnológica y operativa del principal mercado de valores de
+Argentina, interconectando a agentes de liquidación y compensación (conocidos
+como ALyCs), bancos y plataformas de inversión minorista.
+En jornadas de alta volatilidad financiera, el sistema ha registrado recurrentes
+interrupciones y demoras operativas ante el incremento abrupto del volumen de
+transacciones.
+
+En este escenario se materializan tres riesgos críticos de las arquitecturas
+Cliente-Servidor centralizadas: la **sobrecarga del servidor** provocada por
+millones de consultas simultáneas de cotizaciones en tiempo real; la formación
+de **cuellos de botella** en el motor central de negociación y en las interfaces
+con sistemas centrales heredados (*legacy* o *mainframe*); y una **dependencia
+crítica** de la disponibilidad continua del núcleo transaccional, cuya
+indisponibilidad impide ejecutar órdenes en momentos clave del mercado.
+
+Como **alternativa de mejora**, se propone evolucionar hacia una **arquitectura
+orientada a servicios (SOA)** apoyada en un *API Gateway* y colas de mensajería
+asíncrona de alta velocidad para desacoplar los modernos canales digitales de
+los sistemas financieros de legado.
+Complementariamente, separar las consultas de lectura (mediante réplicas y caché
+distribuida en memoria) del procesamiento transaccional de órdenes permitiría
+absorber picos de demanda sin comprometer la estabilidad del núcleo bursátil.
+
 # Conclusiones
+
+La arquitectura Cliente-Servidor ocupa un lugar central en los sistemas
+modernos. En un entorno cada vez más interconectado —con tomadores de decisión
+que operan con datos en tiempo real, operarios en planta o de forma remota que
+requieren acceso continuo a internet para desplegar sus procesos productivos, y
+usuarios que consumen servicios digitalmente—, resulta innegable su vigencia
+como paradigma fundamental de comunicación en red.
+
+No obstante, el análisis realizado permite señalar que el modelo
+Cliente-Servidor tradicional, por sí solo, resulta insuficiente para afrontar
+los niveles de concurrencia, disponibilidad y complejidad de las plataformas
+contemporáneas.
+
+Como se observó en los casos exitosos, el modelo sigue plenamente vigente, pero
+su éxito depende de su articulación con otras estrategias arquitectónicas: redes
+de distribución de contenido (CDN), procesamiento asíncrono, cifrado de extremo
+a extremo y separación de responsabilidades entre clientes ligeros y servicios
+especializados en la nube.
+
+Asimismo, se constató que en los casos problemáticos no falló el paradigma
+Cliente-Servidor en sí mismo, sino la ausencia de previsión para escalar ante
+picos de demanda y la dependencia crítica de núcleos monolíticos centralizados.
+Por ello, antes que ser reemplazada, la arquitectura Cliente-Servidor evoluciona
+integrándose con enfoques distribuidos —como microservicios, colas de mensajería
+y arquitecturas híbridas— que permiten sostener su flexibilidad y resiliencia en
+la actualidad.
+
+# Anexos - Diagramas UML
+
+\begin{figure}[H]
+  \centering
+  \caption{Diagrama de Secuencia representativo de Netflix}
+  \includegraphics[width=0.9\textwidth]{uml/netflix.png}
+  \label{fig:netflix}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Diagrama de Secuencia representativo de Spotify}
+  \includegraphics[width=0.9\textwidth]{uml/spotify.png}
+  \label{fig:spotify}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Diagrama de Secuencia representativo de WhatsApp}
+  \includegraphics[width=0.9\textwidth]{uml/whatsapp.png}
+  \label{fig:whatsapp}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Diagrama de Secuencia representativo de Gmail}
+  \includegraphics[width=0.9\textwidth]{uml/gmail.png}
+  \label{fig:gmail}
+\end{figure}
+
+
 
 # Referencias bibliográficas

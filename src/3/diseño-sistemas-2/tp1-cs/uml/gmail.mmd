@@ -1,0 +1,22 @@
+sequenceDiagram
+    actor Usuario
+    participant Cliente as Navegador
+    participant Auth as Servidor Autenticación
+    participant Mail as Servidores Gmail
+
+    Usuario->>Cliente: Accede a Gmail
+    Cliente->>+Auth: Credenciales / Token de sesión
+    Auth-->>-Cliente: Sesión autorizada
+    Cliente->>+Mail: Petición inicial de bandeja
+    Mail-->>-Cliente: Interfaz + Lista de hilos
+
+    
+    Cliente->>+Mail: Consulta nuevos mensajes (AJAX/Fetch)
+    Mail-->>-Cliente: Delta de correos nuevos (sin recargar página)
+    Cliente->>Usuario: Actualiza bandeja dinámicamente
+    
+
+    Usuario->>Cliente: Redacta y envía correo
+    Cliente->>+Mail: Envío asíncrono (SMTP/API)
+    Mail->>Mail: Escaneo antispam y almacenamiento
+    Mail-->>-Cliente: Confirmación de envío

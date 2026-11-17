@@ -1,0 +1,11 @@
+sequenceDiagram
+    actor Usuario
+    participant Cliente as App Cliente
+    participant Servidor as Servidores Netflix
+
+    Usuario->>Cliente: Ingresa credenciales
+    Cliente->>+Servidor: Solicitud de autenticación
+    Servidor-->>-Cliente: Token de sesión y catálogo
+    Usuario->>Cliente: Selección de título
+    Cliente->>+Servidor: Petición de streaming
+    Servidor-->>-Cliente: Flujo de video

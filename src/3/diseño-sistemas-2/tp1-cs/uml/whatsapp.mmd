@@ -1,0 +1,17 @@
+sequenceDiagram
+    actor Emisor
+    participant AppE as Cliente Emisor
+    participant Server as Servidores WhatsApp
+    participant AppR as Cliente Receptor
+    actor Receptor
+
+    Emisor->>AppE: Redacta y envía mensaje
+    AppE->>AppE: Cifra mensaje (Protocolo Signal)
+    AppE->>+Server: Envía paquete cifrado (XMPP)
+    Server-->>AppE: Confirmación de recepción (✓)
+
+    Server->>+AppR: Reenvía paquete cifrado
+    AppR->>AppR: Descifra mensaje
+    AppR->>Receptor: Muestra notificación/mensaje
+    AppR-->>-Server: Confirmación de entrega (ACK)
+    Server->>-AppE: Notifica entrega (✓✓)

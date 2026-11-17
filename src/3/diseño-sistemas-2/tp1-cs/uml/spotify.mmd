@@ -1,0 +1,17 @@
+sequenceDiagram
+    actor Usuario
+    participant Cliente as App Spotify (Cliente)
+    participant Backend as Servidores Spotify
+    participant CDN as CDN
+
+    Usuario->>Cliente: Inicia sesión
+    Cliente->>+Backend: Credenciales
+    Backend-->>-Cliente: Token de acceso
+
+    Usuario->>Cliente: Selecciona canción
+    Cliente->>+Backend: Solicita metadatos y URL de pista (Token)
+    Backend-->>-Cliente: URL + Clave de descifrado
+
+    Cliente->>+CDN: Petición de flujo de audio
+    CDN-->>-Cliente: Flujo de audio cifrado
+    Cliente->>Usuario: Reproduce audio
