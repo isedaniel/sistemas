@@ -207,19 +207,91 @@ servicios de manera autónoma y concurrente sin bloquearse entre sí.
 La escalabilidad puede asumir dos modalidades: vertical —incrementar el poder de
 cómputo de un único servidor— u horizontal —desplegar nuevas instancias en
 paralelo detrás de un balanceador de carga que distribuye el tráfico—
-[@razavi2024tale]. Las arquitecturas monolíticas suelen depender del primer
-enfoque, lo que representa una limitación crítica dado que el escalado vertical
-enfrenta límites físicos y un crecimiento exponencial de costos. En cambio, SOA
-se adapta naturalmente al escalado horizontal y granular: gracias a la autonomía
-de los servicios y al principio de diseño *statelessness*[@garcia2026], es
-posible multiplicar únicamente las instancias del servicio puntual que enfrenta
-un pico de demanda, **facilitando la escalabilidad** del sistema y la respuesta
-ágil ante los desafíos del negocio.
+[@razavi2024tale].
+Las arquitecturas monolíticas suelen depender del primer enfoque, lo que
+representa una limitación crítica dado que el escalado vertical enfrenta límites
+físicos y un crecimiento exponencial de costos.
+En cambio, SOA se adapta naturalmente al escalado horizontal y granular: gracias
+a la autonomía de los servicios y al principio de diseño
+*statelessness*[@garcia2026], es posible multiplicar únicamente las instancias
+del servicio puntual que enfrenta un pico de demanda, **facilitando la
+escalabilidad** del sistema y la respuesta ágil ante los desafíos del negocio.
 
 ## Monitoreo preciso
 
+Como se señaló considerando las pruebas en SOA, el monitoreo asume un lugar
+privilegiado en la gobernanza de sistemas distribuidos [@canfora2006service].
+La naturaleza diferenciada y desacoplada de los sistemas basados en SOA permite
+la observabilidad de cada uno de los componentes que forman parte del sistema.
+Si se considera que cada servicio responde a un -y solo un- requerimiento de
+negocio, podemos concluir que el monitoreo de un sistema centrado en servicios
+permite a los tomadores de decisión contar con un **monitoreo preciso** del 
+estado del negocio.
+
+Como se señaló al considerar las pruebas en SOA, el monitoreo asume una posición
+privilegiada en la gobernanza de sistemas distribuidos [@canfora2006service].
+La naturaleza diferenciada y desacoplada de esta arquitectura permite la
+observabilidad individual de cada componente mediante contratos estandarizados y
+puntos de mediación como el ESB.
+Si se considera que cada servicio responde a un —y solo un— requerimiento de
+negocio, podemos concluir que la supervisión de un sistema centrado en servicios
+brinda a los tomadores de decisión un **monitoreo preciso** y en tiempo real
+sobre el desempeño operativo del negocio.
+
 ## Interoperabilidad
 
+En la introducción se señalaron los pilares de diseño en SOA, entre los que se 
+resaltaron la *composabilidad*, esto es, la capacidad de orquestar servicios
+para definir procesos de negocio de mayor complejidad;
+el *bajo acoplamiento*, es decir, la autonomía que tienen los servicios para 
+funcionar, permitiendo tanto su funcionamiento individual como su coordinación;
+y la *reusabilidad*, sobre la base del concepto de *contrato*
+[@garcia2026].
+Estos principios de diseño constituyen la base natural para la
+**interoperabilidad** de sistemas diferenciados, con independencia de sus
+detalles de implementación e, inclusive, del *hardware* sobre el que corren
+[@vetere2005models].
+
+En la introducción se señalaron los pilares de diseño de SOA, entre los que se 
+destacaron la *composabilidad* —la capacidad de orquestar servicios para 
+definir procesos de negocio de mayor complejidad—, el *bajo acoplamiento* —la 
+autonomía que tienen los servicios para operar tanto de forma individual como 
+coordinada— y la *reutilización* sobre la base de contratos explícitos 
+[@garcia2026].
+Articulados mediante el uso de protocolos y estándares abiertos de comunicación
+(como `XML`, `SOAP`, `WSDL` o `HTTP`), estos principios constituyen la base
+natural para lograr la **interoperabilidad** entre sistemas heterogéneos, con
+independencia de sus lenguajes de implementación e, incluso, del *hardware*
+sobre el que se ejecutan [@vetere2005models].
+
 # Arquitectura Cliente-Servidor y Arquitectura Orientada a Servicios
+
+La arquitectura Cliente-Servidor se basa en dos clases de entidades, *clientes*
+y *servidores*, que se comunican siguiendo un *ciclo de petición y respuesta*:
+el cliente envía una solicitud al servidor, que la procesa y elabora una
+respuesta.
+
+Esta arquitectura y SOA no son mutuamente excluyentes; por el contrario, muchas
+implementaciones de SOA son sistemas distribuidos web que operan sobre un
+esquema Cliente-Servidor [@vetere2005models; @dwivedi2015incorporating; @chetty2010towards].
+En este modelo híbrido, ambos paradigmas se articulan mediante la **negociación
+de contratos**: el servidor (proveedor de servicio) publica una interfaz
+estandarizada —como una especificación `OpenAPI`— donde define operaciones,
+formatos de datos y políticas de acceso.
+El cliente (consumidor) inspecciona y acuerda dicho contrato para establecer la
+comunicación, pudiendo incluso un mismo servicio asumir el rol de servidor
+frente a una aplicación frontal y el de cliente al invocar otros servicios
+internos.
+
+Un ejemplo concreto de esta integración es el proceso de transferencia en una
+aplicación de *home-banking*. La aplicación web o móvil (cliente) envía una
+petición `HTTPS` ajustada al contrato expuesto por el bus de servicios o *API
+Gateway* (servidor), el cual orquesta de forma transparente los servicios de
+*Autenticación*, *Gestión de Cuentas* y *Notificaciones*, tal como se ilustra en
+el diagrama de secuencia incluido en el Anexo.
+
+# Anexo
+
+![Diagrama de secuencia UML: transferencia en una aplicación de *banking online*.](uml/uml.png){#fig:secuencia-soa width=100%}
 
 # Bibliografía citada

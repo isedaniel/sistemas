@@ -1,0 +1,25 @@
+sequenceDiagram
+    autonumber
+    actor Cliente
+    participant Web as Banking App / Cliente
+    participant API as API Gateway / Servidor
+    participant Auth as Servicio Auth
+    participant Balance as Servicio Balance
+    participant Transferencia as Servicio Transferencia
+
+    Cliente->>+Web: Ingresa credenciales
+    Web->>+API: Envía credenciales
+    API->>+Auth: Valida credenciales
+    Auth-->>-API: Token de autenticación
+    API-->>-Web: Token de autenticación
+    Web-->>-Cliente: Confirma ingreso
+    Cliente->>+Web: Inicia transferencia
+
+    Web->>+API: Solicitud de transferencia con Token
+    API->>+Balance: Verifica fondos disponibles
+    Balance-->>-API: Autorización de saldo
+    API->>+Transferencia: Ejecuta transferencia
+    Transferencia-->>-API: Comprobante de operación
+    API-->>-Web: Confirma transferencia
+    Web-->>-Cliente: Muestra comprobante
+    
