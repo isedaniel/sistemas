@@ -1,0 +1,79 @@
+---
+title: "Sistemas de Tiempo Real"
+subtitle: "Caso de estudio: Trading Algorítmico"
+author: "Daniel Ise"
+format:
+  revealjs:
+    theme: black
+    transition: fade
+    slide-number: true
+    width: 1280
+    height: 720
+---
+
+## Definición
+
+### Sistema de Tiempo Real (STR)
+
+Es un sistema que debe **procesar información** y responder dentro de un **límite de tiempo estricto** (*deadline*).
+
+> La validez del resultado depende tanto de su exactitud como del tiempo de entrega.
+
+## Características de un STR
+
+- **Determinismo:** tiempos de respuesta predecibles
+- **Concurrencia:** manejo simultáneo de múltiples flujos de datos
+- **Alta fiabilidad:** operación continua sin interrupciones
+- **Tolerancia a fallos:** capacidad de recuperación ante errores
+
+## Ejemplo: Trading Algorítmico
+
+### 1. Baja latencia y determinismo
+
+- Redes y servidores dedicados
+- Proximidad física a los servidores de bolsa
+- Uso de lenguajes de bajo nivel (`C++`)
+- Evita retrasos impredecibles (sin *garbage collection*)
+
+## Ejemplo: Trading Algorítmico
+
+### 2. Procesamiento y ejecución
+
+- **Flujo masivo de datos en tiempo real:**
+    - Recepción de cotizaciones
+    - Procesamiento de órdenes de compra/venta
+- **Ejecución autónoma:**
+    - Toma de decisiones sin intervención humana mediante modelos matemáticos
+
+## Definición
+
+### Interfaz de Usuario (UI)
+
+- Del inglés *User Interface*
+- Conjunto de elementos visuales, auditivos o táctiles
+- Medio de operación entre humano y sistema
+- Permite **interactuar, controlar y supervisar** una máquina o *software*
+
+## Características UI en Trading Algorítmico
+
+### Visualización y Ergonomía
+
+- **Alta densidad de datos en vivo:**
+    - Gráficos de velas
+    - Profundidad de mercado (libro de órdenes)
+    - Flujo de órdenes ejecutadas
+- **Diseño ergonómico:**
+    - Modo oscuro para reducir fatiga en largas jornadas
+    - Alto contraste (verde/rojo) para lectura rápida
+
+## Características UI en Trading Algorítmico
+
+### Control y Monitoreo Crítico
+
+- **Controles de emergencia:**
+    - Detiene algoritmos de inmediato
+    - Liquida posiciones ante anomalías de mercado
+- **Alertas y estado del sistema:**
+    - Indicadores de latencia en milisegundos/microsegundos
+    - Estado de conexión con los *exchanges*
+    
