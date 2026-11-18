@@ -1,0 +1,145 @@
+---
+lang: es-AR
+geometry: margin=2.5cm
+output:
+  pdf_document:
+    number_sections: true
+    latex_engine: pdflatex
+header-includes:
+  - \usepackage{graphicx}
+  - \usepackage{float}
+  - \usepackage[default]{cantarell}
+  - \usepackage{setspace}
+  - \onehalfspacing
+bibliography: referencias.bib
+csl: chicago-notes-bibliography.csl
+---
+
+\pagenumbering{roman}
+
+\begin{titlepage}
+    \centering
+    \includegraphics[width=.3\textwidth]{../../../img/udemm-logo.png}
+
+    \vspace{0.4cm}
+    {\Large Facultad de Ingeniería} \\
+    \vspace{0.3cm}
+    {\large Ingeniería en Sistemas} \\
+
+    \vspace{2.5cm}
+
+    \rule{\linewidth}{0.5mm} \\[0.4cm]
+    {\huge \bfseries Trabajo Práctico} \\[0.3cm]
+    {\Large Redes de Petri} \\[0.2cm]
+    \rule{\linewidth}{0.5mm}
+
+    \vfill
+
+    \begin{tabular}{r l}
+        \textbf{Asignatura:} & Diseño de Sistemas II \\
+        \textbf{Docente:}    & Mg. Daniel Omar García \\
+        \textbf{Alumno:}     & Daniel Ise \\
+        \textbf{Legajo:}     & 28547 \\
+        \textbf{Fecha:}      & Noviembre, 2026 \\
+    \end{tabular}
+\end{titlepage}
+
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+**Nota:**
+Las Redes de Petri fueron modeladas con la herramienta
+[YAPNE - Yet Another Petri Net Editor](https://chimenkamp.github.io/YAPNE-Yet-Another-Petri-Net-Editor/).
+Cuando los arcos no especifican peso, es igual a 1.
+Es una decisión de diseño de la herramienta.
+
+# Actividad 1
+
+Retomando el ejercicio de la peluquería explicado en clase, modele el caso
+tomando en cuenta que si bien hay dos sillas de corte disponible, hay un solo
+peluquero.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{redes/1.png}
+  \caption{Actividad 1}
+  \label{fig:1}
+\end{figure}
+
+# Actividad 2
+
+En una cafetería hay 1 cajero y 1 barista. Hay 3 clientes haciendo fila para
+pedir.
+El cliente que está primero en la fila paga en la caja, siempre que el
+cajero esté libre.
+Cuando termina de pagar, el cajero queda libre y el cliente espera su café.
+Cuando el barista está libre, empieza a preparar el café de un cliente que
+espera.
+Al terminar, entrega el café, el cliente se va y el barista queda libre
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{redes/2.png}
+  \caption{Actividad 2}
+  \label{fig:2}
+\end{figure}
+
+# Actividad 3
+
+En un aula de informática hay 3 alumnos que quieren imprimir un documento cada
+uno, pero hay una sola impresora.
+La impresora solo puede imprimir un documento a la vez.
+Cuando termina de imprimir, el documento queda en la bandeja y la impresora
+queda libre para el siguiente.
+Después, el alumno retira su documento de la bandeja.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{redes/3.png}
+  \caption{Actividad 3}
+  \label{fig:2}
+\end{figure}
+
+# Actividad 4
+
+En un supermercado hay 2 cajas para cobrar.
+En este momento hay 4 clientes comprando con su carrito y las 2 cajas están
+libres.
+Cuando un cliente termina de comprar, se pone en la fila.
+Si hay una caja libre, el primer cliente de la fila pasa a esa caja y empieza a
+pagar.
+Las dos cajas pueden atender al mismo tiempo, pero cada una atiende a un solo
+cliente a la vez.
+Cuando el cliente termina de pagar, se va con sus bolsas y la caja queda libre.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{redes/4.png}
+  \caption{Actividad 4}
+  \label{fig:2}
+\end{figure}
+
+# Actividad 5
+
+En un banco hay 2 cajeros automáticos.
+Uno es exclusivo para clientes del banco.
+El otro es de uso público: lo puede usar cualquier persona, sea o no cliente.
+Cada cajero atiende a una sola persona a la vez.
+En este momento hay 2 clientes del banco y 2 personas que no son clientes, todos
+esperando para usar un cajero.
+Los dos cajeros están libres.
+Un cliente del banco puede usar cualquiera de los dos cajeros que esté libre.
+Una persona que no es cliente solo puede usar el cajero público.
+Cuando una persona termina, se va y el cajero queda libre para otra.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{redes/5.png}
+  \caption{Actividad 5}
+  \label{fig:2}
+\end{figure}
