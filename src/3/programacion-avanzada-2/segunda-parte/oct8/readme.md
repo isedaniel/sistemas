@@ -97,6 +97,3 @@ ng generate service Nombre
 Este comando genera un `spec` y un archivo para manejar el comportamiento, ambos 
 en `Typescript`.
 
-```bash
-# quedo 2h26m
-```
