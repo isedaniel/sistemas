@@ -1,0 +1,17 @@
+<h2>Formulario para Agregar Tareas</h2>
+
+<!-- Le sacamos el atributo action, porque angular va a manejar el formulario,
+mediante el evento ngSubmit.  -->
+<form (ngSubmit)="sendForm()">
+    <div>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="name">
+    </div>
+    <div>
+        <label for="description">Descripción:</label>
+        <input type="text" id="description" name="description" [(ngModel)]="description">
+    </div>
+    <input type="submit" value="Agregar tarea">
+</form>
+<!-- Si no ponemos nada, por defecto envía solicitud GET. Una vez que escuchamos
+ngSubmit, angular captura el envío y ejecuta la función que definimos -->

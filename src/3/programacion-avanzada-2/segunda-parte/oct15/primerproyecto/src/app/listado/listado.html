@@ -1,0 +1,12 @@
+
+<app-nueva-tarea (newTaskEvent)="newTask($event)"/>
+
+<br>
+
+<h2>Listado de Tareas</h2>
+
+<button (click)="update()">Actualizar</button>
+
+@for (task of tasks; track task.id) {
+    <app-item-listado [task]="task" (deleteEvent)="deleteTask($event)"/>
+}
