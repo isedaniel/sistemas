@@ -4,14 +4,9 @@
 <app-first-component />
 <!-- Así pasamos información de un componente padre. -->
 <!-- Del otro lado hay una variable con el decorador @Input() -->
-<app-first-component name="Beli"/>
+<app-first-component name="Oso"/>
 <app-first-component name="Dan"/>
 
-<!-- Agregamos un botón para incorporar nuevas tareas.
- Con la sintaxis ( ) indicamos que escuchamos un evento.
- En este caso escuchamos el click.
- Cuando ocurre el click, invocamos addTask() -->
-<button (click)="addTask()">Agregar tarea</button>
 <!-- Creamos un segundo componente y le pasamos las tareas -->
 <!-- La sintaxis para pasar un objeto es [ ] -->
 <app-listado [tasks]="getTasks"/>

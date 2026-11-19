@@ -13,4 +13,19 @@ export class Listado {
   // podemos incializarla con un valor por defecto
   // o tasks! indica que nunca va a estar vacía para que no se queje
   @Input() tasks: Task[] = [ {id:0, name:"default", description:"default"} ];
+
+  addTask() {
+    const newTask = {
+      id: 0,
+      name: "Tarea nueva",
+      description: "Descripción de la nueva tarea."
+    }
+
+    // agregamos la nueva tarea a nuestro array
+    this.tasks.push(newTask);
+  }
+
+  deleteTask(task: Task) {
+    this.tasks = this.tasks.filter(e => e.id !== task.id);
+  }
 }

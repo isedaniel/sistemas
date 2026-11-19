@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '../task'
 
 @Component({
@@ -14,4 +14,12 @@ export class ItemListado {
     name: "default",
     description: "default"
   };
+
+  // Para eliminar la tarea necesito emitir un evento, creo el objeto emisor
+  // con un decorador para que el componente padre escuche
+  @Output() deleteEvent = new EventEmitter<Task>();
+
+  deleteTask() {
+    this.deleteEvent.emit(this.task);
+  }
 }

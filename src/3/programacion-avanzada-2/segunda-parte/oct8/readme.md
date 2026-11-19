@@ -64,6 +64,8 @@ El decorador recibe un objeto, donde es importante especificar:
 
 Limpiamos el template en `app.html` y la clase `App` para empezar a trabajar.
 
+## Componente
+
 Para generar un nuevo componente usamos el comando:
 
 ```bash
@@ -73,6 +75,8 @@ ng generate component nuevoComponente
 Se puede usar camelCase y `ng` lo acomoda solo.
 Para invocarlo en `App` usamos el selector.
 
+## Interfaz
+
 Puedo generar una interfaz con `ng`:
 
 ```bash
@@ -81,6 +85,18 @@ ng generate interface Nombre
 
 La genera en `src/app`.
 
+## Servicios
+
+Para obtener datos del *backend* hacemos llamadas `HTTP`.
+Para eso creamos servicios:
+
 ```bash
-# quedo 1h40m
+ng generate service Nombre
+```
+
+Este comando genera un `spec` y un archivo para manejar el comportamiento, ambos 
+en `Typescript`.
+
+```bash
+# quedo 2h26m
 ```

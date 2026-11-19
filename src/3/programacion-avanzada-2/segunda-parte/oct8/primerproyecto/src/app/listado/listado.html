@@ -1,8 +1,15 @@
 <h2>tareas</h2>
-<!-- para renderizar sus elementos iteramos con la instrucción @for -->
-<!-- el elemento track ayuda a redibujar la pantalla de forma más eficiente -->
+<!-- Agregamos un botón para incorporar nuevas tareas.  Con la sintaxis ( )
+indicamos que escuchamos un evento.  En este caso escuchamos el click.  Cuando
+ocurre el click, invocamos addTask() -->
+<button (click)="addTask()">Agregar tarea</button>
+<!-- La escucha de evento se tiene que hacer aquí para actualizar, porque es el
+componente listado el que sigue al arreglo -->
+
+<!-- para renderizar elementos iteramos con la instrucción @for el elemento
+track ayuda a redibujar la pantalla de forma más eficiente -->
 @for (task of tasks; track task.id) {
-    <!-- llamamos a item-listado para crear cada elemento,
-     pasando cada una de las Task que recibimos de la falsa API -->
-    <app-item-listado [task]="task" />
+    <!-- llamamos a item-listado para crear cada elemento, pasando cada una de
+    las Task que recibimos de la falsa API -->
+    <app-item-listado [task]="task" (deleteEvent)="deleteTask($event)"/>
 }
