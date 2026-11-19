@@ -15,13 +15,13 @@ import { ClienteTareas } from './cliente-tareas';
 export class App {
   // podemos agregar datos
   // se renderiza con el operador de *binding* {{ }}
-  title: string = "Tests de Angular";
-  clientTask = inject(ClienteTareas);
-  tasks: Task[] = [];
+  private title: string = "Tests de Angular";
+  private client = inject(ClienteTareas);
+  private tasks: Task[] = [];
 
   // cuando la clase termina de cargarse, llama a ngOnInit, aquí poblamos la 
   // lista de tareas, desde el servicio
   ngOnInit() {
-    this.tasks = this.clientTask.getTasks();
+    this.tasks = this.client.getTasks();
   }
 }
