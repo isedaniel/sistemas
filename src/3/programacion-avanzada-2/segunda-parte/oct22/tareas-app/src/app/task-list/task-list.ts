@@ -23,9 +23,11 @@ export class TaskList {
     this.tasks$ = this.httpClient.getTasks();
   }
 
-  newTask(task: ITask) {
-    this.httpClient.newTask(task).subscribe((_) => {
-      this.tasks$ = this.httpClient.getTasks();
-    });
+  taskCreated(task: ITask) {
+    this.tasks$ = this.httpClient.getTasks();
+  }
+
+  taskDeleted() {
+    this.tasks$ = this.httpClient.getTasks();
   }
 }

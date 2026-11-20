@@ -13,7 +13,7 @@ datos.
 ng generate interface ITask
 ```
 
-Generar una interfaz crea un archivo `ts` en el directorio raíz de la aplicacón.
+Generar una interfaz crea un archivo `ts` en el directorio raíz de la aplicación.
 El archivo representa el esquema que vamos a usar para leer y escribir la base
 de datos.
 
@@ -27,7 +27,7 @@ El componente consta de 4 archivos:
 
 - Un archivo `html` para el template.
 - Un archivo `css` para los estilos del componente.
-- Un archio `ts` para el comportamiento.
+- Un archivo `ts` para el comportamiento.
 - Un archivo `spec.ts` para la especificación.
 
 Creamos componentes para crear nuevas tareas e item de tareas:

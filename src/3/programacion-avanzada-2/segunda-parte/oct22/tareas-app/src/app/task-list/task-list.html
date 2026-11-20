@@ -1,6 +1,6 @@
 <h2>Nueva Tarea</h2>
 
-<app-new-task (newTaskEvent)="newTask($event)"/>
+<app-new-task (newTaskEvent)="taskCreated($event)"/>
 
 <h2>Lista de Tareas</h2>
 
@@ -10,6 +10,6 @@ dentro del bloque
 -->
 @if (this.tasks$ | async; as tasks) {
     @for (task of tasks; track task.id) {
-        <app-task-item [task]="task"/>
+        <app-task-item [task]="task" (taskDeletedEvent)="taskDeleted()"/>
     }
 }
