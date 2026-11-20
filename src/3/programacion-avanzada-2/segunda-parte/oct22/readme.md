@@ -85,6 +85,3 @@ Creamos una ruta `/tareas`, copiado el controlador
 Con el *Endpoint* levantado, necesitamos crear un modelo.
 En `Models/`, creamos `Tarea.cs`, con una clase `POCO` que los describa.
 
-```bash
-# Quedo 1h50m
-```
