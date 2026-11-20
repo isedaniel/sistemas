@@ -1,0 +1,25 @@
+{
+  "tareas": [
+    {
+      "id": "1",
+      "title": "cocinar",
+      "description": "hacer la comida"
+    },
+    {
+      "id": "2",
+      "title": "lavar",
+      "description": "limpiar las cosas"
+    },
+    {
+      "id": "3",
+      "title": "llenar",
+      "description": "la botella con agua"
+    },
+    {
+      "id": "4",
+      "title": "pasear al perro",
+      "description": "al rrope"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

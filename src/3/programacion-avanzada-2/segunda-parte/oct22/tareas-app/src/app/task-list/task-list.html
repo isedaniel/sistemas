@@ -1,0 +1,15 @@
+<h2>Nueva Tarea</h2>
+
+<app-new-task (newTaskEvent)="newTask($event)"/>
+
+<h2>Lista de Tareas</h2>
+
+<!--
+con | async esperamos que se cumpla el observable y lo trabajamos como tasks
+dentro del bloque
+-->
+@if (this.tasks$ | async; as tasks) {
+    @for (task of tasks; track task.id) {
+        <app-task-item [task]="task"/>
+    }
+}
