@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 export class TaskApiClient {
     // inyectamos el cliente http
     private httpClient = inject(HttpClient);
-    private url = "http://localhost:3000/tareas";
+    private url = "http://localhost:5268/tareas";
 
     // envía una petición POST a la URL con la nueva tarea
     newTask(task: ITask) {

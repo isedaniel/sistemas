@@ -1,0 +1,7 @@
+# curl file
+url = "http://localhost:5268/tareas"
+request = "POST"
+-H "Content-Type: application/json"
+-d "{ \"titulo\":\"Pasear la tortuga\", \"descripcion\":\"Se escapo.\" }"
+
+# END

@@ -70,6 +70,21 @@ export const appConfig: ApplicationConfig = {
 };
 ```
 
+## Rest API
+
+Pasamos a la parte de desarrollar la Rest API con `ASP.NET`.
+Creamos el proyecto:
+
+```bash
+dotnet new webapi -o tareasappapi --no-openapi --use-program-main --use-controllers
+```
+
+Creamos una ruta `/tareas`, copiado el controlador
+`WeatherForecastController.cs`, renombrándolo como `TareasController.cs`.
+
+Con el *Endpoint* levantado, necesitamos crear un modelo.
+En `Models/`, creamos `Tarea.cs`, con una clase `POCO` que los describa.
+
 ```bash
 # Quedo 1h50m
 ```
