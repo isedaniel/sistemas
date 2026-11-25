@@ -32,12 +32,14 @@ dotnet ef migrations add PrimeraMigracion
 Recordar agregar el paquete `Microsoft.EntitfyFrameworkCore.Design`.
 Generada la migración, aplicamos la actualización a la base de datos.
 
-Se puede inspeccionar con `.schema` en `sqlite3`.
-
 ```bash
 dotnet ef database update
 ```
 
-```bash
-# Quedo en 1h45m.
-```
+Se puede inspeccionar con `.schema` en `sqlite3`.
+
+Cada vez que modifiquemos o queramos recrear la base de datos volvemos a llamar
+`database update`.
+
+Ahora integramos los dos, creando una `webapi` con `dotnet`.
+
