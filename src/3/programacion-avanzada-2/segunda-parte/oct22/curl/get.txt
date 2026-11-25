@@ -1,3 +1,6 @@
-url = "http://localhost:5268/tareas"
+url = "http://localhost:5257/tareas"
+request = "GET"
+
+url = "http://localhost:5257/tareas/1"
 request = "GET"
 
